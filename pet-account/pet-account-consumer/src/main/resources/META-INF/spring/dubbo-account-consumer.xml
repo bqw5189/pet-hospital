@@ -12,5 +12,5 @@
     <!--uncomment this if you want to test dubbo's monitor-->
     <!--<dubbo:monitor protocol="registry"/>-->
 
-    <dubbo:reference id="accountRestService" interface="com.fl.pet.account.facade.AccountRestService"/>
+    <dubbo:reference id="accountService" interface="com.fl.pet.account.service.AccountService"/>
 </beans>

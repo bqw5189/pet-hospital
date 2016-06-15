@@ -15,9 +15,11 @@
  */
 package com.fl.pet.account.consumer;
 
+import com.fl.pet.account.entity.Account;
 import com.fl.pet.account.entity.From;
 import com.fl.pet.account.facade.AccountRestService;
 import com.fl.pet.account.facade.SignInVO;
+import com.fl.pet.account.service.AccountService;
 
 
 /**
@@ -25,20 +27,20 @@ import com.fl.pet.account.facade.SignInVO;
  */
 public class DemoAction {
 
-    private AccountRestService accountRestService;
+    private AccountService accountService;
 
-    public AccountRestService getAccountRestService() {
-        return accountRestService;
+    public AccountService getAccountService() {
+        return accountService;
     }
 
-    public void setAccountRestService(AccountRestService accountRestService) {
-        this.accountRestService = accountRestService;
+    public void setAccountService(AccountService accountService) {
+        this.accountService = accountService;
     }
 
     public void start() throws Exception {
 
 
-        SignInVO account = new SignInVO();
+        Account account = new Account();
         account.setName("白群伟");
         account.setPassword("123456");
 
@@ -53,7 +55,7 @@ public class DemoAction {
         account.setFrom(from);
 
 
-        System.out.println("SUCESS: signin user with: " + accountRestService.signIn(account));
+        System.out.println("SUCESS: signin user with: " + accountService.signIn(account));
     }
 
 }
