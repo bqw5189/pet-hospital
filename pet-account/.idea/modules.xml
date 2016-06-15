@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/pet-account.iml" filepath="$PROJECT_DIR$/pet-account.iml" />
+      <module fileurl="file://$PROJECT_DIR$/pet-account-api/pet-account-api.iml" filepath="$PROJECT_DIR$/pet-account-api/pet-account-api.iml" />
+      <module fileurl="file://$PROJECT_DIR$/pet-account-api-provider/pet-account-api-provider.iml" filepath="$PROJECT_DIR$/pet-account-api-provider/pet-account-api-provider.iml" />
+      <module fileurl="file://$PROJECT_DIR$/pet-account-consumer/pet-account-consumer.iml" filepath="$PROJECT_DIR$/pet-account-consumer/pet-account-consumer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/pet-account-service-provider/pet-account-service-provider.iml" filepath="$PROJECT_DIR$/pet-account-service-provider/pet-account-service-provider.iml" />
+    </modules>
+  </component>
+</project>
