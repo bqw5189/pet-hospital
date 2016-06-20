@@ -7,28 +7,61 @@ import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.hibernate.validator.constraints.NotBlank;
 
-import javax.persistence.Entity;
-import javax.persistence.Table;
-import javax.persistence.Transient;
+import javax.persistence.*;
 import java.util.Date;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 @Entity
 @Table(name = "t_user")
 public class User extends IdEntity {
+	/**
+	 * 登录名
+	 */
 	private String loginName;
+	/**
+	 * 用户名
+	 */
 	private String name;
+	/**
+	 * 明文密码
+	 */
 	private String plainPassword;
+	/**
+	 * 加密密码
+	 */
 	private String password;
+	/**
+	 * 加密 佐料
+	 */
 	private String salt;
+	/**
+	 * 角色
+	 */
 	private String roles;
+	/**
+	 * 注册日期
+	 */
 	private Date registerDate;
+	/**
+	 * 所属企业
+	 */
+	private Enterprise enterprise;
 
-	public User() {
+	/**
+	 * 用户 角色 信息
+	 */
+	private Set<Role> roleSet = new HashSet<Role>();
+
+	@ManyToMany(cascade = {CascadeType.PERSIST, CascadeType.MERGE})
+	@JoinTable(name = "t_user_role", joinColumns = {@JoinColumn(name = "user_id")}, inverseJoinColumns = {@JoinColumn(name = "role_id")})
+	public Set<Role> getRoleSet() {
+		return roleSet;
 	}
 
-	public User(Long id) {
-		this.id = id;
+	public void setRoleSet(Set<Role> roleSet) {
+		this.roleSet = roleSet;
 	}
 
 	@NotBlank
@@ -99,6 +132,16 @@ public class User extends IdEntity {
 
 	public void setRegisterDate(Date registerDate) {
 		this.registerDate = registerDate;
+	}
+
+	@ManyToOne
+	@JoinColumn(name = "enterprise_id", referencedColumnName = "uuid")
+	public Enterprise getEnterprise() {
+		return enterprise;
+	}
+
+	public void setEnterprise(Enterprise enterprise) {
+		this.enterprise = enterprise;
 	}
 
 	@Override

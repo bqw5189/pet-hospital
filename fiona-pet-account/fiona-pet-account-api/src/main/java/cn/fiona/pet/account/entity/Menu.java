@@ -1,0 +1,136 @@
+package cn.fiona.pet.account.entity;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import org.hibernate.annotations.NotFound;
+import org.hibernate.annotations.NotFoundAction;
+
+import javax.persistence.*;
+import java.util.LinkedHashSet;
+import java.util.Set;
+
+/**
+ * 系统菜单
+ *
+ * @author bqw
+ */
+@Entity
+@Table(name = "t_menu")
+public class Menu extends IdEntity {
+    /**
+     * 角色信息
+     */
+    private Set<Role> roles = new LinkedHashSet<Role>();
+    /**
+     * 子组
+     */
+    private Set<Menu> menus = new LinkedHashSet<Menu>();
+    /**
+     * 父组
+     */
+    private Menu parentMenu;
+    /**
+     * 名称
+     */
+    private String name;
+    /**
+     * 链接地址
+     */
+    private String uri;
+    /**
+     * 对应图标样式名称
+     */
+    private String iconClass;
+    /**
+     * 描述
+     */
+    private String describe;
+    /**
+     * 状态
+     */
+    private int status;
+
+    @Column(name = "c_name")
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    @JsonIgnore
+    @ManyToMany(cascade = {CascadeType.PERSIST, CascadeType.MERGE}, mappedBy = "menuSet", fetch = FetchType.LAZY)
+    public Set<Role> getRoles() {
+        return roles;
+    }
+
+    public void setRoles(Set<Role> roles) {
+        this.roles = roles;
+    }
+
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "parentMenu")
+    public Set<Menu> getMenus() {
+        return menus;
+    }
+
+    public void setMenus(Set<Menu> menus) {
+        this.menus = menus;
+    }
+
+    @JsonIgnore
+    @ManyToOne(cascade = CascadeType.DETACH)
+    @JoinColumn(name = "parent_id")
+    @NotFound(action = NotFoundAction.IGNORE)
+    public Menu getParentMenu() {
+        return parentMenu;
+    }
+
+    public void setParentMenu(Menu parentMenu) {
+        this.parentMenu = parentMenu;
+    }
+
+    @Column(name = "c_describe")
+    public String getDescribe() {
+        return describe;
+    }
+
+    public void setDescribe(String describe) {
+        this.describe = describe;
+    }
+
+    @Column(name = "c_status")
+    public int getStatus() {
+        return status;
+    }
+
+    public void setStatus(int status) {
+        this.status = status;
+    }
+
+    @Column(name = "c_uri")
+    public String getUri() {
+        return uri;
+    }
+
+    public void setUri(String uri) {
+        this.uri = uri;
+    }
+
+    @Column(name = "c_icon_class")
+    public String getIconClass() {
+        return iconClass;
+    }
+
+    public void setIconClass(String iconClass) {
+        this.iconClass = iconClass;
+    }
+
+    @Override
+    public String toString() {
+        return "Menu{" +
+                "name='" + name + '\'' +
+                ", uri='" + uri + '\'' +
+                ", iconClass='" + iconClass + '\'' +
+                '}';
+    }
+}
