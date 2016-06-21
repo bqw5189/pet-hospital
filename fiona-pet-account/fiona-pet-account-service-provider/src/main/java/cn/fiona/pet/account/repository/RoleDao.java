@@ -5,9 +5,10 @@
  *******************************************************************************/
 package cn.fiona.pet.account.repository;
 
+import cn.fiona.pet.account.entity.Role;
 import cn.fiona.pet.account.entity.User;
 import org.springframework.data.repository.PagingAndSortingRepository;
 
-public interface UserDao extends PagingAndSortingRepository<User, String> {
-	User findByLoginName(String loginName);
+public interface RoleDao extends PagingAndSortingRepository<Role, String> {
+	Role findByName(String name);
 }

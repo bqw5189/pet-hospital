@@ -19,14 +19,14 @@ public class Enterprise extends IdEntity{
      * saas 服务 标示 英文
      */
     @NotNull
-    private String serviceGroup;
+    private String code;
 
-    public String getServiceGroup() {
-        return serviceGroup;
+    public String getCode() {
+        return code;
     }
 
-    public void setServiceGroup(String serviceGroup) {
-        this.serviceGroup = serviceGroup;
+    public void setCode(String code) {
+        this.code = code;
     }
 
     public String getName() {
