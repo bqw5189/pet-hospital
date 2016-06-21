@@ -1,6 +1,7 @@
 package cn.fiona.pet.account.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import org.hibernate.annotations.Fetch;
 import org.hibernate.annotations.NotFound;
 import org.hibernate.annotations.NotFoundAction;
 
@@ -19,7 +20,7 @@ public class Menu extends IdEntity {
     /**
      * 角色信息
      */
-    private Set<Role> roles = new LinkedHashSet<Role>();
+//    private Set<Role> roles = new LinkedHashSet<Role>();
     /**
      * 子组
      */
@@ -32,6 +33,10 @@ public class Menu extends IdEntity {
      * 名称
      */
     private String name;
+    /**
+     * code
+     */
+    private String code;
     /**
      * 链接地址
      */
@@ -47,9 +52,20 @@ public class Menu extends IdEntity {
     /**
      * 状态
      */
-    private int status;
+    private String status;
+    /**
+     * 叶子节点
+     */
+    private Boolean leaf;
 
-    @Column(name = "c_name")
+    public String getCode() {
+        return code;
+    }
+
+    public void setCode(String code) {
+        this.code = code;
+    }
+
     public String getName() {
         return name;
     }
@@ -58,17 +74,17 @@ public class Menu extends IdEntity {
         this.name = name;
     }
 
-    @JsonIgnore
-    @ManyToMany(cascade = {CascadeType.PERSIST, CascadeType.MERGE}, mappedBy = "menuSet", fetch = FetchType.LAZY)
-    public Set<Role> getRoles() {
-        return roles;
-    }
+//    @JsonIgnore
+//    @ManyToMany(cascade = {CascadeType.PERSIST, CascadeType.MERGE}, mappedBy = "menuSet", fetch = FetchType.LAZY)
+//    public Set<Role> getRoles() {
+//        return roles;
+//    }
+//
+//    public void setRoles(Set<Role> roles) {
+//        this.roles = roles;
+//    }
 
-    public void setRoles(Set<Role> roles) {
-        this.roles = roles;
-    }
-
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "parentMenu")
+    @OneToMany(cascade = CascadeType.DETACH,fetch = FetchType.LAZY, mappedBy = "parentMenu")
     public Set<Menu> getMenus() {
         return menus;
     }
@@ -79,7 +95,7 @@ public class Menu extends IdEntity {
 
     @JsonIgnore
     @ManyToOne(cascade = CascadeType.DETACH)
-    @JoinColumn(name = "parent_id")
+    @JoinColumn(name = "parent_id",referencedColumnName = "code")
     @NotFound(action = NotFoundAction.IGNORE)
     public Menu getParentMenu() {
         return parentMenu;
@@ -89,7 +105,7 @@ public class Menu extends IdEntity {
         this.parentMenu = parentMenu;
     }
 
-    @Column(name = "c_describe")
+    @Column(name = "describe")
     public String getDescribe() {
         return describe;
     }
@@ -98,16 +114,16 @@ public class Menu extends IdEntity {
         this.describe = describe;
     }
 
-    @Column(name = "c_status")
-    public int getStatus() {
+    @Column(name = "status")
+    public String getStatus() {
         return status;
     }
 
-    public void setStatus(int status) {
+    public void setStatus(String status) {
         this.status = status;
     }
 
-    @Column(name = "c_uri")
+    @Column(name = "uri")
     public String getUri() {
         return uri;
     }
@@ -116,13 +132,21 @@ public class Menu extends IdEntity {
         this.uri = uri;
     }
 
-    @Column(name = "c_icon_class")
+    @Column(name = "icon_class")
     public String getIconClass() {
         return iconClass;
     }
 
     public void setIconClass(String iconClass) {
         this.iconClass = iconClass;
+    }
+
+    public Boolean getLeaf() {
+        return leaf;
+    }
+
+    public void setLeaf(Boolean leaf) {
+        this.leaf = leaf;
     }
 
     @Override

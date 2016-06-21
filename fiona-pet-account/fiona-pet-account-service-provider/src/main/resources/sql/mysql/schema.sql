@@ -44,11 +44,13 @@ CREATE TABLE `t_user_role` (
 DROP TABLE IF EXISTS `t_menu`;
 CREATE TABLE `t_menu` (
   `uuid` VARCHAR(36) NOT NULL,
-  `c_name` varchar(128) NOT NULL,
-  `c_uri` varchar(128) DEFAULT '#',
-  `c_icon_class` varchar(128) NOT NULL,
-  `c_describe` varchar(256) DEFAULT NULL,
+  `name` varchar(128) NOT NULL,
+  `code` varchar(128) NOT NULL,
+  `uri` varchar(128) DEFAULT '#',
+  `icon_class` varchar(128) NOT NULL,
+  `describe` varchar(256) DEFAULT NULL,
   `status` varchar(32) NOT NULL DEFAULT 'OK',
+  `leaf` BOOLEAN DEFAULT TRUE,
   `parent_id` VARCHAR(36) DEFAULT '-1',
   PRIMARY KEY (`uuid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;

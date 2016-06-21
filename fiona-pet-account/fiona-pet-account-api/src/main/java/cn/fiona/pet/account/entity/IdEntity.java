@@ -8,6 +8,7 @@ package cn.fiona.pet.account.entity;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
+import java.io.Serializable;
 
 /**
  * saas模式采用uuid
@@ -15,7 +16,7 @@ import javax.persistence.*;
  */
 // JPA 基类的标识
 @MappedSuperclass
-public abstract class IdEntity {
+public abstract class IdEntity implements Serializable {
 	protected String uuid;
 
 	@Id
