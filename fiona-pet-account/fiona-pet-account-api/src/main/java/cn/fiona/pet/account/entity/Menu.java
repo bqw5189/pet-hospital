@@ -58,6 +58,11 @@ public class Menu extends IdEntity {
      */
     private Boolean leaf;
 
+    /**
+     * 排序
+     */
+    private Integer order;
+
     public String getCode() {
         return code;
     }
@@ -84,7 +89,7 @@ public class Menu extends IdEntity {
 //        this.roles = roles;
 //    }
 
-    @OneToMany(cascade = CascadeType.DETACH,fetch = FetchType.LAZY, mappedBy = "parentMenu")
+    @OneToMany(cascade = CascadeType.DETACH, fetch = FetchType.LAZY, mappedBy = "parentMenu")
     public Set<Menu> getMenus() {
         return menus;
     }
@@ -95,7 +100,7 @@ public class Menu extends IdEntity {
 
     @JsonIgnore
     @ManyToOne(cascade = CascadeType.DETACH)
-    @JoinColumn(name = "parent_id",referencedColumnName = "code")
+    @JoinColumn(name = "parent_id", referencedColumnName = "code")
     @NotFound(action = NotFoundAction.IGNORE)
     public Menu getParentMenu() {
         return parentMenu;
@@ -147,6 +152,14 @@ public class Menu extends IdEntity {
 
     public void setLeaf(Boolean leaf) {
         this.leaf = leaf;
+    }
+
+    public Integer getOrder() {
+        return order;
+    }
+
+    public void setOrder(Integer order) {
+        this.order = order;
     }
 
     @Override

@@ -51,6 +51,7 @@ CREATE TABLE `t_menu` (
   `describe` varchar(256) DEFAULT NULL,
   `status` varchar(32) NOT NULL DEFAULT 'OK',
   `leaf` BOOLEAN DEFAULT TRUE,
+  `order` int DEFAULT 0,
   `parent_id` VARCHAR(36) DEFAULT '-1',
   PRIMARY KEY (`uuid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
