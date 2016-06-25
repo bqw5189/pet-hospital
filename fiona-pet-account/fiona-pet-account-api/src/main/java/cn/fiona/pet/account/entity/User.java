@@ -55,7 +55,7 @@ public class User extends IdEntity {
 	private Set<Role> roleSet = new HashSet<Role>();
 
 	@ManyToMany(cascade = {CascadeType.PERSIST, CascadeType.MERGE})
-	@JoinTable(name = "t_user_role", joinColumns = {@JoinColumn(name = "user_id")}, inverseJoinColumns = {@JoinColumn(name = "role_id")})
+	@JoinTable(name = "t_user_role", joinColumns = {@JoinColumn(name = "user_id")}, inverseJoinColumns = {@JoinColumn(name = "role_code")})
 	public Set<Role> getRoleSet() {
 		return roleSet;
 	}

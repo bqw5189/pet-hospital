@@ -1,7 +1,5 @@
 package cn.fiona.pet.account.entity;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-
 import javax.persistence.*;
 import java.util.HashSet;
 import java.util.LinkedHashSet;
@@ -31,6 +29,19 @@ public class Role extends IdEntity {
      */
     private String name;
 
+    /**
+     * 码
+     */
+    private String code;
+
+    public String getCode() {
+        return code;
+    }
+
+    public void setCode(String code) {
+        this.code = code;
+    }
+
     public String getName() {
         return name;
     }
@@ -49,7 +60,7 @@ public class Role extends IdEntity {
     }
 
     @ManyToMany(cascade = {CascadeType.PERSIST, CascadeType.MERGE})
-    @JoinTable(name = "t_role_menu", joinColumns = {@JoinColumn(name = "role_id")}, inverseJoinColumns = {@JoinColumn(name = "menu_id")})
+    @JoinTable(name = "t_role_menu", joinColumns = {@JoinColumn(name = "role_code", referencedColumnName = "code")}, inverseJoinColumns = {@JoinColumn(name = "menu_code", referencedColumnName = "code")})
     public Set<Menu> getMenuSet() {
         return menuSet;
     }

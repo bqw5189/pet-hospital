@@ -20,7 +20,7 @@ public class Menu extends IdEntity {
     /**
      * 角色信息
      */
-//    private Set<Role> roles = new LinkedHashSet<Role>();
+    private Set<Role> roles = new LinkedHashSet<Role>();
     /**
      * 子组
      */
@@ -79,15 +79,15 @@ public class Menu extends IdEntity {
         this.name = name;
     }
 
-//    @JsonIgnore
-//    @ManyToMany(cascade = {CascadeType.PERSIST, CascadeType.MERGE}, mappedBy = "menuSet", fetch = FetchType.LAZY)
-//    public Set<Role> getRoles() {
-//        return roles;
-//    }
-//
-//    public void setRoles(Set<Role> roles) {
-//        this.roles = roles;
-//    }
+    @JsonIgnore
+    @ManyToMany(cascade = {CascadeType.PERSIST, CascadeType.MERGE}, mappedBy = "menuSet", fetch = FetchType.LAZY)
+    public Set<Role> getRoles() {
+        return roles;
+    }
+
+    public void setRoles(Set<Role> roles) {
+        this.roles = roles;
+    }
 
     @OneToMany(cascade = CascadeType.DETACH, fetch = FetchType.LAZY, mappedBy = "parentMenu")
     public Set<Menu> getMenus() {

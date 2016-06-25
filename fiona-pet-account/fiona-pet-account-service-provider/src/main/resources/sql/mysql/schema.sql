@@ -23,6 +23,7 @@ DROP TABLE IF EXISTS `t_role`;
 CREATE TABLE `t_role` (
   `uuid` VARCHAR(36) NOT NULL,
   `name` VARCHAR(256) NOT NULL,
+  `code` VARCHAR(36) NOT NULL,
   `describe` varchar(256),
   `status` varchar(32) NOT NULL DEFAULT 'OK',
   PRIMARY KEY (`uuid`),
@@ -35,7 +36,7 @@ DROP TABLE IF EXISTS `t_user_role`;
 CREATE TABLE `t_user_role` (
   `uuid` VARCHAR(36) NOT NULL,
   `user_id` VARCHAR(36) NOT NULL,
-  `role_id` VARCHAR(36) NOT NULL,
+  `role_code` VARCHAR(36) NOT NULL,
   PRIMARY KEY (`uuid`)
 ) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
 -- ----------------------------
@@ -45,7 +46,7 @@ DROP TABLE IF EXISTS `t_menu`;
 CREATE TABLE `t_menu` (
   `uuid` VARCHAR(36) NOT NULL,
   `name` varchar(128) NOT NULL,
-  `code` varchar(128) NOT NULL,
+  `code` varchar(36) NOT NULL,
   `uri` varchar(128) DEFAULT '#',
   `icon_class` varchar(128) NOT NULL,
   `describe` varchar(256) DEFAULT NULL,
@@ -62,8 +63,8 @@ CREATE TABLE `t_menu` (
 DROP TABLE IF EXISTS `t_role_menu`;
 CREATE TABLE `t_role_menu` (
   `uuid` VARCHAR(36) NOT NULL,
-  `role_id` VARCHAR(36) NOT NULL,
-  `menu_id` VARCHAR(36) NOT NULL,
+  `role_code` VARCHAR(36) NOT NULL,
+  `menu_code` VARCHAR(36) NOT NULL,
   PRIMARY KEY (`uuid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 -- ----------------------------

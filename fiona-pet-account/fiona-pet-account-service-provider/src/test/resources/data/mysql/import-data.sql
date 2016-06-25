@@ -10,10 +10,14 @@ insert into t_user (uuid,enterprise_id, login_name, name, password, salt, roles,
 -- ----------------------------
 -- Table data for t_role
 -- ----------------------------
-insert into t_role (uuid,name,`describe`) values('8890e122-d989-4800-8bee-23cc345e13ba','admin','系统管理员');
-insert into t_role (uuid,name,`describe`) values('b57c2d66-4ebf-4a20-9eb1-e47c8ede27c8','销售员','挂号,结帐,会员注册登记');
-insert into t_role (uuid,name,`describe`) values('59061794-7df9-49b5-a5e4-b786073c2b80','医生','就诊,开单,化验,检查');
-insert into t_role (uuid,name,`describe`) values('42ed144b-76ef-4634-ba6b-b6664105401c','护士','出药,打针,盘点');
+insert into t_role (uuid,name,code,`describe`) values('8890e122-d989-4800-8bee-23cc345e13ba','admin','admin','系统管理员');
+insert into t_role (uuid,name,code,`describe`) values('b57c2d66-4ebf-4a20-9eb1-e47c8ede27c8','销售员','sales-staff','挂号,结帐,会员注册登记');
+insert into t_role (uuid,name,code,`describe`) values('59061794-7df9-49b5-a5e4-b786073c2b80','医生','doctor','就诊,开单,化验,检查');
+insert into t_role (uuid,name,code,`describe`) values('42ed144b-76ef-4634-ba6b-b6664105401c','护士','nurse','出药,打针,盘点');
+-- ----------------------------
+-- Table data for t_user_role
+-- ----------------------------
+insert into t_user_role (uuid,user_id,role_code) values('836b4570-9b24-4a1b-9b50-0e4a652d9ee1','fc5db3b3-4063-4a12-a511-880ba19e4b58','admin');
 -- ----------------------------
 -- Table data for t_menu
 -- ----------------------------
@@ -117,19 +121,13 @@ insert into t_menu (uuid,name,code,uri,icon_class,`describe`,parent_id) values(u
 insert into t_menu (uuid,name,code,uri,icon_class,`describe`,parent_id) values(uuid(),'盘点管理','FM0205','WarehouseManagement/CheckWarehouseList','nav-item','','FM0200');
 insert into t_menu (uuid,name,code,uri,icon_class,`describe`,parent_id) values(uuid(),'退货管理','FM0206','WarehouseManagement/BackWarehouseList','nav-item','','FM0200');
 --  仓库管理 --
-
---  (N'FM0800', N'拓瑞检测', N'FM0000', N'#', 2, 1, N'', 1, 0, 4, N'admin', CAST(0x0000A3DA00000000 AS DateTime), N'', CAST(0x0000A3DA00F67CE2 AS DateTime), 0)
---  (N'FM0801', N'检测申报', N'FM0800', N'TR.PHM.WPFClient.WinApplyTRCheck', 3, 1, N'', 1, 1, 0, N'admin', CAST(0x0000A3DA00000000 AS DateTime), N'', CAST(0x0000A53801084C91 AS DateTime), 0)
---  (N'FM0802', N'检测查询', N'FM0800', N'TRSearch/TRCheckFileManage.xaml', 3, 1, N'', 1, 0, 1, N'admin', CAST(0x0000A3DA00000000 AS DateTime), N'', CAST(0x0000A3DA00F67CE2 AS DateTime), 0)
---  (N'FM0803', N'费用统计', N'FM0800', N'#', 3, 1, N'', 0, 0, 0, N'admin', CAST(0x0000A3DA00000000 AS DateTime), N'', CAST(0x0000A3DA00F67CE2 AS DateTime), 1)
---  (N'FM0804', N'尿检设备', N'FM0800', N'Equipment/UrineInstrument.xaml', 3, 1, N'', 1, 0, 3, N'admin', CAST(0x0000A619010C77FE AS DateTime), N'admin', CAST(0x0000A619010C77FE AS DateTime), 0)
 -- 系统应用模块 --
 
 
 -- ----------------------------
--- Table data for t_user_role
+-- Table data for t_role_menu
 -- ----------------------------
-insert into t_user_role (uuid,user_id,role_id) values('836b4570-9b24-4a1b-9b50-0e4a652d9ee1','fc5db3b3-4063-4a12-a511-880ba19e4b58','8890e122-d989-4800-8bee-23cc345e13ba');
+insert into t_role_menu (uuid,menu_code,role_code) values(uuid(),'FM0301','admin');
 
 -- ----------------------------
 -- Table data for t_enterprise
