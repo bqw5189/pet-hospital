@@ -1,6 +1,10 @@
 package cn.fiona.pet.account.facade;
 
 import com.alibaba.dubbo.rpc.protocol.rest.support.ContentType;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.ApiParam;
 
 import javax.ws.rs.Consumes;
 import javax.ws.rs.POST;
@@ -17,6 +21,7 @@ import javax.ws.rs.core.MediaType;
 @Path("accounts")
 @Consumes({MediaType.APPLICATION_JSON})
 @Produces({ContentType.APPLICATION_JSON_UTF_8})
+@Api(value="/accounts", description = "账号接口")
 public interface AccountRestService {
     /**
      * 注册
@@ -25,6 +30,9 @@ public interface AccountRestService {
      */
     @POST
     @Path("sign-up")
+    @ApiOperation(value = "注册",
+            notes = "用户注册"
+    )
     RestResult signUp(SignUpVO signUp);
 
     /**
@@ -34,6 +42,9 @@ public interface AccountRestService {
      */
     @POST
     @Path("sign-in")
+    @ApiOperation(value = "登录",
+            notes = "用户登录"
+    )
     RestResult signIn(SignInVO signIn);
 
 }

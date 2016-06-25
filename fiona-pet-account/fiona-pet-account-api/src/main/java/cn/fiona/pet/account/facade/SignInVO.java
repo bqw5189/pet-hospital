@@ -1,6 +1,8 @@
 package cn.fiona.pet.account.facade;
 
 import cn.fiona.pet.account.entity.From;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
 import org.codehaus.jackson.annotate.JsonProperty;
 
 import javax.validation.constraints.NotNull;
@@ -18,16 +20,18 @@ import java.io.Serializable;
 
 @XmlRootElement
 @XmlAccessorType(XmlAccessType.FIELD)
+@ApiModel("登录信息")
 public class SignInVO implements Serializable{
-
     @JsonProperty("username")
     @XmlElement(name = "username")
     @NotNull
     @Size(min = 1, max = 20)
+    @ApiModelProperty(value = "用户名", required = true)
     private String name;
-
+    @ApiModelProperty(value = "密码", required = true)
     private String password;
 
+    @ApiModelProperty(value = "客户端信息", required = false)
     private From from;
 
     public From getFrom() {

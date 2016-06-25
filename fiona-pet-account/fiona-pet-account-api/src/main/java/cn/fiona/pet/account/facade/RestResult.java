@@ -1,5 +1,9 @@
 package cn.fiona.pet.account.facade;
 
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
+import io.swagger.annotations.ApiResponse;
+
 import javax.xml.bind.annotation.XmlRootElement;
 import java.io.Serializable;
 
@@ -9,7 +13,8 @@ import java.io.Serializable;
  * @author lishen
  */
 @XmlRootElement
-public class RestResult implements Serializable {
+@ApiModel("返回结果")
+public class RestResult<T> implements Serializable {
     public static final int OK = 0;
     public static final String M_OK = "成功";
 
@@ -21,9 +26,12 @@ public class RestResult implements Serializable {
         return restResult;
     }
 
+    @ApiModelProperty("错误码:0 无错误信息;404 未找到资源 500 服务器错误")
     private int errorCode;
+    @ApiModelProperty("错误信息")
     private String errorMessage;
-    private Object data;
+    @ApiModelProperty("数据信息")
+    private T data;
 
     public int getErrorCode() {
         return errorCode;
@@ -41,11 +49,11 @@ public class RestResult implements Serializable {
         this.errorMessage = errorMessage;
     }
 
-    public Object getData() {
+    public T getData() {
         return data;
     }
 
-    public void setData(Object data) {
+    public void setData(T data) {
         this.data = data;
     }
 }
