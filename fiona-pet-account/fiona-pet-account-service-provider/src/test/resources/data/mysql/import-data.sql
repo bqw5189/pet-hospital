@@ -18,117 +18,111 @@ insert into t_role (uuid,name,`describe`) values('42ed144b-76ef-4634-ba6b-b66641
 -- Table data for t_menu
 -- ----------------------------
 -- 系统应用模块 --
-insert into t_menu (uuid,name,code,uri,icon_class,`describe`,parent_id,leaf) values('87cafa35-7efd-4d91-bb9b-23e91a28b2e0','系统应用模块','M00000','#','nav-item','系统应用模块','M',false);
+insert into t_menu (uuid,name,code,uri,icon_class,`describe`,parent_id,leaf) values(uuid(),'系统应用模块','M00000','#','nav-item','系统应用模块','M',false);
 --  前台服务 --
-insert into t_menu (uuid,name,code,uri,icon_class,`describe`,parent_id,leaf) values('60cf0342-ff06-4fa1-aa9b-42183b10a70a','前台服务','M00300','#','nav-item','前台服务','M00000',false);
-insert into t_menu (uuid,name,code,uri,icon_class,`describe`,parent_id) values('60cf0342-ff06-4fa1-aa9b-42183b10a70a','门诊挂号','FM0301','MedicBusiness/ApplyRegister','nav-item','门诊挂号','M00300');
-insert into t_menu (uuid,name,code,uri,icon_class,`describe`,parent_id) values('60cf0342-ff06-4fa1-aa9b-42183b10a70a','门诊收费','FM0302','Business/PatientCharge','nav-item','门诊收费','M00300');
-insert into t_menu (uuid,name,code,uri,icon_class,`describe`,parent_id) values('60cf0342-ff06-4fa1-aa9b-42183b10a70a','直接销售','FM0303','StoreBusiness/DirectSell','nav-item','直接销售','M00300');
-insert into t_menu (uuid,name,code,uri,icon_class,`describe`,parent_id) values('60cf0342-ff06-4fa1-aa9b-42183b10a70a','挂号查询','FM0304','MedicBusiness/RegisterQueryList','nav-item','挂号查询','M00300');
-
- (N'FM0305', N'收费管理', N'FM0300', N'StoreBusiness/CashManageList.xaml', 3, 1, N'', 1, 0, 9, N'admin', CAST(0x0000A3DA00000000 AS DateTime), N'', CAST(0x0000A3DA00F67CE2 AS DateTime), 0)
- (N'FM0313', N'寄养管理', N'FM0300', N'HotelBusiness/FosterManage.xaml', 3, 1, N'', 1, 0, 7, N'admin', CAST(0x0000A3DA00000000 AS DateTime), N'', CAST(0x0000A3DA00F67CE2 AS DateTime), 0)
- (N'FM0314', N'住院管理', N'FM0300', N'HotelBusiness/HospitalizedManage.xaml', 3, 1, N'', 1, 0, 8, N'admin', CAST(0x0000A3DA00000000 AS DateTime), N'', CAST(0x0000A3DA00F67CE2 AS DateTime), 0)
- (N'FM0315', N'自助短信', N'FM0300', N'Business/SMSBySelf.xaml', 3, 1, N'', 0, 0, 6, N'admin', CAST(0x0000A3DA00000000 AS DateTime), N'', CAST(0x0000A3DA00F67CE2 AS DateTime), 1)
- (N'FM0317', N'销售查询', N'FM0300', N'StoreBusiness/SellSearchManage.xaml', 3, 1, N'', 1, 0, 5, N'admin', CAST(0x0000A3DA00000000 AS DateTime), N'', CAST(0x0000A3DA00F67CE2 AS DateTime), 0)
- (N'FM0316', N'结算单管理', N'FM0300', N'StoreBusiness/CashSearchList.xaml', 3, 1, N'', 1, 0, 9, N'', CAST(0xFFFFFFFE00000000 AS DateTime), N'', CAST(0xFFFFFFFE00000000 AS DateTime), 0)
- (N'FM0318', N'会员挂号', N'FM0300', N'TR.PHM.WPFClient.MedicBusiness.Register.AddRegister', 3, 1, N'""', 1, 1, 1, N'admin', CAST(0x0000A3DA00000000 AS DateTime), N'""', CAST(0x0000A3DA00F67CE2 AS DateTime), 0)
- (N'FM0319', N'快捷挂号', N'FM0300', N'TR.PHM.WPFClient.WinRandomGestRegist', 3, 1, N'""""""', 1, 1, 2, N'admin', CAST(0x0000A3DA00000000 AS DateTime), N'""""""', CAST(0x0000A3DA00F67CE2 AS DateTime), 0)
- (N'FM0320', N'美容服务', N'FM0300', N'HotelBusiness/ServiceManage.xaml', 3, 1, N'', 1, 0, 6, N'admin', CAST(0x0000A56C012BC5F7 AS DateTime), N'', CAST(0x0000A56C012BC5F7 AS DateTime), 0)
- (N'FM0370', N'预约管理', N'FM0300', N'MicroSMS/AppointmentList.xaml', 3, 1, N'', 1, 0, -20, N'admin', CAST(0x0000A58500F028B6 AS DateTime), N'admin', CAST(0x0000A58500F028B6 AS DateTime), 0)
- (N'FM0321', N'销售退货', N'FM0300', N'StoreBusiness/ReturnCommodityManage.xaml', 3, 1, N'', 1, 0, 10, N'admin', CAST(0x0000A58500F028B6 AS DateTime), N'admin', CAST(0x0000A58500F028B6 AS DateTime), 0)
-
+insert into t_menu (uuid,name,code,uri,icon_class,`describe`,parent_id,leaf) values(uuid(),'前台服务','M00300','#','nav-item','前台服务','M00000',false);
+insert into t_menu (uuid,name,code,uri,icon_class,`describe`,parent_id) values(uuid(),'门诊挂号','FM0301','MedicBusiness/ApplyRegister','nav-item','门诊挂号','M00300');
+insert into t_menu (uuid,name,code,uri,icon_class,`describe`,parent_id) values(uuid(),'门诊收费','FM0302','Business/PatientCharge','nav-item','门诊收费','M00300');
+insert into t_menu (uuid,name,code,uri,icon_class,`describe`,parent_id) values(uuid(),'直接销售','FM0303','StoreBusiness/DirectSell','nav-item','直接销售','M00300');
+insert into t_menu (uuid,name,code,uri,icon_class,`describe`,parent_id) values(uuid(),'挂号查询','FM0304','MedicBusiness/RegisterQueryList','nav-item','挂号查询','M00300');
+insert into t_menu (uuid,name,code,uri,icon_class,`describe`,parent_id) values(uuid(),'收费管理','FM0305','StoreBusiness/CashManageList','nav-item','收费管理','M00300');
+insert into t_menu (uuid,name,code,uri,icon_class,`describe`,parent_id) values(uuid(),'寄养管理','FM0313','HotelBusiness/FosterManage','nav-item','寄养管理','M00300');
+insert into t_menu (uuid,name,code,uri,icon_class,`describe`,parent_id) values(uuid(),'住院管理','FM0314','HotelBusiness/HospitalizedManage','nav-item','住院管理','M00300');
+insert into t_menu (uuid,name,code,uri,icon_class,`describe`,parent_id) values(uuid(),'自助短信','FM0315','Business/SMSBySelf','nav-item','自助短信','M00300');
+insert into t_menu (uuid,name,code,uri,icon_class,`describe`,parent_id) values(uuid(),'销售查询','FM0317','StoreBusiness/SellSearchManage','nav-item','销售查询','M00300');
+insert into t_menu (uuid,name,code,uri,icon_class,`describe`,parent_id) values(uuid(),'结算单管理','FM0316','StoreBusiness/CashSearchList','nav-item','结算单管理','M00300');
+insert into t_menu (uuid,name,code,uri,icon_class,`describe`,parent_id) values(uuid(),'会员挂号','FM0318','TR.PHM.WPFClient.MedicBusiness.Register.AddRegister','nav-item','会员挂号','M00300');
+insert into t_menu (uuid,name,code,uri,icon_class,`describe`,parent_id) values(uuid(),'快捷挂号','FM0319','TR.PHM.WPFClient.WinRandomGestRegist','nav-item','快捷挂号','M00300');
+insert into t_menu (uuid,name,code,uri,icon_class,`describe`,parent_id) values(uuid(),'美容服务','FM0320','HotelBusiness/ServiceManage','nav-item','美容服务','M00300');
+insert into t_menu (uuid,name,code,uri,icon_class,`describe`,parent_id) values(uuid(),'预约管理','FM0370','MicroSMS/AppointmentList','nav-item','预约管理','M00300');
+insert into t_menu (uuid,name,code,uri,icon_class,`describe`,parent_id) values(uuid(),'销售退货','FM0321','StoreBusiness/ReturnCommodityManage','nav-item','销售退货','M00300');
 --  前台服务 --
 --  诊疗服务 --
-insert into t_menu (uuid,name,code,uri,icon_class,`describe`,parent_id) values('cb587c93-bce4-43fa-86a9-6e6ee23ff259','诊疗服务','M00350','SYS_BUSINESS_MDULE/MEDICAL','nav-item','诊疗服务','M00000');
- (N'FM0306', N'就诊管理', N'FM0350', N'MedicBusiness/MedicTreatment.xaml', 3, 1, N'', 1, 0, 0, N'admin', CAST(0x0000A3DA00000000 AS DateTime), N'', CAST(0x0000A3DA00F67CE2 AS DateTime), 0)
- (N'FM0310', N'驱虫疫苗', N'FM0350', N'MedicBusiness/VaccineManage.xaml', 3, 1, N'', 1, 0, 0, N'admin', CAST(0x0000A3DA00000000 AS DateTime), N'', CAST(0x0000A3DA00F67CE2 AS DateTime), 0)
- (N'FM0311', N'拓瑞检测', N'FM0350', N'Business/TRTest.xaml', 3, 1, N'', 0, 0, 0, N'admin', CAST(0x0000A3DA00000000 AS DateTime), N'', CAST(0x0000A3DA00F67CE2 AS DateTime), 1)
- (N'FM0312', N'病案管理', N'FM0350', N'MedicBusiness/SickFileManagement.xaml', 3, 1, N'', 1, 0, 0, N'admin', CAST(0x0000A3DA00000000 AS DateTime), N'', CAST(0x0000A3DA00F67CE2 AS DateTime), 0)
- (N'FM0608', N'处方模板管理', N'FM0350', N'MedicBusiness/PrescriptionTemplateManage.xaml', 3, 1, N'', 1, 0, 0, N'admin', CAST(0x0000A3DA00000000 AS DateTime), N'', CAST(0x0000A3DA00F67CE2 AS DateTime), 0)
+insert into t_menu (uuid,name,code,uri,icon_class,`describe`,parent_id,leaf) values(uuid(),'诊疗服务','M00350','#','nav-item','诊疗服务','M00000',FALSE);
+insert into t_menu (uuid,name,code,uri,icon_class,`describe`,parent_id) values(uuid(),'就诊管理','FM0306','MedicBusiness/MedicTreatment','nav-item','就诊管理','M00350');
+insert into t_menu (uuid,name,code,uri,icon_class,`describe`,parent_id) values(uuid(),'驱虫疫苗','FM0310','MedicBusiness/VaccineManage','nav-item','驱虫疫苗','M00350');
+insert into t_menu (uuid,name,code,uri,icon_class,`describe`,parent_id) values(uuid(),'拓瑞检测','FM0311','Business/TRTest','nav-item','拓瑞检测','M00350');
+insert into t_menu (uuid,name,code,uri,icon_class,`describe`,parent_id) values(uuid(),'病案管理','FM0312','MedicBusiness/SickFileManagement','nav-item','病案管理','M00350');
+insert into t_menu (uuid,name,code,uri,icon_class,`describe`,parent_id) values(uuid(),'处方模板管理','FM0608','MedicBusiness/PrescriptionTemplateManage','nav-item','处方模板管理','M00350');
 --  诊疗服务 --
 --  化验影像 --
-insert into t_menu (uuid,name,code,uri,icon_class,`describe`,parent_id) values('f9978660-91cf-40fb-822d-c73680cf878a','化验影像','M00380','SYS_BUSINESS_MDULE/TEST','nav-item','化验影像','M00000');
- (N'FM0307', N'化验管理', N'FM0380', N'MedicBusiness/ChemistResultManage.xaml', 3, 1, N'', 1, 0, 0, N'admin', CAST(0x0000A3DA00000000 AS DateTime), N'', CAST(0x0000A3DA00F67CE2 AS DateTime), 0)
- (N'FM0308', N'影像管理', N'FM0380', N'MedicBusiness/VedioResultManage.xaml', 3, 1, N'', 1, 0, 0, N'admin', CAST(0x0000A3DA00000000 AS DateTime), N'', CAST(0x0000A3DA00F67CE2 AS DateTime), 0)
-
+insert into t_menu (uuid,name,code,uri,icon_class,`describe`,parent_id,leaf) values('f9978660-91cf-40fb-822d-c73680cf878a','化验影像','M00380','#','nav-item','化验影像','M00000',FALSE);
+insert into t_menu (uuid,name,code,uri,icon_class,`describe`,parent_id) values(uuid(),'化验管理','FM0307','MedicBusiness/ChemistResultManage','nav-item','化验管理','M00350');
+insert into t_menu (uuid,name,code,uri,icon_class,`describe`,parent_id) values(uuid(),'影像管理','FM0308','MedicBusiness/VedioResultManage','nav-item','影像管理','M00350');
 --  化验影像 --
 --  护士工作站 --
-insert into t_menu (uuid,name,code,uri,icon_class,`describe`,parent_id) values('c735985a-1ec0-4f03-b498-2f5c6cef3f51','护士工作站','M00390','SYS_BUSINESS_MDULE/NURSE_STATION','nav-item','','M00000');
- (N'FM0309', N'处方执行', N'FM0390', N'MedicBusiness/PrescriptionManage.xaml', 3, 1, N'', 1, 0, 0, N'admin', CAST(0x0000A3DA00000000 AS DateTime), N'', CAST(0x0000A3DA00F67CE2 AS DateTime), 0)
+insert into t_menu (uuid,name,code,uri,icon_class,`describe`,parent_id,leaf) values(uuid(),'护士工作站','M00390','#','nav-item','','M00000',FALSE);
+insert into t_menu (uuid,name,code,uri,icon_class,`describe`,parent_id) values(uuid(),'处方执行','FM0309','MedicBusiness/PrescriptionManage','nav-item','处方执行','M00350');
 --  护士工作站 --
+--  短信&微信营销 --
+insert into t_menu (uuid,name,code,uri,icon_class,`describe`,parent_id,leaf) values(uuid(),'短信&微信营销','FM0900','#','nav-item','','M00000',FALSE);
+insert into t_menu (uuid,name,code,uri,icon_class,`describe`,parent_id) values(uuid(),'自助短信','FM0902','SMSManagement/SMSSendList','nav-item','自助短信','FM0900');
+insert into t_menu (uuid,name,code,uri,icon_class,`describe`,parent_id) values(uuid(),'短信设置','FM0903','SMSManagement/SMSConfigPage','nav-item','短信设置','FM0900');
+insert into t_menu (uuid,name,code,uri,icon_class,`describe`,parent_id) values(uuid(),'微信设置','FM1002','MicroSMS/MicroSMSConfigPage','nav-item','微信设置','FM0900');
+insert into t_menu (uuid,name,code,uri,icon_class,`describe`,parent_id) values(uuid(),'微网站管理','FM1011','MicroSMS/MicroWeb','nav-item','微网站管理','FM0900');
+insert into t_menu (uuid,name,code,uri,icon_class,`describe`,parent_id) values(uuid(),'会员关注','FM1001','MicroSMS/VIPSMSManageList','nav-item','会员关注','FM0900');
+insert into t_menu (uuid,name,code,uri,icon_class,`describe`,parent_id) values(uuid(),'短信查询','FM0901','SMSManagement/SMSManage','nav-item','短信查询','FM0900');
+--  短信&微信营销 --
+--  经营管理 --
+insert into t_menu (uuid,name,code,uri,icon_class,`describe`,parent_id,leaf) values(uuid(),'经营管理','FM0700','#','nav-item','','M00000',FALSE);
+insert into t_menu (uuid,name,code,uri,icon_class,`describe`,parent_id) values(uuid(),'支出管理','FM0701','OperateManagement/ExpenseManageList','nav-item','支出管理','FM0700');
+--  经营管理 --
+--  会员信息 --
+insert into t_menu (uuid,name,code,uri,icon_class,`describe`,parent_id,leaf) values(uuid(),'会员信息','FM0100','#','nav-item','','M00000',FALSE);
+insert into t_menu (uuid,name,code,uri,icon_class,`describe`,parent_id) values(uuid(),'宠物管理','FM0102','GestManagement/PetManageList','nav-item','宠物管理','FM0100');
+insert into t_menu (uuid,name,code,uri,icon_class,`describe`,parent_id) values(uuid(),'会员管理','FM0101','GestManagement/VIPManageList','nav-item','会员管理','FM0100');
+--  会员信息 --
+--  统计报表 --
+insert into t_menu (uuid,name,code,uri,icon_class,`describe`,parent_id,leaf) values(uuid(),'统计报表','FM0400','#','nav-item','','M00000',FALSE);
+insert into t_menu (uuid,name,code,uri,icon_class,`describe`,parent_id) values(uuid(),'库存资产统计','FM0401','StatisticsBusiness/CurrentProperty','nav-item','库存资产统计','FM0400');
+insert into t_menu (uuid,name,code,uri,icon_class,`describe`,parent_id) values(uuid(),'营业收入统计','FM0402','StatisticsBusiness/TotalEarnMoney','nav-item','营业收入统计','FM0400');
+insert into t_menu (uuid,name,code,uri,icon_class,`describe`,parent_id) values(uuid(),'挂号就诊统计','FM0403','StatisticsBusiness/TotalRegisterRecord','nav-item','挂号就诊统计','FM0400');
+insert into t_menu (uuid,name,code,uri,icon_class,`describe`,parent_id) values(uuid(),'就诊分期统计','FM0404','StatisticsBusiness/RegisterRecordCount','nav-item','就诊分期统计','FM0400');
+insert into t_menu (uuid,name,code,uri,icon_class,`describe`,parent_id) values(uuid(),'效绩考核统计','FM0702','StatisticsBusiness/CountAchievement','nav-item','效绩考核统计','FM0400');
+insert into t_menu (uuid,name,code,uri,icon_class,`describe`,parent_id) values(uuid(),'门店收支统计','FM0703','StatisticsBusiness/CountInCome','nav-item','门店收支统计','FM0400');
+insert into t_menu (uuid,name,code,uri,icon_class,`describe`,parent_id) values(uuid(),'会员消费统计','FM0704','StatisticsBusiness/CountVIPCost','nav-item','会员消费统计','FM0400');
+insert into t_menu (uuid,name,code,uri,icon_class,`describe`,parent_id) values(uuid(),'病例统计','FM0405','StatisticsBusiness/TotalMedicalRecord','nav-item','病例统计','FM0400');
+insert into t_menu (uuid,name,code,uri,icon_class,`describe`,parent_id) values(uuid(),'毛利统计','FM0707','StatisticsBusiness/CountMargin','nav-item','毛利统计','FM0400');
+insert into t_menu (uuid,name,code,uri,icon_class,`describe`,parent_id) values(uuid(),'商品销售统计','FM0708','StatisticsBusiness/CountItemSell','nav-item','商品销售统计','FM0400');
+insert into t_menu (uuid,name,code,uri,icon_class,`describe`,parent_id) values(uuid(),'商品采购统计','FM0709','StatisticsBusiness/CountItemPurchase','nav-item','商品采购统计','FM0400');
+--  统计报表 --
+--  会员信息 --
+insert into t_menu (uuid,name,code,uri,icon_class,`describe`,parent_id,leaf) values(uuid(),'系统管理','FM0500','#','nav-item','','M00000',FALSE);
+insert into t_menu (uuid,name,code,uri,icon_class,`describe`,parent_id) values(uuid(),'登录日志','FM0501','Maintain/LoginLog','nav-item','登录日志','FM0500');
+insert into t_menu (uuid,name,code,uri,icon_class,`describe`,parent_id) values(uuid(),'密码变更','FM0505','TR.PHM.WpfClient.Maintain.PWChange','nav-item','密码变更','FM0500');
+insert into t_menu (uuid,name,code,uri,icon_class,`describe`,parent_id) values(uuid(),'备份还原','FM0506','TR.PHM.WPFClient.DBChooseMenu','nav-item','备份还原','FM0500');
+insert into t_menu (uuid,name,code,uri,icon_class,`describe`,parent_id) values(uuid(),'设置向导','FM0507','TR.PHM.WPFClient.WinNavigation','nav-item','设置向导','FM0500');
+--  会员信息 --
+--  基础数据 --
+insert into t_menu (uuid,name,code,uri,icon_class,`describe`,parent_id,leaf) values(uuid(),'基础数据','FM0600','#','nav-item','','M00000',FALSE);
+insert into t_menu (uuid,name,code,uri,icon_class,`describe`,parent_id) values(uuid(),'经销商与生产商','FM0601','BaseDataManagement/DealerManageList','nav-item','经销商与生产商','FM0600');
+insert into t_menu (uuid,name,code,uri,icon_class,`describe`,parent_id) values(uuid(),'仓库信息管理','FM0602','BaseDataManagement/WarehouseManagementList','nav-item','仓库信息管理','FM0600');
+insert into t_menu (uuid,name,code,uri,icon_class,`describe`,parent_id) values(uuid(),'商品与服务管理','FM0603','BaseDataManagement/ItemTypeManageList','nav-item','商品与服务管理','FM0600');
+insert into t_menu (uuid,name,code,uri,icon_class,`describe`,parent_id) values(uuid(),'会员等级管理','FM0604','BaseDataManagement/VIPLevel','nav-item','会员等级管理','FM0600');
+insert into t_menu (uuid,name,code,uri,icon_class,`describe`,parent_id) values(uuid(),'数据字典管理','FM0605','BaseDataManagement/DataDictmanageList','nav-item','数据字典管理','FM0600');
+insert into t_menu (uuid,name,code,uri,icon_class,`describe`,parent_id) values(uuid(),'员工管理','FM0606','BaseDataManagement/Employee','nav-item','','FM0600');
+insert into t_menu (uuid,name,code,uri,icon_class,`describe`,parent_id) values(uuid(),'按钮配置','FM0607','SetButton','nav-item','','FM0600');
+insert into t_menu (uuid,name,code,uri,icon_class,`describe`,parent_id) values(uuid(),'化验项目管理','FM0609','BaseDataManagement/CheMistTestTypeManageList','nav-item','','FM0600');
+insert into t_menu (uuid,name,code,uri,icon_class,`describe`,parent_id) values(uuid(),'宠物品种管理','FM0610','BaseDataManagement/PetRaceManage','nav-item','','FM0600');
+insert into t_menu (uuid,name,code,uri,icon_class,`describe`,parent_id) values(uuid(),'医院信息','FM0502','TR.PHM.WPFClient.WinHospitalInfo','nav-item','','FM0600');
+insert into t_menu (uuid,name,code,uri,icon_class,`describe`,parent_id) values(uuid(),'应用参数','FM0503','BaseDataManagement/ConfigPage','nav-item','','FM0600');
+insert into t_menu (uuid,name,code,uri,icon_class,`describe`,parent_id) values(uuid(),'角色管理','FM0504','BaseDataManagement/RoleManageList','nav-item','','FM0600');
+--  基础数据 --
+--  仓库管理 --
+insert into t_menu (uuid,name,code,uri,icon_class,`describe`,parent_id,leaf) values(uuid(),'仓库管理','FM0200','#','nav-item','','M00000',FALSE);
+insert into t_menu (uuid,name,code,uri,icon_class,`describe`,parent_id) values(uuid(),'库存查询','FM0201','WarehouseManagement/WarehouseItemCount','nav-item','','FM0200');
+insert into t_menu (uuid,name,code,uri,icon_class,`describe`,parent_id) values(uuid(),'入库管理','FM0202','WarehouseManagement/InWarehouseList','nav-item','','FM0200');
+insert into t_menu (uuid,name,code,uri,icon_class,`describe`,parent_id) values(uuid(),'出库管理','FM0203','WarehouseManagement/OutWarehouseList','nav-item','','FM0200');
+insert into t_menu (uuid,name,code,uri,icon_class,`describe`,parent_id) values(uuid(),'移库管理','FM0204','WarehouseManagement/MoveWarehouseList','nav-item','','FM0200');
+insert into t_menu (uuid,name,code,uri,icon_class,`describe`,parent_id) values(uuid(),'盘点管理','FM0205','WarehouseManagement/CheckWarehouseList','nav-item','','FM0200');
+insert into t_menu (uuid,name,code,uri,icon_class,`describe`,parent_id) values(uuid(),'退货管理','FM0206','WarehouseManagement/BackWarehouseList','nav-item','','FM0200');
+--  仓库管理 --
 
- (N'FM0900', N'短信&微信营销', N'FM0000', N'#', 2, 1, N'""', 1, 0, 3, N'admin', CAST(0x0000A3DA00000000 AS DateTime), N'""', CAST(0x0000A3DA00F67CE2 AS DateTime), 0)
- (N'FM0902', N'自助短信', N'FM0900', N'SMSManagement/SMSSendList.xaml', 3, 1, N'""', 1, 0, 0, N'admin', CAST(0x0000A3DA00000000 AS DateTime), N'""', CAST(0x0000A53801084C91 AS DateTime), 0)
- (N'FM0903', N'短信设置', N'FM0900', N'SMSManagement/SMSConfigPage.xaml', 3, 1, N'""', 1, 0, 0, N'admin', CAST(0x0000A3DA00000000 AS DateTime), N'""', CAST(0x0000A3DA00F67CE2 AS DateTime), 0)
- (N'FM1002', N'微信设置', N'FM0900', N'MicroSMS/MicroSMSConfigPage.xaml', 3, 1, N'""""""', 1, 0, 0, N'admin', CAST(0x0000A3DA00000000 AS DateTime), N'""""""', CAST(0x0000A3DA00F67CE2 AS DateTime), 0)
- (N'FM1011', N'微网站管理', N'FM0900', N'MicroSMS/MicroWeb.xaml', 3, 1, N'', 1, 0, 20, N'admin', CAST(0x0000A58500F028B6 AS DateTime), N'admin', CAST(0x0000A58500F028B6 AS DateTime), 0)
- (N'FM1001', N'会员关注', N'FM0900', N'MicroSMS/VIPSMSManageList.xaml', 3, 1, N'', 1, 0, 0, N'admin', CAST(0x0000A3DA00000000 AS DateTime), N'', CAST(0x0000A3DA00F67CE2 AS DateTime), 0)
- (N'FM0901', N'短信查询', N'FM0900', N'SMSManagement/SMSManage.xaml', 3, 1, N'', 1, 0, 0, N'admin', CAST(0x0000A3DA00000000 AS DateTime), N'', CAST(0x0000A3DA00F67CC8 AS DateTime), 0)
-
- (N'FM0700', N'经营管理', N'FM0000', N'#', 2, 1, N'', 1, 0, 8, N'admin', CAST(0x0000A59C00EDD1F8 AS DateTime), N'admin', CAST(0x0000A59C00EDD1F8 AS DateTime), 0)
- (N'FM0701', N'支出管理', N'FM0700', N'OperateManagement/ExpenseManageList.xaml', 3, 1, N'', 1, 0, 0, N'admin', CAST(0x0000A59C00EDD1F8 AS DateTime), N'admin', CAST(0x0000A59C00EDD1F8 AS DateTime), 0)
-
- (N'FM0100', N'会员信息', N'FM0000', N'#', 2, 1, N'', 1, 0, 2, N'admin', CAST(0x0000A3DA00000000 AS DateTime), N'', CAST(0x0000A3DA00F67CE2 AS DateTime), 0)
- (N'FM0102', N'宠物管理', N'FM0100', N'GestManagement/PetManageList.xaml', 3, 1, N'', 1, 0, 0, N'admin', CAST(0x0000A3DA00000000 AS DateTime), N'', CAST(0x0000A3DA00F67CE2 AS DateTime), 0)
- (N'FM0101', N'会员管理', N'FM0100', N'GestManagement/VIPManageList.xaml', 3, 1, N'""', 1, 0, 0, N'admin', CAST(0x0000A3DA00000000 AS DateTime), N'""', CAST(0x0000A3DA00F67CE2 AS DateTime), 0)
-
- (N'FM1000', N'微信营销', N'FM0000', N'#', 2, 1, N'""""""', 0, 0, 3, N'admin', CAST(0x0000A3DA00000000 AS DateTime), N'""""""', CAST(0x0000A3DA00F67CE2 AS DateTime), 1)
-
- (N'FM0400', N'统计报表', N'FM0000', N'#', 2, 1, N'', 1, 0, 10, N'admin', CAST(0x0000A3DA00000000 AS DateTime), N'', CAST(0x0000A3DA00F67CE2 AS DateTime), 0)
- (N'FM0401', N'库存资产统计', N'FM0400', N'StatisticsBusiness/CurrentProperty.xaml', 3, 1, N'', 1, 0, 3, N'', CAST(0xFFFFFFFE00000000 AS DateTime), N'', CAST(0xFFFFFFFE00000000 AS DateTime), 0)
- (N'FM0402', N'营业收入统计', N'FM0400', N'StatisticsBusiness/TotalEarnMoney.xaml', 3, 1, N'', 1, 0, 2, N'', CAST(0xFFFFFFFE00000000 AS DateTime), N'', CAST(0xFFFFFFFE00000000 AS DateTime), 0)
- (N'FM0403', N'挂号就诊统计', N'FM0400', N'StatisticsBusiness/TotalRegisterRecord.xaml', 3, 1, N'', 1, 0, 1, N'', CAST(0xFFFFFFFE00000000 AS DateTime), N'', CAST(0xFFFFFFFE00000000 AS DateTime), 0)
- (N'FM0404', N'就诊分期统计', N'FM0400', N'StatisticsBusiness/RegisterRecordCount.xaml', 3, 1, N'""', 1, 0, 1, N'""', CAST(0xFFFFFFFE00000000 AS DateTime), N'""', CAST(0xFFFFFFFE00000000 AS DateTime), 0)
- (N'FM0702', N'效绩考核统计', N'FM0400', N'StatisticsBusiness/CountAchievement.xaml', 3, 1, N'', 1, 0, 1, N'admin', CAST(0x0000A59C00EDD1F8 AS DateTime), N'admin', CAST(0x0000A59C00EDD1F8 AS DateTime), 0)
- (N'FM0703', N'门店收支统计', N'FM0400', N'StatisticsBusiness/CountInCome.xaml', 3, 1, N'', 1, 0, 2, N'admin', CAST(0x0000A59C00EDD1F8 AS DateTime), N'admin', CAST(0x0000A59C00EDD1F8 AS DateTime), 0)
- (N'FM0704', N'会员消费统计', N'FM0400', N'StatisticsBusiness/CountVIPCost.xaml', 3, 1, N'', 1, 0, 3, N'admin', CAST(0x0000A59C00EDD1F8 AS DateTime), N'admin', CAST(0x0000A59C00EDD1F8 AS DateTime), 0)
- (N'FM0405', N'病例统计', N'FM0400', N'StatisticsBusiness/TotalMedicalRecord.xaml', 3, 1, N'', 1, 0, 4, N'admin', CAST(0x0000A5B8012CA6EF AS DateTime), N'admin', CAST(0x0000A5B8012CA6EF AS DateTime), 0)
- (N'FM0707', N'毛利统计', N'FM0400', N'StatisticsBusiness/CountMargin.xaml', 3, 1, N'', 1, 0, 5, N'admin', CAST(0x0000A5B8012CA6EF AS DateTime), N'admin', CAST(0x0000A5B8012CA6EF AS DateTime), 0)
- (N'FM0708', N'商品销售统计', N'FM0400', N'StatisticsBusiness/CountItemSell.xaml', 3, 1, N'""', 1, 0, 7, N'admin', CAST(0x0000A5B8012CA6EF AS DateTime), N'admin', CAST(0x0000A5B8012CA6EF AS DateTime), 0)
- (N'FM0709', N'商品采购统计', N'FM0400', N'StatisticsBusiness/CountItemPurchase.xaml', 3, 1, N'""', 1, 0, 6, N'admin', CAST(0x0000A5B8012CA6EF AS DateTime), N'admin', CAST(0x0000A5B8012CA6EF AS DateTime), 0)
-
-
- (N'FM0500', N'系统管理', N'FM0000', N'#', 2, 1, N'', 0, 0, 7, N'admin', CAST(0x0000A3DA00000000 AS DateTime), N'', CAST(0x0000A3DA00F67CE2 AS DateTime), 0)
- (N'FM0501', N'登录日志', N'FM0500', N'Maintain/LoginLog.xaml', 3, 1, N'', 0, 0, 0, N'admin', CAST(0x0000A3DA00000000 AS DateTime), N'', CAST(0x0000A3DA00F67CE2 AS DateTime), 1)
- (N'FM0505', N'密码变更', N'FM0500', N'TR.PHM.WpfClient.Maintain.PWChange', 3, 1, N'', 0, 1, 0, N'admin', CAST(0x0000A3DA00000000 AS DateTime), N'', CAST(0x0000A3DA00F67CE2 AS DateTime), 1)
- (N'FM0506', N'备份还原', N'FM0500', N'TR.PHM.WPFClient.DBChooseMenu', 3, 1, N'', 0, 1, 1, N'admin', CAST(0x0000A56C012BC601 AS DateTime), N'', CAST(0x0000A56C012BC601 AS DateTime), 0)
- (N'FM0507', N'设置向导', N'FM0500', N'TR.PHM.WPFClient.WinNavigation', 3, 1, N'', 0, 1, 1, N'admin', CAST(0x0000A575013457D3 AS DateTime), N'', CAST(0x0000A575013457D3 AS DateTime), 0)
-
-
-
- (N'FM0600', N'基础数据', N'FM0000', N'#', 2, 1, N'""', 1, 0, 9, N'admin', CAST(0x0000A3DA00000000 AS DateTime), N'', CAST(0x0000A3DA00F67CE2 AS DateTime), 0)
-
- (N'FM0601', N'经销商与生产商', N'FM0600', N'BaseDataManagement/DealerManageList.xaml', 3, 1, N'', 1, 0, 0, N'admin', CAST(0x0000A3DA00000000 AS DateTime), N'', CAST(0x0000A3DA00F68029 AS DateTime), 0)
- (N'FM0602', N'仓库信息管理', N'FM0600', N'BaseDataManagement/WarehouseManagementList.xaml', 3, 1, N'', 1, 0, 0, N'admin', CAST(0x0000A3DA00000000 AS DateTime), N'', CAST(0x0000A3DA00F67CE2 AS DateTime), 0)
- (N'FM0603', N'商品与服务管理', N'FM0600', N'BaseDataManagement/ItemTypeManageList.xaml', 3, 1, N'', 1, 0, 0, N'admin', CAST(0x0000A3DA00000000 AS DateTime), N'', CAST(0x0000A3DA00F67CE2 AS DateTime), 0)
- (N'FM0604', N'会员等级管理', N'FM0600', N'BaseDataManagement/VIPLevel.xaml', 3, 1, N'', 1, 0, 0, N'admin', CAST(0x0000A3DA00000000 AS DateTime), N'', CAST(0x0000A3DA00F67CE2 AS DateTime), 0)
- (N'FM0605', N'数据字典管理', N'FM0600', N'BaseDataManagement/DataDictmanageList.xaml', 3, 1, N'', 1, 0, 0, N'admin', CAST(0x0000A3DA00000000 AS DateTime), N'', CAST(0x0000A3DA00F67CE2 AS DateTime), 0)
- (N'FM0606', N'员工管理', N'FM0600', N'BaseDataManagement/Employee.xaml', 3, 1, N'', 1, 0, 0, N'admin', CAST(0x0000A3DA00000000 AS DateTime), N'', CAST(0x0000A3DA00F67CE2 AS DateTime), 0)
- (N'FM0607', N'按钮配置', N'FM0600', N'SetButton.xaml', 3, 1, N'', 0, 0, 0, N'admin', CAST(0x0000A3DA00000000 AS DateTime), N'', CAST(0x0000A3DA00F67CE2 AS DateTime), 1)
- (N'FM0609', N'化验项目管理', N'FM0600', N'BaseDataManagement/CheMistTestTypeManageList.xaml', 3, 1, N'', 1, 0, 0, N'admin', CAST(0x0000A3DA00000000 AS DateTime), N'', CAST(0x0000A3DA00F67CE2 AS DateTime), 0)
- (N'FM0610', N'宠物品种管理', N'FM0600', N'BaseDataManagement/PetRaceManage.xaml', 3, 1, N'""', 1, 0, 0, N'admin', CAST(0x0000A3DA00000000 AS DateTime), N'""', CAST(0x0000A3DA00F67CC8 AS DateTime), 0)
- (N'FM0502', N'医院信息', N'FM0600', N'TR.PHM.WPFClient.WinHospitalInfo', 3, 1, N'', 1, 1, 0, N'admin', CAST(0x0000A3DA00000000 AS DateTime), N'', CAST(0x0000A3DA00F67CE2 AS DateTime), 0)
- (N'FM0503', N'应用参数', N'FM0600', N'BaseDataManagement/ConfigPage.xaml', 3, 1, N'', 1, 0, 10, N'admin', CAST(0x0000A3DA00000000 AS DateTime), N'', CAST(0x0000A3DA00F67CE2 AS DateTime), 0)
- (N'FM0504', N'角色管理', N'FM0600', N'BaseDataManagement/RoleManageList.xaml', 3, 1, N'', 1, 0, 0, N'admin', CAST(0x0000A3DA00000000 AS DateTime), N'', CAST(0x0000A3DA00F67CE2 AS DateTime), 0)
-
-
-
- (N'FM0200', N'仓库管理', N'FM0000', N'#', 2, 1, N'', 1, 0, 5, N'admin', CAST(0x0000A3DA00000000 AS DateTime), N'', CAST(0x0000A3DA00F67CE2 AS DateTime), 0)
- (N'FM0201', N'库存查询', N'FM0200', N'WarehouseManagement/WarehouseItemCount.xaml', 3, 1, N'', 1, 0, 0, N'admin', CAST(0x0000A3DA00000000 AS DateTime), N'', CAST(0x0000A3DA00F67CE2 AS DateTime), 0)
- (N'FM0202', N'入库管理', N'FM0200', N'WarehouseManagement/InWarehouseList.xaml', 3, 1, N'', 1, 0, 0, N'admin', CAST(0x0000A3DA00000000 AS DateTime), N'', CAST(0x0000A3DA00F67CE2 AS DateTime), 0)
- (N'FM0203', N'出库管理', N'FM0200', N'WarehouseManagement/OutWarehouseList.xaml', 3, 1, N'', 1, 0, 0, N'admin', CAST(0x0000A3DA00000000 AS DateTime), N'', CAST(0x0000A3DA00F67CE2 AS DateTime), 0)
- (N'FM0204', N'移库管理', N'FM0200', N'WarehouseManagement/MoveWarehouseList.xaml', 3, 1, N'', 1, 0, 0, N'admin', CAST(0x0000A3DA00000000 AS DateTime), N'', CAST(0x0000A3DA00F67CE2 AS DateTime), 0)
- (N'FM0205', N'盘点管理', N'FM0200', N'WarehouseManagement/CheckWarehouseList.xaml', 3, 1, N'', 0, 0, 0, N'admin', CAST(0x0000A3DA00000000 AS DateTime), N'', CAST(0x0000A3DA00F67CE2 AS DateTime), 1)
- (N'FM0206', N'退货管理', N'FM0200', N'WarehouseManagement/BackWarehouseList.xaml', 3, 1, N'', 1, 0, 0, N'admin', CAST(0x0000A3DA00000000 AS DateTime), N'', CAST(0x0000A3DA00F67CE2 AS DateTime), 0)
-
- (N'FM0800', N'拓瑞检测', N'FM0000', N'#', 2, 1, N'', 1, 0, 4, N'admin', CAST(0x0000A3DA00000000 AS DateTime), N'', CAST(0x0000A3DA00F67CE2 AS DateTime), 0)
- (N'FM0801', N'检测申报', N'FM0800', N'TR.PHM.WPFClient.WinApplyTRCheck', 3, 1, N'', 1, 1, 0, N'admin', CAST(0x0000A3DA00000000 AS DateTime), N'', CAST(0x0000A53801084C91 AS DateTime), 0)
- (N'FM0802', N'检测查询', N'FM0800', N'TRSearch/TRCheckFileManage.xaml', 3, 1, N'', 1, 0, 1, N'admin', CAST(0x0000A3DA00000000 AS DateTime), N'', CAST(0x0000A3DA00F67CE2 AS DateTime), 0)
- (N'FM0803', N'费用统计', N'FM0800', N'#', 3, 1, N'', 0, 0, 0, N'admin', CAST(0x0000A3DA00000000 AS DateTime), N'', CAST(0x0000A3DA00F67CE2 AS DateTime), 1)
- (N'FM0804', N'尿检设备', N'FM0800', N'Equipment/UrineInstrument.xaml', 3, 1, N'', 1, 0, 3, N'admin', CAST(0x0000A619010C77FE AS DateTime), N'admin', CAST(0x0000A619010C77FE AS DateTime), 0)
-
-
+--  (N'FM0800', N'拓瑞检测', N'FM0000', N'#', 2, 1, N'', 1, 0, 4, N'admin', CAST(0x0000A3DA00000000 AS DateTime), N'', CAST(0x0000A3DA00F67CE2 AS DateTime), 0)
+--  (N'FM0801', N'检测申报', N'FM0800', N'TR.PHM.WPFClient.WinApplyTRCheck', 3, 1, N'', 1, 1, 0, N'admin', CAST(0x0000A3DA00000000 AS DateTime), N'', CAST(0x0000A53801084C91 AS DateTime), 0)
+--  (N'FM0802', N'检测查询', N'FM0800', N'TRSearch/TRCheckFileManage.xaml', 3, 1, N'', 1, 0, 1, N'admin', CAST(0x0000A3DA00000000 AS DateTime), N'', CAST(0x0000A3DA00F67CE2 AS DateTime), 0)
+--  (N'FM0803', N'费用统计', N'FM0800', N'#', 3, 1, N'', 0, 0, 0, N'admin', CAST(0x0000A3DA00000000 AS DateTime), N'', CAST(0x0000A3DA00F67CE2 AS DateTime), 1)
+--  (N'FM0804', N'尿检设备', N'FM0800', N'Equipment/UrineInstrument.xaml', 3, 1, N'', 1, 0, 3, N'admin', CAST(0x0000A619010C77FE AS DateTime), N'admin', CAST(0x0000A619010C77FE AS DateTime), 0)
 -- 系统应用模块 --
 
 
