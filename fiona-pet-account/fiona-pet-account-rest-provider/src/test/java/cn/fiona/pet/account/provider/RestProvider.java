@@ -15,7 +15,7 @@
  */
 package cn.fiona.pet.account.provider;
 
-public class DemoProvider {
+public class RestProvider {
 
     public static void main(String[] args) {
       System.setProperty("spring.profiles.default", "test");

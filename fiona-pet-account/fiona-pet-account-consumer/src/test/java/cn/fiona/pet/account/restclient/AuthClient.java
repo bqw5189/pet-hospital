@@ -1,9 +1,10 @@
 
-package cn.fiona.pet.account.consumer;
+package cn.fiona.pet.account.restclient;
 
 
 import cn.fiona.pet.account.entity.From;
 import cn.fiona.pet.account.facade.LoginVO;
+import org.junit.Test;
 
 import javax.ws.rs.client.Client;
 import javax.ws.rs.client.ClientBuilder;
@@ -15,14 +16,14 @@ import javax.ws.rs.core.Response;
 /**
  * @author baiqw
  */
-public class RestClient {
-
-  public static void main(String[] args) {
+public class AuthClient {
+    @Test
+  public void testLogin() {
       final String port = "8828";
-      signIn("http://localhost:" + port + "/api/v2/accounts/signin", MediaType.APPLICATION_JSON_TYPE);
+      signIn("http://172.17.191.191:" + port + "/api/v2/auth/login", MediaType.APPLICATION_JSON_TYPE);
   }
 
-  private static void signIn(String url, MediaType mediaType) {
+  private void signIn(String url, MediaType mediaType) {
       System.out.println("signIn account via " + url);
       LoginVO account = new LoginVO();
       account.setName("admin");

@@ -36,6 +36,14 @@
                     com.alibaba.dubbo.rpc.protocol.rest.support.LoggingFilter"/>
 
 
+    <!-- auth api v2 -->
+    <dubbo:service interface="cn.fiona.pet.account.facade.AuthRestService" ref="authRestService"
+                   protocol="rest" validation="true" timeout="2000" connections="100"/>
+    <bean id="authRestService" class="cn.fiona.pet.account.facade.AuthRestServiceImpl">
+        <property name="accountService" ref="accountService"/>
+    </bean>
+    <!-- auth api v2 -->
+
     <!-- account api v2 -->
     <dubbo:service interface="cn.fiona.pet.account.facade.AccountRestService" ref="accountRestService"
                    protocol="rest" validation="true" timeout="2000" connections="100"/>
