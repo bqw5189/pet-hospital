@@ -45,7 +45,7 @@ public class MessageRestServiceImpl implements MessageRestService {
     @Override
     public RestResult verificationCode(@ApiParam(value = "手机号", required = true) @NotEmpty String phoneNumber, @ApiParam(value = "验证码", required = true) @NotEmpty String verificationCode) throws ApiException {
         if (phoneNumber.length() < 11) {
-            throw new NotFoundException(400, "无效手机号");
+            throw new NotFoundException("无效手机号");
         }else {
         return RestResult.OK(messageService.verificationCode(phoneNumber, verificationCode));
         }

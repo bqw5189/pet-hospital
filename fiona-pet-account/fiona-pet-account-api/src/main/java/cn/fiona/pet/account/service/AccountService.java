@@ -1,11 +1,19 @@
 package cn.fiona.pet.account.service;
 
-import cn.fiona.pet.account.entity.Account;
-import cn.fiona.pet.account.facade.RestResult;
+import cn.fiona.pet.account.exception.ApiException;
+import cn.fiona.pet.account.facade.LoginVO;
 
 /**
+ * 账号接口
+ *
  * @author baiqw
  */
 public interface AccountService {
-    Account signIn(Account account);
+    /**
+     * 用户登录
+     *
+     * @param loginVO
+     * @return 登录成功返回 token
+     */
+    String login(LoginVO loginVO) throws ApiException;
 }

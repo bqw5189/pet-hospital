@@ -2,9 +2,7 @@ package cn.fiona.pet.account.facade;
 
 import com.alibaba.dubbo.rpc.protocol.rest.support.ContentType;
 import io.swagger.annotations.Api;
-import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiOperation;
-import io.swagger.annotations.ApiParam;
 
 import javax.ws.rs.Consumes;
 import javax.ws.rs.POST;
@@ -45,6 +43,6 @@ public interface AccountRestService {
     @ApiOperation(value = "登录",
             notes = "用户登录"
     )
-    RestResult signIn(SignInVO signIn);
+    RestResult signIn(LoginVO signIn);
 
 }

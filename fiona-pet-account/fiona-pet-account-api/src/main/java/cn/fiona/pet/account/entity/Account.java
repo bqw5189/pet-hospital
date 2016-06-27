@@ -16,7 +16,6 @@ import java.io.Serializable;
 @XmlRootElement
 @XmlAccessorType(XmlAccessType.FIELD)
 public class Account implements Serializable {
-
     @JsonProperty("username")
     @XmlElement(name = "username")
     @NotNull

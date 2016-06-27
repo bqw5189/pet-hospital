@@ -20,11 +20,11 @@ public interface AuthRestService {
     /**
      * 登录
      *
-     * @param signInVO 登录信息
+     * @param loginVO 登录信息
      * @return RestResult 身份认证成功 data 返回用户token
      */
     @POST
     @Path("login")
     @ApiOperation(value = "登录", notes = "用户登录,登录成功返回token信息",response = RestResult.class)
-    RestResult<String> login(@ApiParam(value = "登录信息", required = true) SignInVO signInVO);
+    RestResult<String> login(@ApiParam(value = "登录信息", required = true) LoginVO loginVO);
 }

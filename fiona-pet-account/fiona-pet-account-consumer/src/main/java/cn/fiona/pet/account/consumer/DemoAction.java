@@ -17,8 +17,7 @@ package cn.fiona.pet.account.consumer;
 
 import cn.fiona.pet.account.entity.Account;
 import cn.fiona.pet.account.entity.From;
-import cn.fiona.pet.account.facade.AccountRestService;
-import cn.fiona.pet.account.facade.SignInVO;
+import cn.fiona.pet.account.facade.LoginVO;
 import cn.fiona.pet.account.service.AccountService;
 
 
@@ -40,9 +39,9 @@ public class DemoAction {
     public void start() throws Exception {
 
 
-        Account account = new Account();
-        account.setName("白群伟");
-        account.setPassword("123456");
+        LoginVO loginVO = new LoginVO();
+        loginVO.setName("admin");
+        loginVO.setPassword("admin");
 
         From from = new From();
         from.setAgentId("test");
@@ -52,10 +51,10 @@ public class DemoAction {
         from.setLocation("1,2,3");
         from.setOsVersion("10.10.5");
 
-        account.setFrom(from);
+        loginVO.setFrom(from);
 
 
-        System.out.println("SUCESS: signin user with: " + accountService.signIn(account));
+        System.out.println("SUCESS: login user with: " + accountService.login(loginVO));
     }
 
 }

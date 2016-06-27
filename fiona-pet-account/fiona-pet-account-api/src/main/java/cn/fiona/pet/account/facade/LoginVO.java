@@ -21,7 +21,7 @@ import java.io.Serializable;
 @XmlRootElement
 @XmlAccessorType(XmlAccessType.FIELD)
 @ApiModel("登录信息")
-public class SignInVO implements Serializable{
+public class LoginVO implements Serializable{
     @JsonProperty("username")
     @XmlElement(name = "username")
     @NotNull

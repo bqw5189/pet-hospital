@@ -3,7 +3,7 @@ package cn.fiona.pet.account.consumer;
 
 
 import cn.fiona.pet.account.entity.From;
-import cn.fiona.pet.account.facade.SignInVO;
+import cn.fiona.pet.account.facade.LoginVO;
 
 import javax.ws.rs.client.Client;
 import javax.ws.rs.client.ClientBuilder;
@@ -24,7 +24,7 @@ public class RestClient {
 
   private static void signIn(String url, MediaType mediaType) {
       System.out.println("signIn account via " + url);
-      SignInVO account = new SignInVO();
+      LoginVO account = new LoginVO();
       account.setName("白群伟");
       account.setPassword("123456");
 

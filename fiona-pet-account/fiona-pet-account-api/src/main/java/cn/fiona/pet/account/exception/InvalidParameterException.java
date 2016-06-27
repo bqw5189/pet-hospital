@@ -15,8 +15,8 @@
  */
  package cn.fiona.pet.account.exception;
 
-public class ApiException extends Exception{
-  public ApiException(String message) {
+public class InvalidParameterException extends ApiException {
+  public InvalidParameterException(String message) {
     super(message);
   }
 }
