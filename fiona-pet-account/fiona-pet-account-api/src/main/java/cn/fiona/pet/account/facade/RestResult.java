@@ -20,33 +20,33 @@ public class RestResult<T> implements Serializable {
 
     public static RestResult OK(Object data){
         RestResult restResult = new RestResult();
-        restResult.setErrorMessage(M_OK);
-        restResult.setErrorCode(OK);
+        restResult.setMessage(M_OK);
+        restResult.setCode(OK);
         restResult.setData(data);
         return restResult;
     }
 
-    @ApiModelProperty("错误码:0 无错误信息;404 未找到资源 500 服务器错误")
-    private int errorCode;
+    @ApiModelProperty("错误码:0 无错误信息;404 未找到资源; 500 服务器错误;")
+    private int code;
     @ApiModelProperty("错误信息")
-    private String errorMessage;
+    private String message;
     @ApiModelProperty("数据信息")
     private T data;
 
-    public int getErrorCode() {
-        return errorCode;
+    public int getCode() {
+        return code;
     }
 
-    public void setErrorCode(int errorCode) {
-        this.errorCode = errorCode;
+    public void setCode(int code) {
+        this.code = code;
     }
 
-    public String getErrorMessage() {
-        return errorMessage;
+    public String getMessage() {
+        return message;
     }
 
-    public void setErrorMessage(String errorMessage) {
-        this.errorMessage = errorMessage;
+    public void setMessage(String message) {
+        this.message = message;
     }
 
     public T getData() {
