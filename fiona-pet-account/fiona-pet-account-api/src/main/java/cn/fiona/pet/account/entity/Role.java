@@ -50,7 +50,7 @@ public class Role extends IdEntity {
         this.name = name;
     }
 
-    @ManyToMany(cascade = {CascadeType.PERSIST, CascadeType.MERGE}, mappedBy = "roleSet", fetch = FetchType.LAZY)
+    @ManyToMany(mappedBy = "roles", fetch = FetchType.LAZY)
     public Set<User> getUsers() {
         return users;
     }
@@ -59,8 +59,10 @@ public class Role extends IdEntity {
         this.users = users;
     }
 
-    @ManyToMany(cascade = {CascadeType.PERSIST, CascadeType.MERGE})
-    @JoinTable(name = "t_role_menu", joinColumns = {@JoinColumn(name = "role_code", referencedColumnName = "code")}, inverseJoinColumns = {@JoinColumn(name = "menu_code", referencedColumnName = "code")})
+    @ManyToMany(fetch=FetchType.LAZY, cascade={CascadeType.MERGE})
+    @JoinTable(name = "t_role_menu",
+            joinColumns = {@JoinColumn(name = "role_code", referencedColumnName = "code")},
+            inverseJoinColumns = {@JoinColumn(name = "menu_code", referencedColumnName = "code")})
     public Set<Menu> getMenuSet() {
         return menuSet;
     }

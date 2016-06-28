@@ -40,4 +40,11 @@
 
     <bean id="messageService" class="cn.fiona.pet.account.service.MessageServiceImpl"/>
     <!-- message service v2 -->
+
+    <!-- menu service -->
+    <dubbo:service interface="cn.fiona.pet.account.service.MenuService" ref="menuService"
+                   protocol="dubbo" validation="true" timeout="2000" connections="100"/>
+
+    <bean id="menuService" class="cn.fiona.pet.account.service.MenuServiceImpl"/>
+    <!-- menu service -->
 </beans>

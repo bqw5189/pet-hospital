@@ -1,6 +1,8 @@
 package cn.fiona.pet.account.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import org.apache.commons.lang3.builder.EqualsBuilder;
+import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.hibernate.annotations.Fetch;
 import org.hibernate.annotations.NotFound;
 import org.hibernate.annotations.NotFoundAction;
@@ -89,6 +91,7 @@ public class Menu extends IdEntity {
         this.roles = roles;
     }
 
+    @JsonIgnore
     @OneToMany(cascade = CascadeType.DETACH, fetch = FetchType.LAZY, mappedBy = "parentMenu")
     public Set<Menu> getMenus() {
         return menus;

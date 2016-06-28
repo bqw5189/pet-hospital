@@ -22,8 +22,8 @@ public class TestUserDao extends SpringTransactionalTestCase {
 
         Assert.assertNotNull(user);
 
-        Assert.assertNotNull(user.getRoleSet());
+        Assert.assertNotNull(user.getRoles());
 
-        Assert.assertTrue(user.getRoleList().contains("admin"));
+        Assert.assertEquals(user.getRoles().size(),1);
     }
 }

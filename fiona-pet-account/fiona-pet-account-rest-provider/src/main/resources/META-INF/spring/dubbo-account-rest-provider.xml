@@ -33,8 +33,8 @@
                     cn.fiona.pet.account.extension.ClientTraceFilter,
                     cn.fiona.pet.account.extension.DynamicTraceBinding,
                     cn.fiona.pet.account.extension.CustomExceptionMapper,
-                    com.alibaba.dubbo.rpc.protocol.rest.support.LoggingFilter"/>
-
+                    com.alibaba.dubbo.rpc.protocol.rest.support.LoggingFilter">
+    </dubbo:protocol>
 
     <!-- auth api v2 -->
     <dubbo:service interface="cn.fiona.pet.account.facade.AuthRestService" ref="authRestService"
@@ -43,6 +43,15 @@
         <property name="accountService" ref="accountService"/>
     </bean>
     <!-- auth api v2 -->
+
+    <!-- menu api v2 -->
+    <dubbo:service interface="cn.fiona.pet.account.facade.MenuRestService" ref="menuRestService"
+                   protocol="rest" validation="true" timeout="2000" connections="100"/>
+    <bean id="menuRestService" class="cn.fiona.pet.account.facade.MenuRestServiceImpl">
+        <property name="menuService" ref="menuService"></property>
+    </bean>
+    <dubbo:reference id="menuService" interface="cn.fiona.pet.account.service.MenuService"/>
+    <!-- menu api v2 -->
 
     <!-- account api v2 -->
     <dubbo:service interface="cn.fiona.pet.account.facade.AccountRestService" ref="accountRestService"

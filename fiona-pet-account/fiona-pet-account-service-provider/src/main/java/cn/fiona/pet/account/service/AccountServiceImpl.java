@@ -50,6 +50,20 @@ public class AccountServiceImpl implements AccountService {
         return token;
     }
 
+    @Override
+    public boolean validateToken(String token) throws ApiException {
+        if (StringUtils.isBlank(token)){
+            throw new ApiException("token is null!");
+        }
+
+        User user = userDao.findOne(token);
+        if (null == user){
+            throw new ApiException(String.format("%s not exists!", token));
+        }
+
+        return true;
+    }
+
     private boolean passwordValidation(String password, User user){
 
         byte[] salt = Encodes.decodeHex(user.getSalt());

@@ -10,7 +10,6 @@ CREATE TABLE `t_user` (
   `name` varchar(64) NOT NULL,
   `password` varchar(255) NOT NULL,
   `salt` varchar(64) DEFAULT NULL,
-  `roles` varchar(255) DEFAULT NULL,
   `register_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `status` varchar(32) NOT NULL DEFAULT 'OK',
   PRIMARY KEY (`uuid`),
@@ -23,7 +22,7 @@ DROP TABLE IF EXISTS `t_role`;
 CREATE TABLE `t_role` (
   `uuid` VARCHAR(36) NOT NULL,
   `name` VARCHAR(256) NOT NULL,
-  `code` VARCHAR(36) NOT NULL,
+  `code` VARCHAR(36) NOT NULL UNIQUE,
   `describe` varchar(256),
   `status` varchar(32) NOT NULL DEFAULT 'OK',
   PRIMARY KEY (`uuid`),
@@ -36,7 +35,7 @@ DROP TABLE IF EXISTS `t_user_role`;
 CREATE TABLE `t_user_role` (
   `uuid` VARCHAR(36) NOT NULL,
   `user_id` VARCHAR(36) NOT NULL,
-  `role_code` VARCHAR(36) NOT NULL,
+  `role_id` VARCHAR(36) NOT NULL,
   PRIMARY KEY (`uuid`)
 ) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
 -- ----------------------------

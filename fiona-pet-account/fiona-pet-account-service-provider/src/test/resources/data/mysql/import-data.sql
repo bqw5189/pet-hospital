@@ -5,8 +5,8 @@
 -- ----------------------------
 -- Table data for t_user
 -- ----------------------------
-insert into t_user (uuid,enterprise_id, login_name, name, password, salt, roles, register_date) values('fc5db3b3-4063-4a12-a511-880ba19e4b58','9b06d376-44ff-4153-9b31-c29a19b8da29','admin','Admin','691b14d79bf0fa2215f155235df5e670b64394cc','7efbd59d9741d34f','admin','2012-06-04 01:00:00');
-insert into t_user (uuid,enterprise_id, login_name, name, password, salt, roles, register_date) values('f7419766-8544-47f7-8aca-b8b48e7698fc','9b06d376-44ff-4153-9b31-c29a19b8da29','user','Calvin','2488aa0c31c624687bd9928e0a5d29e7d1ed520b','6d65d24122c30500','user','2012-06-04 02:00:00');
+insert into t_user (uuid,enterprise_id, login_name, name, password, salt, register_date) values('fc5db3b3-4063-4a12-a511-880ba19e4b58','9b06d376-44ff-4153-9b31-c29a19b8da29','admin','Admin','691b14d79bf0fa2215f155235df5e670b64394cc','7efbd59d9741d34f','2012-06-04 01:00:00');
+insert into t_user (uuid,enterprise_id, login_name, name, password, salt, register_date) values('f7419766-8544-47f7-8aca-b8b48e7698fc','9b06d376-44ff-4153-9b31-c29a19b8da29','user','Calvin','2488aa0c31c624687bd9928e0a5d29e7d1ed520b','6d65d24122c30500','2012-06-04 02:00:00');
 -- ----------------------------
 -- Table data for t_role
 -- ----------------------------
@@ -17,7 +17,7 @@ insert into t_role (uuid,name,code,`describe`) values('42ed144b-76ef-4634-ba6b-b
 -- ----------------------------
 -- Table data for t_user_role
 -- ----------------------------
-insert into t_user_role (uuid,user_id,role_code) values('836b4570-9b24-4a1b-9b50-0e4a652d9ee1','fc5db3b3-4063-4a12-a511-880ba19e4b58','admin');
+insert into t_user_role (uuid,user_id,role_id) values('836b4570-9b24-4a1b-9b50-0e4a652d9ee1','fc5db3b3-4063-4a12-a511-880ba19e4b58','8890e122-d989-4800-8bee-23cc345e13ba');
 -- ----------------------------
 -- Table data for t_menu
 -- ----------------------------
@@ -128,6 +128,9 @@ insert into t_menu (uuid,name,code,uri,icon_class,`describe`,parent_id) values(u
 -- Table data for t_role_menu
 -- ----------------------------
 insert into t_role_menu (uuid,menu_code,role_code) values(uuid(),'FM0301','admin');
+insert into t_role_menu (uuid,menu_code,role_code) values(uuid(),'FM0302','admin');
+insert into t_role_menu (uuid,menu_code,role_code) values(uuid(),'FM0306','admin');
+insert into t_role_menu (uuid,menu_code,role_code) values(uuid(),'FM0601','admin');
 
 -- ----------------------------
 -- Table data for t_enterprise
