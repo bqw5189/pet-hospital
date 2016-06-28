@@ -17,6 +17,7 @@ import javax.ws.rs.core.MediaType;
 @Consumes({MediaType.APPLICATION_JSON})
 @Produces({ContentType.APPLICATION_JSON_UTF_8})
 public interface AuthRestService {
+    public static final String HEADER_AUTHORIZATION_KEY = "authorization";
     /**
      * 登录
      *

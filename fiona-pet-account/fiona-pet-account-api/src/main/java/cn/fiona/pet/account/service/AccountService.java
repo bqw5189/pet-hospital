@@ -16,4 +16,12 @@ public interface AccountService {
      * @return 登录成功返回 token
      */
     String login(LoginVO loginVO) throws ApiException;
+
+    /**
+     * token 验证
+     * @param token
+     * @return
+     * @throws ApiException
+     */
+    boolean validateToken(String token) throws ApiException;
 }
