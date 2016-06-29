@@ -9,6 +9,7 @@ import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.transaction.annotation.Transactional;
 import org.springside.modules.security.utils.Digests;
 import org.springside.modules.utils.Encodes;
 
@@ -17,6 +18,7 @@ import java.security.InvalidParameterException;
 /**
  * @author baiqw
  */
+@Transactional
 public class AccountServiceImpl implements AccountService {
     @Autowired
     private UserDao userDao;

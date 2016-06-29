@@ -48,7 +48,7 @@ public class User extends IdEntity {
      */
     private Set<Role> roles = new HashSet<Role>();
 
-    @ManyToMany
+    @ManyToMany(fetch=FetchType.EAGER)
     @JoinTable(name="t_user_role",
             joinColumns={@JoinColumn(name="user_id")},
             inverseJoinColumns={@JoinColumn(name="role_id")}

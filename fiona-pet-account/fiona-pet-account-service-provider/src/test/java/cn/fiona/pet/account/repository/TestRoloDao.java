@@ -33,6 +33,8 @@ public class TestRoloDao extends SpringTransactionalTestCase {
 
         Assert.assertNotNull(menus);
 
+        Assert.assertEquals(menus.size(),4);
+
         Menu menu = menuDao.findByCode("FM0301");
 
         Assert.assertNotNull(menu);

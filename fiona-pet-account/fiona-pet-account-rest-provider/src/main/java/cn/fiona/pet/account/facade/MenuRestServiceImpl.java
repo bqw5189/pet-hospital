@@ -7,14 +7,12 @@ import cn.fiona.pet.account.service.AccountService;
 import cn.fiona.pet.account.service.MenuService;
 import cn.fiona.pet.account.vo.MenuVO;
 import io.swagger.annotations.ApiParam;
+import org.apache.commons.collections.CollectionUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import javax.ws.rs.HeaderParam;
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 import static cn.fiona.pet.account.service.MenuService.MENU_ROOT;
 
@@ -41,43 +39,10 @@ public class MenuRestServiceImpl implements MenuRestService {
 
     @Override
     public RestResult<List<MenuVO>> menus(String token) throws ApiException{
-        Set<Menu> menuSet = menuService.findByToken(token);
-
-        List<MenuVO> menus = new ArrayList<MenuVO>();
-
-        findChild(menuSet, menus, new HashSet<Menu>(), MENU_ROOT);
-
+        List<MenuVO> menus = menuService.menus(token);
+        LOGGER.info("menus:{}", menus);
         return RestResult.OK(menus);
     }
 
-    private void findChild(Set<Menu> menuSet, List<MenuVO> menuVOList, Set<Menu> hasFind, String uuid) {
-        for (Menu menu : menuSet) {
-            if (hasFind.contains(menu)) {
-                continue;
-            }
 
-            Menu parentMenu = menu.getParentMenu();
-
-            if (parentMenu == null || uuid.equals(parentMenu.getUuid())) {
-                MenuVO menuVO = toVO(menu);
-
-                menuVOList.add(menuVO);
-
-                hasFind.add(menu);
-            }
-        }
-
-        for (MenuVO menuVO : menuVOList) {
-            findChild(menuSet, menuVO.getSubMenu(), hasFind, menuVO.getUuid());
-        }
-    }
-
-    private MenuVO toVO(Menu menu) {
-        MenuVO menuVO = new MenuVO();
-        menuVO.setUuid(menu.getUuid());
-        menuVO.setName(menu.getName());
-        menuVO.setCode(menu.getCode());
-        menuVO.setLeaf(menu.getLeaf());
-        return menuVO;
-    }
 }

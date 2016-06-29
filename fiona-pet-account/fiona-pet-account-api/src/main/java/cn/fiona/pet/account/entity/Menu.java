@@ -81,7 +81,8 @@ public class Menu extends IdEntity {
         this.name = name;
     }
 
-    @JsonIgnore
+
+
     @ManyToMany(cascade = {CascadeType.PERSIST, CascadeType.MERGE}, mappedBy = "menuSet", fetch = FetchType.LAZY)
     public Set<Role> getRoles() {
         return roles;
@@ -102,7 +103,7 @@ public class Menu extends IdEntity {
     }
 
     @JsonIgnore
-    @ManyToOne(cascade = CascadeType.DETACH)
+    @ManyToOne(cascade = CascadeType.DETACH,fetch = FetchType.LAZY)
     @JoinColumn(name = "parent_id", referencedColumnName = "code")
     @NotFound(action = NotFoundAction.IGNORE)
     public Menu getParentMenu() {

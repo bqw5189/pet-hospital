@@ -29,6 +29,7 @@
 			<props>
 				<!-- 命名规则 My_NAME->MyName -->
 				<prop key="hibernate.ejb.naming_strategy">org.hibernate.cfg.ImprovedNamingStrategy</prop>
+				<prop key="hibernate.ejb.showsql">true</prop>
 			</props>
 		</property>
 	</bean>
@@ -39,6 +40,7 @@
 				<constructor-arg ref="dataSource"/>
 			</bean>
 		</property>
+		<property name="showSql" value="true"/>
 	</bean>
 
 	<!-- Spring Data Jpa配置 -->

@@ -1,5 +1,10 @@
 package cn.fiona.pet.account.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import org.hibernate.annotations.Fetch;
+import org.hibernate.annotations.FetchMode;
+import org.hibernate.annotations.LazyCollection;
+
 import javax.persistence.*;
 import java.util.HashSet;
 import java.util.LinkedHashSet;
@@ -21,7 +26,7 @@ public class Role extends IdEntity {
     /**
      * 菜单 信息
      */
-    private Set<Menu> menuSet = new HashSet<Menu>();
+    private Set<Menu> menuSet;
 
 
     /**
@@ -59,7 +64,7 @@ public class Role extends IdEntity {
         this.users = users;
     }
 
-    @ManyToMany(fetch=FetchType.LAZY, cascade={CascadeType.MERGE})
+    @ManyToMany(fetch = FetchType.LAZY)
     @JoinTable(name = "t_role_menu",
             joinColumns = {@JoinColumn(name = "role_code", referencedColumnName = "code")},
             inverseJoinColumns = {@JoinColumn(name = "menu_code", referencedColumnName = "code")})

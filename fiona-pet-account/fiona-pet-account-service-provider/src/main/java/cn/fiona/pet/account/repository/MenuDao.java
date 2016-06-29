@@ -14,5 +14,5 @@ import java.util.List;
 public interface MenuDao extends PagingAndSortingRepository<Menu, String> {
 	Menu findByCode(String code);
 
-	List<Menu> findByParentMenuCode(String code);
+	List<Menu> findByParentMenuCodeOrderByOrderAsc(String code);
 }
