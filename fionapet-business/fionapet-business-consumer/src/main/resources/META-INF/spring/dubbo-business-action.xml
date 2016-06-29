@@ -1,6 +1,3 @@
-#set( $symbol_pound = '#' )
-#set( $symbol_dollar = '$' )
-#set( $symbol_escape = '\' )
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
  - Copyright 1999-2011 Alibaba Group.
@@ -21,8 +18,8 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.2.xsd">
 
-    <bean class="${package}.consumer.DemoAction" init-method="start">
-        <property name="accountRestService" ref="accountRestService"/>
+    <bean class="com.fionapet.business.consumer.DemoAction" init-method="start">
+        <property name="accountService" ref="accountService"/>
     </bean>
 
 
