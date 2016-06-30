@@ -2,8 +2,8 @@
 package com.fionapet.business.consumer;
 
 
-import com.fionapet.business.entity.From;
-import com.fionapet.business.facade.SignInVO;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import javax.ws.rs.client.Client;
 import javax.ws.rs.client.ClientBuilder;
@@ -16,37 +16,25 @@ import javax.ws.rs.core.Response;
  * @author baiqw
  */
 public class RestClient {
+    private static final Logger LOGGER = LoggerFactory.getLogger(RestClient.class);
 
   public static void main(String[] args) {
       final String port = "8818";
-      signIn("http://localhost:" + port + "/api/v2/accounts/sign-in", MediaType.APPLICATION_JSON_TYPE);
+      petRaceList("http://localhost:" + port + "/api/v2/pet/races", MediaType.APPLICATION_JSON_TYPE);
   }
 
-  private static void signIn(String url, MediaType mediaType) {
-      System.out.println("signIn account via " + url);
-      SignInVO account = new SignInVO();
-      account.setName("白群伟");
-      account.setPassword("123456");
-
-      From from = new From();
-      from.setAgentId("test");
-      from.setAgentName("R03025");
-      from.setAgentType("MacOS");
-      from.setClientVersion("1.0");
-      from.setLocation("1,2,3");
-      from.setOsVersion("10.10.5");
-
-      account.setFrom(from);
+  private static void petRaceList(String url, MediaType mediaType) {
+      LOGGER.info("Request petRaceList url: {}" , url);
 
       Client client = ClientBuilder.newClient();
       WebTarget target = client.target(url);
-      Response response = target.request().post(Entity.entity(account, mediaType));
+      Response response = target.request().get();
 
       try {
           if (response.getStatus() != 200) {
               throw new RuntimeException("Failed with HTTP error code : " + response.getStatus());
           }
-          System.out.println("Successfully got result: " + response.readEntity(String.class));
+          LOGGER.info("Successfully got result: {}",response.readEntity(String.class));
       } finally {
           response.close();
           client.close();

@@ -12,5 +12,5 @@
     <!--uncomment this if you want to test dubbo's monitor-->
     <!--<dubbo:monitor protocol="registry"/>-->
 
-    <dubbo:reference id="accountService" interface="com.fionapet.business.service.AccountService"/>
+    <dubbo:reference id="petRaceService" interface="com.fionapet.business.service.PetRaceService"/>
 </beans>

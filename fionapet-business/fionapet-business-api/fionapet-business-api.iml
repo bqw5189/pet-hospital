@@ -9,6 +9,7 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" name="Maven: cn.fiona.pet:fiona-pet-account-api:1.0-SNAPSHOT" level="project" />
     <orderEntry type="library" name="Maven: com.alibaba:dubbo:2.8.4" level="project" />
     <orderEntry type="library" name="Maven: org.springframework:spring-beans:3.2.9.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: org.springframework:spring-core:3.2.9.RELEASE" level="project" />

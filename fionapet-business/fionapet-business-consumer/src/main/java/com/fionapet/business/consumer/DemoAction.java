@@ -15,47 +15,36 @@
  */
 package com.fionapet.business.consumer;
 
-import com.fionapet.business.entity.Account;
-import com.fionapet.business.entity.From;
-import com.fionapet.business.facade.AccountRestService;
-import com.fionapet.business.facade.SignInVO;
-import com.fionapet.business.service.AccountService;
 
+import com.fionapet.business.entity.PetRace;
+import com.fionapet.business.service.PetRaceService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import java.util.List;
 
 /**
  * @author baiqw
  */
 public class DemoAction {
+    private static final Logger LOGGER = LoggerFactory.getLogger(DemoAction.class);
 
-    private AccountService accountService;
+    private PetRaceService petRaceService;
 
-    public AccountService getAccountService() {
-        return accountService;
+    public PetRaceService getPetRaceService() {
+        return petRaceService;
     }
 
-    public void setAccountService(AccountService accountService) {
-        this.accountService = accountService;
+    public void setPetRaceService(PetRaceService petRaceService) {
+        this.petRaceService = petRaceService;
     }
 
     public void start() throws Exception {
 
-
-        Account account = new Account();
-        account.setName("白群伟");
-        account.setPassword("123456");
-
-        From from = new From();
-        from.setAgentId("test");
-        from.setAgentName("R03025");
-        from.setAgentType("MacOS");
-        from.setClientVersion("1.0");
-        from.setLocation("1,2,3");
-        from.setOsVersion("10.10.5");
-
-        account.setFrom(from);
+        List<PetRace> petRaceList = petRaceService.listAll();
 
 
-        System.out.println("SUCESS: signin user with: " + accountService.signIn(account));
+        LOGGER.info("SUCESS: petRaceList: {}" ,petRaceList);
     }
 
 }

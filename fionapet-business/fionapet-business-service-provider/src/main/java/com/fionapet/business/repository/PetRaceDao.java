@@ -5,9 +5,11 @@
  *******************************************************************************/
 package com.fionapet.business.repository;
 
-import com.fionapet.business.entity.User;
+import com.fionapet.business.entity.PetRace;
 import org.springframework.data.repository.PagingAndSortingRepository;
 
-public interface UserDao extends PagingAndSortingRepository<User, Long> {
-	User findByLoginName(String loginName);
+import java.util.List;
+
+public interface PetRaceDao extends PagingAndSortingRepository<PetRace, String> {
+	List<PetRace> findAllByOrderByCreateDateAsc();
 }

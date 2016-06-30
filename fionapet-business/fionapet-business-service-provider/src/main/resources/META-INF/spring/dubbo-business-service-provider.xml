@@ -27,17 +27,12 @@
                     optimizer="com.fionapet.business.SerializationOptimizerImpl"/>
 
 
-    <!-- account api v2 -->
-    <bean id="accountService" class="com.fionapet.business.service.AccountServiceImpl"/>
+    <!-- pet race api -->
+    <bean id="petRaceService" class="com.fionapet.business.service.PetRaceServiceImpl"/>
 
-    <dubbo:service interface="com.fionapet.business.service.AccountService" ref="accountService"
+    <dubbo:service interface="com.fionapet.business.service.PetRaceService" ref="petRaceService"
                    protocol="dubbo" validation="true" timeout="2000" connections="100"/>
-    <!-- account api v2 -->
+    <!-- pet race api -->
 
-    <!-- message service v2 -->
-    <dubbo:service interface="com.fionapet.business.service.MessageService" ref="messageService"
-                   protocol="dubbo" validation="true" timeout="2000" connections="100"/>
 
-    <bean id="messageService" class="com.fionapet.business.service.MessageServiceImpl"/>
-    <!-- message service v2 -->
 </beans>
