@@ -3,6 +3,7 @@ package com.fionapet.business.consumer;
 
 
 import cn.fiona.pet.account.entity.RestResultEnum;
+import cn.fiona.pet.account.facade.AuthRestService;
 import cn.fiona.pet.account.facade.RestResult;
 import com.fionapet.business.entity.PetRace;
 import junit.framework.Assert;
@@ -29,12 +30,10 @@ public class PetRaceRestClient extends RestClientTestCase{
     public void testList(){
         LOGGER.info("Request petRaceList url: {}" , URL);
         WebTarget target = CLIENT.target(URL);
-        Response response = target.request().get();
+        Response response = target.request().header(AuthRestService.HEADER_AUTHORIZATION_KEY, "fc5db3b3-4063-4a12-a511-880ba19e4b58").get();
 
         try {
-            if (response.getStatus() != 200) {
-                throw new RuntimeException("Failed with HTTP error code : " + response.getStatus());
-            }
+            Assert.assertEquals(response.getStatus(), 200);
 
             RestResult<List<PetRace>> restResult = response.readEntity(RestResult.class);
 
@@ -46,6 +45,7 @@ public class PetRaceRestClient extends RestClientTestCase{
 
         } finally {
             response.close();
+            Assert.assertEquals(response.getStatus(), 200);
             throw new ProcessingException("测试结束");
         }
     }
