@@ -7,7 +7,8 @@ public enum RestResultEnum {
     OK(0, "OK"),
     NOT_FONT(404, "数据未找到!"),
     SERVER_ERROR(500, "服务器错误!"),
-    INVALID_PARAMETER(501, "参数错误错误!");
+    INVALID_PARAMETER(501, "参数错误错误!"),
+    UNAUTHORIZED(401, "未经授权!");
 
     RestResultEnum(int code, String desc) {
         this.code = code;
