@@ -59,6 +59,7 @@ public class CMSEntity implements Serializable {
         this.createUserId = createUserId;
     }
 
+    @JsonIgnore
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone = "GMT+08:00")
     public Date getCreateDate() {
         return createDate;
@@ -77,6 +78,7 @@ public class CMSEntity implements Serializable {
         this.updateUserId = updateUserId;
     }
 
+    @JsonIgnore
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone = "GMT+08:00")
     public Date getUpdateDate() {
         return updateDate;

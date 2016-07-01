@@ -27,7 +27,6 @@ public class PetRace extends CMSEntity{
     @NotNull
     private String name;
 
-
     public String getName() {
         return name;
     }
