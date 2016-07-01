@@ -18,7 +18,11 @@ import java.io.Serializable;
 @ApiModel("返回结果")
 public class RestResult<T> implements Serializable {
     @ApiModelProperty("错误码:0 无错误信息;404 未找到资源; 500 服务器错误;")
-    RestResultEnum resultEnum = RestResultEnum.OK;
+    private RestResultEnum resultEnum = RestResultEnum.OK;
+
+    public RestResult() {
+
+    }
 
     public RestResult(RestResultEnum resultEnum) {
         this.resultEnum = resultEnum;
@@ -50,6 +54,14 @@ public class RestResult<T> implements Serializable {
 
     public String getMessage() {
         return resultEnum.getDesc();
+    }
+
+    public void setCode(int code) {
+        this.resultEnum.setCode(code);
+    }
+
+    public void setMessage(String message) {
+        this.resultEnum.setDesc(message);
     }
 
     public T getData() {
