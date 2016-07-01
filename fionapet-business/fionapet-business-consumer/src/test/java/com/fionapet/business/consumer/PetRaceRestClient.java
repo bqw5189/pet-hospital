@@ -5,6 +5,7 @@ package com.fionapet.business.consumer;
 import cn.fiona.pet.account.entity.RestResultEnum;
 import cn.fiona.pet.account.facade.AuthRestService;
 import cn.fiona.pet.account.facade.RestResult;
+import com.alibaba.fastjson.JSON;
 import com.fionapet.business.entity.PetRace;
 import junit.framework.Assert;
 import org.junit.AfterClass;
@@ -42,6 +43,8 @@ public class PetRaceRestClient extends RestClientTestCase{
             Assert.assertNotNull(restResult.getData());
 
             Assert.assertEquals(restResult.getData().size(), 5);
+
+            LOGGER.info("pet race list:{}", JSON.toJSON(restResult));
 
         } finally {
             response.close();
