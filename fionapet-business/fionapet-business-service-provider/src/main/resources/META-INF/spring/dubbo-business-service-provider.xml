@@ -32,6 +32,11 @@
 
     <dubbo:service interface="com.fionapet.business.service.PetRaceService" ref="petRaceService"
                    protocol="dubbo" validation="true" timeout="2000" connections="100"/>
+
+    <bean id="petSmallRaceService" class="com.fionapet.business.service.PetSmallRaceServiceImpl"/>
+
+    <dubbo:service interface="com.fionapet.business.service.PetSmallRaceService" ref="petSmallRaceService"
+                   protocol="dubbo" validation="true" timeout="2000" connections="100"/>
     <!-- pet race api -->
 
 

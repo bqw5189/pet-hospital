@@ -13,7 +13,7 @@ public class PetStoreApplication extends Application {
         BeanConfig beanConfig = new BeanConfig();
         beanConfig.setVersion("2.0.0");
         beanConfig.setSchemes(new String[]{"http"});
-        beanConfig.setHost("localhost:8898");
+        beanConfig.setHost("localhost:8818");
         beanConfig.setBasePath("/api/v2");
         beanConfig.setFilterClass("com.fionapet.business.util.ApiAuthorizationFilterImpl");
         beanConfig.setResourcePackage("com.fionapet.business.facade");

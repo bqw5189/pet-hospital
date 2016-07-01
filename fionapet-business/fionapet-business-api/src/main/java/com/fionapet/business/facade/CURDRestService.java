@@ -30,7 +30,7 @@ public interface CURDRestService<T> {
 
     @POST
     @ApiOperation(value = "添加/修改")
-    RestResult<T> create(@HeaderParam(AuthRestService.HEADER_AUTHORIZATION_KEY) String token, PetRace petRace);
+    RestResult<T> create(@HeaderParam(AuthRestService.HEADER_AUTHORIZATION_KEY) String token, T entity);
 
     @DELETE
     @ApiOperation(value = "删除")
