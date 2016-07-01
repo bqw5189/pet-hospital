@@ -12,4 +12,6 @@ import java.util.List;
 
 public interface PetRaceDao extends PagingAndSortingRepository<PetRace, String> {
 	List<PetRace> findAllByOrderByCreateDateAsc();
+
+	PetRace findByName(String race);
 }

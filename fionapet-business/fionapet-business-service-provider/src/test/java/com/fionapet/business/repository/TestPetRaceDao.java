@@ -28,4 +28,38 @@ public class TestPetRaceDao extends SpringTransactionalTestCase {
         Assert.assertNotNull(petRaces);
         Assert.assertEquals(petRaces.size(), 5);
     }
+
+    @Test
+    public void curd(){
+        String race = "昆虫";
+        String userId = "fc5db3b3-4063-4a12-a511-880ba19e4b58";
+        PetRace petRace = petRaceDao.findByName(race);
+
+        Assert.assertNull(petRace);
+
+        petRace = new PetRace();
+        petRace.setName(race);
+        petRace.setCreateUserId(userId);
+        petRace.setUpdateUserId(userId);
+
+        petRaceDao.save(petRace);
+
+        Assert.assertNotNull(petRace.getUuid());
+
+        petRace.setName("鱼");
+
+        petRaceDao.save(petRace);
+
+        petRace = petRaceDao.findByName(race);
+
+        Assert.assertNull(petRace);
+
+        petRace = petRaceDao.findByName("鱼");
+
+        petRaceDao.delete(petRace);
+
+        petRace = petRaceDao.findByName("鱼");
+
+        Assert.assertNull(petRace);
+    }
 }
