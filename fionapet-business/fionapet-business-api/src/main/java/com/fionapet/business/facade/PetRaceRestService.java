@@ -22,7 +22,7 @@ import java.util.List;
 @Consumes({MediaType.APPLICATION_JSON})
 @Produces({ContentType.APPLICATION_JSON_UTF_8})
 @Api(value="pet", description = "宠物接口")
-public interface PetRaceRestService {
+public interface PetRaceRestService extends CURDRestService<PetRace>{
     /**
      * 宠物类型
      * @return
@@ -32,6 +32,17 @@ public interface PetRaceRestService {
     @ApiOperation(value = "宠物类型",
             notes = "宠物类型列表.")
     RestResult<List<PetRace>> list(@HeaderParam(AuthRestService.HEADER_AUTHORIZATION_KEY) String token);
+
+    /**
+     * 宠物类型 详细信息
+     *
+     * @return
+     */
+    @GET
+    @Path("races/{id}")
+    @ApiOperation(value = "详细信息",
+            notes = "宠物类型详细信息.")
+    RestResult<PetRace> detail(@HeaderParam(AuthRestService.HEADER_AUTHORIZATION_KEY) String token, @ApiParam("id") @PathParam("id") String uuid);
 
     @POST
     @Path("races")

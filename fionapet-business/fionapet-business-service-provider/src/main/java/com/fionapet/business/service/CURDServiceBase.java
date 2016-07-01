@@ -47,5 +47,10 @@ public abstract class CURDServiceBase<T extends CMSEntity> implements CURDServic
         getDao().delete(uuid);
     }
 
+    @Override
+    public T detail(String uuid) {
+        return getDao().findOne(uuid);
+    }
+
     public abstract DaoBase<T> getDao();
 }

@@ -15,6 +15,13 @@ public interface CURDService<T> {
     List<T> listAll();
 
     /**
+     * 详情
+     *
+     * @return
+     */
+    T detail(String uuid);
+
+    /**
      * 创建更行
      * @param entity
      * @return

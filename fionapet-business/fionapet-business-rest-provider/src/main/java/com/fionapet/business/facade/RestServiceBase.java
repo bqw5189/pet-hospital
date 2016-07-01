@@ -17,7 +17,7 @@ import java.util.List;
  * Date: 14-12-9
  * Time: 下午3:45
  */
-public abstract class RestServiceBase<T> {
+public abstract class RestServiceBase<T> implements CURDRestService<T>{
     private static final Logger LOGGER = LoggerFactory.getLogger(RestServiceBase.class);
 
     public abstract CURDService<T> getService();
@@ -36,4 +36,12 @@ public abstract class RestServiceBase<T> {
         getService().delete(uuid);
         return RestResult.OK("删除成功!");
     }
+
+
+    @Override
+    public RestResult<T> detail(@HeaderParam(AuthRestService.HEADER_AUTHORIZATION_KEY) String token, @ApiParam("id") String uuid) {
+        return RestResult.OK(getService().detail(uuid));
+    }
+
+
 }

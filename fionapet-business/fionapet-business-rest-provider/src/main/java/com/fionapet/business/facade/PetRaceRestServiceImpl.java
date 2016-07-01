@@ -1,10 +1,15 @@
 package com.fionapet.business.facade;
 
+import cn.fiona.pet.account.facade.AuthRestService;
+import cn.fiona.pet.account.facade.RestResult;
 import com.fionapet.business.entity.PetRace;
 import com.fionapet.business.service.CURDService;
 import com.fionapet.business.service.PetRaceService;
+import io.swagger.annotations.ApiParam;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import javax.ws.rs.HeaderParam;
 
 /**
  * User: baiqw
@@ -29,4 +34,5 @@ public class PetRaceRestServiceImpl extends RestServiceBase<PetRace> implements 
     public CURDService<PetRace> getService() {
         return petRaceService;
     }
+
 }
