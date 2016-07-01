@@ -8,6 +8,7 @@ import io.swagger.annotations.ApiModelProperty;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 import java.util.Date;
 
 /**
@@ -22,8 +23,10 @@ public class PetRace extends CMSEntity{
     /**
      * 名称
      */
-    @ApiModelProperty("名称")
+    @ApiModelProperty(value = "名称",required = true)
+    @NotNull
     private String name;
+
 
     public String getName() {
         return name;
