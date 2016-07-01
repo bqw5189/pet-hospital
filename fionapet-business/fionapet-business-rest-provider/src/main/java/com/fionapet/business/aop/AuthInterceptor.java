@@ -3,7 +3,10 @@ package com.fionapet.business.aop;
 import cn.fiona.pet.account.exception.ApiException;
 import cn.fiona.pet.account.exception.AuthorizationException;
 import cn.fiona.pet.account.service.AccountService;
+import com.fionapet.business.facade.RestServiceBase;
 import org.aspectj.lang.JoinPoint;
+import org.aspectj.lang.ProceedingJoinPoint;
+import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
 import org.aspectj.lang.annotation.Pointcut;
@@ -23,6 +26,18 @@ public class AuthInterceptor {
 
     @Pointcut("execution(* com.fionapet.business.facade.*.*(..))")
     private void anyMethod(){}//定义一个切入点
+
+    @Around("anyMethod()")
+    public Object process(ProceedingJoinPoint point) throws Throwable {
+
+        Object[] args = point.getArgs();
+        if (args != null && args.length > 0 && args[0].getClass() == String.class) {
+            RestServiceBase restServiceBase = (RestServiceBase) point.getTarget();
+            restServiceBase.getService().setToken(point.getArgs()[0]+"");
+        }
+
+        return point.proceed(args);
+    }
 
     @Before(value = "anyMethod() && args(token,..)", argNames = "token")
     public void doAccessCheck(String token) throws AuthorizationException {

@@ -23,21 +23,16 @@ public abstract class RestServiceBase<T> {
     public abstract CURDService<T> getService();
 
     public RestResult<List<T>> list(@HeaderParam(AuthRestService.HEADER_AUTHORIZATION_KEY) String token) {
-        getService().setToken(token);
-
         return RestResult.OK(getService().listAll());
     }
 
     public RestResult<T> create(@HeaderParam(AuthRestService.HEADER_AUTHORIZATION_KEY) String token, T petRace) {
-        getService().setToken(token);
-
         LOGGER.debug("create or update :{}", petRace);
         return RestResult.OK(getService().createOrUpdte(petRace));
     }
 
     public RestResult<String> delete(@HeaderParam(AuthRestService.HEADER_AUTHORIZATION_KEY) String token, @ApiParam("id") String uuid) {
         LOGGER.debug("delete :{}", uuid);
-        getService().setToken(token);
         getService().delete(uuid);
         return RestResult.OK("删除成功!");
     }
