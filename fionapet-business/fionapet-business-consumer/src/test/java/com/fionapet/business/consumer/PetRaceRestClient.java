@@ -20,6 +20,7 @@ import javax.ws.rs.client.Entity;
 import javax.ws.rs.client.WebTarget;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
+import java.util.HashMap;
 import java.util.List;
 
 /**
@@ -28,7 +29,7 @@ import java.util.List;
 public class PetRaceRestClient extends RestClientTestCase{
     private static final Logger LOGGER = LoggerFactory.getLogger(PetRaceRestClient.class);
     private static final String TOKEN = "fc5db3b3-4063-4a12-a511-880ba19e4b58";
-    
+
     @Test(expected = ProcessingException.class)
     public void testList(){
          assertRequest(new Assertable() {
@@ -46,49 +47,33 @@ public class PetRaceRestClient extends RestClientTestCase{
         }, TOKEN);
     }
 
-//    new Assertable<RestResult<List<PetRace>>>(){
-//        @Override
-//        public void assertBlack(RestResult<List<PetRace>> restResult) throws Exception {
-//            Assert.assertEquals(restResult.getCode(), RestResultEnum.OK.getCode());
-//
-//            Assert.assertNotNull(restResult.getData());
-//
-//            Assert.assertEquals(restResult.getData().size(), 5);
-//
-//            LOGGER.info("pet race list:{}", JSON.toJSON(restResult));
-//        }
-//
-//    }
 
-//    @Test(expected = ProcessingException.class)
-//    public void testCreate(){
-//        LOGGER.info("Request petRaceList url: {}" , URL);
-//        WebTarget target = CLIENT.target(URL);
-//
-//        PetRace petRace = new PetRace();
-//        petRace.setName("爬行科");
-//
-//        Response response = target.request().header(AuthRestService.HEADER_AUTHORIZATION_KEY, "fc5db3b3-4063-4a12-a511-880ba19e4b58").post(Entity.entity(petRace, MediaType.APPLICATION_JSON));
-//
-//        try {
-//            Assert.assertEquals(response.getStatus(), 200);
-//
-//            RestResult<List<PetRace>> restResult = response.readEntity(RestResult.class);
-//
-//            Assert.assertEquals(restResult.getCode(), RestResultEnum.OK.getCode());
-//
-//            Assert.assertNotNull(restResult.getData());
-//
-//            Assert.assertEquals(restResult.getData().size(), 5);
-//
-//            LOGGER.info("pet race list:{}", JSON.toJSON(restResult));
-//
-//        } finally {
-//            response.close();
-//            Assert.assertEquals(response.getStatus(), 200);
-//            throw new ProcessingException("测试结束");
-//        }
-//    }
+    @Test(expected = ProcessingException.class)
+    public void testCreate(){
+        final PetRace petRace = new PetRace();
+        petRace.setName("爬行科");
+
+        Response response = getBuilder(TOKEN).post(Entity.entity(petRace, MediaType.APPLICATION_JSON));
+
+        assertRequest(new Assertable() {
+            @Override
+            public void assertBlack(RestResult restResult) throws Exception {
+                LOGGER.info("restResult:{}", restResult);
+                RestResult<HashMap> result = (RestResult<HashMap>)restResult;
+                Assert.assertEquals(restResult.getCode(), RestResultEnum.OK.getCode());
+
+                Assert.assertNotNull(result.getData());
+
+                LOGGER.info("result.getData():{}", result.getData().getClass());
+
+                Assert.assertNotNull(result.getData().get("uuid"));
+
+                Assert.assertEquals(result.getData().get("name"), petRace.getName());
+
+                LOGGER.info("pet race list:{}", JSON.toJSON(restResult));
+            }
+        }, response);
+    }
 
 
 

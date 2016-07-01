@@ -2,6 +2,7 @@ package com.fionapet.business.entity;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import org.codehaus.jackson.map.annotate.JsonFilter;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
@@ -16,8 +17,8 @@ public class CMSEntity implements Serializable {
     protected String uuid;
 
     @Id
-    @GeneratedValue(generator = "system-uuid")
-    @GenericGenerator(name = "system-uuid", strategy = "uuid")
+    @GeneratedValue(generator = "uuid")
+    @GenericGenerator(name = "uuid", strategy = "uuid")
     @Column(name = "uuid", length = 36)
     public String getUuid() {
         return uuid;

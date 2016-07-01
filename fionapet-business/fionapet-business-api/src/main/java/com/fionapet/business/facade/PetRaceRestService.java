@@ -31,7 +31,7 @@ public interface PetRaceRestService {
     @Path("races")
     @ApiOperation(value = "宠物类型",
             notes = "宠物类型列表.")
-    RestResult<List<PetRace>> races(@HeaderParam(AuthRestService.HEADER_AUTHORIZATION_KEY) String token);
+    RestResult<List<PetRace>> list(@HeaderParam(AuthRestService.HEADER_AUTHORIZATION_KEY) String token);
 
     @POST
     @Path("races")

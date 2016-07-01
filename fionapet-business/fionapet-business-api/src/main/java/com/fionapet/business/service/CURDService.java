@@ -26,4 +26,18 @@ public interface CURDService<T> {
      * @param uuid
      */
     void delete(String uuid);
+
+    /**
+     * 获取token
+     *
+     * @return
+     */
+    String getToken();
+
+    /**
+     * 设置token
+     *
+     * @param token
+     */
+    void setToken(String token);
 }

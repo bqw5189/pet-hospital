@@ -44,6 +44,10 @@ public class RestClientTestCase {
 
         final Response response = getBuilder(token).get();
 
+        assertRequest(assertable, response);
+    }
+
+    public void  assertRequest(Assertable assertable, Response response) {
         Assert.assertEquals(response.getStatus(), 200);
 
         try {
