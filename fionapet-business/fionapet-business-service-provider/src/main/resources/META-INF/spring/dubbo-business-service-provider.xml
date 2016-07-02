@@ -65,4 +65,13 @@
                    protocol="dubbo" validation="true" timeout="2000" connections="100"/>
     <!-- 经销商 api -->
 
+
+	<!-- 商品和服务类型 api -->
+    <bean id="itemTypeService" class="com.fionapet.business.service.ItemTypeServiceImpl"/>
+
+    <dubbo:service interface="com.fionapet.business.service.ItemTypeService" ref="itemTypeService"
+                   protocol="dubbo" validation="true" timeout="2000" connections="100"/>
+    <!-- 商品和服务类型 api -->
+
+
 </beans>
