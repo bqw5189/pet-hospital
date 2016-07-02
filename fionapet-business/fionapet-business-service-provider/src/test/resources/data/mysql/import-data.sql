@@ -34,3 +34,8 @@ insert into t_pet_small_race (uuid, type,pet_race_id, create_user_id, update_use
 insert into t_pet_small_race (uuid, type,pet_race_id, create_user_id, update_user_id) values('1aa38af8-efd0-4fbb-8c78-d12d17cc9629','波斯猫','326209c2-59aa-474a-b714-49f3cba8675f','fc5db3b3-4063-4a12-a511-880ba19e4b58','fc5db3b3-4063-4a12-a511-880ba19e4b58');
 insert into t_pet_small_race (uuid, type,pet_race_id, create_user_id, update_user_id) values('1aa38af8-efd0-4fbb-8c78-d12d17cc9630','流氓兔','41fa0032-2400-4ffc-8e16-ed4ec2e6d1c5','fc5db3b3-4063-4a12-a511-880ba19e4b58','fc5db3b3-4063-4a12-a511-880ba19e4b58');
 -- t_pet_small_race --
+
+-- t_warehouse --
+insert into t_warehouse (uuid, code, name,drug_store,sell_store,create_user_id, update_user_id) values(uuid(),'CK00003','后备仓库',false,false,'fc5db3b3-4063-4a12-a511-880ba19e4b58','fc5db3b3-4063-4a12-a511-880ba19e4b58');
+insert into t_warehouse (uuid, code, name,drug_store,sell_store, create_user_id, update_user_id) values(uuid(),'CKBH0000001','医院药房',true,true,'fc5db3b3-4063-4a12-a511-880ba19e4b58','fc5db3b3-4063-4a12-a511-880ba19e4b58');
+-- t_warehouse --

@@ -57,4 +57,14 @@
     <!-- pet race api -->
 
     <dubbo:reference id="accountService" interface="cn.fiona.pet.account.service.AccountService"/>
+
+    <!--warehouse api -->
+    <dubbo:service interface="com.fionapet.business.facade.WarehouseRestService" ref="warehouseRestService"
+                   protocol="rest" validation="true" timeout="2000" connections="100"/>
+
+    <bean id="warehouseRestService" class="com.fionapet.business.facade.WarehouseRestServiceImpl">
+        <property name="warehouseService" ref="warehouseService"/>
+    </bean>
+
+    <dubbo:reference id="warehouseService" interface="com.fionapet.business.service.WarehouseService"/>
 </beans>
