@@ -6,7 +6,8 @@ import com.fionapet.business.repository.WarehouseDao;
 import org.springframework.beans.factory.annotation.Autowired;
 
 /**
- * @author baiqw
+ * 仓库信息实现类
+ * @author bailj
  */
 public class WarehouseServiceImpl extends CURDServiceBase<Warehouse> implements WarehouseService {
     @Autowired

@@ -67,4 +67,28 @@
     </bean>
 
     <dubbo:reference id="warehouseService" interface="com.fionapet.business.service.WarehouseService"/>
+
+    <!-- warehouse api-->
+    <!--itemcate api -->
+    <dubbo:service interface="com.fionapet.business.facade.ItemCateRestService" ref="itemCateRestService"
+                   protocol="rest" validation="true" timeout="2000" connections="100"/>
+
+    <bean id="itemCateRestService" class="com.fionapet.business.facade.ItemCateRestServiceImpl">
+        <property name="itemCateService" ref="itemCateService"/>
+    </bean>
+
+    <dubbo:reference id="itemCateService" interface="com.fionapet.business.service.ItemCateService"/>
+
+    <!-- itemcate api-->
+    <!--businesCate api -->
+    <dubbo:service interface="com.fionapet.business.facade.BusinesCateRestService" ref="businesCateRestService"
+                   protocol="rest" validation="true" timeout="2000" connections="100"/>
+
+    <bean id="businesCateRestService" class="com.fionapet.business.facade.BusinesCateRestServiceImpl">
+        <property name="businesCateService" ref="businesCateService"/>
+    </bean>
+
+    <dubbo:reference id="businesCateService" interface="com.fionapet.business.service.BusinesCateService"/>
+
+    <!-- businesCate api-->
 </beans>

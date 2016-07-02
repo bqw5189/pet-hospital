@@ -50,3 +50,38 @@ CREATE TABLE `t_warehouse` (
   `status` varchar(32) NOT NULL DEFAULT 'OK',
   PRIMARY KEY (`uuid`)
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
+
+
+-- ----------------------------
+-- Table structure for t_item_cate 商品服务种类
+-- ----------------------------
+DROP TABLE IF EXISTS `t_item_cate`;
+CREATE TABLE `t_item_cate` (
+  `uuid` VARCHAR(36) NOT NULL,
+  `cate_no` varchar(50),-- 种类业务编号
+  `parent_id` VARCHAR(36), -- 父类ID
+  `cate_name` VARCHAR(50), -- 种类业务名称
+  `busi_type_id` VARCHAR(36),-- 业务类型ID
+  `single_profit` DOUBLE ,-- 零售预期毛利
+  `create_user_id` varchar(36) NOT NULL,
+  `create_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `update_user_id` varchar(36) NOT NULL,
+  `update_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `status` varchar(32) NOT NULL DEFAULT 'OK',
+  PRIMARY KEY (`uuid`)
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Table structure for t_busines_cate 业务类型表
+-- ----------------------------
+DROP TABLE IF EXISTS `t_busines_cate`;
+CREATE TABLE `t_busines_cate` (
+  `uuid` VARCHAR(36) NOT NULL,
+  `cate_name` varchar(50) NOT NULL,-- 业务类型名称
+  `create_user_id` varchar(36) NOT NULL,
+  `create_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `update_user_id` varchar(36) NOT NULL,
+  `update_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `status` varchar(32) NOT NULL DEFAULT 'OK',
+  PRIMARY KEY (`uuid`)
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;

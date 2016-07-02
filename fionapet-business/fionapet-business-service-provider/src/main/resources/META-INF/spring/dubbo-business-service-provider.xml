@@ -45,4 +45,16 @@
     <dubbo:service interface="com.fionapet.business.service.WarehouseService" ref="warehouseService"
                    protocol="dubbo" validation="true" timeout="2000" connections="100"/>
     <!-- warehouse api -->
+    <!-- itemcate api -->
+    <bean id="itemCateService" class="com.fionapet.business.service.ItemCateServiceImpl"/>
+
+    <dubbo:service interface="com.fionapet.business.service.ItemCateService" ref="itemCateService"
+                   protocol="dubbo" validation="true" timeout="2000" connections="100"/>
+    <!-- itemcate api -->
+    <!-- businescate api -->
+    <bean id="businesCateService" class="com.fionapet.business.service.BusinesCateServiceImpl"/>
+
+    <dubbo:service interface="com.fionapet.business.service.BusinesCateService" ref="businesCateService"
+                   protocol="dubbo" validation="true" timeout="2000" connections="100"/>
+    <!-- businescate api -->
 </beans>
