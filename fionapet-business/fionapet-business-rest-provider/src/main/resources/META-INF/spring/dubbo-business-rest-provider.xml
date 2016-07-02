@@ -91,4 +91,16 @@
     <dubbo:reference id="businesCateService" interface="com.fionapet.business.service.BusinesCateService"/>
 
     <!-- businesCate api-->
+
+	<!--经销商 api -->
+    <dubbo:service interface="com.fionapet.business.facade.DealerRestService" ref="dealerRestService"
+                   protocol="rest" validation="true" timeout="2000" connections="100"/>
+
+    <bean id="dealerRestService" class="com.fionapet.business.facade.DealerRestServiceImpl">
+        <property name="dealerService" ref="dealerService"/>
+    </bean>
+
+    <dubbo:reference id="dealerService" interface="com.fionapet.business.service.DealerService"/>
+    <!--经销商 api -->
+
 </beans>

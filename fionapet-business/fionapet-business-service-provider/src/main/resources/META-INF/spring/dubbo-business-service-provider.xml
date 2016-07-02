@@ -57,4 +57,12 @@
     <dubbo:service interface="com.fionapet.business.service.BusinesCateService" ref="businesCateService"
                    protocol="dubbo" validation="true" timeout="2000" connections="100"/>
     <!-- businescate api -->
+
+	<!-- 经销商 api -->
+    <bean id="dealerService" class="com.fionapet.business.service.DealerServiceImpl"/>
+
+    <dubbo:service interface="com.fionapet.business.service.DealerService" ref="dealerService"
+                   protocol="dubbo" validation="true" timeout="2000" connections="100"/>
+    <!-- 经销商 api -->
+
 </beans>
