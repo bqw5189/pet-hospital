@@ -19,7 +19,7 @@ CREATE TABLE `t_dealer` (
   `dealer_bank_name` varchar(12) , -- 代理商账户名
   `account_no` varchar(32) , -- 银行账号
   `remark` varchar(256) , -- 备注
-  `companyt_ype` varchar(32) , -- 类型:经销商/生产商/经销商和代理商
+  `company_type` varchar(32) , -- 类型:经销商/生产商/经销商和代理商
   `create_user_id` varchar(36) NOT NULL,
   `create_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `update_user_id` varchar(36) NOT NULL,
