@@ -19,7 +19,7 @@ import java.util.List;
  * @author bailj
  */
 
-@Path("warehouse")
+@Path("warehouses")
 @Consumes({MediaType.APPLICATION_JSON})
 @Produces({ContentType.APPLICATION_JSON_UTF_8})
 @Api(value="warehouse", description = "仓库接口")
