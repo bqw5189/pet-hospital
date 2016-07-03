@@ -20,7 +20,7 @@ import java.util.Date;
 public class ItemType extends CMSEntity {
     
     /**
-     * itemCode
+     *商品编号
      */
     @ApiModelProperty(value = "itemCode", required = false)
     private String itemCode;
@@ -32,7 +32,7 @@ public class ItemType extends CMSEntity {
     }
     
     /**
-     * itemName
+     * 商品名称 
      */
     @ApiModelProperty(value = "itemName", required = false)
     private String itemName;
@@ -44,9 +44,9 @@ public class ItemType extends CMSEntity {
     }
     
     /**
-     * cateNo
+     * 种类业务编号对应t_item_cate表的cate_no 
      */
-    @ApiModelProperty(value = "cateNo", required = false)
+    @ApiModelProperty(value = "cateNo")
     private String cateNo;
     public String getCateNo() {
         return cateNo;
@@ -56,9 +56,9 @@ public class ItemType extends CMSEntity {
     }
     
     /**
-     * packageUnit
+     * 销售单位 
      */
-    @ApiModelProperty(value = "packageUnit", required = false)
+    @ApiModelProperty(value = "packageUnit")
     private String packageUnit;
     public String getPackageUnit() {
         return packageUnit;
@@ -68,9 +68,9 @@ public class ItemType extends CMSEntity {
     }
     
     /**
-     * recipeUnit
+     * 处方单位
      */
-    @ApiModelProperty(value = "recipeUnit", required = false)
+    @ApiModelProperty(value = "recipeUnit")
     private String recipeUnit;
     public String getRecipeUnit() {
         return recipeUnit;
@@ -80,9 +80,9 @@ public class ItemType extends CMSEntity {
     }
     
     /**
-     * itemStandard
+     * 规格
      */
-    @ApiModelProperty(value = "itemStandard", required = false)
+    @ApiModelProperty(value = "itemStandard")
     private String itemStandard;
     public String getItemStandard() {
         return itemStandard;
@@ -92,7 +92,7 @@ public class ItemType extends CMSEntity {
     }
     
     /**
-     * itemStyle
+     * 商品服务种类t_item_cate 表cate_name
      */
     @ApiModelProperty(value = "itemStyle", required = false)
     private String itemStyle;
@@ -104,7 +104,7 @@ public class ItemType extends CMSEntity {
     }
     
     /**
-     * barCode
+     * 条码
      */
     @ApiModelProperty(value = "barCode", required = false)
     private String barCode;
@@ -116,7 +116,7 @@ public class ItemType extends CMSEntity {
     }
     
     /**
-     * busiTypeId
+     * 业务类型ID  表t_busines_cate 的uuid
      */
     @ApiModelProperty(value = "busiTypeId", required = false)
     private String busiTypeId;
@@ -128,7 +128,7 @@ public class ItemType extends CMSEntity {
     }
     
     /**
-     * itemBulk
+     * 零散比
      */
     @ApiModelProperty(value = "itemBulk", required = false)
     private Integer itemBulk;
@@ -140,7 +140,7 @@ public class ItemType extends CMSEntity {
     }
     
     /**
-     * inputPrice
+     * 进货价格 
      */
     @ApiModelProperty(value = "inputPrice", required = false)
     private double inputPrice;
@@ -152,7 +152,7 @@ public class ItemType extends CMSEntity {
     }
     
     /**
-     * dealerCode
+     * 条码
      */
     @ApiModelProperty(value = "dealerCode", required = false)
     private String dealerCode;
@@ -164,7 +164,7 @@ public class ItemType extends CMSEntity {
     }
     
     /**
-     * dealerName
+     * 条码名称
      */
     @ApiModelProperty(value = "dealerName", required = false)
     private String dealerName;
@@ -176,7 +176,7 @@ public class ItemType extends CMSEntity {
     }
     
     /**
-     * sellPrice
+     * 销售价格
      */
     @ApiModelProperty(value = "sellPrice", required = false)
     private double sellPrice;
@@ -188,7 +188,7 @@ public class ItemType extends CMSEntity {
     }
     
     /**
-     * isVipDiscount
+     * VIP是否打折
      */
     @ApiModelProperty(value = "isVipDiscount", required = false)
     private String isVipDiscount;
@@ -200,7 +200,7 @@ public class ItemType extends CMSEntity {
     }
     
     /**
-     * vipSellPrice
+     * vip价格
      */
     @ApiModelProperty(value = "vipSellPrice", required = false)
     private double vipSellPrice;
@@ -212,7 +212,7 @@ public class ItemType extends CMSEntity {
     }
     
     /**
-     * isSell
+     * 是否销售
      */
     @ApiModelProperty(value = "isSell", required = false)
     private String isSell;
@@ -224,7 +224,7 @@ public class ItemType extends CMSEntity {
     }
     
     /**
-     * isCount
+     * 是否记库
      */
     @ApiModelProperty(value = "isCount", required = false)
     private String isCount;
@@ -236,7 +236,7 @@ public class ItemType extends CMSEntity {
     }
     
     /**
-     * recipePrice
+     * 处方价格
      */
     @ApiModelProperty(value = "recipePrice", required = false)
     private double recipePrice;
@@ -248,7 +248,7 @@ public class ItemType extends CMSEntity {
     }
     
     /**
-     * drugForm
+     * 剂型
      */
     @ApiModelProperty(value = "drugForm", required = false)
     private String drugForm;
@@ -260,7 +260,7 @@ public class ItemType extends CMSEntity {
     }
     
     /**
-     * wareUpLimit
+     * 库存上限
      */
     @ApiModelProperty(value = "wareUpLimit", required = false)
     private Integer wareUpLimit;
@@ -272,7 +272,7 @@ public class ItemType extends CMSEntity {
     }
     
     /**
-     * wareDownLimit
+     * 库存下限
      */
     @ApiModelProperty(value = "wareDownLimit", required = false)
     private Integer wareDownLimit;
@@ -284,7 +284,7 @@ public class ItemType extends CMSEntity {
     }
     
     /**
-     * safeDay
+     * 有效天数
      */
     @ApiModelProperty(value = "safeDay", required = false)
     private Integer safeDay;
@@ -296,7 +296,7 @@ public class ItemType extends CMSEntity {
     }
     
     /**
-     * useWay
+     * 用法
      */
     @ApiModelProperty(value = "useWay", required = false)
     private String useWay;
@@ -308,7 +308,7 @@ public class ItemType extends CMSEntity {
     }
     
     /**
-     * groupName
+     * 组名
      */
     @ApiModelProperty(value = "groupName", required = false)
     private String groupName;
@@ -320,7 +320,7 @@ public class ItemType extends CMSEntity {
     }
     
     /**
-     * remark
+     * 备注
      */
     @ApiModelProperty(value = "remark", required = false)
     private String remark;
@@ -332,7 +332,7 @@ public class ItemType extends CMSEntity {
     }
     
     /**
-     * inputCode
+     * 拼音码
      */
     @ApiModelProperty(value = "inputCode", required = false)
     private String inputCode;
@@ -346,7 +346,7 @@ public class ItemType extends CMSEntity {
     /**
      * isScattered
      */
-    @ApiModelProperty(value = "isScattered", required = false)
+    @ApiModelProperty(value = "isScattered")
     private double isScattered;
     public double getIsScattered() {
         return isScattered;
@@ -356,7 +356,7 @@ public class ItemType extends CMSEntity {
     }
     
     /**
-     * location
+     * 生产商
      */
     @ApiModelProperty(value = "location", required = false)
     private String location;
@@ -368,7 +368,7 @@ public class ItemType extends CMSEntity {
     }
     
     /**
-     * isCanExchange
+     * 是否可兑换
      */
     @ApiModelProperty(value = "isCanExchange", required = false)
     private String isCanExchange;
@@ -380,7 +380,7 @@ public class ItemType extends CMSEntity {
     }
     
     /**
-     * exchangeRewardPoint
+     * 兑换积分
      */
     @ApiModelProperty(value = "exchangeRewardPoint", required = false)
     private Integer exchangeRewardPoint;

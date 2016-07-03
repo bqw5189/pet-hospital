@@ -89,45 +89,46 @@ CREATE TABLE `t_busines_cate` (
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
 -- ---------------------------- --
--- Table structure for t_item_type 商品类型 --
+-- Table structure for t_item_type 商品类型 
 -- ---------------------------- --
-DROP TABLE IF EXISTS `t_item_type`; 
-CREATE TABLE `t_item_type`(
-  `uuid` VARCHAR(36) NOT NULL,
-  `item_code` varchar(50), -- 商品编号
-  `item_name` varchar(100), -- 商品名称 
-  `cate_no` varchar(50), --  种类业务编号对应t_item_cate表的cate_no 
-  `package_unit` varchar(50),-- 销售单位 
-  `recipe_unit` varchar(50),-- 处方单位
-  `item_standard` varchar(50),-- 规格
-  `item_style` varchar(50),-- t_item_cate 表cate_name
-  `bar_code` varchar(50),-- 条码
-  `busi_type_id` varchar(36),-- 业务类型ID  表t_busines_cate 的uuid
-  `item_bulk` INT , -- 零散比
-  `input_price` DOUBLE ,-- 进货价格 
-  `dealer_code` VARCHAR(50),-- 条码
-  `dealer_name` VARCHAR(100),-- 条码名称
-  `sell_price` DOUBLE,-- 销售价格
-  `is_vip_discount` VARCHAR(50),-- VIP是否打折
-  `vip_sell_price` DOUBLE ,-- vip价格
-  `is_sell` VARCHAR(50),-- 是否销售
-  `is_count` VARCHAR(50),-- 是否记库
-  `recipe_price` DOUBLE,-- 处方价格
-  `drug_form` VARCHAR(50),-- 剂型
-  `ware_up_limit` INT,-- 库存上限
-  `ware_down_limit` INT,-- 库存下限
-  `safe_day` INT,-- 有效天数
-  `use_way` VARCHAR(5000),-- 用法
-  `group_name` VARCHAR(50),-- 组名
-  `remark` VARCHAR(5000),-- 备注
-  `input_code` VARCHAR(50),-- 拼音码
-  `is_scattered` DOUBLE ,--
-  `location` VARCHAR(200),-- 生产商
-  `is_can_exchange` VARCHAR(50),-- 是否可兑换
-  `exchange_reward_point` INT ,-- 兑换积分
-  `create_user_id` varchar(36) NOT NULL,
-  `create_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  `update_user_id` varchar(36) NOT NULL,
-  `update_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  `status` varchar(32) NOT NULL DEFAULT 'OK',
-PRIMARY KEY (`uuid`)) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
+DROP TABLE IF EXISTS `t_item_type`;
+CREATE TABLE t_item_type
+(
+  uuid VARCHAR(36) PRIMARY KEY NOT NULL,
+  item_code VARCHAR(50),-- 商品编号
+  item_name VARCHAR(100),-- 商品名称
+  cate_no VARCHAR(50),
+  package_unit VARCHAR(50),
+  recipe_unit VARCHAR(50),
+  item_standard VARCHAR(50),
+  item_style VARCHAR(50),
+  bar_code VARCHAR(50),
+  busi_type_id VARCHAR(36),
+  item_bulk INT(11),
+  input_price DOUBLE,
+  dealer_code VARCHAR(50),
+  dealer_name VARCHAR(100),
+  sell_price DOUBLE,
+  is_vip_discount VARCHAR(50),
+  vip_sell_price DOUBLE,
+  is_sell VARCHAR(50),
+  is_count VARCHAR(50),
+  recipe_price DOUBLE,
+  drug_form VARCHAR(50),
+  ware_up_limit INT(11),
+  ware_down_limit INT(11),
+  safe_day INT(11),
+  use_way VARCHAR(5000),
+  group_name VARCHAR(50),
+  remark VARCHAR(5000),
+  input_code VARCHAR(50),
+  is_scattered DOUBLE,
+  location VARCHAR(200),
+  is_can_exchange VARCHAR(50),
+  exchange_reward_point INT(11),
+  create_user_id VARCHAR(36) NOT NULL,
+  create_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL,
+  update_user_id VARCHAR(36) NOT NULL,
+  update_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL,
+  status VARCHAR(32) DEFAULT 'OK' NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
