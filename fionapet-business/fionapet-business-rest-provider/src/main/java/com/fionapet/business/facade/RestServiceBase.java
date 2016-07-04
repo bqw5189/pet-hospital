@@ -2,12 +2,14 @@ package com.fionapet.business.facade;
 
 import cn.fiona.pet.account.facade.AuthRestService;
 import cn.fiona.pet.account.facade.RestResult;
+import com.fionapet.business.entity.PageSearch;
 import com.fionapet.business.entity.PetRace;
 import com.fionapet.business.service.CURDService;
 import com.fionapet.business.service.PetRaceService;
 import io.swagger.annotations.ApiParam;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.data.domain.Page;
 
 import javax.ws.rs.HeaderParam;
 import java.util.List;
@@ -24,6 +26,15 @@ public abstract class RestServiceBase<T> implements CURDRestService<T>{
 
     public RestResult<List<T>> list(@HeaderParam(AuthRestService.HEADER_AUTHORIZATION_KEY) String token) {
         return RestResult.OK(getService().listAll());
+    }
+
+    @Override
+    public RestResult<Page<T>> page(@HeaderParam(AuthRestService.HEADER_AUTHORIZATION_KEY) String token, PageSearch pageSearch) {
+        Page<T> page = getService().page(pageSearch);
+
+        LOGGER.debug("pageSearch:{} => {}", pageSearch, page);
+
+        return RestResult.OK(page);
     }
 
     public RestResult<T> create(@HeaderParam(AuthRestService.HEADER_AUTHORIZATION_KEY) String token, T petRace) {

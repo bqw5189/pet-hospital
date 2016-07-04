@@ -18,7 +18,7 @@ package com.fionapet.business.provider;
 public class BusinessServiceProvider {
 
     public static void main(String[] args) {
-      System.setProperty("spring.profiles.default", "test");
+      System.setProperty("spring.profiles.default", "development");
 //        new Thread(new Runnable() {
 //            public void run() {
 //                try {

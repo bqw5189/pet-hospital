@@ -6,12 +6,17 @@ import org.codehaus.jackson.map.annotate.JsonFilter;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlRootElement;
 import java.io.Serializable;
 import java.util.Date;
 
 /**
  * Created by tom on 16/6/29.
  */
+
+
 @MappedSuperclass
 public class CMSEntity implements Serializable {
     protected String uuid;

@@ -1,5 +1,8 @@
 package com.fionapet.business.service;
 
+import com.fionapet.business.entity.PageSearch;
+import org.springframework.data.domain.Page;
+
 import java.util.List;
 
 /**
@@ -13,6 +16,12 @@ public interface CURDService<T> {
      * @return
      */
     List<T> listAll();
+    /**
+     * 分页 列表
+     *
+     * @return
+     */
+    Page<T> page(PageSearch pageSearch);
 
     /**
      * 详情

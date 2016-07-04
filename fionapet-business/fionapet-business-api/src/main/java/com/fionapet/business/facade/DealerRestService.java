@@ -4,9 +4,14 @@ import cn.fiona.pet.account.facade.AuthRestService;
 import cn.fiona.pet.account.facade.RestResult;
 import com.alibaba.dubbo.rpc.protocol.rest.support.ContentType;
 import com.fionapet.business.entity.Dealer;
+import com.fionapet.business.entity.PageSearch;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.jaxb.SpringDataJaxb;
+import org.springframework.data.web.PageableDefault;
 
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
@@ -32,6 +37,12 @@ public interface DealerRestService extends CURDRestService<Dealer>{
     @ApiOperation(value = "经销商",
             notes = "经销商列表.")
     RestResult<List<Dealer>> list(@HeaderParam(AuthRestService.HEADER_AUTHORIZATION_KEY) String token);
+
+    @POST
+    @Path("/page")
+    @ApiOperation(value = "分页查询经销商",
+            notes = "经销商分页.")
+    RestResult<Page<Dealer>> page(@HeaderParam(AuthRestService.HEADER_AUTHORIZATION_KEY) String token, PageSearch pageSearch);
 
     /**
      * 经销商 详细信息
