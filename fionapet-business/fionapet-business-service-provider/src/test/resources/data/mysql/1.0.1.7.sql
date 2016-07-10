@@ -256,9 +256,9 @@ GO
 SET ANSI_PADDING OFF
 GO
 SET IDENTITY_INSERT [dbo].[S_BusinesCate] ON
+INSERT [dbo].[S_BusinesCate] ([ID], [CateName], [IsDeleted]) VALUES (1, N'宠物药品', 0)
 INSERT [dbo].[S_BusinesCate] ([ID], [CateName], [IsDeleted]) VALUES (2, N'宠物食品', 0)
 INSERT [dbo].[S_BusinesCate] ([ID], [CateName], [IsDeleted]) VALUES (3, N'宠物用品', 0)
-INSERT [dbo].[S_BusinesCate] ([ID], [CateName], [IsDeleted]) VALUES (1, N'宠物药品', 0)
 INSERT [dbo].[S_BusinesCate] ([ID], [CateName], [IsDeleted]) VALUES (4, N'化验项目', 0)
 INSERT [dbo].[S_BusinesCate] ([ID], [CateName], [IsDeleted]) VALUES (5, N'影像项目', 0)
 INSERT [dbo].[S_BusinesCate] ([ID], [CateName], [IsDeleted]) VALUES (6, N'住院项目', 0)
