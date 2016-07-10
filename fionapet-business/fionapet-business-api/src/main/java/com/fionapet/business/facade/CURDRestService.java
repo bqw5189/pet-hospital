@@ -2,14 +2,12 @@ package com.fionapet.business.facade;
 
 import cn.fiona.pet.account.facade.AuthRestService;
 import cn.fiona.pet.account.facade.RestResult;
-import com.alibaba.dubbo.rpc.protocol.rest.support.ContentType;
-import com.fionapet.business.entity.PetRace;
-import io.swagger.annotations.Api;
+import com.fionapet.business.entity.PageSearch;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
+import org.springframework.data.domain.Page;
 
 import javax.ws.rs.*;
-import javax.ws.rs.core.MediaType;
 import java.util.List;
 
 /**
@@ -23,6 +21,10 @@ public interface CURDRestService<T> {
     @GET
     @ApiOperation(value = "列表")
     RestResult<List<T>> list(@HeaderParam(AuthRestService.HEADER_AUTHORIZATION_KEY) String token);
+
+    @POST
+    @ApiOperation(value = "分页")
+    RestResult<Page<T>> page(@HeaderParam(AuthRestService.HEADER_AUTHORIZATION_KEY) String token, PageSearch pageSearch);
 
     @GET
     @ApiOperation(value = "详细信息")

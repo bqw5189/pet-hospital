@@ -116,6 +116,7 @@
 			<jdbc:script location="classpath:sql/mysql/schema.sql" />
 			<jdbc:script location="classpath:sql/mysql/schema-tom.sql" />
 			<jdbc:script location="classpath:data/mysql/import-data.sql" encoding="UTF-8"/>
+			<jdbc:script location="classpath:data/mysql/import-data-tom.sql" encoding="UTF-8"/>
 		</jdbc:initialize-database>
 	</beans>
 </beans>

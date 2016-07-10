@@ -5,3 +5,8 @@ insert into t_dealer (uuid,code,name, create_user_id, update_user_id,company_typ
 insert into t_dealer (uuid,code,name, create_user_id, update_user_id,company_type) values(uuid(),'JXS0000000004', '五湖','fc5db3b3-4063-4a12-a511-880ba19e4b58','fc5db3b3-4063-4a12-a511-880ba19e4b58','DEALER');
 insert into t_dealer (uuid,code,name, create_user_id, update_user_id,company_type) values(uuid(),'JXS0000000005', '宠儿香','fc5db3b3-4063-4a12-a511-880ba19e4b58','fc5db3b3-4063-4a12-a511-880ba19e4b58','DEALER');
 -- t_dealer --
+-- t_member_level --
+insert into t_member_level (uuid,name,is_credit,is_discount,discount_rate, create_user_id, update_user_id) values(uuid(), '普通会员',FALSE ,FALSE ,100, 'fc5db3b3-4063-4a12-a511-880ba19e4b58','fc5db3b3-4063-4a12-a511-880ba19e4b58');
+insert into t_member_level (uuid,name,is_credit,is_discount,discount_rate, create_user_id, update_user_id) values(uuid(), '银卡会员',FALSE ,TRUE ,95, 'fc5db3b3-4063-4a12-a511-880ba19e4b58','fc5db3b3-4063-4a12-a511-880ba19e4b58');
+insert into t_member_level (uuid,name,is_credit,is_discount,discount_rate, create_user_id, update_user_id) values(uuid(), '金卡会员',FALSE ,TRUE ,92, 'fc5db3b3-4063-4a12-a511-880ba19e4b58','fc5db3b3-4063-4a12-a511-880ba19e4b58');
+-- t_member_level --

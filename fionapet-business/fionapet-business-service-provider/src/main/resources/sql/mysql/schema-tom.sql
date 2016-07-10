@@ -28,3 +28,23 @@ CREATE TABLE `t_dealer` (
   PRIMARY KEY (`uuid`),
   UNIQUE KEY `name` (`name`)
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Table structure for t_member_level 会员级别
+-- ----------------------------
+DROP TABLE IF EXISTS `t_member_level`;
+CREATE TABLE `t_member_level` (
+  `uuid` VARCHAR(36) NOT NULL,
+  `name` varchar(256) NOT NULL,
+  `is_credit` boolean DEFAULT FALSE , -- 信誉状态
+  `is_discount` boolean DEFAULT FALSE , -- 是否打折
+  `discount_rate` FLOAT DEFAULT 100, -- 打折比率
+  `remark` varchar(256) , -- 备注
+  `create_user_id` varchar(36) NOT NULL,
+  `create_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `update_user_id` varchar(36) NOT NULL,
+  `update_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `status` varchar(32) NOT NULL DEFAULT 'OK',
+  PRIMARY KEY (`uuid`),
+  UNIQUE KEY `name` (`name`)
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;

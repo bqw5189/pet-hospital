@@ -21,4 +21,16 @@
 	http://code.alibabatech.com/schema/dubbo http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
 
 
+
+	<!--会员级别 api -->
+    <dubbo:service interface="com.fionapet.business.facade.MemberLevelRestService" ref="memberLevelRestService"
+                   protocol="rest" validation="true" timeout="2000" connections="100"/>
+
+    <bean id="memberLevelRestService" class="com.fionapet.business.facade.MemberLevelRestServiceImpl">
+        <property name="memberLevelService" ref="memberLevelService"/>
+    </bean>
+
+    <dubbo:reference id="memberLevelService" interface="com.fionapet.business.service.MemberLevelService"/>
+    <!--会员级别 api -->
+
 </beans>
