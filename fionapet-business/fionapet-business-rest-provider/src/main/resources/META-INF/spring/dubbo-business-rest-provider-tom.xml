@@ -310,19 +310,6 @@
     <dubbo:reference id="medicPrescriptionDetailService" interface="com.fionapet.business.service.MedicPrescriptionDetailService"/>
     <!--医生处方明细 api -->
 
-
-	<!--医生影像样例 api -->
-    <dubbo:service interface="com.fionapet.business.facade.MedicVedioExamRestService" ref="medicVedioExamRestService"
-                   protocol="rest" validation="true" timeout="2000" connections="100"/>
-
-    <bean id="medicVedioExamRestService" class="com.fionapet.business.facade.MedicVedioExamRestServiceImpl">
-        <property name="medicVedioExamService" ref="medicVedioExamService"/>
-    </bean>
-
-    <dubbo:reference id="medicVedioExamService" interface="com.fionapet.business.service.MedicVedioExamService"/>
-    <!--医生影像样例 api -->
-
-
 	<!--医生开处方 api -->
     <dubbo:service interface="com.fionapet.business.facade.MedicPrescriptionRestService" ref="medicPrescriptionRestService"
                    protocol="rest" validation="true" timeout="2000" connections="100"/>
