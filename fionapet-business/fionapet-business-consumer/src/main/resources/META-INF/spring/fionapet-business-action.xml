@@ -65,4 +65,32 @@
     </bean>
     <!-- 应用配置 action -->
 
+
+	<!-- 应用配置 action -->
+    <bean class="com.fionapet.business.consumer.AppConfigDemoAction" init-method="start">
+        <property name="appConfigService" ref="appConfigService"/>
+    </bean>
+    <!-- 应用配置 action -->
+
+
+	<!-- 应用配置 action -->
+    <bean class="com.fionapet.business.consumer.AppConfigDemoAction" init-method="start">
+        <property name="appConfigService" ref="appConfigService"/>
+    </bean>
+    <!-- 应用配置 action -->
+
+
+	<!-- 应用配置 action -->
+    <bean class="com.fionapet.business.consumer.AppConfigDemoAction" init-method="start">
+        <property name="appConfigService" ref="appConfigService"/>
+    </bean>
+    <!-- 应用配置 action -->
+
+
+	<!-- 应用配置 action -->
+    <bean class="com.fionapet.business.consumer.AppConfigDemoAction" init-method="start">
+        <property name="appConfigService" ref="appConfigService"/>
+    </bean>
+    <!-- 应用配置 action -->
+
 </beans>
