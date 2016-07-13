@@ -41,7 +41,7 @@ public abstract class CURDServiceBase<T extends CMSEntity> implements CURDServic
 
     @Override
     public List<T> listAll() {
-        return getDao().findAllByOrderByCreateDateAsc();
+        return getDao().findAllBy();
     }
 
     @Override

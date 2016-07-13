@@ -74,4 +74,12 @@
     <!-- 商品和服务类型 api -->
 
 
+
+	<!-- 应用配置 api -->
+    <bean id="appConfigService" class="com.fionapet.business.service.AppConfigServiceImpl"/>
+
+    <dubbo:service interface="com.fionapet.business.service.AppConfigService" ref="appConfigService"
+                   protocol="dubbo" validation="true" timeout="2000" connections="100"/>
+    <!-- 应用配置 api -->
+
 </beans>

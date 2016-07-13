@@ -13,4 +13,9 @@
     <!--<dubbo:monitor protocol="registry"/>-->
 
     <dubbo:reference id="petRaceService" interface="com.fionapet.business.service.PetRaceService"/>
+
+	<!-- 应用配置 service -->
+    <dubbo:reference id="appConfigService" interface="com.fionapet.business.service.AppConfigService"/>
+    <!-- 应用配置 service -->
+
 </beans>

@@ -3,8 +3,6 @@ package com.fionapet.business.repository;
 import com.fionapet.business.entity.AppConfig;
 import org.junit.Assert;
 import org.junit.Test;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springside.modules.test.spring.SpringTransactionalTestCase;
@@ -12,22 +10,21 @@ import org.springside.modules.test.spring.SpringTransactionalTestCase;
 import java.util.List;
 
 /**
- * 提醒配置表
- * Created by tom on 16/6/21.
+ * 应用配置
+* Created by tom on 2016-07-13 15:23:53.
  */
 @ContextConfiguration(locations = {"/META-INF/spring/applicationContext.xml"})
-public class TestAppConfigDao extends SpringTransactionalTestCase {
-    private static final Logger LOGGER = LoggerFactory.getLogger(TestAppConfigDao.class);
+public class AppConfigDaoTest extends SpringTransactionalTestCase {
+
     @Autowired
     private AppConfigDao appConfigDao;
 
-
     @Test
-    public void findAll() {
-        List<AppConfig> appConfigs = appConfigDao.findAllByOrderByCreateDateAsc();
+    public void findAll(){
+        List<AppConfig> appConfigs = appConfigDao.findAllBy();
 
         Assert.assertNotNull(appConfigs);
+
         Assert.assertEquals(appConfigs.size(), 101);
     }
-
 }
