@@ -1867,7 +1867,7 @@ CREATE TABLE `t_medic_chemical_examtype_detail` (
 
 
 -------------------------------------------------------------
------ Table structure for t_medic_chemical_examtype  医生化验实例类型表
+----- Table structure for t_medic_chemical_examtype  医生化验实例类型细节表
 -- -----------------------------------------------------------
 DROP TABLE IF EXISTS `t_medic_chemical_examtype`;
 CREATE TABLE `t_medic_chemical_examtype` (
@@ -1878,19 +1878,6 @@ CREATE TABLE `t_medic_chemical_examtype` (
 	`che_test_unit` varchar(50) null,-- 检查测试单元
 	`index_type` varchar(50) null,-- 索引类型
 	`cate_no` varchar(50) null,-- 种类编号
-  `sample_str` text  null,-- 宠物名称
-  `sample_value` text  null,-- 宠物名称
-  `normal_check_str` text  null,-- 宠物名称
-  `normal_check_value` text  null,-- 宠物名称
-  `adv_check_str` text null,-- 宠物名称
-  `adv_check_value` text  null,-- 宠物名称
-  `medic_treatment_code` varchar(50)  null,-- 宠物名称
-  `last_sheet_no` varchar(50)  null,-- 宠物名称
-  `query_status` varchar(36)  null,-- 宠物名称
-  `guest_id` varchar(36)  null,-- 宠物名称
-  `sent_to_library` varchar(50)  null,-- 宠物名称
-  `gest_code` varchar(36)  null,-- 宠物名称
-  `is_urgent` int  null,-- 宠物名称
   `create_user_id` varchar(36) not null,
   `create_date` timestamp not null default current_timestamp on update current_timestamp,
   `update_user_id` varchar(36) not null,
@@ -1898,3 +1885,4 @@ CREATE TABLE `t_medic_chemical_examtype` (
   `status` varchar(32) NOT NULL DEFAULT 'OK',
   PRIMARY KEY (`uuid`)
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
+
