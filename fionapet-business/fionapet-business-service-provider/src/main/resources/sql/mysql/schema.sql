@@ -811,7 +811,7 @@ CREATE TABLE `t_medic_chemicalexam` (
 
 
 -- ------------------------------------------------------------
--- --- Table structure for t_check_process_sheet 检查处理单据
+-- --- Table structure for t_check_process_sheet 检查处理单据 new
 -- -----------------------------------------------------------
 DROP TABLE IF EXISTS `t_check_process_sheet`;
 CREATE TABLE `t_check_process_sheet` (
