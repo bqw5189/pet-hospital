@@ -819,39 +819,38 @@ CREATE TABLE `t_check_process_sheet` (
   `sheet_no` varchar(50)  null,-- 单据编号
   `resource_sheet_no` varchar(50)  null,-- 原单据编号
   `lib_center_request_id` varchar(36)  null,-- 库存中心请求id
-  `hospital_no` varchar(50)  null,-- 医院编号
-  `hospital_name` varchar(50) null,-- 医院名称
+  `hospital_no` varchar(50)  null,-- 化验编号
+  `hospital_name` varchar(50) null,-- 化验费用
   `doctor_no` varchar(50) null,--  医生编号
   `doctor_name` varchar(50) null,-- 医生名称
   `sampling_date` timestamp  null,-- 日期
-  `guest_name` varchar(50)  null,-- 宠物主人名称
+  `guest_name` varchar(50)  null,--
   `guest_phone` varchar(50)  null,-- 电话
-  `pet_mode` varchar(50)  null,-- 宠物模
-  `pet_name` varchar(50)  null,-- 宠物名称
-  `pet_pz` varchar(50)  null,-- 宠物
-  `pet_age` varchar(50)  null,-- 宠物年龄
-  `pet_sex` varchar(50)  null,-- 宠物性别
-  `pet_jy` varchar(50)  null,-- 宠物经验
+  `pet_mode` varchar(50)  null,--
+  `pet_name` varchar(50)  null,--
+  `pet_pz` varchar(50)  null,--
+  `pet_age` varchar(50)  null,-- 年龄
+  `pet_sex` varchar(50)  null,-- 性别
+  `pet_jy` varchar(50)  null,--
   `sampling_part` varchar(50)  null,--
-  `sample_item` text  null,-- 类型
-  `check_item` text  null,-- 检查类型
-  `medicinal_history` varchar(500)  null,-- 病例历史
-  `send_to_library_address` varchar(50) null,-- 发送地址
+  `sample_item` text  null,--
+  `check_item` text  null,--
+  `medicinal_history` varchar(500)  null,--
+  `send_to_library_address` varchar(50) null,--
   `pet_id` varchar(36)  null,-- 宠物ID
-<<<<<<< HEAD
-  `sample_str` text  null,-- 实例简述
-  `sample_value` text  null,-- 实例值
-  `normal_check_str` text  null,-- 检查名称
-  `normal_check_value` text  null,-- 检查值
-  `adv_check_str` text null,-- 检查名称
-  `adv_check_value` text  null,-- 结果
-  `medic_treatment_code` varchar(50)  null,-- 编号
-  `last_sheet_no` varchar(50)  null,-- 下一单据编号
-  `query_status` varchar(36)  null,-- 查询状态
-  `guest_id` varchar(36)  null,-- 宠物主人ID
-  `sent_to_library` varchar(50)  null,--
-  `gest_code` varchar(36)  null,-- 宠物主人编号
-  `is_urgent` INTEGER  null,-- 是否紧急
+  `sample_str` text  null,-- 宠物名称
+  `sample_value` text  null,-- 宠物名称
+  `normal_check_str` text  null,-- 宠物名称
+  `normal_check_value` text  null,-- 宠物名称
+  `adv_check_str` text null,-- 宠物名称
+  `adv_check_value` text  null,-- 宠物名称
+  `medic_treatment_code` varchar(50)  null,-- 宠物名称
+  `last_sheet_no` varchar(50)  null,-- 宠物名称
+  `query_status` varchar(36)  null,-- 宠物名称
+  `guest_id` varchar(36)  null,-- 宠物名称
+  `sent_to_library` varchar(50)  null,-- 宠物名称
+  `gest_code` varchar(36)  null,-- 宠物名称
+  `is_urgent` int  null,-- 宠物名称
   `create_user_id` varchar(36) not null,
   `create_date` timestamp not null default current_timestamp on update current_timestamp,
   `update_user_id` varchar(36) not null,
