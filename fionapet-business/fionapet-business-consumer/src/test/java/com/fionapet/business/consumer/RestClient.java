@@ -13,7 +13,7 @@ import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
 /**
- * @author baiqw
+ * @author tom
  */
 public class RestClient {
     private static final Logger LOGGER = LoggerFactory.getLogger(RestClient.class);

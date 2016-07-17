@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ - Copyright 1999-2011 Alibaba Group.
+ -
+ - Licensed under the Apache License, Version 2.0 (the "License");
+ - you may not use this file except in compliance with the License.
+ - You may obtain a copy of the License at
+ -
+ -      http://www.apache.org/licenses/LICENSE-2.0
+ -
+ - Unless required by applicable law or agreed to in writing, software
+ - distributed under the License is distributed on an "AS IS" BASIS,
+ - WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ - See the License for the specific language governing permissions and
+ - limitations under the License.
+-->
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.2.xsd
+	http://code.alibabatech.com/schema/dubbo http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
+
+    <!--uncomment this if you want to test dubbo's monitor-->
+    <dubbo:monitor protocol="registry"/>
+
+    <dubbo:protocol name="dubbo" serialization="kryo"
+                    optimizer="com.fionapet.business.SerializationOptimizerImpl"/>
+
+
+    <!-- pet race api -->
+    <bean id="petRaceService" class="com.fionapet.business.service.PetRaceServiceImpl"/>
+
+    <dubbo:service interface="com.fionapet.business.service.PetRaceService" ref="petRaceService"
+                   protocol="dubbo" validation="true" timeout="2000" connections="100"/>
+
+    <bean id="petSmallRaceService" class="com.fionapet.business.service.PetSmallRaceServiceImpl"/>
+
+    <dubbo:service interface="com.fionapet.business.service.PetSmallRaceService" ref="petSmallRaceService"
+                   protocol="dubbo" validation="true" timeout="2000" connections="100"/>
+    <!-- pet race api -->
+
+    <!-- warehouse api -->
+    <bean id="warehouseService" class="com.fionapet.business.service.WarehouseServiceImpl"/>
+
+    <dubbo:service interface="com.fionapet.business.service.WarehouseService" ref="warehouseService"
+                   protocol="dubbo" validation="true" timeout="2000" connections="100"/>
+    <!-- warehouse api -->
+    <!-- itemcate api -->
+    <bean id="itemCateService" class="com.fionapet.business.service.ItemCateServiceImpl"/>
+
+    <dubbo:service interface="com.fionapet.business.service.ItemCateService" ref="itemCateService"
+                   protocol="dubbo" validation="true" timeout="2000" connections="100"/>
+    <!-- itemcate api -->
+    <!-- businescate api -->
+    <bean id="businesCateService" class="com.fionapet.business.service.BusinesCateServiceImpl"/>
+
+    <dubbo:service interface="com.fionapet.business.service.BusinesCateService" ref="businesCateService"
+                   protocol="dubbo" validation="true" timeout="2000" connections="100"/>
+    <!-- businescate api -->
+
+	<!-- 经销商 api -->
+    <bean id="dealerService" class="com.fionapet.business.service.DealerServiceImpl"/>
+
+    <dubbo:service interface="com.fionapet.business.service.DealerService" ref="dealerService"
+                   protocol="dubbo" validation="true" timeout="2000" connections="100"/>
+    <!-- 经销商 api -->
+
+
+	<!-- 商品和服务类型 api -->
+    <bean id="itemTypeService" class="com.fionapet.business.service.ItemTypeServiceImpl"/>
+
+    <dubbo:service interface="com.fionapet.business.service.ItemTypeService" ref="itemTypeService"
+                   protocol="dubbo" validation="true" timeout="2000" connections="100"/>
+    <!-- 商品和服务类型 api -->
+
+
+
+	<!-- 应用配置 api -->
+    <bean id="appConfigService" class="com.fionapet.business.service.AppConfigServiceImpl"/>
+
+    <dubbo:service interface="com.fionapet.business.service.AppConfigService" ref="appConfigService"
+                   protocol="dubbo" validation="true" timeout="2000" connections="100"/>
+    <!-- 应用配置 api -->
+
+</beans>

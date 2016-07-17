@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ - Copyright 1999-2011 Alibaba Group.
+ -
+ - Licensed under the Apache License, Version 2.0 (the "License");
+ - you may not use this file except in compliance with the License.
+ - You may obtain a copy of the License at
+ -
+ -      http://www.apache.org/licenses/LICENSE-2.0
+ -
+ - Unless required by applicable law or agreed to in writing, software
+ - distributed under the License is distributed on an "AS IS" BASIS,
+ - WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ - See the License for the specific language governing permissions and
+ - limitations under the License.
+-->
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.2.xsd
+	http://code.alibabatech.com/schema/dubbo http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
+
+
+
+	<!-- 会员级别 api -->
+    <bean id="memberLevelService" class="com.fionapet.business.service.MemberLevelServiceImpl"/>
+
+    <dubbo:service interface="com.fionapet.business.service.MemberLevelService" ref="memberLevelService"
+                   protocol="dubbo" validation="true" timeout="2000" connections="100"/>
+    <!-- 会员级别 api -->
+
+
+	<!-- 会员等级管理 api -->
+    <bean id="gestLevelService" class="com.fionapet.business.service.GestLevelServiceImpl"/>
+
+    <dubbo:service interface="com.fionapet.business.service.GestLevelService" ref="gestLevelService"
+                   protocol="dubbo" validation="true" timeout="2000" connections="100"/>
+    <!-- 会员等级管理 api -->
+
+
+	<!-- 数据字典 字典明细项 api -->
+    <bean id="userDictDetailService" class="com.fionapet.business.service.UserDictDetailServiceImpl"/>
+
+    <dubbo:service interface="com.fionapet.business.service.UserDictDetailService" ref="userDictDetailService"
+                   protocol="dubbo" validation="true" timeout="2000" connections="100"/>
+    <!-- 数据字典 字典明细项 api -->
+
+
+	<!-- 应用字典大类 api -->
+    <bean id="userDictService" class="com.fionapet.business.service.UserDictServiceImpl"/>
+
+    <dubbo:service interface="com.fionapet.business.service.UserDictService" ref="userDictService"
+                   protocol="dubbo" validation="true" timeout="2000" connections="100"/>
+    <!-- 应用字典大类 api -->
+
+
+	<!-- 宠物字典类型明细 api -->
+    <bean id="dictTypeDetailService" class="com.fionapet.business.service.DictTypeDetailServiceImpl"/>
+
+    <dubbo:service interface="com.fionapet.business.service.DictTypeDetailService" ref="dictTypeDetailService"
+                   protocol="dubbo" validation="true" timeout="2000" connections="100"/>
+    <!-- 宠物字典类型明细 api -->
+
+
+	<!-- 字典类型 api -->
+    <bean id="dictTypeService" class="com.fionapet.business.service.DictTypeServiceImpl"/>
+
+    <dubbo:service interface="com.fionapet.business.service.DictTypeService" ref="dictTypeService"
+                   protocol="dubbo" validation="true" timeout="2000" connections="100"/>
+    <!-- 字典类型 api -->
+
+
+	<!-- 业务类型打折率 api -->
+    <bean id="itemDiscountRateService" class="com.fionapet.business.service.ItemDiscountRateServiceImpl"/>
+
+    <dubbo:service interface="com.fionapet.business.service.ItemDiscountRateService" ref="itemDiscountRateService"
+                   protocol="dubbo" validation="true" timeout="2000" connections="100"/>
+    <!-- 业务类型打折率 api -->
+
+
+	<!-- 提醒配置表 api -->
+    <bean id="appConfigService" class="com.fionapet.business.service.AppConfigServiceImpl"/>
+
+    <dubbo:service interface="com.fionapet.business.service.AppConfigService" ref="appConfigService"
+                   protocol="dubbo" validation="true" timeout="2000" connections="100"/>
+    <!-- 提醒配置表 api -->
+
+
+	<!-- 处方模版类型 api -->
+    <bean id="trprescriptionTemplateTypeService" class="com.fionapet.business.service.TrprescriptionTemplateTypeServiceImpl"/>
+
+    <dubbo:service interface="com.fionapet.business.service.TrprescriptionTemplateTypeService" ref="trprescriptionTemplateTypeService"
+                   protocol="dubbo" validation="true" timeout="2000" connections="100"/>
+    <!-- 处方模版类型 api -->
+
+
+	<!-- 处方模版明细 api -->
+    <bean id="trprescriptionTemplateDetailService" class="com.fionapet.business.service.TrprescriptionTemplateDetailServiceImpl"/>
+
+    <dubbo:service interface="com.fionapet.business.service.TrprescriptionTemplateDetailService" ref="trprescriptionTemplateDetailService"
+                   protocol="dubbo" validation="true" timeout="2000" connections="100"/>
+    <!-- 处方模版明细 api -->
+
+
+	<!-- 处方模版明细 api -->
+    <bean id="trprescriptionTemplateService" class="com.fionapet.business.service.TrprescriptionTemplateServiceImpl"/>
+
+    <dubbo:service interface="com.fionapet.business.service.TrprescriptionTemplateService" ref="trprescriptionTemplateService"
+                   protocol="dubbo" validation="true" timeout="2000" connections="100"/>
+    <!-- 处方模版明细 api -->
+
+
+	<!-- 处方模版类型 api -->
+    <bean id="prescriptionTemplateTypeService" class="com.fionapet.business.service.PrescriptionTemplateTypeServiceImpl"/>
+
+    <dubbo:service interface="com.fionapet.business.service.PrescriptionTemplateTypeService" ref="prescriptionTemplateTypeService"
+                   protocol="dubbo" validation="true" timeout="2000" connections="100"/>
+    <!-- 处方模版类型 api -->
+
+
+	<!-- 处方模版明细 api -->
+    <bean id="prescriptionTemplateDetailService" class="com.fionapet.business.service.PrescriptionTemplateDetailServiceImpl"/>
+
+    <dubbo:service interface="com.fionapet.business.service.PrescriptionTemplateDetailService" ref="prescriptionTemplateDetailService"
+                   protocol="dubbo" validation="true" timeout="2000" connections="100"/>
+    <!-- 处方模版明细 api -->
+
+
+	<!-- 处方模版明细 api -->
+    <bean id="prescriptionTemplateService" class="com.fionapet.business.service.PrescriptionTemplateServiceImpl"/>
+
+    <dubbo:service interface="com.fionapet.business.service.PrescriptionTemplateService" ref="prescriptionTemplateService"
+                   protocol="dubbo" validation="true" timeout="2000" connections="100"/>
+    <!-- 处方模版明细 api -->
+
+
+	<!-- 宠物 api -->
+    <bean id="petService" class="com.fionapet.business.service.PetServiceImpl"/>
+
+    <dubbo:service interface="com.fionapet.business.service.PetService" ref="petService"
+                   protocol="dubbo" validation="true" timeout="2000" connections="100"/>
+    <!-- 宠物 api -->
+
+
+	<!-- t_persons_cm_app api -->
+    <bean id="personsCmAppService" class="com.fionapet.business.service.PersonsCmAppServiceImpl"/>
+
+    <dubbo:service interface="com.fionapet.business.service.PersonsCmAppService" ref="personsCmAppService"
+                   protocol="dubbo" validation="true" timeout="2000" connections="100"/>
+    <!-- t_persons_cm_app api -->
+
+
+	<!-- t_persons_appointment api -->
+    <bean id="personsAppointmentService" class="com.fionapet.business.service.PersonsAppointmentServiceImpl"/>
+
+    <dubbo:service interface="com.fionapet.business.service.PersonsAppointmentService" ref="personsAppointmentService"
+                   protocol="dubbo" validation="true" timeout="2000" connections="100"/>
+    <!-- t_persons_appointment api -->
+
+
+	<!-- 宠物主人信息 api -->
+    <bean id="personsService" class="com.fionapet.business.service.PersonsServiceImpl"/>
+
+    <dubbo:service interface="com.fionapet.business.service.PersonsService" ref="personsService"
+                   protocol="dubbo" validation="true" timeout="2000" connections="100"/>
+    <!-- 宠物主人信息 api -->
+
+
+	<!-- 图片信息 api -->
+    <bean id="imagesService" class="com.fionapet.business.service.ImagesServiceImpl"/>
+
+    <dubbo:service interface="com.fionapet.business.service.ImagesService" ref="imagesService"
+                   protocol="dubbo" validation="true" timeout="2000" connections="100"/>
+    <!-- 图片信息 api -->
+
+
+	<!-- 宠物主人 api -->
+    <bean id="gestService" class="com.fionapet.business.service.GestServiceImpl"/>
+
+    <dubbo:service interface="com.fionapet.business.service.GestService" ref="gestService"
+                   protocol="dubbo" validation="true" timeout="2000" connections="100"/>
+    <!-- 宠物主人 api -->
+
+
+	<!-- 费用类型 api -->
+    <bean id="expensesCateService" class="com.fionapet.business.service.ExpensesCateServiceImpl"/>
+
+    <dubbo:service interface="com.fionapet.business.service.ExpensesCateService" ref="expensesCateService"
+                   protocol="dubbo" validation="true" timeout="2000" connections="100"/>
+    <!-- 费用类型 api -->
+
+
+	<!-- 化验样例类型 api -->
+    <bean id="chemicalExamCateService" class="com.fionapet.business.service.ChemicalExamCateServiceImpl"/>
+
+    <dubbo:service interface="com.fionapet.business.service.ChemicalExamCateService" ref="chemicalExamCateService"
+                   protocol="dubbo" validation="true" timeout="2000" connections="100"/>
+    <!-- 化验样例类型 api -->
+
+
+	<!-- 医生影像样例 api -->
+    <bean id="medicVedioExamService" class="com.fionapet.business.service.MedicVedioExamServiceImpl"/>
+
+    <dubbo:service interface="com.fionapet.business.service.MedicVedioExamService" ref="medicVedioExamService"
+                   protocol="dubbo" validation="true" timeout="2000" connections="100"/>
+    <!-- 医生影像样例 api -->
+
+
+	<!-- 医生处方明细 api -->
+    <bean id="medicPrescriptionDetailService" class="com.fionapet.business.service.MedicPrescriptionDetailServiceImpl"/>
+
+    <dubbo:service interface="com.fionapet.business.service.MedicPrescriptionDetailService" ref="medicPrescriptionDetailService"
+                   protocol="dubbo" validation="true" timeout="2000" connections="100"/>
+    <!-- 医生处方明细 api -->
+
+	<!-- 医生开处方 api -->
+    <bean id="medicPrescriptionService" class="com.fionapet.business.service.MedicPrescriptionServiceImpl"/>
+
+    <dubbo:service interface="com.fionapet.business.service.MedicPrescriptionService" ref="medicPrescriptionService"
+                   protocol="dubbo" validation="true" timeout="2000" connections="100"/>
+    <!-- 医生开处方 api -->
+
+
+	<!-- 化验单明细 api -->
+    <bean id="medicChemicalExamDetailService" class="com.fionapet.business.service.MedicChemicalExamDetailServiceImpl"/>
+
+    <dubbo:service interface="com.fionapet.business.service.MedicChemicalExamDetailService" ref="medicChemicalExamDetailService"
+                   protocol="dubbo" validation="true" timeout="2000" connections="100"/>
+    <!-- 化验单明细 api -->
+
+
+	<!-- 化验单明细 api -->
+    <bean id="medicChemicalexamService" class="com.fionapet.business.service.MedicChemicalexamServiceImpl"/>
+
+    <dubbo:service interface="com.fionapet.business.service.MedicChemicalexamService" ref="medicChemicalexamService"
+                   protocol="dubbo" validation="true" timeout="2000" connections="100"/>
+    <!-- 化验单明细 api -->
+
+
+	<!-- 检查处理单据 api -->
+    <bean id="checkProcessSheetService" class="com.fionapet.business.service.CheckProcessSheetServiceImpl"/>
+
+    <dubbo:service interface="com.fionapet.business.service.CheckProcessSheetService" ref="checkProcessSheetService"
+                   protocol="dubbo" validation="true" timeout="2000" connections="100"/>
+    <!-- 检查处理单据 api -->
+
+</beans>

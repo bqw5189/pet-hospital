@@ -21,7 +21,7 @@ import java.lang.reflect.Type;
 import java.util.List;
 
 /**
- * @author baiqw
+ * @author tom
  */
 public class RestClientTestCase {
     private static final Logger LOGGER = LoggerFactory.getLogger(RestClientTestCase.class);

@@ -1,7 +1,7 @@
 -- CREATE DATABASE IF NOT EXISTS fiona_pet_business DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci;
--- ----------------------------
+-- -- --------------------------
 -- Table structure for t_pet_race 宠物种类
--- ----------------------------
+-- -- --------------------------
 DROP TABLE IF EXISTS `t_pet_race`;
 CREATE TABLE `t_pet_race` (
   `uuid` VARCHAR(36) NOT NULL,
@@ -15,9 +15,9 @@ CREATE TABLE `t_pet_race` (
   UNIQUE KEY `name` (`name`)
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
--- ----------------------------
+-- -- --------------------------
 -- Table structure for t_pet_small_race 宠物类型
--- ----------------------------
+-- -- --------------------------
 DROP TABLE IF EXISTS `t_pet_small_race`;
 CREATE TABLE `t_pet_small_race` (
   `uuid` VARCHAR(36) NOT NULL,
@@ -32,9 +32,9 @@ CREATE TABLE `t_pet_small_race` (
   UNIQUE KEY `type` (`type`)
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
--- ----------------------------
+-- -- --------------------------
 -- Table structure for t_warehouse 仓库
--- ----------------------------
+-- -- --------------------------
 DROP TABLE IF EXISTS `t_warehouse`;
 CREATE TABLE `t_warehouse` (
   `uuid` VARCHAR(36) NOT NULL,
@@ -52,9 +52,9 @@ CREATE TABLE `t_warehouse` (
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
 
--- ----------------------------
+-- -- --------------------------
 -- Table structure for t_item_cate 商品服务种类
--- ----------------------------
+-- -- --------------------------
 DROP TABLE IF EXISTS `t_item_cate`;
 CREATE TABLE `t_item_cate` (
   `uuid` VARCHAR(36) NOT NULL,
@@ -73,9 +73,9 @@ CREATE TABLE `t_item_cate` (
 
 
 
--- ----------------------------
+-- -- --------------------------
 -- Table structure for t_busines_cate 业务类型表
--- ----------------------------
+-- -- --------------------------
 DROP TABLE IF EXISTS `t_busines_cate`;
 CREATE TABLE `t_busines_cate` (
   `uuid` VARCHAR(36) NOT NULL,
@@ -88,9 +88,9 @@ CREATE TABLE `t_busines_cate` (
   PRIMARY KEY (`uuid`)
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
--- ---------------------------- --
+-- -- -------------------------- --
 -- Table structure for t_item_type 商品类型 
--- ---------------------------- --
+-- -- -------------------------- --
 DROP TABLE IF EXISTS `t_item_type`;
 CREATE TABLE t_item_type
 (
@@ -133,7 +133,7 @@ CREATE TABLE t_item_type
   status VARCHAR(32) DEFAULT 'OK' NOT NULL
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
-----------------------------
+-- --------------------------
 -- Table structure for t_gest_level 会员等级管理
 -- ----------------------------
 DROP TABLE IF EXISTS `t_gest_level`;
@@ -153,16 +153,16 @@ CREATE TABLE `t_gest_level` (
   PRIMARY KEY (`uuid`)
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
-----------------------------
+-- --------------------------
 -- Table structure for t_user_dict_detail 数据字典 字典明细项
--- ----------------------------
+-- -- --------------------------
 DROP TABLE IF EXISTS `t_user_dict_detail`;
 CREATE TABLE `t_user_dict_detail` (
   `uuid` VARCHAR(36) NOT NULL,
   `dict_type_id` varchar(36)  NULL,-- 字典类型ID t_user_dict表uuid关联
   `dict_detail_code` varchar(50)  NULL,-- 字典明细编号
-  `value_name_CN` varchar(50)  NULL,-- 中文名称
-  `value_name_EN` varchar(50)  NULL,-- 英文名称
+  `value_name_cn` varchar(50)  NULL,-- 中文名称
+  `value_name_en` varchar(50)  NULL,-- 英文名称
   `sort` INTEGER  DEFAULT 0,-- 排序
   `comments` varchar(100) null,-- 说明
   `create_user_id` varchar(36) NOT NULL,
@@ -174,9 +174,9 @@ CREATE TABLE `t_user_dict_detail` (
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
 
-----------------------------
+-- --------------------------
 -- Table structure for t_user_dict  应用字典大类
--- ----------------------------
+-- -- --------------------------
 DROP TABLE IF EXISTS `t_user_dict`;
 CREATE TABLE `t_user_dict` (
   `uuid` VARCHAR(36) NOT NULL,
@@ -192,16 +192,16 @@ CREATE TABLE `t_user_dict` (
   PRIMARY KEY (`uuid`)
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
----------------------------
+-- --------------------------
 -- Table structure for t_dict_type_detail  宠物字典类型明细
--- ----------------------------
+-- -- --------------------------
 DROP TABLE IF EXISTS `t_dict_type_detail`;
 CREATE TABLE `t_dict_type_detail` (
   `uuid` VARCHAR(36) NOT NULL,
   `dict_type_id` varchar(36)  NULL,-- 字典类型ID 关联t_dict_type表UUID
   `dict_detail_code` varchar(50)  NULL,-- 编号
-  `value_name_CN` varchar(50)  NULL,-- 中文名
-  `value_name_EN` varchar(50)  NULL ,-- 英文名
+  `value_name_cn` varchar(50)  NULL,-- 中文名
+  `value_name_en` varchar(50)  NULL ,-- 英文名
   `comments` varchar(100)  NULL ,-- 描述
   `create_user_id` varchar(36) NOT NULL,
   `create_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
@@ -211,9 +211,9 @@ CREATE TABLE `t_dict_type_detail` (
   PRIMARY KEY (`uuid`)
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
--------------------------------------------
+-- -- ---------------------------------------
 -- Table structure for t_dict_type  字典类型
--------------------------------------------
+-- -- ---------------------------------------
 DROP TABLE IF EXISTS `t_dict_type`;
 CREATE TABLE `t_dict_type` (
   `uuid` VARCHAR(36) NOT NULL,
@@ -226,9 +226,9 @@ CREATE TABLE `t_dict_type` (
   PRIMARY KEY (`uuid`)
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
-----------------------------
+-- --------------------------
 -- Table structure for t_item_discount_rate 业务类型打折率
--- ----------------------------
+-- -- --------------------------
 DROP TABLE IF EXISTS `t_item_discount_rate`;
 CREATE TABLE `t_item_discount_rate` (
   `uuid` VARCHAR(36) NOT NULL,
@@ -243,9 +243,9 @@ CREATE TABLE `t_item_discount_rate` (
   PRIMARY KEY (`uuid`)
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
-----------------------------
+-- --------------------------
 -- Table structure for t_app_config 提醒配置表
--- ----------------------------
+-- -- --------------------------
 DROP TABLE IF EXISTS `t_app_config`;
 CREATE TABLE `t_app_config` (
   `uuid` VARCHAR(36) NOT NULL,
@@ -260,9 +260,9 @@ CREATE TABLE `t_app_config` (
   PRIMARY KEY (`uuid`)
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
-----------------------------
+-- --------------------------
 -- Table structure for t_trprescription_template_type 处方模版类型
--- ----------------------------
+-- -- --------------------------
 DROP TABLE IF EXISTS `t_trprescription_template_type`;
 CREATE TABLE `t_trprescription_template_type` (
   `uuid` VARCHAR(36) NOT NULL,
@@ -278,9 +278,9 @@ CREATE TABLE `t_trprescription_template_type` (
   PRIMARY KEY (`uuid`)
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
-----------------------------
+-- --------------------------
 -- Table structure for t_trprescription_template_detail 处方模版明细
--- ----------------------------
+-- -- --------------------------
 DROP TABLE IF EXISTS `t_trprescription_template_detail`;
 CREATE TABLE `t_trprescription_template_detail` (
   `uuid` VARCHAR(36) NOT NULL,
@@ -302,9 +302,9 @@ CREATE TABLE `t_trprescription_template_detail` (
   PRIMARY KEY (`uuid`)
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
-----------------------------
+-- --------------------------
 -- Table structure for t_trprescription_template 处方模版明细
--- ----------------------------
+-- -- --------------------------
 DROP TABLE IF EXISTS `t_trprescription_template`;
 CREATE TABLE `t_trprescription_template` (
   `uuid` VARCHAR(36) NOT NULL,
@@ -323,42 +323,42 @@ CREATE TABLE `t_trprescription_template` (
   PRIMARY KEY (`uuid`)
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
-----------------------------
+-- --------------------------
 -- Table structure for t_role 登陆角色
--- ----------------------------
-DROP TABLE IF EXISTS `t_role`;
-CREATE TABLE `t_role` (
-  `uuid` VARCHAR(36) NOT NULL,
-  `role_code` varchar(50)  NULL,-- 角色编号
-  `role_name` varchar(100)  NULL,-- 角色名称
-  `role_desc` varchar(1000)  NULL,-- 角色描述
-  `create_user_id` varchar(36) NOT NULL,
-  `create_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  `update_user_id` varchar(36) NOT NULL,
-  `update_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  `status` varchar(32) NOT NULL DEFAULT 'OK',
-  PRIMARY KEY (`uuid`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
+-- -- --------------------------
+-- DROP TABLE IF EXISTS `t_role`;
+-- CREATE TABLE `t_role` (
+--   `uuid` VARCHAR(36) NOT NULL,
+--   `role_code` varchar(50)  NULL,-- 角色编号
+--   `role_name` varchar(100)  NULL,-- 角色名称
+--   `role_desc` varchar(1000)  NULL,-- 角色描述
+--   `create_user_id` varchar(36) NOT NULL,
+--   `create_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+--   `update_user_id` varchar(36) NOT NULL,
+--   `update_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+--   `status` varchar(32) NOT NULL DEFAULT 'OK',
+--   PRIMARY KEY (`uuid`)
+-- ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
-----------------------------
+-- --------------------------
 -- Table structure for t_role_right 角色权限表
--- ----------------------------
-DROP TABLE IF EXISTS `t_role_right`;
-CREATE TABLE `t_role_right` (
-  `uuid` VARCHAR(36) NOT NULL,
-  `role_id` varchar(50)  NULL,-- 角色ID表t_role的ID
-  `modul_id` varchar(100)  NULL,-- 模块t_menu_fun_module表ID
-  `create_user_id` varchar(36) NOT NULL,
-  `create_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  `update_user_id` varchar(36) NOT NULL,
-  `update_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  `status` varchar(32) NOT NULL DEFAULT 'OK',
-  PRIMARY KEY (`uuid`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
+-- -- --------------------------
+-- DROP TABLE IF EXISTS `t_role_right`;
+-- CREATE TABLE `t_role_right` (
+--   `uuid` VARCHAR(36) NOT NULL,
+--   `role_id` varchar(50)  NULL,-- 角色ID表t_role的ID
+--   `modul_id` varchar(100)  NULL,-- 模块t_menu_fun_module表ID
+--   `create_user_id` varchar(36) NOT NULL,
+--   `create_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+--   `update_user_id` varchar(36) NOT NULL,
+--   `update_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+--   `status` varchar(32) NOT NULL DEFAULT 'OK',
+--   PRIMARY KEY (`uuid`)
+-- ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
-----------------------------
--- Table structure for t_prescription_template_type
--- ----------------------------
+-- --------------------------
+-- Table structure for t_prescription_template_type 处方模版类型
+-- -- --------------------------
 DROP TABLE IF EXISTS `t_prescription_template_type`;
 CREATE TABLE `t_prescription_template_type` (
   `uuid` VARCHAR(36) NOT NULL,
@@ -374,9 +374,9 @@ CREATE TABLE `t_prescription_template_type` (
   PRIMARY KEY (`uuid`)
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
-----------------------------
--- Table structure for t_prescription_template_detail
--- ----------------------------
+-- --------------------------
+-- Table structure for t_prescription_template_detail 处方模版明细
+-- -- --------------------------
 DROP TABLE IF EXISTS `t_prescription_template_detail`;
 CREATE TABLE `t_prescription_template_detail` (
   `uuid` VARCHAR(36) NOT NULL,
@@ -398,9 +398,9 @@ CREATE TABLE `t_prescription_template_detail` (
   PRIMARY KEY (`uuid`)
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
-----------------------------
+-- --------------------------
 -- Table structure for t_prescription_template 处方模版明细
--- ----------------------------
+-- -- --------------------------
 DROP TABLE IF EXISTS `t_prescription_template`;
 CREATE TABLE `t_prescription_template` (
   `uuid` VARCHAR(36) NOT NULL,
@@ -418,9 +418,9 @@ CREATE TABLE `t_prescription_template` (
   PRIMARY KEY (`uuid`)
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
-----------------------------
+-- --------------------------
 -- Table structure for t_pet 宠物
--- ----------------------------
+-- -- --------------------------
 DROP TABLE IF EXISTS `t_pet`;
 CREATE TABLE `t_pet` (
   `uuid` VARCHAR(36) NOT NULL,
@@ -454,9 +454,9 @@ CREATE TABLE `t_pet` (
   PRIMARY KEY (`uuid`)
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
-----------------------------
+-- --------------------------
 -- Table structure for t_persons_cm_app
--- ----------------------------
+-- -- --------------------------
 DROP TABLE IF EXISTS `t_persons_cm_app`;
 CREATE TABLE `t_persons_cm_app` (
   `uuid` VARCHAR(36) NOT NULL,
@@ -474,9 +474,9 @@ CREATE TABLE `t_persons_cm_app` (
   PRIMARY KEY (`uuid`)
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
-----------------------------
+-- --------------------------
 -- Table structure for t_persons_appointment
--- ----------------------------
+-- -- --------------------------
 DROP TABLE IF EXISTS `t_persons_appointment`;
 CREATE TABLE `t_persons_appointment` (
   `uuid` VARCHAR(36) NOT NULL,
@@ -493,9 +493,9 @@ CREATE TABLE `t_persons_appointment` (
   `status` varchar(32) NOT NULL DEFAULT 'OK',
   PRIMARY KEY (`uuid`)
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
-----------------------------
+-- --------------------------
 -- Table structure for t_persons 宠物主人信息
--- ----------------------------
+-- -- --------------------------
 DROP TABLE IF EXISTS `t_persons`;
 CREATE TABLE `t_persons` (
   `uuid` VARCHAR(36) NOT NULL,
@@ -536,9 +536,9 @@ CREATE TABLE `t_persons` (
   PRIMARY KEY (`uuid`)
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
-----------------------------
--- Table structure for t_images
--- ----------------------------
+-- --------------------------
+-- Table structure for t_images 图片信息
+-- -- --------------------------
 DROP TABLE IF EXISTS `t_images`;
 CREATE TABLE `t_images` (
   `uuid` VARCHAR(36) NOT NULL,
@@ -557,49 +557,49 @@ CREATE TABLE `t_images` (
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
 --M_OperationLog
-----------------------------
+-- --------------------------
 -- Table structure for t_menu_fun_module 功能模块
--- ----------------------------
-DROP TABLE IF EXISTS `t_menu_fun_module`;
-CREATE TABLE `t_menu_fun_module` (
-  `uuid` VARCHAR(36) NOT NULL,
-  `mfm_name` varchar(50)  null,-- 功能模块名称
-  `parent_id` varchar(36)  null,-- 上级ID
-  `mfm_location` varchar(500) null,-- 路径
-  `mfm_level` integer  null, -- 菜单级别
-  `mfm_type` integer  null, -- 类型
-  `mfm_desc` varchar(500)  null, -- 描述
-  `is_modal_window` varchar(500)  null, -- 显示模式
-  `Sort` INTEGER NULL, -- 排序
-  `mfm_status` INTEGER DEFAULT 1, -- 状态
-  `create_user_id` varchar(36) NOT NULL,
-  `create_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  `update_user_id` varchar(36) NOT NULL,
-  `update_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  `status` varchar(32) NOT NULL DEFAULT 'OK',
-  PRIMARY KEY (`uuid`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
+-- -- --------------------------
+-- DROP TABLE IF EXISTS `t_menu_fun_module`;
+-- CREATE TABLE `t_menu_fun_module` (
+--   `uuid` VARCHAR(36) NOT NULL,
+--   `mfm_name` varchar(50)  null,-- 功能模块名称
+--   `parent_id` varchar(36)  null,-- 上级ID
+--   `mfm_location` varchar(500) null,-- 路径
+--   `mfm_level` integer  null, -- 菜单级别
+--   `mfm_type` integer  null, -- 类型
+--   `mfm_desc` varchar(500)  null, -- 描述
+--   `is_modal_window` varchar(500)  null, -- 显示模式
+--   `Sort` INTEGER NULL, -- 排序
+--   `mfm_status` INTEGER DEFAULT 1, -- 状态
+--   `create_user_id` varchar(36) NOT NULL,
+--   `create_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+--   `update_user_id` varchar(36) NOT NULL,
+--   `update_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+--   `status` varchar(32) NOT NULL DEFAULT 'OK',
+--   PRIMARY KEY (`uuid`)
+-- ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
-----------------------------
+-- --------------------------
 -- Table structure for t_menu_button 功能按钮
--- ----------------------------
-DROP TABLE IF EXISTS `t_menu_button`;
-CREATE TABLE `t_menu_button` (
-  `uuid` VARCHAR(36) NOT NULL,
-  `mfm_id` varchar(36)  null,-- 功能模块ID
-  `mfm_name` varchar(50)  null,-- 模块名称
-  `button_name` varchar(50)  null,-- 按钮名称
-  `Button_Code` varchar(50) null,-- 按钮编号
-  `Button_Desc` varchar(200)  null, -- 按钮描述URL
-  `Button_image` varchar(200)  null, -- 按钮描述URL
-  `Sort` INTEGER NULL, -- 排序
-  `status` varchar(32) NOT NULL DEFAULT 'OK',
-  PRIMARY KEY (`uuid`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
+-- -- --------------------------
+-- DROP TABLE IF EXISTS `t_menu_button`;
+-- CREATE TABLE `t_menu_button` (
+--   `uuid` VARCHAR(36) NOT NULL,
+--   `mfm_id` varchar(36)  null,-- 功能模块ID
+--   `mfm_name` varchar(50)  null,-- 模块名称
+--   `button_name` varchar(50)  null,-- 按钮名称
+--   `Button_Code` varchar(50) null,-- 按钮编号
+--   `Button_Desc` varchar(200)  null, -- 按钮描述URL
+--   `Button_image` varchar(200)  null, -- 按钮描述URL
+--   `Sort` INTEGER NULL, -- 排序
+--   `status` varchar(32) NOT NULL DEFAULT 'OK',
+--   PRIMARY KEY (`uuid`)
+-- ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
-----------------------------
+-- --------------------------
 -- Table structure for t_gest 宠物主人
--- ----------------------------
+-- -- --------------------------
 DROP TABLE IF EXISTS `t_gest`;
 CREATE TABLE `t_gest` (
   `uuid` VARCHAR(36) NOT NULL,
@@ -610,7 +610,7 @@ CREATE TABLE `t_gest` (
   `gest_birthday` date  null, -- 生日
   `mobile_phone` varchar(50)  null, -- 手机
   `tel_phone` varchar(50) null, -- 电话
-  `e_mail` varchar(50) null ,-- 邮箱
+  `email` varchar(50) null ,-- 邮箱
   `gest_address` varchar(100) null , -- 地址
   `is_vip` varchar(50) null ,-- 是否VIP
   `vip_no` varchar(50) null ,-- VIP号
@@ -630,9 +630,9 @@ CREATE TABLE `t_gest` (
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
 
-----------------------------
+-- --------------------------
 -- Table structure for t_expenses_cate 费用类型
--- ----------------------------
+-- -- --------------------------
 DROP TABLE IF EXISTS `t_expenses_cate`;
 CREATE TABLE `t_expenses_cate` (
   `uuid` VARCHAR(36) NOT NULL,
@@ -648,9 +648,9 @@ CREATE TABLE `t_expenses_cate` (
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
 
---------------------------------------------------------
+-- ---------------------------- --------------------------
 ----- Table structure for t_chemical_exam_cate 化验样例类型
--- ----------------------------------------------------
+-- -- --------------------------------------------------
 DROP TABLE IF EXISTS `t_chemical_exam_cate`;
 CREATE TABLE `t_chemical_exam_cate` (
   `uuid` VARCHAR(36) NOT NULL,
@@ -669,9 +669,10 @@ CREATE TABLE `t_chemical_exam_cate` (
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
 
---------------------------------------------------------
+-- ---------------------------- --------------------------
 ----- Table structure for t_medic_vedio_exam 医生影像样例
--- ----------------------------------------------------
+-- -- --------------------------------------------------
+
 DROP TABLE IF EXISTS `t_medic_vedio_exam`;
 CREATE TABLE `t_medic_vedio_exam` (
   `uuid` VARCHAR(36) NOT NULL,
@@ -695,9 +696,9 @@ CREATE TABLE `t_medic_vedio_exam` (
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
 
---------------------------------------------------------
+-- ---------------------------- --------------------------
 ----- Table structure for t_medic_prescription_detail 医生处方明细
--- ----------------------------------------------------
+-- -- --------------------------------------------------
 DROP TABLE IF EXISTS `t_medic_prescription_detail`;
 CREATE TABLE `t_medic_prescription_detail` (
   `uuid` VARCHAR(36) NOT NULL,
@@ -727,9 +728,9 @@ CREATE TABLE `t_medic_prescription_detail` (
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
 
---------------------------------------------------------
+-- ---------------------------- --------------------------
 ----- Table structure for t_medic_prescription 医生开处方
--- ----------------------------------------------------
+-- -- --------------------------------------------------
 DROP TABLE IF EXISTS `t_medic_prescription`;
 CREATE TABLE `t_medic_prescription` (
   `uuid` VARCHAR(36) NOT NULL,
@@ -752,9 +753,9 @@ CREATE TABLE `t_medic_prescription` (
   PRIMARY KEY (`uuid`)
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
---------------------------------------------------------------
+-- ---------------------------- --------------------------------
 ----- Table structure for t_medic_chemical_exam_detail 化验单明细
--- -----------------------------------------------------------
+-- -- ---------------------------- -----------------------------
 DROP TABLE IF EXISTS `t_medic_chemical_exam_detail`;
 CREATE TABLE `t_medic_chemical_exam_detail` (
   `uuid` VARCHAR(36) NOT NULL,
@@ -779,8 +780,8 @@ CREATE TABLE `t_medic_chemical_exam_detail` (
   PRIMARY KEY (`uuid`)
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
---------------------------------------------------------------
------ Table structure for t_medic_chemicalexam 化验单明细
+-- ------------------------------------------------------------
+-- --- Table structure for t_medic_chemicalexam 化验单明细
 -- -----------------------------------------------------------
 DROP TABLE IF EXISTS `t_medic_chemicalexam`;
 CREATE TABLE `t_medic_chemicalexam` (
@@ -809,8 +810,8 @@ CREATE TABLE `t_medic_chemicalexam` (
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
 
---------------------------------------------------------------
------ Table structure for t_check_process_sheet 检查处理单据
+-- ------------------------------------------------------------
+-- --- Table structure for t_check_process_sheet 检查处理单据
 -- -----------------------------------------------------------
 DROP TABLE IF EXISTS `t_check_process_sheet`;
 CREATE TABLE `t_check_process_sheet` (
@@ -837,6 +838,7 @@ CREATE TABLE `t_check_process_sheet` (
   `medicinal_history` varchar(500)  null,-- 病例历史
   `send_to_library_address` varchar(50) null,-- 发送地址
   `pet_id` varchar(36)  null,-- 宠物ID
+<<<<<<< HEAD
   `sample_str` text  null,-- 实例简述
   `sample_value` text  null,-- 实例值
   `normal_check_str` text  null,-- 检查名称
@@ -1876,6 +1878,19 @@ CREATE TABLE `t_medic_chemical_examtype` (
 	`che_test_unit` varchar(50) null,-- 检查测试单元
 	`index_type` varchar(50) null,-- 索引类型
 	`cate_no` varchar(50) null,-- 种类编号
+  `sample_str` text  null,-- 宠物名称
+  `sample_value` text  null,-- 宠物名称
+  `normal_check_str` text  null,-- 宠物名称
+  `normal_check_value` text  null,-- 宠物名称
+  `adv_check_str` text null,-- 宠物名称
+  `adv_check_value` text  null,-- 宠物名称
+  `medic_treatment_code` varchar(50)  null,-- 宠物名称
+  `last_sheet_no` varchar(50)  null,-- 宠物名称
+  `query_status` varchar(36)  null,-- 宠物名称
+  `guest_id` varchar(36)  null,-- 宠物名称
+  `sent_to_library` varchar(50)  null,-- 宠物名称
+  `gest_code` varchar(36)  null,-- 宠物名称
+  `is_urgent` int  null,-- 宠物名称
   `create_user_id` varchar(36) not null,
   `create_date` timestamp not null default current_timestamp on update current_timestamp,
   `update_user_id` varchar(36) not null,
