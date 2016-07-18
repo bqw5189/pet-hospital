@@ -1,7 +1,7 @@
 -- CREATE DATABASE IF NOT EXISTS fiona_pet_business DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci;
--- -- --------------------------
+-- -- -- --- --- --- --- --- --- --- ---
 -- Table structure for t_pet_race 宠物种类
--- -- --------------------------
+-- -- -- --- --- --- --- --- --- --- ---
 DROP TABLE IF EXISTS `t_pet_race`;
 CREATE TABLE `t_pet_race` (
   `uuid` VARCHAR(36) NOT NULL,
@@ -15,9 +15,9 @@ CREATE TABLE `t_pet_race` (
   UNIQUE KEY `name` (`name`)
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
--- -- --------------------------
+-- -- -- --- --- --- --- --- --- --- ---
 -- Table structure for t_pet_small_race 宠物类型
--- -- --------------------------
+-- -- -- --- --- --- --- --- --- --- ---
 DROP TABLE IF EXISTS `t_pet_small_race`;
 CREATE TABLE `t_pet_small_race` (
   `uuid` VARCHAR(36) NOT NULL,
@@ -32,9 +32,9 @@ CREATE TABLE `t_pet_small_race` (
   UNIQUE KEY `type` (`type`)
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
--- -- --------------------------
+-- -- -- --- --- --- --- --- --- --- ---
 -- Table structure for t_warehouse 仓库
--- -- --------------------------
+-- -- -- --- --- --- --- --- --- --- ---
 DROP TABLE IF EXISTS `t_warehouse`;
 CREATE TABLE `t_warehouse` (
   `uuid` VARCHAR(36) NOT NULL,
@@ -52,9 +52,9 @@ CREATE TABLE `t_warehouse` (
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
 
--- -- --------------------------
+-- -- -- --- --- --- --- --- --- --- ---
 -- Table structure for t_item_cate 商品服务种类
--- -- --------------------------
+-- -- -- --- --- --- --- --- --- --- ---
 DROP TABLE IF EXISTS `t_item_cate`;
 CREATE TABLE `t_item_cate` (
   `uuid` VARCHAR(36) NOT NULL,
@@ -73,9 +73,9 @@ CREATE TABLE `t_item_cate` (
 
 
 
--- -- --------------------------
+-- -- -- --- --- --- --- --- --- --- ---
 -- Table structure for t_busines_cate 业务类型表
--- -- --------------------------
+-- -- -- --- --- --- --- --- --- --- ---
 DROP TABLE IF EXISTS `t_busines_cate`;
 CREATE TABLE `t_busines_cate` (
   `uuid` VARCHAR(36) NOT NULL,
@@ -88,9 +88,9 @@ CREATE TABLE `t_busines_cate` (
   PRIMARY KEY (`uuid`)
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
--- -- -------------------------- --
+-- -- -- --- --- --- --- --- --- --- --- --
 -- Table structure for t_item_type 商品类型 
--- -- -------------------------- --
+-- -- -- --- --- --- --- --- --- --- --- --
 DROP TABLE IF EXISTS `t_item_type`;
 CREATE TABLE t_item_type
 (
@@ -133,9 +133,9 @@ CREATE TABLE t_item_type
   status VARCHAR(32) DEFAULT 'OK' NOT NULL
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
--- --------------------------
+-- -- --- --- --- --- --- --- --- ---
 -- Table structure for t_gest_level 会员等级管理
--- ----------------------------
+-- -- --- --- --- --- --- --- --- --- --
 DROP TABLE IF EXISTS `t_gest_level`;
 CREATE TABLE `t_gest_level` (
   `uuid` VARCHAR(36) NOT NULL,
@@ -153,9 +153,9 @@ CREATE TABLE `t_gest_level` (
   PRIMARY KEY (`uuid`)
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
--- --------------------------
+-- -- --- --- --- --- --- --- --- ---
 -- Table structure for t_user_dict_detail 数据字典 字典明细项
--- -- --------------------------
+-- -- -- --- --- --- --- --- --- --- ---
 DROP TABLE IF EXISTS `t_user_dict_detail`;
 CREATE TABLE `t_user_dict_detail` (
   `uuid` VARCHAR(36) NOT NULL,
@@ -174,9 +174,9 @@ CREATE TABLE `t_user_dict_detail` (
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
 
--- --------------------------
+-- -- --- --- --- --- --- --- --- ---
 -- Table structure for t_user_dict  应用字典大类
--- -- --------------------------
+-- -- -- --- --- --- --- --- --- --- ---
 DROP TABLE IF EXISTS `t_user_dict`;
 CREATE TABLE `t_user_dict` (
   `uuid` VARCHAR(36) NOT NULL,
@@ -192,9 +192,9 @@ CREATE TABLE `t_user_dict` (
   PRIMARY KEY (`uuid`)
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
--- --------------------------
+-- -- --- --- --- --- --- --- --- ---
 -- Table structure for t_dict_type_detail  宠物字典类型明细
--- -- --------------------------
+-- -- -- --- --- --- --- --- --- --- ---
 DROP TABLE IF EXISTS `t_dict_type_detail`;
 CREATE TABLE `t_dict_type_detail` (
   `uuid` VARCHAR(36) NOT NULL,
@@ -211,9 +211,9 @@ CREATE TABLE `t_dict_type_detail` (
   PRIMARY KEY (`uuid`)
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
--- -- ---------------------------------------
+-- -- -- --- --- --- --- --- --- --- --- --- --- --- --- -
 -- Table structure for t_dict_type  字典类型
--- -- ---------------------------------------
+-- -- -- --- --- --- --- --- --- --- --- --- --- --- --- -
 DROP TABLE IF EXISTS `t_dict_type`;
 CREATE TABLE `t_dict_type` (
   `uuid` VARCHAR(36) NOT NULL,
@@ -226,9 +226,9 @@ CREATE TABLE `t_dict_type` (
   PRIMARY KEY (`uuid`)
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
--- --------------------------
+-- -- --- --- --- --- --- --- --- ---
 -- Table structure for t_item_discount_rate 业务类型打折率
--- -- --------------------------
+-- -- -- --- --- --- --- --- --- --- ---
 DROP TABLE IF EXISTS `t_item_discount_rate`;
 CREATE TABLE `t_item_discount_rate` (
   `uuid` VARCHAR(36) NOT NULL,
@@ -243,9 +243,9 @@ CREATE TABLE `t_item_discount_rate` (
   PRIMARY KEY (`uuid`)
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
--- --------------------------
+-- -- --- --- --- --- --- --- --- ---
 -- Table structure for t_app_config 提醒配置表
--- -- --------------------------
+-- -- -- --- --- --- --- --- --- --- ---
 DROP TABLE IF EXISTS `t_app_config`;
 CREATE TABLE `t_app_config` (
   `uuid` VARCHAR(36) NOT NULL,
@@ -260,9 +260,9 @@ CREATE TABLE `t_app_config` (
   PRIMARY KEY (`uuid`)
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
--- --------------------------
+-- -- --- --- --- --- --- --- --- ---
 -- Table structure for t_trprescription_template_type 处方模版类型
--- -- --------------------------
+-- -- -- --- --- --- --- --- --- --- ---
 DROP TABLE IF EXISTS `t_trprescription_template_type`;
 CREATE TABLE `t_trprescription_template_type` (
   `uuid` VARCHAR(36) NOT NULL,
@@ -278,9 +278,9 @@ CREATE TABLE `t_trprescription_template_type` (
   PRIMARY KEY (`uuid`)
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
--- --------------------------
+-- -- --- --- --- --- --- --- --- ---
 -- Table structure for t_trprescription_template_detail 处方模版明细
--- -- --------------------------
+-- -- -- --- --- --- --- --- --- --- ---
 DROP TABLE IF EXISTS `t_trprescription_template_detail`;
 CREATE TABLE `t_trprescription_template_detail` (
   `uuid` VARCHAR(36) NOT NULL,
@@ -302,9 +302,9 @@ CREATE TABLE `t_trprescription_template_detail` (
   PRIMARY KEY (`uuid`)
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
--- --------------------------
+-- -- --- --- --- --- --- --- --- ---
 -- Table structure for t_trprescription_template 处方模版明细
--- -- --------------------------
+-- -- -- --- --- --- --- --- --- --- ---
 DROP TABLE IF EXISTS `t_trprescription_template`;
 CREATE TABLE `t_trprescription_template` (
   `uuid` VARCHAR(36) NOT NULL,
@@ -323,9 +323,9 @@ CREATE TABLE `t_trprescription_template` (
   PRIMARY KEY (`uuid`)
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
--- --------------------------
+-- -- --- --- --- --- --- --- --- ---
 -- Table structure for t_role 登陆角色
--- -- --------------------------
+-- -- -- --- --- --- --- --- --- --- ---
 -- DROP TABLE IF EXISTS `t_role`;
 -- CREATE TABLE `t_role` (
 --   `uuid` VARCHAR(36) NOT NULL,
@@ -340,9 +340,9 @@ CREATE TABLE `t_trprescription_template` (
 --   PRIMARY KEY (`uuid`)
 -- ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
--- --------------------------
+-- -- --- --- --- --- --- --- --- ---
 -- Table structure for t_role_right 角色权限表
--- -- --------------------------
+-- -- -- --- --- --- --- --- --- --- ---
 -- DROP TABLE IF EXISTS `t_role_right`;
 -- CREATE TABLE `t_role_right` (
 --   `uuid` VARCHAR(36) NOT NULL,
@@ -356,9 +356,9 @@ CREATE TABLE `t_trprescription_template` (
 --   PRIMARY KEY (`uuid`)
 -- ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
--- --------------------------
+-- -- --- --- --- --- --- --- --- ---
 -- Table structure for t_prescription_template_type 处方模版类型
--- -- --------------------------
+-- -- -- --- --- --- --- --- --- --- ---
 DROP TABLE IF EXISTS `t_prescription_template_type`;
 CREATE TABLE `t_prescription_template_type` (
   `uuid` VARCHAR(36) NOT NULL,
@@ -374,9 +374,9 @@ CREATE TABLE `t_prescription_template_type` (
   PRIMARY KEY (`uuid`)
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
--- --------------------------
+-- -- --- --- --- --- --- --- --- ---
 -- Table structure for t_prescription_template_detail 处方模版明细
--- -- --------------------------
+-- -- -- --- --- --- --- --- --- --- ---
 DROP TABLE IF EXISTS `t_prescription_template_detail`;
 CREATE TABLE `t_prescription_template_detail` (
   `uuid` VARCHAR(36) NOT NULL,
@@ -398,9 +398,9 @@ CREATE TABLE `t_prescription_template_detail` (
   PRIMARY KEY (`uuid`)
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
--- --------------------------
+-- -- --- --- --- --- --- --- --- ---
 -- Table structure for t_prescription_template 处方模版明细
--- -- --------------------------
+-- -- -- --- --- --- --- --- --- --- ---
 DROP TABLE IF EXISTS `t_prescription_template`;
 CREATE TABLE `t_prescription_template` (
   `uuid` VARCHAR(36) NOT NULL,
@@ -418,9 +418,9 @@ CREATE TABLE `t_prescription_template` (
   PRIMARY KEY (`uuid`)
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
--- --------------------------
+-- -- --- --- --- --- --- --- --- ---
 -- Table structure for t_pet 宠物
--- -- --------------------------
+-- -- -- --- --- --- --- --- --- --- ---
 DROP TABLE IF EXISTS `t_pet`;
 CREATE TABLE `t_pet` (
   `uuid` VARCHAR(36) NOT NULL,
@@ -454,9 +454,9 @@ CREATE TABLE `t_pet` (
   PRIMARY KEY (`uuid`)
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
--- --------------------------
+-- -- --- --- --- --- --- --- --- ---
 -- Table structure for t_persons_cm_app
--- -- --------------------------
+-- -- -- --- --- --- --- --- --- --- ---
 DROP TABLE IF EXISTS `t_persons_cm_app`;
 CREATE TABLE `t_persons_cm_app` (
   `uuid` VARCHAR(36) NOT NULL,
@@ -474,9 +474,9 @@ CREATE TABLE `t_persons_cm_app` (
   PRIMARY KEY (`uuid`)
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
--- --------------------------
+-- -- --- --- --- --- --- --- --- ---
 -- Table structure for t_persons_appointment
--- -- --------------------------
+-- -- -- --- --- --- --- --- --- --- ---
 DROP TABLE IF EXISTS `t_persons_appointment`;
 CREATE TABLE `t_persons_appointment` (
   `uuid` VARCHAR(36) NOT NULL,
@@ -493,9 +493,9 @@ CREATE TABLE `t_persons_appointment` (
   `status` varchar(32) NOT NULL DEFAULT 'OK',
   PRIMARY KEY (`uuid`)
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
--- --------------------------
+-- -- --- --- --- --- --- --- --- ---
 -- Table structure for t_persons 宠物主人信息
--- -- --------------------------
+-- -- -- --- --- --- --- --- --- --- ---
 DROP TABLE IF EXISTS `t_persons`;
 CREATE TABLE `t_persons` (
   `uuid` VARCHAR(36) NOT NULL,
@@ -536,9 +536,9 @@ CREATE TABLE `t_persons` (
   PRIMARY KEY (`uuid`)
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
--- --------------------------
+-- -- --- --- --- --- --- --- --- ---
 -- Table structure for t_images 图片信息
--- -- --------------------------
+-- -- -- --- --- --- --- --- --- --- ---
 DROP TABLE IF EXISTS `t_images`;
 CREATE TABLE `t_images` (
   `uuid` VARCHAR(36) NOT NULL,
@@ -557,9 +557,9 @@ CREATE TABLE `t_images` (
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
 --M_OperationLog
--- --------------------------
+-- -- --- --- --- --- --- --- --- ---
 -- Table structure for t_menu_fun_module 功能模块
--- -- --------------------------
+-- -- -- --- --- --- --- --- --- --- ---
 -- DROP TABLE IF EXISTS `t_menu_fun_module`;
 -- CREATE TABLE `t_menu_fun_module` (
 --   `uuid` VARCHAR(36) NOT NULL,
@@ -580,9 +580,9 @@ CREATE TABLE `t_images` (
 --   PRIMARY KEY (`uuid`)
 -- ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
--- --------------------------
+-- -- --- --- --- --- --- --- --- ---
 -- Table structure for t_menu_button 功能按钮
--- -- --------------------------
+-- -- -- --- --- --- --- --- --- --- ---
 -- DROP TABLE IF EXISTS `t_menu_button`;
 -- CREATE TABLE `t_menu_button` (
 --   `uuid` VARCHAR(36) NOT NULL,
@@ -597,9 +597,9 @@ CREATE TABLE `t_images` (
 --   PRIMARY KEY (`uuid`)
 -- ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
--- --------------------------
+-- -- --- --- --- --- --- --- --- ---
 -- Table structure for t_gest 宠物主人
--- -- --------------------------
+-- -- -- --- --- --- --- --- --- --- ---
 DROP TABLE IF EXISTS `t_gest`;
 CREATE TABLE `t_gest` (
   `uuid` VARCHAR(36) NOT NULL,
@@ -630,9 +630,9 @@ CREATE TABLE `t_gest` (
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
 
--- --------------------------
+-- -- --- --- --- --- --- --- --- ---
 -- Table structure for t_expenses_cate 费用类型
--- -- --------------------------
+-- -- -- --- --- --- --- --- --- --- ---
 DROP TABLE IF EXISTS `t_expenses_cate`;
 CREATE TABLE `t_expenses_cate` (
   `uuid` VARCHAR(36) NOT NULL,
@@ -648,9 +648,9 @@ CREATE TABLE `t_expenses_cate` (
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
 
--- ---------------------------- --------------------------
------ Table structure for t_chemical_exam_cate 化验样例类型
--- -- --------------------------------------------------
+-- -- --- --- --- --- --- --- --- --- -- -- --- --- --- --- --- --- --- ---
+-- --- Table structure for t_chemical_exam_cate 化验样例类型
+-- -- -- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
 DROP TABLE IF EXISTS `t_chemical_exam_cate`;
 CREATE TABLE `t_chemical_exam_cate` (
   `uuid` VARCHAR(36) NOT NULL,
@@ -669,9 +669,9 @@ CREATE TABLE `t_chemical_exam_cate` (
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
 
--- ---------------------------- --------------------------
------ Table structure for t_medic_vedio_exam 医生影像样例
--- -- --------------------------------------------------
+-- -- --- --- --- --- --- --- --- --- -- -- --- --- --- --- --- --- --- ---
+-- --- Table structure for t_medic_vedio_exam 医生影像样例
+-- -- -- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
 
 DROP TABLE IF EXISTS `t_medic_vedio_exam`;
 CREATE TABLE `t_medic_vedio_exam` (
@@ -696,9 +696,9 @@ CREATE TABLE `t_medic_vedio_exam` (
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
 
--- ---------------------------- --------------------------
------ Table structure for t_medic_prescription_detail 医生处方明细
--- -- --------------------------------------------------
+-- -- --- --- --- --- --- --- --- --- -- -- --- --- --- --- --- --- --- ---
+-- --- Table structure for t_medic_prescription_detail 医生处方明细
+-- -- -- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
 DROP TABLE IF EXISTS `t_medic_prescription_detail`;
 CREATE TABLE `t_medic_prescription_detail` (
   `uuid` VARCHAR(36) NOT NULL,
@@ -728,9 +728,9 @@ CREATE TABLE `t_medic_prescription_detail` (
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
 
--- ---------------------------- --------------------------
------ Table structure for t_medic_prescription 医生开处方
--- -- --------------------------------------------------
+-- -- --- --- --- --- --- --- --- --- -- -- --- --- --- --- --- --- --- ---
+-- --- Table structure for t_medic_prescription 医生开处方
+-- -- -- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
 DROP TABLE IF EXISTS `t_medic_prescription`;
 CREATE TABLE `t_medic_prescription` (
   `uuid` VARCHAR(36) NOT NULL,
@@ -753,9 +753,9 @@ CREATE TABLE `t_medic_prescription` (
   PRIMARY KEY (`uuid`)
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
--- ---------------------------- --------------------------------
------ Table structure for t_medic_chemical_exam_detail 化验单明细
--- -- ---------------------------- -----------------------------
+-- -- --- --- --- --- --- --- --- --- -- -- --- --- --- --- --- --- --- --- --- ---
+-- --- Table structure for t_medic_chemical_exam_detail 化验单明细
+-- -- -- --- --- --- --- --- --- --- --- -- -- --- --- --- --- --- --- --- --- ---
 DROP TABLE IF EXISTS `t_medic_chemical_exam_detail`;
 CREATE TABLE `t_medic_chemical_exam_detail` (
   `uuid` VARCHAR(36) NOT NULL,
@@ -780,9 +780,9 @@ CREATE TABLE `t_medic_chemical_exam_detail` (
   PRIMARY KEY (`uuid`)
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
--- ------------------------------------------------------------
--- --- Table structure for t_medic_chemicalexam 化验单明细
--- -----------------------------------------------------------
+-- -- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- -
+-- -- - Table structure for t_medic_chemicalexam 化验单明细
+-- -- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
 DROP TABLE IF EXISTS `t_medic_chemicalexam`;
 CREATE TABLE `t_medic_chemicalexam` (
   `uuid` VARCHAR(36) NOT NULL,
@@ -810,9 +810,9 @@ CREATE TABLE `t_medic_chemicalexam` (
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
 
--- ------------------------------------------------------------
--- --- Table structure for t_check_process_sheet 检查处理单据 new
--- -----------------------------------------------------------
+-- -- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- -
+-- -- - Table structure for t_check_process_sheet 检查处理单据 new
+-- -- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
 DROP TABLE IF EXISTS `t_check_process_sheet`;
 CREATE TABLE `t_check_process_sheet` (
   `uuid` VARCHAR(36) NOT NULL,
@@ -860,9 +860,9 @@ CREATE TABLE `t_check_process_sheet` (
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
 
---------------------------------------------------------------
------ Table structure for t_approve_status_entity  审批状态实体
--- -----------------------------------------------------------
+-- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
+-- --- Table structure for t_approve_status_entity  审批状态实体
+-- -- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
 DROP TABLE IF EXISTS `t_approve_status_entity`;
 CREATE TABLE `t_approve_status_entity` (
   `uuid` VARCHAR(36) NOT NULL,
@@ -879,9 +879,9 @@ CREATE TABLE `t_approve_status_entity` (
   PRIMARY KEY (`uuid`)
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
---------------------------------------------------------------
------ Table structure for t_warehouse_outrecord_detail  出库记录明细
--- -----------------------------------------------------------
+-- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
+-- --- Table structure for t_warehouse_outrecord_detail  出库记录明细
+-- -- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
 DROP TABLE IF EXISTS `t_warehouse_outrecord_detail`;
 CREATE TABLE `t_warehouse_outrecord_detail` (
   `uuid` VARCHAR(36) NOT NULL,
@@ -915,9 +915,9 @@ CREATE TABLE `t_warehouse_outrecord_detail` (
   PRIMARY KEY (`uuid`)
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
---------------------------------------------------------------
------ Table structure for t_warehouse_outrecord  出库记录
--- -----------------------------------------------------------
+-- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
+-- --- Table structure for t_warehouse_outrecord  出库记录
+-- -- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
 DROP TABLE IF EXISTS `t_warehouse_outrecord`;
 CREATE TABLE `t_warehouse_outrecord` (
   `uuid` VARCHAR(36) NOT NULL,
@@ -941,9 +941,9 @@ CREATE TABLE `t_warehouse_outrecord` (
   PRIMARY KEY (`uuid`)
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
---------------------------------------------------------------
------ Table structure for t_warehouse_moverecord_detail  出库记录
--- -----------------------------------------------------------
+-- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
+-- --- Table structure for t_warehouse_moverecord_detail  出库记录
+-- -- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
 DROP TABLE IF EXISTS `t_warehouse_moverecord_detail`;
 CREATE TABLE `t_warehouse_moverecord_detail` (
   `uuid` VARCHAR(36) NOT NULL,
@@ -978,9 +978,9 @@ CREATE TABLE `t_warehouse_moverecord_detail` (
   PRIMARY KEY (`uuid`)
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
---------------------------------------------------------------
------ Table structure for t_warehouse_moverecord  移库记录
--- -----------------------------------------------------------
+-- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
+-- --- Table structure for t_warehouse_moverecord  移库记录
+-- -- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
 DROP TABLE IF EXISTS `t_warehouse_moverecord`;
 CREATE TABLE `t_warehouse_moverecord` (
   `uuid` VARCHAR(36) NOT NULL,
@@ -1006,9 +1006,9 @@ CREATE TABLE `t_warehouse_moverecord` (
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
 
---------------------------------------------------------------
------ Table structure for t_warehouse_inventory  仓库存货清单
--- -----------------------------------------------------------
+-- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
+-- --- Table structure for t_warehouse_inventory  仓库存货清单
+-- -- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
 DROP TABLE IF EXISTS `t_warehouse_inventory`;
 CREATE TABLE `t_warehouse_inventory` (
   `uuid` VARCHAR(36) NOT NULL,
@@ -1028,9 +1028,9 @@ CREATE TABLE `t_warehouse_inventory` (
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
 
---------------------------------------------------------------
------ Table structure for t_warehouse_inrecord_detail  进库记录明细
--- -----------------------------------------------------------
+-- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
+-- --- Table structure for t_warehouse_inrecord_detail  进库记录明细
+-- -- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
 DROP TABLE IF EXISTS `t_warehouse_inrecord_detail`;
 CREATE TABLE `t_warehouse_inrecord_detail` (
   `uuid` VARCHAR(36) NOT NULL,
@@ -1066,9 +1066,9 @@ CREATE TABLE `t_warehouse_inrecord_detail` (
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
 
---------------------------------------------------------------
------ Table structure for t_warehouse_inrecord  进库记录
--- -----------------------------------------------------------
+-- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
+-- --- Table structure for t_warehouse_inrecord  进库记录
+-- -- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
 DROP TABLE IF EXISTS `t_warehouse_inrecord`;
 CREATE TABLE `t_warehouse_inrecord` (
   `uuid` VARCHAR(36) NOT NULL,
@@ -1097,9 +1097,9 @@ CREATE TABLE `t_warehouse_inrecord` (
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
 
---------------------------------------------------------------
------ Table structure for t_warehouse_backrecord_detail  退回记录明细
--- -----------------------------------------------------------
+-- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
+-- --- Table structure for t_warehouse_backrecord_detail  退回记录明细
+-- -- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
 DROP TABLE IF EXISTS `t_warehouse_backrecord_detail`;
 CREATE TABLE `t_warehouse_backrecord_detail` (
   `uuid` VARCHAR(36) NOT NULL,
@@ -1135,9 +1135,9 @@ CREATE TABLE `t_warehouse_backrecord_detail` (
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
 
---------------------------------------------------------------
------ Table structure for t_warehouse_backrecord  退回记录
--- -----------------------------------------------------------
+-- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
+-- --- Table structure for t_warehouse_backrecord  退回记录
+-- -- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
 DROP TABLE IF EXISTS `t_warehouse_backrecord`;
 CREATE TABLE `t_warehouse_backrecord` (
   `uuid` VARCHAR(36) NOT NULL,
@@ -1166,9 +1166,9 @@ CREATE TABLE `t_warehouse_backrecord` (
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
 
---------------------------------------------------------------
------ Table structure for t_vip_input_tem  VIP信息
--- -----------------------------------------------------------
+-- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
+-- --- Table structure for t_vip_input_tem  VIP信息
+-- -- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
 DROP TABLE IF EXISTS `t_vip_input_tem`;
 CREATE TABLE `t_vip_input_tem` (
   `uuid` VARCHAR(36) NOT NULL,
@@ -1194,9 +1194,9 @@ CREATE TABLE `t_vip_input_tem` (
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
 
---------------------------------------------------------------
------ Table structure for t_store_direct_sell_detail  仓库直销明细
--- -----------------------------------------------------------
+-- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
+-- --- Table structure for t_store_direct_sell_detail  仓库直销明细
+-- -- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
 DROP TABLE IF EXISTS `t_store_direct_sell_detail`;
 CREATE TABLE `t_store_direct_sell_detail` (
   `uuid` VARCHAR(36) NOT NULL,
@@ -1227,9 +1227,9 @@ CREATE TABLE `t_store_direct_sell_detail` (
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
 
---------------------------------------------------------------
------ Table structure for t_store_direct_sell  仓库直销主表
--- -----------------------------------------------------------
+-- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
+-- --- Table structure for t_store_direct_sell  仓库直销主表
+-- -- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
 DROP TABLE IF EXISTS `t_store_direct_sell`;
 CREATE TABLE `t_store_direct_sell` (
   `uuid` VARCHAR(36) NOT NULL,
@@ -1255,9 +1255,9 @@ CREATE TABLE `t_store_direct_sell` (
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
 
---------------------------------------------------------------
------ Table structure for t_service_detail  服务明细
--- -----------------------------------------------------------
+-- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
+-- --- Table structure for t_service_detail  服务明细
+-- -- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
 DROP TABLE IF EXISTS `t_service_detail`;
 CREATE TABLE `t_service_detail` (
   `uuid` VARCHAR(36) NOT NULL,
@@ -1282,9 +1282,9 @@ CREATE TABLE `t_service_detail` (
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
 
---------------------------------------------------------------
------ Table structure for t_service  服务主表
--- -----------------------------------------------------------
+-- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
+-- --- Table structure for t_service  服务主表
+-- -- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
 DROP TABLE IF EXISTS `t_service`;
 CREATE TABLE `t_service` (
   `uuid` VARCHAR(36) NOT NULL,
@@ -1313,9 +1313,9 @@ CREATE TABLE `t_service` (
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
 
---------------------------------------------------------------
------ Table structure for t_serial_number  序列号
--- -----------------------------------------------------------
+-- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
+-- --- Table structure for t_serial_number  序列号
+-- -- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
 DROP TABLE IF EXISTS `t_serial_number`;
 CREATE TABLE `t_serial_number` (
   `uuid` VARCHAR(36) NOT NULL,
@@ -1330,9 +1330,9 @@ CREATE TABLE `t_serial_number` (
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
 
---------------------------------------------------------------
------ Table structure for t_reward_point_log  序列号
--- -----------------------------------------------------------
+-- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
+-- --- Table structure for t_reward_point_log  序列号
+-- -- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
 DROP TABLE IF EXISTS `t_reward_point_log`;
 CREATE TABLE `t_reward_point_log` (
   `uuid` VARCHAR(36) NOT NULL,
@@ -1360,9 +1360,9 @@ CREATE TABLE `t_reward_point_log` (
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
 
---------------------------------------------------------------
------ Table structure for t_rewardpoint_exchange_detail  赔偿交换细节
--- -----------------------------------------------------------
+-- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
+-- --- Table structure for t_rewardpoint_exchange_detail  赔偿交换细节
+-- -- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
 DROP TABLE IF EXISTS `t_reward_point_log`;
 CREATE TABLE `t_reward_point_log` (
   `uuid` VARCHAR(36) NOT NULL,
@@ -1386,9 +1386,9 @@ CREATE TABLE `t_reward_point_log` (
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
 
---------------------------------------------------------------
------ Table structure for t_rewardpoint_exchange  赔偿交换
--- -----------------------------------------------------------
+-- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
+-- --- Table structure for t_rewardpoint_exchange  赔偿交换
+-- -- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
 DROP TABLE IF EXISTS `t_rewardpoint_exchange`;
 CREATE TABLE `t_rewardpoint_exchange` (
   `uuid` VARCHAR(36) NOT NULL,
@@ -1409,9 +1409,9 @@ CREATE TABLE `t_rewardpoint_exchange` (
 
 
 
---------------------------------------------------------------
------ Table structure for t_return_commodity_detail  返回商品明细
--- -----------------------------------------------------------
+-- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
+-- --- Table structure for t_return_commodity_detail  返回商品明细
+-- -- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
 DROP TABLE IF EXISTS `t_return_commodity_detail`;
 CREATE TABLE `t_return_commodity_detail` (
   `uuid` VARCHAR(36) NOT NULL,
@@ -1447,9 +1447,9 @@ CREATE TABLE `t_return_commodity_detail` (
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
 
---------------------------------------------------------------
------ Table structure for t_return_commodity  返回商品主表
--- -----------------------------------------------------------
+-- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
+-- --- Table structure for t_return_commodity  返回商品主表
+-- -- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
 DROP TABLE IF EXISTS `t_return_commodity`;
 CREATE TABLE `t_return_commodity` (
   `uuid` VARCHAR(36) NOT NULL,
@@ -1476,9 +1476,9 @@ CREATE TABLE `t_return_commodity` (
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
 
---------------------------------------------------------------
------ Table structure for t_prompt  急诊表
--- -----------------------------------------------------------
+-- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
+-- --- Table structure for t_prompt  急诊表
+-- -- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
 DROP TABLE IF EXISTS `t_prompt`;
 CREATE TABLE `t_prompt` (
   `uuid` VARCHAR(36) NOT NULL,
@@ -1518,9 +1518,9 @@ CREATE TABLE `t_prompt` (
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
 
---------------------------------------------------------------
------ Table structure for t_prepay_money  提前付费表
--- -----------------------------------------------------------
+-- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
+-- --- Table structure for t_prepay_money  提前付费表
+-- -- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
 DROP TABLE IF EXISTS `t_prepay_money`;
 CREATE TABLE `t_prepay_money` (
   `uuid` VARCHAR(36) NOT NULL,
@@ -1541,9 +1541,9 @@ CREATE TABLE `t_prepay_money` (
 
 
 
---------------------------------------------------------------
------ Table structure for t_phone_message  电话信息表
--- -----------------------------------------------------------
+-- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
+-- --- Table structure for t_phone_message  电话信息表
+-- -- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
 DROP TABLE IF EXISTS `t_phone_message`;
 CREATE TABLE `t_phone_message` (
   `uuid` VARCHAR(36) NOT NULL,
@@ -1565,44 +1565,44 @@ CREATE TABLE `t_phone_message` (
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
 
---------------------------------------------------------------
------ Table structure for t_pet_small_race  宠物竞赛表
--- -----------------------------------------------------------
-DROP TABLE IF EXISTS `t_pet_small_race`;
-CREATE TABLE `t_pet_small_race` (
-  `uuid` VARCHAR(36) NOT NULL,
-  `race_id` varchar(36)null,-- 竞赛ID
-	`pet_race_name` varchar(50) null,-- 宠物竞赛名称
-	`pet_type` varchar(50) null,-- 宠物类型
-  `create_user_id` varchar(36) not null,
-  `create_date` timestamp not null default current_timestamp on update current_timestamp,
-  `update_user_id` varchar(36) not null,
-  `update_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  `status` varchar(32) NOT NULL DEFAULT 'OK',
-  PRIMARY KEY (`uuid`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
+-- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
+-- --- Table structure for t_pet_small_race  宠物竞赛表
+-- -- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
+-- DROP TABLE IF EXISTS `t_pet_small_race`;
+-- CREATE TABLE `t_pet_small_race` (
+--   `uuid` VARCHAR(36) NOT NULL,
+--   `race_id` varchar(36)null,-- 竞赛ID
+-- 	`pet_race_name` varchar(50) null,-- 宠物竞赛名称
+-- 	`pet_type` varchar(50) null,-- 宠物类型
+--   `create_user_id` varchar(36) not null,
+--   `create_date` timestamp not null default current_timestamp on update current_timestamp,
+--   `update_user_id` varchar(36) not null,
+--   `update_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+--   `status` varchar(32) NOT NULL DEFAULT 'OK',
+--   PRIMARY KEY (`uuid`)
+-- ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
 
---------------------------------------------------------------
------ Table structure for t_pet_race  宠物竞赛类型表
--- -----------------------------------------------------------
-DROP TABLE IF EXISTS `t_pet_race`;
-CREATE TABLE `t_pet_race` (
-  `uuid` VARCHAR(36) NOT NULL,
-  `big_type_name` varchar(50)null,-- 大类名称
-	`mdic_type_name` varchar(50) null,-- 类型名称
-  `create_user_id` varchar(36) not null,
-  `create_date` timestamp not null default current_timestamp on update current_timestamp,
-  `update_user_id` varchar(36) not null,
-  `update_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  `status` varchar(32) NOT NULL DEFAULT 'OK',
-  PRIMARY KEY (`uuid`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
+-- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
+-- --- Table structure for t_pet_race  宠物竞赛类型表
+-- -- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
+-- DROP TABLE IF EXISTS `t_pet_race`;
+-- CREATE TABLE `t_pet_race` (
+--   `uuid` VARCHAR(36) NOT NULL,
+--   `big_type_name` varchar(50)null,-- 大类名称
+-- 	`mdic_type_name` varchar(50) null,-- 类型名称
+--   `create_user_id` varchar(36) not null,
+--   `create_date` timestamp not null default current_timestamp on update current_timestamp,
+--   `update_user_id` varchar(36) not null,
+--   `update_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+--   `status` varchar(32) NOT NULL DEFAULT 'OK',
+--   PRIMARY KEY (`uuid`)
+-- ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
 
---------------------------------------------------------------
------ Table structure for t_micro_sms_config  消息提醒配置表
--- -----------------------------------------------------------
+-- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
+-- --- Table structure for t_micro_sms_config  消息提醒配置表
+-- -- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
 DROP TABLE IF EXISTS `t_micro_sms_config`;
 CREATE TABLE `t_micro_sms_config` (
   `uuid` VARCHAR(36) NOT NULL,
@@ -1619,9 +1619,9 @@ CREATE TABLE `t_micro_sms_config` (
 
 
 
---------------------------------------------------------------
------ Table structure for t_medic_vedio_exam  医生录像实例表
--- -----------------------------------------------------------
+-- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
+-- --- Table structure for t_medic_vedio_exam  医生录像实例表
+-- -- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
 /*DROP TABLE IF EXISTS `t_medic_vedio_exam`;
 CREATE TABLE `t_medic_vedio_exam` (
   `uuid` VARCHAR(36) NOT NULL,
@@ -1644,9 +1644,9 @@ CREATE TABLE `t_medic_vedio_exam` (
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;*/
 
 
---------------------------------------------------------------
------ Table structure for t_medic_vaccine  育苗表
--- -----------------------------------------------------------
+-- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
+-- --- Table structure for t_medic_vaccine  育苗表
+-- -- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
 DROP TABLE IF EXISTS `t_medic_vaccine`;
 CREATE TABLE `t_medic_vaccine` (
   `uuid` VARCHAR(36) NOT NULL,
@@ -1694,9 +1694,9 @@ CREATE TABLE `t_medic_vaccine` (
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
 
---------------------------------------------------------------
------ Table structure for t_medic_supplies  医生供应量表
--- -----------------------------------------------------------
+-- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
+-- --- Table structure for t_medic_supplies  医生供应量表
+-- -- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
 DROP TABLE IF EXISTS `t_medic_supplies`;
 CREATE TABLE `t_medic_supplies` (
   `uuid` VARCHAR(36) NOT NULL,
@@ -1721,9 +1721,9 @@ CREATE TABLE `t_medic_supplies` (
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
 
---------------------------------------------------------------
------ Table structure for t_medic_register_record  医生登记记录明细
--- -----------------------------------------------------------
+-- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
+-- --- Table structure for t_medic_register_record  医生登记记录明细
+-- -- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
 DROP TABLE IF EXISTS `t_medic_register_record`;
 CREATE TABLE `t_medic_register_record` (
   `uuid` VARCHAR(36) NOT NULL,
@@ -1753,9 +1753,9 @@ CREATE TABLE `t_medic_register_record` (
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
 
---------------------------------------------------------------
------ Table structure for t_medic_prescription_detail  医生处方明细
--- -----------------------------------------------------------
+-- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
+-- --- Table structure for t_medic_prescription_detail  医生处方明细
+-- -- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
 DROP TABLE IF EXISTS `t_medic_prescription_detail`;
 CREATE TABLE `t_medic_prescription_detail` (
   `uuid` VARCHAR(36) NOT NULL,
@@ -1786,9 +1786,9 @@ CREATE TABLE `t_medic_prescription_detail` (
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
 
---------------------------------------------------------------
------ Table structure for b_medic_prescription  医生处方明细
--- -----------------------------------------------------------
+-- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
+-- --- Table structure for b_medic_prescription  医生处方明细
+-- -- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
 DROP TABLE IF EXISTS `t_medic_prescription`;
 CREATE TABLE `t_medic_prescription` (
   `uuid` VARCHAR(36) NOT NULL,
@@ -1811,9 +1811,9 @@ CREATE TABLE `t_medic_prescription` (
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
 
---------------------------------------------------------------
------ Table structure for t_medic_medictreat_record  医生处理记录
--- -----------------------------------------------------------
+-- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
+-- --- Table structure for t_medic_medictreat_record  医生处理记录
+-- -- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
 DROP TABLE IF EXISTS `t_medic_medictreat_record`;
 CREATE TABLE `t_medic_medictreat_record` (
   `uuid` VARCHAR(36) NOT NULL,
@@ -1842,9 +1842,9 @@ CREATE TABLE `t_medic_medictreat_record` (
   PRIMARY KEY (`uuid`)
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
--------------------------------------------------------------
------ Table structure for t_medic_chemical_examtype_detail  医生化验实例类型细节表
--- -----------------------------------------------------------
+-- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --
+-- --- Table structure for t_medic_chemical_examtype_detail  医生化验实例类型细节表
+-- -- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
 DROP TABLE IF EXISTS `t_medic_chemical_examtype_detail`;
 CREATE TABLE `t_medic_chemical_examtype_detail` (
   `uuid` VARCHAR(36) NOT NULL,
@@ -1865,9 +1865,9 @@ CREATE TABLE `t_medic_chemical_examtype_detail` (
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
 
--------------------------------------------------------------
------ Table structure for t_medic_chemical_examtype  医生化验实例类型细节表
--- -----------------------------------------------------------
+-- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --
+-- --- Table structure for t_medic_chemical_examtype  医生化验实例类型细节表
+-- -- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
 DROP TABLE IF EXISTS `t_medic_chemical_examtype`;
 CREATE TABLE `t_medic_chemical_examtype` (
   `uuid` VARCHAR(36) NOT NULL,
