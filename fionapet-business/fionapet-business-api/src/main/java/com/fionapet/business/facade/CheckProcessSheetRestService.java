@@ -1,7 +1,8 @@
 package com.fionapet.business.facade;
 
-import cn.fiona.pet.account.facade.AuthRestService;
-import cn.fiona.pet.account.facade.RestResult;
+import org.dubbo.x.facade.CURDRestService;
+import org.dubbo.x.facade.RestResult;
+import org.dubbo.x.util.ConstantVariable;
 import com.alibaba.dubbo.rpc.protocol.rest.support.ContentType;
 import com.fionapet.business.entity.CheckProcessSheet;
 import io.swagger.annotations.Api;
@@ -15,7 +16,7 @@ import java.util.List;
 /**
  * 检查处理单据 接口
  *
- * @author baiqw
+* Created by tom on 2016-07-18 11:56:10.
  */
 
 @Path("checkprocesssheets")
@@ -31,7 +32,7 @@ public interface CheckProcessSheetRestService extends CURDRestService<CheckProce
     @Path("")
     @ApiOperation(value = "检查处理单据",
             notes = "检查处理单据列表.")
-    RestResult<List<CheckProcessSheet>> list(@HeaderParam(AuthRestService.HEADER_AUTHORIZATION_KEY) String token);
+    RestResult<List<CheckProcessSheet>> list(@HeaderParam(ConstantVariable.HEADER_AUTHORIZATION_KEY) String token);
 
     /**
      * 检查处理单据 详细信息
@@ -42,15 +43,15 @@ public interface CheckProcessSheetRestService extends CURDRestService<CheckProce
     @Path("/{id}")
     @ApiOperation(value = "详细信息",
             notes = "检查处理单据详细信息.")
-    RestResult<CheckProcessSheet> detail(@HeaderParam(AuthRestService.HEADER_AUTHORIZATION_KEY) String token, @ApiParam("id") @PathParam("id") String uuid);
+    RestResult<CheckProcessSheet> detail(@HeaderParam(ConstantVariable.HEADER_AUTHORIZATION_KEY) String token, @ApiParam("id") @PathParam("id") String uuid);
 
     @POST
     @Path("")
     @ApiOperation(value = "添加/修改检查处理单据", notes = "添加/修改检查处理单据")
-    RestResult<CheckProcessSheet> create(@HeaderParam(AuthRestService.HEADER_AUTHORIZATION_KEY) String token,CheckProcessSheet checkProcessSheet);
+    RestResult<CheckProcessSheet> create(@HeaderParam(ConstantVariable.HEADER_AUTHORIZATION_KEY) String token,CheckProcessSheet checkProcessSheet);
 
     @DELETE
     @Path("/{id}")
     @ApiOperation(value = "删除检查处理单据", notes = "删除检查处理单据")
-    RestResult<String> delete(@HeaderParam(AuthRestService.HEADER_AUTHORIZATION_KEY) String token, @ApiParam("id") @PathParam("id") String uuid);
+    RestResult<String> delete(@HeaderParam(ConstantVariable.HEADER_AUTHORIZATION_KEY) String token, @ApiParam("id") @PathParam("id") String uuid);
 }

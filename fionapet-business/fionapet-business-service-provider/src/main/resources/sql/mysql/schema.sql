@@ -1753,11 +1753,71 @@ CREATE TABLE `t_medic_register_record` (
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
 
+
 -- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
--- --- Table structure for t_medic_prescription_detail  医生处方明细
+-- --- Table structure for t_base_medic_prescription_detail  处方明细
 -- -- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
-DROP TABLE IF EXISTS `t_medic_prescription_detail`;
-CREATE TABLE `t_medic_prescription_detail` (
+DROP TABLE IF EXISTS `t_base_medic_prescription_detail`;
+CREATE TABLE `t_base_medic_prescription_detail` (
+  `id` VARCHAR(36) NOT NULL,
+  `prescription_id` varchar(36)  null,-- 处方ID
+  `item_name` varchar(100) null,-- 类型名称
+  `item_code` varchar(50)  null,-- 类型编号
+  `item_cost` DOUBLE null,-- 类型费用
+  `item_num` INTEGER  null,-- 类型数量
+  `recipe_unit` varchar(50) null,-- 食谱单位
+  `use_way` varchar(50) null,-- 食用方式
+  `group_name` varchar(50)  null,-- 组名称
+  `paid_status` varchar(50)  null,-- 影像状态
+  `paid_time` TIMESTAMP null,-- 影像时间
+  `item_count_status` varchar(50) null,-- 类型状态
+  `manufacturer_code` varchar(50) null,-- 生产编号
+  `manufacturer_name` varchar(200) null,-- 生产名称
+  `executor_id` varchar(36)  null,-- 执行ID
+  `executor_name` varchar(50)  null,-- 执行名称
+  `frequency` varchar(200)  null,-- 发生率
+  `dose` varchar(50) null,-- 一次剂量
+  `use_unit` varchar(50) null,-- 使用单位
+  `create_user_id` varchar(36) not null,
+  `create_date` timestamp not null default current_timestamp on update current_timestamp,
+  `update_user_id` varchar(36) not null,
+  `update_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `status` varchar(32) NOT NULL DEFAULT 'OK',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
+
+
+-- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
+-- --- Table structure for t_base_medic_prescription  处方
+-- -- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
+DROP TABLE IF EXISTS `t_base_medic_prescription`;
+CREATE TABLE `t_base_medic_prescription` (
+  `id` VARCHAR(36) NOT NULL,
+  `medic_record_code` varchar(50) null,-- 医生记录编号
+  `medic_record_id` VARCHAR(36) null,-- 记录名称
+  `prescription_code` varchar(50) null,-- 开处方编号
+  `prescription_cost` double null,-- 开处方费用
+  `gest_name` varchar(50) null,-- 宠物主人名称
+  `pet_name` varchar(50) null,-- 宠物名称
+  `sick_file_code` varchar(50) null,-- 病例编号
+  `doctor` varchar(50) null,-- 医生
+  `paid_status` varchar(50) null,-- 影像状态
+  `paid_time` timestamp null,-- 影像时间
+  `create_user_id` varchar(36) not null,
+  `create_date` timestamp not null default current_timestamp on update current_timestamp,
+  `update_user_id` varchar(36) not null,
+  `update_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `status` varchar(32) NOT NULL DEFAULT 'OK',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
+
+
+
+-- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
+-- --- Table structure for t_in_hospital_prescription_detail  住院处方明细
+-- -- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
+DROP TABLE IF EXISTS `t_in_hospital_prescription_detail`;
+CREATE TABLE `t_in_hospital_prescription_detail` (
   `id` VARCHAR(36) NOT NULL,
   `prescription_id` varchar(36)  null,-- 处方ID
   `item_name` varchar(100) null,-- 类型名称
@@ -1787,13 +1847,13 @@ CREATE TABLE `t_medic_prescription_detail` (
 
 
 -- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
--- --- Table structure for b_medic_prescription  医生处方明细
+-- --- Table structure for t_in_hospital_prescription  住院处方明细
 -- -- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
-DROP TABLE IF EXISTS `t_medic_prescription`;
-CREATE TABLE `t_medic_prescription` (
+DROP TABLE IF EXISTS `t_in_hospital_prescription`;
+CREATE TABLE `t_in_hospital_prescription` (
   `id` VARCHAR(36) NOT NULL,
-  `medic_record_code` varchar(50) null,-- 医生记录编号
-	`medic_record_id` VARCHAR(36) null,-- 记录名称
+  `in_hospital_no` varchar(50) null,-- 医生记录编号
+	`in_hospital_id` VARCHAR(36) null,-- 记录名称
 	`prescription_code` varchar(50) null,-- 开处方编号
 	`prescription_cost` double null,-- 开处方费用
 	`gest_name` varchar(50) null,-- 宠物主人名称

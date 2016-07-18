@@ -18,4 +18,194 @@
     <dubbo:reference id="appConfigService" interface="com.fionapet.business.service.AppConfigService"/>
     <!-- 应用配置 service -->
 
+
+	<!-- 电话信息表 service -->
+    <dubbo:reference id="phoneMessageService" interface="com.fionapet.business.service.PhoneMessageService"/>
+    <!-- 电话信息表 service -->
+
+
+	<!-- 移库记录 service -->
+    <dubbo:reference id="warehouseMoverecordService" interface="com.fionapet.business.service.WarehouseMoverecordService"/>
+    <!-- 移库记录 service -->
+
+
+	<!-- 仓库存货清单 service -->
+    <dubbo:reference id="warehouseInventoryService" interface="com.fionapet.business.service.WarehouseInventoryService"/>
+    <!-- 仓库存货清单 service -->
+
+
+	<!-- 医生化验实例类型细节表 service -->
+    <dubbo:reference id="medicChemicalExamtypeDetailService" interface="com.fionapet.business.service.MedicChemicalExamtypeDetailService"/>
+    <!-- 医生化验实例类型细节表 service -->
+
+
+	<!-- 退回记录 service -->
+    <dubbo:reference id="warehouseBackrecordService" interface="com.fionapet.business.service.WarehouseBackrecordService"/>
+    <!-- 退回记录 service -->
+
+
+	<!-- 仓库直销主表 service -->
+    <dubbo:reference id="storeDirectSellService" interface="com.fionapet.business.service.StoreDirectSellService"/>
+    <!-- 仓库直销主表 service -->
+
+
+	<!-- 育苗表 service -->
+    <dubbo:reference id="medicVaccineService" interface="com.fionapet.business.service.MedicVaccineService"/>
+    <!-- 育苗表 service -->
+
+
+	<!-- 医生处方明细 service -->
+    <dubbo:reference id="medicPrescriptionService" interface="com.fionapet.business.service.MedicPrescriptionService"/>
+    <!-- 医生处方明细 service -->
+
+
+	<!-- 医生供应量表 service -->
+    <dubbo:reference id="medicSuppliesService" interface="com.fionapet.business.service.MedicSuppliesService"/>
+    <!-- 医生供应量表 service -->
+
+
+	<!-- 序列号 service -->
+    <dubbo:reference id="rewardPointLogService" interface="com.fionapet.business.service.RewardPointLogService"/>
+    <!-- 序列号 service -->
+
+
+	<!-- 退回记录明细 service -->
+    <dubbo:reference id="warehouseBackrecordDetailService" interface="com.fionapet.business.service.WarehouseBackrecordDetailService"/>
+    <!-- 退回记录明细 service -->
+
+
+	<!-- 返回商品主表 service -->
+    <dubbo:reference id="returnCommodityService" interface="com.fionapet.business.service.ReturnCommodityService"/>
+    <!-- 返回商品主表 service -->
+
+
+	<!-- 医生处方明细 service -->
+    <dubbo:reference id="medicPrescriptionDetailService" interface="com.fionapet.business.service.MedicPrescriptionDetailService"/>
+    <!-- 医生处方明细 service -->
+
+
+	<!-- 消息提醒配置表 service -->
+    <dubbo:reference id="microSmsConfigService" interface="com.fionapet.business.service.MicroSmsConfigService"/>
+    <!-- 消息提醒配置表 service -->
+
+
+	<!-- 进库记录 service -->
+    <dubbo:reference id="warehouseInrecordService" interface="com.fionapet.business.service.WarehouseInrecordService"/>
+    <!-- 进库记录 service -->
+
+
+	<!-- 医生登记记录明细 service -->
+    <dubbo:reference id="medicRegisterRecordService" interface="com.fionapet.business.service.MedicRegisterRecordService"/>
+    <!-- 医生登记记录明细 service -->
+
+
+	<!-- 提前付费表 service -->
+    <dubbo:reference id="prepayMoneyService" interface="com.fionapet.business.service.PrepayMoneyService"/>
+    <!-- 提前付费表 service -->
+
+
+	<!-- 进库记录明细 service -->
+    <dubbo:reference id="warehouseInrecordDetailService" interface="com.fionapet.business.service.WarehouseInrecordDetailService"/>
+    <!-- 进库记录明细 service -->
+
+
+	<!-- 急诊表 service -->
+    <dubbo:reference id="promptService" interface="com.fionapet.business.service.PromptService"/>
+    <!-- 急诊表 service -->
+
+
+	<!-- 服务明细 service -->
+    <dubbo:reference id="serviceDetailService" interface="com.fionapet.business.service.ServiceDetailService"/>
+    <!-- 服务明细 service -->
+
+
+	<!-- 检查处理单据 service -->
+    <dubbo:reference id="checkProcessSheetService" interface="com.fionapet.business.service.CheckProcessSheetService"/>
+    <!-- 检查处理单据 service -->
+
+
+	<!-- 出库记录 service -->
+    <dubbo:reference id="warehouseOutrecordService" interface="com.fionapet.business.service.WarehouseOutrecordService"/>
+    <!-- 出库记录 service -->
+
+
+	<!-- 医生化验实例类型细节表 service -->
+    <dubbo:reference id="medicChemicalExamtypeService" interface="com.fionapet.business.service.MedicChemicalExamtypeService"/>
+    <!-- 医生化验实例类型细节表 service -->
+
+
+	<!-- 医生处理记录 service -->
+    <dubbo:reference id="medicMedictreatRecordService" interface="com.fionapet.business.service.MedicMedictreatRecordService"/>
+    <!-- 医生处理记录 service -->
+
+
+	<!-- 赔偿交换细节 service -->
+    <dubbo:reference id="rewardpointExchangeDetailService" interface="com.fionapet.business.service.RewardpointExchangeDetailService"/>
+    <!-- 赔偿交换细节 service -->
+
+
+	<!-- 出库记录明细 service -->
+    <dubbo:reference id="warehouseOutrecordDetailService" interface="com.fionapet.business.service.WarehouseOutrecordDetailService"/>
+    <!-- 出库记录明细 service -->
+
+
+	<!-- 赔偿交换 service -->
+    <dubbo:reference id="rewardpointExchangeService" interface="com.fionapet.business.service.RewardpointExchangeService"/>
+    <!-- 赔偿交换 service -->
+
+
+	<!-- 序列号 service -->
+    <dubbo:reference id="serialNumberService" interface="com.fionapet.business.service.SerialNumberService"/>
+    <!-- 序列号 service -->
+
+
+	<!-- VIP信息 service -->
+    <dubbo:reference id="vipInputTemService" interface="com.fionapet.business.service.VipInputTemService"/>
+    <!-- VIP信息 service -->
+
+
+	<!-- 审批状态实体 service -->
+    <dubbo:reference id="approveStatusEntityService" interface="com.fionapet.business.service.ApproveStatusEntityService"/>
+    <!-- 审批状态实体 service -->
+
+
+	<!-- 移库记录明细 service -->
+    <dubbo:reference id="warehouseMoverecordDetailService" interface="com.fionapet.business.service.WarehouseMoverecordDetailService"/>
+    <!-- 移库记录明细 service -->
+
+
+	<!-- 仓库直销明细 service -->
+    <dubbo:reference id="storeDirectSellDetailService" interface="com.fionapet.business.service.StoreDirectSellDetailService"/>
+    <!-- 仓库直销明细 service -->
+
+
+	<!-- 返回商品明细 service -->
+    <dubbo:reference id="returnCommodityDetailService" interface="com.fionapet.business.service.ReturnCommodityDetailService"/>
+    <!-- 返回商品明细 service -->
+
+
+	<!-- 服务主表 service -->
+    <dubbo:reference id="serviceService" interface="com.fionapet.business.service.ServiceService"/>
+    <!-- 服务主表 service -->
+
+
+	<!-- 住院处方明细 service -->
+    <dubbo:reference id="inHospitalPrescriptionDetailService" interface="com.fionapet.business.service.InHospitalPrescriptionDetailService"/>
+    <!-- 住院处方明细 service -->
+
+
+	<!-- 住院处方 service -->
+    <dubbo:reference id="inHospitalPrescriptionService" interface="com.fionapet.business.service.InHospitalPrescriptionService"/>
+    <!-- 住院处方 service -->
+
+
+	<!-- 处方明细 service -->
+    <dubbo:reference id="baseMedicPrescriptionDetailService" interface="com.fionapet.business.service.BaseMedicPrescriptionDetailService"/>
+    <!-- 处方明细 service -->
+
+
+	<!-- 处方 service -->
+    <dubbo:reference id="baseMedicPrescriptionService" interface="com.fionapet.business.service.BaseMedicPrescriptionService"/>
+    <!-- 处方 service -->
+
 </beans>

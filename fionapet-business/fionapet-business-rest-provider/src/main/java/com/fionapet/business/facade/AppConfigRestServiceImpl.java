@@ -1,16 +1,15 @@
 package com.fionapet.business.facade;
 
 import com.fionapet.business.entity.AppConfig;
-import com.fionapet.business.service.CURDService;
+import org.dubbo.x.service.CURDService;
+import org.dubbo.x.facade.RestServiceBase;
 import com.fionapet.business.service.AppConfigService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- * 提醒配置表
- * User: baiqw
- * Date: 14-12-9
- * Time: 下午3:45
+ * 应用配置
+* Created by tom on 2016-07-18 11:56:10.
  */
 public class AppConfigRestServiceImpl extends RestServiceBase<AppConfig> implements AppConfigRestService {
 

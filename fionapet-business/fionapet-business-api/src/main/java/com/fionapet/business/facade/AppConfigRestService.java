@@ -1,7 +1,8 @@
 package com.fionapet.business.facade;
 
-import cn.fiona.pet.account.facade.AuthRestService;
-import cn.fiona.pet.account.facade.RestResult;
+import org.dubbo.x.facade.CURDRestService;
+import org.dubbo.x.facade.RestResult;
+import org.dubbo.x.util.ConstantVariable;
 import com.alibaba.dubbo.rpc.protocol.rest.support.ContentType;
 import com.fionapet.business.entity.AppConfig;
 import io.swagger.annotations.Api;
@@ -13,44 +14,44 @@ import javax.ws.rs.core.MediaType;
 import java.util.List;
 
 /**
- * 提醒配置表 接口
+ * 应用配置 接口
  *
- * @author baiqw
+* Created by tom on 2016-07-18 11:56:10.
  */
 
 @Path("appconfigs")
 @Consumes({MediaType.APPLICATION_JSON})
 @Produces({ContentType.APPLICATION_JSON_UTF_8})
-@Api(value="appconfigs", description = "提醒配置表接口")
+@Api(value="appconfigs", description = "应用配置接口")
 public interface AppConfigRestService extends CURDRestService<AppConfig>{
     /**
-     * 提醒配置表
+     * 应用配置
      * @return
      */
     @GET
     @Path("")
-    @ApiOperation(value = "提醒配置表",
-            notes = "提醒配置表列表.")
-    RestResult<List<AppConfig>> list(@HeaderParam(AuthRestService.HEADER_AUTHORIZATION_KEY) String token);
+    @ApiOperation(value = "应用配置",
+            notes = "应用配置列表.")
+    RestResult<List<AppConfig>> list(@HeaderParam(ConstantVariable.HEADER_AUTHORIZATION_KEY) String token);
 
     /**
-     * 提醒配置表 详细信息
+     * 应用配置 详细信息
      *
      * @return
      */
     @GET
     @Path("/{id}")
     @ApiOperation(value = "详细信息",
-            notes = "提醒配置表详细信息.")
-    RestResult<AppConfig> detail(@HeaderParam(AuthRestService.HEADER_AUTHORIZATION_KEY) String token, @ApiParam("id") @PathParam("id") String uuid);
+            notes = "应用配置详细信息.")
+    RestResult<AppConfig> detail(@HeaderParam(ConstantVariable.HEADER_AUTHORIZATION_KEY) String token, @ApiParam("id") @PathParam("id") String uuid);
 
     @POST
     @Path("")
-    @ApiOperation(value = "添加/修改提醒配置表", notes = "添加/修改提醒配置表")
-    RestResult<AppConfig> create(@HeaderParam(AuthRestService.HEADER_AUTHORIZATION_KEY) String token,AppConfig appConfig);
+    @ApiOperation(value = "添加/修改应用配置", notes = "添加/修改应用配置")
+    RestResult<AppConfig> create(@HeaderParam(ConstantVariable.HEADER_AUTHORIZATION_KEY) String token,AppConfig appConfig);
 
     @DELETE
     @Path("/{id}")
-    @ApiOperation(value = "删除提醒配置表", notes = "删除提醒配置表")
-    RestResult<String> delete(@HeaderParam(AuthRestService.HEADER_AUTHORIZATION_KEY) String token, @ApiParam("id") @PathParam("id") String uuid);
+    @ApiOperation(value = "删除应用配置", notes = "删除应用配置")
+    RestResult<String> delete(@HeaderParam(ConstantVariable.HEADER_AUTHORIZATION_KEY) String token, @ApiParam("id") @PathParam("id") String uuid);
 }

@@ -1,7 +1,8 @@
 package com.fionapet.business.facade;
 
-import cn.fiona.pet.account.facade.AuthRestService;
-import cn.fiona.pet.account.facade.RestResult;
+import org.dubbo.x.facade.CURDRestService;
+import org.dubbo.x.facade.RestResult;
+import org.dubbo.x.util.ConstantVariable;
 import com.alibaba.dubbo.rpc.protocol.rest.support.ContentType;
 import com.fionapet.business.entity.MedicPrescription;
 import io.swagger.annotations.Api;
@@ -13,44 +14,44 @@ import javax.ws.rs.core.MediaType;
 import java.util.List;
 
 /**
- * 医生开处方 接口
+ * 医生处方明细 接口
  *
- * @author baiqw
+* Created by tom on 2016-07-18 11:56:08.
  */
 
 @Path("medicprescriptions")
 @Consumes({MediaType.APPLICATION_JSON})
 @Produces({ContentType.APPLICATION_JSON_UTF_8})
-@Api(value="medicprescriptions", description = "医生开处方接口")
+@Api(value="medicprescriptions", description = "医生处方明细接口")
 public interface MedicPrescriptionRestService extends CURDRestService<MedicPrescription>{
     /**
-     * 医生开处方
+     * 医生处方明细
      * @return
      */
     @GET
     @Path("")
-    @ApiOperation(value = "医生开处方",
-            notes = "医生开处方列表.")
-    RestResult<List<MedicPrescription>> list(@HeaderParam(AuthRestService.HEADER_AUTHORIZATION_KEY) String token);
+    @ApiOperation(value = "医生处方明细",
+            notes = "医生处方明细列表.")
+    RestResult<List<MedicPrescription>> list(@HeaderParam(ConstantVariable.HEADER_AUTHORIZATION_KEY) String token);
 
     /**
-     * 医生开处方 详细信息
+     * 医生处方明细 详细信息
      *
      * @return
      */
     @GET
     @Path("/{id}")
     @ApiOperation(value = "详细信息",
-            notes = "医生开处方详细信息.")
-    RestResult<MedicPrescription> detail(@HeaderParam(AuthRestService.HEADER_AUTHORIZATION_KEY) String token, @ApiParam("id") @PathParam("id") String uuid);
+            notes = "医生处方明细详细信息.")
+    RestResult<MedicPrescription> detail(@HeaderParam(ConstantVariable.HEADER_AUTHORIZATION_KEY) String token, @ApiParam("id") @PathParam("id") String uuid);
 
     @POST
     @Path("")
-    @ApiOperation(value = "添加/修改医生开处方", notes = "添加/修改医生开处方")
-    RestResult<MedicPrescription> create(@HeaderParam(AuthRestService.HEADER_AUTHORIZATION_KEY) String token,MedicPrescription medicPrescription);
+    @ApiOperation(value = "添加/修改医生处方明细", notes = "添加/修改医生处方明细")
+    RestResult<MedicPrescription> create(@HeaderParam(ConstantVariable.HEADER_AUTHORIZATION_KEY) String token,MedicPrescription medicPrescription);
 
     @DELETE
     @Path("/{id}")
-    @ApiOperation(value = "删除医生开处方", notes = "删除医生开处方")
-    RestResult<String> delete(@HeaderParam(AuthRestService.HEADER_AUTHORIZATION_KEY) String token, @ApiParam("id") @PathParam("id") String uuid);
+    @ApiOperation(value = "删除医生处方明细", notes = "删除医生处方明细")
+    RestResult<String> delete(@HeaderParam(ConstantVariable.HEADER_AUTHORIZATION_KEY) String token, @ApiParam("id") @PathParam("id") String uuid);
 }

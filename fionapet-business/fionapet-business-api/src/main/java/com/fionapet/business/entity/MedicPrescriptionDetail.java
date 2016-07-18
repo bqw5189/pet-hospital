@@ -3,6 +3,8 @@ package com.fionapet.business.entity;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
+
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
@@ -12,7 +14,7 @@ import java.util.Date;
 /**
  * 医生处方明细
  * <p>
- * Created by tom on 16/7/2.
+* Created by tom on 2016-07-18 15:56:23.
  */
 @Entity
 @Table(name = "t_medic_prescription_detail")
@@ -20,9 +22,11 @@ import java.util.Date;
 public class MedicPrescriptionDetail extends CMSEntity {
     
     /**
-     * enterpriseNo
+     * 企业编号
      */
-    @ApiModelProperty(value = "enterpriseNo", required = false)
+    @ApiModelProperty(value = "企业编号", required = false)
+    
+    @Column(columnDefinition = "企业编号")
     private String enterpriseNo;
     public String getEnterpriseNo() {
         return enterpriseNo;
@@ -32,9 +36,11 @@ public class MedicPrescriptionDetail extends CMSEntity {
     }
     
     /**
-     * prescriptionId
+     * 处方ID
      */
-    @ApiModelProperty(value = "prescriptionId", required = false)
+    @ApiModelProperty(value = "处方ID", required = false)
+    
+    @Column(columnDefinition = "处方ID")
     private String prescriptionId;
     public String getPrescriptionId() {
         return prescriptionId;
@@ -44,9 +50,11 @@ public class MedicPrescriptionDetail extends CMSEntity {
     }
     
     /**
-     * itemName
+     * 类别名称
      */
-    @ApiModelProperty(value = "itemName", required = false)
+    @ApiModelProperty(value = "类别名称", required = false)
+    
+    @Column(columnDefinition = "类别名称")
     private String itemName;
     public String getItemName() {
         return itemName;
@@ -56,9 +64,11 @@ public class MedicPrescriptionDetail extends CMSEntity {
     }
     
     /**
-     * itemCode
+     * 类别编号
      */
-    @ApiModelProperty(value = "itemCode", required = false)
+    @ApiModelProperty(value = "类别编号", required = false)
+    
+    @Column(columnDefinition = "类别编号")
     private String itemCode;
     public String getItemCode() {
         return itemCode;
@@ -68,9 +78,11 @@ public class MedicPrescriptionDetail extends CMSEntity {
     }
     
     /**
-     * itemCost
+     * 费用
      */
-    @ApiModelProperty(value = "itemCost", required = false)
+    @ApiModelProperty(value = "费用", required = false)
+    
+    @Column(columnDefinition = "费用")
     private double itemCost;
     public double getItemCost() {
         return itemCost;
@@ -80,9 +92,11 @@ public class MedicPrescriptionDetail extends CMSEntity {
     }
     
     /**
-     * itemNum
+     * 数量
      */
-    @ApiModelProperty(value = "itemNum", required = false)
+    @ApiModelProperty(value = "数量", required = false)
+    
+    @Column(columnDefinition = "数量")
     private Integer itemNum;
     public Integer getItemNum() {
         return itemNum;
@@ -92,9 +106,11 @@ public class MedicPrescriptionDetail extends CMSEntity {
     }
     
     /**
-     * recipeUnit
+     * 处方单位
      */
-    @ApiModelProperty(value = "recipeUnit", required = false)
+    @ApiModelProperty(value = "处方单位", required = false)
+    
+    @Column(columnDefinition = "处方单位")
     private String recipeUnit;
     public String getRecipeUnit() {
         return recipeUnit;
@@ -104,9 +120,11 @@ public class MedicPrescriptionDetail extends CMSEntity {
     }
     
     /**
-     * useWay
+     * 使用方式
      */
-    @ApiModelProperty(value = "useWay", required = false)
+    @ApiModelProperty(value = "使用方式", required = false)
+    
+    @Column(columnDefinition = "使用方式")
     private String useWay;
     public String getUseWay() {
         return useWay;
@@ -116,9 +134,11 @@ public class MedicPrescriptionDetail extends CMSEntity {
     }
     
     /**
-     * groupName
+     * 组名
      */
-    @ApiModelProperty(value = "groupName", required = false)
+    @ApiModelProperty(value = "组名", required = false)
+    
+    @Column(columnDefinition = "组名")
     private String groupName;
     public String getGroupName() {
         return groupName;
@@ -128,9 +148,11 @@ public class MedicPrescriptionDetail extends CMSEntity {
     }
     
     /**
-     * paidStatus
+     * 影像状态
      */
-    @ApiModelProperty(value = "paidStatus", required = false)
+    @ApiModelProperty(value = "影像状态", required = false)
+    
+    @Column(columnDefinition = "影像状态")
     private String paidStatus;
     public String getPaidStatus() {
         return paidStatus;
@@ -140,9 +162,11 @@ public class MedicPrescriptionDetail extends CMSEntity {
     }
     
     /**
-     * paidTime
+     * 影像时间
      */
-    @ApiModelProperty(value = "paidTime", required = false)
+    @ApiModelProperty(value = "影像时间", required = false)
+    
+    @Column(columnDefinition = "影像时间")
     private Date paidTime;
     public Date getPaidTime() {
         return paidTime;
@@ -152,9 +176,11 @@ public class MedicPrescriptionDetail extends CMSEntity {
     }
     
     /**
-     * itemCountStatus
+     * 状态
      */
-    @ApiModelProperty(value = "itemCountStatus", required = false)
+    @ApiModelProperty(value = "状态", required = false)
+    
+    @Column(columnDefinition = "状态")
     private String itemCountStatus;
     public String getItemCountStatus() {
         return itemCountStatus;
@@ -164,9 +190,11 @@ public class MedicPrescriptionDetail extends CMSEntity {
     }
     
     /**
-     * frequency
+     * 发生率
      */
-    @ApiModelProperty(value = "frequency", required = false)
+    @ApiModelProperty(value = "发生率", required = false)
+    
+    @Column(columnDefinition = "发生率")
     private String frequency;
     public String getFrequency() {
         return frequency;
@@ -176,9 +204,11 @@ public class MedicPrescriptionDetail extends CMSEntity {
     }
     
     /**
-     * dose
+     * 剂量
      */
-    @ApiModelProperty(value = "dose", required = false)
+    @ApiModelProperty(value = "剂量", required = false)
+    
+    @Column(columnDefinition = "剂量")
     private String dose;
     public String getDose() {
         return dose;
@@ -188,9 +218,11 @@ public class MedicPrescriptionDetail extends CMSEntity {
     }
     
     /**
-     * executorId
+     * 执行ID
      */
-    @ApiModelProperty(value = "executorId", required = false)
+    @ApiModelProperty(value = "执行ID", required = false)
+    
+    @Column(columnDefinition = "执行ID")
     private String executorId;
     public String getExecutorId() {
         return executorId;
@@ -202,7 +234,9 @@ public class MedicPrescriptionDetail extends CMSEntity {
     /**
      * executorDate
      */
-    @ApiModelProperty(value = "executorDate", required = false)@NotNull
+    @ApiModelProperty(value = "executorDate", required = false)
+    
+    @Column(columnDefinition = "executorDate")
     private Date executorDate;
     public Date getExecutorDate() {
         return executorDate;
@@ -212,9 +246,11 @@ public class MedicPrescriptionDetail extends CMSEntity {
     }
     
     /**
-     * useUnit
+     * 使用单位
      */
-    @ApiModelProperty(value = "useUnit", required = false)
+    @ApiModelProperty(value = "使用单位", required = false)
+    
+    @Column(columnDefinition = "使用单位")
     private String useUnit;
     public String getUseUnit() {
         return useUnit;

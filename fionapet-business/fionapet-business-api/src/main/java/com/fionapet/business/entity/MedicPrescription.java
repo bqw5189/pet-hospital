@@ -3,6 +3,8 @@ package com.fionapet.business.entity;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
+
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
@@ -10,31 +12,20 @@ import javax.validation.constraints.NotNull;
 import java.util.Date;
 
 /**
- * 医生开处方
+ * 医生处方
  * <p>
- * Created by tom on 16/7/2.
+* Created by tom on 2016-07-18 15:37:42.
  */
 @Entity
 @Table(name = "t_medic_prescription")
-@ApiModel("医生开处方")
+@ApiModel("医生处方")
 public class MedicPrescription extends CMSEntity {
-    
     /**
-     * enterpriseNo
+     * 处方编号
      */
-    @ApiModelProperty(value = "enterpriseNo", required = false)
-    private String enterpriseNo;
-    public String getEnterpriseNo() {
-        return enterpriseNo;
-    }
-    public void setEnterpriseNo(String enterpriseNo) {
-        this.enterpriseNo = enterpriseNo;
-    }
+    @ApiModelProperty(value = "处方编号", required = false)
     
-    /**
-     * medicRecordCode
-     */
-    @ApiModelProperty(value = "medicRecordCode", required = false)
+    @Column(columnDefinition = "处方编号")
     private String medicRecordCode;
     public String getMedicRecordCode() {
         return medicRecordCode;
@@ -44,9 +35,11 @@ public class MedicPrescription extends CMSEntity {
     }
     
     /**
-     * medicRecordId
+     * 处方ID
      */
-    @ApiModelProperty(value = "medicRecordId", required = false)
+    @ApiModelProperty(value = "处方ID", required = false)
+    
+    @Column(columnDefinition = "处方ID")
     private String medicRecordId;
     public String getMedicRecordId() {
         return medicRecordId;
@@ -56,9 +49,11 @@ public class MedicPrescription extends CMSEntity {
     }
     
     /**
-     * prescriptionCode
+     * 类别名称
      */
-    @ApiModelProperty(value = "prescriptionCode", required = false)
+    @ApiModelProperty(value = "类别名称", required = false)
+    
+    @Column(columnDefinition = "类别名称")
     private String prescriptionCode;
     public String getPrescriptionCode() {
         return prescriptionCode;
@@ -68,9 +63,11 @@ public class MedicPrescription extends CMSEntity {
     }
     
     /**
-     * prescriptionCost
+     * 类别编号
      */
-    @ApiModelProperty(value = "prescriptionCost", required = false)
+    @ApiModelProperty(value = "类别编号", required = false)
+    
+    @Column(columnDefinition = "类别编号")
     private double prescriptionCost;
     public double getPrescriptionCost() {
         return prescriptionCost;
@@ -80,9 +77,11 @@ public class MedicPrescription extends CMSEntity {
     }
     
     /**
-     * gestName
+     * 养育人名称
      */
-    @ApiModelProperty(value = "gestName", required = false)
+    @ApiModelProperty(value = "养育人名称", required = false)
+    
+    @Column(columnDefinition = "养育人名称")
     private String gestName;
     public String getGestName() {
         return gestName;
@@ -92,9 +91,11 @@ public class MedicPrescription extends CMSEntity {
     }
     
     /**
-     * petName
+     * 宠物名称
      */
-    @ApiModelProperty(value = "petName", required = false)
+    @ApiModelProperty(value = "宠物名称", required = false)
+    
+    @Column(columnDefinition = "宠物名称")
     private String petName;
     public String getPetName() {
         return petName;
@@ -104,9 +105,11 @@ public class MedicPrescription extends CMSEntity {
     }
     
     /**
-     * sickFileCode
+     * 病例编号
      */
-    @ApiModelProperty(value = "sickFileCode", required = false)
+    @ApiModelProperty(value = "病例编号", required = false)
+    
+    @Column(columnDefinition = "病例编号")
     private String sickFileCode;
     public String getSickFileCode() {
         return sickFileCode;
@@ -116,9 +119,11 @@ public class MedicPrescription extends CMSEntity {
     }
     
     /**
-     * doctor
+     * 医生
      */
-    @ApiModelProperty(value = "doctor", required = false)
+    @ApiModelProperty(value = "医生", required = false)
+    
+    @Column(columnDefinition = "医生")
     private String doctor;
     public String getDoctor() {
         return doctor;
@@ -128,9 +133,11 @@ public class MedicPrescription extends CMSEntity {
     }
     
     /**
-     * paidStatus
+     * 影像状态
      */
-    @ApiModelProperty(value = "paidStatus", required = false)
+    @ApiModelProperty(value = "影像状态", required = false)
+    
+    @Column(columnDefinition = "影像状态")
     private String paidStatus;
     public String getPaidStatus() {
         return paidStatus;
@@ -140,9 +147,11 @@ public class MedicPrescription extends CMSEntity {
     }
     
     /**
-     * paidTime
+     * 影像时间
      */
-    @ApiModelProperty(value = "paidTime", required = false)
+    @ApiModelProperty(value = "影像时间", required = false)
+    
+    @Column(columnDefinition = "影像时间")
     private Date paidTime;
     public Date getPaidTime() {
         return paidTime;

@@ -3,6 +3,7 @@ package com.fionapet.business.entity;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.codehaus.jackson.map.annotate.JsonFilter;
+import org.dubbo.x.entity.StatusEntity;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
@@ -18,21 +19,7 @@ import java.util.Date;
 
 
 @MappedSuperclass
-public class CMSEntity implements Serializable {
-    protected String uuid;
-
-    @Id
-    @GeneratedValue(generator = "uuid")
-    @GenericGenerator(name = "uuid", strategy = "uuid")
-    @Column(name = "uuid", length = 36)
-    public String getUuid() {
-        return uuid;
-    }
-
-    public void setUuid(String uuid) {
-        this.uuid = uuid;
-    }
-
+public class CMSEntity extends StatusEntity {
     /**
      * 创建人
      */
@@ -91,14 +78,5 @@ public class CMSEntity implements Serializable {
 
     public void setUpdateDate(Date updateDate) {
         this.updateDate = updateDate;
-    }
-
-    @Enumerated(EnumType.STRING)
-    public StatusEnum getStatus() {
-        return status;
-    }
-
-    public void setStatus(StatusEnum status) {
-        this.status = status;
     }
 }
