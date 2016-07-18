@@ -4,14 +4,14 @@
 -- -- -- --- --- --- --- --- --- --- ---
 DROP TABLE IF EXISTS `t_pet_race`;
 CREATE TABLE `t_pet_race` (
-  `uuid` VARCHAR(36) NOT NULL,
+  `id` VARCHAR(36) NOT NULL,
   `name` varchar(64) NOT NULL,
   `create_user_id` varchar(36) NOT NULL,
   `create_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `update_user_id` varchar(36) NOT NULL,
   `update_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `status` varchar(32) NOT NULL DEFAULT 'OK',
-  PRIMARY KEY (`uuid`),
+  PRIMARY KEY (`id`),
   UNIQUE KEY `name` (`name`)
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
@@ -20,7 +20,7 @@ CREATE TABLE `t_pet_race` (
 -- -- -- --- --- --- --- --- --- --- ---
 DROP TABLE IF EXISTS `t_pet_small_race`;
 CREATE TABLE `t_pet_small_race` (
-  `uuid` VARCHAR(36) NOT NULL,
+  `id` VARCHAR(36) NOT NULL,
   `type` varchar(64) NOT NULL,
   `pet_race_id` VARCHAR(36) NOT NULL,
   `create_user_id` varchar(36) NOT NULL,
@@ -28,7 +28,7 @@ CREATE TABLE `t_pet_small_race` (
   `update_user_id` varchar(36) NOT NULL,
   `update_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `status` varchar(32) NOT NULL DEFAULT 'OK',
-  PRIMARY KEY (`uuid`),
+  PRIMARY KEY (`id`),
   UNIQUE KEY `type` (`type`)
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
@@ -37,7 +37,7 @@ CREATE TABLE `t_pet_small_race` (
 -- -- -- --- --- --- --- --- --- --- ---
 DROP TABLE IF EXISTS `t_warehouse`;
 CREATE TABLE `t_warehouse` (
-  `uuid` VARCHAR(36) NOT NULL,
+  `id` VARCHAR(36) NOT NULL,
   `code` varchar(64) NOT NULL,
   `name` VARCHAR(36) NOT NULL,
   `remark` VARCHAR(36),
@@ -48,7 +48,7 @@ CREATE TABLE `t_warehouse` (
   `update_user_id` varchar(36) NOT NULL,
   `update_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `status` varchar(32) NOT NULL DEFAULT 'OK',
-  PRIMARY KEY (`uuid`)
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
 
@@ -57,7 +57,7 @@ CREATE TABLE `t_warehouse` (
 -- -- -- --- --- --- --- --- --- --- ---
 DROP TABLE IF EXISTS `t_item_cate`;
 CREATE TABLE `t_item_cate` (
-  `uuid` VARCHAR(36) NOT NULL,
+  `id` VARCHAR(36) NOT NULL,
   `cate_no` varchar(50),-- 种类业务编号
   `parent_id` VARCHAR(36), -- 父类ID
   `cate_name` VARCHAR(50), -- 种类业务名称
@@ -68,7 +68,7 @@ CREATE TABLE `t_item_cate` (
   `update_user_id` varchar(36) NOT NULL,
   `update_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `status` varchar(32) NOT NULL DEFAULT 'OK',
-  PRIMARY KEY (`uuid`)
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
 
@@ -78,14 +78,14 @@ CREATE TABLE `t_item_cate` (
 -- -- -- --- --- --- --- --- --- --- ---
 DROP TABLE IF EXISTS `t_busines_cate`;
 CREATE TABLE `t_busines_cate` (
-  `uuid` VARCHAR(36) NOT NULL,
+  `id` VARCHAR(36) NOT NULL,
   `cate_name` varchar(50) NOT NULL,-- 业务类型名称
   `create_user_id` varchar(36) NOT NULL,
   `create_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `update_user_id` varchar(36) NOT NULL,
   `update_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `status` varchar(32) NOT NULL DEFAULT 'OK',
-  PRIMARY KEY (`uuid`)
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
 -- -- -- --- --- --- --- --- --- --- --- --
@@ -94,43 +94,43 @@ CREATE TABLE `t_busines_cate` (
 DROP TABLE IF EXISTS `t_item_type`;
 CREATE TABLE t_item_type
 (
-  uuid VARCHAR(36) PRIMARY KEY NOT NULL,
-  item_code VARCHAR(50),-- 商品编号
-  item_name VARCHAR(100),-- 商品名称
-  cate_no VARCHAR(50),
-  package_unit VARCHAR(50),-- 单位
-  recipe_unit VARCHAR(50),
-  item_standard VARCHAR(50),
-  item_style VARCHAR(50),
-  bar_code VARCHAR(50),
-  busi_type_id VARCHAR(36),
-  item_bulk INT(11),
-  input_price DOUBLE,
-  dealer_code VARCHAR(50),
-  dealer_name VARCHAR(100),
-  sell_price DOUBLE,
-  is_vip_discount VARCHAR(50),
-  vip_sell_price DOUBLE,
-  is_sell VARCHAR(50),
-  is_count VARCHAR(50),
-  recipe_price DOUBLE,
-  drug_form VARCHAR(50),
-  ware_up_limit INT(11),
-  ware_down_limit INT(11),
-  safe_day INT(11),
-  use_way VARCHAR(5000),
-  group_name VARCHAR(50),
-  remark VARCHAR(5000),
-  input_code VARCHAR(50),
-  is_scattered DOUBLE,
-  location VARCHAR(200),
-  is_can_exchange VARCHAR(50),
-  exchange_reward_point INT(11),
-  create_user_id VARCHAR(36) NOT NULL,
-  create_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL,
-  update_user_id VARCHAR(36) NOT NULL,
-  update_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL,
-  status VARCHAR(32) DEFAULT 'OK' NOT NULL
+  `id` VARCHAR(36) PRIMARY KEY NOT NULL,
+  `item_code` VARCHAR(50),-- 商品编号
+  `item_name` VARCHAR(100),-- 商品名称
+  `cate_no` VARCHAR(50),
+  `package_unit` VARCHAR(50),-- 单位
+  `recipe_unit` VARCHAR(50),
+  `item_standard` VARCHAR(50),
+  `item_style` VARCHAR(50),
+  `bar_code` VARCHAR(50),
+  `busi_type_id` VARCHAR(36),
+  `item_bulk` INT(11),
+  `input_price` DOUBLE,
+  `dealer_code` VARCHAR(50),
+  `dealer_name` VARCHAR(100),
+  `sell_price` DOUBLE,
+  `is_vip_discount` VARCHAR(50),
+  `vip_sell_price` DOUBLE,
+  `is_sell` VARCHAR(50),
+  `is_count` VARCHAR(50),
+  `recipe_price` DOUBLE,
+  `drug_form` VARCHAR(50),
+  `ware_up_limit` INT(11),
+  `ware_down_limit` INT(11),
+  `safe_day` INT(11),
+  `use_way` VARCHAR(5000),
+  `group_name` VARCHAR(50),
+  `remark` VARCHAR(5000),
+  `input_code` VARCHAR(50),
+  `is_scattered` DOUBLE,
+  `location` VARCHAR(200),
+  `is_can_exchange` VARCHAR(50),
+  `exchange_reward_point` INT(11),
+  `create_user_id` VARCHAR(36) NOT NULL,
+  `create_date` TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL,
+  `update_user_id` VARCHAR(36) NOT NULL,
+  `update_date` TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL,
+  `status` VARCHAR(32) DEFAULT 'OK' NOT NULL
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
 -- -- --- --- --- --- --- --- --- ---
@@ -138,7 +138,7 @@ CREATE TABLE t_item_type
 -- -- --- --- --- --- --- --- --- --- --
 DROP TABLE IF EXISTS `t_gest_level`;
 CREATE TABLE `t_gest_level` (
-  `uuid` VARCHAR(36) NOT NULL,
+  `id` VARCHAR(36) NOT NULL,
   `level_code` varchar(50)  NULL,-- 等级编号
   `level_name` varchar(50)  NULL,-- 等级名称
   `is_credit` varchar(50)  NULL,-- 信用是否生效
@@ -150,7 +150,7 @@ CREATE TABLE `t_gest_level` (
   `update_user_id` varchar(36) NOT NULL,
   `update_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `status` varchar(32) NOT NULL DEFAULT 'OK',
-  PRIMARY KEY (`uuid`)
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
 -- -- --- --- --- --- --- --- --- ---
@@ -158,7 +158,7 @@ CREATE TABLE `t_gest_level` (
 -- -- -- --- --- --- --- --- --- --- ---
 DROP TABLE IF EXISTS `t_user_dict_detail`;
 CREATE TABLE `t_user_dict_detail` (
-  `uuid` VARCHAR(36) NOT NULL,
+  `id` VARCHAR(36) NOT NULL,
   `dict_type_id` varchar(36)  NULL,-- 字典类型ID t_user_dict表uuid关联
   `dict_detail_code` varchar(50)  NULL,-- 字典明细编号
   `value_name_cn` varchar(50)  NULL,-- 中文名称
@@ -170,7 +170,7 @@ CREATE TABLE `t_user_dict_detail` (
   `update_user_id` varchar(36) NOT NULL,
   `update_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `status` varchar(32) NOT NULL DEFAULT 'OK',
-  PRIMARY KEY (`uuid`)
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
 
@@ -179,7 +179,7 @@ CREATE TABLE `t_user_dict_detail` (
 -- -- -- --- --- --- --- --- --- --- ---
 DROP TABLE IF EXISTS `t_user_dict`;
 CREATE TABLE `t_user_dict` (
-  `uuid` VARCHAR(36) NOT NULL,
+  `id` VARCHAR(36) NOT NULL,
   `dict_name` varchar(50)  NULL,-- 字典名称
   `can_edit` varchar(5)  NULL,-- 可编辑
   `can_view` varchar(5)  NULL,-- 可展示
@@ -189,7 +189,7 @@ CREATE TABLE `t_user_dict` (
   `update_user_id` varchar(36) NOT NULL,
   `update_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `status` varchar(32) NOT NULL DEFAULT 'OK',
-  PRIMARY KEY (`uuid`)
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
 -- -- --- --- --- --- --- --- --- ---
@@ -197,7 +197,7 @@ CREATE TABLE `t_user_dict` (
 -- -- -- --- --- --- --- --- --- --- ---
 DROP TABLE IF EXISTS `t_dict_type_detail`;
 CREATE TABLE `t_dict_type_detail` (
-  `uuid` VARCHAR(36) NOT NULL,
+  `id` VARCHAR(36) NOT NULL,
   `dict_type_id` varchar(36)  NULL,-- 字典类型ID 关联t_dict_type表UUID
   `dict_detail_code` varchar(50)  NULL,-- 编号
   `value_name_cn` varchar(50)  NULL,-- 中文名
@@ -208,7 +208,7 @@ CREATE TABLE `t_dict_type_detail` (
   `update_user_id` varchar(36) NOT NULL,
   `update_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `status` varchar(32) NOT NULL DEFAULT 'OK',
-  PRIMARY KEY (`uuid`)
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
 -- -- -- --- --- --- --- --- --- --- --- --- --- --- --- -
@@ -216,14 +216,14 @@ CREATE TABLE `t_dict_type_detail` (
 -- -- -- --- --- --- --- --- --- --- --- --- --- --- --- -
 DROP TABLE IF EXISTS `t_dict_type`;
 CREATE TABLE `t_dict_type` (
-  `uuid` VARCHAR(36) NOT NULL,
+  `id` VARCHAR(36) NOT NULL,
   `dict_name` varchar(50)  NULL,-- 字典名称
   `create_user_id` varchar(36) NOT NULL,
   `create_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `update_user_id` varchar(36) NOT NULL,
   `update_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `status` varchar(32) NOT NULL DEFAULT 'OK',
-  PRIMARY KEY (`uuid`)
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
 -- -- --- --- --- --- --- --- --- ---
@@ -231,7 +231,7 @@ CREATE TABLE `t_dict_type` (
 -- -- -- --- --- --- --- --- --- --- ---
 DROP TABLE IF EXISTS `t_item_discount_rate`;
 CREATE TABLE `t_item_discount_rate` (
-  `uuid` VARCHAR(36) NOT NULL,
+  `id` VARCHAR(36) NOT NULL,
   `level_code` varchar(50)  NULL,-- 等级编号
   `cate_no` varchar(50)  NULL,-- 业务类型编号
   `discount_rate` varchar(50)  NULL,-- 折扣比率
@@ -240,7 +240,7 @@ CREATE TABLE `t_item_discount_rate` (
   `update_user_id` varchar(36) NOT NULL,
   `update_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `status` varchar(32) NOT NULL DEFAULT 'OK',
-  PRIMARY KEY (`uuid`)
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
 -- -- --- --- --- --- --- --- --- ---
@@ -248,7 +248,7 @@ CREATE TABLE `t_item_discount_rate` (
 -- -- -- --- --- --- --- --- --- --- ---
 DROP TABLE IF EXISTS `t_app_config`;
 CREATE TABLE `t_app_config` (
-  `uuid` VARCHAR(36) NOT NULL,
+  `id` VARCHAR(36) NOT NULL,
   `config_name` varchar(500)  NULL,-- 名称
   `config_value` varchar(1000)  NULL,-- 提醒内容
   `description` varchar(1000)  NULL,-- 描述 模版
@@ -257,7 +257,7 @@ CREATE TABLE `t_app_config` (
   `update_user_id` varchar(36) NOT NULL,
   `update_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `status` varchar(32) NOT NULL DEFAULT 'OK',
-  PRIMARY KEY (`uuid`)
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
 -- -- --- --- --- --- --- --- --- ---
@@ -265,7 +265,7 @@ CREATE TABLE `t_app_config` (
 -- -- -- --- --- --- --- --- --- --- ---
 DROP TABLE IF EXISTS `t_trprescription_template_type`;
 CREATE TABLE `t_trprescription_template_type` (
-  `uuid` VARCHAR(36) NOT NULL,
+  `id` VARCHAR(36) NOT NULL,
   `type_no` varchar(50)  NULL,-- 编号
   `parent_id` varchar(36)  NULL,-- 上级ID号
   `type_name` varchar(50)  NULL,-- 处方名称
@@ -275,7 +275,7 @@ CREATE TABLE `t_trprescription_template_type` (
   `update_user_id` varchar(36) NOT NULL,
   `update_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `status` varchar(32) NOT NULL DEFAULT 'OK',
-  PRIMARY KEY (`uuid`)
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
 -- -- --- --- --- --- --- --- --- ---
@@ -283,7 +283,7 @@ CREATE TABLE `t_trprescription_template_type` (
 -- -- -- --- --- --- --- --- --- --- ---
 DROP TABLE IF EXISTS `t_trprescription_template_detail`;
 CREATE TABLE `t_trprescription_template_detail` (
-  `uuid` VARCHAR(36) NOT NULL,
+  `id` VARCHAR(36) NOT NULL,
   `template_id` varchar(36)  NULL,-- 模版ID
   `template_no` varchar(50)  NULL,-- 模版编号
   `item_code` varchar(50)  NULL,-- 商品类型 ID t_item_type表item_code
@@ -299,7 +299,7 @@ CREATE TABLE `t_trprescription_template_detail` (
   `update_user_id` varchar(36) NOT NULL,
   `update_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `status` varchar(32) NOT NULL DEFAULT 'OK',
-  PRIMARY KEY (`uuid`)
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
 -- -- --- --- --- --- --- --- --- ---
@@ -307,7 +307,7 @@ CREATE TABLE `t_trprescription_template_detail` (
 -- -- -- --- --- --- --- --- --- --- ---
 DROP TABLE IF EXISTS `t_trprescription_template`;
 CREATE TABLE `t_trprescription_template` (
-  `uuid` VARCHAR(36) NOT NULL,
+  `id` VARCHAR(36) NOT NULL,
   `type_id` varchar(36)  NULL,-- 类型ID
   `type_no` varchar(50)  NULL,-- 类型编号
   `template_no` varchar(50)  NULL,-- 模版编号
@@ -320,7 +320,7 @@ CREATE TABLE `t_trprescription_template` (
   `update_user_id` varchar(36) NOT NULL,
   `update_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `status` varchar(32) NOT NULL DEFAULT 'OK',
-  PRIMARY KEY (`uuid`)
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
 -- -- --- --- --- --- --- --- --- ---
@@ -328,7 +328,7 @@ CREATE TABLE `t_trprescription_template` (
 -- -- -- --- --- --- --- --- --- --- ---
 -- DROP TABLE IF EXISTS `t_role`;
 -- CREATE TABLE `t_role` (
---   `uuid` VARCHAR(36) NOT NULL,
+--   `id` VARCHAR(36) NOT NULL,
 --   `role_code` varchar(50)  NULL,-- 角色编号
 --   `role_name` varchar(100)  NULL,-- 角色名称
 --   `role_desc` varchar(1000)  NULL,-- 角色描述
@@ -337,7 +337,7 @@ CREATE TABLE `t_trprescription_template` (
 --   `update_user_id` varchar(36) NOT NULL,
 --   `update_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
 --   `status` varchar(32) NOT NULL DEFAULT 'OK',
---   PRIMARY KEY (`uuid`)
+--   PRIMARY KEY (`id`)
 -- ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
 -- -- --- --- --- --- --- --- --- ---
@@ -345,7 +345,7 @@ CREATE TABLE `t_trprescription_template` (
 -- -- -- --- --- --- --- --- --- --- ---
 -- DROP TABLE IF EXISTS `t_role_right`;
 -- CREATE TABLE `t_role_right` (
---   `uuid` VARCHAR(36) NOT NULL,
+--   `id` VARCHAR(36) NOT NULL,
 --   `role_id` varchar(50)  NULL,-- 角色ID表t_role的ID
 --   `modul_id` varchar(100)  NULL,-- 模块t_menu_fun_module表ID
 --   `create_user_id` varchar(36) NOT NULL,
@@ -353,7 +353,7 @@ CREATE TABLE `t_trprescription_template` (
 --   `update_user_id` varchar(36) NOT NULL,
 --   `update_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
 --   `status` varchar(32) NOT NULL DEFAULT 'OK',
---   PRIMARY KEY (`uuid`)
+--   PRIMARY KEY (`id`)
 -- ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
 -- -- --- --- --- --- --- --- --- ---
@@ -361,7 +361,7 @@ CREATE TABLE `t_trprescription_template` (
 -- -- -- --- --- --- --- --- --- --- ---
 DROP TABLE IF EXISTS `t_prescription_template_type`;
 CREATE TABLE `t_prescription_template_type` (
-  `uuid` VARCHAR(36) NOT NULL,
+  `id` VARCHAR(36) NOT NULL,
   `type_no` varchar(50)  NULL,-- 类型编号
   `parent_id` varchar(36)  NULL,-- 上级ID
   `type_name` varchar(50)  NULL,-- 类型名称
@@ -371,7 +371,7 @@ CREATE TABLE `t_prescription_template_type` (
   `update_user_id` varchar(36) NOT NULL,
   `update_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `status` varchar(32) NOT NULL DEFAULT 'OK',
-  PRIMARY KEY (`uuid`)
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
 -- -- --- --- --- --- --- --- --- ---
@@ -379,7 +379,7 @@ CREATE TABLE `t_prescription_template_type` (
 -- -- -- --- --- --- --- --- --- --- ---
 DROP TABLE IF EXISTS `t_prescription_template_detail`;
 CREATE TABLE `t_prescription_template_detail` (
-  `uuid` VARCHAR(36) NOT NULL,
+  `id` VARCHAR(36) NOT NULL,
   `template_id` varchar(36)  NULL,-- 模版ID
   `template_no` varchar(50)  NULL,-- 模版编号
   `item_code` varchar(50)  NULL,-- 商品类型 ID t_item_type表item_code
@@ -395,7 +395,7 @@ CREATE TABLE `t_prescription_template_detail` (
   `update_user_id` varchar(36) NOT NULL,
   `update_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `status` varchar(32) NOT NULL DEFAULT 'OK',
-  PRIMARY KEY (`uuid`)
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
 -- -- --- --- --- --- --- --- --- ---
@@ -403,7 +403,7 @@ CREATE TABLE `t_prescription_template_detail` (
 -- -- -- --- --- --- --- --- --- --- ---
 DROP TABLE IF EXISTS `t_prescription_template`;
 CREATE TABLE `t_prescription_template` (
-  `uuid` VARCHAR(36) NOT NULL,
+  `id` VARCHAR(36) NOT NULL,
   `type_id` varchar(36)  NULL,-- 类型ID
   `type_no` varchar(50)  NULL,-- 类型编号
   `template_no` varchar(50)  NULL,-- 模版编号
@@ -415,7 +415,7 @@ CREATE TABLE `t_prescription_template` (
   `update_user_id` varchar(36) NOT NULL,
   `update_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `status` varchar(32) NOT NULL DEFAULT 'OK',
-  PRIMARY KEY (`uuid`)
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
 -- -- --- --- --- --- --- --- --- ---
@@ -423,7 +423,7 @@ CREATE TABLE `t_prescription_template` (
 -- -- -- --- --- --- --- --- --- --- ---
 DROP TABLE IF EXISTS `t_pet`;
 CREATE TABLE `t_pet` (
-  `uuid` VARCHAR(36) NOT NULL,
+  `id` VARCHAR(36) NOT NULL,
   `pet_code` varchar(50)  NULL,-- 宠物编号
   `gest_id` varchar(36)  NULL,-- 主人ID
   `gest_code` varchar(50)  null,-- 主人编号
@@ -451,7 +451,7 @@ CREATE TABLE `t_pet` (
   `update_user_id` varchar(36) NOT NULL,
   `update_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `status` varchar(32) NOT NULL DEFAULT 'OK',
-  PRIMARY KEY (`uuid`)
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
 -- -- --- --- --- --- --- --- --- ---
@@ -459,7 +459,7 @@ CREATE TABLE `t_pet` (
 -- -- -- --- --- --- --- --- --- --- ---
 DROP TABLE IF EXISTS `t_persons_cm_app`;
 CREATE TABLE `t_persons_cm_app` (
-  `uuid` VARCHAR(36) NOT NULL,
+  `id` VARCHAR(36) NOT NULL,
   `request_id` varchar(36)  NULL,
   `person_id` varchar(36)  NULL,
   `focus_date` DATE NULL,
@@ -471,7 +471,7 @@ CREATE TABLE `t_persons_cm_app` (
   `update_user_id` varchar(36) NOT NULL,
   `update_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `status` varchar(32) NOT NULL DEFAULT 'OK',
-  PRIMARY KEY (`uuid`)
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
 -- -- --- --- --- --- --- --- --- ---
@@ -479,7 +479,7 @@ CREATE TABLE `t_persons_cm_app` (
 -- -- -- --- --- --- --- --- --- --- ---
 DROP TABLE IF EXISTS `t_persons_appointment`;
 CREATE TABLE `t_persons_appointment` (
-  `uuid` VARCHAR(36) NOT NULL,
+  `id` VARCHAR(36) NOT NULL,
   `request_id` varchar(36)  NULL,
   `persons_cm_app_request_id` varchar(36)  NULL,
   `pet_name` varchar(50) NULL,
@@ -491,14 +491,14 @@ CREATE TABLE `t_persons_appointment` (
   `update_user_id` varchar(36) NOT NULL,
   `update_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `status` varchar(32) NOT NULL DEFAULT 'OK',
-  PRIMARY KEY (`uuid`)
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 -- -- --- --- --- --- --- --- --- ---
 -- Table structure for t_persons 宠物主人信息
 -- -- -- --- --- --- --- --- --- --- ---
 DROP TABLE IF EXISTS `t_persons`;
 CREATE TABLE `t_persons` (
-  `uuid` VARCHAR(36) NOT NULL,
+  `id` VARCHAR(36) NOT NULL,
   `person_code` varchar(50)  NULL,
   `person_name` varchar(200)  NULL,
   `password` varchar(100) NULL,
@@ -533,7 +533,7 @@ CREATE TABLE `t_persons` (
   `update_user_id` varchar(36) NOT NULL,
   `update_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `status` varchar(32) NOT NULL DEFAULT 'OK',
-  PRIMARY KEY (`uuid`)
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
 -- -- --- --- --- --- --- --- --- ---
@@ -541,7 +541,7 @@ CREATE TABLE `t_persons` (
 -- -- -- --- --- --- --- --- --- --- ---
 DROP TABLE IF EXISTS `t_images`;
 CREATE TABLE `t_images` (
-  `uuid` VARCHAR(36) NOT NULL,
+  `id` VARCHAR(36) NOT NULL,
   `pet_code` varchar(50)  NULL,-- 等级编号
   `pet_id` varchar(36)  NULL,--
   `image_name` varchar(50)  NULL,-- 图片名称
@@ -553,7 +553,7 @@ CREATE TABLE `t_images` (
   `update_user_id` varchar(36) NOT NULL,
   `update_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `status` varchar(32) NOT NULL DEFAULT 'OK',
-  PRIMARY KEY (`uuid`)
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
 --M_OperationLog
@@ -562,7 +562,7 @@ CREATE TABLE `t_images` (
 -- -- -- --- --- --- --- --- --- --- ---
 -- DROP TABLE IF EXISTS `t_menu_fun_module`;
 -- CREATE TABLE `t_menu_fun_module` (
---   `uuid` VARCHAR(36) NOT NULL,
+--   `id` VARCHAR(36) NOT NULL,
 --   `mfm_name` varchar(50)  null,-- 功能模块名称
 --   `parent_id` varchar(36)  null,-- 上级ID
 --   `mfm_location` varchar(500) null,-- 路径
@@ -577,7 +577,7 @@ CREATE TABLE `t_images` (
 --   `update_user_id` varchar(36) NOT NULL,
 --   `update_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
 --   `status` varchar(32) NOT NULL DEFAULT 'OK',
---   PRIMARY KEY (`uuid`)
+--   PRIMARY KEY (`id`)
 -- ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
 -- -- --- --- --- --- --- --- --- ---
@@ -585,7 +585,7 @@ CREATE TABLE `t_images` (
 -- -- -- --- --- --- --- --- --- --- ---
 -- DROP TABLE IF EXISTS `t_menu_button`;
 -- CREATE TABLE `t_menu_button` (
---   `uuid` VARCHAR(36) NOT NULL,
+--   `id` VARCHAR(36) NOT NULL,
 --   `mfm_id` varchar(36)  null,-- 功能模块ID
 --   `mfm_name` varchar(50)  null,-- 模块名称
 --   `button_name` varchar(50)  null,-- 按钮名称
@@ -594,7 +594,7 @@ CREATE TABLE `t_images` (
 --   `Button_image` varchar(200)  null, -- 按钮描述URL
 --   `Sort` INTEGER NULL, -- 排序
 --   `status` varchar(32) NOT NULL DEFAULT 'OK',
---   PRIMARY KEY (`uuid`)
+--   PRIMARY KEY (`id`)
 -- ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
 -- -- --- --- --- --- --- --- --- ---
@@ -602,7 +602,7 @@ CREATE TABLE `t_images` (
 -- -- -- --- --- --- --- --- --- --- ---
 DROP TABLE IF EXISTS `t_gest`;
 CREATE TABLE `t_gest` (
-  `uuid` VARCHAR(36) NOT NULL,
+  `id` VARCHAR(36) NOT NULL,
   `gest_code` varchar(36)  null,-- 编号
   `lose_right_date` date  null,--
   `gest_name` varchar(100)  null,-- 姓名
@@ -626,7 +626,7 @@ CREATE TABLE `t_gest` (
   `update_user_id` varchar(36) NOT NULL,
   `update_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `status` varchar(32) NOT NULL DEFAULT 'OK',
-  PRIMARY KEY (`uuid`)
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
 
@@ -635,7 +635,7 @@ CREATE TABLE `t_gest` (
 -- -- -- --- --- --- --- --- --- --- ---
 DROP TABLE IF EXISTS `t_expenses_cate`;
 CREATE TABLE `t_expenses_cate` (
-  `uuid` VARCHAR(36) NOT NULL,
+  `id` VARCHAR(36) NOT NULL,
   `cate_no` varchar(50)  null,-- 类型编号
   `cate_name` varchar(50)  null,-- 类型名称
   `sort` INTEGER DEFAULT 0, -- 排序
@@ -644,7 +644,7 @@ CREATE TABLE `t_expenses_cate` (
   `update_user_id` varchar(36) NOT NULL,
   `update_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `status` varchar(32) NOT NULL DEFAULT 'OK',
-  PRIMARY KEY (`uuid`)
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
 
@@ -653,7 +653,7 @@ CREATE TABLE `t_expenses_cate` (
 -- -- -- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
 DROP TABLE IF EXISTS `t_chemical_exam_cate`;
 CREATE TABLE `t_chemical_exam_cate` (
-  `uuid` VARCHAR(36) NOT NULL,
+  `id` VARCHAR(36) NOT NULL,
   `cate_no` varchar(50)  null,-- 类型编号
   `parent_id` varchar(36)  null,-- 上级ID
   `cate_name` varchar(50)  null,-- 类型名称
@@ -665,7 +665,7 @@ CREATE TABLE `t_chemical_exam_cate` (
   `update_user_id` varchar(36) NOT NULL,
   `update_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `status` varchar(32) NOT NULL DEFAULT 'OK',
-  PRIMARY KEY (`uuid`)
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
 
@@ -675,7 +675,7 @@ CREATE TABLE `t_chemical_exam_cate` (
 
 DROP TABLE IF EXISTS `t_medic_vedio_exam`;
 CREATE TABLE `t_medic_vedio_exam` (
-  `uuid` VARCHAR(36) NOT NULL,
+  `id` VARCHAR(36) NOT NULL,
   `enterprise_no` varchar(50)  null,-- 类型编号
   `medic_record_code` varchar(50)  null,-- 医生记录号
   `medic_record_id` varchar(36)  null,-- 医生记录ID
@@ -692,7 +692,7 @@ CREATE TABLE `t_medic_vedio_exam` (
   `update_user_id` varchar(36) NOT NULL,
   `update_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `status` varchar(32) NOT NULL DEFAULT 'OK',
-  PRIMARY KEY (`uuid`)
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
 
@@ -701,7 +701,7 @@ CREATE TABLE `t_medic_vedio_exam` (
 -- -- -- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
 DROP TABLE IF EXISTS `t_medic_prescription_detail`;
 CREATE TABLE `t_medic_prescription_detail` (
-  `uuid` VARCHAR(36) NOT NULL,
+  `id` VARCHAR(36) NOT NULL,
   `enterprise_no` varchar(50)  null,-- 企业编号
   `prescription_id` varchar(36)  null,-- 处方ID
   `item_name` varchar(50)  null,-- 类别名称
@@ -724,7 +724,7 @@ CREATE TABLE `t_medic_prescription_detail` (
   `update_user_id` varchar(36) not null,
   `update_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `status` varchar(32) NOT NULL DEFAULT 'OK',
-  PRIMARY KEY (`uuid`)
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
 
@@ -733,7 +733,7 @@ CREATE TABLE `t_medic_prescription_detail` (
 -- -- -- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
 DROP TABLE IF EXISTS `t_medic_prescription`;
 CREATE TABLE `t_medic_prescription` (
-  `uuid` VARCHAR(36) NOT NULL,
+  `id` VARCHAR(36) NOT NULL,
   `enterprise_no` varchar(50)  null,-- 企业编号
   `medic_record_code` varchar(50)  null,-- 处方编号
   `medic_record_id` varchar(36)  null,-- 处方ID
@@ -750,7 +750,7 @@ CREATE TABLE `t_medic_prescription` (
   `update_user_id` varchar(36) not null,
   `update_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `status` varchar(32) NOT NULL DEFAULT 'OK',
-  PRIMARY KEY (`uuid`)
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
 -- -- --- --- --- --- --- --- --- --- -- -- --- --- --- --- --- --- --- --- --- ---
@@ -758,7 +758,7 @@ CREATE TABLE `t_medic_prescription` (
 -- -- -- --- --- --- --- --- --- --- --- -- -- --- --- --- --- --- --- --- --- ---
 DROP TABLE IF EXISTS `t_medic_chemical_exam_detail`;
 CREATE TABLE `t_medic_chemical_exam_detail` (
-  `uuid` VARCHAR(36) NOT NULL,
+  `id` VARCHAR(36) NOT NULL,
   `enterprise_no` varchar(50)  null,-- 企业编号
   `exam_type_id` varchar(36)  null,-- 处方编号
   `chemical_exam_id` varchar(36)  null,-- 化验报告id
@@ -777,7 +777,7 @@ CREATE TABLE `t_medic_chemical_exam_detail` (
   `update_user_id` varchar(36) not null,
   `update_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `status` varchar(32) NOT NULL DEFAULT 'OK',
-  PRIMARY KEY (`uuid`)
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
 -- -- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- -
@@ -785,7 +785,7 @@ CREATE TABLE `t_medic_chemical_exam_detail` (
 -- -- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
 DROP TABLE IF EXISTS `t_medic_chemicalexam`;
 CREATE TABLE `t_medic_chemicalexam` (
-  `uuid` VARCHAR(36) NOT NULL,
+  `id` VARCHAR(36) NOT NULL,
   `enterprise_no` varchar(50)  null,-- 企业编号
   `medic_record_code` varchar(36)  null,-- 处方编号
   `medic_record_id` varchar(36)  null,-- 化验报告id
@@ -806,7 +806,7 @@ CREATE TABLE `t_medic_chemicalexam` (
   `update_user_id` varchar(36) not null,
   `update_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `status` varchar(32) NOT NULL DEFAULT 'OK',
-  PRIMARY KEY (`uuid`)
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
 
@@ -815,7 +815,7 @@ CREATE TABLE `t_medic_chemicalexam` (
 -- -- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
 DROP TABLE IF EXISTS `t_check_process_sheet`;
 CREATE TABLE `t_check_process_sheet` (
-  `uuid` VARCHAR(36) NOT NULL,
+  `id` VARCHAR(36) NOT NULL,
   `sheet_no` varchar(50)  null,-- 单据编号
   `resource_sheet_no` varchar(50)  null,-- 原单据编号
   `lib_center_request_id` varchar(36)  null,-- 库存中心请求id
@@ -856,7 +856,7 @@ CREATE TABLE `t_check_process_sheet` (
   `update_user_id` varchar(36) not null,
   `update_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `status` varchar(32) NOT NULL DEFAULT 'OK',
-  PRIMARY KEY (`uuid`)
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
 
@@ -865,7 +865,7 @@ CREATE TABLE `t_check_process_sheet` (
 -- -- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
 DROP TABLE IF EXISTS `t_approve_status_entity`;
 CREATE TABLE `t_approve_status_entity` (
-  `uuid` VARCHAR(36) NOT NULL,
+  `id` VARCHAR(36) NOT NULL,
   `sheet_no` varchar(50)  null,-- 单号
   `activity_name` varchar(50)  null,-- 事项名称
   `approve_status` varchar(36)  null,-- 审批状态
@@ -876,7 +876,7 @@ CREATE TABLE `t_approve_status_entity` (
   `update_user_id` varchar(36) not null,
   `update_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `status` varchar(32) NOT NULL DEFAULT 'OK',
-  PRIMARY KEY (`uuid`)
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
 -- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
@@ -884,7 +884,7 @@ CREATE TABLE `t_approve_status_entity` (
 -- -- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
 DROP TABLE IF EXISTS `t_warehouse_outrecord_detail`;
 CREATE TABLE `t_warehouse_outrecord_detail` (
-  `uuid` VARCHAR(36) NOT NULL,
+  `id` VARCHAR(36) NOT NULL,
   `out_warehouse_code` varchar(50)  null,-- 出库编号
   `item_code` varchar(50)  null,-- 类型编号
   `bar_code` varchar(50)  null,-- 条码
@@ -912,7 +912,7 @@ CREATE TABLE `t_warehouse_outrecord_detail` (
   `update_user_id` varchar(36) not null,
   `update_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `status` varchar(32) NOT NULL DEFAULT 'OK',
-  PRIMARY KEY (`uuid`)
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
 -- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
@@ -920,7 +920,7 @@ CREATE TABLE `t_warehouse_outrecord_detail` (
 -- -- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
 DROP TABLE IF EXISTS `t_warehouse_outrecord`;
 CREATE TABLE `t_warehouse_outrecord` (
-  `uuid` VARCHAR(36) NOT NULL,
+  `id` VARCHAR(36) NOT NULL,
   `out_warehouse_code` varchar(50)  null,-- 出库编号
   `out_warehouse_man` varchar(50)  null,-- 出库人
   `out_warehouse_total_cost` DOUBLE  null,-- 出库总价
@@ -938,15 +938,15 @@ CREATE TABLE `t_warehouse_outrecord` (
   `update_user_id` varchar(36) not null,
   `update_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `status` varchar(32) NOT NULL DEFAULT 'OK',
-  PRIMARY KEY (`uuid`)
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
 -- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
--- --- Table structure for t_warehouse_moverecord_detail  出库记录
+-- --- Table structure for t_warehouse_moverecord_detail  移库记录明细
 -- -- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
 DROP TABLE IF EXISTS `t_warehouse_moverecord_detail`;
 CREATE TABLE `t_warehouse_moverecord_detail` (
-  `uuid` VARCHAR(36) NOT NULL,
+  `id` VARCHAR(36) NOT NULL,
   `out_warehouse_code` varchar(50)  null,-- 移库编号
   `item_code` varchar(50)  null,-- 类型编号
   `bar_code` varchar(50)  null,-- 条码
@@ -975,7 +975,7 @@ CREATE TABLE `t_warehouse_moverecord_detail` (
   `update_user_id` varchar(36) not null,
   `update_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `status` varchar(32) NOT NULL DEFAULT 'OK',
-  PRIMARY KEY (`uuid`)
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
 -- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
@@ -983,7 +983,7 @@ CREATE TABLE `t_warehouse_moverecord_detail` (
 -- -- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
 DROP TABLE IF EXISTS `t_warehouse_moverecord`;
 CREATE TABLE `t_warehouse_moverecord` (
-  `uuid` VARCHAR(36) NOT NULL,
+  `id` VARCHAR(36) NOT NULL,
   `out_warehouse_code` varchar(50)  null,-- 移库编号
   `out_warehouse_man` varchar(50)  null,-- 移库人
   `Move_Warehouse_Date` TIMESTAMP  null,-- 移库时间
@@ -1002,7 +1002,7 @@ CREATE TABLE `t_warehouse_moverecord` (
   `update_user_id` varchar(36) not null,
   `update_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `status` varchar(32) NOT NULL DEFAULT 'OK',
-  PRIMARY KEY (`uuid`)
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
 
@@ -1011,7 +1011,7 @@ CREATE TABLE `t_warehouse_moverecord` (
 -- -- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
 DROP TABLE IF EXISTS `t_warehouse_inventory`;
 CREATE TABLE `t_warehouse_inventory` (
-  `uuid` VARCHAR(36) NOT NULL,
+  `id` VARCHAR(36) NOT NULL,
   `Inventory_Code` varchar(50)  null,-- 存货清单编号
   `Inventory_Man` varchar(50)  null,-- 存货清单人员
   `Inventory_Date` TIMESTAMP  null,-- 存货清单时间
@@ -1024,7 +1024,7 @@ CREATE TABLE `t_warehouse_inventory` (
   `update_user_id` varchar(36) not null,
   `update_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `status` varchar(32) NOT NULL DEFAULT 'OK',
-  PRIMARY KEY (`uuid`)
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
 
@@ -1033,7 +1033,7 @@ CREATE TABLE `t_warehouse_inventory` (
 -- -- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
 DROP TABLE IF EXISTS `t_warehouse_inrecord_detail`;
 CREATE TABLE `t_warehouse_inrecord_detail` (
-  `uuid` VARCHAR(36) NOT NULL,
+  `id` VARCHAR(36) NOT NULL,
   `in_warehouse_code` varchar(50)  null,-- 入库编号
   `item_code` varchar(50)  null,-- 类型编号
   `bar_code` varchar(50)  null,-- 条码
@@ -1062,7 +1062,7 @@ CREATE TABLE `t_warehouse_inrecord_detail` (
   `update_user_id` varchar(36) not null,
   `update_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `status` varchar(32) NOT NULL DEFAULT 'OK',
-  PRIMARY KEY (`uuid`)
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
 
@@ -1071,7 +1071,7 @@ CREATE TABLE `t_warehouse_inrecord_detail` (
 -- -- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
 DROP TABLE IF EXISTS `t_warehouse_inrecord`;
 CREATE TABLE `t_warehouse_inrecord` (
-  `uuid` VARCHAR(36) NOT NULL,
+  `id` VARCHAR(36) NOT NULL,
   `in_warehouse_code` varchar(50)  null,-- 入库编号
   `in_warehouse_man` varchar(50)  null,-- 入库人
   `in_warehouse_total_cost` DOUBLE  null,-- 入库总价
@@ -1093,7 +1093,7 @@ CREATE TABLE `t_warehouse_inrecord` (
   `update_user_id` varchar(36) not null,
   `update_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `status` varchar(32) NOT NULL DEFAULT 'OK',
-  PRIMARY KEY (`uuid`)
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
 
@@ -1102,7 +1102,7 @@ CREATE TABLE `t_warehouse_inrecord` (
 -- -- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
 DROP TABLE IF EXISTS `t_warehouse_backrecord_detail`;
 CREATE TABLE `t_warehouse_backrecord_detail` (
-  `uuid` VARCHAR(36) NOT NULL,
+  `id` VARCHAR(36) NOT NULL,
   `back_warehouse_code` varchar(50)  null,-- 退回编号
   `item_code` varchar(50)  null,-- 类型编号
   `bar_code` varchar(50)  null,-- 条码
@@ -1131,7 +1131,7 @@ CREATE TABLE `t_warehouse_backrecord_detail` (
   `update_user_id` varchar(36) not null,
   `update_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `status` varchar(32) NOT NULL DEFAULT 'OK',
-  PRIMARY KEY (`uuid`)
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
 
@@ -1140,7 +1140,7 @@ CREATE TABLE `t_warehouse_backrecord_detail` (
 -- -- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
 DROP TABLE IF EXISTS `t_warehouse_backrecord`;
 CREATE TABLE `t_warehouse_backrecord` (
-  `uuid` VARCHAR(36) NOT NULL,
+  `id` VARCHAR(36) NOT NULL,
   `back_warehouse_code` varchar(50)  null,-- 退回仓库编号
   `back_warehouse_man` varchar(50)  null,-- 退回仓库人
   `back_warehouse_total_cost` DOUBLE  null,-- 退回仓库总价
@@ -1162,7 +1162,7 @@ CREATE TABLE `t_warehouse_backrecord` (
   `update_user_id` varchar(36) not null,
   `update_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `status` varchar(32) NOT NULL DEFAULT 'OK',
-  PRIMARY KEY (`uuid`)
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
 
@@ -1171,7 +1171,7 @@ CREATE TABLE `t_warehouse_backrecord` (
 -- -- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
 DROP TABLE IF EXISTS `t_vip_input_tem`;
 CREATE TABLE `t_vip_input_tem` (
-  `uuid` VARCHAR(36) NOT NULL,
+  `id` VARCHAR(36) NOT NULL,
   `vip_no` varchar(50)  null,-- vip编号
   `batch_number` varchar(50)  null,-- 批次号
   `row_number` double  null,-- 行号
@@ -1190,7 +1190,7 @@ CREATE TABLE `t_vip_input_tem` (
   `update_user_id` varchar(36) not null,
   `update_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `status` varchar(32) NOT NULL DEFAULT 'OK',
-  PRIMARY KEY (`uuid`)
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
 
@@ -1199,7 +1199,7 @@ CREATE TABLE `t_vip_input_tem` (
 -- -- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
 DROP TABLE IF EXISTS `t_store_direct_sell_detail`;
 CREATE TABLE `t_store_direct_sell_detail` (
-  `uuid` VARCHAR(36) NOT NULL,
+  `id` VARCHAR(36) NOT NULL,
   `direct_sell_id` varchar(36)  null,-- 直销id
   `direct_sell_code` varchar(50)  null,-- 直销编号
   `bar_code` varchar(50) null,-- 条码
@@ -1223,7 +1223,7 @@ CREATE TABLE `t_store_direct_sell_detail` (
   `update_user_id` varchar(36) not null,
   `update_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `status` varchar(32) NOT NULL DEFAULT 'OK',
-  PRIMARY KEY (`uuid`)
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
 
@@ -1232,7 +1232,7 @@ CREATE TABLE `t_store_direct_sell_detail` (
 -- -- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
 DROP TABLE IF EXISTS `t_store_direct_sell`;
 CREATE TABLE `t_store_direct_sell` (
-  `uuid` VARCHAR(36) NOT NULL,
+  `id` VARCHAR(36) NOT NULL,
   `direct_sell_code` varchar(50) null,-- 仓库直销编号
 	`total_num` INTEGER null,-- 总数
 	`total_cost` DOUBLE null,-- 总价
@@ -1251,7 +1251,7 @@ CREATE TABLE `t_store_direct_sell` (
   `update_user_id` varchar(36) not null,
   `update_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `status` varchar(32) NOT NULL DEFAULT 'OK',
-  PRIMARY KEY (`uuid`)
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
 
@@ -1260,7 +1260,7 @@ CREATE TABLE `t_store_direct_sell` (
 -- -- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
 DROP TABLE IF EXISTS `t_service_detail`;
 CREATE TABLE `t_service_detail` (
-  `uuid` VARCHAR(36) NOT NULL,
+  `id` VARCHAR(36) NOT NULL,
   `service_id` VARCHAR(36) null,-- 服务ID
 	`item_code` varchar(50) null,-- 类型编号
 	`item_name` varchar(100) null,-- 类型名称
@@ -1278,7 +1278,7 @@ CREATE TABLE `t_service_detail` (
   `update_user_id` varchar(36) not null,
   `update_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `status` varchar(32) NOT NULL DEFAULT 'OK',
-  PRIMARY KEY (`uuid`)
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
 
@@ -1287,7 +1287,7 @@ CREATE TABLE `t_service_detail` (
 -- -- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
 DROP TABLE IF EXISTS `t_service`;
 CREATE TABLE `t_service` (
-  `uuid` VARCHAR(36) NOT NULL,
+  `id` VARCHAR(36) NOT NULL,
   `service_code` varchar(50) not null,-- 服务编号
 	`gest_id` VARCHAR(36) null,-- 宠物主人ID
 	`gest_name` varchar(100) null,-- 宠物主人名称
@@ -1309,7 +1309,7 @@ CREATE TABLE `t_service` (
   `update_user_id` varchar(36) not null,
   `update_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `status` varchar(32) NOT NULL DEFAULT 'OK',
-  PRIMARY KEY (`uuid`)
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
 
@@ -1318,7 +1318,7 @@ CREATE TABLE `t_service` (
 -- -- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
 DROP TABLE IF EXISTS `t_serial_number`;
 CREATE TABLE `t_serial_number` (
-  `uuid` VARCHAR(36) NOT NULL,
+  `id` VARCHAR(36) NOT NULL,
   `serial_number_style` varchar(50) NULL,-- 序列种类方式
 	`serial_num` INTEGER NULL,-- 序列数
   `create_user_id` varchar(36) not null,
@@ -1326,7 +1326,7 @@ CREATE TABLE `t_serial_number` (
   `update_user_id` varchar(36) not null,
   `update_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `status` varchar(32) NOT NULL DEFAULT 'OK',
-  PRIMARY KEY (`uuid`)
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
 
@@ -1335,7 +1335,7 @@ CREATE TABLE `t_serial_number` (
 -- -- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
 DROP TABLE IF EXISTS `t_reward_point_log`;
 CREATE TABLE `t_reward_point_log` (
-  `uuid` VARCHAR(36) NOT NULL,
+  `id` VARCHAR(36) NOT NULL,
   `gest_id` VARCHAR(36) null,-- 宠物主人ID
 	`settle_id` VARCHAR(36) null,--
 	`detail_id` VARCHAR(36) null,--
@@ -1356,16 +1356,16 @@ CREATE TABLE `t_reward_point_log` (
   `update_user_id` varchar(36) not null,
   `update_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `status` varchar(32) NOT NULL DEFAULT 'OK',
-  PRIMARY KEY (`uuid`)
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
 
 -- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
 -- --- Table structure for t_rewardpoint_exchange_detail  赔偿交换细节
 -- -- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
-DROP TABLE IF EXISTS `t_reward_point_log`;
-CREATE TABLE `t_reward_point_log` (
-  `uuid` VARCHAR(36) NOT NULL,
+DROP TABLE IF EXISTS `t_rewardpoint_exchange_detail`;
+CREATE TABLE `t_rewardpoint_exchange_detail` (
+  `id` VARCHAR(36) NOT NULL,
   `parent_id` VARCHAR(36) null,-- 上级ID
 	`item_code` varchar(50) null,-- 类型编号
 	`item_name` varchar(100) null,-- 类型名称
@@ -1382,7 +1382,7 @@ CREATE TABLE `t_reward_point_log` (
   `update_user_id` varchar(36) not null,
   `update_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `status` varchar(32) NOT NULL DEFAULT 'OK',
-  PRIMARY KEY (`uuid`)
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
 
@@ -1391,7 +1391,7 @@ CREATE TABLE `t_reward_point_log` (
 -- -- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
 DROP TABLE IF EXISTS `t_rewardpoint_exchange`;
 CREATE TABLE `t_rewardpoint_exchange` (
-  `uuid` VARCHAR(36) NOT NULL,
+  `id` VARCHAR(36) NOT NULL,
   `gest_id` VARCHAR(36) null,-- 宠物主人ID
 	`gest_code` varchar(50) null,-- 宠物主人编号
 	`gest_name` varchar(100) null,-- 宠物主人名称
@@ -1404,7 +1404,7 @@ CREATE TABLE `t_rewardpoint_exchange` (
   `update_user_id` varchar(36) not null,
   `update_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `status` varchar(32) NOT NULL DEFAULT 'OK',
-  PRIMARY KEY (`uuid`)
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
 
@@ -1414,7 +1414,7 @@ CREATE TABLE `t_rewardpoint_exchange` (
 -- -- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
 DROP TABLE IF EXISTS `t_return_commodity_detail`;
 CREATE TABLE `t_return_commodity_detail` (
-  `uuid` VARCHAR(36) NOT NULL,
+  `id` VARCHAR(36) NOT NULL,
   `rc_id` VARCHAR(36) null,
 	`busi_type_id` VARCHAR(36) null,-- 业务类型ID
 	`sell_detail_id` VARCHAR(36) null,-- 销售细节ID
@@ -1443,7 +1443,7 @@ CREATE TABLE `t_return_commodity_detail` (
   `update_user_id` varchar(36) not null,
   `update_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `status` varchar(32) NOT NULL DEFAULT 'OK',
-  PRIMARY KEY (`uuid`)
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
 
@@ -1452,7 +1452,7 @@ CREATE TABLE `t_return_commodity_detail` (
 -- -- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
 DROP TABLE IF EXISTS `t_return_commodity`;
 CREATE TABLE `t_return_commodity` (
-  `uuid` VARCHAR(36) NOT NULL,
+  `id` VARCHAR(36) NOT NULL,
   `rc_code` varchar(50) null,-- 编号
 	`cash_id` VARCHAR(36) null,-- 患处ID
 	`cash_code` varchar(50) null,-- 患处编号
@@ -1472,7 +1472,7 @@ CREATE TABLE `t_return_commodity` (
   `update_user_id` varchar(36) not null,
   `update_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `status` varchar(32) NOT NULL DEFAULT 'OK',
-  PRIMARY KEY (`uuid`)
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
 
@@ -1481,7 +1481,7 @@ CREATE TABLE `t_return_commodity` (
 -- -- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
 DROP TABLE IF EXISTS `t_prompt`;
 CREATE TABLE `t_prompt` (
-  `uuid` VARCHAR(36) NOT NULL,
+  `id` VARCHAR(36) NOT NULL,
   `config_id` varchar(36) null,-- 配置ID
 	`key_code` varchar(50) null,-- 编号
 	`relation_id` varchar(36) null,-- 关联ID
@@ -1514,7 +1514,7 @@ CREATE TABLE `t_prompt` (
   `update_user_id` varchar(36) not null,
   `update_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `status` varchar(32) NOT NULL DEFAULT 'OK',
-  PRIMARY KEY (`uuid`)
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
 
@@ -1523,7 +1523,7 @@ CREATE TABLE `t_prompt` (
 -- -- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
 DROP TABLE IF EXISTS `t_prepay_money`;
 CREATE TABLE `t_prepay_money` (
-  `uuid` VARCHAR(36) NOT NULL,
+  `id` VARCHAR(36) NOT NULL,
   `gest_id` VARCHAR(36) null,-- 宠物主人ID
 	`business_type` VARCHAR(50) null,-- 业务类型
 	`option_type` VARCHAR(50) null,-- 类型
@@ -1536,7 +1536,7 @@ CREATE TABLE `t_prepay_money` (
   `update_user_id` varchar(36) not null,
   `update_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `status` varchar(32) NOT NULL DEFAULT 'OK',
-  PRIMARY KEY (`uuid`)
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
 
@@ -1546,7 +1546,7 @@ CREATE TABLE `t_prepay_money` (
 -- -- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
 DROP TABLE IF EXISTS `t_phone_message`;
 CREATE TABLE `t_phone_message` (
-  `uuid` VARCHAR(36) NOT NULL,
+  `id` VARCHAR(36) NOT NULL,
   `gest_id` VARCHAR(36) null,-- 宠物主人ID
 	`gest_name` varchar(50) null,-- 宠物主人名称
 	`mobile_phone` varchar(50) null,-- 电话
@@ -1561,7 +1561,7 @@ CREATE TABLE `t_phone_message` (
   `update_user_id` varchar(36) not null,
   `update_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `status` varchar(32) NOT NULL DEFAULT 'OK',
-  PRIMARY KEY (`uuid`)
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
 
@@ -1570,7 +1570,7 @@ CREATE TABLE `t_phone_message` (
 -- -- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
 -- DROP TABLE IF EXISTS `t_pet_small_race`;
 -- CREATE TABLE `t_pet_small_race` (
---   `uuid` VARCHAR(36) NOT NULL,
+--   `id` VARCHAR(36) NOT NULL,
 --   `race_id` varchar(36)null,-- 竞赛ID
 -- 	`pet_race_name` varchar(50) null,-- 宠物竞赛名称
 -- 	`pet_type` varchar(50) null,-- 宠物类型
@@ -1579,7 +1579,7 @@ CREATE TABLE `t_phone_message` (
 --   `update_user_id` varchar(36) not null,
 --   `update_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
 --   `status` varchar(32) NOT NULL DEFAULT 'OK',
---   PRIMARY KEY (`uuid`)
+--   PRIMARY KEY (`id`)
 -- ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
 
@@ -1588,7 +1588,7 @@ CREATE TABLE `t_phone_message` (
 -- -- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
 -- DROP TABLE IF EXISTS `t_pet_race`;
 -- CREATE TABLE `t_pet_race` (
---   `uuid` VARCHAR(36) NOT NULL,
+--   `id` VARCHAR(36) NOT NULL,
 --   `big_type_name` varchar(50)null,-- 大类名称
 -- 	`mdic_type_name` varchar(50) null,-- 类型名称
 --   `create_user_id` varchar(36) not null,
@@ -1596,7 +1596,7 @@ CREATE TABLE `t_phone_message` (
 --   `update_user_id` varchar(36) not null,
 --   `update_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
 --   `status` varchar(32) NOT NULL DEFAULT 'OK',
---   PRIMARY KEY (`uuid`)
+--   PRIMARY KEY (`id`)
 -- ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
 
@@ -1605,7 +1605,7 @@ CREATE TABLE `t_phone_message` (
 -- -- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
 DROP TABLE IF EXISTS `t_micro_sms_config`;
 CREATE TABLE `t_micro_sms_config` (
-  `uuid` VARCHAR(36) NOT NULL,
+  `id` VARCHAR(36) NOT NULL,
   `config_name` varchar(50)null,-- 配置名称
 	`config_value` varchar(256) null,-- 配置值
 	`description` varchar(256) null,-- 描述
@@ -1614,7 +1614,7 @@ CREATE TABLE `t_micro_sms_config` (
   `update_user_id` varchar(36) not null,
   `update_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `status` varchar(32) NOT NULL DEFAULT 'OK',
-  PRIMARY KEY (`uuid`)
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
 
@@ -1624,7 +1624,7 @@ CREATE TABLE `t_micro_sms_config` (
 -- -- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
 /*DROP TABLE IF EXISTS `t_medic_vedio_exam`;
 CREATE TABLE `t_medic_vedio_exam` (
-  `uuid` VARCHAR(36) NOT NULL,
+  `id` VARCHAR(36) NOT NULL,
   `medic_record_code` varchar(50) NULL,-- 医生记录编号
 	`medic_record_id` VARCHAR(36) NULL,-- 医生记录ID
 	`item_code` varchar(50) NULL,-- 类型编号
@@ -1640,7 +1640,7 @@ CREATE TABLE `t_medic_vedio_exam` (
   `update_user_id` varchar(36) not null,
   `update_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `status` varchar(32) NOT NULL DEFAULT 'OK',
-  PRIMARY KEY (`uuid`)
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;*/
 
 
@@ -1649,7 +1649,7 @@ CREATE TABLE `t_medic_vedio_exam` (
 -- -- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
 DROP TABLE IF EXISTS `t_medic_vaccine`;
 CREATE TABLE `t_medic_vaccine` (
-  `uuid` VARCHAR(36) NOT NULL,
+  `id` VARCHAR(36) NOT NULL,
   `vaccine_group_code` varchar(50) null,-- 育苗组编号
 	`pet_name` varchar(50) null,-- 宠物名称
 	`gest_id` VARCHAR(36) null,-- 宠物主人ID
@@ -1690,7 +1690,7 @@ CREATE TABLE `t_medic_vaccine` (
   `update_user_id` varchar(36) not null,
   `update_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `status` varchar(32) NOT NULL DEFAULT 'OK',
-  PRIMARY KEY (`uuid`)
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
 
@@ -1699,7 +1699,7 @@ CREATE TABLE `t_medic_vaccine` (
 -- -- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
 DROP TABLE IF EXISTS `t_medic_supplies`;
 CREATE TABLE `t_medic_supplies` (
-  `uuid` VARCHAR(36) NOT NULL,
+  `id` VARCHAR(36) NOT NULL,
   `medic_record_code` varchar(50) null,-- 医生记录编号
 	`medic_record_id` VARCHAR(36) null,-- 医生记录ID
 	`exam_id` VARCHAR(36) not null,-- 实例ID
@@ -1717,7 +1717,7 @@ CREATE TABLE `t_medic_supplies` (
   `update_user_id` varchar(36) not null,
   `update_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `status` varchar(32) NOT NULL DEFAULT 'OK',
-  PRIMARY KEY (`uuid`)
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
 
@@ -1726,7 +1726,7 @@ CREATE TABLE `t_medic_supplies` (
 -- -- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
 DROP TABLE IF EXISTS `t_medic_register_record`;
 CREATE TABLE `t_medic_register_record` (
-  `uuid` VARCHAR(36) NOT NULL,
+  `id` VARCHAR(36) NOT NULL,
   `register_no` varchar(50)  null,-- 登记编号
   `register_style` varchar(50)  null,-- 登记类型
   `item_name` varchar(100) null,-- 类型名称
@@ -1749,7 +1749,7 @@ CREATE TABLE `t_medic_register_record` (
   `update_user_id` varchar(36) not null,
   `update_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `status` varchar(32) NOT NULL DEFAULT 'OK',
-  PRIMARY KEY (`uuid`)
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
 
@@ -1758,7 +1758,7 @@ CREATE TABLE `t_medic_register_record` (
 -- -- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
 DROP TABLE IF EXISTS `t_medic_prescription_detail`;
 CREATE TABLE `t_medic_prescription_detail` (
-  `uuid` VARCHAR(36) NOT NULL,
+  `id` VARCHAR(36) NOT NULL,
   `prescription_id` varchar(36)  null,-- 处方ID
   `item_name` varchar(100) null,-- 类型名称
   `item_code` varchar(50)  null,-- 类型编号
@@ -1782,7 +1782,7 @@ CREATE TABLE `t_medic_prescription_detail` (
   `update_user_id` varchar(36) not null,
   `update_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `status` varchar(32) NOT NULL DEFAULT 'OK',
-  PRIMARY KEY (`uuid`)
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
 
@@ -1791,7 +1791,7 @@ CREATE TABLE `t_medic_prescription_detail` (
 -- -- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
 DROP TABLE IF EXISTS `t_medic_prescription`;
 CREATE TABLE `t_medic_prescription` (
-  `uuid` VARCHAR(36) NOT NULL,
+  `id` VARCHAR(36) NOT NULL,
   `medic_record_code` varchar(50) null,-- 医生记录编号
 	`medic_record_id` VARCHAR(36) null,-- 记录名称
 	`prescription_code` varchar(50) null,-- 开处方编号
@@ -1807,7 +1807,7 @@ CREATE TABLE `t_medic_prescription` (
   `update_user_id` varchar(36) not null,
   `update_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `status` varchar(32) NOT NULL DEFAULT 'OK',
-  PRIMARY KEY (`uuid`)
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
 
@@ -1816,7 +1816,7 @@ CREATE TABLE `t_medic_prescription` (
 -- -- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
 DROP TABLE IF EXISTS `t_medic_medictreat_record`;
 CREATE TABLE `t_medic_medictreat_record` (
-  `uuid` VARCHAR(36) NOT NULL,
+  `id` VARCHAR(36) NOT NULL,
   `pet_id` varchar(36) null,-- 宠物id
 	`medi_treatment_code` varchar(50) null,-- 医生对待编号
 	`register_no` varchar(50) null,-- 注册编号
@@ -1839,7 +1839,7 @@ CREATE TABLE `t_medic_medictreat_record` (
   `update_user_id` varchar(36) not null,
   `update_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `status` varchar(32) NOT NULL DEFAULT 'OK',
-  PRIMARY KEY (`uuid`)
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
 -- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --
@@ -1847,7 +1847,7 @@ CREATE TABLE `t_medic_medictreat_record` (
 -- -- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
 DROP TABLE IF EXISTS `t_medic_chemical_examtype_detail`;
 CREATE TABLE `t_medic_chemical_examtype_detail` (
-  `uuid` VARCHAR(36) NOT NULL,
+  `id` VARCHAR(36) NOT NULL,
   `che_test_typd_id` varchar(36) null,-- 实验类型ID
 	`pet_race_name` varchar(50) null,-- 宠物竞赛名称
 	`pet_age_moth_from` integer null,-- 宠物起始年龄月
@@ -1861,7 +1861,7 @@ CREATE TABLE `t_medic_chemical_examtype_detail` (
   `update_user_id` varchar(36) not null,
   `update_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `status` varchar(32) NOT NULL DEFAULT 'OK',
-  PRIMARY KEY (`uuid`)
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
 
@@ -1870,7 +1870,7 @@ CREATE TABLE `t_medic_chemical_examtype_detail` (
 -- -- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
 DROP TABLE IF EXISTS `t_medic_chemical_examtype`;
 CREATE TABLE `t_medic_chemical_examtype` (
-  `uuid` VARCHAR(36) NOT NULL,
+  `id` VARCHAR(36) NOT NULL,
   `item_code` varchar(50) null,-- 类型编号
 	`item_name` varchar(50) null,-- 类型名称
 	`che_test_name` varchar(50) null,-- 检查测试名称
@@ -1882,6 +1882,6 @@ CREATE TABLE `t_medic_chemical_examtype` (
   `update_user_id` varchar(36) not null,
   `update_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `status` varchar(32) NOT NULL DEFAULT 'OK',
-  PRIMARY KEY (`uuid`)
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 

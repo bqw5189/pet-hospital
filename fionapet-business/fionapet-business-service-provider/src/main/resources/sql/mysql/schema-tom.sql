@@ -4,7 +4,7 @@
 -- ----------------------------
 DROP TABLE IF EXISTS `t_dealer`;
 CREATE TABLE `t_dealer` (
-  `uuid` VARCHAR(36) NOT NULL,
+  `id` VARCHAR(36) NOT NULL,
   `code` varchar(16) NOT NULL, -- 编码
   `name` varchar(256) NOT NULL,
   `contract_man` varchar(16), -- 联系人
@@ -25,7 +25,7 @@ CREATE TABLE `t_dealer` (
   `update_user_id` varchar(36) NOT NULL,
   `update_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `status` varchar(32) NOT NULL DEFAULT 'OK',
-  PRIMARY KEY (`uuid`),
+  PRIMARY KEY (`id`),
   UNIQUE KEY `name` (`name`)
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
@@ -34,7 +34,7 @@ CREATE TABLE `t_dealer` (
 -- ----------------------------
 DROP TABLE IF EXISTS `t_member_level`;
 CREATE TABLE `t_member_level` (
-  `uuid` VARCHAR(36) NOT NULL,
+  `id` VARCHAR(36) NOT NULL,
   `name` varchar(256) NOT NULL,
   `is_credit` boolean DEFAULT FALSE , -- 信誉状态
   `is_discount` boolean DEFAULT FALSE , -- 是否打折
@@ -45,6 +45,6 @@ CREATE TABLE `t_member_level` (
   `update_user_id` varchar(36) NOT NULL,
   `update_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `status` varchar(32) NOT NULL DEFAULT 'OK',
-  PRIMARY KEY (`uuid`),
+  PRIMARY KEY (`id`),
   UNIQUE KEY `name` (`name`)
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
