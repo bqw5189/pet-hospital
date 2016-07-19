@@ -1,8 +1,8 @@
 package com.fionapet.business.repository;
 
 import com.fionapet.business.entity.Pet;
-import com.fionapet.business.entity.PetSmallRace;
-import com.fionapet.business.entity.UserDictDetail;
+import com.fionapet.business.test.DataBuilder;
+import com.fionapet.business.test.PetData;
 import org.junit.Assert;
 import org.junit.Test;
 import org.slf4j.Logger;
@@ -11,7 +11,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springside.modules.test.spring.SpringTransactionalTestCase;
 
-import java.util.Date;
 import java.util.List;
 
 /**
@@ -24,41 +23,10 @@ public class PetDaoTest extends SpringTransactionalTestCase {
     private static final Logger LOGGER = LoggerFactory.getLogger(PetDaoTest.class);
     @Autowired
     private PetDao petDao;
-    @Autowired
-    private UserDictDetailDao userDictDetailDao;
-    @Autowired
-    private PetSmallRaceDao petSmallRaceDao;
 
     @Test
     public void curd(){
-        Pet pet = new Pet();
-        pet.setPetName("二哈");
-        pet.setAge(2);
-        pet.setDogBandId("110");
-        pet.setGestId("01");
-        pet.setGestCode("vip01");
-        pet.setGestName("小新");
-        pet.setMdicTypeName("院长");
-        pet.setPetBirthday(new Date());
-        pet.setPetBodyLong(10);
-        pet.setPetWeight(2.5f);
-        pet.setPetHeight(50);
-        pet.setPetSwidth(20);
-        pet.setPetCode("CP01");
-        pet.setPetHead("头像");
-        pet.setPetHeadId("01");
-
-        //品种
-        PetSmallRace petSmallRace = petSmallRaceDao.findByType("哈士奇");
-        pet.setPetRace(petSmallRace);
-
-        //性别
-        UserDictDetail userDictDetail = userDictDetailDao.findByDictDetailCode("DM00003");
-        pet.setPetSex(userDictDetail);
-
-        //颜色
-        userDictDetail = userDictDetailDao.findByDictDetailCode("DM00005");
-        pet.setPetSkinColor(userDictDetail);
+        Pet pet = DataBuilder.data(PetData.class);
 
         petDao.save(pet);
 

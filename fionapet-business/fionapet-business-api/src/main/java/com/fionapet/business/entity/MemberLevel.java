@@ -7,8 +7,6 @@ import javax.persistence.Entity;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
-import java.util.Date;
-
 /**
  * 会员级别
  * <p>

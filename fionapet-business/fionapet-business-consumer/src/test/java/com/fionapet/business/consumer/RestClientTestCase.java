@@ -4,7 +4,6 @@ package com.fionapet.business.consumer;
 
 import cn.fiona.pet.account.facade.AuthRestService;
 import cn.fiona.pet.account.facade.RestResult;
-import com.fionapet.business.entity.PetRace;
 import junit.framework.Assert;
 import org.junit.AfterClass;
 import org.slf4j.Logger;
@@ -16,9 +15,6 @@ import javax.ws.rs.client.ClientBuilder;
 import javax.ws.rs.client.Invocation;
 import javax.ws.rs.client.WebTarget;
 import javax.ws.rs.core.Response;
-import java.lang.reflect.ParameterizedType;
-import java.lang.reflect.Type;
-import java.util.List;
 
 /**
  * @author tom

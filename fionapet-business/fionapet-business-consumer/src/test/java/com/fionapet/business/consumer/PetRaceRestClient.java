@@ -3,21 +3,16 @@ package com.fionapet.business.consumer;
 
 
 import cn.fiona.pet.account.entity.RestResultEnum;
-import cn.fiona.pet.account.facade.AuthRestService;
 import cn.fiona.pet.account.facade.RestResult;
 import com.alibaba.fastjson.JSON;
 import com.fionapet.business.entity.PetRace;
 import junit.framework.Assert;
-import org.junit.AfterClass;
 import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import javax.ws.rs.ProcessingException;
-import javax.ws.rs.client.Client;
-import javax.ws.rs.client.ClientBuilder;
 import javax.ws.rs.client.Entity;
-import javax.ws.rs.client.WebTarget;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import java.util.HashMap;

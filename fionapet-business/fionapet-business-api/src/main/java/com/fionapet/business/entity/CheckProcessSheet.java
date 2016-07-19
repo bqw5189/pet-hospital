@@ -1,13 +1,9 @@
 package com.fionapet.business.entity;
 
 import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
 
 import javax.persistence.Entity;
 import javax.persistence.Table;
-import javax.validation.constraints.NotNull;
-
-import java.util.Date;
 
 /**
  * 检查处理单据
