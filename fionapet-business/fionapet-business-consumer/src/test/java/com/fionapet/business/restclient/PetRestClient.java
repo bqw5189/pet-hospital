@@ -3,6 +3,7 @@ package com.fionapet.business.restclient;
 
 
 import com.alibaba.fastjson.JSON;
+import com.fionapet.business.entity.PageSearch;
 import com.fionapet.business.entity.Pet;
 import com.fionapet.business.test.DataBuilder;
 import com.fionapet.business.test.PetData;
@@ -47,6 +48,27 @@ public class PetRestClient extends RestClientTestCase {
         }, URL, PetRestClient.TOKEN);
     }
 
+    @Test(expected = ProcessingException.class)
+    public void testPage(){
+        final PageSearch pageSearch = new PageSearch();
+
+        LOGGER.info("pageSearch:{}", pageSearch);
+
+        Response response = getBuilder(URL + "/page", TOKEN).post(Entity.entity(pageSearch, MediaType.APPLICATION_JSON));
+
+        assertRequest(new Assertable() {
+            @Override
+            public void assertBlack(RestResult restResult) throws Exception {
+                LOGGER.info("restResult:{}", restResult);
+                RestResult<HashMap> result = (RestResult<HashMap>)restResult;
+                Assert.assertEquals(restResult.getCode(), RestResultEnum.OK.getCode());
+
+                Assert.assertNotNull(result.getData());
+
+                LOGGER.info("page:{}", JSON.toJSON(restResult));
+            }
+        }, response);
+    }
 
     @Test(expected = ProcessingException.class)
     public void testCreate(){

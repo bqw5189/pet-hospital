@@ -1,5 +1,6 @@
 package com.fionapet.business.facade;
 
+import org.dubbo.x.entity.PageSearch;
 import org.dubbo.x.facade.CURDRestService;
 import org.dubbo.x.facade.RestResult;
 import org.dubbo.x.util.ConstantVariable;
@@ -8,6 +9,7 @@ import com.fionapet.business.entity.Pet;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
+import org.springframework.data.domain.Page;
 
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
@@ -33,6 +35,12 @@ public interface PetRestService extends CURDRestService<Pet>{
     @ApiOperation(value = "宠物",
             notes = "宠物列表.")
     RestResult<List<Pet>> list(@HeaderParam(ConstantVariable.HEADER_AUTHORIZATION_KEY) String token);
+
+    @Override
+    @POST
+    @Path("/page")
+    @ApiOperation(value = "分页")
+    RestResult<Page<Pet>> page(@HeaderParam(ConstantVariable.HEADER_AUTHORIZATION_KEY) String token, PageSearch pageSearch);
 
     /**
      * 宠物 详细信息
