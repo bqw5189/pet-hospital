@@ -208,4 +208,14 @@
     <dubbo:reference id="baseMedicPrescriptionService" interface="com.fionapet.business.service.BaseMedicPrescriptionService"/>
     <!-- 处方 service -->
 
+
+	<!-- 宠物 service -->
+    <dubbo:reference id="petService" interface="com.fionapet.business.service.PetService"/>
+    <!-- 宠物 service -->
+
+
+	<!-- 宠物品种 service -->
+    <dubbo:reference id="petSmallRaceService" interface="com.fionapet.business.service.PetSmallRaceService"/>
+    <!-- 宠物品种 service -->
+
 </beans>

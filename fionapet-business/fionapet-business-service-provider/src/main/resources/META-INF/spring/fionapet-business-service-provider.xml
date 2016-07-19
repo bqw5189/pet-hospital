@@ -386,4 +386,12 @@
                    protocol="dubbo" validation="true" timeout="2000" connections="100"/>
     <!-- 处方 api -->
 
+
+	<!-- 宠物 api -->
+    <bean id="petService" class="com.fionapet.business.service.PetServiceImpl"/>
+
+    <dubbo:service interface="com.fionapet.business.service.PetService" ref="petService"
+                   protocol="dubbo" validation="true" timeout="2000" connections="100"/>
+    <!-- 宠物 api -->
+
 </beans>

@@ -431,14 +431,14 @@ CREATE TABLE `t_pet` (
   `pet_name` varchar(100)  null,-- 宠物名称
   `pet_sex` varchar(50)  null,-- 宠物性别
   `pet_birthday` date  null,-- 宠物生日
-  `age` varchar(20) null ,-- 宠物年龄
+  `age` int null ,-- 宠物年龄
   `pet_skin_color` varchar(50)  null,-- 宠物皮肤颜色
-  `pet_race` varchar(50)  null,-- 宠物跑赛
-  `pet_breed` varchar(50)  null,-- 宠物饲养
-  `pet_weight` varchar(50)  null,-- 宠物重量
-  `pet_height` varchar(50)  null,-- 宠物高度
-  `pet_swidth` varchar(50)  null,-- 宠物宽度
-  `pet_body_long` varchar(50)  null,-- 宠物长度
+  `pet_race` varchar(50)  null,-- 宠物品种
+  `pet_breed` varchar(50)  null,-- 绝育状态
+  `pet_weight` FLOAT  null,-- 宠物重量
+  `pet_height` int  null,-- 宠物高度
+  `pet_swidth` int  null,-- 宠物宽度
+  `pet_body_long` int  null,-- 宠物长度
   `sick_file_code` varchar(50)  null,-- 宠物状态
   `birth_status` varchar(50)  null,-- 宠物生日状态
   `pet_head` varchar(36)  null,-- 宠物头像

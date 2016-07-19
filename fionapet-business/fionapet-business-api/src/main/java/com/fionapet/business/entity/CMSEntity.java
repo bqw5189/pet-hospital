@@ -2,15 +2,10 @@ package com.fionapet.business.entity;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import org.codehaus.jackson.map.annotate.JsonFilter;
+import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.dubbo.x.entity.StatusEntity;
-import org.hibernate.annotations.GenericGenerator;
 
-import javax.persistence.*;
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlRootElement;
-import java.io.Serializable;
+import javax.persistence.MappedSuperclass;
 import java.util.Date;
 
 /**
@@ -77,6 +72,12 @@ public class CMSEntity extends StatusEntity {
     }
 
     public void setUpdateDate(Date updateDate) {
+
         this.updateDate = updateDate;
+    }
+
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this);
     }
 }
