@@ -32,22 +32,13 @@
                     com.fionapet.business.extension.TraceFilter,
                     com.fionapet.business.extension.ClientTraceFilter,
                     com.fionapet.business.extension.DynamicTraceBinding,
-                    com.fionapet.business.extension.CustomExceptionMapper,
+                    org.dubbo.x.extension.CustomExceptionMapper,
                     com.alibaba.dubbo.rpc.protocol.rest.support.LoggingFilter"/>
 
 
     <!-- pet race api -->
-    <dubbo:service interface="com.fionapet.business.facade.PetRaceRestService" ref="petRaceRestService"
-                   protocol="rest" validation="true" timeout="2000" connections="100"/>
-
-    <bean id="petRaceRestService" class="com.fionapet.business.facade.PetRaceRestServiceImpl">
-        <property name="petRaceService" ref="petRaceService"/>
-    </bean>
-
-    <dubbo:reference id="petRaceService" interface="com.fionapet.business.service.PetRaceService"/>
-
     <dubbo:service interface="com.fionapet.business.facade.PetSmallRaceRestService" ref="petSmallRaceRestService"
-                   protocol="rest" validation="true" timeout="2000" connections="100"/>
+                   protocol="rest" validation="true" timeout="2000" />
 
     <bean id="petSmallRaceRestService" class="com.fionapet.business.facade.PetSmallRaceRestServiceImpl">
         <property name="petSmallRaceService" ref="petSmallRaceService"/>
@@ -58,79 +49,22 @@
 
     <dubbo:reference id="accountService" interface="cn.fiona.pet.account.service.AccountService"/>
 
-    <!--warehouse api -->
-    <dubbo:service interface="com.fionapet.business.facade.WarehouseRestService" ref="warehouseRestService"
-                   protocol="rest" validation="true" timeout="2000" connections="100"/>
-
-    <bean id="warehouseRestService" class="com.fionapet.business.facade.WarehouseRestServiceImpl">
-        <property name="warehouseService" ref="warehouseService"/>
-    </bean>
-
-    <dubbo:reference id="warehouseService" interface="com.fionapet.business.service.WarehouseService"/>
-
-    <!-- warehouse api-->
-    <!--itemcate api -->
-    <dubbo:service interface="com.fionapet.business.facade.ItemCateRestService" ref="itemCateRestService"
-                   protocol="rest" validation="true" timeout="2000" connections="100"/>
-
-    <bean id="itemCateRestService" class="com.fionapet.business.facade.ItemCateRestServiceImpl">
-        <property name="itemCateService" ref="itemCateService"/>
-    </bean>
-
-    <dubbo:reference id="itemCateService" interface="com.fionapet.business.service.ItemCateService"/>
-
-    <!-- itemcate api-->
-    <!--businesCate api -->
-    <dubbo:service interface="com.fionapet.business.facade.BusinesCateRestService" ref="businesCateRestService"
-                   protocol="rest" validation="true" timeout="2000" connections="100"/>
-
-    <bean id="businesCateRestService" class="com.fionapet.business.facade.BusinesCateRestServiceImpl">
-        <property name="businesCateService" ref="businesCateService"/>
-    </bean>
-
-    <dubbo:reference id="businesCateService" interface="com.fionapet.business.service.BusinesCateService"/>
-
-    <!-- businesCate api-->
-
-	<!--经销商 api -->
-    <dubbo:service interface="com.fionapet.business.facade.DealerRestService" ref="dealerRestService"
-                   protocol="rest" validation="true" timeout="2000" connections="100"/>
-
-    <bean id="dealerRestService" class="com.fionapet.business.facade.DealerRestServiceImpl">
-        <property name="dealerService" ref="dealerService"/>
-    </bean>
-
-    <dubbo:reference id="dealerService" interface="com.fionapet.business.service.DealerService"/>
-    <!--经销商 api -->
-
-
-	<!--商品和服务类型 api -->
-    <dubbo:service interface="com.fionapet.business.facade.ItemTypeRestService" ref="itemTypeRestService"
-                   protocol="rest" validation="true" timeout="2000" connections="100"/>
-
-    <bean id="itemTypeRestService" class="com.fionapet.business.facade.ItemTypeRestServiceImpl">
-        <property name="itemTypeService" ref="itemTypeService"/>
-    </bean>
-
-    <dubbo:reference id="itemTypeService" interface="com.fionapet.business.service.ItemTypeService"/>
-    <!--商品和服务类型 api -->
-
 
 	<!--应用配置 api -->
     <dubbo:service interface="com.fionapet.business.facade.AppConfigRestService" ref="appConfigRestService"
-                   protocol="rest" validation="true" timeout="2000" connections="100"/>
+                   protocol="rest" validation="true" timeout="2000" />
 
     <bean id="appConfigRestService" class="com.fionapet.business.facade.AppConfigRestServiceImpl">
         <property name="appConfigService" ref="appConfigService"/>
     </bean>
 
-    <dubbo:reference id="appConfigService" interface="com.fionapet.business..service.AppConfigService"/>
+    <dubbo:reference id="appConfigService" interface="com.fionapet.business.service.AppConfigService"/>
     <!--应用配置 api -->
 
 
 	<!--电话信息表 api -->
     <dubbo:service interface="com.fionapet.business.facade.PhoneMessageRestService" ref="phoneMessageRestService"
-                   protocol="rest" validation="true" timeout="2000" connections="100"/>
+                   protocol="rest" validation="true" timeout="2000" />
 
     <bean id="phoneMessageRestService" class="com.fionapet.business.facade.PhoneMessageRestServiceImpl">
         <property name="phoneMessageService" ref="phoneMessageService"/>
@@ -142,7 +76,7 @@
 
 	<!--移库记录 api -->
     <dubbo:service interface="com.fionapet.business.facade.WarehouseMoverecordRestService" ref="warehouseMoverecordRestService"
-                   protocol="rest" validation="true" timeout="2000" connections="100"/>
+                   protocol="rest" validation="true" timeout="2000" />
 
     <bean id="warehouseMoverecordRestService" class="com.fionapet.business.facade.WarehouseMoverecordRestServiceImpl">
         <property name="warehouseMoverecordService" ref="warehouseMoverecordService"/>
@@ -154,7 +88,7 @@
 
 	<!--仓库存货清单 api -->
     <dubbo:service interface="com.fionapet.business.facade.WarehouseInventoryRestService" ref="warehouseInventoryRestService"
-                   protocol="rest" validation="true" timeout="2000" connections="100"/>
+                   protocol="rest" validation="true" timeout="2000" />
 
     <bean id="warehouseInventoryRestService" class="com.fionapet.business.facade.WarehouseInventoryRestServiceImpl">
         <property name="warehouseInventoryService" ref="warehouseInventoryService"/>
@@ -166,7 +100,7 @@
 
 	<!--医生化验实例类型细节表 api -->
     <dubbo:service interface="com.fionapet.business.facade.MedicChemicalExamtypeDetailRestService" ref="medicChemicalExamtypeDetailRestService"
-                   protocol="rest" validation="true" timeout="2000" connections="100"/>
+                   protocol="rest" validation="true" timeout="2000" />
 
     <bean id="medicChemicalExamtypeDetailRestService" class="com.fionapet.business.facade.MedicChemicalExamtypeDetailRestServiceImpl">
         <property name="medicChemicalExamtypeDetailService" ref="medicChemicalExamtypeDetailService"/>
@@ -178,7 +112,7 @@
 
 	<!--退回记录 api -->
     <dubbo:service interface="com.fionapet.business.facade.WarehouseBackrecordRestService" ref="warehouseBackrecordRestService"
-                   protocol="rest" validation="true" timeout="2000" connections="100"/>
+                   protocol="rest" validation="true" timeout="2000" />
 
     <bean id="warehouseBackrecordRestService" class="com.fionapet.business.facade.WarehouseBackrecordRestServiceImpl">
         <property name="warehouseBackrecordService" ref="warehouseBackrecordService"/>
@@ -190,7 +124,7 @@
 
 	<!--仓库直销主表 api -->
     <dubbo:service interface="com.fionapet.business.facade.StoreDirectSellRestService" ref="storeDirectSellRestService"
-                   protocol="rest" validation="true" timeout="2000" connections="100"/>
+                   protocol="rest" validation="true" timeout="2000" />
 
     <bean id="storeDirectSellRestService" class="com.fionapet.business.facade.StoreDirectSellRestServiceImpl">
         <property name="storeDirectSellService" ref="storeDirectSellService"/>
@@ -202,7 +136,7 @@
 
 	<!--育苗表 api -->
     <dubbo:service interface="com.fionapet.business.facade.MedicVaccineRestService" ref="medicVaccineRestService"
-                   protocol="rest" validation="true" timeout="2000" connections="100"/>
+                   protocol="rest" validation="true" timeout="2000" />
 
     <bean id="medicVaccineRestService" class="com.fionapet.business.facade.MedicVaccineRestServiceImpl">
         <property name="medicVaccineService" ref="medicVaccineService"/>
@@ -214,7 +148,7 @@
 
 	<!--医生处方明细 api -->
     <dubbo:service interface="com.fionapet.business.facade.MedicPrescriptionRestService" ref="medicPrescriptionRestService"
-                   protocol="rest" validation="true" timeout="2000" connections="100"/>
+                   protocol="rest" validation="true" timeout="2000" />
 
     <bean id="medicPrescriptionRestService" class="com.fionapet.business.facade.MedicPrescriptionRestServiceImpl">
         <property name="medicPrescriptionService" ref="medicPrescriptionService"/>
@@ -226,7 +160,7 @@
 
 	<!--医生供应量表 api -->
     <dubbo:service interface="com.fionapet.business.facade.MedicSuppliesRestService" ref="medicSuppliesRestService"
-                   protocol="rest" validation="true" timeout="2000" connections="100"/>
+                   protocol="rest" validation="true" timeout="2000" />
 
     <bean id="medicSuppliesRestService" class="com.fionapet.business.facade.MedicSuppliesRestServiceImpl">
         <property name="medicSuppliesService" ref="medicSuppliesService"/>
@@ -238,7 +172,7 @@
 
 	<!--序列号 api -->
     <dubbo:service interface="com.fionapet.business.facade.RewardPointLogRestService" ref="rewardPointLogRestService"
-                   protocol="rest" validation="true" timeout="2000" connections="100"/>
+                   protocol="rest" validation="true" timeout="2000" />
 
     <bean id="rewardPointLogRestService" class="com.fionapet.business.facade.RewardPointLogRestServiceImpl">
         <property name="rewardPointLogService" ref="rewardPointLogService"/>
@@ -250,7 +184,7 @@
 
 	<!--退回记录明细 api -->
     <dubbo:service interface="com.fionapet.business.facade.WarehouseBackrecordDetailRestService" ref="warehouseBackrecordDetailRestService"
-                   protocol="rest" validation="true" timeout="2000" connections="100"/>
+                   protocol="rest" validation="true" timeout="2000" />
 
     <bean id="warehouseBackrecordDetailRestService" class="com.fionapet.business.facade.WarehouseBackrecordDetailRestServiceImpl">
         <property name="warehouseBackrecordDetailService" ref="warehouseBackrecordDetailService"/>
@@ -262,7 +196,7 @@
 
 	<!--返回商品主表 api -->
     <dubbo:service interface="com.fionapet.business.facade.ReturnCommodityRestService" ref="returnCommodityRestService"
-                   protocol="rest" validation="true" timeout="2000" connections="100"/>
+                   protocol="rest" validation="true" timeout="2000" />
 
     <bean id="returnCommodityRestService" class="com.fionapet.business.facade.ReturnCommodityRestServiceImpl">
         <property name="returnCommodityService" ref="returnCommodityService"/>
@@ -274,7 +208,7 @@
 
 	<!--医生处方明细 api -->
     <dubbo:service interface="com.fionapet.business.facade.MedicPrescriptionDetailRestService" ref="medicPrescriptionDetailRestService"
-                   protocol="rest" validation="true" timeout="2000" connections="100"/>
+                   protocol="rest" validation="true" timeout="2000" />
 
     <bean id="medicPrescriptionDetailRestService" class="com.fionapet.business.facade.MedicPrescriptionDetailRestServiceImpl">
         <property name="medicPrescriptionDetailService" ref="medicPrescriptionDetailService"/>
@@ -286,7 +220,7 @@
 
 	<!--消息提醒配置表 api -->
     <dubbo:service interface="com.fionapet.business.facade.MicroSmsConfigRestService" ref="microSmsConfigRestService"
-                   protocol="rest" validation="true" timeout="2000" connections="100"/>
+                   protocol="rest" validation="true" timeout="2000" />
 
     <bean id="microSmsConfigRestService" class="com.fionapet.business.facade.MicroSmsConfigRestServiceImpl">
         <property name="microSmsConfigService" ref="microSmsConfigService"/>
@@ -298,7 +232,7 @@
 
 	<!--进库记录 api -->
     <dubbo:service interface="com.fionapet.business.facade.WarehouseInrecordRestService" ref="warehouseInrecordRestService"
-                   protocol="rest" validation="true" timeout="2000" connections="100"/>
+                   protocol="rest" validation="true" timeout="2000" />
 
     <bean id="warehouseInrecordRestService" class="com.fionapet.business.facade.WarehouseInrecordRestServiceImpl">
         <property name="warehouseInrecordService" ref="warehouseInrecordService"/>
@@ -310,7 +244,7 @@
 
 	<!--医生登记记录明细 api -->
     <dubbo:service interface="com.fionapet.business.facade.MedicRegisterRecordRestService" ref="medicRegisterRecordRestService"
-                   protocol="rest" validation="true" timeout="2000" connections="100"/>
+                   protocol="rest" validation="true" timeout="2000" />
 
     <bean id="medicRegisterRecordRestService" class="com.fionapet.business.facade.MedicRegisterRecordRestServiceImpl">
         <property name="medicRegisterRecordService" ref="medicRegisterRecordService"/>
@@ -322,7 +256,7 @@
 
 	<!--提前付费表 api -->
     <dubbo:service interface="com.fionapet.business.facade.PrepayMoneyRestService" ref="prepayMoneyRestService"
-                   protocol="rest" validation="true" timeout="2000" connections="100"/>
+                   protocol="rest" validation="true" timeout="2000" />
 
     <bean id="prepayMoneyRestService" class="com.fionapet.business.facade.PrepayMoneyRestServiceImpl">
         <property name="prepayMoneyService" ref="prepayMoneyService"/>
@@ -334,7 +268,7 @@
 
 	<!--进库记录明细 api -->
     <dubbo:service interface="com.fionapet.business.facade.WarehouseInrecordDetailRestService" ref="warehouseInrecordDetailRestService"
-                   protocol="rest" validation="true" timeout="2000" connections="100"/>
+                   protocol="rest" validation="true" timeout="2000" />
 
     <bean id="warehouseInrecordDetailRestService" class="com.fionapet.business.facade.WarehouseInrecordDetailRestServiceImpl">
         <property name="warehouseInrecordDetailService" ref="warehouseInrecordDetailService"/>
@@ -346,7 +280,7 @@
 
 	<!--急诊表 api -->
     <dubbo:service interface="com.fionapet.business.facade.PromptRestService" ref="promptRestService"
-                   protocol="rest" validation="true" timeout="2000" connections="100"/>
+                   protocol="rest" validation="true" timeout="2000" />
 
     <bean id="promptRestService" class="com.fionapet.business.facade.PromptRestServiceImpl">
         <property name="promptService" ref="promptService"/>
@@ -358,7 +292,7 @@
 
 	<!--服务明细 api -->
     <dubbo:service interface="com.fionapet.business.facade.ServiceDetailRestService" ref="serviceDetailRestService"
-                   protocol="rest" validation="true" timeout="2000" connections="100"/>
+                   protocol="rest" validation="true" timeout="2000" />
 
     <bean id="serviceDetailRestService" class="com.fionapet.business.facade.ServiceDetailRestServiceImpl">
         <property name="serviceDetailService" ref="serviceDetailService"/>
@@ -370,7 +304,7 @@
 
 	<!--检查处理单据 api -->
     <dubbo:service interface="com.fionapet.business.facade.CheckProcessSheetRestService" ref="checkProcessSheetRestService"
-                   protocol="rest" validation="true" timeout="2000" connections="100"/>
+                   protocol="rest" validation="true" timeout="2000" />
 
     <bean id="checkProcessSheetRestService" class="com.fionapet.business.facade.CheckProcessSheetRestServiceImpl">
         <property name="checkProcessSheetService" ref="checkProcessSheetService"/>
@@ -382,7 +316,7 @@
 
 	<!--出库记录 api -->
     <dubbo:service interface="com.fionapet.business.facade.WarehouseOutrecordRestService" ref="warehouseOutrecordRestService"
-                   protocol="rest" validation="true" timeout="2000" connections="100"/>
+                   protocol="rest" validation="true" timeout="2000" />
 
     <bean id="warehouseOutrecordRestService" class="com.fionapet.business.facade.WarehouseOutrecordRestServiceImpl">
         <property name="warehouseOutrecordService" ref="warehouseOutrecordService"/>
@@ -394,7 +328,7 @@
 
 	<!--医生化验实例类型细节表 api -->
     <dubbo:service interface="com.fionapet.business.facade.MedicChemicalExamtypeRestService" ref="medicChemicalExamtypeRestService"
-                   protocol="rest" validation="true" timeout="2000" connections="100"/>
+                   protocol="rest" validation="true" timeout="2000" />
 
     <bean id="medicChemicalExamtypeRestService" class="com.fionapet.business.facade.MedicChemicalExamtypeRestServiceImpl">
         <property name="medicChemicalExamtypeService" ref="medicChemicalExamtypeService"/>
@@ -406,7 +340,7 @@
 
 	<!--医生处理记录 api -->
     <dubbo:service interface="com.fionapet.business.facade.MedicMedictreatRecordRestService" ref="medicMedictreatRecordRestService"
-                   protocol="rest" validation="true" timeout="2000" connections="100"/>
+                   protocol="rest" validation="true" timeout="2000" />
 
     <bean id="medicMedictreatRecordRestService" class="com.fionapet.business.facade.MedicMedictreatRecordRestServiceImpl">
         <property name="medicMedictreatRecordService" ref="medicMedictreatRecordService"/>
@@ -418,7 +352,7 @@
 
 	<!--赔偿交换细节 api -->
     <dubbo:service interface="com.fionapet.business.facade.RewardpointExchangeDetailRestService" ref="rewardpointExchangeDetailRestService"
-                   protocol="rest" validation="true" timeout="2000" connections="100"/>
+                   protocol="rest" validation="true" timeout="2000" />
 
     <bean id="rewardpointExchangeDetailRestService" class="com.fionapet.business.facade.RewardpointExchangeDetailRestServiceImpl">
         <property name="rewardpointExchangeDetailService" ref="rewardpointExchangeDetailService"/>
@@ -430,7 +364,7 @@
 
 	<!--出库记录明细 api -->
     <dubbo:service interface="com.fionapet.business.facade.WarehouseOutrecordDetailRestService" ref="warehouseOutrecordDetailRestService"
-                   protocol="rest" validation="true" timeout="2000" connections="100"/>
+                   protocol="rest" validation="true" timeout="2000" />
 
     <bean id="warehouseOutrecordDetailRestService" class="com.fionapet.business.facade.WarehouseOutrecordDetailRestServiceImpl">
         <property name="warehouseOutrecordDetailService" ref="warehouseOutrecordDetailService"/>
@@ -442,7 +376,7 @@
 
 	<!--赔偿交换 api -->
     <dubbo:service interface="com.fionapet.business.facade.RewardpointExchangeRestService" ref="rewardpointExchangeRestService"
-                   protocol="rest" validation="true" timeout="2000" connections="100"/>
+                   protocol="rest" validation="true" timeout="2000" />
 
     <bean id="rewardpointExchangeRestService" class="com.fionapet.business.facade.RewardpointExchangeRestServiceImpl">
         <property name="rewardpointExchangeService" ref="rewardpointExchangeService"/>
@@ -454,7 +388,7 @@
 
 	<!--序列号 api -->
     <dubbo:service interface="com.fionapet.business.facade.SerialNumberRestService" ref="serialNumberRestService"
-                   protocol="rest" validation="true" timeout="2000" connections="100"/>
+                   protocol="rest" validation="true" timeout="2000" />
 
     <bean id="serialNumberRestService" class="com.fionapet.business.facade.SerialNumberRestServiceImpl">
         <property name="serialNumberService" ref="serialNumberService"/>
@@ -466,7 +400,7 @@
 
 	<!--VIP信息 api -->
     <dubbo:service interface="com.fionapet.business.facade.VipInputTemRestService" ref="vipInputTemRestService"
-                   protocol="rest" validation="true" timeout="2000" connections="100"/>
+                   protocol="rest" validation="true" timeout="2000" />
 
     <bean id="vipInputTemRestService" class="com.fionapet.business.facade.VipInputTemRestServiceImpl">
         <property name="vipInputTemService" ref="vipInputTemService"/>
@@ -478,7 +412,7 @@
 
 	<!--审批状态实体 api -->
     <dubbo:service interface="com.fionapet.business.facade.ApproveStatusEntityRestService" ref="approveStatusEntityRestService"
-                   protocol="rest" validation="true" timeout="2000" connections="100"/>
+                   protocol="rest" validation="true" timeout="2000" />
 
     <bean id="approveStatusEntityRestService" class="com.fionapet.business.facade.ApproveStatusEntityRestServiceImpl">
         <property name="approveStatusEntityService" ref="approveStatusEntityService"/>
@@ -490,7 +424,7 @@
 
 	<!--移库记录明细 api -->
     <dubbo:service interface="com.fionapet.business.facade.WarehouseMoverecordDetailRestService" ref="warehouseMoverecordDetailRestService"
-                   protocol="rest" validation="true" timeout="2000" connections="100"/>
+                   protocol="rest" validation="true" timeout="2000" />
 
     <bean id="warehouseMoverecordDetailRestService" class="com.fionapet.business.facade.WarehouseMoverecordDetailRestServiceImpl">
         <property name="warehouseMoverecordDetailService" ref="warehouseMoverecordDetailService"/>
@@ -502,7 +436,7 @@
 
 	<!--仓库直销明细 api -->
     <dubbo:service interface="com.fionapet.business.facade.StoreDirectSellDetailRestService" ref="storeDirectSellDetailRestService"
-                   protocol="rest" validation="true" timeout="2000" connections="100"/>
+                   protocol="rest" validation="true" timeout="2000" />
 
     <bean id="storeDirectSellDetailRestService" class="com.fionapet.business.facade.StoreDirectSellDetailRestServiceImpl">
         <property name="storeDirectSellDetailService" ref="storeDirectSellDetailService"/>
@@ -514,7 +448,7 @@
 
 	<!--返回商品明细 api -->
     <dubbo:service interface="com.fionapet.business.facade.ReturnCommodityDetailRestService" ref="returnCommodityDetailRestService"
-                   protocol="rest" validation="true" timeout="2000" connections="100"/>
+                   protocol="rest" validation="true" timeout="2000" />
 
     <bean id="returnCommodityDetailRestService" class="com.fionapet.business.facade.ReturnCommodityDetailRestServiceImpl">
         <property name="returnCommodityDetailService" ref="returnCommodityDetailService"/>
@@ -526,7 +460,7 @@
 
 	<!--服务主表 api -->
     <dubbo:service interface="com.fionapet.business.facade.ServiceRestService" ref="serviceRestService"
-                   protocol="rest" validation="true" timeout="2000" connections="100"/>
+                   protocol="rest" validation="true" timeout="2000" />
 
     <bean id="serviceRestService" class="com.fionapet.business.facade.ServiceRestServiceImpl">
         <property name="serviceService" ref="serviceService"/>
@@ -538,7 +472,7 @@
 
 	<!--住院处方明细 api -->
     <dubbo:service interface="com.fionapet.business.facade.InHospitalPrescriptionDetailRestService" ref="inHospitalPrescriptionDetailRestService"
-                   protocol="rest" validation="true" timeout="2000" connections="100"/>
+                   protocol="rest" validation="true" timeout="2000" />
 
     <bean id="inHospitalPrescriptionDetailRestService" class="com.fionapet.business.facade.InHospitalPrescriptionDetailRestServiceImpl">
         <property name="inHospitalPrescriptionDetailService" ref="inHospitalPrescriptionDetailService"/>
@@ -550,7 +484,7 @@
 
 	<!--住院处方 api -->
     <dubbo:service interface="com.fionapet.business.facade.InHospitalPrescriptionRestService" ref="inHospitalPrescriptionRestService"
-                   protocol="rest" validation="true" timeout="2000" connections="100"/>
+                   protocol="rest" validation="true" timeout="2000" />
 
     <bean id="inHospitalPrescriptionRestService" class="com.fionapet.business.facade.InHospitalPrescriptionRestServiceImpl">
         <property name="inHospitalPrescriptionService" ref="inHospitalPrescriptionService"/>
@@ -562,7 +496,7 @@
 
 	<!--处方明细 api -->
     <dubbo:service interface="com.fionapet.business.facade.BaseMedicPrescriptionDetailRestService" ref="baseMedicPrescriptionDetailRestService"
-                   protocol="rest" validation="true" timeout="2000" connections="100"/>
+                   protocol="rest" validation="true" timeout="2000" />
 
     <bean id="baseMedicPrescriptionDetailRestService" class="com.fionapet.business.facade.BaseMedicPrescriptionDetailRestServiceImpl">
         <property name="baseMedicPrescriptionDetailService" ref="baseMedicPrescriptionDetailService"/>
@@ -574,7 +508,7 @@
 
 	<!--处方 api -->
     <dubbo:service interface="com.fionapet.business.facade.BaseMedicPrescriptionRestService" ref="baseMedicPrescriptionRestService"
-                   protocol="rest" validation="true" timeout="2000" connections="100"/>
+                   protocol="rest" validation="true" timeout="2000" />
 
     <bean id="baseMedicPrescriptionRestService" class="com.fionapet.business.facade.BaseMedicPrescriptionRestServiceImpl">
         <property name="baseMedicPrescriptionService" ref="baseMedicPrescriptionService"/>
@@ -586,7 +520,7 @@
 
 	<!--宠物 api -->
     <dubbo:service interface="com.fionapet.business.facade.PetRestService" ref="petRestService"
-                   protocol="rest" validation="true" timeout="2000" connections="100"/>
+                   protocol="rest" validation="true" timeout="2000" />
 
     <bean id="petRestService" class="com.fionapet.business.facade.PetRestServiceImpl">
         <property name="petService" ref="petService"/>

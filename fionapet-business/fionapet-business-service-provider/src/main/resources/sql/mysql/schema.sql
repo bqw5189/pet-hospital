@@ -1622,26 +1622,26 @@ CREATE TABLE `t_micro_sms_config` (
 -- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
 -- --- Table structure for t_medic_vedio_exam  医生录像实例表
 -- -- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
-/*DROP TABLE IF EXISTS `t_medic_vedio_exam`;
-CREATE TABLE `t_medic_vedio_exam` (
-  `id` VARCHAR(36) NOT NULL,
-  `medic_record_code` varchar(50) NULL,-- 医生记录编号
-	`medic_record_id` VARCHAR(36) NULL,-- 医生记录ID
-	`item_code` varchar(50) NULL,-- 类型编号
-	`vedio_exam_cost` DOUBLE NULL,-- 录像实例消费
-	`vedio_test_name` varchar(50) NULL,-- 录像测试名称
-	`vedio_result` text NULL,-- 录像结果
-	`doctor` varchar(50) NULL,-- 医生
-	`check_time` TIMESTAMP NULL,-- 检查时间
-	`paid_status` varchar(50) null,-- 影像状态
-	`paid_time` timestamp null,-- 影像名称
-  `create_user_id` varchar(36) not null,
-  `create_date` timestamp not null default current_timestamp on update current_timestamp,
-  `update_user_id` varchar(36) not null,
-  `update_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  `status` varchar(32) NOT NULL DEFAULT 'OK',
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;*/
+-- DROP TABLE IF EXISTS `t_medic_vedio_exam`;
+-- CREATE TABLE `t_medic_vedio_exam` (
+--   `id` VARCHAR(36) NOT NULL,
+--   `medic_record_code` varchar(50) NULL,-- 医生记录编号
+-- 	`medic_record_id` VARCHAR(36) NULL,-- 医生记录ID
+-- 	`item_code` varchar(50) NULL,-- 类型编号
+-- 	`vedio_exam_cost` DOUBLE NULL,-- 录像实例消费
+-- 	`vedio_test_name` varchar(50) NULL,-- 录像测试名称
+-- 	`vedio_result` text NULL,-- 录像结果
+-- 	`doctor` varchar(50) NULL,-- 医生
+-- 	`check_time` TIMESTAMP NULL,-- 检查时间
+-- 	`paid_status` varchar(50) null,-- 影像状态
+-- 	`paid_time` timestamp null,-- 影像名称
+--   `create_user_id` varchar(36) not null,
+--   `create_date` timestamp not null default current_timestamp on update current_timestamp,
+--   `update_user_id` varchar(36) not null,
+--   `update_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+--   `status` varchar(32) NOT NULL DEFAULT 'OK',
+--   PRIMARY KEY (`id`)
+-- ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
 
 -- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---

@@ -2914,4 +2914,60 @@
     </bean>
     <!-- 服务主表 action -->
 
+
+	<!-- 医生处方 action -->
+    <bean class="com.fionapet.business.consumer.MedicPrescriptionDemoAction" init-method="start">
+        <property name="medicPrescriptionService" ref="medicPrescriptionService"/>
+    </bean>
+    <!-- 医生处方 action -->
+
+
+	<!-- 电话信息表 action -->
+    <bean class="com.fionapet.business.consumer.PhoneMessageDemoAction" init-method="start">
+        <property name="phoneMessageService" ref="phoneMessageService"/>
+    </bean>
+    <!-- 电话信息表 action -->
+
+
+	<!-- 移库记录 action -->
+    <bean class="com.fionapet.business.consumer.WarehouseMoverecordDemoAction" init-method="start">
+        <property name="warehouseMoverecordService" ref="warehouseMoverecordService"/>
+    </bean>
+    <!-- 移库记录 action -->
+
+
+	<!-- 仓库存货清单 action -->
+    <bean class="com.fionapet.business.consumer.WarehouseInventoryDemoAction" init-method="start">
+        <property name="warehouseInventoryService" ref="warehouseInventoryService"/>
+    </bean>
+    <!-- 仓库存货清单 action -->
+
+
+	<!-- 医生处方 action -->
+    <bean class="com.fionapet.business.consumer.MedicPrescriptionDemoAction" init-method="start">
+        <property name="medicPrescriptionService" ref="medicPrescriptionService"/>
+    </bean>
+    <!-- 医生处方 action -->
+
+
+	<!-- 电话信息表 action -->
+    <bean class="com.fionapet.business.consumer.PhoneMessageDemoAction" init-method="start">
+        <property name="phoneMessageService" ref="phoneMessageService"/>
+    </bean>
+    <!-- 电话信息表 action -->
+
+
+	<!-- 移库记录 action -->
+    <bean class="com.fionapet.business.consumer.WarehouseMoverecordDemoAction" init-method="start">
+        <property name="warehouseMoverecordService" ref="warehouseMoverecordService"/>
+    </bean>
+    <!-- 移库记录 action -->
+
+
+	<!-- 仓库存货清单 action -->
+    <bean class="com.fionapet.business.consumer.WarehouseInventoryDemoAction" init-method="start">
+        <property name="warehouseInventoryService" ref="warehouseInventoryService"/>
+    </bean>
+    <!-- 仓库存货清单 action -->
+
 </beans>

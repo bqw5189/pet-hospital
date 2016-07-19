@@ -92,9 +92,10 @@ public class Pet extends CMSEntity {
      */
     @ApiModelProperty(value = "宠物性别", required = false)
     @Column(columnDefinition = "宠物性别")
-    @ManyToOne(cascade = {CascadeType.MERGE,CascadeType.REFRESH }, optional = true)
-    @JoinColumn(name="dict_detail_code")
     private UserDictDetail petSex;
+
+    @ManyToOne(cascade = {CascadeType.MERGE,CascadeType.REFRESH }, optional = true)
+    @JoinColumn(name="pet_sex", referencedColumnName = "dictDetailCode")
     public UserDictDetail getPetSex() {
         return petSex;
     }
@@ -136,9 +137,10 @@ public class Pet extends CMSEntity {
      */
     @ApiModelProperty(value = "宠物皮肤颜色", required = false)
     @Column(columnDefinition = "宠物皮肤颜色")
-    @ManyToOne(cascade = {CascadeType.MERGE,CascadeType.REFRESH }, optional = true)
-    @JoinColumn(name="dict_detail_code")
     private UserDictDetail petSkinColor;
+
+    @ManyToOne(cascade = {CascadeType.MERGE,CascadeType.REFRESH }, optional = true)
+    @JoinColumn(name="pet_skin_color", referencedColumnName = "dictDetailCode")
     public UserDictDetail getPetSkinColor() {
         return petSkinColor;
     }
@@ -150,9 +152,11 @@ public class Pet extends CMSEntity {
      * 宠物品种
      */
     @ApiModelProperty(value = "宠物品种", required = false)
-    @Column(columnDefinition = "宠物品种") @ManyToOne(cascade = {CascadeType.MERGE,CascadeType.REFRESH }, optional = true)
-    @JoinColumn(name="id")
+    @Column(columnDefinition = "宠物品种")
     private PetSmallRace petRace;
+
+    @ManyToOne(cascade = {CascadeType.MERGE,CascadeType.REFRESH }, optional = true)
+    @JoinColumn(name="pet_race")
     public PetSmallRace getPetRace() {
         return petRace;
     }
@@ -230,10 +234,10 @@ public class Pet extends CMSEntity {
      */
     @ApiModelProperty(value = "宠物状态", required = false)
     @Column(columnDefinition = "宠物状态")
-    @ManyToOne(cascade = {CascadeType.MERGE,CascadeType.REFRESH }, optional = true)
-    @JoinColumn(name="dict_detail_code")
     private DictTypeDetail sickFileCode;
 
+    @ManyToOne(cascade = {CascadeType.MERGE,CascadeType.REFRESH }, optional = true)
+    @JoinColumn(name="sick_file_code", referencedColumnName = "dictDetailCode")
     public DictTypeDetail getSickFileCode() {
         return sickFileCode;
     }

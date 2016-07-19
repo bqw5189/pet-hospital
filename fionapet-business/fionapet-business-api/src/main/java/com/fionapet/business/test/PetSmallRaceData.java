@@ -8,7 +8,8 @@ import com.fionapet.business.entity.PetSmallRace;
 public class PetSmallRaceData implements IData<PetSmallRace> {
     public PetSmallRace data(){
         PetSmallRace petSmallRace = new PetSmallRace();
-        petSmallRace.setId("34ff5c2e-6625-4d6d-ad39-d1745755b3a8");
+        petSmallRace.setId("1aa38af8-efd0-4fbb-8c78-d12d17cc9624");
+        petSmallRace.setType("哈士奇");
         return petSmallRace;
     }
 }

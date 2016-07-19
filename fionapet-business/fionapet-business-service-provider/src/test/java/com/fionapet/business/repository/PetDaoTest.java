@@ -8,6 +8,7 @@ import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.test.annotation.Rollback;
 import org.springframework.test.context.ContextConfiguration;
 import org.springside.modules.test.spring.SpringTransactionalTestCase;
 
@@ -25,6 +26,7 @@ public class PetDaoTest extends SpringTransactionalTestCase {
     private PetDao petDao;
 
     @Test
+//    @Rollback(false)
     public void curd(){
         Pet pet = DataBuilder.data(PetData.class);
 
@@ -32,11 +34,16 @@ public class PetDaoTest extends SpringTransactionalTestCase {
 
         Assert.assertNotNull(pet.getId());
 
+        LOGGER.info("create pet:{}", pet);
+
+
         pet = petDao.findOne(pet.getId());
 
         Assert.assertNotNull(pet);
 
-        LOGGER.info("create pet:{}", pet);
+        LOGGER.info("find pet:{}", pet);
+
+
 
     }
 

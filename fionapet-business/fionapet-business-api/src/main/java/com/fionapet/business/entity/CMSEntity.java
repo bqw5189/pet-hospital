@@ -31,13 +31,8 @@ public class CMSEntity extends StatusEntity {
      * 修改日期
      */
     private Date updateDate;
-    /**
-     * 状态 1 删除 0 未删除
-     */
-    private StatusEnum status = StatusEnum.OK;
 
-
-    @JsonIgnore
+//    @JsonIgnore
     public String getCreateUserId() {
         return createUserId;
     }
@@ -46,7 +41,7 @@ public class CMSEntity extends StatusEntity {
         this.createUserId = createUserId;
     }
 
-    @JsonIgnore
+//    @JsonIgnore
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone = "GMT+08:00")
     public Date getCreateDate() {
         return createDate;
@@ -56,7 +51,7 @@ public class CMSEntity extends StatusEntity {
         this.createDate = createDate;
     }
 
-    @JsonIgnore
+//    @JsonIgnore
     public String getUpdateUserId() {
         return updateUserId;
     }
@@ -65,7 +60,7 @@ public class CMSEntity extends StatusEntity {
         this.updateUserId = updateUserId;
     }
 
-    @JsonIgnore
+//    @JsonIgnore
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone = "GMT+08:00")
     public Date getUpdateDate() {
         return updateDate;

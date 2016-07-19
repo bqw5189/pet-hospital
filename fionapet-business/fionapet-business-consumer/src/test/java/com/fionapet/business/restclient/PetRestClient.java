@@ -4,6 +4,8 @@ package com.fionapet.business.restclient;
 
 import com.alibaba.fastjson.JSON;
 import com.fionapet.business.entity.Pet;
+import com.fionapet.business.test.DataBuilder;
+import com.fionapet.business.test.PetData;
 import junit.framework.Assert;
 import org.dubbo.x.consumer.Assertable;
 import org.dubbo.x.consumer.RestClientTestCase;
@@ -14,6 +16,10 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import javax.ws.rs.ProcessingException;
+import javax.ws.rs.client.Entity;
+import javax.ws.rs.core.MediaType;
+import javax.ws.rs.core.Response;
+import java.util.HashMap;
 import java.util.List;
 
 /**
@@ -34,7 +40,7 @@ public class PetRestClient extends RestClientTestCase {
 
                 Assert.assertNotNull(result.getData());
 
-                Assert.assertEquals(result.getData().size(), 0);
+                Assert.assertEquals(result.getData().size(), 1);
 
                 LOGGER.info("Pet list:{}", JSON.toJSON(restResult));
             }
@@ -42,30 +48,31 @@ public class PetRestClient extends RestClientTestCase {
     }
 
 
-//    @Test(expected = ProcessingException.class)
-//    public void testCreate(){
-//        final Pet pet = new Pet();
-////        pet.set*("*");
-//
-//        Response response = getBuilder(URL, petRestClient.TOKEN).post(Entity.entity(pet, MediaType.APPLICATION_JSON));
-//
-//        assertRequest(new Assertable() {
-//            @Override
-//            public void assertBlack(RestResult restResult) throws Exception {
-//                LOGGER.info("restResult:{}", restResult);
-//                RestResult<HashMap> result = (RestResult<HashMap>)restResult;
-//                Assert.assertEquals(restResult.getCode(), RestResultEnum.OK.getCode());
-//
-//                Assert.assertNotNull(result.getData());
-//
-//                LOGGER.info("result.getData():{}", result.getData().getClass());
-//
-//                Assert.assertNotNull(result.getData().get("id"));
-//
-//                LOGGER.info("list:{}", JSON.toJSON(restResult));
-//            }
-//        }, response);
-//    }
+    @Test(expected = ProcessingException.class)
+    public void testCreate(){
+        final Pet pet = DataBuilder.data(PetData.class);
+
+        LOGGER.info("create pet:{}", pet);
+
+        Response response = getBuilder(URL, TOKEN).post(Entity.entity(pet, MediaType.APPLICATION_JSON));
+
+        assertRequest(new Assertable() {
+            @Override
+            public void assertBlack(RestResult restResult) throws Exception {
+                LOGGER.info("restResult:{}", restResult);
+                RestResult<HashMap> result = (RestResult<HashMap>)restResult;
+                Assert.assertEquals(restResult.getCode(), RestResultEnum.OK.getCode());
+
+                Assert.assertNotNull(result.getData());
+
+                LOGGER.info("result.getData():{}", result.getData().getClass());
+
+                Assert.assertNotNull(result.getData().get("id"));
+
+                LOGGER.info("list:{}", JSON.toJSON(restResult));
+            }
+        }, response);
+    }
 
 
 
