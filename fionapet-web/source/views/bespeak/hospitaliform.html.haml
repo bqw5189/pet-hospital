@@ -1,0 +1,134 @@
+- page '住院登记', 'bespeak'
+
+/ BEGIN SAMPLE FORM PORTLET
+.portlet.light.bordered
+  .portlet-title
+    .caption
+      %i.icon-settings.font-dark
+      %span.caption-subject.font-dark.sbold.uppercase 宠物信息
+
+  .portlet-body.form
+    %form.form-horizontal{:role => "form"}
+      .form-body
+
+        .form-group
+          %label.col-md-1.control-label 会员姓名
+          .col-md-3
+            %input.form-control{:placeholder => "Enter text", :type => "text"}/
+
+          %label.col-md-1.control-label 手机
+          .col-md-3
+            .input-icon.right
+              %i.fa.fa-calendar
+              %input.form-control{:placeholder => "Right icon", :type => "text"}/
+
+        .form-group
+          %label.col-md-1.control-label 宠物昵称
+          .col-md-3
+            %input.form-control{:placeholder => "Enter text", :type => "text"}/
+
+          %label.col-md-1.control-label 性别
+          .col-md-3
+            .radio-list
+              %input#optionsRadios25{:checked => "checked", :name => "optionsRadios", :type => "text", :value => "option1"}
+
+        .form-group
+          %label.col-md-1.control-label 年龄
+          .col-md-3
+            %input.form-control{:placeholder => "Enter text", :type => "text"}/
+
+          %label.col-md-1.control-label 体重
+          .col-md-3
+            .radio-list
+              %input#optionsRadios25{:checked => "checked", :name => "optionsRadios", :type => "text", :value => "option1"}
+
+
+        .form-group
+          %label.col-md-1.control-label 种类
+          .col-md-3
+            %input.form-control{:placeholder => "Enter text", :type => "text"}/
+
+          %label.col-md-1.control-label 品种
+          .col-md-3
+            .radio-list
+              %input#optionsRadios25{:checked => "checked", :name => "optionsRadios", :type => "text", :value => "option1"}
+
+
+        .form-group
+          %label.col-md-1.control-label 绝育状态
+          .col-md-3
+            %input.form-control{:placeholder => "Enter text", :type => "text"}/
+
+          %label.col-md-1.control-label 病例编号
+          .col-md-3
+            .radio-list
+              %input#optionsRadios25{:checked => "checked", :name => "optionsRadios", :type => "text", :value => "option1"}
+
+
+/ END PAGE HEADER
+.row
+  .col-md-12
+    / BEGIN SAMPLE FORM PORTLET
+    .portlet.light.bordered
+      .portlet-title
+        .caption
+          %i.icon-settings.font-dark
+          %span.caption-subject.font-dark.sbold.uppercase 寄养信息
+
+      .portlet-body.form
+        %form.form-horizontal{:role => "form"}
+          .form-body
+            .form-group
+              %label.col-md-1.control-label 住院号
+              .col-md-3
+                %input.form-control{:placeholder => "Enter text", :type => "text"}/
+
+              %label.col-md-1.control-label 开始日期
+              .col-md-3
+                .input-icon.right
+                  %i.fa.fa-calendar
+                  %input.form-control{:placeholder => "Right icon", :type => "text"}/
+
+              %label.col-md-1.control-label 结束日期
+              .col-md-3
+                .input-icon.right
+                  %i.fa.fa-calendar
+                  %input.form-control{:placeholder => "Right icon", :type => "text"}/
+
+            .form-group
+              %label.col-md-1.control-label 预计金额
+              .col-md-3
+                %input.form-control{:placeholder => "Enter text", :type => "text"}/
+
+              %label.col-md-1.control-label 预计天数
+              .col-md-3
+                %input.form-control{:placeholder => "Enter text", :type => "text"}/
+
+              %label.col-md-1.control-label 主官人员
+              .col-md-3
+                %select.form-control
+                  %option 院长
+
+            .form-group
+              %label.col-md-1.control-label 住院类型
+              .col-md-3
+                %select.form-control
+                  %option 住院服务
+
+              %label.col-md-1.control-label 价格
+              .col-md-3
+                %input.form-control{:placeholder => "Enter text", :type => "text"}/
+
+              %label.col-md-1.control-label 笼舍编号
+              .col-md-3
+                %input.form-control{:placeholder => "Enter text", :type => "text"}/
+
+            .form-group
+              %label.col-md-1.control-label 业务员
+              .col-md-3
+                %select.form-control
+                  %option 院长
+
+.form-actions.text-center
+  %button.btn.blue{:type => "submit"} 保存住院登记
+  %button.btn.default{:type => "button"} 取消登记

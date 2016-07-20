@@ -1,0 +1,79 @@
+- page '宠物管理', 'pet'
+
+- content_for :toolbar do
+  %a.btn.btn-circle.btn-default.btn-sm{:href => "javascript:;"}
+    %i.fa.fa-plus
+    增加
+  %a.btn.btn-circle.red-sunglo.btn-sm{:href => "javascript:;"}
+    %i.fa.fa-remove
+    删除
+
+- content_for :searchfields do
+  %ul.dropdown-menu
+    %li
+      %a{:href => "javascript:;"} 宠物病例号
+    %li
+      %a{:href => "javascript:;"} 宠物昵称
+    %li.divider
+    %li
+      %a{:href => "javascript:;"} 会员编号
+    %li
+      %a{:href => "javascript:;"} 会员名称
+    %li
+      %a{:href => "javascript:;"} 会员电话
+    %li.divider
+    %li
+      %a{:href => "javascript:;"} 登记日期
+
+
+%table#sample_1.table.table-striped.table-bordered.table-hover.table-checkable.order-column
+  %thead
+    %tr
+      %th
+        %input.group-checkable{"data-set" => "#sample_1 .checkboxes", :type => "checkbox"}/
+      %th 操作
+      %th 挂号状态
+      %th 宠物状态
+      %th 会员编号
+      %th 会员姓名
+      %th 宠物卡号
+      %th 宠物牌号
+      %th 宠物病例号
+      %th 宠物昵称
+      %th 宠物性别
+      %th 宠物生日
+      %th 身高
+      %th 体重(kg)
+      %th 颜色
+      %th 宠物种类
+      %th 宠物品种
+      %th 宠物卡号
+  %tbody
+    %tr.odd.gradeX
+      %td
+        %input.checkboxes{:type => "checkbox", :value => "1"}/
+      %td
+        %a.btn.btn-outline.btn-circle.btn-sm.purple{:href => "#/pet/update/1"}
+          %i.fa.fa-edit
+          编辑
+        %a.btn.btn-outline.btn-circle.dark.btn-sm.black{:href => "#/pet/update/1"}
+          %i.fa.fa-trash-o
+          删除
+      %td
+        %a{:href => "mailto:shuxer@gmail.com"} shuxer@gmail.com
+      %td 120
+      %td.center 12 Jan 2012
+      %td
+      %td
+      %td
+      %td
+      %td
+      %td
+      %td
+      %td
+      %td
+      %td
+      %td
+      %td
+      %td
+        %span.label.label-sm.label-success Approved

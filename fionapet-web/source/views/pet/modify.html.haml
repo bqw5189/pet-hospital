@@ -1,0 +1,184 @@
+- page '宠物管理', 'pet'
+
+/ BEGIN SAMPLE FORM PORTLET
+.portlet.light.bordered
+  .portlet-title
+    .caption
+      %i.icon-settings.font-dark
+      %span.caption-subject.font-dark.sbold.uppercase 会员信息
+    .actions
+      %a.btn.btn-circle.grey-salsa.btn-sm{:href => "javascript:;"}
+        %i.fa.fa-plus
+        新增主人
+
+      %a.btn.btn-circle.grey-salsa.btn-sm{:href => "javascript:;"}
+        %i.fa.fa-remove
+        选择主人
+
+  .portlet-body.form
+    %form.form-horizontal{:role => "form"}
+      .form-body
+        .form-group
+          %label.col-md-1.control-label 会员编号
+          .col-md-3
+            %input.form-control{:placeholder => "Enter text", :type => "text"}/
+
+          %label.col-md-1.control-label 会员姓名
+          .col-md-3
+            %input.form-control.input-inline.input-medium{:placeholder => "Enter text", :type => "text"}/
+
+          %label.col-md-1.control-label 会员等级
+          .col-md-3
+            %input.form-control.input-inline.input-medium{:placeholder => "Enter text", :type => "text"}/
+
+        .form-group
+          %label.col-md-1.control-label 会员性别
+          .col-md-3
+            %input.form-control{:placeholder => "Enter text", :type => "text"}/
+
+          %label.col-md-1.control-label 出生日期
+          .col-md-3
+            %input.form-control.input-inline.input-medium{:placeholder => "Enter text", :type => "text"}/
+
+          %label.col-md-1.control-label 会员年龄
+          .col-md-3
+            %input.form-control.input-inline.input-medium{:placeholder => "Enter text", :type => "text"}/
+
+        .form-group
+          %label.col-md-1.control-label 会员电话
+          .col-md-3
+            %input.form-control{:placeholder => "Enter text", :type => "text"}/
+
+          %label.col-md-1.control-label 固定电话
+          .col-md-3
+            %input.form-control.input-inline.input-medium{:placeholder => "Enter text", :type => "text"}/
+
+          %label.col-md-1.control-label 账户金额
+          .col-md-3
+            %input.form-control.input-inline.input-medium{:placeholder => "Enter text", :type => "text"}/
+
+        .form-group
+          %label.col-md-1.control-label 联系地址
+          .col-md-7
+            %input.form-control{:placeholder => "Enter text", :type => "text"}/
+
+          %label.col-md-1.control-label 登记日期
+          .col-md-3
+            %input.form-control.input-inline.input-medium{:placeholder => "Enter text", :type => "text"}/
+
+= partial 'layouts/partials/portlet'
+
+/ BEGIN SAMPLE FORM PORTLET
+.portlet.light.bordered
+  .portlet-title
+    .caption
+      %i.icon-settings.font-dark
+      %span.caption-subject.font-dark.sbold.uppercase 宠物信息
+
+  .portlet-body.form
+    .tabbable-line
+      %ul.nav.nav-tabs
+        %li.active
+          %a{"data-toggle" => "tab", :href => "#tab_15_1"} Section 1
+        %li
+          %a{"data-toggle" => "tab", :href => "#tab_15_2"} Section 2
+        %li
+          %a{"data-toggle" => "tab", :href => "#tab_15_3"} Section 3
+      .tab-content
+        #tab_15_1.tab-pane.active
+          %p I'm in Section 1.
+          %p
+            Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo
+            consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat.
+        #tab_15_2.tab-pane
+          %p Howdy, I'm in Section 2.
+          %p
+            Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie
+            consequat. Ut wisi enim ad minim veniam, quis nostrud exerci tation.
+          %p
+            %a.btn.green{:href => "ui_tabs_accordions_navs.html#tab_15_2", :target => "_blank"} Activate this tab via URL
+        #tab_15_3.tab-pane
+          %p Howdy, I'm in Section 3.
+          %p
+            Duis autem vel eum iriure dolor in hendrerit in vulputate. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum
+            iriure dolor in hendrerit in vulputate velit esse molestie consequat
+          %p
+            %a.btn.yellow{:href => "ui_tabs_accordions_navs.html#tab_15_3", :target => "_blank"} Activate this tab via URL
+
+    %form.form-horizontal{:role => "form"}
+      .form-body
+
+        .form-group
+          %label.col-md-1.control-label 编号(自动)
+          .col-md-3
+            %input.form-control{:placeholder => "Enter text", :type => "text"}/
+
+          %label.col-md-1.control-label 宠物昵称
+          .col-md-3
+            %input.form-control.input-inline.input-medium{:placeholder => "Enter text", :type => "text"}/
+
+          %label.col-md-1.control-label 宠物性别
+          .col-md-3
+            %input.form-control.input-inline.input-medium{:placeholder => "Enter text", :type => "text"}/
+
+        .form-group
+          %label.col-md-1.control-label 出生日期
+          .col-md-3
+            %input.form-control{:placeholder => "Enter text", :type => "text"}/
+
+          %label.col-md-1.control-label 宠物年龄
+          .col-md-3
+            %input.form-control.input-inline.input-medium{:placeholder => "Enter text", :type => "text"}/
+
+          %label.col-md-1.control-label 绝育状态
+          .col-md-3
+            %input.form-control.input-inline.input-medium{:placeholder => "Enter text", :type => "text"}/
+
+        .form-group
+          %label.col-md-1.control-label 宠物颜色
+          .col-md-3
+            %input.form-control{:placeholder => "Enter text", :type => "text"}/
+
+          %label.col-md-1.control-label 宠物种类
+          .col-md-3
+            %input.form-control.input-inline.input-medium{:placeholder => "Enter text", :type => "text"}/
+
+          %label.col-md-1.control-label 宠物品种
+          .col-md-3
+            %input.form-control.input-inline.input-medium{:placeholder => "Enter text", :type => "text"}/
+
+        .form-group
+          %label.col-md-1.control-label 宠物状态
+          .col-md-3
+            %input.form-control.input-inline.input-medium{:placeholder => "Enter text", :type => "text"}/
+
+          %label.col-md-1.control-label 病例号
+          .col-md-7
+            %input.form-control{:placeholder => "Enter text", :type => "text"}/
+
+        .form-group
+          %label.col-md-1.control-label 身高
+          .col-md-2
+            %input.form-control{:placeholder => "Enter text", :type => "text"}/
+
+          %label.col-md-1.control-label 体重
+          .col-md-2
+            %input.form-control{:placeholder => "Enter text", :type => "text"}/
+
+          %label.col-md-1.control-label 肩宽
+          .col-md-2
+            %input.form-control{:placeholder => "Enter text", :type => "text"}/
+
+          %label.col-md-1.control-label 体长
+          .col-md-2
+            %input.form-control{:placeholder => "Enter text", :type => "text"}/
+
+        .form-group
+          %label.col-md-1.control-label 宠物牌号
+          .col-md-11
+            %input.form-control{:placeholder => "Enter text", :type => "text"}/
+
+        .form-group
+          %label.col-md-1.control-label 备注
+          .col-md-11
+            %textarea.form-control{:placeholder => "Enter text", :type => "text"}

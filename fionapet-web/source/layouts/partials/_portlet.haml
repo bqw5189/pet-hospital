@@ -1,0 +1,13 @@
+/ 门户组件
+/ BEGIN  FORM PORTLET
+.portlet.light.bordered
+  .portlet-title
+    .caption
+      %i.icon-settings.font-dark
+      %span.caption-subject.font-dark.sbold.uppercase=yield_content :title2
+    .actions
+      =yield_content :actions
+
+  .portlet-body.form
+    =yield_content :form
+/ END FORM PORTLET

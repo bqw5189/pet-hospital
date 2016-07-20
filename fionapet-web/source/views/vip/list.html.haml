@@ -1,0 +1,54 @@
+- page '会员管理', 'vip'
+
+- content_for :toolbar do
+  %a.btn.btn-circle.btn-default.btn-sm{:href => "javascript:;"}
+    %i.fa.fa-plus
+    增加
+  %a.btn.btn-circle.red-sunglo.btn-sm{:href => "javascript:;"}
+    %i.fa.fa-remove
+    删除
+
+- content_for :searchfields do
+  %ul.dropdown-menu
+    %li
+      %a{:href => "javascript:;"} 编号
+    %li
+      %a{:href => "javascript:;"} 姓名
+    %li.divider
+    %li
+      %a{:href => "javascript:;"} 电话
+
+%table#sample_1.table.table-striped.table-bordered.table-hover.table-checkable.order-column
+  %thead
+    %tr
+      %th
+        %input.group-checkable{"data-set" => "#sample_1 .checkboxes", :type => "checkbox"}/
+      %th 操作
+      %th 充值记录
+      %th 会员等级
+      %th 会员编号
+      %th 会员姓名
+      %th 性别
+      %th 会员电话
+      %th 固定电话
+      %th 会员生日
+      %th 账户金额
+      %th 登记日期
+      %th 最后消费时间
+  %tbody
+    %tr.odd.gradeX
+      %td
+        %input.checkboxes{:type => "checkbox", :value => "1"}/
+      %td
+        %a.btn.btn-outline.btn-circle.btn-sm.purple{:href => "#/vip/update/1"}
+          %i.fa.fa-edit
+          编辑
+        %a.btn.btn-outline.btn-circle.dark.btn-sm.black{:href => "#/vip/remove/1"}
+          %i.fa.fa-trash-o
+          删除
+      %td
+        %a{:href => "mailto:shuxer@gmail.com"} shuxer@gmail.com
+      %td 120
+      %td.center 12 Jan 2012
+      %td
+        %span.label.label-sm.label-success Approved

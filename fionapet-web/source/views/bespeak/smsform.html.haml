@@ -1,0 +1,29 @@
+- page '发送短信', 'bespeak'
+
+%form.form-horizontal{:role => "form"}
+  .form-body
+    .form-group
+      %label.col-md-1.control-label 会员姓名
+      .col-md-3
+        %input.form-control{:placeholder => "Enter text", :type => "text"}/
+
+      %label.col-md-1.control-label 会员电话
+      .col-md-3
+        .input-icon.right
+          %i.fa.fa-calendar
+          %input.form-control{:placeholder => "Right icon", :type => "text"}/
+
+    .form-group
+      %label.col-md-1.control-label 信息类型
+      .col-md-3
+        %input.form-control{:placeholder => "预约短信", :type => "text"}/
+
+    .form-group
+      %label.col-md-1.control-label 短信内容
+      .col-md-10
+        %textarea.form-control{:placeholder => "Enter text"}
+
+
+.form-actions.text-center
+  %button.btn.blue{:type => "submit"} 发送
+  %button.btn.default{:type => "button"} 取消

@@ -1,0 +1,27 @@
+!!!5
+%html
+  %body
+    / BEGIN PAGE BAR
+    .page-bar
+      %ul.page-breadcrumb
+        %li
+          %a{:href => "#/pet/list"}=yield_content :title
+          %i.fa.fa-circle
+        %li
+          %span 编辑
+      .page-toolbar
+
+    / END PAGE BAR
+    / BEGIN PAGE TITLE
+    %h3.page-title
+      =yield_content :title
+      %small
+    / END PAGE TITLE
+
+    = yield
+
+    .form-actions.text-center
+      %button.btn.blue{:type => "submit"} 保存表单
+      %button.btn.default{:type => "button"} 重置表单
+
+  / END SAMPLE FORM PORTLET

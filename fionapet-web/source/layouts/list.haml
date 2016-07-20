@@ -1,0 +1,48 @@
+!!!5
+%html
+  %body
+    / BEGIN EXAMPLE TABLE PORTLET
+    .portlet.light.bordered
+      .portlet-title
+        .caption.font-dark
+          %i.icon-settings.font-dark
+          %span.caption-subject.bold.uppercase=yield_content :title
+        .actions
+          =yield_content :toolbar
+
+      .portlet-body
+        .table-toolbar
+          %form{:role => "form"}
+            .row
+              .col-md-6
+                = partial 'layouts/partials/search'
+
+        = yield
+
+        .row
+          .col-md-5.col-sm-12
+            .dataTablesInfo
+              共 20383 条记录
+          .col-md-7.col-sm-12
+            %ul.pagination.pull-right{"style"=>"margin:0px;"}
+              %li
+                %a{:href => "javascript:;"}
+                  %i.fa.fa-angle-left
+              %li
+                %a{:href => "javascript:;"} 1
+              %li.active
+                %a{:href => "javascript:;"} 2
+              %li
+                %a{:href => "javascript:;"} 3
+              %li
+                %a{:href => "javascript:;"} 4
+              %li
+                %a{:href => "javascript:;"} 5
+              %li
+                %a{:href => "javascript:;"} 6
+              %li
+                %a{:href => "javascript:;"}
+                  %i.fa.fa-angle-right
+
+
+    / END EXAMPLE TABLE PORTLET

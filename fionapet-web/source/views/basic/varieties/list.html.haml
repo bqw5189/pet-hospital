@@ -1,0 +1,133 @@
+- page '宠物品种管理', 'varieties'
+
+- content_for :toolbar do
+  %a.btn.btn-circle.btn-default.btn-sm{:href => "javascript:;"}
+    %i.fa.fa-plus
+    增加
+  %a.btn.btn-circle.red-sunglo.btn-sm{:href => "javascript:;"}
+    %i.fa.fa-remove
+    删除
+
+- content_for :searchfields do
+  %ul.dropdown-menu
+    %li
+      %a{:href => "javascript:;"} 宠物病例号
+    %li
+      %a{:href => "javascript:;"} 宠物昵称
+    %li.divider
+    %li
+      %a{:href => "javascript:;"} 会员编号
+    %li
+      %a{:href => "javascript:;"} 会员名称
+    %li
+      %a{:href => "javascript:;"} 会员电话
+    %li.divider
+    %li
+      %a{:href => "javascript:;"} 登记日期
+
+/ END EXAMPLE TABLE PORTLET
+.row
+  .col-md-3
+    / BEGIN EXAMPLE TABLE PORTLET
+    .portlet.light.bordered
+      .portlet-title
+        .caption.font-dark
+          %i.icon-settings.font-dark
+          %span.caption-subject.bold.uppercase 种类
+        .actions
+          %a.btn.btn-circle.btn-default.btn-sm{:href => "#/varieties/type"}
+            %i.fa.fa-plus
+            增加
+
+          %a.btn.btn-circle.red-sunglo.btn-sm{:href => ""}
+            %i.fa.fa-remove
+            删除
+
+      .portlet-body
+        %ul.list-group
+          %li.list-group-item
+            小型犬(犬科)
+            %span.badge.badge-default 3
+          %li.list-group-item
+            中型犬(犬科)
+            %span.badge.badge-success 11
+          %li.list-group-item
+            大型犬(犬科)
+            %span.badge.badge-danger new
+          %li.list-group-item
+            猫(猫科)
+            %span.badge.badge-warning 4
+
+
+  .col-md-9
+    / BEGIN EXAMPLE TABLE PORTLET
+    .portlet.light.bordered
+      .portlet-title
+        .caption.font-dark
+          %i.icon-settings.font-dark
+          %span.caption-subject.bold.uppercase 宠物品种管理
+        .actions
+          %a.btn.btn-circle.btn-default.btn-sm{:href => "javascript:;"}
+            %i.fa.fa-plus
+            增加
+
+          %a.btn.btn-circle.red-sunglo.btn-sm{:href => "javascript:;"}
+            %i.fa.fa-remove
+            删除
+
+      .portlet-body
+        .table-toolbar
+          %form{:role => "form"}
+            .row
+              .col-md-12
+                .input-group
+                  .input-group-btn
+                    %button.form-control.input-noborder-right.input-circle-left.dropdown-toggle{"data-toggle" => "dropdown", :type => "button"}
+                      搜索
+                      %i.fa.fa-angle-down
+                    %ul.dropdown-menu
+                      %li
+                        %a{:href => "javascript:;"} 品种
+                      %li
+                        %a{:href => "javascript:;"} 种类
+
+                  / /btn-group
+                  %input.form-control{:placeholder => "宠物/会员", :type => "text"}/
+
+                  .input-group-btn
+                    %button.form-control.input-noborder-vertical{:tabindex => "-1", :type => "button"}
+                      %i.fa.fa-calendar
+
+                  %input.form-control{:placeholder => "", :type => "text", "style"=>"display: table-cell;"}/
+
+                  .input-group-btn
+                    %button.form-control.input-noborder-vertical{:tabindex => "-1", :type => "button"}
+                      %i.fa.fa-calendar
+
+                  .input-group-btn
+                    %button.btn.green.input-circle-right
+                      %i.fa.fa-search
+
+        %table#sample_1.table.table-striped.table-bordered.table-hover.table-checkable.order-column
+          %thead
+            %tr
+              %th
+                %input.group-checkable{"data-set" => "#sample_1 .checkboxes", :type => "checkbox"}/
+              %th 操作
+              %th 种类
+              %th 品种
+
+          %tbody
+            %tr.odd.gradeX
+              %td
+                %input.checkboxes{:type => "checkbox", :value => "1"}/
+              %td
+                %a.btn.btn-outline.btn-circle.btn-sm.purple{:href => "#/varieties/update/1"}
+                  %i.fa.fa-edit
+                  编辑
+                %a.btn.btn-outline.btn-circle.dark.btn-sm.black{:href => "#/varieties/remove/1"}
+                  %i.fa.fa-trash-o
+                  删除
+              %td
+                %a{:href => "mailto:shuxer@gmail.com"} 小型犬
+              %td 品种

@@ -1,0 +1,32 @@
+.page-sidebar-wrapper{"ng-controller"=>"SidebarController"}
+  .page-sidebar.navbar-collapse.collapse
+    %ul.page-sidebar-menu.page-header-fixed{"data-auto-scroll" => "true", "data-keep-expanded" => "false", "data-slide-speed" => "200", :style => "padding-top: 20px"}
+      %li.sidebar-toggler-wrapper.hide
+        .sidebar-toggler
+          %span
+      %li.heading
+        %h3.uppercase Header
+
+      %li.nav-item.start{ "ng-repeat"=>"header1 in sidebar.data" }
+        %a.nav-link.nav-toggle{:href => "javascript:;"}
+          %i{:class=>"{{ header1.iconClass }}"}
+          %span.title {{ header1.name }}
+          %span.arrow
+        %ul.sub-menu
+          %li.nav-item.start{ "ng-repeat"=>"header2 in header1.subMenu" }
+            %a.nav-link{:href => "{{ header2.uri }}"}
+              %i.icon-bar-chart
+              %span.title {{ header2.name }}
+
+      %li.nav-item.start.active.open
+        %a.nav-link.nav-toggle{:href => "javascript:;"}
+          %i.icon-anchor
+          %span.title 案例
+          %span.selected
+          %span.arrow.open
+        %ul.sub-menu
+          %li.nav-item.start.active.open
+            %a.nav-link{:href => "#/pages/datalist"}
+              %i.icon-bar-chart
+              %span.title 数据列表
+              %span.selected

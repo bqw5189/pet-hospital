@@ -1,0 +1,74 @@
+- page '预约管理', 'bespeak'
+
+- content_for :toolbar do
+  %a.btn.btn-circle.btn-default.btn-sm{:href => "javascript:;"}
+    %i.fa.fa-plus
+    增加
+  %a.btn.btn-circle.red-sunglo.btn-sm{:href => "javascript:;"}
+    %i.fa.fa-remove
+    删除
+
+- content_for :searchfields do
+  %ul.dropdown-menu
+    %li
+      %a{:href => "javascript:;"} 宠物病例号
+    %li
+      %a{:href => "javascript:;"} 宠物昵称
+    %li.divider
+    %li
+      %a{:href => "javascript:;"} 会员编号
+    %li
+      %a{:href => "javascript:;"} 会员名称
+    %li
+      %a{:href => "javascript:;"} 会员电话
+    %li.divider
+    %li
+      %a{:href => "javascript:;"} 登记日期
+
+%table#sample_1.table.table-striped.table-bordered.table-hover.table-checkable.order-column
+  %thead
+    %tr
+      %th
+        %input.group-checkable{"data-set" => "#sample_1 .checkboxes", :type => "checkbox"}/
+      %th 操作
+      %th 员工姓名
+      %th 员工电话
+      %th 宠物名字
+      %th 宠物年龄
+      %th 预约人
+      %th 预约人手机
+      %th 预约会诊日期
+      %th 登记日期
+      %th 状态
+  %tbody
+    %tr.odd.gradeX
+      %td
+        %input.checkboxes{:type => "checkbox", :value => "1"}/
+      %td
+        %a.btn.btn-outline.btn-circle.btn-sm.purple{:href => "#none"}
+          %i.fa.fa-edit
+          确认
+        %a.btn.btn-outline.btn-circle.btn-sm.purple{:href => "#none"}
+          %i.fa.fa-edit
+          取消
+        %a.btn.btn-outline.btn-circle.btn-sm.purple{:href => "#/bespeak/sms/1"}
+          %i.fa.fa-edit
+          重发短信
+        %a.btn.btn-outline.btn-circle.dark.btn-sm.black{:href => "#/register/register/1"}
+          %i.fa.fa-trash-o
+          挂号
+        %a.btn.btn-outline.btn-circle.dark.btn-sm.black{:href => "#/bespeak/fosterage/1"}
+          %i.fa.fa-trash-o
+          寄养
+        %a.btn.btn-outline.btn-circle.dark.btn-sm.black{:href => "#/bespeak/hospitalization/1"}
+          %i.fa.fa-trash-o
+          住院
+        %a.btn.btn-outline.btn-circle.dark.btn-sm.black{:href => "#/bespeak/detail/1"}
+          %i.fa.fa-trash-o
+          查看
+      %td
+        %a{:href => "mailto:shuxer@gmail.com"} shuxer@gmail.com
+      %td 120
+      %td.center 12 Jan 2012
+      %td
+        %span.label.label-sm.label-success Approved

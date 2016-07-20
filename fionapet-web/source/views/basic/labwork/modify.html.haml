@@ -1,0 +1,183 @@
+/ BEGIN PAGE BAR
+.page-bar
+  %ul.page-breadcrumb
+    %li
+      %a{:href => "#/varietie/list"} 化验项目管理
+      %i.fa.fa-circle
+    %li
+      %span 编辑
+  .page-toolbar
+
+/ END PAGE BAR
+/ BEGIN PAGE TITLE
+%h3.page-title
+  化验项目管理
+  %small
+/ END PAGE TITLE
+
+/ END PAGE HEADER
+.row
+  .col-md-12
+    / BEGIN SAMPLE FORM PORTLET
+    .portlet.light.bordered
+      .portlet-title
+        .caption
+          %i.icon-settings.font-dark
+          %span.caption-subject.font-dark.sbold.uppercase 会员信息
+
+      .portlet-body.form
+        %form.form-horizontal{:role => "form"}
+          .form-body
+
+            .form-group
+              %label.col-md-1.control-label 会员编号
+              .col-md-3
+                %input.form-control{:placeholder => "Enter text", :type => "text"}/
+
+              %label.col-md-1.control-label 登记日期
+              .col-md-3
+                .input-icon.right
+                  %i.fa.fa-calendar
+                  %input.form-control{:placeholder => "Right icon", :type => "text"}/
+
+            .form-group
+              %label.col-md-1.control-label 会员姓名
+              .col-md-3
+                %input.form-control{:placeholder => "Enter text", :type => "text"}/
+
+              %label.col-md-1.control-label 会员性别
+              .col-md-3
+                .radio-list
+                  %label.radio-inline
+                    %input#optionsRadios25{:checked => "checked", :name => "optionsRadios", :type => "radio", :value => "option1"}/
+                    男
+                  %label.radio-inline
+                    %input#optionsRadios26{:checked => "checked", :name => "optionsRadios", :type => "radio", :value => "option2"}/
+                    女
+
+            .form-group
+              %label.col-md-1.control-label 出生日期
+              .col-md-3
+                .input-icon.right
+                  %i.fa.fa-calendar
+                  %input.form-control{:placeholder => "Right icon", :type => "text"}/
+
+              %label.col-md-1.control-label 会员年龄
+              .col-md-3
+                %input.form-control{:placeholder => "Enter text", :type => "text"}/
+
+            .form-group
+              %label.col-md-1.control-label 会员电话
+              .col-md-3
+                %input.form-control{:placeholder => "Enter text", :type => "text"}/
+
+              %label.col-md-1.control-label 固定电话
+              .col-md-3
+                %input.form-control{:placeholder => "Enter text", :type => "text"}/
+
+            .form-group
+              %label.col-md-1.control-label 联系邮箱
+              .col-md-3
+                %input.form-control{:placeholder => "Enter text", :type => "text"}/
+
+              %label.col-md-1.control-label 联系地址
+              .col-md-3
+                %input.form-control{:placeholder => "Enter text", :type => "text"}/
+
+            .form-group
+              %label.col-md-1.control-label 会员等级
+              .col-md-3
+                %select.form-control
+                  %option 普通会员
+                  %option VIP会员
+
+              %label.col-md-1.control-label 会员状态
+              .col-md-3
+                %select.form-control
+                  %option 正常
+                  %option 禁用
+
+            .form-group
+              %label.col-md-1.control-label 账户金额
+              .col-md-3
+                %input.form-control{:placeholder => "Enter text", :type => "text"}/
+
+              %label.col-md-1.control-label  最后消息日期
+              .col-md-3
+                .input-icon.right
+                  %i.fa.fa-calendar
+                  %input.form-control{:placeholder => "Right icon", :type => "text"}/
+
+
+            .form-group
+              %label.col-md-1.control-label 备注
+              .col-md-7
+                %textarea.form-control{:placeholder => "Enter text", :type => "text"}
+
+    / END SAMPLE FORM PORTLET
+
+  / END PAGE HEADER
+  .row
+  .col-md-12
+    / BEGIN SAMPLE FORM PORTLET
+    .portlet.light.bordered
+      .portlet-title
+        .caption
+          %i.icon-settings.font-dark
+          %span.caption-subject.font-dark.sbold.uppercase 宠物信息
+        .actions
+          %a.btn.btn-circle.grey-salsa.btn-sm{:href => "javascript:;"}
+            %i.fa.fa-plus
+            增加
+
+          %a.btn.btn-circle.grey-salsa.btn-sm{:href => "javascript:;"}
+            %i.fa.fa-remove
+            删除
+
+      .portlet-body.form
+        %table#sample_1.table.table-striped.table-bordered.table-hover.table-checkable.order-column
+          %thead
+            %tr
+              %th
+                %input.group-checkable{"data-set" => "#sample_1 .checkboxes", :type => "checkbox"}/
+              %th 操作
+              %th 挂号状态
+              %th 宠物状态
+              %th 会员编号
+              %th 会员姓名
+              %th 宠物卡号
+              %th 宠物牌号
+              %th 宠物病例号
+              %th 宠物昵称
+              %th 宠物性别
+              %th 宠物生日
+              %th 身高
+              %th 体重(kg)
+              %th 颜色
+              %th 宠物种类
+              %th 宠物品种
+              %th 宠物卡号
+          %tbody
+            %tr.odd.gradeX
+              %td
+                %input.checkboxes{:type => "checkbox", :value => "1"}/
+              %td
+                %a.btn.btn-outline.btn-circle.btn-sm.purple{:href => "#/pet/update/1"}
+                  %i.fa.fa-edit
+                  编辑
+                %a.btn.btn-outline.btn-circle.dark.btn-sm.black{:href => "#/pet/update/1"}
+                  %i.fa.fa-trash-o
+                  删除
+              %td
+                %a{:href => "mailto:shuxer@gmail.com"} shuxer@gmail.com
+              %td 120
+              %td.center 12 Jan 2012
+              %td
+                %span.label.label-sm.label-success Approved
+
+
+.form-actions.text-center
+  %button.btn.blue{:type => "submit"} 保存表单
+  %button.btn.default{:type => "button"} 重置表单
+
+  / END SAMPLE FORM PORTLET
