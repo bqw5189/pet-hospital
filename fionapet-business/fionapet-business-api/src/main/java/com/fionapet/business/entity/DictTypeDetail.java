@@ -1,10 +1,12 @@
 package com.fionapet.business.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
 import javax.persistence.Entity;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 
 /**
  * 宠物字典类型明细
@@ -14,7 +16,7 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "t_dict_type_detail")
 @ApiModel("宠物字典类型明细")
-public class DictTypeDetail extends CMSEntity {
+public class DictTypeDetail extends CMEntity {
     
     /**
      * dictTypeId
@@ -79,6 +81,6 @@ public class DictTypeDetail extends CMSEntity {
     public void setComments(String comments) {
         this.comments = comments;
     }
-    
+
 }
 
