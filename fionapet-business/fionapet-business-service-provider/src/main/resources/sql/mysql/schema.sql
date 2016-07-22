@@ -604,7 +604,7 @@ DROP TABLE IF EXISTS `t_gest`;
 CREATE TABLE `t_gest` (
   `id` VARCHAR(36) NOT NULL,
   `gest_code` varchar(36)  null,-- 编号
-  `lose_right_date` date  null,--
+  `lose_right_date` date  null,
   `gest_name` varchar(100)  null,-- 姓名
   `gest_sex` varchar(50) null,-- 性别
   `gest_birthday` date  null, -- 生日
@@ -616,7 +616,7 @@ CREATE TABLE `t_gest` (
   `vip_no` varchar(50) null ,-- VIP号
   `vip_account` double null ,-- 折扣
   `last_paid_time` timestamp null ,-- 最后就诊时间
-  `gest_style` varchar(50) null ,
+  `gest_style` varchar(50) null , -- 会员级别
   `paid_status` varchar(50) null ,
   `remark` varchar(100) null ,
   `reward_point` varchar(50) null ,

@@ -216,4 +216,9 @@
     <dubbo:reference id="petSmallRaceService" interface="com.fionapet.business.service.PetSmallRaceService"/>
     <!-- 宠物品种 service -->
 
+
+	<!-- 会员 service -->
+    <dubbo:reference id="gestService" interface="com.fionapet.business.service.GestService"/>
+    <!-- 会员 service -->
+
 </beans>

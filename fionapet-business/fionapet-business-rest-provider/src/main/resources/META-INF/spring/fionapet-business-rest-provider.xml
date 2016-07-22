@@ -529,4 +529,16 @@
     <dubbo:reference id="petService" interface="com.fionapet.business.service.PetService"/>
     <!--宠物 api -->
 
+
+	<!--会员 api -->
+    <dubbo:service interface="com.fionapet.business.facade.GestRestService" ref="gestRestService"
+                   protocol="rest" validation="true" timeout="2000" connections="100"/>
+
+    <bean id="gestRestService" class="com.fionapet.business.facade.GestRestServiceImpl">
+        <property name="gestService" ref="gestService"/>
+    </bean>
+
+    <dubbo:reference id="gestService" interface="com.fionapet.business.service.GestService"/>
+    <!--会员 api -->
+
 </beans>

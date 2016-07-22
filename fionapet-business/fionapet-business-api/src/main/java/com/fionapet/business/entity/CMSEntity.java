@@ -3,7 +3,6 @@ package com.fionapet.business.entity;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.apache.commons.lang3.builder.ToStringBuilder;
-import org.dubbo.x.entity.StatusEntity;
 
 import javax.persistence.MappedSuperclass;
 import java.util.Date;
