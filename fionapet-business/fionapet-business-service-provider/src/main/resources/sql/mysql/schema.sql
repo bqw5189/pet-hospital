@@ -1951,18 +1951,18 @@ DROP TABLE IF EXISTS `t_medic_appliance`;
 CREATE TABLE `t_medic_appliance` (
   `id` VARCHAR(36) NOT NULL,
   `medic_record_code` varchar(50) null,-- 医生记录编号
-	`medic_record_id` varchar(50) null,-- 医生记录名称
-	`item_code` varchar(50) null,-- 类型编号
-	`item_name` varchar(100) null,-- 类型名称
-	`item_num` double null,-- 数量
-	`item_standard` varchar(50) null,-- 规格
-	`sell_price` number null,-- 售价
-	`is_count` varchar(50) null,-- 是否计算
-	`unit` varchar(50) null,-- 单元
-	`executor_id` varchar(36) null,-- 执行者
-	`executor_name` varchar(50) null,-- 执行者名称
-	`paid_status` varchar(50) null,-- 影像状态
-	`paid_time` timestamp null,-- 影像时间
+  `medic_record_id` varchar(50) null,-- 医生记录名称
+  `item_code` varchar(50) null,-- 类型编号
+  `item_name` varchar(100) null,-- 类型名称
+  `item_num` double null,-- 数量
+  `item_standard` varchar(50) null,-- 规格
+  `sell_price` double null,-- 售价
+  `is_count` varchar(50) null,-- 是否计算
+  `unit` varchar(50) null,-- 单元
+  `executor_id` varchar(36) null,-- 执行者
+  `executor_name` varchar(50) null,-- 执行者名称
+  `paid_status` varchar(50) null,-- 影像状态
+  `paid_time` timestamp null,-- 影像时间
   `create_user_id` varchar(36) not null,
   `create_date` timestamp not null default current_timestamp on update current_timestamp,
   `update_user_id` varchar(36) not null,
@@ -1977,11 +1977,11 @@ CREATE TABLE `t_medic_appliance` (
 DROP TABLE IF EXISTS `t_itemtype_supplies`;
 CREATE TABLE `t_itemtype_supplies` (
   `id` VARCHAR(36) NOT NULL,
-	`item_code` varchar(50) null,-- 类型编号
-	`item_num` double null,-- 数量
-	`unit` varchar(50) null,-- 单元
-	`supplies_code` varchar(50) null,-- 供应量编号
-	`sign` varchar(50) null,-- 提示
+  `item_code` varchar(50) null,-- 类型编号
+  `item_num` double null,-- 数量
+  `unit` varchar(50) null,-- 单元
+  `supplies_code` varchar(50) null,-- 供应量编号
+  `sign` varchar(50) null,-- 提示
   `create_user_id` varchar(36) not null,
   `create_date` timestamp not null default current_timestamp on update current_timestamp,
   `update_user_id` varchar(36) not null,
@@ -1996,8 +1996,8 @@ CREATE TABLE `t_itemtype_supplies` (
 DROP TABLE IF EXISTS `t_itemtype_chemicalexam`;
 CREATE TABLE `t_itemtype_chemicalexam` (
   `id` VARCHAR(36) NOT NULL,
-	`item_code` varchar(50) null,-- 类型编号
-	`chemical_exam_id` VARCHAR(36) null,-- 化验实例ID
+  `item_code` varchar(50) null,-- 类型编号
+  `chemical_exam_id` VARCHAR(36) null,-- 化验实例ID
   `create_user_id` varchar(36) not null,
   `create_date` timestamp not null default current_timestamp on update current_timestamp,
   `update_user_id` varchar(36) not null,
@@ -2012,8 +2012,8 @@ CREATE TABLE `t_itemtype_chemicalexam` (
 DROP TABLE IF EXISTS `t_item_single_detail`;
 CREATE TABLE `t_item_single_detail` (
   `id` VARCHAR(36) NOT NULL,
-	`item_code` varchar(50) null,-- 类型编号
-	`batch_code` varchar(100) null,-- 批次号
+  `item_code` varchar(50) null,-- 类型编号
+  `batch_code` varchar(100) null,-- 批次号
   `bar_code` varchar(100) not null,-- 条码
   `item_name` varchar(100) null,-- 类型名称
   `package_unit` varchar(50) null,-- 单元
@@ -2050,20 +2050,20 @@ CREATE TABLE `t_item_single_detail` (
 DROP TABLE IF EXISTS `t_item_count_change_reason`;
 CREATE TABLE `t_item_count_change_reason` (
   `id` VARCHAR(36) NOT NULL,
-	`item_code` varchar(50) null,-- 类型编号
-	`item_name` varchar(100) null,-- 类型名称
-	`warehouse_code` varchar(50) null,-- 仓库编号
+  `item_code` varchar(50) null,-- 类型编号
+  `item_name` varchar(100) null,-- 类型名称
+  `warehouse_code` varchar(50) null,-- 仓库编号
   `warehouse_name` varchar(50) null,-- 仓库名称
-	`source_count` DOUBLE null,-- 资源数量
-	`new_count` double null,-- 新数量
-	`source_scattered_count` double null,-- 原洒落数量
-	`new_scattered_count` double null,-- 新洒落数量
-	`change_reason` text null,-- 更新原因
-	`source_batch_number` varchar(50) null,-- 原批数量
-	`new_batch_number` varchar(200) null,-- 新批数量
-	`source_out_date_time` timestamp null,-- 原移除时间
-	`new_out_date_time` timestamp null,-- 新移除时间
-	`item_count_id` VARCHAR(36) null,-- 类型数量ID
+  `source_count` DOUBLE null,-- 资源数量
+  `new_count` double null,-- 新数量
+  `source_scattered_count` double null,-- 原洒落数量
+  `new_scattered_count` double null,-- 新洒落数量
+  `change_reason` text null,-- 更新原因
+  `source_batch_number` varchar(50) null,-- 原批数量
+  `new_batch_number` varchar(200) null,-- 新批数量
+  `source_out_date_time` timestamp null,-- 原移除时间
+  `new_out_date_time` timestamp null,-- 新移除时间
+  `item_count_id` VARCHAR(36) null,-- 类型数量ID
   `create_user_id` varchar(36) not null,
   `create_date` timestamp not null default current_timestamp on update current_timestamp,
   `update_user_id` varchar(36) not null,
@@ -2078,29 +2078,29 @@ CREATE TABLE `t_item_count_change_reason` (
 DROP TABLE IF EXISTS `t_item_count`;
 CREATE TABLE `t_item_count` (
   `id` VARCHAR(36) NOT NULL,
-	`item_code` varchar(50) null,-- 类型编号
-	`bar_code` varchar(50) null,-- 条码
-	`item_name` varchar(100) null,-- 类型名称
-	`package_unit` varchar(50) null,-- 单元
-	`item_standard` varchar(50) null,-- 规格
-	`drug_form` varchar(50) null,-- 药品形状
-	`item_style` varchar(50) null,-- 商品服务种类
-	`item_bulk` INTEGER null,-- 零散比
-	`sell_price` double null,-- 售价
-	`is_vip_discount` varchar(50) null,-- vip折扣
-	`vip_sell_price` double null,-- VIP价格
-	`item_count_num` double null,-- 类型数量
-	`scattered_count_num` double null,-- 散装数量
-	`input_price` double null,-- 进价
-	`ware_up_limit` integer null,-- 仓库上限
-	`ware_down_limit` integer null,-- 仓库下限
-	`warehouse_name` varchar(50) null,-- 仓库名称
-	`warehouse_id` varchar(36) null,-- 仓库ID
-	`remark` text null,-- 备注
-	`manufacturer_code` varchar(50) null,-- 经销商编号
-	`manufacturer_name` varchar(200) null,-- 经销商名称
-	`batch_number` varchar(50) not null,-- 批次号
-	`out_date_time` timestamp null,-- 过期时间
+  `item_code` varchar(50) null,-- 类型编号
+  `bar_code` varchar(50) null,-- 条码
+  `item_name` varchar(100) null,-- 类型名称
+  `package_unit` varchar(50) null,-- 单元
+  `item_standard` varchar(50) null,-- 规格
+  `drug_form` varchar(50) null,-- 药品形状
+  `item_style` varchar(50) null,-- 商品服务种类
+  `item_bulk` INTEGER null,-- 零散比
+  `sell_price` double null,-- 售价
+  `is_vip_discount` varchar(50) null,-- vip折扣
+  `vip_sell_price` double null,-- VIP价格
+  `item_count_num` double null,-- 类型数量
+  `scattered_count_num` double null,-- 散装数量
+  `input_price` double null,-- 进价
+  `ware_up_limit` integer null,-- 仓库上限
+  `ware_down_limit` integer null,-- 仓库下限
+  `warehouse_name` varchar(50) null,-- 仓库名称
+  `warehouse_id` varchar(36) null,-- 仓库ID
+  `remark` text null,-- 备注
+  `manufacturer_code` varchar(50) null,-- 经销商编号
+  `manufacturer_name` varchar(200) null,-- 经销商名称
+  `batch_number` varchar(50) not null,-- 批次号
+  `out_date_time` timestamp null,-- 过期时间
   `create_user_id` varchar(36) not null,
   `create_date` timestamp not null default current_timestamp on update current_timestamp,
   `update_user_id` varchar(36) not null,
@@ -2116,13 +2116,13 @@ CREATE TABLE `t_item_count` (
 DROP TABLE IF EXISTS `t_inventory_log`;
 CREATE TABLE `t_inventory_log` (
   `id` VARCHAR(36) NOT NULL,
-	`inventory_code` varchar(50) null,-- 存货清单编号
-	`inventory` varchar(36) null,-- 存货清单
-	`warehouse_id` varchar(36) null,-- 仓库ID
-	`item_code` varchar(36) null,-- 类型编号
-	`batch_number` varchar(36) null,-- 批次号
-	`item_count_num` varchar(36) null,-- 类型统计个数
-	`scattered_count_num` varchar(36) null,-- 散装数量
+  `inventory_code` varchar(50) null,-- 存货清单编号
+  `inventory` varchar(36) null,-- 存货清单
+  `warehouse_id` varchar(36) null,-- 仓库ID
+  `item_code` varchar(36) null,-- 类型编号
+  `batch_number` varchar(36) null,-- 批次号
+  `item_count_num` varchar(36) null,-- 类型统计个数
+  `scattered_count_num` varchar(36) null,-- 散装数量
   `create_user_id` varchar(36) not null,
   `create_date` timestamp not null default current_timestamp on update current_timestamp,
   `update_user_id` varchar(36) not null,
@@ -2138,11 +2138,11 @@ CREATE TABLE `t_inventory_log` (
 DROP TABLE IF EXISTS `t_input_money_record`;
 CREATE TABLE `t_input_money_record` (
   `id` VARCHAR(36) NOT NULL,
-	`input_money_date` TIMESTAMP null,-- 收款时间
-	`gest_name` varchar(50) null,-- 客户名称
-	`gest_id` varchar(36) null,-- 客户ID
-	`input_money` DOUBLE null,-- 收款金额
-	`vip_account` DOUBLE null,-- VIP账号
+  `input_money_date` TIMESTAMP null,-- 收款时间
+  `gest_name` varchar(50) null,-- 客户名称
+  `gest_id` varchar(36) null,-- 客户ID
+  `input_money` DOUBLE null,-- 收款金额
+  `vip_account` DOUBLE null,-- VIP账号
   `create_user_id` varchar(36) not null,
   `create_date` timestamp not null default current_timestamp on update current_timestamp,
   `update_user_id` varchar(36) not null,
@@ -2158,27 +2158,27 @@ CREATE TABLE `t_input_money_record` (
 DROP TABLE IF EXISTS `t_in_hospital_record_detail`;
 CREATE TABLE `t_in_hospital_record_detail` (
   `id` VARCHAR(36) NOT NULL,
-	`in_hospital_id` varchar(36) null,-- 医院ID
-	`in_hospital_no` varchar(50) null,-- 医院编号
-	`item_code` varchar(50) null,-- 类型编号
-	`item_name` varchar(100) null,-- 类型名称
-	`total_cost` double null,-- 整体消费
-	`item_num` double null,-- 类型数量
-	`sell_price` double null,-- 销售价格
-	`item_style` varchar(50) null,-- 商品服务种类
-	`recipe_unit` varchar(50) null,-- 食谱单位
-	`item_standard` varchar(50) null,-- 规格
-	`use_way` varchar(1000) null,-- 食用方式
-	`item_count_status` varchar(50) null,-- 状态
-	`paid_status` varchar(50) null,-- 影像状态
-	`paid_time` timestamp null,-- 影像时间
-	`warehouse_id` varchar(36) null, -- 仓库ID
-	`record_time` timestamp null, -- 记录时间
-	`remark` text null,-- 备注
-	`batch_number` varchar(50) null,-- 批次号
-	`out_date_time` timestamp null,-- 过期时间
-	`manufacturer_code` varchar(50) null,-- 经销商编号
-	`manufacturer_name` varchar(200) null,-- 经销商名称
+  `in_hospital_id` varchar(36) null,-- 医院ID
+  `in_hospital_no` varchar(50) null,-- 医院编号
+  `item_code` varchar(50) null,-- 类型编号
+  `item_name` varchar(100) null,-- 类型名称
+  `total_cost` double null,-- 整体消费
+  `item_num` double null,-- 类型数量
+  `sell_price` double null,-- 销售价格
+  `item_style` varchar(50) null,-- 商品服务种类
+  `recipe_unit` varchar(50) null,-- 食谱单位
+  `item_standard` varchar(50) null,-- 规格
+  `use_way` varchar(1000) null,-- 食用方式
+  `item_count_status` varchar(50) null,-- 状态
+  `paid_status` varchar(50) null,-- 影像状态
+  `paid_time` timestamp null,-- 影像时间
+  `warehouse_id` varchar(36) null, -- 仓库ID
+  `record_time` timestamp null, -- 记录时间
+  `remark` text null,-- 备注
+  `batch_number` varchar(50) null,-- 批次号
+  `out_date_time` timestamp null,-- 过期时间
+  `manufacturer_code` varchar(50) null,-- 经销商编号
+  `manufacturer_name` varchar(200) null,-- 经销商名称
   `create_user_id` varchar(36) not null,
   `create_date` timestamp not null default current_timestamp on update current_timestamp,
   `update_user_id` varchar(36) not null,
@@ -2193,34 +2193,34 @@ CREATE TABLE `t_in_hospital_record_detail` (
 DROP TABLE IF EXISTS `t_in_hospital_record`;
 CREATE TABLE `t_in_hospital_record` (
   `id` VARCHAR(36) NOT NULL,
-	`in_hospital_no` varchar(50) null,-- 医院编号
-	`gest_id` varchar(36) null,-- 顾客ID
-	`gest_code` varchar(100) null,-- 顾客编号
-	`gest_name` varchar(50) null,-- 顾客名称
-	`vip_no` double null,-- VIP编号
-	`mobile_phone` varchar(50) null,-- 手机
-	`pet_id` varchar(36) null,-- 宠物ID
-	`pet_name` varchar(50) null,-- 宠物名称
-	`start_time` timestamp null,-- 起始时间
-	`end_time` timestamp null,-- 结束时间
-	`input_money` double null,-- 收款
-	`pre_days` integer null,-- 预约时间
-	`real_days` integer null,-- 实际时间
-	`cage_no` varchar(50) null, -- 笼子编号
-	`item_code` varchar(50) null,-- 类型编号
-	`item_name` varchar(100) null,-- 类型名称
+  `in_hospital_no` varchar(50) null,-- 医院编号
+  `gest_id` varchar(36) null,-- 顾客ID
+  `gest_code` varchar(100) null,-- 顾客编号
+  `gest_name` varchar(50) null,-- 顾客名称
+  `vip_no` double null,-- VIP编号
+  `mobile_phone` varchar(50) null,-- 手机
+  `pet_id` varchar(36) null,-- 宠物ID
+  `pet_name` varchar(50) null,-- 宠物名称
+  `start_time` timestamp null,-- 起始时间
+  `end_time` timestamp null,-- 结束时间
+  `input_money` double null,-- 收款
+  `pre_days` integer null,-- 预约时间
+  `real_days` integer null,-- 实际时间
+  `cage_no` varchar(50) null, -- 笼子编号
+  `item_code` varchar(50) null,-- 类型编号
+  `item_name` varchar(100) null,-- 类型名称
   `price` double null, -- 价格
-	`real_price` double null,-- 实际价格
-	`total_money` double null,-- 总价
-	`record_time` timestamp null,-- 记录时间
-	`paid_status` varchar(50) null,-- 影像状态
-	`paid_time` timestamp null,-- 影像时间
-	`manager_by` varchar(50) null,--
-	`remark` text null,
-	`update_time` timestamp null,
-	`manager_id` VARCHAR(36) null,
-	`manufacturer_id` varchar(36) null,-- 经销商编号
-	`manufacturer_name` varchar(200) null,-- 经销商名称
+  `real_price` double null,-- 实际价格
+  `total_money` double null,-- 总价
+  `record_time` timestamp null,-- 记录时间
+  `paid_status` varchar(50) null,-- 影像状态
+  `paid_time` timestamp null,-- 影像时间
+  `manager_by` varchar(50) null,--
+  `remark` text null,
+  `update_time` timestamp null,
+  `manager_id` VARCHAR(36) null,
+  `manufacturer_id` varchar(36) null,-- 经销商编号
+  `manufacturer_name` varchar(200) null,-- 经销商名称
   `create_user_id` varchar(36) not null,
   `create_date` timestamp not null default current_timestamp on update current_timestamp,
   `update_user_id` varchar(36) not null,
@@ -2235,11 +2235,11 @@ CREATE TABLE `t_in_hospital_record` (
 DROP TABLE IF EXISTS `t_gest_paid_record`;
 CREATE TABLE `t_gest_paid_record` (
   `id` VARCHAR(36) NOT NULL,
-	`gest_name` varchar(50) null,-- 客户名称
-	`gest_id` varchar(36) null,-- 客户ID
-	`operate_action` varchar(50) null,-- 操作部位
-	`operate_content` varchar(50) null,-- 操作内容
-	`settle_accounts_id` varchar(36) null,-- 账号ID
+  `gest_name` varchar(50) null,-- 客户名称
+  `gest_id` varchar(36) null,-- 客户ID
+  `operate_action` varchar(50) null,-- 操作部位
+  `operate_content` varchar(50) null,-- 操作内容
+  `settle_accounts_id` varchar(36) null,-- 账号ID
   `create_user_id` varchar(36) not null,
   `create_date` timestamp not null default current_timestamp on update current_timestamp,
   `update_user_id` varchar(36) not null,
@@ -2256,24 +2256,24 @@ DROP TABLE IF EXISTS `t_foster_record_detail`;
 CREATE TABLE `t_foster_record_detail` (
   `id` VARCHAR(36) NOT NULL,
   `foster_id` VARCHAR(36) null,-- 养育ID
-	`foster_no` varchar(50) null,-- 养育编号
-	`item_code` varchar(50) null,-- 类型编号
-	`item_name` varchar(100) null,-- 类型名称
-	`total_cost` double null,-- 总价
-	`item_num` double null,-- 类型编号
-	`sell_price` double null,-- 售价
-	`item_style` varchar(50) null,-- 商品服务种类
-	`recipe_unit` varchar(50) null,-- 食谱单位
-	`item_standard` varchar(50) null,-- 规格
-	`use_way` varchar(1000) null,-- 食用方式
-	`item_count_status` varchar(50) null,-- 状态
-	`paid_status` varchar(50) null,-- 影像状态
-	`paid_time` timestamp null,-- 影像时间
-	`record_time` timestamp null,-- 记录时间
-	`remark` text null,-- 备注
-	`warehouse_id` VARCHAR(36) null,-- 仓库ID
-	`manufacturer_code` varchar(50) null,-- 经销商编号
-	`manufacturer_name` varchar(200) null,-- 经销商名称
+  `foster_no` varchar(50) null,-- 养育编号
+  `item_code` varchar(50) null,-- 类型编号
+  `item_name` varchar(100) null,-- 类型名称
+  `total_cost` double null,-- 总价
+  `item_num` double null,-- 类型编号
+  `sell_price` double null,-- 售价
+  `item_style` varchar(50) null,-- 商品服务种类
+  `recipe_unit` varchar(50) null,-- 食谱单位
+  `item_standard` varchar(50) null,-- 规格
+  `use_way` varchar(1000) null,-- 食用方式
+  `item_count_status` varchar(50) null,-- 状态
+  `paid_status` varchar(50) null,-- 影像状态
+  `paid_time` timestamp null,-- 影像时间
+  `record_time` timestamp null,-- 记录时间
+  `remark` text null,-- 备注
+  `warehouse_id` VARCHAR(36) null,-- 仓库ID
+  `manufacturer_code` varchar(50) null,-- 经销商编号
+  `manufacturer_name` varchar(200) null,-- 经销商名称
   `create_user_id` varchar(36) not null,
   `create_date` timestamp not null default current_timestamp on update current_timestamp,
   `update_user_id` varchar(36) not null,
@@ -2290,32 +2290,32 @@ DROP TABLE IF EXISTS `t_foster_record`;
 CREATE TABLE `t_foster_record` (
   `id` VARCHAR(36) NOT NULL,
   `foster_no` varchar(50) null,-- 养育编号
-	`gest_id` VARCHAR(36) null,-- 顾客ID
-	`gest_code` varchar(50) null,-- 顾客编号
-	`gest_name` varchar(100) null,-- 顾客名称
-	`vip_no` varchar(50) null,-- vip编号
-	`mobile_phone` varchar(50) null,-- 手机
-	`pet_id` VARCHAR(36) null,-- 宠物ID
-	`pet_name` varchar(50) null,-- 宠物名称
-	`start_time` timestamp null,-- 起始时间
-	`end_time` timestamp null,-- 结束时间
-	`input_money` double null,-- 预存金额
-	`pre_days` integer null,-- 预约时间
-	`real_days` integer null,-- 实际时间
-	`cage_no` varchar(50) null,-- 笼子编号
-	`item_code` varchar(50) null,-- 类型编号
-	`item_name` varchar(100) null,-- 类型名称
-	`price` double null,-- 价格
-	`real_price` double null,-- 实际价格
-	`total_money` double null,-- 总价
-	`paid_status` varchar(50) null,-- 影像状态
-	`paid_time` timestamp null,-- 影像时间
-	`record_time` timestamp null,-- 记录时间
-	`remark` text null,-- 备注
-	`manufacturer_id` varchar(50) null,-- 经销商id
-	`manufacturer_name` varchar(200) null,-- 经销商名称
-	`Manager_By` varchar(50) NULL,-- 管理人员
-	`Manager_ID` varchar(36) NULL,-- 管理ID
+  `gest_id` VARCHAR(36) null,-- 顾客ID
+  `gest_code` varchar(50) null,-- 顾客编号
+  `gest_name` varchar(100) null,-- 顾客名称
+  `vip_no` varchar(50) null,-- vip编号
+  `mobile_phone` varchar(50) null,-- 手机
+  `pet_id` VARCHAR(36) null,-- 宠物ID
+  `pet_name` varchar(50) null,-- 宠物名称
+  `start_time` timestamp null,-- 起始时间
+  `end_time` timestamp null,-- 结束时间
+  `input_money` double null,-- 预存金额
+  `pre_days` integer null,-- 预约时间
+  `real_days` integer null,-- 实际时间
+  `cage_no` varchar(50) null,-- 笼子编号
+  `item_code` varchar(50) null,-- 类型编号
+  `item_name` varchar(100) null,-- 类型名称
+  `price` double null,-- 价格
+  `real_price` double null,-- 实际价格
+  `total_money` double null,-- 总价
+  `paid_status` varchar(50) null,-- 影像状态
+  `paid_time` timestamp null,-- 影像时间
+  `record_time` timestamp null,-- 记录时间
+  `remark` text null,-- 备注
+  `manufacturer_id` varchar(50) null,-- 经销商id
+  `manufacturer_name` varchar(200) null,-- 经销商名称
+  `Manager_By` varchar(50) NULL,-- 管理人员
+  `Manager_ID` varchar(36) NULL,-- 管理ID
   `create_user_id` varchar(36) not null,
   `create_date` timestamp not null default current_timestamp on update current_timestamp,
   `update_user_id` varchar(36) not null,
@@ -2331,8 +2331,8 @@ CREATE TABLE `t_foster_record` (
 DROP TABLE IF EXISTS `t_foster_health`;
 CREATE TABLE `t_foster_health` (
   `id` VARCHAR(36) NOT NULL,
-	`foster_no` varchar(50) null,-- 编号
-	`remark` text null,-- 说明
+  `foster_no` varchar(50) null,-- 编号
+  `remark` text null,-- 说明
   `create_user_id` varchar(36) not null,
   `create_date` timestamp not null default current_timestamp on update current_timestamp,
   `update_user_id` varchar(36) not null,
@@ -2348,25 +2348,25 @@ CREATE TABLE `t_foster_health` (
 DROP TABLE IF EXISTS `t_finance_settle_accounts_detail`;
 CREATE TABLE `t_finance_settle_accounts_detail` (
   `id` VARCHAR(36) NOT NULL,
-	`settle_accounts_detail_id` VARCHAR(36) null,
-	`item_code` varchar(50) null,-- 类型编号
-	`item_name` varchar(100) null,-- 类型名称
-	`package_unit` varchar(50) null,-- 单元
-	`item_standard` varchar(50) null,-- 规格
-	`item_bulk` integer null,-- 零散比
-	`sell_price` double null,-- 售价
-	`total_num` double null,-- 总个数
-	`total_cost` double null,-- 总价
-	`infact_price` double null,-- 实际价格
-	`discount_money` double null,-- 折后价
-	`busi_type_id` integer null,-- 业务类型ID
-	`relation_id` integer null,-- 关联ID
-	`item_descript` varchar(100) null,-- 类型描述
-	`paid_status` varchar(50) null,-- 影像状态
-	`paid_time` timestamp null,-- 影像时间
-	`relation_detail_id` integer null,-- 关联细节ID
-	`sum_discount_money` double null,-- 折后总价
-	`sum_original_money` double null,-- 原始价格
+  `settle_accounts_detail_id` VARCHAR(36) null,
+  `item_code` varchar(50) null,-- 类型编号
+  `item_name` varchar(100) null,-- 类型名称
+  `package_unit` varchar(50) null,-- 单元
+  `item_standard` varchar(50) null,-- 规格
+  `item_bulk` integer null,-- 零散比
+  `sell_price` double null,-- 售价
+  `total_num` double null,-- 总个数
+  `total_cost` double null,-- 总价
+  `infact_price` double null,-- 实际价格
+  `discount_money` double null,-- 折后价
+  `busi_type_id` integer null,-- 业务类型ID
+  `relation_id` integer null,-- 关联ID
+  `item_descript` varchar(100) null,-- 类型描述
+  `paid_status` varchar(50) null,-- 影像状态
+  `paid_time` timestamp null,-- 影像时间
+  `relation_detail_id` integer null,-- 关联细节ID
+  `sum_discount_money` double null,-- 折后总价
+  `sum_original_money` double null,-- 原始价格
   `create_user_id` varchar(36) not null,
   `create_date` timestamp not null default current_timestamp on update current_timestamp,
   `update_user_id` varchar(36) not null,
@@ -2383,21 +2383,21 @@ CREATE TABLE `t_finance_settle_accounts_detail` (
 DROP TABLE IF EXISTS `t_finance_settle_accounts`;
 CREATE TABLE `t_finance_settle_accounts` (
   `id` VARCHAR(36) NOT NULL,
-	`settle_code` varchar(50) null,-- 编号
-	`gest_id` integer null,-- 顾客ID
-	`gest_code` varchar(50) null,-- 顾客编号
-	`gest_name` varchar(100) null,-- 顾客名称
-	`pet_code` varchar(50) null,-- 宠物编号
-	`pet_name` varchar(50) null,-- 宠物名称
-	`total_money` double null,-- 总金额
-	`dis_count_money` double null,-- 折扣金额
-	`should_paid_money` double null,-- 原金额
-	`fact_paid_money` double null,-- 实际金额
-	`back_money` double null,-- 返回金额
-	`back_reason` text null,-- 返回原因
-	`paid_status` varchar(50) null,-- 影像状态
-	`paid_time` timestamp null,-- 影像时间
-	`change_money` double null,-- 变更金额
+  `settle_code` varchar(50) null,-- 编号
+  `gest_id` integer null,-- 顾客ID
+  `gest_code` varchar(50) null,-- 顾客编号
+  `gest_name` varchar(100) null,-- 顾客名称
+  `pet_code` varchar(50) null,-- 宠物编号
+  `pet_name` varchar(50) null,-- 宠物名称
+  `total_money` double null,-- 总金额
+  `dis_count_money` double null,-- 折扣金额
+  `should_paid_money` double null,-- 原金额
+  `fact_paid_money` double null,-- 实际金额
+  `back_money` double null,-- 返回金额
+  `back_reason` text null,-- 返回原因
+  `paid_status` varchar(50) null,-- 影像状态
+  `paid_time` timestamp null,-- 影像时间
+  `change_money` double null,-- 变更金额
   `create_user_id` varchar(36) not null,
   `create_date` timestamp not null default current_timestamp on update current_timestamp,
   `update_user_id` varchar(36) not null,
@@ -2413,18 +2413,18 @@ CREATE TABLE `t_finance_settle_accounts` (
 DROP TABLE IF EXISTS `t_fifo_log`;
 CREATE TABLE `t_fifo_log` (
   `id` VARCHAR(36) NOT NULL,
-	`type` varchar(50) not null,-- 类型
-	`bill_code` varchar(50) not null,-- 单号
-	`detail_id` VARCHAR(36) null,-- 明细ID
-	`warehouse_id` VARCHAR(36) null,-- 仓库ID
-	`item_code` varchar(50) not null,-- 类型编号
-	`batch_number` varchar(50) null,-- 批次号
-	`out_date_time` timestamp null,-- 出库时间
-	`item_count_num` double null,-- 个数
-	`sign` integer null,-- 标签
-	`created_on` timestamp null,-- 时间
-	`unit` varchar(50) null,-- 单元
-	`input_price` double null,-- 进价
+  `type` varchar(50) not null,-- 类型
+  `bill_code` varchar(50) not null,-- 单号
+  `detail_id` VARCHAR(36) null,-- 明细ID
+  `warehouse_id` VARCHAR(36) null,-- 仓库ID
+  `item_code` varchar(50) not null,-- 类型编号
+  `batch_number` varchar(50) null,-- 批次号
+  `out_date_time` timestamp null,-- 出库时间
+  `item_count_num` double null,-- 个数
+  `sign` integer null,-- 标签
+  `created_on` timestamp null,-- 时间
+  `unit` varchar(50) null,-- 单元
+  `input_price` double null,-- 进价
   `create_user_id` varchar(36) not null,
   `create_date` timestamp not null default current_timestamp on update current_timestamp,
   `update_user_id` varchar(36) not null,
@@ -2441,11 +2441,11 @@ CREATE TABLE `t_fifo_log` (
 DROP TABLE IF EXISTS `t_expenses_expend`;
 CREATE TABLE `t_expenses_expend` (
   `id` VARCHAR(36) NOT NULL,
-	`Cate_No` varchar(50) null,-- 种类编号
-	`Cate_Name` varchar(50) null,-- 种类名称
-	`Input_Date` TIMESTAMP null,-- 日期
-	`Amount` DOUBLE null,-- 账号
-	`Describe` varchar(8000) null,-- 说明
+  `Cate_No` varchar(50) null,-- 种类编号
+  `Cate_Name` varchar(50) null,-- 种类名称
+  `Input_Date` TIMESTAMP null,-- 日期
+  `Amount` DOUBLE null,-- 账号
+  `Describe` varchar(8000) null,-- 说明
   `create_user_id` varchar(36) not null,
   `create_date` timestamp not null default current_timestamp on update current_timestamp,
   `update_user_id` varchar(36) not null,
@@ -2461,18 +2461,18 @@ CREATE TABLE `t_expenses_expend` (
 DROP TABLE IF EXISTS `t_enterprise`;
 CREATE TABLE `t_enterprise` (
   `id` VARCHAR(36) NOT NULL,
-	`full_name` varchar(50) null,-- 全名称
-	`short_name` varchar(50) null,-- 简称
-	`ent_no` varchar(50) null,-- 企业号
-	`response_man` varchar(50) null,-- 负责人
-	`email_no` varchar(50) null,-- 邮箱号
-	`address` varchar(50) null,-- 地址
-	`tel_phone` varchar(50) null,-- 电话
-	`fax` varchar(50) null,-- 口号
-	`e_mail` varchar(50) null,-- 邮箱
-	`area_code` varchar(50) null,-- 邮编
-	`serial_number` varchar(50) null,-- 序列号
-	`remark` `text` null,-- 说明
+  `full_name` varchar(50) null,-- 全名称
+  `short_name` varchar(50) null,-- 简称
+  `ent_no` varchar(50) null,-- 企业号
+  `response_man` varchar(50) null,-- 负责人
+  `email_no` varchar(50) null,-- 邮箱号
+  `address` varchar(50) null,-- 地址
+  `tel_phone` varchar(50) null,-- 电话
+  `fax` varchar(50) null,-- 口号
+  `e_mail` varchar(50) null,-- 邮箱
+  `area_code` varchar(50) null,-- 邮编
+  `serial_number` varchar(50) null,-- 序列号
+  `remark` text null,-- 说明
   `create_user_id` varchar(36) not null,
   `create_date` timestamp not null default current_timestamp on update current_timestamp,
   `update_user_id` varchar(36) not null,
@@ -2488,22 +2488,22 @@ CREATE TABLE `t_enterprise` (
 DROP TABLE IF EXISTS `t_check_warehouse_detail`;
 CREATE TABLE `t_check_warehouse_detail` (
   `id` VARCHAR(36) NOT NULL,
-	`item_count_id` VARCHAR(36) not null,-- 类型统计ID
-	`item_code` varchar(50) null,-- 类型编号
-	`item_count_num` DOUBLE null,-- 个数
-	`item_bulk` INTEGER null,-- 零散比
-	`scattered_count_num` DOUBLE null,-- 散装数量
-	`package_unit` varchar(50) null,-- 单位
-	`recipe_unit` varchar(50) null,-- 食谱单位
-	`batch_number` varchar(50) not null,-- 批次数
-	`out_date_time` TIMESTAMP null,-- 出库时间
-	`old_item_count_num` DOUBLE null,-- 上次类型数量
-	`old_scattered_count_num` DOUBLE null,-- 上次散装数量
-	`old_out_date_time` TIMESTAMP null,-- 上次出库时间
-	`remark` text null,-- 说明
-	`warehouse_id` INTEGER null,-- 仓库ID
-	`warehouse_name` varchar(200) null,-- 仓库名称
-	`check_number` varchar(50) not null,-- 检查数量
+  `item_count_id` VARCHAR(36) not null,-- 类型统计ID
+  `item_code` varchar(50) null,-- 类型编号
+  `item_count_num` DOUBLE null,-- 个数
+  `item_bulk` INTEGER null,-- 零散比
+  `scattered_count_num` DOUBLE null,-- 散装数量
+  `package_unit` varchar(50) null,-- 单位
+  `recipe_unit` varchar(50) null,-- 食谱单位
+  `batch_number` varchar(50) not null,-- 批次数
+  `out_date_time` TIMESTAMP null,-- 出库时间
+  `old_item_count_num` DOUBLE null,-- 上次类型数量
+  `old_scattered_count_num` DOUBLE null,-- 上次散装数量
+  `old_out_date_time` TIMESTAMP null,-- 上次出库时间
+  `remark` text null,-- 说明
+  `warehouse_id` INTEGER null,-- 仓库ID
+  `warehouse_name` varchar(200) null,-- 仓库名称
+  `check_number` varchar(50) not null,-- 检查数量
   `create_user_id` varchar(36) not null,
   `create_date` timestamp not null default current_timestamp on update current_timestamp,
   `update_user_id` varchar(36) not null,
@@ -2518,19 +2518,18 @@ CREATE TABLE `t_check_warehouse_detail` (
 -- --- Table structure for t_check_warehouse  仓库检查主表
 -- -- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
 DROP TABLE IF EXISTS `t_check_warehouse`;
-CREATE TABLE `t_foster_health` (
+CREATE TABLE `t_check_warehouse` (
   `id` VARCHAR(36) NOT NULL,
-	`check_date` timestamp null,-- 检查时间
-	`check_man` varchar(50) null,-- 检查者
-	`status` varchar(50) null,-- 状态
-	`file_name` varchar(500) null,-- 文件名
-	`item_count` INTEGER not null,-- 类型统计
-	`describe` varchar(2500) null,-- 描述
-	`check_number` varchar(50) not null,-- 检查数量
+  `check_date` timestamp null,-- 检查时间
+  `check_man` varchar(50) null,-- 检查者
+  `status` varchar(50) null,-- 状态
+  `file_name` varchar(500) null,-- 文件名
+  `item_count` INTEGER not null,-- 类型统计
+  `describe` varchar(2500) null,-- 描述
+  `check_number` varchar(50) not null,-- 检查数量
   `create_user_id` varchar(36) not null,
   `create_date` timestamp not null default current_timestamp on update current_timestamp,
   `update_user_id` varchar(36) not null,
   `update_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  `status` varchar(32) NOT NULL DEFAULT 'OK',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;

@@ -25,6 +25,6 @@ public class PetSmallRaceDaoTest extends SpringTransactionalTestCase {
 
         Assert.assertNotNull(petSmallRaces);
 
-        Assert.assertEquals(petSmallRaces.size(), 0);
+        Assert.assertEquals(petSmallRaces.size(), 26);
     }
 }

@@ -221,4 +221,109 @@
     <dubbo:reference id="gestService" interface="com.fionapet.business.service.GestService"/>
     <!-- 会员 service -->
 
+
+	<!-- 存货清单日志表 service -->
+    <dubbo:reference id="inventoryLogService" interface="com.fionapet.business.service.InventoryLogService"/>
+    <!-- 存货清单日志表 service -->
+
+
+	<!-- 种类数量更改原因表 service -->
+    <dubbo:reference id="itemCountChangeReasonService" interface="com.fionapet.business.service.ItemCountChangeReasonService"/>
+    <!-- 种类数量更改原因表 service -->
+
+
+	<!-- 企业信息表 service -->
+    <dubbo:reference id="enterpriseService" interface="com.fionapet.business.service.EnterpriseService"/>
+    <!-- 企业信息表 service -->
+
+
+	<!-- 养育记录明细表 service -->
+    <dubbo:reference id="fosterRecordDetailService" interface="com.fionapet.business.service.FosterRecordDetailService"/>
+    <!-- 养育记录明细表 service -->
+
+
+	<!-- 医院记录明细表 service -->
+    <dubbo:reference id="inHospitalRecordDetailService" interface="com.fionapet.business.service.InHospitalRecordDetailService"/>
+    <!-- 医院记录明细表 service -->
+
+
+	<!-- 进库出库日志 service -->
+    <dubbo:reference id="fifoLogService" interface="com.fionapet.business.service.FifoLogService"/>
+    <!-- 进库出库日志 service -->
+
+
+	<!-- 类型化验实例表 service -->
+    <dubbo:reference id="itemtypeChemicalexamService" interface="com.fionapet.business.service.ItemtypeChemicalexamService"/>
+    <!-- 类型化验实例表 service -->
+
+
+	<!-- 类型化验实例明细表 service -->
+    <dubbo:reference id="itemSingleDetailService" interface="com.fionapet.business.service.ItemSingleDetailService"/>
+    <!-- 类型化验实例明细表 service -->
+
+
+	<!-- 医院记录表 service -->
+    <dubbo:reference id="inHospitalRecordService" interface="com.fionapet.business.service.InHospitalRecordService"/>
+    <!-- 医院记录表 service -->
+
+
+	<!-- 养育健康状况表 service -->
+    <dubbo:reference id="fosterHealthService" interface="com.fionapet.business.service.FosterHealthService"/>
+    <!-- 养育健康状况表 service -->
+
+
+	<!-- 养育记录主表 service -->
+    <dubbo:reference id="fosterRecordService" interface="com.fionapet.business.service.FosterRecordService"/>
+    <!-- 养育记录主表 service -->
+
+
+	<!-- 收款记录表 service -->
+    <dubbo:reference id="inputMoneyRecordService" interface="com.fionapet.business.service.InputMoneyRecordService"/>
+    <!-- 收款记录表 service -->
+
+
+	<!-- 种类数量更改原因表 service -->
+    <dubbo:reference id="itemCountService" interface="com.fionapet.business.service.ItemCountService"/>
+    <!-- 种类数量更改原因表 service -->
+
+
+	<!-- 仓库检查主表 service -->
+    <dubbo:reference id="checkWarehouseService" interface="com.fionapet.business.service.CheckWarehouseService"/>
+    <!-- 仓库检查主表 service -->
+
+
+	<!-- 检查仓库明细表 service -->
+    <dubbo:reference id="checkWarehouseDetailService" interface="com.fionapet.business.service.CheckWarehouseDetailService"/>
+    <!-- 检查仓库明细表 service -->
+
+
+	<!-- 资金账户明细表 service -->
+    <dubbo:reference id="financeSettleAccountsDetailService" interface="com.fionapet.business.service.FinanceSettleAccountsDetailService"/>
+    <!-- 资金账户明细表 service -->
+
+
+	<!-- 供应量表 service -->
+    <dubbo:reference id="itemtypeSuppliesService" interface="com.fionapet.business.service.ItemtypeSuppliesService"/>
+    <!-- 供应量表 service -->
+
+
+	<!-- 资金账号表 service -->
+    <dubbo:reference id="financeSettleAccountsService" interface="com.fionapet.business.service.FinanceSettleAccountsService"/>
+    <!-- 资金账号表 service -->
+
+
+	<!-- 医生器具表 service -->
+    <dubbo:reference id="medicApplianceService" interface="com.fionapet.business.service.MedicApplianceService"/>
+    <!-- 医生器具表 service -->
+
+
+	<!-- 付出费用表 service -->
+    <dubbo:reference id="expensesExpendService" interface="com.fionapet.business.service.ExpensesExpendService"/>
+    <!-- 付出费用表 service -->
+
+
+	<!-- 顾客影像记录表 service -->
+    <dubbo:reference id="gestPaidRecordService" interface="com.fionapet.business.service.GestPaidRecordService"/>
+    <!-- 顾客影像记录表 service -->
+
 </beans>
