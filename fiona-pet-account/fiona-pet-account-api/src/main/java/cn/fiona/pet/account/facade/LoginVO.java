@@ -18,12 +18,8 @@ import java.io.Serializable;
  * Created by baiqw on 16/1/21.
  */
 
-@XmlRootElement
-@XmlAccessorType(XmlAccessType.FIELD)
 @ApiModel("登录信息")
 public class LoginVO implements Serializable{
-    @JsonProperty("username")
-    @XmlElement(name = "username")
     @NotNull
     @Size(min = 1, max = 20)
     @ApiModelProperty(value = "用户名", required = true)
