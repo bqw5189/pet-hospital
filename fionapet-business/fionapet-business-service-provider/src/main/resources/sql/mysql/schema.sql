@@ -89,7 +89,7 @@ CREATE TABLE `t_busines_cate` (
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
 -- -- -- --- --- --- --- --- --- --- --- --
--- Table structure for t_item_type 商品类型 
+-- Table structure for t_item_type 商品类型
 -- -- -- --- --- --- --- --- --- --- --- --
 DROP TABLE IF EXISTS `t_item_type`;
 CREATE TABLE t_item_type
@@ -2037,6 +2037,7 @@ CREATE TABLE `t_item_single_detail` (
   `sell_man` varchar(100) null,-- 销售人
   `warehouse_code` varchar(50) null,-- 仓库编号
   `warehouse_id` varchar(36) null,-- 仓库ID
+  `create_user_id` varchar(36) not null,
   `create_date` timestamp not null default current_timestamp on update current_timestamp,
   `update_user_id` varchar(36) not null,
   `update_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
@@ -2314,8 +2315,8 @@ CREATE TABLE `t_foster_record` (
   `remark` text null,-- 备注
   `manufacturer_id` varchar(50) null,-- 经销商id
   `manufacturer_name` varchar(200) null,-- 经销商名称
-  `Manager_By` varchar(50) NULL,-- 管理人员
-  `Manager_ID` varchar(36) NULL,-- 管理ID
+  `manager_by` varchar(50) NULL,-- 管理人员
+  `manager_id` varchar(36) NULL,-- 管理ID
   `create_user_id` varchar(36) not null,
   `create_date` timestamp not null default current_timestamp on update current_timestamp,
   `update_user_id` varchar(36) not null,
@@ -2532,4 +2533,34 @@ CREATE TABLE `t_check_warehouse` (
   `update_user_id` varchar(36) not null,
   `update_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Table structure for t_dealer 经销商
+-- ----------------------------
+DROP TABLE IF EXISTS `t_dealer`;
+CREATE TABLE `t_dealer` (
+  `id` VARCHAR(36) NOT NULL,
+  `code` varchar(16) NOT NULL, -- 编码
+  `name` varchar(256) NOT NULL,
+  `contract_man` varchar(16), -- 联系人
+  `mobile_phone` varchar(11), -- 移动电话
+  `tel_phone` varchar(12) , -- 电话
+  `email` varchar(12), -- 邮箱
+  `dealer_address` varchar(256), -- 联系地址
+  `fax` varchar(12) , -- 传真
+  `website` varchar(128) , -- 网站
+  `tax_no` varchar(128) , -- 税号
+  `bank_name` varchar(128) , -- 开户银行
+  `dealer_bank_name` varchar(12) , -- 代理商账户名
+  `account_no` varchar(32) , -- 银行账号
+  `remark` varchar(256) , -- 备注
+  `company_type` varchar(32) , -- 类型:经销商/生产商/经销商和代理商
+  `create_user_id` varchar(36) NOT NULL,
+  `create_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `update_user_id` varchar(36) NOT NULL,
+  `update_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `status` varchar(32) NOT NULL DEFAULT 'OK',
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `name` (`name`)
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;

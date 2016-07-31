@@ -3999,4 +3999,4750 @@
     </bean>
     <!-- 顾客影像记录表 action -->
 
+
+	<!-- 医生处方 action -->
+    <bean class="com.fionapet.business.consumer.MedicPrescriptionDemoAction" init-method="start">
+        <property name="medicPrescriptionService" ref="medicPrescriptionService"/>
+    </bean>
+    <!-- 医生处方 action -->
+
+
+	<!-- 数据字典 字典明细项 action -->
+    <bean class="com.fionapet.business.consumer.UserDictDetailDemoAction" init-method="start">
+        <property name="userDictDetailService" ref="userDictDetailService"/>
+    </bean>
+    <!-- 数据字典 字典明细项 action -->
+
+
+	<!-- 仓库存货清单 action -->
+    <bean class="com.fionapet.business.consumer.WarehouseInventoryDemoAction" init-method="start">
+        <property name="warehouseInventoryService" ref="warehouseInventoryService"/>
+    </bean>
+    <!-- 仓库存货清单 action -->
+
+
+	<!-- 存货清单日志表 action -->
+    <bean class="com.fionapet.business.consumer.InventoryLogDemoAction" init-method="start">
+        <property name="inventoryLogService" ref="inventoryLogService"/>
+    </bean>
+    <!-- 存货清单日志表 action -->
+
+
+	<!-- 种类数量更改原因表 action -->
+    <bean class="com.fionapet.business.consumer.ItemCountChangeReasonDemoAction" init-method="start">
+        <property name="itemCountChangeReasonService" ref="itemCountChangeReasonService"/>
+    </bean>
+    <!-- 种类数量更改原因表 action -->
+
+
+	<!-- 企业信息表 action -->
+    <bean class="com.fionapet.business.consumer.EnterpriseDemoAction" init-method="start">
+        <property name="enterpriseService" ref="enterpriseService"/>
+    </bean>
+    <!-- 企业信息表 action -->
+
+
+	<!-- 退回记录 action -->
+    <bean class="com.fionapet.business.consumer.WarehouseBackrecordDemoAction" init-method="start">
+        <property name="warehouseBackrecordService" ref="warehouseBackrecordService"/>
+    </bean>
+    <!-- 退回记录 action -->
+
+
+	<!-- 仓库直销主表 action -->
+    <bean class="com.fionapet.business.consumer.StoreDirectSellDemoAction" init-method="start">
+        <property name="storeDirectSellService" ref="storeDirectSellService"/>
+    </bean>
+    <!-- 仓库直销主表 action -->
+
+
+	<!-- 养育记录明细表 action -->
+    <bean class="com.fionapet.business.consumer.FosterRecordDetailDemoAction" init-method="start">
+        <property name="fosterRecordDetailService" ref="fosterRecordDetailService"/>
+    </bean>
+    <!-- 养育记录明细表 action -->
+
+
+	<!-- 育苗表 action -->
+    <bean class="com.fionapet.business.consumer.MedicVaccineDemoAction" init-method="start">
+        <property name="medicVaccineService" ref="medicVaccineService"/>
+    </bean>
+    <!-- 育苗表 action -->
+
+
+	<!-- 序列号 action -->
+    <bean class="com.fionapet.business.consumer.RewardPointLogDemoAction" init-method="start">
+        <property name="rewardPointLogService" ref="rewardPointLogService"/>
+    </bean>
+    <!-- 序列号 action -->
+
+
+	<!-- 处方明细 action -->
+    <bean class="com.fionapet.business.consumer.BaseMedicPrescriptionDetailDemoAction" init-method="start">
+        <property name="baseMedicPrescriptionDetailService" ref="baseMedicPrescriptionDetailService"/>
+    </bean>
+    <!-- 处方明细 action -->
+
+
+	<!-- 医生处方明细 action -->
+    <bean class="com.fionapet.business.consumer.MedicPrescriptionDetailDemoAction" init-method="start">
+        <property name="medicPrescriptionDetailService" ref="medicPrescriptionDetailService"/>
+    </bean>
+    <!-- 医生处方明细 action -->
+
+
+	<!-- 医院记录明细表 action -->
+    <bean class="com.fionapet.business.consumer.InHospitalRecordDetailDemoAction" init-method="start">
+        <property name="inHospitalRecordDetailService" ref="inHospitalRecordDetailService"/>
+    </bean>
+    <!-- 医院记录明细表 action -->
+
+
+	<!-- 进库出库日志 action -->
+    <bean class="com.fionapet.business.consumer.FifoLogDemoAction" init-method="start">
+        <property name="fifoLogService" ref="fifoLogService"/>
+    </bean>
+    <!-- 进库出库日志 action -->
+
+
+	<!-- 消息提醒配置表 action -->
+    <bean class="com.fionapet.business.consumer.MicroSmsConfigDemoAction" init-method="start">
+        <property name="microSmsConfigService" ref="microSmsConfigService"/>
+    </bean>
+    <!-- 消息提醒配置表 action -->
+
+
+	<!-- 类型化验实例表 action -->
+    <bean class="com.fionapet.business.consumer.ItemtypeChemicalexamDemoAction" init-method="start">
+        <property name="itemtypeChemicalexamService" ref="itemtypeChemicalexamService"/>
+    </bean>
+    <!-- 类型化验实例表 action -->
+
+
+	<!-- 类型化验实例明细表 action -->
+    <bean class="com.fionapet.business.consumer.ItemSingleDetailDemoAction" init-method="start">
+        <property name="itemSingleDetailService" ref="itemSingleDetailService"/>
+    </bean>
+    <!-- 类型化验实例明细表 action -->
+
+
+	<!-- 医生登记记录明细 action -->
+    <bean class="com.fionapet.business.consumer.MedicRegisterRecordDemoAction" init-method="start">
+        <property name="medicRegisterRecordService" ref="medicRegisterRecordService"/>
+    </bean>
+    <!-- 医生登记记录明细 action -->
+
+
+	<!-- 医院记录表 action -->
+    <bean class="com.fionapet.business.consumer.InHospitalRecordDemoAction" init-method="start">
+        <property name="inHospitalRecordService" ref="inHospitalRecordService"/>
+    </bean>
+    <!-- 医院记录表 action -->
+
+
+	<!-- 养育健康状况表 action -->
+    <bean class="com.fionapet.business.consumer.FosterHealthDemoAction" init-method="start">
+        <property name="fosterHealthService" ref="fosterHealthService"/>
+    </bean>
+    <!-- 养育健康状况表 action -->
+
+
+	<!-- 养育记录主表 action -->
+    <bean class="com.fionapet.business.consumer.FosterRecordDemoAction" init-method="start">
+        <property name="fosterRecordService" ref="fosterRecordService"/>
+    </bean>
+    <!-- 养育记录主表 action -->
+
+
+	<!-- 提前付费表 action -->
+    <bean class="com.fionapet.business.consumer.PrepayMoneyDemoAction" init-method="start">
+        <property name="prepayMoneyService" ref="prepayMoneyService"/>
+    </bean>
+    <!-- 提前付费表 action -->
+
+
+	<!-- 进库记录明细 action -->
+    <bean class="com.fionapet.business.consumer.WarehouseInrecordDetailDemoAction" init-method="start">
+        <property name="warehouseInrecordDetailService" ref="warehouseInrecordDetailService"/>
+    </bean>
+    <!-- 进库记录明细 action -->
+
+
+	<!-- 急诊表 action -->
+    <bean class="com.fionapet.business.consumer.PromptDemoAction" init-method="start">
+        <property name="promptService" ref="promptService"/>
+    </bean>
+    <!-- 急诊表 action -->
+
+
+	<!-- 应用配置 action -->
+    <bean class="com.fionapet.business.consumer.AppConfigDemoAction" init-method="start">
+        <property name="appConfigService" ref="appConfigService"/>
+    </bean>
+    <!-- 应用配置 action -->
+
+
+	<!-- 收款记录表 action -->
+    <bean class="com.fionapet.business.consumer.InputMoneyRecordDemoAction" init-method="start">
+        <property name="inputMoneyRecordService" ref="inputMoneyRecordService"/>
+    </bean>
+    <!-- 收款记录表 action -->
+
+
+	<!-- 医生处理记录 action -->
+    <bean class="com.fionapet.business.consumer.MedicMedictreatRecordDemoAction" init-method="start">
+        <property name="medicMedictreatRecordService" ref="medicMedictreatRecordService"/>
+    </bean>
+    <!-- 医生处理记录 action -->
+
+
+	<!-- 种类数量更改原因表 action -->
+    <bean class="com.fionapet.business.consumer.ItemCountDemoAction" init-method="start">
+        <property name="itemCountService" ref="itemCountService"/>
+    </bean>
+    <!-- 种类数量更改原因表 action -->
+
+
+	<!-- 赔偿交换细节 action -->
+    <bean class="com.fionapet.business.consumer.RewardpointExchangeDetailDemoAction" init-method="start">
+        <property name="rewardpointExchangeDetailService" ref="rewardpointExchangeDetailService"/>
+    </bean>
+    <!-- 赔偿交换细节 action -->
+
+
+	<!-- 出库记录明细 action -->
+    <bean class="com.fionapet.business.consumer.WarehouseOutrecordDetailDemoAction" init-method="start">
+        <property name="warehouseOutrecordDetailService" ref="warehouseOutrecordDetailService"/>
+    </bean>
+    <!-- 出库记录明细 action -->
+
+
+	<!-- 序列号 action -->
+    <bean class="com.fionapet.business.consumer.SerialNumberDemoAction" init-method="start">
+        <property name="serialNumberService" ref="serialNumberService"/>
+    </bean>
+    <!-- 序列号 action -->
+
+
+	<!-- 审批状态实体 action -->
+    <bean class="com.fionapet.business.consumer.ApproveStatusEntityDemoAction" init-method="start">
+        <property name="approveStatusEntityService" ref="approveStatusEntityService"/>
+    </bean>
+    <!-- 审批状态实体 action -->
+
+
+	<!-- 仓库检查主表 action -->
+    <bean class="com.fionapet.business.consumer.CheckWarehouseDemoAction" init-method="start">
+        <property name="checkWarehouseService" ref="checkWarehouseService"/>
+    </bean>
+    <!-- 仓库检查主表 action -->
+
+
+	<!-- 移库记录明细 action -->
+    <bean class="com.fionapet.business.consumer.WarehouseMoverecordDetailDemoAction" init-method="start">
+        <property name="warehouseMoverecordDetailService" ref="warehouseMoverecordDetailService"/>
+    </bean>
+    <!-- 移库记录明细 action -->
+
+
+	<!-- 检查仓库明细表 action -->
+    <bean class="com.fionapet.business.consumer.CheckWarehouseDetailDemoAction" init-method="start">
+        <property name="checkWarehouseDetailService" ref="checkWarehouseDetailService"/>
+    </bean>
+    <!-- 检查仓库明细表 action -->
+
+
+	<!-- 返回商品明细 action -->
+    <bean class="com.fionapet.business.consumer.ReturnCommodityDetailDemoAction" init-method="start">
+        <property name="returnCommodityDetailService" ref="returnCommodityDetailService"/>
+    </bean>
+    <!-- 返回商品明细 action -->
+
+
+	<!-- 宠物品种 action -->
+    <bean class="com.fionapet.business.consumer.PetSmallRaceDemoAction" init-method="start">
+        <property name="petSmallRaceService" ref="petSmallRaceService"/>
+    </bean>
+    <!-- 宠物品种 action -->
+
+
+	<!-- 服务主表 action -->
+    <bean class="com.fionapet.business.consumer.ServiceDemoAction" init-method="start">
+        <property name="serviceService" ref="serviceService"/>
+    </bean>
+    <!-- 服务主表 action -->
+
+
+	<!-- 资金账户明细表 action -->
+    <bean class="com.fionapet.business.consumer.FinanceSettleAccountsDetailDemoAction" init-method="start">
+        <property name="financeSettleAccountsDetailService" ref="financeSettleAccountsDetailService"/>
+    </bean>
+    <!-- 资金账户明细表 action -->
+
+
+	<!-- 电话信息表 action -->
+    <bean class="com.fionapet.business.consumer.PhoneMessageDemoAction" init-method="start">
+        <property name="phoneMessageService" ref="phoneMessageService"/>
+    </bean>
+    <!-- 电话信息表 action -->
+
+
+	<!-- 移库记录 action -->
+    <bean class="com.fionapet.business.consumer.WarehouseMoverecordDemoAction" init-method="start">
+        <property name="warehouseMoverecordService" ref="warehouseMoverecordService"/>
+    </bean>
+    <!-- 移库记录 action -->
+
+
+	<!-- 医生化验实例类型细节表 action -->
+    <bean class="com.fionapet.business.consumer.MedicChemicalExamtypeDetailDemoAction" init-method="start">
+        <property name="medicChemicalExamtypeDetailService" ref="medicChemicalExamtypeDetailService"/>
+    </bean>
+    <!-- 医生化验实例类型细节表 action -->
+
+
+	<!-- 医生供应量表 action -->
+    <bean class="com.fionapet.business.consumer.MedicSuppliesDemoAction" init-method="start">
+        <property name="medicSuppliesService" ref="medicSuppliesService"/>
+    </bean>
+    <!-- 医生供应量表 action -->
+
+
+	<!-- 供应量表 action -->
+    <bean class="com.fionapet.business.consumer.ItemtypeSuppliesDemoAction" init-method="start">
+        <property name="itemtypeSuppliesService" ref="itemtypeSuppliesService"/>
+    </bean>
+    <!-- 供应量表 action -->
+
+
+	<!-- 退回记录明细 action -->
+    <bean class="com.fionapet.business.consumer.WarehouseBackrecordDetailDemoAction" init-method="start">
+        <property name="warehouseBackrecordDetailService" ref="warehouseBackrecordDetailService"/>
+    </bean>
+    <!-- 退回记录明细 action -->
+
+
+	<!-- 返回商品主表 action -->
+    <bean class="com.fionapet.business.consumer.ReturnCommodityDemoAction" init-method="start">
+        <property name="returnCommodityService" ref="returnCommodityService"/>
+    </bean>
+    <!-- 返回商品主表 action -->
+
+
+	<!-- 进库记录 action -->
+    <bean class="com.fionapet.business.consumer.WarehouseInrecordDemoAction" init-method="start">
+        <property name="warehouseInrecordService" ref="warehouseInrecordService"/>
+    </bean>
+    <!-- 进库记录 action -->
+
+
+	<!-- 宠物 action -->
+    <bean class="com.fionapet.business.consumer.PetDemoAction" init-method="start">
+        <property name="petService" ref="petService"/>
+    </bean>
+    <!-- 宠物 action -->
+
+
+	<!-- 服务明细 action -->
+    <bean class="com.fionapet.business.consumer.ServiceDetailDemoAction" init-method="start">
+        <property name="serviceDetailService" ref="serviceDetailService"/>
+    </bean>
+    <!-- 服务明细 action -->
+
+
+	<!-- 资金账号表 action -->
+    <bean class="com.fionapet.business.consumer.FinanceSettleAccountsDemoAction" init-method="start">
+        <property name="financeSettleAccountsService" ref="financeSettleAccountsService"/>
+    </bean>
+    <!-- 资金账号表 action -->
+
+
+	<!-- 检查处理单据 action -->
+    <bean class="com.fionapet.business.consumer.CheckProcessSheetDemoAction" init-method="start">
+        <property name="checkProcessSheetService" ref="checkProcessSheetService"/>
+    </bean>
+    <!-- 检查处理单据 action -->
+
+
+	<!-- 出库记录 action -->
+    <bean class="com.fionapet.business.consumer.WarehouseOutrecordDemoAction" init-method="start">
+        <property name="warehouseOutrecordService" ref="warehouseOutrecordService"/>
+    </bean>
+    <!-- 出库记录 action -->
+
+
+	<!-- 医生化验实例类型细节表 action -->
+    <bean class="com.fionapet.business.consumer.MedicChemicalExamtypeDemoAction" init-method="start">
+        <property name="medicChemicalExamtypeService" ref="medicChemicalExamtypeService"/>
+    </bean>
+    <!-- 医生化验实例类型细节表 action -->
+
+
+	<!-- 处方 action -->
+    <bean class="com.fionapet.business.consumer.BaseMedicPrescriptionDemoAction" init-method="start">
+        <property name="baseMedicPrescriptionService" ref="baseMedicPrescriptionService"/>
+    </bean>
+    <!-- 处方 action -->
+
+
+	<!-- 赔偿交换 action -->
+    <bean class="com.fionapet.business.consumer.RewardpointExchangeDemoAction" init-method="start">
+        <property name="rewardpointExchangeService" ref="rewardpointExchangeService"/>
+    </bean>
+    <!-- 赔偿交换 action -->
+
+
+	<!-- VIP信息 action -->
+    <bean class="com.fionapet.business.consumer.VipInputTemDemoAction" init-method="start">
+        <property name="vipInputTemService" ref="vipInputTemService"/>
+    </bean>
+    <!-- VIP信息 action -->
+
+
+	<!-- 住院处方明细 action -->
+    <bean class="com.fionapet.business.consumer.InHospitalPrescriptionDetailDemoAction" init-method="start">
+        <property name="inHospitalPrescriptionDetailService" ref="inHospitalPrescriptionDetailService"/>
+    </bean>
+    <!-- 住院处方明细 action -->
+
+
+	<!-- 会员 action -->
+    <bean class="com.fionapet.business.consumer.GestDemoAction" init-method="start">
+        <property name="gestService" ref="gestService"/>
+    </bean>
+    <!-- 会员 action -->
+
+
+	<!-- 医生器具表 action -->
+    <bean class="com.fionapet.business.consumer.MedicApplianceDemoAction" init-method="start">
+        <property name="medicApplianceService" ref="medicApplianceService"/>
+    </bean>
+    <!-- 医生器具表 action -->
+
+
+	<!-- 付出费用表 action -->
+    <bean class="com.fionapet.business.consumer.ExpensesExpendDemoAction" init-method="start">
+        <property name="expensesExpendService" ref="expensesExpendService"/>
+    </bean>
+    <!-- 付出费用表 action -->
+
+
+	<!-- 仓库直销明细 action -->
+    <bean class="com.fionapet.business.consumer.StoreDirectSellDetailDemoAction" init-method="start">
+        <property name="storeDirectSellDetailService" ref="storeDirectSellDetailService"/>
+    </bean>
+    <!-- 仓库直销明细 action -->
+
+
+	<!-- 住院处方 action -->
+    <bean class="com.fionapet.business.consumer.InHospitalPrescriptionDemoAction" init-method="start">
+        <property name="inHospitalPrescriptionService" ref="inHospitalPrescriptionService"/>
+    </bean>
+    <!-- 住院处方 action -->
+
+
+	<!-- 顾客影像记录表 action -->
+    <bean class="com.fionapet.business.consumer.GestPaidRecordDemoAction" init-method="start">
+        <property name="gestPaidRecordService" ref="gestPaidRecordService"/>
+    </bean>
+    <!-- 顾客影像记录表 action -->
+
+
+	<!-- 医生处方 action -->
+    <bean class="com.fionapet.business.consumer.MedicPrescriptionDemoAction" init-method="start">
+        <property name="medicPrescriptionService" ref="medicPrescriptionService"/>
+    </bean>
+    <!-- 医生处方 action -->
+
+
+	<!-- 数据字典 字典明细项 action -->
+    <bean class="com.fionapet.business.consumer.UserDictDetailDemoAction" init-method="start">
+        <property name="userDictDetailService" ref="userDictDetailService"/>
+    </bean>
+    <!-- 数据字典 字典明细项 action -->
+
+
+	<!-- 仓库存货清单 action -->
+    <bean class="com.fionapet.business.consumer.WarehouseInventoryDemoAction" init-method="start">
+        <property name="warehouseInventoryService" ref="warehouseInventoryService"/>
+    </bean>
+    <!-- 仓库存货清单 action -->
+
+
+	<!-- 存货清单日志表 action -->
+    <bean class="com.fionapet.business.consumer.InventoryLogDemoAction" init-method="start">
+        <property name="inventoryLogService" ref="inventoryLogService"/>
+    </bean>
+    <!-- 存货清单日志表 action -->
+
+
+	<!-- 种类数量更改原因表 action -->
+    <bean class="com.fionapet.business.consumer.ItemCountChangeReasonDemoAction" init-method="start">
+        <property name="itemCountChangeReasonService" ref="itemCountChangeReasonService"/>
+    </bean>
+    <!-- 种类数量更改原因表 action -->
+
+
+	<!-- 企业信息表 action -->
+    <bean class="com.fionapet.business.consumer.EnterpriseDemoAction" init-method="start">
+        <property name="enterpriseService" ref="enterpriseService"/>
+    </bean>
+    <!-- 企业信息表 action -->
+
+
+	<!-- 用户字典 action -->
+    <bean class="com.fionapet.business.consumer.UserDictDemoAction" init-method="start">
+        <property name="userDictService" ref="userDictService"/>
+    </bean>
+    <!-- 用户字典 action -->
+
+
+	<!-- 退回记录 action -->
+    <bean class="com.fionapet.business.consumer.WarehouseBackrecordDemoAction" init-method="start">
+        <property name="warehouseBackrecordService" ref="warehouseBackrecordService"/>
+    </bean>
+    <!-- 退回记录 action -->
+
+
+	<!-- 仓库直销主表 action -->
+    <bean class="com.fionapet.business.consumer.StoreDirectSellDemoAction" init-method="start">
+        <property name="storeDirectSellService" ref="storeDirectSellService"/>
+    </bean>
+    <!-- 仓库直销主表 action -->
+
+
+	<!-- 养育记录明细表 action -->
+    <bean class="com.fionapet.business.consumer.FosterRecordDetailDemoAction" init-method="start">
+        <property name="fosterRecordDetailService" ref="fosterRecordDetailService"/>
+    </bean>
+    <!-- 养育记录明细表 action -->
+
+
+	<!-- 育苗表 action -->
+    <bean class="com.fionapet.business.consumer.MedicVaccineDemoAction" init-method="start">
+        <property name="medicVaccineService" ref="medicVaccineService"/>
+    </bean>
+    <!-- 育苗表 action -->
+
+
+	<!-- 药方模版 action -->
+    <bean class="com.fionapet.business.consumer.TrprescriptionTemplateDemoAction" init-method="start">
+        <property name="trprescriptionTemplateService" ref="trprescriptionTemplateService"/>
+    </bean>
+    <!-- 药方模版 action -->
+
+
+	<!-- 会员等级管理 action -->
+    <bean class="com.fionapet.business.consumer.GestLevelDemoAction" init-method="start">
+        <property name="gestLevelService" ref="gestLevelService"/>
+    </bean>
+    <!-- 会员等级管理 action -->
+
+
+	<!-- 序列号 action -->
+    <bean class="com.fionapet.business.consumer.RewardPointLogDemoAction" init-method="start">
+        <property name="rewardPointLogService" ref="rewardPointLogService"/>
+    </bean>
+    <!-- 序列号 action -->
+
+
+	<!-- 处方明细 action -->
+    <bean class="com.fionapet.business.consumer.BaseMedicPrescriptionDetailDemoAction" init-method="start">
+        <property name="baseMedicPrescriptionDetailService" ref="baseMedicPrescriptionDetailService"/>
+    </bean>
+    <!-- 处方明细 action -->
+
+
+	<!-- 宠物主人 action -->
+    <bean class="com.fionapet.business.consumer.PersonsCmAppDemoAction" init-method="start">
+        <property name="personsCmAppService" ref="personsCmAppService"/>
+    </bean>
+    <!-- 宠物主人 action -->
+
+
+	<!-- 化验单明细 action -->
+    <bean class="com.fionapet.business.consumer.MedicChemicalExamDetailDemoAction" init-method="start">
+        <property name="medicChemicalExamDetailService" ref="medicChemicalExamDetailService"/>
+    </bean>
+    <!-- 化验单明细 action -->
+
+
+	<!-- 医生影像样例 action -->
+    <bean class="com.fionapet.business.consumer.MedicVedioExamDemoAction" init-method="start">
+        <property name="medicVedioExamService" ref="medicVedioExamService"/>
+    </bean>
+    <!-- 医生影像样例 action -->
+
+
+	<!-- 医生处方明细 action -->
+    <bean class="com.fionapet.business.consumer.MedicPrescriptionDetailDemoAction" init-method="start">
+        <property name="medicPrescriptionDetailService" ref="medicPrescriptionDetailService"/>
+    </bean>
+    <!-- 医生处方明细 action -->
+
+
+	<!-- 业务类型表 action -->
+    <bean class="com.fionapet.business.consumer.BusinesCateDemoAction" init-method="start">
+        <property name="businesCateService" ref="businesCateService"/>
+    </bean>
+    <!-- 业务类型表 action -->
+
+
+	<!-- 医院记录明细表 action -->
+    <bean class="com.fionapet.business.consumer.InHospitalRecordDetailDemoAction" init-method="start">
+        <property name="inHospitalRecordDetailService" ref="inHospitalRecordDetailService"/>
+    </bean>
+    <!-- 医院记录明细表 action -->
+
+
+	<!-- 进库出库日志 action -->
+    <bean class="com.fionapet.business.consumer.FifoLogDemoAction" init-method="start">
+        <property name="fifoLogService" ref="fifoLogService"/>
+    </bean>
+    <!-- 进库出库日志 action -->
+
+
+	<!-- 消息提醒配置表 action -->
+    <bean class="com.fionapet.business.consumer.MicroSmsConfigDemoAction" init-method="start">
+        <property name="microSmsConfigService" ref="microSmsConfigService"/>
+    </bean>
+    <!-- 消息提醒配置表 action -->
+
+
+	<!-- 类型化验实例表 action -->
+    <bean class="com.fionapet.business.consumer.ItemtypeChemicalexamDemoAction" init-method="start">
+        <property name="itemtypeChemicalexamService" ref="itemtypeChemicalexamService"/>
+    </bean>
+    <!-- 类型化验实例表 action -->
+
+
+	<!-- 类型化验实例明细表 action -->
+    <bean class="com.fionapet.business.consumer.ItemSingleDetailDemoAction" init-method="start">
+        <property name="itemSingleDetailService" ref="itemSingleDetailService"/>
+    </bean>
+    <!-- 类型化验实例明细表 action -->
+
+
+	<!-- 商品类型 action -->
+    <bean class="com.fionapet.business.consumer.ItemTypeDemoAction" init-method="start">
+        <property name="itemTypeService" ref="itemTypeService"/>
+    </bean>
+    <!-- 商品类型 action -->
+
+
+	<!-- 医生登记记录明细 action -->
+    <bean class="com.fionapet.business.consumer.MedicRegisterRecordDemoAction" init-method="start">
+        <property name="medicRegisterRecordService" ref="medicRegisterRecordService"/>
+    </bean>
+    <!-- 医生登记记录明细 action -->
+
+
+	<!-- 医院记录表 action -->
+    <bean class="com.fionapet.business.consumer.InHospitalRecordDemoAction" init-method="start">
+        <property name="inHospitalRecordService" ref="inHospitalRecordService"/>
+    </bean>
+    <!-- 医院记录表 action -->
+
+
+	<!-- 养育健康状况表 action -->
+    <bean class="com.fionapet.business.consumer.FosterHealthDemoAction" init-method="start">
+        <property name="fosterHealthService" ref="fosterHealthService"/>
+    </bean>
+    <!-- 养育健康状况表 action -->
+
+
+	<!-- 养育记录主表 action -->
+    <bean class="com.fionapet.business.consumer.FosterRecordDemoAction" init-method="start">
+        <property name="fosterRecordService" ref="fosterRecordService"/>
+    </bean>
+    <!-- 养育记录主表 action -->
+
+
+	<!-- 提前付费表 action -->
+    <bean class="com.fionapet.business.consumer.PrepayMoneyDemoAction" init-method="start">
+        <property name="prepayMoneyService" ref="prepayMoneyService"/>
+    </bean>
+    <!-- 提前付费表 action -->
+
+
+	<!-- 进库记录明细 action -->
+    <bean class="com.fionapet.business.consumer.WarehouseInrecordDetailDemoAction" init-method="start">
+        <property name="warehouseInrecordDetailService" ref="warehouseInrecordDetailService"/>
+    </bean>
+    <!-- 进库记录明细 action -->
+
+
+	<!-- 医生处方 action -->
+    <bean class="com.fionapet.business.consumer.MedicPrescriptionDemoAction" init-method="start">
+        <property name="medicPrescriptionService" ref="medicPrescriptionService"/>
+    </bean>
+    <!-- 医生处方 action -->
+
+
+	<!-- 数据字典 字典明细项 action -->
+    <bean class="com.fionapet.business.consumer.UserDictDetailDemoAction" init-method="start">
+        <property name="userDictDetailService" ref="userDictDetailService"/>
+    </bean>
+    <!-- 数据字典 字典明细项 action -->
+
+
+	<!-- 仓库存货清单 action -->
+    <bean class="com.fionapet.business.consumer.WarehouseInventoryDemoAction" init-method="start">
+        <property name="warehouseInventoryService" ref="warehouseInventoryService"/>
+    </bean>
+    <!-- 仓库存货清单 action -->
+
+
+	<!-- 存货清单日志表 action -->
+    <bean class="com.fionapet.business.consumer.InventoryLogDemoAction" init-method="start">
+        <property name="inventoryLogService" ref="inventoryLogService"/>
+    </bean>
+    <!-- 存货清单日志表 action -->
+
+
+	<!-- 种类数量更改原因表 action -->
+    <bean class="com.fionapet.business.consumer.ItemCountChangeReasonDemoAction" init-method="start">
+        <property name="itemCountChangeReasonService" ref="itemCountChangeReasonService"/>
+    </bean>
+    <!-- 种类数量更改原因表 action -->
+
+
+	<!-- 企业信息表 action -->
+    <bean class="com.fionapet.business.consumer.EnterpriseDemoAction" init-method="start">
+        <property name="enterpriseService" ref="enterpriseService"/>
+    </bean>
+    <!-- 企业信息表 action -->
+
+
+	<!-- 用户字典 action -->
+    <bean class="com.fionapet.business.consumer.UserDictDemoAction" init-method="start">
+        <property name="userDictService" ref="userDictService"/>
+    </bean>
+    <!-- 用户字典 action -->
+
+
+	<!-- 退回记录 action -->
+    <bean class="com.fionapet.business.consumer.WarehouseBackrecordDemoAction" init-method="start">
+        <property name="warehouseBackrecordService" ref="warehouseBackrecordService"/>
+    </bean>
+    <!-- 退回记录 action -->
+
+
+	<!-- 仓库直销主表 action -->
+    <bean class="com.fionapet.business.consumer.StoreDirectSellDemoAction" init-method="start">
+        <property name="storeDirectSellService" ref="storeDirectSellService"/>
+    </bean>
+    <!-- 仓库直销主表 action -->
+
+
+	<!-- 养育记录明细表 action -->
+    <bean class="com.fionapet.business.consumer.FosterRecordDetailDemoAction" init-method="start">
+        <property name="fosterRecordDetailService" ref="fosterRecordDetailService"/>
+    </bean>
+    <!-- 养育记录明细表 action -->
+
+
+	<!-- 育苗表 action -->
+    <bean class="com.fionapet.business.consumer.MedicVaccineDemoAction" init-method="start">
+        <property name="medicVaccineService" ref="medicVaccineService"/>
+    </bean>
+    <!-- 育苗表 action -->
+
+
+	<!-- 药方模版 action -->
+    <bean class="com.fionapet.business.consumer.TrprescriptionTemplateDemoAction" init-method="start">
+        <property name="trprescriptionTemplateService" ref="trprescriptionTemplateService"/>
+    </bean>
+    <!-- 药方模版 action -->
+
+
+	<!-- 会员等级管理 action -->
+    <bean class="com.fionapet.business.consumer.GestLevelDemoAction" init-method="start">
+        <property name="gestLevelService" ref="gestLevelService"/>
+    </bean>
+    <!-- 会员等级管理 action -->
+
+
+	<!-- 序列号 action -->
+    <bean class="com.fionapet.business.consumer.RewardPointLogDemoAction" init-method="start">
+        <property name="rewardPointLogService" ref="rewardPointLogService"/>
+    </bean>
+    <!-- 序列号 action -->
+
+
+	<!-- 处方明细 action -->
+    <bean class="com.fionapet.business.consumer.BaseMedicPrescriptionDetailDemoAction" init-method="start">
+        <property name="baseMedicPrescriptionDetailService" ref="baseMedicPrescriptionDetailService"/>
+    </bean>
+    <!-- 处方明细 action -->
+
+
+	<!-- 宠物主人 action -->
+    <bean class="com.fionapet.business.consumer.PersonsCmAppDemoAction" init-method="start">
+        <property name="personsCmAppService" ref="personsCmAppService"/>
+    </bean>
+    <!-- 宠物主人 action -->
+
+
+	<!-- 化验单明细 action -->
+    <bean class="com.fionapet.business.consumer.MedicChemicalExamDetailDemoAction" init-method="start">
+        <property name="medicChemicalExamDetailService" ref="medicChemicalExamDetailService"/>
+    </bean>
+    <!-- 化验单明细 action -->
+
+
+	<!-- 医生影像样例 action -->
+    <bean class="com.fionapet.business.consumer.MedicVedioExamDemoAction" init-method="start">
+        <property name="medicVedioExamService" ref="medicVedioExamService"/>
+    </bean>
+    <!-- 医生影像样例 action -->
+
+
+	<!-- 医生处方明细 action -->
+    <bean class="com.fionapet.business.consumer.MedicPrescriptionDetailDemoAction" init-method="start">
+        <property name="medicPrescriptionDetailService" ref="medicPrescriptionDetailService"/>
+    </bean>
+    <!-- 医生处方明细 action -->
+
+
+	<!-- 业务类型表 action -->
+    <bean class="com.fionapet.business.consumer.BusinesCateDemoAction" init-method="start">
+        <property name="businesCateService" ref="businesCateService"/>
+    </bean>
+    <!-- 业务类型表 action -->
+
+
+	<!-- 医院记录明细表 action -->
+    <bean class="com.fionapet.business.consumer.InHospitalRecordDetailDemoAction" init-method="start">
+        <property name="inHospitalRecordDetailService" ref="inHospitalRecordDetailService"/>
+    </bean>
+    <!-- 医院记录明细表 action -->
+
+
+	<!-- 进库出库日志 action -->
+    <bean class="com.fionapet.business.consumer.FifoLogDemoAction" init-method="start">
+        <property name="fifoLogService" ref="fifoLogService"/>
+    </bean>
+    <!-- 进库出库日志 action -->
+
+
+	<!-- 消息提醒配置表 action -->
+    <bean class="com.fionapet.business.consumer.MicroSmsConfigDemoAction" init-method="start">
+        <property name="microSmsConfigService" ref="microSmsConfigService"/>
+    </bean>
+    <!-- 消息提醒配置表 action -->
+
+
+	<!-- 类型化验实例表 action -->
+    <bean class="com.fionapet.business.consumer.ItemtypeChemicalexamDemoAction" init-method="start">
+        <property name="itemtypeChemicalexamService" ref="itemtypeChemicalexamService"/>
+    </bean>
+    <!-- 类型化验实例表 action -->
+
+
+	<!-- 类型化验实例明细表 action -->
+    <bean class="com.fionapet.business.consumer.ItemSingleDetailDemoAction" init-method="start">
+        <property name="itemSingleDetailService" ref="itemSingleDetailService"/>
+    </bean>
+    <!-- 类型化验实例明细表 action -->
+
+
+	<!-- 商品类型 action -->
+    <bean class="com.fionapet.business.consumer.ItemTypeDemoAction" init-method="start">
+        <property name="itemTypeService" ref="itemTypeService"/>
+    </bean>
+    <!-- 商品类型 action -->
+
+
+	<!-- 医生登记记录明细 action -->
+    <bean class="com.fionapet.business.consumer.MedicRegisterRecordDemoAction" init-method="start">
+        <property name="medicRegisterRecordService" ref="medicRegisterRecordService"/>
+    </bean>
+    <!-- 医生登记记录明细 action -->
+
+
+	<!-- 医院记录表 action -->
+    <bean class="com.fionapet.business.consumer.InHospitalRecordDemoAction" init-method="start">
+        <property name="inHospitalRecordService" ref="inHospitalRecordService"/>
+    </bean>
+    <!-- 医院记录表 action -->
+
+
+	<!-- 养育健康状况表 action -->
+    <bean class="com.fionapet.business.consumer.FosterHealthDemoAction" init-method="start">
+        <property name="fosterHealthService" ref="fosterHealthService"/>
+    </bean>
+    <!-- 养育健康状况表 action -->
+
+
+	<!-- 养育记录主表 action -->
+    <bean class="com.fionapet.business.consumer.FosterRecordDemoAction" init-method="start">
+        <property name="fosterRecordService" ref="fosterRecordService"/>
+    </bean>
+    <!-- 养育记录主表 action -->
+
+
+	<!-- 提前付费表 action -->
+    <bean class="com.fionapet.business.consumer.PrepayMoneyDemoAction" init-method="start">
+        <property name="prepayMoneyService" ref="prepayMoneyService"/>
+    </bean>
+    <!-- 提前付费表 action -->
+
+
+	<!-- 进库记录明细 action -->
+    <bean class="com.fionapet.business.consumer.WarehouseInrecordDetailDemoAction" init-method="start">
+        <property name="warehouseInrecordDetailService" ref="warehouseInrecordDetailService"/>
+    </bean>
+    <!-- 进库记录明细 action -->
+
+
+	<!-- 医生处方 action -->
+    <bean class="com.fionapet.business.consumer.MedicPrescriptionDemoAction" init-method="start">
+        <property name="medicPrescriptionService" ref="medicPrescriptionService"/>
+    </bean>
+    <!-- 医生处方 action -->
+
+
+	<!-- 存货清单日志表 action -->
+    <bean class="com.fionapet.business.consumer.InventoryLogDemoAction" init-method="start">
+        <property name="inventoryLogService" ref="inventoryLogService"/>
+    </bean>
+    <!-- 存货清单日志表 action -->
+
+
+	<!-- 种类数量更改原因表 action -->
+    <bean class="com.fionapet.business.consumer.ItemCountChangeReasonDemoAction" init-method="start">
+        <property name="itemCountChangeReasonService" ref="itemCountChangeReasonService"/>
+    </bean>
+    <!-- 种类数量更改原因表 action -->
+
+
+	<!-- 企业信息表 action -->
+    <bean class="com.fionapet.business.consumer.EnterpriseDemoAction" init-method="start">
+        <property name="enterpriseService" ref="enterpriseService"/>
+    </bean>
+    <!-- 企业信息表 action -->
+
+
+	<!-- 用户字典 action -->
+    <bean class="com.fionapet.business.consumer.UserDictDemoAction" init-method="start">
+        <property name="userDictService" ref="userDictService"/>
+    </bean>
+    <!-- 用户字典 action -->
+
+
+	<!-- 退回记录 action -->
+    <bean class="com.fionapet.business.consumer.WarehouseBackrecordDemoAction" init-method="start">
+        <property name="warehouseBackrecordService" ref="warehouseBackrecordService"/>
+    </bean>
+    <!-- 退回记录 action -->
+
+
+	<!-- 仓库直销主表 action -->
+    <bean class="com.fionapet.business.consumer.StoreDirectSellDemoAction" init-method="start">
+        <property name="storeDirectSellService" ref="storeDirectSellService"/>
+    </bean>
+    <!-- 仓库直销主表 action -->
+
+
+	<!-- 养育记录明细表 action -->
+    <bean class="com.fionapet.business.consumer.FosterRecordDetailDemoAction" init-method="start">
+        <property name="fosterRecordDetailService" ref="fosterRecordDetailService"/>
+    </bean>
+    <!-- 养育记录明细表 action -->
+
+
+	<!-- 育苗表 action -->
+    <bean class="com.fionapet.business.consumer.MedicVaccineDemoAction" init-method="start">
+        <property name="medicVaccineService" ref="medicVaccineService"/>
+    </bean>
+    <!-- 育苗表 action -->
+
+
+	<!-- 药方模版 action -->
+    <bean class="com.fionapet.business.consumer.TrprescriptionTemplateDemoAction" init-method="start">
+        <property name="trprescriptionTemplateService" ref="trprescriptionTemplateService"/>
+    </bean>
+    <!-- 药方模版 action -->
+
+
+	<!-- 会员等级管理 action -->
+    <bean class="com.fionapet.business.consumer.GestLevelDemoAction" init-method="start">
+        <property name="gestLevelService" ref="gestLevelService"/>
+    </bean>
+    <!-- 会员等级管理 action -->
+
+
+	<!-- 序列号 action -->
+    <bean class="com.fionapet.business.consumer.RewardPointLogDemoAction" init-method="start">
+        <property name="rewardPointLogService" ref="rewardPointLogService"/>
+    </bean>
+    <!-- 序列号 action -->
+
+
+	<!-- 处方明细 action -->
+    <bean class="com.fionapet.business.consumer.BaseMedicPrescriptionDetailDemoAction" init-method="start">
+        <property name="baseMedicPrescriptionDetailService" ref="baseMedicPrescriptionDetailService"/>
+    </bean>
+    <!-- 处方明细 action -->
+
+
+	<!-- 宠物主人 action -->
+    <bean class="com.fionapet.business.consumer.PersonsCmAppDemoAction" init-method="start">
+        <property name="personsCmAppService" ref="personsCmAppService"/>
+    </bean>
+    <!-- 宠物主人 action -->
+
+
+	<!-- 化验单明细 action -->
+    <bean class="com.fionapet.business.consumer.MedicChemicalExamDetailDemoAction" init-method="start">
+        <property name="medicChemicalExamDetailService" ref="medicChemicalExamDetailService"/>
+    </bean>
+    <!-- 化验单明细 action -->
+
+
+	<!-- 医生影像样例 action -->
+    <bean class="com.fionapet.business.consumer.MedicVedioExamDemoAction" init-method="start">
+        <property name="medicVedioExamService" ref="medicVedioExamService"/>
+    </bean>
+    <!-- 医生影像样例 action -->
+
+
+	<!-- 医生处方明细 action -->
+    <bean class="com.fionapet.business.consumer.MedicPrescriptionDetailDemoAction" init-method="start">
+        <property name="medicPrescriptionDetailService" ref="medicPrescriptionDetailService"/>
+    </bean>
+    <!-- 医生处方明细 action -->
+
+
+	<!-- 业务类型表 action -->
+    <bean class="com.fionapet.business.consumer.BusinesCateDemoAction" init-method="start">
+        <property name="businesCateService" ref="businesCateService"/>
+    </bean>
+    <!-- 业务类型表 action -->
+
+
+	<!-- 医院记录明细表 action -->
+    <bean class="com.fionapet.business.consumer.InHospitalRecordDetailDemoAction" init-method="start">
+        <property name="inHospitalRecordDetailService" ref="inHospitalRecordDetailService"/>
+    </bean>
+    <!-- 医院记录明细表 action -->
+
+
+	<!-- 进库出库日志 action -->
+    <bean class="com.fionapet.business.consumer.FifoLogDemoAction" init-method="start">
+        <property name="fifoLogService" ref="fifoLogService"/>
+    </bean>
+    <!-- 进库出库日志 action -->
+
+
+	<!-- 消息提醒配置表 action -->
+    <bean class="com.fionapet.business.consumer.MicroSmsConfigDemoAction" init-method="start">
+        <property name="microSmsConfigService" ref="microSmsConfigService"/>
+    </bean>
+    <!-- 消息提醒配置表 action -->
+
+
+	<!-- 类型化验实例表 action -->
+    <bean class="com.fionapet.business.consumer.ItemtypeChemicalexamDemoAction" init-method="start">
+        <property name="itemtypeChemicalexamService" ref="itemtypeChemicalexamService"/>
+    </bean>
+    <!-- 类型化验实例表 action -->
+
+
+	<!-- 类型化验实例明细表 action -->
+    <bean class="com.fionapet.business.consumer.ItemSingleDetailDemoAction" init-method="start">
+        <property name="itemSingleDetailService" ref="itemSingleDetailService"/>
+    </bean>
+    <!-- 类型化验实例明细表 action -->
+
+
+	<!-- 商品类型 action -->
+    <bean class="com.fionapet.business.consumer.ItemTypeDemoAction" init-method="start">
+        <property name="itemTypeService" ref="itemTypeService"/>
+    </bean>
+    <!-- 商品类型 action -->
+
+
+	<!-- 医生登记记录明细 action -->
+    <bean class="com.fionapet.business.consumer.MedicRegisterRecordDemoAction" init-method="start">
+        <property name="medicRegisterRecordService" ref="medicRegisterRecordService"/>
+    </bean>
+    <!-- 医生登记记录明细 action -->
+
+
+	<!-- 医院记录表 action -->
+    <bean class="com.fionapet.business.consumer.InHospitalRecordDemoAction" init-method="start">
+        <property name="inHospitalRecordService" ref="inHospitalRecordService"/>
+    </bean>
+    <!-- 医院记录表 action -->
+
+
+	<!-- 养育健康状况表 action -->
+    <bean class="com.fionapet.business.consumer.FosterHealthDemoAction" init-method="start">
+        <property name="fosterHealthService" ref="fosterHealthService"/>
+    </bean>
+    <!-- 养育健康状况表 action -->
+
+
+	<!-- 养育记录主表 action -->
+    <bean class="com.fionapet.business.consumer.FosterRecordDemoAction" init-method="start">
+        <property name="fosterRecordService" ref="fosterRecordService"/>
+    </bean>
+    <!-- 养育记录主表 action -->
+
+
+	<!-- 提前付费表 action -->
+    <bean class="com.fionapet.business.consumer.PrepayMoneyDemoAction" init-method="start">
+        <property name="prepayMoneyService" ref="prepayMoneyService"/>
+    </bean>
+    <!-- 提前付费表 action -->
+
+
+	<!-- 医生处方 action -->
+    <bean class="com.fionapet.business.consumer.MedicPrescriptionDemoAction" init-method="start">
+        <property name="medicPrescriptionService" ref="medicPrescriptionService"/>
+    </bean>
+    <!-- 医生处方 action -->
+
+
+	<!-- 存货清单日志表 action -->
+    <bean class="com.fionapet.business.consumer.InventoryLogDemoAction" init-method="start">
+        <property name="inventoryLogService" ref="inventoryLogService"/>
+    </bean>
+    <!-- 存货清单日志表 action -->
+
+
+	<!-- 种类数量更改原因表 action -->
+    <bean class="com.fionapet.business.consumer.ItemCountChangeReasonDemoAction" init-method="start">
+        <property name="itemCountChangeReasonService" ref="itemCountChangeReasonService"/>
+    </bean>
+    <!-- 种类数量更改原因表 action -->
+
+
+	<!-- 企业信息表 action -->
+    <bean class="com.fionapet.business.consumer.EnterpriseDemoAction" init-method="start">
+        <property name="enterpriseService" ref="enterpriseService"/>
+    </bean>
+    <!-- 企业信息表 action -->
+
+
+	<!-- 用户字典 action -->
+    <bean class="com.fionapet.business.consumer.UserDictDemoAction" init-method="start">
+        <property name="userDictService" ref="userDictService"/>
+    </bean>
+    <!-- 用户字典 action -->
+
+
+	<!-- 退回记录 action -->
+    <bean class="com.fionapet.business.consumer.WarehouseBackrecordDemoAction" init-method="start">
+        <property name="warehouseBackrecordService" ref="warehouseBackrecordService"/>
+    </bean>
+    <!-- 退回记录 action -->
+
+
+	<!-- 仓库直销主表 action -->
+    <bean class="com.fionapet.business.consumer.StoreDirectSellDemoAction" init-method="start">
+        <property name="storeDirectSellService" ref="storeDirectSellService"/>
+    </bean>
+    <!-- 仓库直销主表 action -->
+
+
+	<!-- 养育记录明细表 action -->
+    <bean class="com.fionapet.business.consumer.FosterRecordDetailDemoAction" init-method="start">
+        <property name="fosterRecordDetailService" ref="fosterRecordDetailService"/>
+    </bean>
+    <!-- 养育记录明细表 action -->
+
+
+	<!-- 育苗表 action -->
+    <bean class="com.fionapet.business.consumer.MedicVaccineDemoAction" init-method="start">
+        <property name="medicVaccineService" ref="medicVaccineService"/>
+    </bean>
+    <!-- 育苗表 action -->
+
+
+	<!-- 药方模版 action -->
+    <bean class="com.fionapet.business.consumer.TrprescriptionTemplateDemoAction" init-method="start">
+        <property name="trprescriptionTemplateService" ref="trprescriptionTemplateService"/>
+    </bean>
+    <!-- 药方模版 action -->
+
+
+	<!-- 会员等级管理 action -->
+    <bean class="com.fionapet.business.consumer.GestLevelDemoAction" init-method="start">
+        <property name="gestLevelService" ref="gestLevelService"/>
+    </bean>
+    <!-- 会员等级管理 action -->
+
+
+	<!-- 序列号 action -->
+    <bean class="com.fionapet.business.consumer.RewardPointLogDemoAction" init-method="start">
+        <property name="rewardPointLogService" ref="rewardPointLogService"/>
+    </bean>
+    <!-- 序列号 action -->
+
+
+	<!-- 处方明细 action -->
+    <bean class="com.fionapet.business.consumer.BaseMedicPrescriptionDetailDemoAction" init-method="start">
+        <property name="baseMedicPrescriptionDetailService" ref="baseMedicPrescriptionDetailService"/>
+    </bean>
+    <!-- 处方明细 action -->
+
+
+	<!-- 宠物主人 action -->
+    <bean class="com.fionapet.business.consumer.PersonsCmAppDemoAction" init-method="start">
+        <property name="personsCmAppService" ref="personsCmAppService"/>
+    </bean>
+    <!-- 宠物主人 action -->
+
+
+	<!-- 化验单明细 action -->
+    <bean class="com.fionapet.business.consumer.MedicChemicalExamDetailDemoAction" init-method="start">
+        <property name="medicChemicalExamDetailService" ref="medicChemicalExamDetailService"/>
+    </bean>
+    <!-- 化验单明细 action -->
+
+
+	<!-- 医生影像样例 action -->
+    <bean class="com.fionapet.business.consumer.MedicVedioExamDemoAction" init-method="start">
+        <property name="medicVedioExamService" ref="medicVedioExamService"/>
+    </bean>
+    <!-- 医生影像样例 action -->
+
+
+	<!-- 医生处方明细 action -->
+    <bean class="com.fionapet.business.consumer.MedicPrescriptionDetailDemoAction" init-method="start">
+        <property name="medicPrescriptionDetailService" ref="medicPrescriptionDetailService"/>
+    </bean>
+    <!-- 医生处方明细 action -->
+
+
+	<!-- 业务类型表 action -->
+    <bean class="com.fionapet.business.consumer.BusinesCateDemoAction" init-method="start">
+        <property name="businesCateService" ref="businesCateService"/>
+    </bean>
+    <!-- 业务类型表 action -->
+
+
+	<!-- 医院记录明细表 action -->
+    <bean class="com.fionapet.business.consumer.InHospitalRecordDetailDemoAction" init-method="start">
+        <property name="inHospitalRecordDetailService" ref="inHospitalRecordDetailService"/>
+    </bean>
+    <!-- 医院记录明细表 action -->
+
+
+	<!-- 进库出库日志 action -->
+    <bean class="com.fionapet.business.consumer.FifoLogDemoAction" init-method="start">
+        <property name="fifoLogService" ref="fifoLogService"/>
+    </bean>
+    <!-- 进库出库日志 action -->
+
+
+	<!-- 消息提醒配置表 action -->
+    <bean class="com.fionapet.business.consumer.MicroSmsConfigDemoAction" init-method="start">
+        <property name="microSmsConfigService" ref="microSmsConfigService"/>
+    </bean>
+    <!-- 消息提醒配置表 action -->
+
+
+	<!-- 类型化验实例表 action -->
+    <bean class="com.fionapet.business.consumer.ItemtypeChemicalexamDemoAction" init-method="start">
+        <property name="itemtypeChemicalexamService" ref="itemtypeChemicalexamService"/>
+    </bean>
+    <!-- 类型化验实例表 action -->
+
+
+	<!-- 类型化验实例明细表 action -->
+    <bean class="com.fionapet.business.consumer.ItemSingleDetailDemoAction" init-method="start">
+        <property name="itemSingleDetailService" ref="itemSingleDetailService"/>
+    </bean>
+    <!-- 类型化验实例明细表 action -->
+
+
+	<!-- 商品类型 action -->
+    <bean class="com.fionapet.business.consumer.ItemTypeDemoAction" init-method="start">
+        <property name="itemTypeService" ref="itemTypeService"/>
+    </bean>
+    <!-- 商品类型 action -->
+
+
+	<!-- 医生登记记录明细 action -->
+    <bean class="com.fionapet.business.consumer.MedicRegisterRecordDemoAction" init-method="start">
+        <property name="medicRegisterRecordService" ref="medicRegisterRecordService"/>
+    </bean>
+    <!-- 医生登记记录明细 action -->
+
+
+	<!-- 医院记录表 action -->
+    <bean class="com.fionapet.business.consumer.InHospitalRecordDemoAction" init-method="start">
+        <property name="inHospitalRecordService" ref="inHospitalRecordService"/>
+    </bean>
+    <!-- 医院记录表 action -->
+
+
+	<!-- 养育健康状况表 action -->
+    <bean class="com.fionapet.business.consumer.FosterHealthDemoAction" init-method="start">
+        <property name="fosterHealthService" ref="fosterHealthService"/>
+    </bean>
+    <!-- 养育健康状况表 action -->
+
+
+	<!-- 养育记录主表 action -->
+    <bean class="com.fionapet.business.consumer.FosterRecordDemoAction" init-method="start">
+        <property name="fosterRecordService" ref="fosterRecordService"/>
+    </bean>
+    <!-- 养育记录主表 action -->
+
+
+	<!-- 提前付费表 action -->
+    <bean class="com.fionapet.business.consumer.PrepayMoneyDemoAction" init-method="start">
+        <property name="prepayMoneyService" ref="prepayMoneyService"/>
+    </bean>
+    <!-- 提前付费表 action -->
+
+
+	<!-- 代理商 action -->
+    <bean class="com.fionapet.business.consumer.DealerDemoAction" init-method="start">
+        <property name="dealerService" ref="dealerService"/>
+    </bean>
+    <!-- 代理商 action -->
+
+
+	<!-- 急诊表 action -->
+    <bean class="com.fionapet.business.consumer.PromptDemoAction" init-method="start">
+        <property name="promptService" ref="promptService"/>
+    </bean>
+    <!-- 急诊表 action -->
+
+
+	<!-- 处方模版明细 action -->
+    <bean class="com.fionapet.business.consumer.PrescriptionTemplateDetailDemoAction" init-method="start">
+        <property name="prescriptionTemplateDetailService" ref="prescriptionTemplateDetailService"/>
+    </bean>
+    <!-- 处方模版明细 action -->
+
+
+	<!-- 业务类型打折率 action -->
+    <bean class="com.fionapet.business.consumer.ItemDiscountRateDemoAction" init-method="start">
+        <property name="itemDiscountRateService" ref="itemDiscountRateService"/>
+    </bean>
+    <!-- 业务类型打折率 action -->
+
+
+	<!-- 收款记录表 action -->
+    <bean class="com.fionapet.business.consumer.InputMoneyRecordDemoAction" init-method="start">
+        <property name="inputMoneyRecordService" ref="inputMoneyRecordService"/>
+    </bean>
+    <!-- 收款记录表 action -->
+
+
+	<!-- 费用类型 action -->
+    <bean class="com.fionapet.business.consumer.ExpensesCateDemoAction" init-method="start">
+        <property name="expensesCateService" ref="expensesCateService"/>
+    </bean>
+    <!-- 费用类型 action -->
+
+
+	<!-- 医生处理记录 action -->
+    <bean class="com.fionapet.business.consumer.MedicMedictreatRecordDemoAction" init-method="start">
+        <property name="medicMedictreatRecordService" ref="medicMedictreatRecordService"/>
+    </bean>
+    <!-- 医生处理记录 action -->
+
+
+	<!-- 种类数量更改原因表 action -->
+    <bean class="com.fionapet.business.consumer.ItemCountDemoAction" init-method="start">
+        <property name="itemCountService" ref="itemCountService"/>
+    </bean>
+    <!-- 种类数量更改原因表 action -->
+
+
+	<!-- 赔偿交换细节 action -->
+    <bean class="com.fionapet.business.consumer.RewardpointExchangeDetailDemoAction" init-method="start">
+        <property name="rewardpointExchangeDetailService" ref="rewardpointExchangeDetailService"/>
+    </bean>
+    <!-- 赔偿交换细节 action -->
+
+
+	<!-- 序列号 action -->
+    <bean class="com.fionapet.business.consumer.SerialNumberDemoAction" init-method="start">
+        <property name="serialNumberService" ref="serialNumberService"/>
+    </bean>
+    <!-- 序列号 action -->
+
+
+	<!-- 药方模版明细 action -->
+    <bean class="com.fionapet.business.consumer.TrprescriptionTemplateDetailDemoAction" init-method="start">
+        <property name="trprescriptionTemplateDetailService" ref="trprescriptionTemplateDetailService"/>
+    </bean>
+    <!-- 药方模版明细 action -->
+
+
+	<!-- 药方模版类型 action -->
+    <bean class="com.fionapet.business.consumer.TrprescriptionTemplateTypeDemoAction" init-method="start">
+        <property name="trprescriptionTemplateTypeService" ref="trprescriptionTemplateTypeService"/>
+    </bean>
+    <!-- 药方模版类型 action -->
+
+
+	<!-- 仓库检查主表 action -->
+    <bean class="com.fionapet.business.consumer.CheckWarehouseDemoAction" init-method="start">
+        <property name="checkWarehouseService" ref="checkWarehouseService"/>
+    </bean>
+    <!-- 仓库检查主表 action -->
+
+
+	<!-- 宠物种类 action -->
+    <bean class="com.fionapet.business.consumer.PetRaceDemoAction" init-method="start">
+        <property name="petRaceService" ref="petRaceService"/>
+    </bean>
+    <!-- 宠物种类 action -->
+
+
+	<!-- 宠物主人 action -->
+    <bean class="com.fionapet.business.consumer.PersonsAppointmentDemoAction" init-method="start">
+        <property name="personsAppointmentService" ref="personsAppointmentService"/>
+    </bean>
+    <!-- 宠物主人 action -->
+
+
+	<!-- 检查仓库明细表 action -->
+    <bean class="com.fionapet.business.consumer.CheckWarehouseDetailDemoAction" init-method="start">
+        <property name="checkWarehouseDetailService" ref="checkWarehouseDetailService"/>
+    </bean>
+    <!-- 检查仓库明细表 action -->
+
+
+	<!-- 返回商品明细 action -->
+    <bean class="com.fionapet.business.consumer.ReturnCommodityDetailDemoAction" init-method="start">
+        <property name="returnCommodityDetailService" ref="returnCommodityDetailService"/>
+    </bean>
+    <!-- 返回商品明细 action -->
+
+
+	<!-- 服务主表 action -->
+    <bean class="com.fionapet.business.consumer.ServiceDemoAction" init-method="start">
+        <property name="serviceService" ref="serviceService"/>
+    </bean>
+    <!-- 服务主表 action -->
+
+
+	<!-- 资金账户明细表 action -->
+    <bean class="com.fionapet.business.consumer.FinanceSettleAccountsDetailDemoAction" init-method="start">
+        <property name="financeSettleAccountsDetailService" ref="financeSettleAccountsDetailService"/>
+    </bean>
+    <!-- 资金账户明细表 action -->
+
+
+	<!-- 电话信息表 action -->
+    <bean class="com.fionapet.business.consumer.PhoneMessageDemoAction" init-method="start">
+        <property name="phoneMessageService" ref="phoneMessageService"/>
+    </bean>
+    <!-- 电话信息表 action -->
+
+
+	<!-- 医生化验实例类型细节表 action -->
+    <bean class="com.fionapet.business.consumer.MedicChemicalExamtypeDetailDemoAction" init-method="start">
+        <property name="medicChemicalExamtypeDetailService" ref="medicChemicalExamtypeDetailService"/>
+    </bean>
+    <!-- 医生化验实例类型细节表 action -->
+
+
+	<!-- 化验单明细 action -->
+    <bean class="com.fionapet.business.consumer.MedicChemicalexamDemoAction" init-method="start">
+        <property name="medicChemicalexamService" ref="medicChemicalexamService"/>
+    </bean>
+    <!-- 化验单明细 action -->
+
+
+	<!-- 商品服务种类 action -->
+    <bean class="com.fionapet.business.consumer.ItemCateDemoAction" init-method="start">
+        <property name="itemCateService" ref="itemCateService"/>
+    </bean>
+    <!-- 商品服务种类 action -->
+
+
+	<!-- 处方模版类型 action -->
+    <bean class="com.fionapet.business.consumer.PrescriptionTemplateTypeDemoAction" init-method="start">
+        <property name="prescriptionTemplateTypeService" ref="prescriptionTemplateTypeService"/>
+    </bean>
+    <!-- 处方模版类型 action -->
+
+
+	<!-- 医生供应量表 action -->
+    <bean class="com.fionapet.business.consumer.MedicSuppliesDemoAction" init-method="start">
+        <property name="medicSuppliesService" ref="medicSuppliesService"/>
+    </bean>
+    <!-- 医生供应量表 action -->
+
+
+	<!-- 供应量表 action -->
+    <bean class="com.fionapet.business.consumer.ItemtypeSuppliesDemoAction" init-method="start">
+        <property name="itemtypeSuppliesService" ref="itemtypeSuppliesService"/>
+    </bean>
+    <!-- 供应量表 action -->
+
+
+	<!-- 退回记录明细 action -->
+    <bean class="com.fionapet.business.consumer.WarehouseBackrecordDetailDemoAction" init-method="start">
+        <property name="warehouseBackrecordDetailService" ref="warehouseBackrecordDetailService"/>
+    </bean>
+    <!-- 退回记录明细 action -->
+
+
+	<!-- 返回商品主表 action -->
+    <bean class="com.fionapet.business.consumer.ReturnCommodityDemoAction" init-method="start">
+        <property name="returnCommodityService" ref="returnCommodityService"/>
+    </bean>
+    <!-- 返回商品主表 action -->
+
+
+	<!-- 宠物主人信息 action -->
+    <bean class="com.fionapet.business.consumer.PersonsDemoAction" init-method="start">
+        <property name="personsService" ref="personsService"/>
+    </bean>
+    <!-- 宠物主人信息 action -->
+
+
+	<!-- 进库记录 action -->
+    <bean class="com.fionapet.business.consumer.WarehouseInrecordDemoAction" init-method="start">
+        <property name="warehouseInrecordService" ref="warehouseInrecordService"/>
+    </bean>
+    <!-- 进库记录 action -->
+
+
+	<!-- 服务明细 action -->
+    <bean class="com.fionapet.business.consumer.ServiceDetailDemoAction" init-method="start">
+        <property name="serviceDetailService" ref="serviceDetailService"/>
+    </bean>
+    <!-- 服务明细 action -->
+
+
+	<!-- 资金账号表 action -->
+    <bean class="com.fionapet.business.consumer.FinanceSettleAccountsDemoAction" init-method="start">
+        <property name="financeSettleAccountsService" ref="financeSettleAccountsService"/>
+    </bean>
+    <!-- 资金账号表 action -->
+
+
+	<!-- 医生化验实例类型细节表 action -->
+    <bean class="com.fionapet.business.consumer.MedicChemicalExamtypeDemoAction" init-method="start">
+        <property name="medicChemicalExamtypeService" ref="medicChemicalExamtypeService"/>
+    </bean>
+    <!-- 医生化验实例类型细节表 action -->
+
+
+	<!-- 处方模版 action -->
+    <bean class="com.fionapet.business.consumer.PrescriptionTemplateDemoAction" init-method="start">
+        <property name="prescriptionTemplateService" ref="prescriptionTemplateService"/>
+    </bean>
+    <!-- 处方模版 action -->
+
+
+	<!-- 处方 action -->
+    <bean class="com.fionapet.business.consumer.BaseMedicPrescriptionDemoAction" init-method="start">
+        <property name="baseMedicPrescriptionService" ref="baseMedicPrescriptionService"/>
+    </bean>
+    <!-- 处方 action -->
+
+
+	<!-- 赔偿交换 action -->
+    <bean class="com.fionapet.business.consumer.RewardpointExchangeDemoAction" init-method="start">
+        <property name="rewardpointExchangeService" ref="rewardpointExchangeService"/>
+    </bean>
+    <!-- 赔偿交换 action -->
+
+
+	<!-- 图片信息 action -->
+    <bean class="com.fionapet.business.consumer.ImagesDemoAction" init-method="start">
+        <property name="imagesService" ref="imagesService"/>
+    </bean>
+    <!-- 图片信息 action -->
+
+
+	<!-- VIP信息 action -->
+    <bean class="com.fionapet.business.consumer.VipInputTemDemoAction" init-method="start">
+        <property name="vipInputTemService" ref="vipInputTemService"/>
+    </bean>
+    <!-- VIP信息 action -->
+
+
+	<!-- 住院处方明细 action -->
+    <bean class="com.fionapet.business.consumer.InHospitalPrescriptionDetailDemoAction" init-method="start">
+        <property name="inHospitalPrescriptionDetailService" ref="inHospitalPrescriptionDetailService"/>
+    </bean>
+    <!-- 住院处方明细 action -->
+
+
+	<!-- 医生器具表 action -->
+    <bean class="com.fionapet.business.consumer.MedicApplianceDemoAction" init-method="start">
+        <property name="medicApplianceService" ref="medicApplianceService"/>
+    </bean>
+    <!-- 医生器具表 action -->
+
+
+	<!-- 付出费用表 action -->
+    <bean class="com.fionapet.business.consumer.ExpensesExpendDemoAction" init-method="start">
+        <property name="expensesExpendService" ref="expensesExpendService"/>
+    </bean>
+    <!-- 付出费用表 action -->
+
+
+	<!-- 化验样例类型 action -->
+    <bean class="com.fionapet.business.consumer.ChemicalExamCateDemoAction" init-method="start">
+        <property name="chemicalExamCateService" ref="chemicalExamCateService"/>
+    </bean>
+    <!-- 化验样例类型 action -->
+
+
+	<!-- 仓库直销明细 action -->
+    <bean class="com.fionapet.business.consumer.StoreDirectSellDetailDemoAction" init-method="start">
+        <property name="storeDirectSellDetailService" ref="storeDirectSellDetailService"/>
+    </bean>
+    <!-- 仓库直销明细 action -->
+
+
+	<!-- 字典类型 action -->
+    <bean class="com.fionapet.business.consumer.DictTypeDemoAction" init-method="start">
+        <property name="dictTypeService" ref="dictTypeService"/>
+    </bean>
+    <!-- 字典类型 action -->
+
+
+	<!-- 住院处方 action -->
+    <bean class="com.fionapet.business.consumer.InHospitalPrescriptionDemoAction" init-method="start">
+        <property name="inHospitalPrescriptionService" ref="inHospitalPrescriptionService"/>
+    </bean>
+    <!-- 住院处方 action -->
+
+
+	<!-- 顾客影像记录表 action -->
+    <bean class="com.fionapet.business.consumer.GestPaidRecordDemoAction" init-method="start">
+        <property name="gestPaidRecordService" ref="gestPaidRecordService"/>
+    </bean>
+    <!-- 顾客影像记录表 action -->
+
+
+	<!-- 字典类型明细 action -->
+    <bean class="com.fionapet.business.consumer.DictTypeDetailDemoAction" init-method="start">
+        <property name="dictTypeDetailService" ref="dictTypeDetailService"/>
+    </bean>
+    <!-- 字典类型明细 action -->
+
+
+	<!-- 医生处方 action -->
+    <bean class="com.fionapet.business.consumer.MedicPrescriptionDemoAction" init-method="start">
+        <property name="medicPrescriptionService" ref="medicPrescriptionService"/>
+    </bean>
+    <!-- 医生处方 action -->
+
+
+	<!-- 数据字典 字典明细项 action -->
+    <bean class="com.fionapet.business.consumer.UserDictDetailDemoAction" init-method="start">
+        <property name="userDictDetailService" ref="userDictDetailService"/>
+    </bean>
+    <!-- 数据字典 字典明细项 action -->
+
+
+	<!-- 仓库存货清单 action -->
+    <bean class="com.fionapet.business.consumer.WarehouseInventoryDemoAction" init-method="start">
+        <property name="warehouseInventoryService" ref="warehouseInventoryService"/>
+    </bean>
+    <!-- 仓库存货清单 action -->
+
+
+	<!-- 存货清单日志表 action -->
+    <bean class="com.fionapet.business.consumer.InventoryLogDemoAction" init-method="start">
+        <property name="inventoryLogService" ref="inventoryLogService"/>
+    </bean>
+    <!-- 存货清单日志表 action -->
+
+
+	<!-- 种类数量更改原因表 action -->
+    <bean class="com.fionapet.business.consumer.ItemCountChangeReasonDemoAction" init-method="start">
+        <property name="itemCountChangeReasonService" ref="itemCountChangeReasonService"/>
+    </bean>
+    <!-- 种类数量更改原因表 action -->
+
+
+	<!-- 企业信息表 action -->
+    <bean class="com.fionapet.business.consumer.EnterpriseDemoAction" init-method="start">
+        <property name="enterpriseService" ref="enterpriseService"/>
+    </bean>
+    <!-- 企业信息表 action -->
+
+
+	<!-- 用户字典 action -->
+    <bean class="com.fionapet.business.consumer.UserDictDemoAction" init-method="start">
+        <property name="userDictService" ref="userDictService"/>
+    </bean>
+    <!-- 用户字典 action -->
+
+
+	<!-- 退回记录 action -->
+    <bean class="com.fionapet.business.consumer.WarehouseBackrecordDemoAction" init-method="start">
+        <property name="warehouseBackrecordService" ref="warehouseBackrecordService"/>
+    </bean>
+    <!-- 退回记录 action -->
+
+
+	<!-- 仓库直销主表 action -->
+    <bean class="com.fionapet.business.consumer.StoreDirectSellDemoAction" init-method="start">
+        <property name="storeDirectSellService" ref="storeDirectSellService"/>
+    </bean>
+    <!-- 仓库直销主表 action -->
+
+
+	<!-- 养育记录明细表 action -->
+    <bean class="com.fionapet.business.consumer.FosterRecordDetailDemoAction" init-method="start">
+        <property name="fosterRecordDetailService" ref="fosterRecordDetailService"/>
+    </bean>
+    <!-- 养育记录明细表 action -->
+
+
+	<!-- 育苗表 action -->
+    <bean class="com.fionapet.business.consumer.MedicVaccineDemoAction" init-method="start">
+        <property name="medicVaccineService" ref="medicVaccineService"/>
+    </bean>
+    <!-- 育苗表 action -->
+
+
+	<!-- 药方模版 action -->
+    <bean class="com.fionapet.business.consumer.TrprescriptionTemplateDemoAction" init-method="start">
+        <property name="trprescriptionTemplateService" ref="trprescriptionTemplateService"/>
+    </bean>
+    <!-- 药方模版 action -->
+
+
+	<!-- 会员等级管理 action -->
+    <bean class="com.fionapet.business.consumer.GestLevelDemoAction" init-method="start">
+        <property name="gestLevelService" ref="gestLevelService"/>
+    </bean>
+    <!-- 会员等级管理 action -->
+
+
+	<!-- 序列号 action -->
+    <bean class="com.fionapet.business.consumer.RewardPointLogDemoAction" init-method="start">
+        <property name="rewardPointLogService" ref="rewardPointLogService"/>
+    </bean>
+    <!-- 序列号 action -->
+
+
+	<!-- 处方明细 action -->
+    <bean class="com.fionapet.business.consumer.BaseMedicPrescriptionDetailDemoAction" init-method="start">
+        <property name="baseMedicPrescriptionDetailService" ref="baseMedicPrescriptionDetailService"/>
+    </bean>
+    <!-- 处方明细 action -->
+
+
+	<!-- 宠物主人 action -->
+    <bean class="com.fionapet.business.consumer.PersonsCmAppDemoAction" init-method="start">
+        <property name="personsCmAppService" ref="personsCmAppService"/>
+    </bean>
+    <!-- 宠物主人 action -->
+
+
+	<!-- 化验单明细 action -->
+    <bean class="com.fionapet.business.consumer.MedicChemicalExamDetailDemoAction" init-method="start">
+        <property name="medicChemicalExamDetailService" ref="medicChemicalExamDetailService"/>
+    </bean>
+    <!-- 化验单明细 action -->
+
+
+	<!-- 医生影像样例 action -->
+    <bean class="com.fionapet.business.consumer.MedicVedioExamDemoAction" init-method="start">
+        <property name="medicVedioExamService" ref="medicVedioExamService"/>
+    </bean>
+    <!-- 医生影像样例 action -->
+
+
+	<!-- 医生处方明细 action -->
+    <bean class="com.fionapet.business.consumer.MedicPrescriptionDetailDemoAction" init-method="start">
+        <property name="medicPrescriptionDetailService" ref="medicPrescriptionDetailService"/>
+    </bean>
+    <!-- 医生处方明细 action -->
+
+
+	<!-- 业务类型表 action -->
+    <bean class="com.fionapet.business.consumer.BusinesCateDemoAction" init-method="start">
+        <property name="businesCateService" ref="businesCateService"/>
+    </bean>
+    <!-- 业务类型表 action -->
+
+
+	<!-- 医院记录明细表 action -->
+    <bean class="com.fionapet.business.consumer.InHospitalRecordDetailDemoAction" init-method="start">
+        <property name="inHospitalRecordDetailService" ref="inHospitalRecordDetailService"/>
+    </bean>
+    <!-- 医院记录明细表 action -->
+
+
+	<!-- 进库出库日志 action -->
+    <bean class="com.fionapet.business.consumer.FifoLogDemoAction" init-method="start">
+        <property name="fifoLogService" ref="fifoLogService"/>
+    </bean>
+    <!-- 进库出库日志 action -->
+
+
+	<!-- 消息提醒配置表 action -->
+    <bean class="com.fionapet.business.consumer.MicroSmsConfigDemoAction" init-method="start">
+        <property name="microSmsConfigService" ref="microSmsConfigService"/>
+    </bean>
+    <!-- 消息提醒配置表 action -->
+
+
+	<!-- 类型化验实例表 action -->
+    <bean class="com.fionapet.business.consumer.ItemtypeChemicalexamDemoAction" init-method="start">
+        <property name="itemtypeChemicalexamService" ref="itemtypeChemicalexamService"/>
+    </bean>
+    <!-- 类型化验实例表 action -->
+
+
+	<!-- 类型化验实例明细表 action -->
+    <bean class="com.fionapet.business.consumer.ItemSingleDetailDemoAction" init-method="start">
+        <property name="itemSingleDetailService" ref="itemSingleDetailService"/>
+    </bean>
+    <!-- 类型化验实例明细表 action -->
+
+
+	<!-- 商品类型 action -->
+    <bean class="com.fionapet.business.consumer.ItemTypeDemoAction" init-method="start">
+        <property name="itemTypeService" ref="itemTypeService"/>
+    </bean>
+    <!-- 商品类型 action -->
+
+
+	<!-- 医生登记记录明细 action -->
+    <bean class="com.fionapet.business.consumer.MedicRegisterRecordDemoAction" init-method="start">
+        <property name="medicRegisterRecordService" ref="medicRegisterRecordService"/>
+    </bean>
+    <!-- 医生登记记录明细 action -->
+
+
+	<!-- 医院记录表 action -->
+    <bean class="com.fionapet.business.consumer.InHospitalRecordDemoAction" init-method="start">
+        <property name="inHospitalRecordService" ref="inHospitalRecordService"/>
+    </bean>
+    <!-- 医院记录表 action -->
+
+
+	<!-- 养育健康状况表 action -->
+    <bean class="com.fionapet.business.consumer.FosterHealthDemoAction" init-method="start">
+        <property name="fosterHealthService" ref="fosterHealthService"/>
+    </bean>
+    <!-- 养育健康状况表 action -->
+
+
+	<!-- 养育记录主表 action -->
+    <bean class="com.fionapet.business.consumer.FosterRecordDemoAction" init-method="start">
+        <property name="fosterRecordService" ref="fosterRecordService"/>
+    </bean>
+    <!-- 养育记录主表 action -->
+
+
+	<!-- 提前付费表 action -->
+    <bean class="com.fionapet.business.consumer.PrepayMoneyDemoAction" init-method="start">
+        <property name="prepayMoneyService" ref="prepayMoneyService"/>
+    </bean>
+    <!-- 提前付费表 action -->
+
+
+	<!-- 进库记录明细 action -->
+    <bean class="com.fionapet.business.consumer.WarehouseInrecordDetailDemoAction" init-method="start">
+        <property name="warehouseInrecordDetailService" ref="warehouseInrecordDetailService"/>
+    </bean>
+    <!-- 进库记录明细 action -->
+
+
+	<!-- 代理商 action -->
+    <bean class="com.fionapet.business.consumer.DealerDemoAction" init-method="start">
+        <property name="dealerService" ref="dealerService"/>
+    </bean>
+    <!-- 代理商 action -->
+
+
+	<!-- 急诊表 action -->
+    <bean class="com.fionapet.business.consumer.PromptDemoAction" init-method="start">
+        <property name="promptService" ref="promptService"/>
+    </bean>
+    <!-- 急诊表 action -->
+
+
+	<!-- 应用配置 action -->
+    <bean class="com.fionapet.business.consumer.AppConfigDemoAction" init-method="start">
+        <property name="appConfigService" ref="appConfigService"/>
+    </bean>
+    <!-- 应用配置 action -->
+
+
+	<!-- 处方模版明细 action -->
+    <bean class="com.fionapet.business.consumer.PrescriptionTemplateDetailDemoAction" init-method="start">
+        <property name="prescriptionTemplateDetailService" ref="prescriptionTemplateDetailService"/>
+    </bean>
+    <!-- 处方模版明细 action -->
+
+
+	<!-- 业务类型打折率 action -->
+    <bean class="com.fionapet.business.consumer.ItemDiscountRateDemoAction" init-method="start">
+        <property name="itemDiscountRateService" ref="itemDiscountRateService"/>
+    </bean>
+    <!-- 业务类型打折率 action -->
+
+
+	<!-- 收款记录表 action -->
+    <bean class="com.fionapet.business.consumer.InputMoneyRecordDemoAction" init-method="start">
+        <property name="inputMoneyRecordService" ref="inputMoneyRecordService"/>
+    </bean>
+    <!-- 收款记录表 action -->
+
+
+	<!-- 费用类型 action -->
+    <bean class="com.fionapet.business.consumer.ExpensesCateDemoAction" init-method="start">
+        <property name="expensesCateService" ref="expensesCateService"/>
+    </bean>
+    <!-- 费用类型 action -->
+
+
+	<!-- 医生处理记录 action -->
+    <bean class="com.fionapet.business.consumer.MedicMedictreatRecordDemoAction" init-method="start">
+        <property name="medicMedictreatRecordService" ref="medicMedictreatRecordService"/>
+    </bean>
+    <!-- 医生处理记录 action -->
+
+
+	<!-- 种类数量更改原因表 action -->
+    <bean class="com.fionapet.business.consumer.ItemCountDemoAction" init-method="start">
+        <property name="itemCountService" ref="itemCountService"/>
+    </bean>
+    <!-- 种类数量更改原因表 action -->
+
+
+	<!-- 赔偿交换细节 action -->
+    <bean class="com.fionapet.business.consumer.RewardpointExchangeDetailDemoAction" init-method="start">
+        <property name="rewardpointExchangeDetailService" ref="rewardpointExchangeDetailService"/>
+    </bean>
+    <!-- 赔偿交换细节 action -->
+
+
+	<!-- 出库记录明细 action -->
+    <bean class="com.fionapet.business.consumer.WarehouseOutrecordDetailDemoAction" init-method="start">
+        <property name="warehouseOutrecordDetailService" ref="warehouseOutrecordDetailService"/>
+    </bean>
+    <!-- 出库记录明细 action -->
+
+
+	<!-- 序列号 action -->
+    <bean class="com.fionapet.business.consumer.SerialNumberDemoAction" init-method="start">
+        <property name="serialNumberService" ref="serialNumberService"/>
+    </bean>
+    <!-- 序列号 action -->
+
+
+	<!-- 药方模版明细 action -->
+    <bean class="com.fionapet.business.consumer.TrprescriptionTemplateDetailDemoAction" init-method="start">
+        <property name="trprescriptionTemplateDetailService" ref="trprescriptionTemplateDetailService"/>
+    </bean>
+    <!-- 药方模版明细 action -->
+
+
+	<!-- 药方模版类型 action -->
+    <bean class="com.fionapet.business.consumer.TrprescriptionTemplateTypeDemoAction" init-method="start">
+        <property name="trprescriptionTemplateTypeService" ref="trprescriptionTemplateTypeService"/>
+    </bean>
+    <!-- 药方模版类型 action -->
+
+
+	<!-- 审批状态实体 action -->
+    <bean class="com.fionapet.business.consumer.ApproveStatusEntityDemoAction" init-method="start">
+        <property name="approveStatusEntityService" ref="approveStatusEntityService"/>
+    </bean>
+    <!-- 审批状态实体 action -->
+
+
+	<!-- 仓库检查主表 action -->
+    <bean class="com.fionapet.business.consumer.CheckWarehouseDemoAction" init-method="start">
+        <property name="checkWarehouseService" ref="checkWarehouseService"/>
+    </bean>
+    <!-- 仓库检查主表 action -->
+
+
+	<!-- 移库记录明细 action -->
+    <bean class="com.fionapet.business.consumer.WarehouseMoverecordDetailDemoAction" init-method="start">
+        <property name="warehouseMoverecordDetailService" ref="warehouseMoverecordDetailService"/>
+    </bean>
+    <!-- 移库记录明细 action -->
+
+
+	<!-- 宠物种类 action -->
+    <bean class="com.fionapet.business.consumer.PetRaceDemoAction" init-method="start">
+        <property name="petRaceService" ref="petRaceService"/>
+    </bean>
+    <!-- 宠物种类 action -->
+
+
+	<!-- 宠物主人 action -->
+    <bean class="com.fionapet.business.consumer.PersonsAppointmentDemoAction" init-method="start">
+        <property name="personsAppointmentService" ref="personsAppointmentService"/>
+    </bean>
+    <!-- 宠物主人 action -->
+
+
+	<!-- 检查仓库明细表 action -->
+    <bean class="com.fionapet.business.consumer.CheckWarehouseDetailDemoAction" init-method="start">
+        <property name="checkWarehouseDetailService" ref="checkWarehouseDetailService"/>
+    </bean>
+    <!-- 检查仓库明细表 action -->
+
+
+	<!-- 返回商品明细 action -->
+    <bean class="com.fionapet.business.consumer.ReturnCommodityDetailDemoAction" init-method="start">
+        <property name="returnCommodityDetailService" ref="returnCommodityDetailService"/>
+    </bean>
+    <!-- 返回商品明细 action -->
+
+
+	<!-- 宠物品种 action -->
+    <bean class="com.fionapet.business.consumer.PetSmallRaceDemoAction" init-method="start">
+        <property name="petSmallRaceService" ref="petSmallRaceService"/>
+    </bean>
+    <!-- 宠物品种 action -->
+
+
+	<!-- 服务主表 action -->
+    <bean class="com.fionapet.business.consumer.ServiceDemoAction" init-method="start">
+        <property name="serviceService" ref="serviceService"/>
+    </bean>
+    <!-- 服务主表 action -->
+
+
+	<!-- 资金账户明细表 action -->
+    <bean class="com.fionapet.business.consumer.FinanceSettleAccountsDetailDemoAction" init-method="start">
+        <property name="financeSettleAccountsDetailService" ref="financeSettleAccountsDetailService"/>
+    </bean>
+    <!-- 资金账户明细表 action -->
+
+
+	<!-- 电话信息表 action -->
+    <bean class="com.fionapet.business.consumer.PhoneMessageDemoAction" init-method="start">
+        <property name="phoneMessageService" ref="phoneMessageService"/>
+    </bean>
+    <!-- 电话信息表 action -->
+
+
+	<!-- 移库记录 action -->
+    <bean class="com.fionapet.business.consumer.WarehouseMoverecordDemoAction" init-method="start">
+        <property name="warehouseMoverecordService" ref="warehouseMoverecordService"/>
+    </bean>
+    <!-- 移库记录 action -->
+
+
+	<!-- 医生化验实例类型细节表 action -->
+    <bean class="com.fionapet.business.consumer.MedicChemicalExamtypeDetailDemoAction" init-method="start">
+        <property name="medicChemicalExamtypeDetailService" ref="medicChemicalExamtypeDetailService"/>
+    </bean>
+    <!-- 医生化验实例类型细节表 action -->
+
+
+	<!-- 化验单明细 action -->
+    <bean class="com.fionapet.business.consumer.MedicChemicalexamDemoAction" init-method="start">
+        <property name="medicChemicalexamService" ref="medicChemicalexamService"/>
+    </bean>
+    <!-- 化验单明细 action -->
+
+
+	<!-- 商品服务种类 action -->
+    <bean class="com.fionapet.business.consumer.ItemCateDemoAction" init-method="start">
+        <property name="itemCateService" ref="itemCateService"/>
+    </bean>
+    <!-- 商品服务种类 action -->
+
+
+	<!-- 处方模版类型 action -->
+    <bean class="com.fionapet.business.consumer.PrescriptionTemplateTypeDemoAction" init-method="start">
+        <property name="prescriptionTemplateTypeService" ref="prescriptionTemplateTypeService"/>
+    </bean>
+    <!-- 处方模版类型 action -->
+
+
+	<!-- 医生供应量表 action -->
+    <bean class="com.fionapet.business.consumer.MedicSuppliesDemoAction" init-method="start">
+        <property name="medicSuppliesService" ref="medicSuppliesService"/>
+    </bean>
+    <!-- 医生供应量表 action -->
+
+
+	<!-- 供应量表 action -->
+    <bean class="com.fionapet.business.consumer.ItemtypeSuppliesDemoAction" init-method="start">
+        <property name="itemtypeSuppliesService" ref="itemtypeSuppliesService"/>
+    </bean>
+    <!-- 供应量表 action -->
+
+
+	<!-- 退回记录明细 action -->
+    <bean class="com.fionapet.business.consumer.WarehouseBackrecordDetailDemoAction" init-method="start">
+        <property name="warehouseBackrecordDetailService" ref="warehouseBackrecordDetailService"/>
+    </bean>
+    <!-- 退回记录明细 action -->
+
+
+	<!-- 返回商品主表 action -->
+    <bean class="com.fionapet.business.consumer.ReturnCommodityDemoAction" init-method="start">
+        <property name="returnCommodityService" ref="returnCommodityService"/>
+    </bean>
+    <!-- 返回商品主表 action -->
+
+
+	<!-- 宠物主人信息 action -->
+    <bean class="com.fionapet.business.consumer.PersonsDemoAction" init-method="start">
+        <property name="personsService" ref="personsService"/>
+    </bean>
+    <!-- 宠物主人信息 action -->
+
+
+	<!-- 进库记录 action -->
+    <bean class="com.fionapet.business.consumer.WarehouseInrecordDemoAction" init-method="start">
+        <property name="warehouseInrecordService" ref="warehouseInrecordService"/>
+    </bean>
+    <!-- 进库记录 action -->
+
+
+	<!-- 宠物 action -->
+    <bean class="com.fionapet.business.consumer.PetDemoAction" init-method="start">
+        <property name="petService" ref="petService"/>
+    </bean>
+    <!-- 宠物 action -->
+
+
+	<!-- 服务明细 action -->
+    <bean class="com.fionapet.business.consumer.ServiceDetailDemoAction" init-method="start">
+        <property name="serviceDetailService" ref="serviceDetailService"/>
+    </bean>
+    <!-- 服务明细 action -->
+
+
+	<!-- 资金账号表 action -->
+    <bean class="com.fionapet.business.consumer.FinanceSettleAccountsDemoAction" init-method="start">
+        <property name="financeSettleAccountsService" ref="financeSettleAccountsService"/>
+    </bean>
+    <!-- 资金账号表 action -->
+
+
+	<!-- 检查处理单据 action -->
+    <bean class="com.fionapet.business.consumer.CheckProcessSheetDemoAction" init-method="start">
+        <property name="checkProcessSheetService" ref="checkProcessSheetService"/>
+    </bean>
+    <!-- 检查处理单据 action -->
+
+
+	<!-- 出库记录 action -->
+    <bean class="com.fionapet.business.consumer.WarehouseOutrecordDemoAction" init-method="start">
+        <property name="warehouseOutrecordService" ref="warehouseOutrecordService"/>
+    </bean>
+    <!-- 出库记录 action -->
+
+
+	<!-- 医生化验实例类型细节表 action -->
+    <bean class="com.fionapet.business.consumer.MedicChemicalExamtypeDemoAction" init-method="start">
+        <property name="medicChemicalExamtypeService" ref="medicChemicalExamtypeService"/>
+    </bean>
+    <!-- 医生化验实例类型细节表 action -->
+
+
+	<!-- 处方模版 action -->
+    <bean class="com.fionapet.business.consumer.PrescriptionTemplateDemoAction" init-method="start">
+        <property name="prescriptionTemplateService" ref="prescriptionTemplateService"/>
+    </bean>
+    <!-- 处方模版 action -->
+
+
+	<!-- 处方 action -->
+    <bean class="com.fionapet.business.consumer.BaseMedicPrescriptionDemoAction" init-method="start">
+        <property name="baseMedicPrescriptionService" ref="baseMedicPrescriptionService"/>
+    </bean>
+    <!-- 处方 action -->
+
+
+	<!-- 赔偿交换 action -->
+    <bean class="com.fionapet.business.consumer.RewardpointExchangeDemoAction" init-method="start">
+        <property name="rewardpointExchangeService" ref="rewardpointExchangeService"/>
+    </bean>
+    <!-- 赔偿交换 action -->
+
+
+	<!-- 图片信息 action -->
+    <bean class="com.fionapet.business.consumer.ImagesDemoAction" init-method="start">
+        <property name="imagesService" ref="imagesService"/>
+    </bean>
+    <!-- 图片信息 action -->
+
+
+	<!-- VIP信息 action -->
+    <bean class="com.fionapet.business.consumer.VipInputTemDemoAction" init-method="start">
+        <property name="vipInputTemService" ref="vipInputTemService"/>
+    </bean>
+    <!-- VIP信息 action -->
+
+
+	<!-- 住院处方明细 action -->
+    <bean class="com.fionapet.business.consumer.InHospitalPrescriptionDetailDemoAction" init-method="start">
+        <property name="inHospitalPrescriptionDetailService" ref="inHospitalPrescriptionDetailService"/>
+    </bean>
+    <!-- 住院处方明细 action -->
+
+
+	<!-- 会员 action -->
+    <bean class="com.fionapet.business.consumer.GestDemoAction" init-method="start">
+        <property name="gestService" ref="gestService"/>
+    </bean>
+    <!-- 会员 action -->
+
+
+	<!-- 医生器具表 action -->
+    <bean class="com.fionapet.business.consumer.MedicApplianceDemoAction" init-method="start">
+        <property name="medicApplianceService" ref="medicApplianceService"/>
+    </bean>
+    <!-- 医生器具表 action -->
+
+
+	<!-- 付出费用表 action -->
+    <bean class="com.fionapet.business.consumer.ExpensesExpendDemoAction" init-method="start">
+        <property name="expensesExpendService" ref="expensesExpendService"/>
+    </bean>
+    <!-- 付出费用表 action -->
+
+
+	<!-- 化验样例类型 action -->
+    <bean class="com.fionapet.business.consumer.ChemicalExamCateDemoAction" init-method="start">
+        <property name="chemicalExamCateService" ref="chemicalExamCateService"/>
+    </bean>
+    <!-- 化验样例类型 action -->
+
+
+	<!-- 仓库直销明细 action -->
+    <bean class="com.fionapet.business.consumer.StoreDirectSellDetailDemoAction" init-method="start">
+        <property name="storeDirectSellDetailService" ref="storeDirectSellDetailService"/>
+    </bean>
+    <!-- 仓库直销明细 action -->
+
+
+	<!-- 字典类型 action -->
+    <bean class="com.fionapet.business.consumer.DictTypeDemoAction" init-method="start">
+        <property name="dictTypeService" ref="dictTypeService"/>
+    </bean>
+    <!-- 字典类型 action -->
+
+
+	<!-- 住院处方 action -->
+    <bean class="com.fionapet.business.consumer.InHospitalPrescriptionDemoAction" init-method="start">
+        <property name="inHospitalPrescriptionService" ref="inHospitalPrescriptionService"/>
+    </bean>
+    <!-- 住院处方 action -->
+
+
+	<!-- 顾客影像记录表 action -->
+    <bean class="com.fionapet.business.consumer.GestPaidRecordDemoAction" init-method="start">
+        <property name="gestPaidRecordService" ref="gestPaidRecordService"/>
+    </bean>
+    <!-- 顾客影像记录表 action -->
+
+
+	<!-- 字典类型明细 action -->
+    <bean class="com.fionapet.business.consumer.DictTypeDetailDemoAction" init-method="start">
+        <property name="dictTypeDetailService" ref="dictTypeDetailService"/>
+    </bean>
+    <!-- 字典类型明细 action -->
+
+
+	<!-- 医生处方 action -->
+    <bean class="com.fionapet.business.consumer.MedicPrescriptionDemoAction" init-method="start">
+        <property name="medicPrescriptionService" ref="medicPrescriptionService"/>
+    </bean>
+    <!-- 医生处方 action -->
+
+
+	<!-- 数据字典 字典明细项 action -->
+    <bean class="com.fionapet.business.consumer.UserDictDetailDemoAction" init-method="start">
+        <property name="userDictDetailService" ref="userDictDetailService"/>
+    </bean>
+    <!-- 数据字典 字典明细项 action -->
+
+
+	<!-- 仓库存货清单 action -->
+    <bean class="com.fionapet.business.consumer.WarehouseInventoryDemoAction" init-method="start">
+        <property name="warehouseInventoryService" ref="warehouseInventoryService"/>
+    </bean>
+    <!-- 仓库存货清单 action -->
+
+
+	<!-- 存货清单日志表 action -->
+    <bean class="com.fionapet.business.consumer.InventoryLogDemoAction" init-method="start">
+        <property name="inventoryLogService" ref="inventoryLogService"/>
+    </bean>
+    <!-- 存货清单日志表 action -->
+
+
+	<!-- 种类数量更改原因表 action -->
+    <bean class="com.fionapet.business.consumer.ItemCountChangeReasonDemoAction" init-method="start">
+        <property name="itemCountChangeReasonService" ref="itemCountChangeReasonService"/>
+    </bean>
+    <!-- 种类数量更改原因表 action -->
+
+
+	<!-- 企业信息表 action -->
+    <bean class="com.fionapet.business.consumer.EnterpriseDemoAction" init-method="start">
+        <property name="enterpriseService" ref="enterpriseService"/>
+    </bean>
+    <!-- 企业信息表 action -->
+
+
+	<!-- 用户字典 action -->
+    <bean class="com.fionapet.business.consumer.UserDictDemoAction" init-method="start">
+        <property name="userDictService" ref="userDictService"/>
+    </bean>
+    <!-- 用户字典 action -->
+
+
+	<!-- 退回记录 action -->
+    <bean class="com.fionapet.business.consumer.WarehouseBackrecordDemoAction" init-method="start">
+        <property name="warehouseBackrecordService" ref="warehouseBackrecordService"/>
+    </bean>
+    <!-- 退回记录 action -->
+
+
+	<!-- 仓库直销主表 action -->
+    <bean class="com.fionapet.business.consumer.StoreDirectSellDemoAction" init-method="start">
+        <property name="storeDirectSellService" ref="storeDirectSellService"/>
+    </bean>
+    <!-- 仓库直销主表 action -->
+
+
+	<!-- 养育记录明细表 action -->
+    <bean class="com.fionapet.business.consumer.FosterRecordDetailDemoAction" init-method="start">
+        <property name="fosterRecordDetailService" ref="fosterRecordDetailService"/>
+    </bean>
+    <!-- 养育记录明细表 action -->
+
+
+	<!-- 育苗表 action -->
+    <bean class="com.fionapet.business.consumer.MedicVaccineDemoAction" init-method="start">
+        <property name="medicVaccineService" ref="medicVaccineService"/>
+    </bean>
+    <!-- 育苗表 action -->
+
+
+	<!-- 药方模版 action -->
+    <bean class="com.fionapet.business.consumer.TrprescriptionTemplateDemoAction" init-method="start">
+        <property name="trprescriptionTemplateService" ref="trprescriptionTemplateService"/>
+    </bean>
+    <!-- 药方模版 action -->
+
+
+	<!-- 会员等级管理 action -->
+    <bean class="com.fionapet.business.consumer.GestLevelDemoAction" init-method="start">
+        <property name="gestLevelService" ref="gestLevelService"/>
+    </bean>
+    <!-- 会员等级管理 action -->
+
+
+	<!-- 序列号 action -->
+    <bean class="com.fionapet.business.consumer.RewardPointLogDemoAction" init-method="start">
+        <property name="rewardPointLogService" ref="rewardPointLogService"/>
+    </bean>
+    <!-- 序列号 action -->
+
+
+	<!-- 处方明细 action -->
+    <bean class="com.fionapet.business.consumer.BaseMedicPrescriptionDetailDemoAction" init-method="start">
+        <property name="baseMedicPrescriptionDetailService" ref="baseMedicPrescriptionDetailService"/>
+    </bean>
+    <!-- 处方明细 action -->
+
+
+	<!-- 宠物主人 action -->
+    <bean class="com.fionapet.business.consumer.PersonsCmAppDemoAction" init-method="start">
+        <property name="personsCmAppService" ref="personsCmAppService"/>
+    </bean>
+    <!-- 宠物主人 action -->
+
+
+	<!-- 化验单明细 action -->
+    <bean class="com.fionapet.business.consumer.MedicChemicalExamDetailDemoAction" init-method="start">
+        <property name="medicChemicalExamDetailService" ref="medicChemicalExamDetailService"/>
+    </bean>
+    <!-- 化验单明细 action -->
+
+
+	<!-- 医生影像样例 action -->
+    <bean class="com.fionapet.business.consumer.MedicVedioExamDemoAction" init-method="start">
+        <property name="medicVedioExamService" ref="medicVedioExamService"/>
+    </bean>
+    <!-- 医生影像样例 action -->
+
+
+	<!-- 医生处方明细 action -->
+    <bean class="com.fionapet.business.consumer.MedicPrescriptionDetailDemoAction" init-method="start">
+        <property name="medicPrescriptionDetailService" ref="medicPrescriptionDetailService"/>
+    </bean>
+    <!-- 医生处方明细 action -->
+
+
+	<!-- 业务类型表 action -->
+    <bean class="com.fionapet.business.consumer.BusinesCateDemoAction" init-method="start">
+        <property name="businesCateService" ref="businesCateService"/>
+    </bean>
+    <!-- 业务类型表 action -->
+
+
+	<!-- 医院记录明细表 action -->
+    <bean class="com.fionapet.business.consumer.InHospitalRecordDetailDemoAction" init-method="start">
+        <property name="inHospitalRecordDetailService" ref="inHospitalRecordDetailService"/>
+    </bean>
+    <!-- 医院记录明细表 action -->
+
+
+	<!-- 进库出库日志 action -->
+    <bean class="com.fionapet.business.consumer.FifoLogDemoAction" init-method="start">
+        <property name="fifoLogService" ref="fifoLogService"/>
+    </bean>
+    <!-- 进库出库日志 action -->
+
+
+	<!-- 消息提醒配置表 action -->
+    <bean class="com.fionapet.business.consumer.MicroSmsConfigDemoAction" init-method="start">
+        <property name="microSmsConfigService" ref="microSmsConfigService"/>
+    </bean>
+    <!-- 消息提醒配置表 action -->
+
+
+	<!-- 类型化验实例表 action -->
+    <bean class="com.fionapet.business.consumer.ItemtypeChemicalexamDemoAction" init-method="start">
+        <property name="itemtypeChemicalexamService" ref="itemtypeChemicalexamService"/>
+    </bean>
+    <!-- 类型化验实例表 action -->
+
+
+	<!-- 类型化验实例明细表 action -->
+    <bean class="com.fionapet.business.consumer.ItemSingleDetailDemoAction" init-method="start">
+        <property name="itemSingleDetailService" ref="itemSingleDetailService"/>
+    </bean>
+    <!-- 类型化验实例明细表 action -->
+
+
+	<!-- 商品类型 action -->
+    <bean class="com.fionapet.business.consumer.ItemTypeDemoAction" init-method="start">
+        <property name="itemTypeService" ref="itemTypeService"/>
+    </bean>
+    <!-- 商品类型 action -->
+
+
+	<!-- 医生登记记录明细 action -->
+    <bean class="com.fionapet.business.consumer.MedicRegisterRecordDemoAction" init-method="start">
+        <property name="medicRegisterRecordService" ref="medicRegisterRecordService"/>
+    </bean>
+    <!-- 医生登记记录明细 action -->
+
+
+	<!-- 医院记录表 action -->
+    <bean class="com.fionapet.business.consumer.InHospitalRecordDemoAction" init-method="start">
+        <property name="inHospitalRecordService" ref="inHospitalRecordService"/>
+    </bean>
+    <!-- 医院记录表 action -->
+
+
+	<!-- 养育健康状况表 action -->
+    <bean class="com.fionapet.business.consumer.FosterHealthDemoAction" init-method="start">
+        <property name="fosterHealthService" ref="fosterHealthService"/>
+    </bean>
+    <!-- 养育健康状况表 action -->
+
+
+	<!-- 养育记录主表 action -->
+    <bean class="com.fionapet.business.consumer.FosterRecordDemoAction" init-method="start">
+        <property name="fosterRecordService" ref="fosterRecordService"/>
+    </bean>
+    <!-- 养育记录主表 action -->
+
+
+	<!-- 提前付费表 action -->
+    <bean class="com.fionapet.business.consumer.PrepayMoneyDemoAction" init-method="start">
+        <property name="prepayMoneyService" ref="prepayMoneyService"/>
+    </bean>
+    <!-- 提前付费表 action -->
+
+
+	<!-- 进库记录明细 action -->
+    <bean class="com.fionapet.business.consumer.WarehouseInrecordDetailDemoAction" init-method="start">
+        <property name="warehouseInrecordDetailService" ref="warehouseInrecordDetailService"/>
+    </bean>
+    <!-- 进库记录明细 action -->
+
+
+	<!-- 代理商 action -->
+    <bean class="com.fionapet.business.consumer.DealerDemoAction" init-method="start">
+        <property name="dealerService" ref="dealerService"/>
+    </bean>
+    <!-- 代理商 action -->
+
+
+	<!-- 急诊表 action -->
+    <bean class="com.fionapet.business.consumer.PromptDemoAction" init-method="start">
+        <property name="promptService" ref="promptService"/>
+    </bean>
+    <!-- 急诊表 action -->
+
+
+	<!-- 应用配置 action -->
+    <bean class="com.fionapet.business.consumer.AppConfigDemoAction" init-method="start">
+        <property name="appConfigService" ref="appConfigService"/>
+    </bean>
+    <!-- 应用配置 action -->
+
+
+	<!-- 处方模版明细 action -->
+    <bean class="com.fionapet.business.consumer.PrescriptionTemplateDetailDemoAction" init-method="start">
+        <property name="prescriptionTemplateDetailService" ref="prescriptionTemplateDetailService"/>
+    </bean>
+    <!-- 处方模版明细 action -->
+
+
+	<!-- 业务类型打折率 action -->
+    <bean class="com.fionapet.business.consumer.ItemDiscountRateDemoAction" init-method="start">
+        <property name="itemDiscountRateService" ref="itemDiscountRateService"/>
+    </bean>
+    <!-- 业务类型打折率 action -->
+
+
+	<!-- 收款记录表 action -->
+    <bean class="com.fionapet.business.consumer.InputMoneyRecordDemoAction" init-method="start">
+        <property name="inputMoneyRecordService" ref="inputMoneyRecordService"/>
+    </bean>
+    <!-- 收款记录表 action -->
+
+
+	<!-- 费用类型 action -->
+    <bean class="com.fionapet.business.consumer.ExpensesCateDemoAction" init-method="start">
+        <property name="expensesCateService" ref="expensesCateService"/>
+    </bean>
+    <!-- 费用类型 action -->
+
+
+	<!-- 医生处理记录 action -->
+    <bean class="com.fionapet.business.consumer.MedicMedictreatRecordDemoAction" init-method="start">
+        <property name="medicMedictreatRecordService" ref="medicMedictreatRecordService"/>
+    </bean>
+    <!-- 医生处理记录 action -->
+
+
+	<!-- 种类数量更改原因表 action -->
+    <bean class="com.fionapet.business.consumer.ItemCountDemoAction" init-method="start">
+        <property name="itemCountService" ref="itemCountService"/>
+    </bean>
+    <!-- 种类数量更改原因表 action -->
+
+
+	<!-- 赔偿交换细节 action -->
+    <bean class="com.fionapet.business.consumer.RewardpointExchangeDetailDemoAction" init-method="start">
+        <property name="rewardpointExchangeDetailService" ref="rewardpointExchangeDetailService"/>
+    </bean>
+    <!-- 赔偿交换细节 action -->
+
+
+	<!-- 出库记录明细 action -->
+    <bean class="com.fionapet.business.consumer.WarehouseOutrecordDetailDemoAction" init-method="start">
+        <property name="warehouseOutrecordDetailService" ref="warehouseOutrecordDetailService"/>
+    </bean>
+    <!-- 出库记录明细 action -->
+
+
+	<!-- 序列号 action -->
+    <bean class="com.fionapet.business.consumer.SerialNumberDemoAction" init-method="start">
+        <property name="serialNumberService" ref="serialNumberService"/>
+    </bean>
+    <!-- 序列号 action -->
+
+
+	<!-- 药方模版明细 action -->
+    <bean class="com.fionapet.business.consumer.TrprescriptionTemplateDetailDemoAction" init-method="start">
+        <property name="trprescriptionTemplateDetailService" ref="trprescriptionTemplateDetailService"/>
+    </bean>
+    <!-- 药方模版明细 action -->
+
+
+	<!-- 药方模版类型 action -->
+    <bean class="com.fionapet.business.consumer.TrprescriptionTemplateTypeDemoAction" init-method="start">
+        <property name="trprescriptionTemplateTypeService" ref="trprescriptionTemplateTypeService"/>
+    </bean>
+    <!-- 药方模版类型 action -->
+
+
+	<!-- 审批状态实体 action -->
+    <bean class="com.fionapet.business.consumer.ApproveStatusEntityDemoAction" init-method="start">
+        <property name="approveStatusEntityService" ref="approveStatusEntityService"/>
+    </bean>
+    <!-- 审批状态实体 action -->
+
+
+	<!-- 仓库检查主表 action -->
+    <bean class="com.fionapet.business.consumer.CheckWarehouseDemoAction" init-method="start">
+        <property name="checkWarehouseService" ref="checkWarehouseService"/>
+    </bean>
+    <!-- 仓库检查主表 action -->
+
+
+	<!-- 移库记录明细 action -->
+    <bean class="com.fionapet.business.consumer.WarehouseMoverecordDetailDemoAction" init-method="start">
+        <property name="warehouseMoverecordDetailService" ref="warehouseMoverecordDetailService"/>
+    </bean>
+    <!-- 移库记录明细 action -->
+
+
+	<!-- 宠物种类 action -->
+    <bean class="com.fionapet.business.consumer.PetRaceDemoAction" init-method="start">
+        <property name="petRaceService" ref="petRaceService"/>
+    </bean>
+    <!-- 宠物种类 action -->
+
+
+	<!-- 宠物主人 action -->
+    <bean class="com.fionapet.business.consumer.PersonsAppointmentDemoAction" init-method="start">
+        <property name="personsAppointmentService" ref="personsAppointmentService"/>
+    </bean>
+    <!-- 宠物主人 action -->
+
+
+	<!-- 检查仓库明细表 action -->
+    <bean class="com.fionapet.business.consumer.CheckWarehouseDetailDemoAction" init-method="start">
+        <property name="checkWarehouseDetailService" ref="checkWarehouseDetailService"/>
+    </bean>
+    <!-- 检查仓库明细表 action -->
+
+
+	<!-- 返回商品明细 action -->
+    <bean class="com.fionapet.business.consumer.ReturnCommodityDetailDemoAction" init-method="start">
+        <property name="returnCommodityDetailService" ref="returnCommodityDetailService"/>
+    </bean>
+    <!-- 返回商品明细 action -->
+
+
+	<!-- 宠物品种 action -->
+    <bean class="com.fionapet.business.consumer.PetSmallRaceDemoAction" init-method="start">
+        <property name="petSmallRaceService" ref="petSmallRaceService"/>
+    </bean>
+    <!-- 宠物品种 action -->
+
+
+	<!-- 服务主表 action -->
+    <bean class="com.fionapet.business.consumer.ServiceDemoAction" init-method="start">
+        <property name="serviceService" ref="serviceService"/>
+    </bean>
+    <!-- 服务主表 action -->
+
+
+	<!-- 资金账户明细表 action -->
+    <bean class="com.fionapet.business.consumer.FinanceSettleAccountsDetailDemoAction" init-method="start">
+        <property name="financeSettleAccountsDetailService" ref="financeSettleAccountsDetailService"/>
+    </bean>
+    <!-- 资金账户明细表 action -->
+
+
+	<!-- 电话信息表 action -->
+    <bean class="com.fionapet.business.consumer.PhoneMessageDemoAction" init-method="start">
+        <property name="phoneMessageService" ref="phoneMessageService"/>
+    </bean>
+    <!-- 电话信息表 action -->
+
+
+	<!-- 移库记录 action -->
+    <bean class="com.fionapet.business.consumer.WarehouseMoverecordDemoAction" init-method="start">
+        <property name="warehouseMoverecordService" ref="warehouseMoverecordService"/>
+    </bean>
+    <!-- 移库记录 action -->
+
+
+	<!-- 医生化验实例类型细节表 action -->
+    <bean class="com.fionapet.business.consumer.MedicChemicalExamtypeDetailDemoAction" init-method="start">
+        <property name="medicChemicalExamtypeDetailService" ref="medicChemicalExamtypeDetailService"/>
+    </bean>
+    <!-- 医生化验实例类型细节表 action -->
+
+
+	<!-- 化验单明细 action -->
+    <bean class="com.fionapet.business.consumer.MedicChemicalexamDemoAction" init-method="start">
+        <property name="medicChemicalexamService" ref="medicChemicalexamService"/>
+    </bean>
+    <!-- 化验单明细 action -->
+
+
+	<!-- 商品服务种类 action -->
+    <bean class="com.fionapet.business.consumer.ItemCateDemoAction" init-method="start">
+        <property name="itemCateService" ref="itemCateService"/>
+    </bean>
+    <!-- 商品服务种类 action -->
+
+
+	<!-- 处方模版类型 action -->
+    <bean class="com.fionapet.business.consumer.PrescriptionTemplateTypeDemoAction" init-method="start">
+        <property name="prescriptionTemplateTypeService" ref="prescriptionTemplateTypeService"/>
+    </bean>
+    <!-- 处方模版类型 action -->
+
+
+	<!-- 医生供应量表 action -->
+    <bean class="com.fionapet.business.consumer.MedicSuppliesDemoAction" init-method="start">
+        <property name="medicSuppliesService" ref="medicSuppliesService"/>
+    </bean>
+    <!-- 医生供应量表 action -->
+
+
+	<!-- 供应量表 action -->
+    <bean class="com.fionapet.business.consumer.ItemtypeSuppliesDemoAction" init-method="start">
+        <property name="itemtypeSuppliesService" ref="itemtypeSuppliesService"/>
+    </bean>
+    <!-- 供应量表 action -->
+
+
+	<!-- 退回记录明细 action -->
+    <bean class="com.fionapet.business.consumer.WarehouseBackrecordDetailDemoAction" init-method="start">
+        <property name="warehouseBackrecordDetailService" ref="warehouseBackrecordDetailService"/>
+    </bean>
+    <!-- 退回记录明细 action -->
+
+
+	<!-- 返回商品主表 action -->
+    <bean class="com.fionapet.business.consumer.ReturnCommodityDemoAction" init-method="start">
+        <property name="returnCommodityService" ref="returnCommodityService"/>
+    </bean>
+    <!-- 返回商品主表 action -->
+
+
+	<!-- 宠物主人信息 action -->
+    <bean class="com.fionapet.business.consumer.PersonsDemoAction" init-method="start">
+        <property name="personsService" ref="personsService"/>
+    </bean>
+    <!-- 宠物主人信息 action -->
+
+
+	<!-- 进库记录 action -->
+    <bean class="com.fionapet.business.consumer.WarehouseInrecordDemoAction" init-method="start">
+        <property name="warehouseInrecordService" ref="warehouseInrecordService"/>
+    </bean>
+    <!-- 进库记录 action -->
+
+
+	<!-- 宠物 action -->
+    <bean class="com.fionapet.business.consumer.PetDemoAction" init-method="start">
+        <property name="petService" ref="petService"/>
+    </bean>
+    <!-- 宠物 action -->
+
+
+	<!-- 服务明细 action -->
+    <bean class="com.fionapet.business.consumer.ServiceDetailDemoAction" init-method="start">
+        <property name="serviceDetailService" ref="serviceDetailService"/>
+    </bean>
+    <!-- 服务明细 action -->
+
+
+	<!-- 资金账号表 action -->
+    <bean class="com.fionapet.business.consumer.FinanceSettleAccountsDemoAction" init-method="start">
+        <property name="financeSettleAccountsService" ref="financeSettleAccountsService"/>
+    </bean>
+    <!-- 资金账号表 action -->
+
+
+	<!-- 检查处理单据 action -->
+    <bean class="com.fionapet.business.consumer.CheckProcessSheetDemoAction" init-method="start">
+        <property name="checkProcessSheetService" ref="checkProcessSheetService"/>
+    </bean>
+    <!-- 检查处理单据 action -->
+
+
+	<!-- 出库记录 action -->
+    <bean class="com.fionapet.business.consumer.WarehouseOutrecordDemoAction" init-method="start">
+        <property name="warehouseOutrecordService" ref="warehouseOutrecordService"/>
+    </bean>
+    <!-- 出库记录 action -->
+
+
+	<!-- 医生化验实例类型细节表 action -->
+    <bean class="com.fionapet.business.consumer.MedicChemicalExamtypeDemoAction" init-method="start">
+        <property name="medicChemicalExamtypeService" ref="medicChemicalExamtypeService"/>
+    </bean>
+    <!-- 医生化验实例类型细节表 action -->
+
+
+	<!-- 处方模版 action -->
+    <bean class="com.fionapet.business.consumer.PrescriptionTemplateDemoAction" init-method="start">
+        <property name="prescriptionTemplateService" ref="prescriptionTemplateService"/>
+    </bean>
+    <!-- 处方模版 action -->
+
+
+	<!-- 处方 action -->
+    <bean class="com.fionapet.business.consumer.BaseMedicPrescriptionDemoAction" init-method="start">
+        <property name="baseMedicPrescriptionService" ref="baseMedicPrescriptionService"/>
+    </bean>
+    <!-- 处方 action -->
+
+
+	<!-- 赔偿交换 action -->
+    <bean class="com.fionapet.business.consumer.RewardpointExchangeDemoAction" init-method="start">
+        <property name="rewardpointExchangeService" ref="rewardpointExchangeService"/>
+    </bean>
+    <!-- 赔偿交换 action -->
+
+
+	<!-- 图片信息 action -->
+    <bean class="com.fionapet.business.consumer.ImagesDemoAction" init-method="start">
+        <property name="imagesService" ref="imagesService"/>
+    </bean>
+    <!-- 图片信息 action -->
+
+
+	<!-- VIP信息 action -->
+    <bean class="com.fionapet.business.consumer.VipInputTemDemoAction" init-method="start">
+        <property name="vipInputTemService" ref="vipInputTemService"/>
+    </bean>
+    <!-- VIP信息 action -->
+
+
+	<!-- 住院处方明细 action -->
+    <bean class="com.fionapet.business.consumer.InHospitalPrescriptionDetailDemoAction" init-method="start">
+        <property name="inHospitalPrescriptionDetailService" ref="inHospitalPrescriptionDetailService"/>
+    </bean>
+    <!-- 住院处方明细 action -->
+
+
+	<!-- 会员 action -->
+    <bean class="com.fionapet.business.consumer.GestDemoAction" init-method="start">
+        <property name="gestService" ref="gestService"/>
+    </bean>
+    <!-- 会员 action -->
+
+
+	<!-- 医生器具表 action -->
+    <bean class="com.fionapet.business.consumer.MedicApplianceDemoAction" init-method="start">
+        <property name="medicApplianceService" ref="medicApplianceService"/>
+    </bean>
+    <!-- 医生器具表 action -->
+
+
+	<!-- 付出费用表 action -->
+    <bean class="com.fionapet.business.consumer.ExpensesExpendDemoAction" init-method="start">
+        <property name="expensesExpendService" ref="expensesExpendService"/>
+    </bean>
+    <!-- 付出费用表 action -->
+
+
+	<!-- 化验样例类型 action -->
+    <bean class="com.fionapet.business.consumer.ChemicalExamCateDemoAction" init-method="start">
+        <property name="chemicalExamCateService" ref="chemicalExamCateService"/>
+    </bean>
+    <!-- 化验样例类型 action -->
+
+
+	<!-- 仓库直销明细 action -->
+    <bean class="com.fionapet.business.consumer.StoreDirectSellDetailDemoAction" init-method="start">
+        <property name="storeDirectSellDetailService" ref="storeDirectSellDetailService"/>
+    </bean>
+    <!-- 仓库直销明细 action -->
+
+
+	<!-- 字典类型 action -->
+    <bean class="com.fionapet.business.consumer.DictTypeDemoAction" init-method="start">
+        <property name="dictTypeService" ref="dictTypeService"/>
+    </bean>
+    <!-- 字典类型 action -->
+
+
+	<!-- 住院处方 action -->
+    <bean class="com.fionapet.business.consumer.InHospitalPrescriptionDemoAction" init-method="start">
+        <property name="inHospitalPrescriptionService" ref="inHospitalPrescriptionService"/>
+    </bean>
+    <!-- 住院处方 action -->
+
+
+	<!-- 顾客影像记录表 action -->
+    <bean class="com.fionapet.business.consumer.GestPaidRecordDemoAction" init-method="start">
+        <property name="gestPaidRecordService" ref="gestPaidRecordService"/>
+    </bean>
+    <!-- 顾客影像记录表 action -->
+
+
+	<!-- 字典类型明细 action -->
+    <bean class="com.fionapet.business.consumer.DictTypeDetailDemoAction" init-method="start">
+        <property name="dictTypeDetailService" ref="dictTypeDetailService"/>
+    </bean>
+    <!-- 字典类型明细 action -->
+
+
+	<!-- 医生处方 action -->
+    <bean class="com.fionapet.business.consumer.MedicPrescriptionDemoAction" init-method="start">
+        <property name="medicPrescriptionService" ref="medicPrescriptionService"/>
+    </bean>
+    <!-- 医生处方 action -->
+
+
+	<!-- 数据字典 字典明细项 action -->
+    <bean class="com.fionapet.business.consumer.UserDictDetailDemoAction" init-method="start">
+        <property name="userDictDetailService" ref="userDictDetailService"/>
+    </bean>
+    <!-- 数据字典 字典明细项 action -->
+
+
+	<!-- 仓库存货清单 action -->
+    <bean class="com.fionapet.business.consumer.WarehouseInventoryDemoAction" init-method="start">
+        <property name="warehouseInventoryService" ref="warehouseInventoryService"/>
+    </bean>
+    <!-- 仓库存货清单 action -->
+
+
+	<!-- 存货清单日志表 action -->
+    <bean class="com.fionapet.business.consumer.InventoryLogDemoAction" init-method="start">
+        <property name="inventoryLogService" ref="inventoryLogService"/>
+    </bean>
+    <!-- 存货清单日志表 action -->
+
+
+	<!-- 种类数量更改原因表 action -->
+    <bean class="com.fionapet.business.consumer.ItemCountChangeReasonDemoAction" init-method="start">
+        <property name="itemCountChangeReasonService" ref="itemCountChangeReasonService"/>
+    </bean>
+    <!-- 种类数量更改原因表 action -->
+
+
+	<!-- 企业信息表 action -->
+    <bean class="com.fionapet.business.consumer.EnterpriseDemoAction" init-method="start">
+        <property name="enterpriseService" ref="enterpriseService"/>
+    </bean>
+    <!-- 企业信息表 action -->
+
+
+	<!-- 用户字典 action -->
+    <bean class="com.fionapet.business.consumer.UserDictDemoAction" init-method="start">
+        <property name="userDictService" ref="userDictService"/>
+    </bean>
+    <!-- 用户字典 action -->
+
+
+	<!-- 退回记录 action -->
+    <bean class="com.fionapet.business.consumer.WarehouseBackrecordDemoAction" init-method="start">
+        <property name="warehouseBackrecordService" ref="warehouseBackrecordService"/>
+    </bean>
+    <!-- 退回记录 action -->
+
+
+	<!-- 仓库直销主表 action -->
+    <bean class="com.fionapet.business.consumer.StoreDirectSellDemoAction" init-method="start">
+        <property name="storeDirectSellService" ref="storeDirectSellService"/>
+    </bean>
+    <!-- 仓库直销主表 action -->
+
+
+	<!-- 养育记录明细表 action -->
+    <bean class="com.fionapet.business.consumer.FosterRecordDetailDemoAction" init-method="start">
+        <property name="fosterRecordDetailService" ref="fosterRecordDetailService"/>
+    </bean>
+    <!-- 养育记录明细表 action -->
+
+
+	<!-- 育苗表 action -->
+    <bean class="com.fionapet.business.consumer.MedicVaccineDemoAction" init-method="start">
+        <property name="medicVaccineService" ref="medicVaccineService"/>
+    </bean>
+    <!-- 育苗表 action -->
+
+
+	<!-- 药方模版 action -->
+    <bean class="com.fionapet.business.consumer.TrprescriptionTemplateDemoAction" init-method="start">
+        <property name="trprescriptionTemplateService" ref="trprescriptionTemplateService"/>
+    </bean>
+    <!-- 药方模版 action -->
+
+
+	<!-- 会员等级管理 action -->
+    <bean class="com.fionapet.business.consumer.GestLevelDemoAction" init-method="start">
+        <property name="gestLevelService" ref="gestLevelService"/>
+    </bean>
+    <!-- 会员等级管理 action -->
+
+
+	<!-- 序列号 action -->
+    <bean class="com.fionapet.business.consumer.RewardPointLogDemoAction" init-method="start">
+        <property name="rewardPointLogService" ref="rewardPointLogService"/>
+    </bean>
+    <!-- 序列号 action -->
+
+
+	<!-- 处方明细 action -->
+    <bean class="com.fionapet.business.consumer.BaseMedicPrescriptionDetailDemoAction" init-method="start">
+        <property name="baseMedicPrescriptionDetailService" ref="baseMedicPrescriptionDetailService"/>
+    </bean>
+    <!-- 处方明细 action -->
+
+
+	<!-- 宠物主人 action -->
+    <bean class="com.fionapet.business.consumer.PersonsCmAppDemoAction" init-method="start">
+        <property name="personsCmAppService" ref="personsCmAppService"/>
+    </bean>
+    <!-- 宠物主人 action -->
+
+
+	<!-- 化验单明细 action -->
+    <bean class="com.fionapet.business.consumer.MedicChemicalExamDetailDemoAction" init-method="start">
+        <property name="medicChemicalExamDetailService" ref="medicChemicalExamDetailService"/>
+    </bean>
+    <!-- 化验单明细 action -->
+
+
+	<!-- 医生影像样例 action -->
+    <bean class="com.fionapet.business.consumer.MedicVedioExamDemoAction" init-method="start">
+        <property name="medicVedioExamService" ref="medicVedioExamService"/>
+    </bean>
+    <!-- 医生影像样例 action -->
+
+
+	<!-- 医生处方明细 action -->
+    <bean class="com.fionapet.business.consumer.MedicPrescriptionDetailDemoAction" init-method="start">
+        <property name="medicPrescriptionDetailService" ref="medicPrescriptionDetailService"/>
+    </bean>
+    <!-- 医生处方明细 action -->
+
+
+	<!-- 业务类型表 action -->
+    <bean class="com.fionapet.business.consumer.BusinesCateDemoAction" init-method="start">
+        <property name="businesCateService" ref="businesCateService"/>
+    </bean>
+    <!-- 业务类型表 action -->
+
+
+	<!-- 医院记录明细表 action -->
+    <bean class="com.fionapet.business.consumer.InHospitalRecordDetailDemoAction" init-method="start">
+        <property name="inHospitalRecordDetailService" ref="inHospitalRecordDetailService"/>
+    </bean>
+    <!-- 医院记录明细表 action -->
+
+
+	<!-- 进库出库日志 action -->
+    <bean class="com.fionapet.business.consumer.FifoLogDemoAction" init-method="start">
+        <property name="fifoLogService" ref="fifoLogService"/>
+    </bean>
+    <!-- 进库出库日志 action -->
+
+
+	<!-- 消息提醒配置表 action -->
+    <bean class="com.fionapet.business.consumer.MicroSmsConfigDemoAction" init-method="start">
+        <property name="microSmsConfigService" ref="microSmsConfigService"/>
+    </bean>
+    <!-- 消息提醒配置表 action -->
+
+
+	<!-- 类型化验实例表 action -->
+    <bean class="com.fionapet.business.consumer.ItemtypeChemicalexamDemoAction" init-method="start">
+        <property name="itemtypeChemicalexamService" ref="itemtypeChemicalexamService"/>
+    </bean>
+    <!-- 类型化验实例表 action -->
+
+
+	<!-- 类型化验实例明细表 action -->
+    <bean class="com.fionapet.business.consumer.ItemSingleDetailDemoAction" init-method="start">
+        <property name="itemSingleDetailService" ref="itemSingleDetailService"/>
+    </bean>
+    <!-- 类型化验实例明细表 action -->
+
+
+	<!-- 商品类型 action -->
+    <bean class="com.fionapet.business.consumer.ItemTypeDemoAction" init-method="start">
+        <property name="itemTypeService" ref="itemTypeService"/>
+    </bean>
+    <!-- 商品类型 action -->
+
+
+	<!-- 医生登记记录明细 action -->
+    <bean class="com.fionapet.business.consumer.MedicRegisterRecordDemoAction" init-method="start">
+        <property name="medicRegisterRecordService" ref="medicRegisterRecordService"/>
+    </bean>
+    <!-- 医生登记记录明细 action -->
+
+
+	<!-- 医院记录表 action -->
+    <bean class="com.fionapet.business.consumer.InHospitalRecordDemoAction" init-method="start">
+        <property name="inHospitalRecordService" ref="inHospitalRecordService"/>
+    </bean>
+    <!-- 医院记录表 action -->
+
+
+	<!-- 养育健康状况表 action -->
+    <bean class="com.fionapet.business.consumer.FosterHealthDemoAction" init-method="start">
+        <property name="fosterHealthService" ref="fosterHealthService"/>
+    </bean>
+    <!-- 养育健康状况表 action -->
+
+
+	<!-- 养育记录主表 action -->
+    <bean class="com.fionapet.business.consumer.FosterRecordDemoAction" init-method="start">
+        <property name="fosterRecordService" ref="fosterRecordService"/>
+    </bean>
+    <!-- 养育记录主表 action -->
+
+
+	<!-- 提前付费表 action -->
+    <bean class="com.fionapet.business.consumer.PrepayMoneyDemoAction" init-method="start">
+        <property name="prepayMoneyService" ref="prepayMoneyService"/>
+    </bean>
+    <!-- 提前付费表 action -->
+
+
+	<!-- 进库记录明细 action -->
+    <bean class="com.fionapet.business.consumer.WarehouseInrecordDetailDemoAction" init-method="start">
+        <property name="warehouseInrecordDetailService" ref="warehouseInrecordDetailService"/>
+    </bean>
+    <!-- 进库记录明细 action -->
+
+
+	<!-- 代理商 action -->
+    <bean class="com.fionapet.business.consumer.DealerDemoAction" init-method="start">
+        <property name="dealerService" ref="dealerService"/>
+    </bean>
+    <!-- 代理商 action -->
+
+
+	<!-- 急诊表 action -->
+    <bean class="com.fionapet.business.consumer.PromptDemoAction" init-method="start">
+        <property name="promptService" ref="promptService"/>
+    </bean>
+    <!-- 急诊表 action -->
+
+
+	<!-- 应用配置 action -->
+    <bean class="com.fionapet.business.consumer.AppConfigDemoAction" init-method="start">
+        <property name="appConfigService" ref="appConfigService"/>
+    </bean>
+    <!-- 应用配置 action -->
+
+
+	<!-- 处方模版明细 action -->
+    <bean class="com.fionapet.business.consumer.PrescriptionTemplateDetailDemoAction" init-method="start">
+        <property name="prescriptionTemplateDetailService" ref="prescriptionTemplateDetailService"/>
+    </bean>
+    <!-- 处方模版明细 action -->
+
+
+	<!-- 业务类型打折率 action -->
+    <bean class="com.fionapet.business.consumer.ItemDiscountRateDemoAction" init-method="start">
+        <property name="itemDiscountRateService" ref="itemDiscountRateService"/>
+    </bean>
+    <!-- 业务类型打折率 action -->
+
+
+	<!-- 收款记录表 action -->
+    <bean class="com.fionapet.business.consumer.InputMoneyRecordDemoAction" init-method="start">
+        <property name="inputMoneyRecordService" ref="inputMoneyRecordService"/>
+    </bean>
+    <!-- 收款记录表 action -->
+
+
+	<!-- 费用类型 action -->
+    <bean class="com.fionapet.business.consumer.ExpensesCateDemoAction" init-method="start">
+        <property name="expensesCateService" ref="expensesCateService"/>
+    </bean>
+    <!-- 费用类型 action -->
+
+
+	<!-- 医生处理记录 action -->
+    <bean class="com.fionapet.business.consumer.MedicMedictreatRecordDemoAction" init-method="start">
+        <property name="medicMedictreatRecordService" ref="medicMedictreatRecordService"/>
+    </bean>
+    <!-- 医生处理记录 action -->
+
+
+	<!-- 种类数量更改原因表 action -->
+    <bean class="com.fionapet.business.consumer.ItemCountDemoAction" init-method="start">
+        <property name="itemCountService" ref="itemCountService"/>
+    </bean>
+    <!-- 种类数量更改原因表 action -->
+
+
+	<!-- 赔偿交换细节 action -->
+    <bean class="com.fionapet.business.consumer.RewardpointExchangeDetailDemoAction" init-method="start">
+        <property name="rewardpointExchangeDetailService" ref="rewardpointExchangeDetailService"/>
+    </bean>
+    <!-- 赔偿交换细节 action -->
+
+
+	<!-- 出库记录明细 action -->
+    <bean class="com.fionapet.business.consumer.WarehouseOutrecordDetailDemoAction" init-method="start">
+        <property name="warehouseOutrecordDetailService" ref="warehouseOutrecordDetailService"/>
+    </bean>
+    <!-- 出库记录明细 action -->
+
+
+	<!-- 序列号 action -->
+    <bean class="com.fionapet.business.consumer.SerialNumberDemoAction" init-method="start">
+        <property name="serialNumberService" ref="serialNumberService"/>
+    </bean>
+    <!-- 序列号 action -->
+
+
+	<!-- 药方模版明细 action -->
+    <bean class="com.fionapet.business.consumer.TrprescriptionTemplateDetailDemoAction" init-method="start">
+        <property name="trprescriptionTemplateDetailService" ref="trprescriptionTemplateDetailService"/>
+    </bean>
+    <!-- 药方模版明细 action -->
+
+
+	<!-- 药方模版类型 action -->
+    <bean class="com.fionapet.business.consumer.TrprescriptionTemplateTypeDemoAction" init-method="start">
+        <property name="trprescriptionTemplateTypeService" ref="trprescriptionTemplateTypeService"/>
+    </bean>
+    <!-- 药方模版类型 action -->
+
+
+	<!-- 审批状态实体 action -->
+    <bean class="com.fionapet.business.consumer.ApproveStatusEntityDemoAction" init-method="start">
+        <property name="approveStatusEntityService" ref="approveStatusEntityService"/>
+    </bean>
+    <!-- 审批状态实体 action -->
+
+
+	<!-- 仓库检查主表 action -->
+    <bean class="com.fionapet.business.consumer.CheckWarehouseDemoAction" init-method="start">
+        <property name="checkWarehouseService" ref="checkWarehouseService"/>
+    </bean>
+    <!-- 仓库检查主表 action -->
+
+
+	<!-- 移库记录明细 action -->
+    <bean class="com.fionapet.business.consumer.WarehouseMoverecordDetailDemoAction" init-method="start">
+        <property name="warehouseMoverecordDetailService" ref="warehouseMoverecordDetailService"/>
+    </bean>
+    <!-- 移库记录明细 action -->
+
+
+	<!-- 宠物种类 action -->
+    <bean class="com.fionapet.business.consumer.PetRaceDemoAction" init-method="start">
+        <property name="petRaceService" ref="petRaceService"/>
+    </bean>
+    <!-- 宠物种类 action -->
+
+
+	<!-- 宠物主人 action -->
+    <bean class="com.fionapet.business.consumer.PersonsAppointmentDemoAction" init-method="start">
+        <property name="personsAppointmentService" ref="personsAppointmentService"/>
+    </bean>
+    <!-- 宠物主人 action -->
+
+
+	<!-- 检查仓库明细表 action -->
+    <bean class="com.fionapet.business.consumer.CheckWarehouseDetailDemoAction" init-method="start">
+        <property name="checkWarehouseDetailService" ref="checkWarehouseDetailService"/>
+    </bean>
+    <!-- 检查仓库明细表 action -->
+
+
+	<!-- 返回商品明细 action -->
+    <bean class="com.fionapet.business.consumer.ReturnCommodityDetailDemoAction" init-method="start">
+        <property name="returnCommodityDetailService" ref="returnCommodityDetailService"/>
+    </bean>
+    <!-- 返回商品明细 action -->
+
+
+	<!-- 宠物品种 action -->
+    <bean class="com.fionapet.business.consumer.PetSmallRaceDemoAction" init-method="start">
+        <property name="petSmallRaceService" ref="petSmallRaceService"/>
+    </bean>
+    <!-- 宠物品种 action -->
+
+
+	<!-- 服务主表 action -->
+    <bean class="com.fionapet.business.consumer.ServiceDemoAction" init-method="start">
+        <property name="serviceService" ref="serviceService"/>
+    </bean>
+    <!-- 服务主表 action -->
+
+
+	<!-- 资金账户明细表 action -->
+    <bean class="com.fionapet.business.consumer.FinanceSettleAccountsDetailDemoAction" init-method="start">
+        <property name="financeSettleAccountsDetailService" ref="financeSettleAccountsDetailService"/>
+    </bean>
+    <!-- 资金账户明细表 action -->
+
+
+	<!-- 电话信息表 action -->
+    <bean class="com.fionapet.business.consumer.PhoneMessageDemoAction" init-method="start">
+        <property name="phoneMessageService" ref="phoneMessageService"/>
+    </bean>
+    <!-- 电话信息表 action -->
+
+
+	<!-- 移库记录 action -->
+    <bean class="com.fionapet.business.consumer.WarehouseMoverecordDemoAction" init-method="start">
+        <property name="warehouseMoverecordService" ref="warehouseMoverecordService"/>
+    </bean>
+    <!-- 移库记录 action -->
+
+
+	<!-- 医生化验实例类型细节表 action -->
+    <bean class="com.fionapet.business.consumer.MedicChemicalExamtypeDetailDemoAction" init-method="start">
+        <property name="medicChemicalExamtypeDetailService" ref="medicChemicalExamtypeDetailService"/>
+    </bean>
+    <!-- 医生化验实例类型细节表 action -->
+
+
+	<!-- 化验单明细 action -->
+    <bean class="com.fionapet.business.consumer.MedicChemicalexamDemoAction" init-method="start">
+        <property name="medicChemicalexamService" ref="medicChemicalexamService"/>
+    </bean>
+    <!-- 化验单明细 action -->
+
+
+	<!-- 商品服务种类 action -->
+    <bean class="com.fionapet.business.consumer.ItemCateDemoAction" init-method="start">
+        <property name="itemCateService" ref="itemCateService"/>
+    </bean>
+    <!-- 商品服务种类 action -->
+
+
+	<!-- 处方模版类型 action -->
+    <bean class="com.fionapet.business.consumer.PrescriptionTemplateTypeDemoAction" init-method="start">
+        <property name="prescriptionTemplateTypeService" ref="prescriptionTemplateTypeService"/>
+    </bean>
+    <!-- 处方模版类型 action -->
+
+
+	<!-- 医生供应量表 action -->
+    <bean class="com.fionapet.business.consumer.MedicSuppliesDemoAction" init-method="start">
+        <property name="medicSuppliesService" ref="medicSuppliesService"/>
+    </bean>
+    <!-- 医生供应量表 action -->
+
+
+	<!-- 供应量表 action -->
+    <bean class="com.fionapet.business.consumer.ItemtypeSuppliesDemoAction" init-method="start">
+        <property name="itemtypeSuppliesService" ref="itemtypeSuppliesService"/>
+    </bean>
+    <!-- 供应量表 action -->
+
+
+	<!-- 退回记录明细 action -->
+    <bean class="com.fionapet.business.consumer.WarehouseBackrecordDetailDemoAction" init-method="start">
+        <property name="warehouseBackrecordDetailService" ref="warehouseBackrecordDetailService"/>
+    </bean>
+    <!-- 退回记录明细 action -->
+
+
+	<!-- 返回商品主表 action -->
+    <bean class="com.fionapet.business.consumer.ReturnCommodityDemoAction" init-method="start">
+        <property name="returnCommodityService" ref="returnCommodityService"/>
+    </bean>
+    <!-- 返回商品主表 action -->
+
+
+	<!-- 宠物主人信息 action -->
+    <bean class="com.fionapet.business.consumer.PersonsDemoAction" init-method="start">
+        <property name="personsService" ref="personsService"/>
+    </bean>
+    <!-- 宠物主人信息 action -->
+
+
+	<!-- 进库记录 action -->
+    <bean class="com.fionapet.business.consumer.WarehouseInrecordDemoAction" init-method="start">
+        <property name="warehouseInrecordService" ref="warehouseInrecordService"/>
+    </bean>
+    <!-- 进库记录 action -->
+
+
+	<!-- 宠物 action -->
+    <bean class="com.fionapet.business.consumer.PetDemoAction" init-method="start">
+        <property name="petService" ref="petService"/>
+    </bean>
+    <!-- 宠物 action -->
+
+
+	<!-- 服务明细 action -->
+    <bean class="com.fionapet.business.consumer.ServiceDetailDemoAction" init-method="start">
+        <property name="serviceDetailService" ref="serviceDetailService"/>
+    </bean>
+    <!-- 服务明细 action -->
+
+
+	<!-- 资金账号表 action -->
+    <bean class="com.fionapet.business.consumer.FinanceSettleAccountsDemoAction" init-method="start">
+        <property name="financeSettleAccountsService" ref="financeSettleAccountsService"/>
+    </bean>
+    <!-- 资金账号表 action -->
+
+
+	<!-- 检查处理单据 action -->
+    <bean class="com.fionapet.business.consumer.CheckProcessSheetDemoAction" init-method="start">
+        <property name="checkProcessSheetService" ref="checkProcessSheetService"/>
+    </bean>
+    <!-- 检查处理单据 action -->
+
+
+	<!-- 出库记录 action -->
+    <bean class="com.fionapet.business.consumer.WarehouseOutrecordDemoAction" init-method="start">
+        <property name="warehouseOutrecordService" ref="warehouseOutrecordService"/>
+    </bean>
+    <!-- 出库记录 action -->
+
+
+	<!-- 医生化验实例类型细节表 action -->
+    <bean class="com.fionapet.business.consumer.MedicChemicalExamtypeDemoAction" init-method="start">
+        <property name="medicChemicalExamtypeService" ref="medicChemicalExamtypeService"/>
+    </bean>
+    <!-- 医生化验实例类型细节表 action -->
+
+
+	<!-- 处方模版 action -->
+    <bean class="com.fionapet.business.consumer.PrescriptionTemplateDemoAction" init-method="start">
+        <property name="prescriptionTemplateService" ref="prescriptionTemplateService"/>
+    </bean>
+    <!-- 处方模版 action -->
+
+
+	<!-- 处方 action -->
+    <bean class="com.fionapet.business.consumer.BaseMedicPrescriptionDemoAction" init-method="start">
+        <property name="baseMedicPrescriptionService" ref="baseMedicPrescriptionService"/>
+    </bean>
+    <!-- 处方 action -->
+
+
+	<!-- 赔偿交换 action -->
+    <bean class="com.fionapet.business.consumer.RewardpointExchangeDemoAction" init-method="start">
+        <property name="rewardpointExchangeService" ref="rewardpointExchangeService"/>
+    </bean>
+    <!-- 赔偿交换 action -->
+
+
+	<!-- 图片信息 action -->
+    <bean class="com.fionapet.business.consumer.ImagesDemoAction" init-method="start">
+        <property name="imagesService" ref="imagesService"/>
+    </bean>
+    <!-- 图片信息 action -->
+
+
+	<!-- VIP信息 action -->
+    <bean class="com.fionapet.business.consumer.VipInputTemDemoAction" init-method="start">
+        <property name="vipInputTemService" ref="vipInputTemService"/>
+    </bean>
+    <!-- VIP信息 action -->
+
+
+	<!-- 住院处方明细 action -->
+    <bean class="com.fionapet.business.consumer.InHospitalPrescriptionDetailDemoAction" init-method="start">
+        <property name="inHospitalPrescriptionDetailService" ref="inHospitalPrescriptionDetailService"/>
+    </bean>
+    <!-- 住院处方明细 action -->
+
+
+	<!-- 会员 action -->
+    <bean class="com.fionapet.business.consumer.GestDemoAction" init-method="start">
+        <property name="gestService" ref="gestService"/>
+    </bean>
+    <!-- 会员 action -->
+
+
+	<!-- 医生器具表 action -->
+    <bean class="com.fionapet.business.consumer.MedicApplianceDemoAction" init-method="start">
+        <property name="medicApplianceService" ref="medicApplianceService"/>
+    </bean>
+    <!-- 医生器具表 action -->
+
+
+	<!-- 付出费用表 action -->
+    <bean class="com.fionapet.business.consumer.ExpensesExpendDemoAction" init-method="start">
+        <property name="expensesExpendService" ref="expensesExpendService"/>
+    </bean>
+    <!-- 付出费用表 action -->
+
+
+	<!-- 化验样例类型 action -->
+    <bean class="com.fionapet.business.consumer.ChemicalExamCateDemoAction" init-method="start">
+        <property name="chemicalExamCateService" ref="chemicalExamCateService"/>
+    </bean>
+    <!-- 化验样例类型 action -->
+
+
+	<!-- 仓库直销明细 action -->
+    <bean class="com.fionapet.business.consumer.StoreDirectSellDetailDemoAction" init-method="start">
+        <property name="storeDirectSellDetailService" ref="storeDirectSellDetailService"/>
+    </bean>
+    <!-- 仓库直销明细 action -->
+
+
+	<!-- 字典类型 action -->
+    <bean class="com.fionapet.business.consumer.DictTypeDemoAction" init-method="start">
+        <property name="dictTypeService" ref="dictTypeService"/>
+    </bean>
+    <!-- 字典类型 action -->
+
+
+	<!-- 住院处方 action -->
+    <bean class="com.fionapet.business.consumer.InHospitalPrescriptionDemoAction" init-method="start">
+        <property name="inHospitalPrescriptionService" ref="inHospitalPrescriptionService"/>
+    </bean>
+    <!-- 住院处方 action -->
+
+
+	<!-- 顾客影像记录表 action -->
+    <bean class="com.fionapet.business.consumer.GestPaidRecordDemoAction" init-method="start">
+        <property name="gestPaidRecordService" ref="gestPaidRecordService"/>
+    </bean>
+    <!-- 顾客影像记录表 action -->
+
+
+	<!-- 字典类型明细 action -->
+    <bean class="com.fionapet.business.consumer.DictTypeDetailDemoAction" init-method="start">
+        <property name="dictTypeDetailService" ref="dictTypeDetailService"/>
+    </bean>
+    <!-- 字典类型明细 action -->
+
+
+	<!-- 医生处方 action -->
+    <bean class="com.fionapet.business.consumer.MedicPrescriptionDemoAction" init-method="start">
+        <property name="medicPrescriptionService" ref="medicPrescriptionService"/>
+    </bean>
+    <!-- 医生处方 action -->
+
+
+	<!-- 数据字典 字典明细项 action -->
+    <bean class="com.fionapet.business.consumer.UserDictDetailDemoAction" init-method="start">
+        <property name="userDictDetailService" ref="userDictDetailService"/>
+    </bean>
+    <!-- 数据字典 字典明细项 action -->
+
+
+	<!-- 仓库存货清单 action -->
+    <bean class="com.fionapet.business.consumer.WarehouseInventoryDemoAction" init-method="start">
+        <property name="warehouseInventoryService" ref="warehouseInventoryService"/>
+    </bean>
+    <!-- 仓库存货清单 action -->
+
+
+	<!-- 存货清单日志表 action -->
+    <bean class="com.fionapet.business.consumer.InventoryLogDemoAction" init-method="start">
+        <property name="inventoryLogService" ref="inventoryLogService"/>
+    </bean>
+    <!-- 存货清单日志表 action -->
+
+
+	<!-- 种类数量更改原因表 action -->
+    <bean class="com.fionapet.business.consumer.ItemCountChangeReasonDemoAction" init-method="start">
+        <property name="itemCountChangeReasonService" ref="itemCountChangeReasonService"/>
+    </bean>
+    <!-- 种类数量更改原因表 action -->
+
+
+	<!-- 企业信息表 action -->
+    <bean class="com.fionapet.business.consumer.EnterpriseDemoAction" init-method="start">
+        <property name="enterpriseService" ref="enterpriseService"/>
+    </bean>
+    <!-- 企业信息表 action -->
+
+
+	<!-- 用户字典 action -->
+    <bean class="com.fionapet.business.consumer.UserDictDemoAction" init-method="start">
+        <property name="userDictService" ref="userDictService"/>
+    </bean>
+    <!-- 用户字典 action -->
+
+
+	<!-- 退回记录 action -->
+    <bean class="com.fionapet.business.consumer.WarehouseBackrecordDemoAction" init-method="start">
+        <property name="warehouseBackrecordService" ref="warehouseBackrecordService"/>
+    </bean>
+    <!-- 退回记录 action -->
+
+
+	<!-- 仓库直销主表 action -->
+    <bean class="com.fionapet.business.consumer.StoreDirectSellDemoAction" init-method="start">
+        <property name="storeDirectSellService" ref="storeDirectSellService"/>
+    </bean>
+    <!-- 仓库直销主表 action -->
+
+
+	<!-- 养育记录明细表 action -->
+    <bean class="com.fionapet.business.consumer.FosterRecordDetailDemoAction" init-method="start">
+        <property name="fosterRecordDetailService" ref="fosterRecordDetailService"/>
+    </bean>
+    <!-- 养育记录明细表 action -->
+
+
+	<!-- 育苗表 action -->
+    <bean class="com.fionapet.business.consumer.MedicVaccineDemoAction" init-method="start">
+        <property name="medicVaccineService" ref="medicVaccineService"/>
+    </bean>
+    <!-- 育苗表 action -->
+
+
+	<!-- 药方模版 action -->
+    <bean class="com.fionapet.business.consumer.TrprescriptionTemplateDemoAction" init-method="start">
+        <property name="trprescriptionTemplateService" ref="trprescriptionTemplateService"/>
+    </bean>
+    <!-- 药方模版 action -->
+
+
+	<!-- 会员等级管理 action -->
+    <bean class="com.fionapet.business.consumer.GestLevelDemoAction" init-method="start">
+        <property name="gestLevelService" ref="gestLevelService"/>
+    </bean>
+    <!-- 会员等级管理 action -->
+
+
+	<!-- 序列号 action -->
+    <bean class="com.fionapet.business.consumer.RewardPointLogDemoAction" init-method="start">
+        <property name="rewardPointLogService" ref="rewardPointLogService"/>
+    </bean>
+    <!-- 序列号 action -->
+
+
+	<!-- 处方明细 action -->
+    <bean class="com.fionapet.business.consumer.BaseMedicPrescriptionDetailDemoAction" init-method="start">
+        <property name="baseMedicPrescriptionDetailService" ref="baseMedicPrescriptionDetailService"/>
+    </bean>
+    <!-- 处方明细 action -->
+
+
+	<!-- 宠物主人 action -->
+    <bean class="com.fionapet.business.consumer.PersonsCmAppDemoAction" init-method="start">
+        <property name="personsCmAppService" ref="personsCmAppService"/>
+    </bean>
+    <!-- 宠物主人 action -->
+
+
+	<!-- 化验单明细 action -->
+    <bean class="com.fionapet.business.consumer.MedicChemicalExamDetailDemoAction" init-method="start">
+        <property name="medicChemicalExamDetailService" ref="medicChemicalExamDetailService"/>
+    </bean>
+    <!-- 化验单明细 action -->
+
+
+	<!-- 医生影像样例 action -->
+    <bean class="com.fionapet.business.consumer.MedicVedioExamDemoAction" init-method="start">
+        <property name="medicVedioExamService" ref="medicVedioExamService"/>
+    </bean>
+    <!-- 医生影像样例 action -->
+
+
+	<!-- 医生处方明细 action -->
+    <bean class="com.fionapet.business.consumer.MedicPrescriptionDetailDemoAction" init-method="start">
+        <property name="medicPrescriptionDetailService" ref="medicPrescriptionDetailService"/>
+    </bean>
+    <!-- 医生处方明细 action -->
+
+
+	<!-- 业务类型表 action -->
+    <bean class="com.fionapet.business.consumer.BusinesCateDemoAction" init-method="start">
+        <property name="businesCateService" ref="businesCateService"/>
+    </bean>
+    <!-- 业务类型表 action -->
+
+
+	<!-- 医院记录明细表 action -->
+    <bean class="com.fionapet.business.consumer.InHospitalRecordDetailDemoAction" init-method="start">
+        <property name="inHospitalRecordDetailService" ref="inHospitalRecordDetailService"/>
+    </bean>
+    <!-- 医院记录明细表 action -->
+
+
+	<!-- 进库出库日志 action -->
+    <bean class="com.fionapet.business.consumer.FifoLogDemoAction" init-method="start">
+        <property name="fifoLogService" ref="fifoLogService"/>
+    </bean>
+    <!-- 进库出库日志 action -->
+
+
+	<!-- 消息提醒配置表 action -->
+    <bean class="com.fionapet.business.consumer.MicroSmsConfigDemoAction" init-method="start">
+        <property name="microSmsConfigService" ref="microSmsConfigService"/>
+    </bean>
+    <!-- 消息提醒配置表 action -->
+
+
+	<!-- 类型化验实例表 action -->
+    <bean class="com.fionapet.business.consumer.ItemtypeChemicalexamDemoAction" init-method="start">
+        <property name="itemtypeChemicalexamService" ref="itemtypeChemicalexamService"/>
+    </bean>
+    <!-- 类型化验实例表 action -->
+
+
+	<!-- 类型化验实例明细表 action -->
+    <bean class="com.fionapet.business.consumer.ItemSingleDetailDemoAction" init-method="start">
+        <property name="itemSingleDetailService" ref="itemSingleDetailService"/>
+    </bean>
+    <!-- 类型化验实例明细表 action -->
+
+
+	<!-- 商品类型 action -->
+    <bean class="com.fionapet.business.consumer.ItemTypeDemoAction" init-method="start">
+        <property name="itemTypeService" ref="itemTypeService"/>
+    </bean>
+    <!-- 商品类型 action -->
+
+
+	<!-- 医生登记记录明细 action -->
+    <bean class="com.fionapet.business.consumer.MedicRegisterRecordDemoAction" init-method="start">
+        <property name="medicRegisterRecordService" ref="medicRegisterRecordService"/>
+    </bean>
+    <!-- 医生登记记录明细 action -->
+
+
+	<!-- 医院记录表 action -->
+    <bean class="com.fionapet.business.consumer.InHospitalRecordDemoAction" init-method="start">
+        <property name="inHospitalRecordService" ref="inHospitalRecordService"/>
+    </bean>
+    <!-- 医院记录表 action -->
+
+
+	<!-- 养育健康状况表 action -->
+    <bean class="com.fionapet.business.consumer.FosterHealthDemoAction" init-method="start">
+        <property name="fosterHealthService" ref="fosterHealthService"/>
+    </bean>
+    <!-- 养育健康状况表 action -->
+
+
+	<!-- 养育记录主表 action -->
+    <bean class="com.fionapet.business.consumer.FosterRecordDemoAction" init-method="start">
+        <property name="fosterRecordService" ref="fosterRecordService"/>
+    </bean>
+    <!-- 养育记录主表 action -->
+
+
+	<!-- 提前付费表 action -->
+    <bean class="com.fionapet.business.consumer.PrepayMoneyDemoAction" init-method="start">
+        <property name="prepayMoneyService" ref="prepayMoneyService"/>
+    </bean>
+    <!-- 提前付费表 action -->
+
+
+	<!-- 进库记录明细 action -->
+    <bean class="com.fionapet.business.consumer.WarehouseInrecordDetailDemoAction" init-method="start">
+        <property name="warehouseInrecordDetailService" ref="warehouseInrecordDetailService"/>
+    </bean>
+    <!-- 进库记录明细 action -->
+
+
+	<!-- 代理商 action -->
+    <bean class="com.fionapet.business.consumer.DealerDemoAction" init-method="start">
+        <property name="dealerService" ref="dealerService"/>
+    </bean>
+    <!-- 代理商 action -->
+
+
+	<!-- 急诊表 action -->
+    <bean class="com.fionapet.business.consumer.PromptDemoAction" init-method="start">
+        <property name="promptService" ref="promptService"/>
+    </bean>
+    <!-- 急诊表 action -->
+
+
+	<!-- 应用配置 action -->
+    <bean class="com.fionapet.business.consumer.AppConfigDemoAction" init-method="start">
+        <property name="appConfigService" ref="appConfigService"/>
+    </bean>
+    <!-- 应用配置 action -->
+
+
+	<!-- 处方模版明细 action -->
+    <bean class="com.fionapet.business.consumer.PrescriptionTemplateDetailDemoAction" init-method="start">
+        <property name="prescriptionTemplateDetailService" ref="prescriptionTemplateDetailService"/>
+    </bean>
+    <!-- 处方模版明细 action -->
+
+
+	<!-- 业务类型打折率 action -->
+    <bean class="com.fionapet.business.consumer.ItemDiscountRateDemoAction" init-method="start">
+        <property name="itemDiscountRateService" ref="itemDiscountRateService"/>
+    </bean>
+    <!-- 业务类型打折率 action -->
+
+
+	<!-- 收款记录表 action -->
+    <bean class="com.fionapet.business.consumer.InputMoneyRecordDemoAction" init-method="start">
+        <property name="inputMoneyRecordService" ref="inputMoneyRecordService"/>
+    </bean>
+    <!-- 收款记录表 action -->
+
+
+	<!-- 费用类型 action -->
+    <bean class="com.fionapet.business.consumer.ExpensesCateDemoAction" init-method="start">
+        <property name="expensesCateService" ref="expensesCateService"/>
+    </bean>
+    <!-- 费用类型 action -->
+
+
+	<!-- 医生处理记录 action -->
+    <bean class="com.fionapet.business.consumer.MedicMedictreatRecordDemoAction" init-method="start">
+        <property name="medicMedictreatRecordService" ref="medicMedictreatRecordService"/>
+    </bean>
+    <!-- 医生处理记录 action -->
+
+
+	<!-- 种类数量更改原因表 action -->
+    <bean class="com.fionapet.business.consumer.ItemCountDemoAction" init-method="start">
+        <property name="itemCountService" ref="itemCountService"/>
+    </bean>
+    <!-- 种类数量更改原因表 action -->
+
+
+	<!-- 赔偿交换细节 action -->
+    <bean class="com.fionapet.business.consumer.RewardpointExchangeDetailDemoAction" init-method="start">
+        <property name="rewardpointExchangeDetailService" ref="rewardpointExchangeDetailService"/>
+    </bean>
+    <!-- 赔偿交换细节 action -->
+
+
+	<!-- 出库记录明细 action -->
+    <bean class="com.fionapet.business.consumer.WarehouseOutrecordDetailDemoAction" init-method="start">
+        <property name="warehouseOutrecordDetailService" ref="warehouseOutrecordDetailService"/>
+    </bean>
+    <!-- 出库记录明细 action -->
+
+
+	<!-- 序列号 action -->
+    <bean class="com.fionapet.business.consumer.SerialNumberDemoAction" init-method="start">
+        <property name="serialNumberService" ref="serialNumberService"/>
+    </bean>
+    <!-- 序列号 action -->
+
+
+	<!-- 药方模版明细 action -->
+    <bean class="com.fionapet.business.consumer.TrprescriptionTemplateDetailDemoAction" init-method="start">
+        <property name="trprescriptionTemplateDetailService" ref="trprescriptionTemplateDetailService"/>
+    </bean>
+    <!-- 药方模版明细 action -->
+
+
+	<!-- 药方模版类型 action -->
+    <bean class="com.fionapet.business.consumer.TrprescriptionTemplateTypeDemoAction" init-method="start">
+        <property name="trprescriptionTemplateTypeService" ref="trprescriptionTemplateTypeService"/>
+    </bean>
+    <!-- 药方模版类型 action -->
+
+
+	<!-- 审批状态实体 action -->
+    <bean class="com.fionapet.business.consumer.ApproveStatusEntityDemoAction" init-method="start">
+        <property name="approveStatusEntityService" ref="approveStatusEntityService"/>
+    </bean>
+    <!-- 审批状态实体 action -->
+
+
+	<!-- 仓库检查主表 action -->
+    <bean class="com.fionapet.business.consumer.CheckWarehouseDemoAction" init-method="start">
+        <property name="checkWarehouseService" ref="checkWarehouseService"/>
+    </bean>
+    <!-- 仓库检查主表 action -->
+
+
+	<!-- 移库记录明细 action -->
+    <bean class="com.fionapet.business.consumer.WarehouseMoverecordDetailDemoAction" init-method="start">
+        <property name="warehouseMoverecordDetailService" ref="warehouseMoverecordDetailService"/>
+    </bean>
+    <!-- 移库记录明细 action -->
+
+
+	<!-- 宠物种类 action -->
+    <bean class="com.fionapet.business.consumer.PetRaceDemoAction" init-method="start">
+        <property name="petRaceService" ref="petRaceService"/>
+    </bean>
+    <!-- 宠物种类 action -->
+
+
+	<!-- 宠物主人 action -->
+    <bean class="com.fionapet.business.consumer.PersonsAppointmentDemoAction" init-method="start">
+        <property name="personsAppointmentService" ref="personsAppointmentService"/>
+    </bean>
+    <!-- 宠物主人 action -->
+
+
+	<!-- 检查仓库明细表 action -->
+    <bean class="com.fionapet.business.consumer.CheckWarehouseDetailDemoAction" init-method="start">
+        <property name="checkWarehouseDetailService" ref="checkWarehouseDetailService"/>
+    </bean>
+    <!-- 检查仓库明细表 action -->
+
+
+	<!-- 返回商品明细 action -->
+    <bean class="com.fionapet.business.consumer.ReturnCommodityDetailDemoAction" init-method="start">
+        <property name="returnCommodityDetailService" ref="returnCommodityDetailService"/>
+    </bean>
+    <!-- 返回商品明细 action -->
+
+
+	<!-- 宠物品种 action -->
+    <bean class="com.fionapet.business.consumer.PetSmallRaceDemoAction" init-method="start">
+        <property name="petSmallRaceService" ref="petSmallRaceService"/>
+    </bean>
+    <!-- 宠物品种 action -->
+
+
+	<!-- 服务主表 action -->
+    <bean class="com.fionapet.business.consumer.ServiceDemoAction" init-method="start">
+        <property name="serviceService" ref="serviceService"/>
+    </bean>
+    <!-- 服务主表 action -->
+
+
+	<!-- 资金账户明细表 action -->
+    <bean class="com.fionapet.business.consumer.FinanceSettleAccountsDetailDemoAction" init-method="start">
+        <property name="financeSettleAccountsDetailService" ref="financeSettleAccountsDetailService"/>
+    </bean>
+    <!-- 资金账户明细表 action -->
+
+
+	<!-- 电话信息表 action -->
+    <bean class="com.fionapet.business.consumer.PhoneMessageDemoAction" init-method="start">
+        <property name="phoneMessageService" ref="phoneMessageService"/>
+    </bean>
+    <!-- 电话信息表 action -->
+
+
+	<!-- 移库记录 action -->
+    <bean class="com.fionapet.business.consumer.WarehouseMoverecordDemoAction" init-method="start">
+        <property name="warehouseMoverecordService" ref="warehouseMoverecordService"/>
+    </bean>
+    <!-- 移库记录 action -->
+
+
+	<!-- 医生化验实例类型细节表 action -->
+    <bean class="com.fionapet.business.consumer.MedicChemicalExamtypeDetailDemoAction" init-method="start">
+        <property name="medicChemicalExamtypeDetailService" ref="medicChemicalExamtypeDetailService"/>
+    </bean>
+    <!-- 医生化验实例类型细节表 action -->
+
+
+	<!-- 化验单明细 action -->
+    <bean class="com.fionapet.business.consumer.MedicChemicalexamDemoAction" init-method="start">
+        <property name="medicChemicalexamService" ref="medicChemicalexamService"/>
+    </bean>
+    <!-- 化验单明细 action -->
+
+
+	<!-- 商品服务种类 action -->
+    <bean class="com.fionapet.business.consumer.ItemCateDemoAction" init-method="start">
+        <property name="itemCateService" ref="itemCateService"/>
+    </bean>
+    <!-- 商品服务种类 action -->
+
+
+	<!-- 处方模版类型 action -->
+    <bean class="com.fionapet.business.consumer.PrescriptionTemplateTypeDemoAction" init-method="start">
+        <property name="prescriptionTemplateTypeService" ref="prescriptionTemplateTypeService"/>
+    </bean>
+    <!-- 处方模版类型 action -->
+
+
+	<!-- 医生供应量表 action -->
+    <bean class="com.fionapet.business.consumer.MedicSuppliesDemoAction" init-method="start">
+        <property name="medicSuppliesService" ref="medicSuppliesService"/>
+    </bean>
+    <!-- 医生供应量表 action -->
+
+
+	<!-- 供应量表 action -->
+    <bean class="com.fionapet.business.consumer.ItemtypeSuppliesDemoAction" init-method="start">
+        <property name="itemtypeSuppliesService" ref="itemtypeSuppliesService"/>
+    </bean>
+    <!-- 供应量表 action -->
+
+
+	<!-- 退回记录明细 action -->
+    <bean class="com.fionapet.business.consumer.WarehouseBackrecordDetailDemoAction" init-method="start">
+        <property name="warehouseBackrecordDetailService" ref="warehouseBackrecordDetailService"/>
+    </bean>
+    <!-- 退回记录明细 action -->
+
+
+	<!-- 返回商品主表 action -->
+    <bean class="com.fionapet.business.consumer.ReturnCommodityDemoAction" init-method="start">
+        <property name="returnCommodityService" ref="returnCommodityService"/>
+    </bean>
+    <!-- 返回商品主表 action -->
+
+
+	<!-- 宠物主人信息 action -->
+    <bean class="com.fionapet.business.consumer.PersonsDemoAction" init-method="start">
+        <property name="personsService" ref="personsService"/>
+    </bean>
+    <!-- 宠物主人信息 action -->
+
+
+	<!-- 进库记录 action -->
+    <bean class="com.fionapet.business.consumer.WarehouseInrecordDemoAction" init-method="start">
+        <property name="warehouseInrecordService" ref="warehouseInrecordService"/>
+    </bean>
+    <!-- 进库记录 action -->
+
+
+	<!-- 宠物 action -->
+    <bean class="com.fionapet.business.consumer.PetDemoAction" init-method="start">
+        <property name="petService" ref="petService"/>
+    </bean>
+    <!-- 宠物 action -->
+
+
+	<!-- 服务明细 action -->
+    <bean class="com.fionapet.business.consumer.ServiceDetailDemoAction" init-method="start">
+        <property name="serviceDetailService" ref="serviceDetailService"/>
+    </bean>
+    <!-- 服务明细 action -->
+
+
+	<!-- 资金账号表 action -->
+    <bean class="com.fionapet.business.consumer.FinanceSettleAccountsDemoAction" init-method="start">
+        <property name="financeSettleAccountsService" ref="financeSettleAccountsService"/>
+    </bean>
+    <!-- 资金账号表 action -->
+
+
+	<!-- 检查处理单据 action -->
+    <bean class="com.fionapet.business.consumer.CheckProcessSheetDemoAction" init-method="start">
+        <property name="checkProcessSheetService" ref="checkProcessSheetService"/>
+    </bean>
+    <!-- 检查处理单据 action -->
+
+
+	<!-- 出库记录 action -->
+    <bean class="com.fionapet.business.consumer.WarehouseOutrecordDemoAction" init-method="start">
+        <property name="warehouseOutrecordService" ref="warehouseOutrecordService"/>
+    </bean>
+    <!-- 出库记录 action -->
+
+
+	<!-- 医生化验实例类型细节表 action -->
+    <bean class="com.fionapet.business.consumer.MedicChemicalExamtypeDemoAction" init-method="start">
+        <property name="medicChemicalExamtypeService" ref="medicChemicalExamtypeService"/>
+    </bean>
+    <!-- 医生化验实例类型细节表 action -->
+
+
+	<!-- 处方模版 action -->
+    <bean class="com.fionapet.business.consumer.PrescriptionTemplateDemoAction" init-method="start">
+        <property name="prescriptionTemplateService" ref="prescriptionTemplateService"/>
+    </bean>
+    <!-- 处方模版 action -->
+
+
+	<!-- 处方 action -->
+    <bean class="com.fionapet.business.consumer.BaseMedicPrescriptionDemoAction" init-method="start">
+        <property name="baseMedicPrescriptionService" ref="baseMedicPrescriptionService"/>
+    </bean>
+    <!-- 处方 action -->
+
+
+	<!-- 赔偿交换 action -->
+    <bean class="com.fionapet.business.consumer.RewardpointExchangeDemoAction" init-method="start">
+        <property name="rewardpointExchangeService" ref="rewardpointExchangeService"/>
+    </bean>
+    <!-- 赔偿交换 action -->
+
+
+	<!-- 图片信息 action -->
+    <bean class="com.fionapet.business.consumer.ImagesDemoAction" init-method="start">
+        <property name="imagesService" ref="imagesService"/>
+    </bean>
+    <!-- 图片信息 action -->
+
+
+	<!-- VIP信息 action -->
+    <bean class="com.fionapet.business.consumer.VipInputTemDemoAction" init-method="start">
+        <property name="vipInputTemService" ref="vipInputTemService"/>
+    </bean>
+    <!-- VIP信息 action -->
+
+
+	<!-- 住院处方明细 action -->
+    <bean class="com.fionapet.business.consumer.InHospitalPrescriptionDetailDemoAction" init-method="start">
+        <property name="inHospitalPrescriptionDetailService" ref="inHospitalPrescriptionDetailService"/>
+    </bean>
+    <!-- 住院处方明细 action -->
+
+
+	<!-- 会员 action -->
+    <bean class="com.fionapet.business.consumer.GestDemoAction" init-method="start">
+        <property name="gestService" ref="gestService"/>
+    </bean>
+    <!-- 会员 action -->
+
+
+	<!-- 医生器具表 action -->
+    <bean class="com.fionapet.business.consumer.MedicApplianceDemoAction" init-method="start">
+        <property name="medicApplianceService" ref="medicApplianceService"/>
+    </bean>
+    <!-- 医生器具表 action -->
+
+
+	<!-- 付出费用表 action -->
+    <bean class="com.fionapet.business.consumer.ExpensesExpendDemoAction" init-method="start">
+        <property name="expensesExpendService" ref="expensesExpendService"/>
+    </bean>
+    <!-- 付出费用表 action -->
+
+
+	<!-- 化验样例类型 action -->
+    <bean class="com.fionapet.business.consumer.ChemicalExamCateDemoAction" init-method="start">
+        <property name="chemicalExamCateService" ref="chemicalExamCateService"/>
+    </bean>
+    <!-- 化验样例类型 action -->
+
+
+	<!-- 仓库直销明细 action -->
+    <bean class="com.fionapet.business.consumer.StoreDirectSellDetailDemoAction" init-method="start">
+        <property name="storeDirectSellDetailService" ref="storeDirectSellDetailService"/>
+    </bean>
+    <!-- 仓库直销明细 action -->
+
+
+	<!-- 字典类型 action -->
+    <bean class="com.fionapet.business.consumer.DictTypeDemoAction" init-method="start">
+        <property name="dictTypeService" ref="dictTypeService"/>
+    </bean>
+    <!-- 字典类型 action -->
+
+
+	<!-- 住院处方 action -->
+    <bean class="com.fionapet.business.consumer.InHospitalPrescriptionDemoAction" init-method="start">
+        <property name="inHospitalPrescriptionService" ref="inHospitalPrescriptionService"/>
+    </bean>
+    <!-- 住院处方 action -->
+
+
+	<!-- 顾客影像记录表 action -->
+    <bean class="com.fionapet.business.consumer.GestPaidRecordDemoAction" init-method="start">
+        <property name="gestPaidRecordService" ref="gestPaidRecordService"/>
+    </bean>
+    <!-- 顾客影像记录表 action -->
+
+
+	<!-- 字典类型明细 action -->
+    <bean class="com.fionapet.business.consumer.DictTypeDetailDemoAction" init-method="start">
+        <property name="dictTypeDetailService" ref="dictTypeDetailService"/>
+    </bean>
+    <!-- 字典类型明细 action -->
+
+
+	<!-- 医生处方 action -->
+    <bean class="com.fionapet.business.consumer.MedicPrescriptionDemoAction" init-method="start">
+        <property name="medicPrescriptionService" ref="medicPrescriptionService"/>
+    </bean>
+    <!-- 医生处方 action -->
+
+
+	<!-- 数据字典 字典明细项 action -->
+    <bean class="com.fionapet.business.consumer.UserDictDetailDemoAction" init-method="start">
+        <property name="userDictDetailService" ref="userDictDetailService"/>
+    </bean>
+    <!-- 数据字典 字典明细项 action -->
+
+
+	<!-- 仓库存货清单 action -->
+    <bean class="com.fionapet.business.consumer.WarehouseInventoryDemoAction" init-method="start">
+        <property name="warehouseInventoryService" ref="warehouseInventoryService"/>
+    </bean>
+    <!-- 仓库存货清单 action -->
+
+
+	<!-- 存货清单日志表 action -->
+    <bean class="com.fionapet.business.consumer.InventoryLogDemoAction" init-method="start">
+        <property name="inventoryLogService" ref="inventoryLogService"/>
+    </bean>
+    <!-- 存货清单日志表 action -->
+
+
+	<!-- 种类数量更改原因表 action -->
+    <bean class="com.fionapet.business.consumer.ItemCountChangeReasonDemoAction" init-method="start">
+        <property name="itemCountChangeReasonService" ref="itemCountChangeReasonService"/>
+    </bean>
+    <!-- 种类数量更改原因表 action -->
+
+
+	<!-- 企业信息表 action -->
+    <bean class="com.fionapet.business.consumer.EnterpriseDemoAction" init-method="start">
+        <property name="enterpriseService" ref="enterpriseService"/>
+    </bean>
+    <!-- 企业信息表 action -->
+
+
+	<!-- 用户字典 action -->
+    <bean class="com.fionapet.business.consumer.UserDictDemoAction" init-method="start">
+        <property name="userDictService" ref="userDictService"/>
+    </bean>
+    <!-- 用户字典 action -->
+
+
+	<!-- 退回记录 action -->
+    <bean class="com.fionapet.business.consumer.WarehouseBackrecordDemoAction" init-method="start">
+        <property name="warehouseBackrecordService" ref="warehouseBackrecordService"/>
+    </bean>
+    <!-- 退回记录 action -->
+
+
+	<!-- 仓库直销主表 action -->
+    <bean class="com.fionapet.business.consumer.StoreDirectSellDemoAction" init-method="start">
+        <property name="storeDirectSellService" ref="storeDirectSellService"/>
+    </bean>
+    <!-- 仓库直销主表 action -->
+
+
+	<!-- 养育记录明细表 action -->
+    <bean class="com.fionapet.business.consumer.FosterRecordDetailDemoAction" init-method="start">
+        <property name="fosterRecordDetailService" ref="fosterRecordDetailService"/>
+    </bean>
+    <!-- 养育记录明细表 action -->
+
+
+	<!-- 育苗表 action -->
+    <bean class="com.fionapet.business.consumer.MedicVaccineDemoAction" init-method="start">
+        <property name="medicVaccineService" ref="medicVaccineService"/>
+    </bean>
+    <!-- 育苗表 action -->
+
+
+	<!-- 药方模版 action -->
+    <bean class="com.fionapet.business.consumer.TrprescriptionTemplateDemoAction" init-method="start">
+        <property name="trprescriptionTemplateService" ref="trprescriptionTemplateService"/>
+    </bean>
+    <!-- 药方模版 action -->
+
+
+	<!-- 会员等级管理 action -->
+    <bean class="com.fionapet.business.consumer.GestLevelDemoAction" init-method="start">
+        <property name="gestLevelService" ref="gestLevelService"/>
+    </bean>
+    <!-- 会员等级管理 action -->
+
+
+	<!-- 序列号 action -->
+    <bean class="com.fionapet.business.consumer.RewardPointLogDemoAction" init-method="start">
+        <property name="rewardPointLogService" ref="rewardPointLogService"/>
+    </bean>
+    <!-- 序列号 action -->
+
+
+	<!-- 处方明细 action -->
+    <bean class="com.fionapet.business.consumer.BaseMedicPrescriptionDetailDemoAction" init-method="start">
+        <property name="baseMedicPrescriptionDetailService" ref="baseMedicPrescriptionDetailService"/>
+    </bean>
+    <!-- 处方明细 action -->
+
+
+	<!-- 宠物主人 action -->
+    <bean class="com.fionapet.business.consumer.PersonsCmAppDemoAction" init-method="start">
+        <property name="personsCmAppService" ref="personsCmAppService"/>
+    </bean>
+    <!-- 宠物主人 action -->
+
+
+	<!-- 化验单明细 action -->
+    <bean class="com.fionapet.business.consumer.MedicChemicalExamDetailDemoAction" init-method="start">
+        <property name="medicChemicalExamDetailService" ref="medicChemicalExamDetailService"/>
+    </bean>
+    <!-- 化验单明细 action -->
+
+
+	<!-- 医生影像样例 action -->
+    <bean class="com.fionapet.business.consumer.MedicVedioExamDemoAction" init-method="start">
+        <property name="medicVedioExamService" ref="medicVedioExamService"/>
+    </bean>
+    <!-- 医生影像样例 action -->
+
+
+	<!-- 医生处方明细 action -->
+    <bean class="com.fionapet.business.consumer.MedicPrescriptionDetailDemoAction" init-method="start">
+        <property name="medicPrescriptionDetailService" ref="medicPrescriptionDetailService"/>
+    </bean>
+    <!-- 医生处方明细 action -->
+
+
+	<!-- 业务类型表 action -->
+    <bean class="com.fionapet.business.consumer.BusinesCateDemoAction" init-method="start">
+        <property name="businesCateService" ref="businesCateService"/>
+    </bean>
+    <!-- 业务类型表 action -->
+
+
+	<!-- 医院记录明细表 action -->
+    <bean class="com.fionapet.business.consumer.InHospitalRecordDetailDemoAction" init-method="start">
+        <property name="inHospitalRecordDetailService" ref="inHospitalRecordDetailService"/>
+    </bean>
+    <!-- 医院记录明细表 action -->
+
+
+	<!-- 进库出库日志 action -->
+    <bean class="com.fionapet.business.consumer.FifoLogDemoAction" init-method="start">
+        <property name="fifoLogService" ref="fifoLogService"/>
+    </bean>
+    <!-- 进库出库日志 action -->
+
+
+	<!-- 消息提醒配置表 action -->
+    <bean class="com.fionapet.business.consumer.MicroSmsConfigDemoAction" init-method="start">
+        <property name="microSmsConfigService" ref="microSmsConfigService"/>
+    </bean>
+    <!-- 消息提醒配置表 action -->
+
+
+	<!-- 类型化验实例表 action -->
+    <bean class="com.fionapet.business.consumer.ItemtypeChemicalexamDemoAction" init-method="start">
+        <property name="itemtypeChemicalexamService" ref="itemtypeChemicalexamService"/>
+    </bean>
+    <!-- 类型化验实例表 action -->
+
+
+	<!-- 类型化验实例明细表 action -->
+    <bean class="com.fionapet.business.consumer.ItemSingleDetailDemoAction" init-method="start">
+        <property name="itemSingleDetailService" ref="itemSingleDetailService"/>
+    </bean>
+    <!-- 类型化验实例明细表 action -->
+
+
+	<!-- 商品类型 action -->
+    <bean class="com.fionapet.business.consumer.ItemTypeDemoAction" init-method="start">
+        <property name="itemTypeService" ref="itemTypeService"/>
+    </bean>
+    <!-- 商品类型 action -->
+
+
+	<!-- 医生登记记录明细 action -->
+    <bean class="com.fionapet.business.consumer.MedicRegisterRecordDemoAction" init-method="start">
+        <property name="medicRegisterRecordService" ref="medicRegisterRecordService"/>
+    </bean>
+    <!-- 医生登记记录明细 action -->
+
+
+	<!-- 医院记录表 action -->
+    <bean class="com.fionapet.business.consumer.InHospitalRecordDemoAction" init-method="start">
+        <property name="inHospitalRecordService" ref="inHospitalRecordService"/>
+    </bean>
+    <!-- 医院记录表 action -->
+
+
+	<!-- 养育健康状况表 action -->
+    <bean class="com.fionapet.business.consumer.FosterHealthDemoAction" init-method="start">
+        <property name="fosterHealthService" ref="fosterHealthService"/>
+    </bean>
+    <!-- 养育健康状况表 action -->
+
+
+	<!-- 养育记录主表 action -->
+    <bean class="com.fionapet.business.consumer.FosterRecordDemoAction" init-method="start">
+        <property name="fosterRecordService" ref="fosterRecordService"/>
+    </bean>
+    <!-- 养育记录主表 action -->
+
+
+	<!-- 提前付费表 action -->
+    <bean class="com.fionapet.business.consumer.PrepayMoneyDemoAction" init-method="start">
+        <property name="prepayMoneyService" ref="prepayMoneyService"/>
+    </bean>
+    <!-- 提前付费表 action -->
+
+
+	<!-- 进库记录明细 action -->
+    <bean class="com.fionapet.business.consumer.WarehouseInrecordDetailDemoAction" init-method="start">
+        <property name="warehouseInrecordDetailService" ref="warehouseInrecordDetailService"/>
+    </bean>
+    <!-- 进库记录明细 action -->
+
+
+	<!-- 代理商 action -->
+    <bean class="com.fionapet.business.consumer.DealerDemoAction" init-method="start">
+        <property name="dealerService" ref="dealerService"/>
+    </bean>
+    <!-- 代理商 action -->
+
+
+	<!-- 急诊表 action -->
+    <bean class="com.fionapet.business.consumer.PromptDemoAction" init-method="start">
+        <property name="promptService" ref="promptService"/>
+    </bean>
+    <!-- 急诊表 action -->
+
+
+	<!-- 应用配置 action -->
+    <bean class="com.fionapet.business.consumer.AppConfigDemoAction" init-method="start">
+        <property name="appConfigService" ref="appConfigService"/>
+    </bean>
+    <!-- 应用配置 action -->
+
+
+	<!-- 处方模版明细 action -->
+    <bean class="com.fionapet.business.consumer.PrescriptionTemplateDetailDemoAction" init-method="start">
+        <property name="prescriptionTemplateDetailService" ref="prescriptionTemplateDetailService"/>
+    </bean>
+    <!-- 处方模版明细 action -->
+
+
+	<!-- 业务类型打折率 action -->
+    <bean class="com.fionapet.business.consumer.ItemDiscountRateDemoAction" init-method="start">
+        <property name="itemDiscountRateService" ref="itemDiscountRateService"/>
+    </bean>
+    <!-- 业务类型打折率 action -->
+
+
+	<!-- 收款记录表 action -->
+    <bean class="com.fionapet.business.consumer.InputMoneyRecordDemoAction" init-method="start">
+        <property name="inputMoneyRecordService" ref="inputMoneyRecordService"/>
+    </bean>
+    <!-- 收款记录表 action -->
+
+
+	<!-- 费用类型 action -->
+    <bean class="com.fionapet.business.consumer.ExpensesCateDemoAction" init-method="start">
+        <property name="expensesCateService" ref="expensesCateService"/>
+    </bean>
+    <!-- 费用类型 action -->
+
+
+	<!-- 医生处理记录 action -->
+    <bean class="com.fionapet.business.consumer.MedicMedictreatRecordDemoAction" init-method="start">
+        <property name="medicMedictreatRecordService" ref="medicMedictreatRecordService"/>
+    </bean>
+    <!-- 医生处理记录 action -->
+
+
+	<!-- 种类数量更改原因表 action -->
+    <bean class="com.fionapet.business.consumer.ItemCountDemoAction" init-method="start">
+        <property name="itemCountService" ref="itemCountService"/>
+    </bean>
+    <!-- 种类数量更改原因表 action -->
+
+
+	<!-- 赔偿交换细节 action -->
+    <bean class="com.fionapet.business.consumer.RewardpointExchangeDetailDemoAction" init-method="start">
+        <property name="rewardpointExchangeDetailService" ref="rewardpointExchangeDetailService"/>
+    </bean>
+    <!-- 赔偿交换细节 action -->
+
+
+	<!-- 出库记录明细 action -->
+    <bean class="com.fionapet.business.consumer.WarehouseOutrecordDetailDemoAction" init-method="start">
+        <property name="warehouseOutrecordDetailService" ref="warehouseOutrecordDetailService"/>
+    </bean>
+    <!-- 出库记录明细 action -->
+
+
+	<!-- 序列号 action -->
+    <bean class="com.fionapet.business.consumer.SerialNumberDemoAction" init-method="start">
+        <property name="serialNumberService" ref="serialNumberService"/>
+    </bean>
+    <!-- 序列号 action -->
+
+
+	<!-- 药方模版明细 action -->
+    <bean class="com.fionapet.business.consumer.TrprescriptionTemplateDetailDemoAction" init-method="start">
+        <property name="trprescriptionTemplateDetailService" ref="trprescriptionTemplateDetailService"/>
+    </bean>
+    <!-- 药方模版明细 action -->
+
+
+	<!-- 药方模版类型 action -->
+    <bean class="com.fionapet.business.consumer.TrprescriptionTemplateTypeDemoAction" init-method="start">
+        <property name="trprescriptionTemplateTypeService" ref="trprescriptionTemplateTypeService"/>
+    </bean>
+    <!-- 药方模版类型 action -->
+
+
+	<!-- 审批状态实体 action -->
+    <bean class="com.fionapet.business.consumer.ApproveStatusEntityDemoAction" init-method="start">
+        <property name="approveStatusEntityService" ref="approveStatusEntityService"/>
+    </bean>
+    <!-- 审批状态实体 action -->
+
+
+	<!-- 仓库检查主表 action -->
+    <bean class="com.fionapet.business.consumer.CheckWarehouseDemoAction" init-method="start">
+        <property name="checkWarehouseService" ref="checkWarehouseService"/>
+    </bean>
+    <!-- 仓库检查主表 action -->
+
+
+	<!-- 移库记录明细 action -->
+    <bean class="com.fionapet.business.consumer.WarehouseMoverecordDetailDemoAction" init-method="start">
+        <property name="warehouseMoverecordDetailService" ref="warehouseMoverecordDetailService"/>
+    </bean>
+    <!-- 移库记录明细 action -->
+
+
+	<!-- 宠物种类 action -->
+    <bean class="com.fionapet.business.consumer.PetRaceDemoAction" init-method="start">
+        <property name="petRaceService" ref="petRaceService"/>
+    </bean>
+    <!-- 宠物种类 action -->
+
+
+	<!-- 宠物主人 action -->
+    <bean class="com.fionapet.business.consumer.PersonsAppointmentDemoAction" init-method="start">
+        <property name="personsAppointmentService" ref="personsAppointmentService"/>
+    </bean>
+    <!-- 宠物主人 action -->
+
+
+	<!-- 检查仓库明细表 action -->
+    <bean class="com.fionapet.business.consumer.CheckWarehouseDetailDemoAction" init-method="start">
+        <property name="checkWarehouseDetailService" ref="checkWarehouseDetailService"/>
+    </bean>
+    <!-- 检查仓库明细表 action -->
+
+
+	<!-- 返回商品明细 action -->
+    <bean class="com.fionapet.business.consumer.ReturnCommodityDetailDemoAction" init-method="start">
+        <property name="returnCommodityDetailService" ref="returnCommodityDetailService"/>
+    </bean>
+    <!-- 返回商品明细 action -->
+
+
+	<!-- 宠物品种 action -->
+    <bean class="com.fionapet.business.consumer.PetSmallRaceDemoAction" init-method="start">
+        <property name="petSmallRaceService" ref="petSmallRaceService"/>
+    </bean>
+    <!-- 宠物品种 action -->
+
+
+	<!-- 服务主表 action -->
+    <bean class="com.fionapet.business.consumer.ServiceDemoAction" init-method="start">
+        <property name="serviceService" ref="serviceService"/>
+    </bean>
+    <!-- 服务主表 action -->
+
+
+	<!-- 资金账户明细表 action -->
+    <bean class="com.fionapet.business.consumer.FinanceSettleAccountsDetailDemoAction" init-method="start">
+        <property name="financeSettleAccountsDetailService" ref="financeSettleAccountsDetailService"/>
+    </bean>
+    <!-- 资金账户明细表 action -->
+
+
+	<!-- 电话信息表 action -->
+    <bean class="com.fionapet.business.consumer.PhoneMessageDemoAction" init-method="start">
+        <property name="phoneMessageService" ref="phoneMessageService"/>
+    </bean>
+    <!-- 电话信息表 action -->
+
+
+	<!-- 移库记录 action -->
+    <bean class="com.fionapet.business.consumer.WarehouseMoverecordDemoAction" init-method="start">
+        <property name="warehouseMoverecordService" ref="warehouseMoverecordService"/>
+    </bean>
+    <!-- 移库记录 action -->
+
+
+	<!-- 医生化验实例类型细节表 action -->
+    <bean class="com.fionapet.business.consumer.MedicChemicalExamtypeDetailDemoAction" init-method="start">
+        <property name="medicChemicalExamtypeDetailService" ref="medicChemicalExamtypeDetailService"/>
+    </bean>
+    <!-- 医生化验实例类型细节表 action -->
+
+
+	<!-- 化验单明细 action -->
+    <bean class="com.fionapet.business.consumer.MedicChemicalexamDemoAction" init-method="start">
+        <property name="medicChemicalexamService" ref="medicChemicalexamService"/>
+    </bean>
+    <!-- 化验单明细 action -->
+
+
+	<!-- 商品服务种类 action -->
+    <bean class="com.fionapet.business.consumer.ItemCateDemoAction" init-method="start">
+        <property name="itemCateService" ref="itemCateService"/>
+    </bean>
+    <!-- 商品服务种类 action -->
+
+
+	<!-- 处方模版类型 action -->
+    <bean class="com.fionapet.business.consumer.PrescriptionTemplateTypeDemoAction" init-method="start">
+        <property name="prescriptionTemplateTypeService" ref="prescriptionTemplateTypeService"/>
+    </bean>
+    <!-- 处方模版类型 action -->
+
+
+	<!-- 医生供应量表 action -->
+    <bean class="com.fionapet.business.consumer.MedicSuppliesDemoAction" init-method="start">
+        <property name="medicSuppliesService" ref="medicSuppliesService"/>
+    </bean>
+    <!-- 医生供应量表 action -->
+
+
+	<!-- 供应量表 action -->
+    <bean class="com.fionapet.business.consumer.ItemtypeSuppliesDemoAction" init-method="start">
+        <property name="itemtypeSuppliesService" ref="itemtypeSuppliesService"/>
+    </bean>
+    <!-- 供应量表 action -->
+
+
+	<!-- 退回记录明细 action -->
+    <bean class="com.fionapet.business.consumer.WarehouseBackrecordDetailDemoAction" init-method="start">
+        <property name="warehouseBackrecordDetailService" ref="warehouseBackrecordDetailService"/>
+    </bean>
+    <!-- 退回记录明细 action -->
+
+
+	<!-- 返回商品主表 action -->
+    <bean class="com.fionapet.business.consumer.ReturnCommodityDemoAction" init-method="start">
+        <property name="returnCommodityService" ref="returnCommodityService"/>
+    </bean>
+    <!-- 返回商品主表 action -->
+
+
+	<!-- 宠物主人信息 action -->
+    <bean class="com.fionapet.business.consumer.PersonsDemoAction" init-method="start">
+        <property name="personsService" ref="personsService"/>
+    </bean>
+    <!-- 宠物主人信息 action -->
+
+
+	<!-- 进库记录 action -->
+    <bean class="com.fionapet.business.consumer.WarehouseInrecordDemoAction" init-method="start">
+        <property name="warehouseInrecordService" ref="warehouseInrecordService"/>
+    </bean>
+    <!-- 进库记录 action -->
+
+
+	<!-- 宠物 action -->
+    <bean class="com.fionapet.business.consumer.PetDemoAction" init-method="start">
+        <property name="petService" ref="petService"/>
+    </bean>
+    <!-- 宠物 action -->
+
+
+	<!-- 服务明细 action -->
+    <bean class="com.fionapet.business.consumer.ServiceDetailDemoAction" init-method="start">
+        <property name="serviceDetailService" ref="serviceDetailService"/>
+    </bean>
+    <!-- 服务明细 action -->
+
+
+	<!-- 资金账号表 action -->
+    <bean class="com.fionapet.business.consumer.FinanceSettleAccountsDemoAction" init-method="start">
+        <property name="financeSettleAccountsService" ref="financeSettleAccountsService"/>
+    </bean>
+    <!-- 资金账号表 action -->
+
+
+	<!-- 检查处理单据 action -->
+    <bean class="com.fionapet.business.consumer.CheckProcessSheetDemoAction" init-method="start">
+        <property name="checkProcessSheetService" ref="checkProcessSheetService"/>
+    </bean>
+    <!-- 检查处理单据 action -->
+
+
+	<!-- 出库记录 action -->
+    <bean class="com.fionapet.business.consumer.WarehouseOutrecordDemoAction" init-method="start">
+        <property name="warehouseOutrecordService" ref="warehouseOutrecordService"/>
+    </bean>
+    <!-- 出库记录 action -->
+
+
+	<!-- 医生化验实例类型细节表 action -->
+    <bean class="com.fionapet.business.consumer.MedicChemicalExamtypeDemoAction" init-method="start">
+        <property name="medicChemicalExamtypeService" ref="medicChemicalExamtypeService"/>
+    </bean>
+    <!-- 医生化验实例类型细节表 action -->
+
+
+	<!-- 处方模版 action -->
+    <bean class="com.fionapet.business.consumer.PrescriptionTemplateDemoAction" init-method="start">
+        <property name="prescriptionTemplateService" ref="prescriptionTemplateService"/>
+    </bean>
+    <!-- 处方模版 action -->
+
+
+	<!-- 处方 action -->
+    <bean class="com.fionapet.business.consumer.BaseMedicPrescriptionDemoAction" init-method="start">
+        <property name="baseMedicPrescriptionService" ref="baseMedicPrescriptionService"/>
+    </bean>
+    <!-- 处方 action -->
+
+
+	<!-- 赔偿交换 action -->
+    <bean class="com.fionapet.business.consumer.RewardpointExchangeDemoAction" init-method="start">
+        <property name="rewardpointExchangeService" ref="rewardpointExchangeService"/>
+    </bean>
+    <!-- 赔偿交换 action -->
+
+
+	<!-- 图片信息 action -->
+    <bean class="com.fionapet.business.consumer.ImagesDemoAction" init-method="start">
+        <property name="imagesService" ref="imagesService"/>
+    </bean>
+    <!-- 图片信息 action -->
+
+
+	<!-- VIP信息 action -->
+    <bean class="com.fionapet.business.consumer.VipInputTemDemoAction" init-method="start">
+        <property name="vipInputTemService" ref="vipInputTemService"/>
+    </bean>
+    <!-- VIP信息 action -->
+
+
+	<!-- 住院处方明细 action -->
+    <bean class="com.fionapet.business.consumer.InHospitalPrescriptionDetailDemoAction" init-method="start">
+        <property name="inHospitalPrescriptionDetailService" ref="inHospitalPrescriptionDetailService"/>
+    </bean>
+    <!-- 住院处方明细 action -->
+
+
+	<!-- 会员 action -->
+    <bean class="com.fionapet.business.consumer.GestDemoAction" init-method="start">
+        <property name="gestService" ref="gestService"/>
+    </bean>
+    <!-- 会员 action -->
+
+
+	<!-- 医生器具表 action -->
+    <bean class="com.fionapet.business.consumer.MedicApplianceDemoAction" init-method="start">
+        <property name="medicApplianceService" ref="medicApplianceService"/>
+    </bean>
+    <!-- 医生器具表 action -->
+
+
+	<!-- 付出费用表 action -->
+    <bean class="com.fionapet.business.consumer.ExpensesExpendDemoAction" init-method="start">
+        <property name="expensesExpendService" ref="expensesExpendService"/>
+    </bean>
+    <!-- 付出费用表 action -->
+
+
+	<!-- 化验样例类型 action -->
+    <bean class="com.fionapet.business.consumer.ChemicalExamCateDemoAction" init-method="start">
+        <property name="chemicalExamCateService" ref="chemicalExamCateService"/>
+    </bean>
+    <!-- 化验样例类型 action -->
+
+
+	<!-- 仓库直销明细 action -->
+    <bean class="com.fionapet.business.consumer.StoreDirectSellDetailDemoAction" init-method="start">
+        <property name="storeDirectSellDetailService" ref="storeDirectSellDetailService"/>
+    </bean>
+    <!-- 仓库直销明细 action -->
+
+
+	<!-- 字典类型 action -->
+    <bean class="com.fionapet.business.consumer.DictTypeDemoAction" init-method="start">
+        <property name="dictTypeService" ref="dictTypeService"/>
+    </bean>
+    <!-- 字典类型 action -->
+
+
+	<!-- 住院处方 action -->
+    <bean class="com.fionapet.business.consumer.InHospitalPrescriptionDemoAction" init-method="start">
+        <property name="inHospitalPrescriptionService" ref="inHospitalPrescriptionService"/>
+    </bean>
+    <!-- 住院处方 action -->
+
+
+	<!-- 顾客影像记录表 action -->
+    <bean class="com.fionapet.business.consumer.GestPaidRecordDemoAction" init-method="start">
+        <property name="gestPaidRecordService" ref="gestPaidRecordService"/>
+    </bean>
+    <!-- 顾客影像记录表 action -->
+
+
+	<!-- 字典类型明细 action -->
+    <bean class="com.fionapet.business.consumer.DictTypeDetailDemoAction" init-method="start">
+        <property name="dictTypeDetailService" ref="dictTypeDetailService"/>
+    </bean>
+    <!-- 字典类型明细 action -->
+
 </beans>

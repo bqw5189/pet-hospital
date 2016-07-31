@@ -14,7 +14,7 @@ import java.util.Date;
 /**
  * 养育记录主表
  * <p>
-* Created by tom on 2016-07-25 09:32:32.
+* Created by tom on 2016-07-31 17:25:33.
  */
 @Entity
 @Table(name = "t_foster_record")
@@ -377,12 +377,12 @@ public class FosterRecord extends CMSEntity {
     @ApiModelProperty(value = "管理人员", required = false)
     
     @Column(columnDefinition = "管理人员")
-    private String ManagerBy;
+    private String managerBy;
     public String getManagerBy() {
-        return ManagerBy;
+        return managerBy;
     }
-    public void setManagerBy(String ManagerBy) {
-        this.ManagerBy = ManagerBy;
+    public void setManagerBy(String managerBy) {
+        this.managerBy = managerBy;
     }
     
     /**
@@ -391,12 +391,12 @@ public class FosterRecord extends CMSEntity {
     @ApiModelProperty(value = "管理ID", required = false)
     
     @Column(columnDefinition = "管理ID")
-    private String ManagerID;
-    public String getManagerID() {
-        return ManagerID;
+    private String managerId;
+    public String getManagerId() {
+        return managerId;
     }
-    public void setManagerID(String ManagerID) {
-        this.ManagerID = ManagerID;
+    public void setManagerId(String managerId) {
+        this.managerId = managerId;
     }
     
 }

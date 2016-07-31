@@ -326,4 +326,134 @@
     <dubbo:reference id="gestPaidRecordService" interface="com.fionapet.business.service.GestPaidRecordService"/>
     <!-- 顾客影像记录表 service -->
 
+
+	<!-- 数据字典 字典明细项 service -->
+    <dubbo:reference id="userDictDetailService" interface="com.fionapet.business.service.UserDictDetailService"/>
+    <!-- 数据字典 字典明细项 service -->
+
+
+	<!-- 用户字典 service -->
+    <dubbo:reference id="userDictService" interface="com.fionapet.business.service.UserDictService"/>
+    <!-- 用户字典 service -->
+
+
+	<!-- 药方模版 service -->
+    <dubbo:reference id="trprescriptionTemplateService" interface="com.fionapet.business.service.TrprescriptionTemplateService"/>
+    <!-- 药方模版 service -->
+
+
+	<!-- 会员等级管理 service -->
+    <dubbo:reference id="gestLevelService" interface="com.fionapet.business.service.GestLevelService"/>
+    <!-- 会员等级管理 service -->
+
+
+	<!-- 宠物主人 service -->
+    <dubbo:reference id="personsCmAppService" interface="com.fionapet.business.service.PersonsCmAppService"/>
+    <!-- 宠物主人 service -->
+
+
+	<!-- 化验单明细 service -->
+    <dubbo:reference id="medicChemicalExamDetailService" interface="com.fionapet.business.service.MedicChemicalExamDetailService"/>
+    <!-- 化验单明细 service -->
+
+
+	<!-- 医生影像样例 service -->
+    <dubbo:reference id="medicVedioExamService" interface="com.fionapet.business.service.MedicVedioExamService"/>
+    <!-- 医生影像样例 service -->
+
+
+	<!-- 业务类型表 service -->
+    <dubbo:reference id="businesCateService" interface="com.fionapet.business.service.BusinesCateService"/>
+    <!-- 业务类型表 service -->
+
+
+	<!-- 商品类型 service -->
+    <dubbo:reference id="itemTypeService" interface="com.fionapet.business.service.ItemTypeService"/>
+    <!-- 商品类型 service -->
+
+
+	<!-- 代理商 service -->
+    <dubbo:reference id="dealerService" interface="com.fionapet.business.service.DealerService"/>
+    <!-- 代理商 service -->
+
+
+	<!-- 处方模版明细 service -->
+    <dubbo:reference id="prescriptionTemplateDetailService" interface="com.fionapet.business.service.PrescriptionTemplateDetailService"/>
+    <!-- 处方模版明细 service -->
+
+
+	<!-- 业务类型打折率 service -->
+    <dubbo:reference id="itemDiscountRateService" interface="com.fionapet.business.service.ItemDiscountRateService"/>
+    <!-- 业务类型打折率 service -->
+
+
+	<!-- 费用类型 service -->
+    <dubbo:reference id="expensesCateService" interface="com.fionapet.business.service.ExpensesCateService"/>
+    <!-- 费用类型 service -->
+
+
+	<!-- 药方模版明细 service -->
+    <dubbo:reference id="trprescriptionTemplateDetailService" interface="com.fionapet.business.service.TrprescriptionTemplateDetailService"/>
+    <!-- 药方模版明细 service -->
+
+
+	<!-- 药方模版类型 service -->
+    <dubbo:reference id="trprescriptionTemplateTypeService" interface="com.fionapet.business.service.TrprescriptionTemplateTypeService"/>
+    <!-- 药方模版类型 service -->
+
+
+	<!-- 宠物种类 service -->
+    <dubbo:reference id="petRaceService" interface="com.fionapet.business.service.PetRaceService"/>
+    <!-- 宠物种类 service -->
+
+
+	<!-- 宠物主人 service -->
+    <dubbo:reference id="personsAppointmentService" interface="com.fionapet.business.service.PersonsAppointmentService"/>
+    <!-- 宠物主人 service -->
+
+
+	<!-- 化验单明细 service -->
+    <dubbo:reference id="medicChemicalexamService" interface="com.fionapet.business.service.MedicChemicalexamService"/>
+    <!-- 化验单明细 service -->
+
+
+	<!-- 商品服务种类 service -->
+    <dubbo:reference id="itemCateService" interface="com.fionapet.business.service.ItemCateService"/>
+    <!-- 商品服务种类 service -->
+
+
+	<!-- 处方模版类型 service -->
+    <dubbo:reference id="prescriptionTemplateTypeService" interface="com.fionapet.business.service.PrescriptionTemplateTypeService"/>
+    <!-- 处方模版类型 service -->
+
+
+	<!-- 宠物主人信息 service -->
+    <dubbo:reference id="personsService" interface="com.fionapet.business.service.PersonsService"/>
+    <!-- 宠物主人信息 service -->
+
+
+	<!-- 处方模版 service -->
+    <dubbo:reference id="prescriptionTemplateService" interface="com.fionapet.business.service.PrescriptionTemplateService"/>
+    <!-- 处方模版 service -->
+
+
+	<!-- 图片信息 service -->
+    <dubbo:reference id="imagesService" interface="com.fionapet.business.service.ImagesService"/>
+    <!-- 图片信息 service -->
+
+
+	<!-- 化验样例类型 service -->
+    <dubbo:reference id="chemicalExamCateService" interface="com.fionapet.business.service.ChemicalExamCateService"/>
+    <!-- 化验样例类型 service -->
+
+
+	<!-- 字典类型 service -->
+    <dubbo:reference id="dictTypeService" interface="com.fionapet.business.service.DictTypeService"/>
+    <!-- 字典类型 service -->
+
+
+	<!-- 字典类型明细 service -->
+    <dubbo:reference id="dictTypeDetailService" interface="com.fionapet.business.service.DictTypeDetailService"/>
+    <!-- 字典类型明细 service -->
+
 </beans>
