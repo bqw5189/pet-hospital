@@ -9,17 +9,20 @@ page '/*.xml', layout: false
 page '/*.json', layout: false
 page '/*.txt', layout: false
 
+page "/*filter.html", layout: false
+page "/*pagination.html", layout: false
+
 page "/login.html", :layout => "login"
 
 page "/index.html", :layout => "application"
 
+# 一列布局
 page "/views/*list.html", :layout => "list"
 
-page "/views/*modify.html", :layout => "form"
-page "/views/*detail.html", :layout => "form"
-page "/views/*form.html", :layout => "form"
+# 两列布局
+page "/views/*cols2.html", :layout => "column2"
 
-page "/views/*popup.html", :layout => "popup"
+# 默认布局
 page "/views/*.html", :layout => "page"
 
 page "/test*.html", :layout => "test"
@@ -52,6 +55,42 @@ set :haml, format: :html5
 ###
 # Helpers
 ###
+
+helpers do
+    def bind(key, fieldName)
+        if fieldName == 'error'
+            return "<span class='label label-danger'>Danger</span>"
+        else
+            return "{{" << key << "." << fieldName << "}}"
+        end
+    end
+
+    def inputName(key, fieldName)
+        return fieldName
+    end
+
+    def inputModel(key, fieldName)
+        if fieldName == 'error'
+            return fieldName
+        else
+            return "" << key << "." << fieldName
+        end
+    end
+
+    def modal(name, id)
+        puts "Method: " << name << ": " << id
+        @modal_id = id
+        @modal_name = name
+    end
+
+    def inputHelper(key, fieldName)
+        if fieldName == 'error'
+            return 'true'
+        else
+            return "" << @modal_id << "form." << fieldName << ".$invalid && " << @modal_id << "form.submitted"
+        end
+    end
+end
 
 # Methods defined in the helpers block are available in templates
 # helpers do

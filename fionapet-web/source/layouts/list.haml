@@ -1,6 +1,7 @@
 !!!5
 %html
   %body
+    #operate_msg_box
     / BEGIN EXAMPLE TABLE PORTLET
     .portlet.light.bordered
       .portlet-title
@@ -12,37 +13,37 @@
 
       .portlet-body
         .table-toolbar
-          %form{:role => "form"}
+          %form{:name=>"searchform", :role => "form"}
             .row
-              .col-md-6
-                = partial 'layouts/partials/search'
+              .col-md-8{'fa_filter' => '', 'templateUrl' => '/views/' + (@prefix || "") + @page_id + '/filter.html', 'placeholder' =>'{{placeholder}}', 'search' =>"search()", 'filters' => 'filters'}
 
-        = yield
+        %table#sample_editable_1.table.table-striped.table-hover.table-bordered
+          %thead
+            %tr
+              %th
+                %input.group-checkable{:type => "checkbox", 'ng': {'model':'selectedall', 'change': 'selectAll()'}}/
+              %th 操作
+              =yield_content :theader
+
+          %tbody
+            %tr.odd.gradeX{ "ng-repeat" => @page_id + " in " +@page_id+ "s" }
+              %td
+                %input.checkboxes{:type => "checkbox", 'ng': {'model': 'selection[' +@page_id+ '.id]', 'change': 'selectChange()'} }/
+              %td
+                - if !content_for?(:ttoolbar)
+                  %a.btn.btn-outline.btn-circle.btn-sm.purple{'ng-click' => 'update(' +@page_id+ '.id)'}
+                    %i.fa.fa-edit
+                    编辑
+                  %a.btn.btn-outline.btn-circle.dark.btn-sm.black{:href => "javascript:;", 'ng': {'click':'remove(' +@page_id+ '.id)'}}
+                    %i.fa.fa-trash-o
+                    删除
+
+                - if content_for?(:ttoolbar)
+                  =yield_content :ttoolbar
+
+              =yield_content :tbody
 
         .row
-          .col-md-5.col-sm-12
-            .dataTablesInfo
-              共 20383 条记录
-          .col-md-7.col-sm-12
-            %ul.pagination.pull-right{"style"=>"margin:0px;"}
-              %li
-                %a{:href => "javascript:;"}
-                  %i.fa.fa-angle-left
-              %li
-                %a{:href => "javascript:;"} 1
-              %li.active
-                %a{:href => "javascript:;"} 2
-              %li
-                %a{:href => "javascript:;"} 3
-              %li
-                %a{:href => "javascript:;"} 4
-              %li
-                %a{:href => "javascript:;"} 5
-              %li
-                %a{:href => "javascript:;"} 6
-              %li
-                %a{:href => "javascript:;"}
-                  %i.fa.fa-angle-right
+          .col-md-12.col-sm-12{ 'fa_pagination' => '','search' =>"search()", 'pagination' => 'pagination'}
 
-
-    / END EXAMPLE TABLE PORTLET
+        =yield

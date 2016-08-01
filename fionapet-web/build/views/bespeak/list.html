@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
   <body>
+    <div id='operate_msg_box'></div>
     <!-- BEGIN EXAMPLE TABLE PORTLET -->
     <div class='portlet light bordered'>
       <div class='portlet-title'>
@@ -21,61 +22,41 @@
       </div>
       <div class='portlet-body'>
         <div class='table-toolbar'>
-          <form role='form'>
+          <form name='searchform' role='form'>
             <div class='row'>
-              <div class='col-md-6'>
-                <div class='input-group'>
-                  <div class='input-group-btn'>
-                    <button class='form-control input-noborder-right input-circle-left dropdown-toggle' data-toggle='dropdown' type='button'>
-                      搜索
-                      <i class='fa fa-angle-down'></i>
-                    </button>
-                    <ul class='dropdown-menu'>
-                      <li>
-                        <a href='javascript:;'>宠物病例号</a>
-                      </li>
-                      <li>
-                        <a href='javascript:;'>宠物昵称</a>
-                      </li>
-                      <li class='divider'></li>
-                      <li>
-                        <a href='javascript:;'>会员编号</a>
-                      </li>
-                      <li>
-                        <a href='javascript:;'>会员名称</a>
-                      </li>
-                      <li>
-                        <a href='javascript:;'>会员电话</a>
-                      </li>
-                      <li class='divider'></li>
-                      <li>
-                        <a href='javascript:;'>登记日期</a>
-                      </li>
-                    </ul>
-                  </div>
-                  <!-- /btn-group -->
-                  <input class='form-control' placeholder='输入搜索内容...' type='text'>
-                  <div class='input-group-btn'>
-                    <button class='form-control input-noborder-vertical' tabindex='-1' type='button'>
-                      <i class='fa fa-calendar'></i>
-                    </button>
-                  </div>
-                  <input class='form-control' placeholder='' style='display: table-cell;' type='text'>
-                  <div class='input-group-btn'>
-                    <button class='form-control input-noborder-vertical' tabindex='-1' type='button'>
-                      <i class='fa fa-calendar'></i>
-                    </button>
-                  </div>
-                  <div class='input-group-btn'>
-                    <button class='btn green input-circle-right'>
-                      <i class='fa fa-search'></i>
-                    </button>
-                  </div>
-                </div>
-              </div>
+              <div class='col-md-8' fa_filter='' filters='filters' placeholder='{{placeholder}}' search='search()' templateUrl='/views/bespeak/filter.html'></div>
             </div>
           </form>
         </div>
+        <table class='table table-striped table-hover table-bordered' id='sample_editable_1'>
+          <thead>
+            <tr>
+              <th>
+                <input class='group-checkable' ng-change='selectAll()' ng-model='selectedall' type='checkbox'>
+              </th>
+              <th>操作</th>
+              
+            </tr>
+          </thead>
+          <tbody>
+            <tr class='odd gradeX' ng-repeat='bespeak in bespeaks'>
+              <td>
+                <input class='checkboxes' ng-change='selectChange()' ng-model='selection[" +@page_id+ ".id]' type='checkbox' value='{{bespeak.id}}'>
+              </td>
+              <td>
+                <a class='btn btn-outline btn-circle btn-sm purple' ng-click='update(" +@page_id+ ".id)'>
+                  <i class='fa fa-edit'></i>
+                  编辑
+                </a>
+                <a class='btn btn-outline btn-circle dark btn-sm black' href='javascript:;' ng-click='remove(" +@page_id+ ".id)'>
+                  <i class='fa fa-trash-o'></i>
+                  删除
+                </a>
+              </td>
+              
+            </tr>
+          </tbody>
+        </table>
         <table class='table table-striped table-bordered table-hover table-checkable order-column' id='sample_1'>
           <thead>
             <tr>
@@ -141,46 +122,9 @@
           </tbody>
         </table>
         <div class='row'>
-          <div class='col-md-5 col-sm-12'>
-            <div class='dataTablesInfo'>
-              共 20383 条记录
-            </div>
-          </div>
-          <div class='col-md-7 col-sm-12'>
-            <ul class='pagination pull-right' style='margin:0px;'>
-              <li>
-                <a href='javascript:;'>
-                  <i class='fa fa-angle-left'></i>
-                </a>
-              </li>
-              <li>
-                <a href='javascript:;'>1</a>
-              </li>
-              <li class='active'>
-                <a href='javascript:;'>2</a>
-              </li>
-              <li>
-                <a href='javascript:;'>3</a>
-              </li>
-              <li>
-                <a href='javascript:;'>4</a>
-              </li>
-              <li>
-                <a href='javascript:;'>5</a>
-              </li>
-              <li>
-                <a href='javascript:;'>6</a>
-              </li>
-              <li>
-                <a href='javascript:;'>
-                  <i class='fa fa-angle-right'></i>
-                </a>
-              </li>
-            </ul>
-          </div>
+          <div class='col-md-12 col-sm-12' fa_pagination='' pagination='pagination' search='search()'></div>
         </div>
       </div>
     </div>
-    <!-- END EXAMPLE TABLE PORTLET -->
   </body>
 </html>

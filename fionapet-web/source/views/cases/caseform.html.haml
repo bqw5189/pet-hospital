@@ -1,0 +1,62 @@
+- page 'Case', 'case'
+
+/ BEGIN FORM
+%form.form-horizontal.form-bordered{:action => "#"}
+  .form-body
+
+    .form-group
+      %label.control-label.col-md-3 Default Datepicker
+      .col-md-3
+        %input.form-control.form-control-inline.input-medium.date-picker{:size => "16", :type => "text", :value => ""}/
+        %span.help-block Select date
+
+    .form-group
+      %label.control-label.col-md-3 Disable Past Dates
+      .col-md-3
+        .input-group.input-medium.date.date-picker{"data-date-format" => "yyyy-mm-dd", "data-date-start-date" => "+0d"}
+          %input.form-control{:readonly => "readonly", :type => "text"}/
+          %span.input-group-btn
+            %button.btn.default{:type => "button"}
+              %i.fa.fa-calendar
+        / /input-group
+        %span.help-block Select date
+
+    .form-group
+      %label.control-label.col-md-3 Start With Years
+      .col-md-3
+        .input-group.input-medium.date.date-picker{"data-date" => "12-02-2012", "data-date-format" => "dd-mm-yyyy", "data-date-viewmode" => "years"}
+          %input.form-control{:readonly => "readonly", :type => "text"}/
+          %span.input-group-btn
+            %button.btn.default{:type => "button"}
+              %i.fa.fa-calendar
+        / /input-group
+        %span.help-block Select date
+    .form-group
+      %label.control-label.col-md-3 Months Only
+      .col-md-3
+        .input-group.input-medium.date.date-picker{"data-date" => "10/2012", "data-date-format" => "mm/yyyy", "data-date-minviewmode" => "months", "data-date-viewmode" => "years"}
+          %input.form-control{:readonly => "readonly", :type => "text"}/
+          %span.input-group-btn
+            %button.btn.default{:type => "button"}
+              %i.fa.fa-calendar
+        / /input-group
+        %span.help-block Select month only
+    .form-group
+      %label.control-label.col-md-3 Date Range
+      .col-md-4
+        .input-group.input-large.date-picker.input-daterange{"data-date" => "10/11/2012", "data-date-format" => "mm/dd/yyyy"}
+          %input.form-control{:name => "from", :type => "text"}/
+          %span.input-group-addon to
+          %input.form-control{:name => "to", :type => "text"}/
+        / /input-group
+        %span.help-block Select date range
+    .form-group
+      %label.control-label.col-md-3 Inline
+      .col-md-3
+        .date-picker{"data-date-format" => "mm/dd/yyyy"}
+    .form-group.last
+      %label.control-label.col-md-3
+      .col-md-3
+        %a.btn.green.btn-outline.sbold.uppercase{"data-toggle" => "modal", :href => "#form_modal2"}
+          View Datepicker in modal
+          %i.fa.fa-share

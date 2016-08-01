@@ -1,28 +1,18 @@
 - page '会员管理', 'vip'
 
 - content_for :toolbar do
-  %a.btn.btn-circle.btn-default.btn-sm{:href => "javascript:;"}
+  %a.btn.btn-circle.btn-default.btn-sm{:href => "javascript:;", 'ng': {'click':'update()'}}
     %i.fa.fa-plus
     增加
-  %a.btn.btn-circle.red-sunglo.btn-sm{:href => "javascript:;"}
+  %a.btn.btn-circle.red-sunglo.btn-sm{:href => "javascript:;", 'ng': {'click':'removes()', 'disabled': 'isRemoves'} }
     %i.fa.fa-remove
     删除
-
-- content_for :searchfields do
-  %ul.dropdown-menu
-    %li
-      %a{:href => "javascript:;"} 编号
-    %li
-      %a{:href => "javascript:;"} 姓名
-    %li.divider
-    %li
-      %a{:href => "javascript:;"} 电话
 
 %table#sample_1.table.table-striped.table-bordered.table-hover.table-checkable.order-column
   %thead
     %tr
       %th
-        %input.group-checkable{"data-set" => "#sample_1 .checkboxes", :type => "checkbox"}/
+        %input.group-checkable{:type => "checkbox", 'ng': {'model':'selectedall', 'change': 'selectAll()'}}/
       %th 操作
       %th 充值记录
       %th 会员等级

@@ -2,14 +2,14 @@
 .logo
   %a{:href => "index.html"}
     %img{:alt => "", :src => "assets/images/logo-big.png"}/
-/ END LOGO
+
 / BEGIN LOGIN
 .content
   / BEGIN LOGIN FORM
   %form.login-form{:name => "signup_form", :novalidate => "", "ng-submit" => "signupForm()", "ng-controller" => "SignupController"}
 
     %h3.form-title.font-green 登录
-    .alert.alert-danger{"ng-show" => "(signup_form.username.$invalid || signup_form.password.$invalid || true) && signup_form.submitted"}
+    .alert.alert-danger{"ng-show" => "(signup_form.username.$invalid || signup_form.password.$invalid) && signup_form.submitted"}
       %button.close{"data-close" => "alert"}
       %span {{ message }}
 
@@ -32,7 +32,6 @@
 
     .create-account
       %p
-  / END LOGIN FORM
 
   / BEGIN FORGOT PASSWORD FORM
   %form.forget-form{:action => "index.html", :method => "post"}
@@ -43,7 +42,6 @@
     .form-actions
       %button#back-btn.btn.green.btn-outline{:type => "button"} 返回
       %button.btn.btn-success.uppercase.pull-right{:type => "submit"} 提交
-  / END FORGOT PASSWORD FORM
 
 .copyright 2014 © Metronic. Admin Dashboard Template.
 

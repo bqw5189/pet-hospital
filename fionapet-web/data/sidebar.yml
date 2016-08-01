@@ -1,0 +1,255 @@
+- name: Cases
+  menus:
+    - name: Index
+      uri: javascript:;
+      menus:
+        - name: Index
+          uri: /api
+
+    - name: 案例
+      uri: javascript:;
+      menus:
+        - name: Table
+          uri: /cases/list
+
+        - name: Filter
+          uri: /cases/filter
+
+        - name: Form
+          uri: /cases/form
+
+- name: Finished
+  menus:
+    - name: 会员信息
+      icon: glyphicon glyphicon-credit-card
+      uri: javascript:;
+      menus:
+        - name: 宠物管理
+          uri: /pet/list
+
+        - name: 会员管理
+          uri: /vip/list
+
+    - name: 基础数据
+      icon: glyphicon glyphicon-hdd
+      uri: javascript:;
+      menus:
+        - name: 宠物品种管理
+          icon: fa fa-icon-github-alt
+          uri: /varietie/list
+
+        - name: 经销商与生产商
+          icon: glyphicon glyphicon-compressed
+          uri: /dealer/list
+
+        - name: 仓库信息管理
+          icon: fa fa-icon-ambulance
+          uri: /storage/list
+
+        - name: 商品与服务管理
+          icon: fa fa-shopping-cart
+          uri: /product/list
+
+        - name: 会员等级管理
+          icon: fa fa-icon-signal
+          uri: /grade/list
+
+        - name: 数据字典管理
+          icon: fa fa-icon-book
+          uri: /dictionary/list
+
+        - name: 员工管理
+          icon: fa fa-icon-user-md
+          uri: /personnel/list
+
+        - name: 化验项目管理
+          icon: fa fa-icon-beaker
+          uri: /labwork/list
+
+        - name: 医院信息
+          icon: fa fa-hospital-o
+          uri: /hospital/list
+
+        - name: 角色管理
+          icon: icon-eyeglasses
+          uri: /role/list
+
+        - name: 应用参数配置
+          icon: fa fa-cogs
+          uri: /setting/list
+
+#
+#- name: 业务办理
+#  menus:
+#    - name: 前台服务
+#      uri: javascript:;
+#      menus:
+#        - name: 门诊挂号
+#          uri: /MedicBusiness/ApplyRegister
+#
+#        - name: 门诊收费
+#          uri: /Business/PatientCharge
+#
+#    - name: 预约管理
+#      uri:
+#      menus:
+#        - name: 预约管理
+#          uri: /bespeak/list
+#
+#
+#    - name: 挂号
+#      uri: javascript:;
+#      menus:
+#        - name: 会员挂号
+#          uri: /register/register
+#
+#        - name: 快捷挂号
+#          uri: /register/fastregister
+#
+#
+#    - name: 诊疗服务
+#      uri: javascript:;
+#      menus:
+#        - name: 就诊管理
+#          uri: /views/pet/List.html
+#
+#        - name: 疫苗登记
+#          uri: /views/pet/List.html
+#
+#        - name: 处方模板管理
+#          uri: /views/pet/List.html
+#
+#        - name: 病案管理
+#          uri: /views/pet/List.html
+#
+#
+#    - name: 化验影像
+#      uri: javascript:;
+#      menus:
+#        - name: 化验检查
+#          uri: /views/pet/List.html
+#
+#        - name: 影像检查
+#          uri: /views/vip/List.html
+#
+#
+#    - name: 护士工作站
+#      uri: javascript:;
+#      menus:
+#        - name: 护士工作站
+#          uri: /
+#
+#
+#- name: 库存管理
+#  menus:
+#    - name: 仓库管理
+#      uri: javascript:;
+#      menus:
+#        - name: 库存查询
+#          uri: /views/pet/List.html
+#
+#        - name: 入库管理
+#          uri: /views/pet/List.html
+#
+#        - name: 出库管理
+#          uri: /views/pet/List.html
+#
+#        - name: 移库管理
+#          uri: /views/pet/List.html
+#
+#        - name: 退货管理
+#          uri: /views/pet/List.html
+#
+#
+#    - name: 宠物寄养
+#      uri: javascript:;
+#      menus:
+#        - name: 宠物寄养
+#          uri: /
+#
+#
+#    - name: 宠物住院
+#      uri: javascript:;
+#      menus:
+#        - name: 宠物住院
+#          uri: /
+#
+#
+#    - name: 销售服务
+#      uri: javascript:;
+#      menus:
+#        - name: 直接销售
+#          uri: /views/pet/List.html
+#
+#        - name: 销售查询
+#          uri: /views/vip/List.html
+#
+#
+#- name: 运维管理
+#  menus:
+#    - name: 拓瑞检测
+#      uri: javascript:;
+#      menus:
+#        - name: 检测申请
+#          uri: /views/pet/List.html
+#
+#        - name: 检测查询
+#          uri: /views/pet/List.html
+#
+#        - name: 拓瑞检测提醒
+#          uri: /views/pet/List.html
+#
+#
+#    - name: 经营管理
+#      uri: javascript:;
+#      menus:
+#        - name: 支出管理
+#          uri: /views/pet/List.html
+#
+#        - name: 绩效考核统计
+#          uri: /views/pet/List.html
+#
+#        - name: 门店收支统计
+#          uri: /views/pet/List.html
+#
+#        - name: 会员消费统计
+#          uri: /views/pet/List.html
+#
+#        - name: 毛利统计
+#          uri: /views/pet/List.html
+#
+#        - name: 商品采购统计
+#          uri: /views/pet/List.html
+#
+#        - name: 商品销售统计
+#          uri: /views/pet/List.html
+#
+#
+#    - name: 统计报表
+#      uri: javascript:;
+#      menus:
+#
+#        - name: 就诊分期统计
+#          uri: /views/pet/List.html
+#
+#        - name: 挂号就诊统计
+#          uri: /views/pet/List.html
+#
+#        - name: 营业收入统计
+#          uri: /views/pet/List.html
+#
+#        - name: 库存资产统计
+#          uri: /views/pet/List.html
+#
+#        - name: 病例统计
+#          uri: /views/pet/List.html
+#
+#    - name: 美容服务管理
+#      uri: javascript:;
+#      menus:
+#
+#        - name: 美容服务管理
+#          uri: /
+#
+#
+

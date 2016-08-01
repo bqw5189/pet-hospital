@@ -3,7 +3,7 @@
   %head
     %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
     %meta{:charset => "utf-8"}/
-    %title Metronic | Dashboard
+    %title Fiona 福莱动物医院
     %meta{:content => "IE=edge", "http-equiv" => "X-UA-Compatible"}/
     %meta{:content => "width=device-width, initial-scale=1", :name => "viewport"}/
     %meta{:content => "", :name => "description"}/
@@ -20,13 +20,10 @@
     / END GLOBAL MANDATORY STYLES
 
     / BEGIN PAGE LEVEL PLUGINS
-
-    %link{:href => "./assets/plugins/morris/morris.css", :rel => "stylesheet", :type => "text/css"}/
-
     / 日期选择插件
-    / %link{:href => "./assets/plugins/bootstrap-daterangepicker/css/daterangepicker.min.css", :rel => "stylesheet", :type => "text/css"}/
-
     %link{:href => "./assets/plugins/bootstrap-datepicker/css/bootstrap-datepicker3.min.css", :rel => "stylesheet", :type => "text/css"}/
+    %link{:href => "./assets/plugins/morris/morris.css", :rel => "stylesheet", :type => "text/css"}/
+    / END PAGE LEVEL PLUGINS
 
     / BEGIN THEME GLOBAL STYLES
     %link{:href => "./assets/stylesheets/components.min.css", :rel => "stylesheet", :type => "text/css"}/
@@ -37,11 +34,8 @@
     %link{:href => "./assets/stylesheets/layout.min.css", :rel => "stylesheet", :type => "text/css"}/
     %link{:href => "./assets/stylesheets/darkblue.min.css", :rel => "stylesheet", :type => "text/css"}/
     %link{:href => "./assets/stylesheets/custom.min.css", :rel => "stylesheet", :type => "text/css"}/
-
     %link{:href => "./assets/stylesheets/fiona.css", :rel => "stylesheet", :type => "text/css"}/
-
     / END THEME LAYOUT STYLES
-    %link{:href => "favicon.ico", :rel => "shortcut icon"}/
 
     = favicon_tag 'favicon.ico'
 
@@ -77,12 +71,11 @@
 %script{:src => "./assets/plugins/jquery.min.js", :type => "text/javascript"}
 %script{:src => "./assets/plugins/bootstrap/js/bootstrap.min.js", :type => "text/javascript"}
 
-/ bootstrap的下拉组件，需要点击click时，方可展示下拉列表。因此对于喜欢简单少操作的大家来说，
-/ 点击一下多少带来不便，因此，引入hover监听，鼠标经过自动展示下拉框。
+/ bootstrap-hover-dropdown 引入hover监听，鼠标经过自动展示下拉框。
 %script{:src => "./assets/plugins/bootstrap-hover-dropdown/bootstrap-hover-dropdown.min.js", :type => "text/javascript"}
 
 / Query slimScroll插件是一个支持把内容放在一个盒子里面，固定一个高度，超出的则使用滚动。
-/ %script{:src => "./assets/global/plugins/jquery-slimscroll/jquery.slimscroll.min.js", :type => "text/javascript"}
+%script{:src => "./assets/plugins/jquery-slimscroll/jquery.slimscroll.min.js", :type => "text/javascript"}
 
 / jQuery BlockUI插件可以在不锁定浏览器的同时，模拟同步模式下发起Ajax请求的行为。
 / 该插件激活时，会阻止用户在页面进行的操作，直到插件被关闭。BlockUI通过向DOM中添加元素实现其外观和组织用户交互的行为。
@@ -93,27 +86,70 @@
 
 / 日期选择
 %script{:src => "./assets/plugins/bootstrap-datepicker/js/bootstrap-datepicker.min.js", :type => "text/javascript"}
-/ END CORE PLUGINS
+
+/ BEGIN PAGE LEVEL PLUGINS
+
+/ 日期控件
+/ %script{:src => "./assets/plugins/bootstrap-daterangepicker/daterangepicker.min.js", :type => "text/javascript"}
 
 / Morris.js 是一个轻量级的 JS 库，使用 jQuery 和 Rapha&euml;l 来生成各种时序图。
 %script{:src => "./assets/plugins/morris/morris.min.js", :type => "text/javascript"}
 
-/ BEGIN THEME GLOBAL SCRIPTS
-%script{:src => "./assets/app.min.js", :type => "text/javascript"}
-/ END THEME GLOBAL SCRIPTS
-
-/ BEGIN PAGE LEVEL SCRIPTS
-%script{:src => "./assets/pages/dashboard/dashboard.min.js", :type => "text/javascript"}
-/ END PAGE LEVEL SCRIPTS
+/ 用于捕获各种滚动事件的插件, 同时Waypoints还支持固定元素和无限滚动的功能，功力十分强大。
+%script{:src => "./assets/plugins/counterup/jquery.waypoints.min.js", :type => "text/javascript"}
 
 / BEGIN THEME LAYOUT SCRIPTS
-%script{:src => "./assets/pages/layout/layout.min.js", :type => "text/javascript"}
-/ %script{:src => "./assets/layouts/layout/scripts/demo.min.js", :type => "text/javascript"}
-/ %script{:src => "./assets/layouts/global/scripts/quick-sidebar.min.js", :type => "text/javascript"}
-/ END THEME LAYOUT SCRIPTS
+%script{:src => "./assets/javascripts/layout.min.js", :type => "text/javascript"}
 
 %script{:src => "./assets/plugins/angular/angular.js", :type => "text/javascript"}
+
 %script{:src => "./assets/plugins/angular-route/angular-route.js", :type => "text/javascript"}
-%script{:src => "./assets/plugins/angular-resource/angular-resource.js", :type => "text/javascript"}
+
+
+%script{:src => "./assets/javascripts/services.js", :type => "text/javascript"}
 
 %script{:src => "./assets/javascripts/application.js", :type => "text/javascript"}
+
+%script{:src => "./assets/javascripts/directive.js", :type => "text/javascript"}
+
+
+/
+%script{:src => "./assets/pages/CaseController.js", :type => "text/javascript"}
+
+%script{:src => "./assets/pages/PetController.js", :type => "text/javascript"}
+
+/ Basic
+
+/ 经销商与生产商
+%script{:src => "./assets/pages/basic/DealerController.js", :type => "text/javascript"}
+
+/ 数据字典管理
+%script{:src => "./assets/pages/basic/DictionaryController.js", :type => "text/javascript"}
+
+/ 会员等级管理
+%script{:src => "./assets/pages/basic/GradeController.js", :type => "text/javascript"}
+
+/ 医院信息
+%script{:src => "./assets/pages/basic/HospitalController.js", :type => "text/javascript"}
+
+/ 化验项目管理
+%script{:src => "./assets/pages/basic/LabworkController.js", :type => "text/javascript"}
+
+/ 员工管理
+%script{:src => "./assets/pages/basic/PersonnelController.js", :type => "text/javascript"}
+
+/ 商品与服务管理
+%script{:src => "./assets/pages/basic/ProductController.js", :type => "text/javascript"}
+
+/ 角色管理
+%script{:src => "./assets/pages/basic/RoleController.js", :type => "text/javascript"}
+
+/应用参数配置
+%script{:src => "./assets/pages/basic/SettingController.js", :type => "text/javascript"}
+
+/ 仓库信息管理
+%script{:src => "./assets/pages/basic/StorageController.js", :type => "text/javascript"}
+
+/ 宠物品种管理
+%script{:src => "./assets/pages/basic/VarietieController.js", :type => "text/javascript"}
+

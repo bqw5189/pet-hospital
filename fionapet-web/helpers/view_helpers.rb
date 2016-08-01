@@ -1,6 +1,7 @@
 module ViewHelpers
   def page(title, id)
     @page_id = id
+    @page_title = title;
     content_for :title do
       title
     end

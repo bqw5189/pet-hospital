@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <!-- / = partial( :'partial', :userName => "tim", :layout=>"portlet" ) -->
+    <!-- / , :userName => "Tim" -->
+    <!-- / = partial( :'layouts/partials/message', :userName => "tim" ) -->
+    <hr style='border: 1px solid green'>
+    <div class='div bg-yellow-gold bg-font-yellow-gold'>
+      inbox.haml
+    </div>
+    Hello Inbox!!!
+    <h1>
+      userName
+    </h1>
+    <hr style='border: 1px solid green'>
+    <div class='div bg-yellow-gold bg-font-yellow-gold'>
+      render >> inbox.haml
+    </div>
+    Hello Inbox!!!
+    <h1>
+      userName
+    </h1>
+    <hr style='border: 1px solid green'>
+    <div class='div bg-yellow-gold bg-font-yellow-gold'>
+      render >> email.haml
+    </div>
+    这个杀手不太冷
+    <div class='div'>
+      0
+    </div>
+    <a class='btn dark btn-outline sbold' data-toggle='modal' href='/#full'>Full</a>
+    <hr style='border: 1px solid green'>
+    <div class='div bg-yellow-gold bg-font-yellow-gold'>
+      foo.haml
+    </div>
+    <h1>dddd</h1>
+    
+    <div class='haml-block'>
+      Am i the only one around here who has this failing?
+    </div>
+    <h3>postfix</h3>
+    tim
+    <hr style='border: 1px solid green'>
+    <div class='div bg-yellow-gold bg-font-yellow-gold'>
+      portlet.haml
+    </div>
+    <!-- 门户组件 -->
+    <!-- BEGIN  FORM PORTLET -->
+    <div class='portlet light bordered'>
+      <div class='portlet-title'>
+        <div class='caption'>
+          <i class='icon-settings font-dark'></i>
+          <span class='caption-subject font-dark sbold uppercase'></span>
+        </div>
+        <div class='actions'>
+          
+        </div>
+      </div>
+      <div class='portlet-body form'>
+        Hello Inbox!!!
+        <h1>
+          userName
+        </h1>
+        <table class='table table-striped table-bordered table-advance table-hover'>
+          <thead>
+            <tr>
+              <th>
+                <i class='fa fa-briefcase'></i>
+                Company
+              </th>
+              <th class='hidden-xs'>
+                <i class='fa fa-user'></i>
+                Contact
+              </th>
+              <th>
+                <i class='fa fa-shopping-cart'></i>
+                Total
+              </th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class='highlight'>
+                <div class='success'></div>
+                <a href='javascript:;'>RedBull</a>
+              </td>
+              <td class='hidden-xs'>Mike Nilson</td>
+              <td>2560.60$</td>
+              <td>
+                <a class='btn btn-outline btn-circle btn-sm purple' href='javascript:;'>
+                  <i class='fa fa-edit'></i>
+                  Edit
+                </a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </body>
+</html>

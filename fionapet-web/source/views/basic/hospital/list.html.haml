@@ -1,63 +1,40 @@
-- page '数据字典', 'dictionary'
+- page '医院信息', 'hospital'
+
+- @prefix = "basic/"
+
+- fields = data[@page_id].fields
+
+- listFields = data[@page_id].listFields
 
 - content_for :toolbar do
-  %a.btn.btn-circle.btn-default.btn-sm{:href => "javascript:;"}
+  %button.btn.btn-circle.btn-default.btn-sm{:href => "javascript:;", 'ng': {'click':'update()'}}
     %i.fa.fa-plus
     增加
-  %a.btn.btn-circle.red-sunglo.btn-sm{:href => "javascript:;"}
+  %button.btn.btn-circle.red-sunglo.btn-sm{:href => "javascript:;", 'ng': {'click':'removes()', 'disabled': 'isRemoves'} }
     %i.fa.fa-remove
     删除
 
-- content_for :searchfields do
-  %ul.dropdown-menu
-    %li
-      %a{:href => "javascript:;"} 宠物病例号
-    %li
-      %a{:href => "javascript:;"} 宠物昵称
-    %li.divider
-    %li
-      %a{:href => "javascript:;"} 会员编号
-    %li
-      %a{:href => "javascript:;"} 会员名称
-    %li
-      %a{:href => "javascript:;"} 会员电话
-    %li.divider
-    %li
-      %a{:href => "javascript:;"} 登记日期
+- content_for :theader do
+  - listFields.each do |field|
+    -#挂号状态
+    %th #{field.aliasName || field.fieldName}
 
-%table#sample_1.table.table-striped.table-bordered.table-hover.table-checkable.order-column
-  %thead
-    %tr
-      %th
-        %input.group-checkable{"data-set" => "#sample_1 .checkboxes", :type => "checkbox"}/
-      %th 操作
-      %th 充值记录
-      %th 会员等级
-      %th 会员编号
-      %th 会员姓名
-      %th 性别
-      %th 会员电话
-      %th 固定电话
-      %th 会员生日
-      %th 账户金额
-      %th 登记日期
-      %th 最后消费时间
-  %tbody
-    %tr.odd.gradeX
-      %td
-        %input.checkboxes{:type => "checkbox", :value => "1"}/
-      %td
-        %a.btn.btn-outline.btn-circle.btn-sm.purple{:href => "#/vip/update/1"}
-          %i.fa.fa-edit
-          编辑
-        %a.btn.btn-outline.btn-circle.dark.btn-sm.black{:href => "#/vip/remove/1"}
-          %i.fa.fa-trash-o
-          删除
-      %td
-        %a{:href => "mailto:shuxer@gmail.com"} shuxer@gmail.com
-      %td 120
-      %td.center 12 Jan 2012
-      %td
-        %span.label.label-sm.label-success Approved
+-#- content_for :ttoolbar do
+-#  %a.btn.btn-outline.btn-circle.btn-sm.purple{'ng-click' => 'update(pet.id)'}
+-#    %i.fa.fa-edit
+-#    更新
+-#  %a.btn.btn-outline.btn-circle.dark.btn-sm.black{:href => "javascript:;", 'ng': {'click':'remove(pet.id)'}}
+-#    %i.fa.fa-trash-o
+-#    Delete
 
-        / END EXAMPLE TABLE PORTLET
+- content_for :tbody do
+  - listFields.each do |column|
+    -# #{column.fieldName}
+    %td
+      = bind @page_id, (column.fieldKey || fields[column.fieldName] || 'error')
+
+/ Modal
+
+/ Modal
+= partial :'layouts/partials/modal' do
+  = partial 'modify'

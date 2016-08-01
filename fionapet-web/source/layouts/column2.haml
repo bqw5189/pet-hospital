@@ -1,0 +1,64 @@
+!!!5
+%html
+  %body
+    #operate_msg_box
+    .row
+      .col-md-3
+        / BEGIN Outline
+        .portlet.light.bordered
+          .portlet-title
+            .caption.font-dark
+              %i.icon-settings.font-dark
+              %span.caption-subject.bold.uppercase=yield_content :outline_title
+            .actions
+              = yield_content :outline_toolbar
+
+          .portlet-body
+            = yield_content :outline_body
+
+      .col-md-9
+        / BEGIN EXAMPLE TABLE PORTLET
+        .portlet.light.bordered
+          .portlet-title
+            .caption.font-dark
+              %i.icon-settings.font-dark
+              %span.caption-subject.bold.uppercase=yield_content :title
+            .actions
+              =yield_content :toolbar
+
+          .portlet-body
+            .table-toolbar
+              %form{:name=>"searchform", :role => "form"}
+                .row
+                  .col-md-8{'fa_filter' => '', 'templateUrl' => '/views/' + (@prefix || "") + @page_id + '/filter.html', 'placeholder' =>'{{placeholder}}', 'search' =>"search()", 'filters' => 'filters'}
+
+            %table#sample_editable_1.table.table-striped.table-hover.table-bordered
+              %thead
+                %tr
+                  %th
+                    %input.group-checkable{:type => "checkbox", 'ng': {'model':'selectedall', 'change': 'selectAll()'}}/
+                  %th 操作
+                  =yield_content :theader
+
+              %tbody
+                %tr.odd.gradeX{ "ng-repeat" => @page_id + " in " +@page_id+ "s" }
+                  %td
+                    %input.checkboxes{:type => "checkbox", 'ng': {'model': 'selection[' +@page_id+ '.id]', 'change': 'selectChange()'} }/
+                  %td
+                    - if !content_for?(:ttoolbar)
+                      %a.btn.btn-outline.btn-circle.btn-sm.purple{'ng-click' => 'update(' +@page_id+ '.id)'}
+                        %i.fa.fa-edit
+                        编辑
+                      %a.btn.btn-outline.btn-circle.dark.btn-sm.black{:href => "javascript:;", 'ng': {'click':'remove(' +@page_id+ '.id)'}}
+                        %i.fa.fa-trash-o
+                        删除
+
+                    - if content_for?(:ttoolbar)
+                      =yield_content :ttoolbar
+
+                  =yield_content :tbody
+
+            .row
+              .col-md-12.col-sm-12{ 'fa_pagination' => '','search' =>"search()", 'pagination' => 'pagination'}
+
+            =yield

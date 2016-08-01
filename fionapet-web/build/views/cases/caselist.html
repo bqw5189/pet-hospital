@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <div id='operate_msg_box'></div>
+    <!-- BEGIN EXAMPLE TABLE PORTLET -->
+    <div class='portlet light bordered'>
+      <div class='portlet-title'>
+        <div class='caption font-dark'>
+          <i class='icon-settings font-dark'></i>
+          <span class='caption-subject bold uppercase'>Case</span>
+        </div>
+        <div class='actions'>
+          
+        </div>
+      </div>
+      <div class='portlet-body'>
+        <div class='table-toolbar'>
+          <form name='searchform' role='form'>
+            <div class='row'>
+              <div class='col-md-8' fa_filter='' filters='filters' placeholder='{{placeholder}}' search='search()' templateUrl='/views/case/filter.html'></div>
+            </div>
+          </form>
+        </div>
+        <table class='table table-striped table-hover table-bordered' id='sample_editable_1'>
+          <thead>
+            <tr>
+              <th>
+                <input class='group-checkable' ng-change='selectAll()' ng-model='selectedall' type='checkbox'>
+              </th>
+              <th>操作</th>
+              
+            </tr>
+          </thead>
+          <tbody>
+            <tr class='odd gradeX' ng-repeat='case in cases'>
+              <td>
+                <input class='checkboxes' ng-change='selectChange()' ng-model='selection[" +@page_id+ ".id]' type='checkbox' value='{{case.id}}'>
+              </td>
+              <td>
+                <a class='btn btn-outline btn-circle btn-sm purple' ng-click='update(" +@page_id+ ".id)'>
+                  <i class='fa fa-edit'></i>
+                  编辑
+                </a>
+                <a class='btn btn-outline btn-circle dark btn-sm black' href='javascript:;' ng-click='remove(" +@page_id+ ".id)'>
+                  <i class='fa fa-trash-o'></i>
+                  删除
+                </a>
+              </td>
+              
+            </tr>
+          </tbody>
+        </table>
+        <table class='table table-striped table-bordered table-advance table-hover'>
+          <thead>
+            <tr>
+              <th>
+                <i class='fa fa-briefcase'></i>
+                Company
+              </th>
+              <th class='hidden-xs'>
+                <i class='fa fa-user'></i>
+                Contact
+              </th>
+              <th>
+                <i class='fa fa-shopping-cart'></i>
+                Total
+              </th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class='highlight'>
+                <div class='success'></div>
+                <a href='javascript:;'>RedBull</a>
+              </td>
+              <td class='hidden-xs'>Mike Nilson</td>
+              <td>2560.60$</td>
+              <td>
+                <a class='btn btn-outline btn-circle btn-sm purple' href='javascript:;'>
+                  <i class='fa fa-edit'></i>
+                  Edit
+                </a>
+              </td>
+            </tr>
+            <tr>
+              <td class='highlight'>
+                <div class='info'></div>
+                <a href='javascript:;'>Google</a>
+              </td>
+              <td class='hidden-xs'>Adam Larson</td>
+              <td>560.60$</td>
+              <td>
+                <a class='btn btn-outline btn-circle dark btn-sm black' href='javascript:;'>
+                  <i class='fa fa-trash-o'></i>
+                  Delete
+                </a>
+              </td>
+            </tr>
+            <tr>
+              <td class='highlight'>
+                <div class='success'></div>
+                <a href='javascript:;'>Apple</a>
+              </td>
+              <td class='hidden-xs'>Daniel Kim</td>
+              <td>3460.60$</td>
+              <td>
+                <a class='btn btn-outline btn-circle green btn-sm purple' href='javascript:;'>
+                  <i class='fa fa-edit'></i>
+                  Edit
+                </a>
+              </td>
+            </tr>
+            <tr>
+              <td class='highlight'>
+                <div class='warning'></div>
+                <a href='javascript:;'>Microsoft</a>
+              </td>
+              <td class='hidden-xs'>Nick</td>
+              <td>2560.60$</td>
+              <td>
+                <a class='btn btn-outline btn-circle red btn-sm blue' href='javascript:;'>
+                  <i class='fa fa-share'></i>
+                  Share
+                </a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <div class='row'>
+          <div class='col-md-12 col-sm-12' fa_pagination='' pagination='pagination' search='search()'></div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
