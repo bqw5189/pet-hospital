@@ -9,6 +9,7 @@ import org.dubbo.x.entity.IdEntity;
  * Created by tom on 16/7/19.
  */
 public class DataBuilder {
+
     public static <R,T extends IData> R data(Class<T> dataClass){
         try {
             if(dataClass.newInstance().data() instanceof CMEntity) {

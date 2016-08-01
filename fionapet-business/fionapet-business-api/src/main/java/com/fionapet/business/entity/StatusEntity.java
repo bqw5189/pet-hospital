@@ -16,11 +16,13 @@ public class StatusEntity extends IdEntity {
     private DictTypeDetail status = new DictTypeDetail();
 
     public StatusEntity() {
-        status.setId("34ff5c2e-6625-4d6d-ad39-d1745755b3a1");
+        status.setId("68479670-5787-11e6-9b57-ec4aad85924d");
         status.setDictDetailCode("SM00001");
+        status.setCreateUserId("fc5db3b3-4063-4a12-a511-880ba19e4b58");
+        status.setUpdateUserId("fc5db3b3-4063-4a12-a511-880ba19e4b58");
     }
 
-    @ManyToOne(cascade = {CascadeType.MERGE,CascadeType.REFRESH }, optional = true)
+    @ManyToOne(cascade = {CascadeType.REFRESH }, optional = true)
     @JoinColumn(name="status", referencedColumnName = "dictDetailCode")
     public DictTypeDetail getStatus() {
         return status;

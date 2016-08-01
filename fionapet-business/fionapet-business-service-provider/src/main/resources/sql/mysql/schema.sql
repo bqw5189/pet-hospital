@@ -199,7 +199,7 @@ DROP TABLE IF EXISTS `t_dict_type_detail`;
 CREATE TABLE `t_dict_type_detail` (
   `id` VARCHAR(36) NOT NULL,
   `dict_type_id` varchar(36)  NULL,-- 字典类型ID 关联t_dict_type表UUID
-  `dict_detail_code` varchar(50)  NULL,-- 编号
+  `dict_detail_code` varchar(50)  not null UNIQUE ,-- 编号
   `value_name_cn` varchar(50)  NULL,-- 中文名
   `value_name_en` varchar(50)  NULL ,-- 英文名
   `comments` varchar(100)  NULL ,-- 描述

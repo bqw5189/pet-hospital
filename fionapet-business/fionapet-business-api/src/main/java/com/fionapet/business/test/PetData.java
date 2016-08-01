@@ -1,5 +1,6 @@
 package com.fionapet.business.test;
 
+import com.fionapet.business.entity.DictTypeDetail;
 import com.fionapet.business.entity.Pet;
 import com.fionapet.business.entity.PetSmallRace;
 import com.fionapet.business.entity.UserDictDetail;
@@ -28,6 +29,9 @@ public class PetData implements IData<Pet>{
         pet.setPetHead("头像");
         pet.setPetHeadId("01");
 
+        pet.setCreateUserId(TOKEN);
+        pet.setUpdateUserId(TOKEN);
+
         //品种
         PetSmallRace petSmallRace = DataBuilder.data(PetSmallRaceData.class);
         pet.setPetRace(petSmallRace);
@@ -35,6 +39,9 @@ public class PetData implements IData<Pet>{
         //性别
         UserDictDetail userDictDetail = DataBuilder.data(UserDictDetailData.class);
         pet.setPetSex(userDictDetail);
+
+        DictTypeDetail dictTypeDetail = DataBuilder.data(DictTypeDetailData.class);
+        pet.setSickFileCode(dictTypeDetail);
 
         //颜色
         pet.setPetSkinColor(userDictDetail);

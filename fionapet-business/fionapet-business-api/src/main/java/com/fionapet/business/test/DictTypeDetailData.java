@@ -10,9 +10,12 @@ public class DictTypeDetailData implements IData<DictTypeDetail>{
     public DictTypeDetail data() {
         DictTypeDetail dictTypeDetail = new DictTypeDetail();
 
-        dictTypeDetail.setId("917e4028-4feb-11e6-b714-5d28aef3b5b0");
+        dictTypeDetail.setId("684d2f2c-5787-11e6-9b57-ec4aad85924d");
+
         dictTypeDetail.setDictDetailCode("SM00055");
         dictTypeDetail.setValueNameCn("散客");
+        dictTypeDetail.setCreateUserId(TOKEN);
+        dictTypeDetail.setUpdateUserId(TOKEN);
 
         return dictTypeDetail;
     }

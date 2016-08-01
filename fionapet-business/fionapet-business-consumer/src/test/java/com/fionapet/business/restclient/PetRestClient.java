@@ -71,7 +71,7 @@ public class PetRestClient extends RestClientTestCase {
     }
 
     @Test(expected = ProcessingException.class)
-    public void testCreate(){
+    public void testCreateUpdate(){
         final Pet pet = DataBuilder.data(PetData.class);
 
         LOGGER.info("create pet:{}", pet);
@@ -92,8 +92,33 @@ public class PetRestClient extends RestClientTestCase {
                 Assert.assertNotNull(result.getData().get("id"));
 
                 LOGGER.info("list:{}", JSON.toJSON(restResult));
+
+                pet.setPetName("哈士奇2");
+                pet.setId(result.getData().get("id")+"");
+
+                Response response = getBuilder(URL, TOKEN).post(Entity.entity(pet, MediaType.APPLICATION_JSON));
+
+                assertRequest(new Assertable() {
+                    @Override
+                    public void assertBlack(RestResult restResult) throws Exception {
+                        LOGGER.info("restResult:{}", restResult);
+                        RestResult<HashMap> result = (RestResult<HashMap>)restResult;
+                        Assert.assertEquals(restResult.getCode(), RestResultEnum.OK.getCode());
+
+                        Assert.assertNotNull(result.getData());
+
+                        LOGGER.info("result.getData():{}", result.getData().getClass());
+
+                        Assert.assertEquals(result.getData().get("petName"), "哈士奇2");
+
+                        LOGGER.info("list:{}", JSON.toJSON(restResult));
+                    }
+                }, response);
+
             }
         }, response);
+
+
     }
 
 
