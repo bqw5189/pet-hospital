@@ -1,5 +1,6 @@
 package com.fionapet.business.facade;
 
+import org.dubbo.x.entity.PageSearch;
 import org.dubbo.x.facade.CURDRestService;
 import org.dubbo.x.facade.RestResult;
 import org.dubbo.x.util.ConstantVariable;
@@ -8,6 +9,7 @@ import com.fionapet.business.entity.PetSmallRace;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
+import org.springframework.data.domain.Page;
 
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
@@ -19,10 +21,10 @@ import java.util.List;
 * Created by tom on 2016-07-19 13:15:47.
  */
 
-@Path("petsmallraces")
+@Path("varieties")
 @Consumes({MediaType.APPLICATION_JSON})
 @Produces({ContentType.APPLICATION_JSON_UTF_8})
-@Api(value="petsmallraces", description = "宠物品种接口")
+@Api(value="varieties", description = "宠物品种接口")
 public interface PetSmallRaceRestService extends CURDRestService<PetSmallRace>{
     /**
      * 宠物品种
@@ -54,4 +56,9 @@ public interface PetSmallRaceRestService extends CURDRestService<PetSmallRace>{
     @Path("/{id}")
     @ApiOperation(value = "删除宠物品种", notes = "删除宠物品种")
     RestResult<String> delete(@HeaderParam(ConstantVariable.HEADER_AUTHORIZATION_KEY) String token, @ApiParam("id") @PathParam("id") String uuid);
+
+    @Override
+    @POST
+    @Path("/page")
+    RestResult<Page<PetSmallRace>> page(@HeaderParam(ConstantVariable.HEADER_AUTHORIZATION_KEY) String token, PageSearch pageSearch);
 }
