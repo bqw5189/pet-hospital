@@ -34,14 +34,14 @@
           <tbody>
             <tr class='odd gradeX' ng-repeat='case in cases'>
               <td>
-                <input class='checkboxes' ng-change='selectChange()' ng-model='selection[" +@page_id+ ".id]' type='checkbox' value='{{case.id}}'>
+                <input class='checkboxes' ng-change='selectChange()' ng-model='selection[case.id]' type='checkbox'>
               </td>
               <td>
-                <a class='btn btn-outline btn-circle btn-sm purple' ng-click='update(" +@page_id+ ".id)'>
+                <a class='btn btn-outline btn-circle btn-sm purple' ng-click='update(case.id)'>
                   <i class='fa fa-edit'></i>
                   编辑
                 </a>
-                <a class='btn btn-outline btn-circle dark btn-sm black' href='javascript:;' ng-click='remove(" +@page_id+ ".id)'>
+                <a class='btn btn-outline btn-circle dark btn-sm black' href='javascript:;' ng-click='remove(case.id)'>
                   <i class='fa fa-trash-o'></i>
                   删除
                 </a>
@@ -50,6 +50,9 @@
             </tr>
           </tbody>
         </table>
+        <div class='row'>
+          <div class='col-md-12 col-sm-12' fa_pagination='' pagination='pagination' search='search()'></div>
+        </div>
         <table class='table table-striped table-bordered table-advance table-hover'>
           <thead>
             <tr>
@@ -127,9 +130,6 @@
             </tr>
           </tbody>
         </table>
-        <div class='row'>
-          <div class='col-md-12 col-sm-12' fa_pagination='' pagination='pagination' search='search()'></div>
-        </div>
       </div>
     </div>
   </body>

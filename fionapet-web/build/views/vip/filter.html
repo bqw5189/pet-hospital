@@ -5,19 +5,19 @@
         {{searchbar.fieldName}}
         <i class='fa fa-angle-down'></i>
       </button>
-      <ul class='dropdown-menu'>
-        <li>
-          <a href='javascript:;'>编号</a>
-        </li>
-        <li>
-          <a href='javascript:;'>姓名</a>
-        </li>
-        <li class='divider'></li>
-        <li>
-          <a href='javascript:;'>电话</a>
-        </li>
-      </ul>
     </div>
+    <ul class='dropdown-menu'>
+      <li>
+        <a href='javascript:;'>编号</a>
+      </li>
+      <li>
+        <a href='javascript:;'>姓名</a>
+      </li>
+      <li class='divider'></li>
+      <li>
+        <a href='javascript:;'>电话</a>
+      </li>
+    </ul>
     <input class='form-control' ng-model='searchbar.firstValue' ng-readonly="searchbar.dataType == 'date'" placeholder='{{searchbar.firstTextPlaceholder}}' type='text'>
     <div class='input-group-btn' ng-show="searchbar.dataType == 'date'">
       <button class='form-control date-picker-btn input-noborder-vertical' tabindex='-1' type='button'>

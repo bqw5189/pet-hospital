@@ -10,21 +10,21 @@
           <span class='caption-subject bold uppercase'>数据字典</span>
         </div>
         <div class='actions'>
-          <a class='btn btn-circle btn-default btn-sm' href='javascript:;'>
+          <button class='btn btn-circle btn-default btn-sm' href='javascript:;' ng-click='update()'>
             <i class='fa fa-plus'></i>
             增加
-          </a>
-          <a class='btn btn-circle red-sunglo btn-sm' href='javascript:;'>
+          </button>
+          <button class='btn btn-circle red-sunglo btn-sm' href='javascript:;' ng-click='removes()' ng-disabled='isRemoves'>
             <i class='fa fa-remove'></i>
             删除
-          </a>
+          </button>
         </div>
       </div>
       <div class='portlet-body'>
         <div class='table-toolbar'>
           <form name='searchform' role='form'>
             <div class='row'>
-              <div class='col-md-8' fa_filter='' filters='filters' placeholder='{{placeholder}}' search='search()' templateUrl='/views/dictionary/filter.html'></div>
+              <div class='col-md-8' fa_filter='' filters='filters' placeholder='{{placeholder}}' search='search()' templateUrl='/views/basic/dictionary/filter.html'></div>
             </div>
           </form>
         </div>
@@ -35,77 +35,184 @@
                 <input class='group-checkable' ng-change='selectAll()' ng-model='selectedall' type='checkbox'>
               </th>
               <th>操作</th>
-              
+              <th>挂号状态</th>
             </tr>
           </thead>
           <tbody>
             <tr class='odd gradeX' ng-repeat='dictionary in dictionarys'>
               <td>
-                <input class='checkboxes' ng-change='selectChange()' ng-model='selection[" +@page_id+ ".id]' type='checkbox' value='{{dictionary.id}}'>
+                <input class='checkboxes' ng-change='selectChange()' ng-model='selection[dictionary.id]' type='checkbox'>
               </td>
               <td>
-                <a class='btn btn-outline btn-circle btn-sm purple' ng-click='update(" +@page_id+ ".id)'>
+                <a class='btn btn-outline btn-circle btn-sm purple' ng-click='update(dictionary.id)'>
                   <i class='fa fa-edit'></i>
                   编辑
                 </a>
-                <a class='btn btn-outline btn-circle dark btn-sm black' href='javascript:;' ng-click='remove(" +@page_id+ ".id)'>
-                  <i class='fa fa-trash-o'></i>
-                  删除
-                </a>
-              </td>
-              
-            </tr>
-          </tbody>
-        </table>
-        <table class='table table-striped table-bordered table-hover table-checkable order-column' id='sample_1'>
-          <thead>
-            <tr>
-              <th>
-                <input class='group-checkable' data-set='#sample_1 .checkboxes' type='checkbox'>
-              </th>
-              <th>操作</th>
-              <th>充值记录</th>
-              <th>会员等级</th>
-              <th>会员编号</th>
-              <th>会员姓名</th>
-              <th>性别</th>
-              <th>会员电话</th>
-              <th>固定电话</th>
-              <th>会员生日</th>
-              <th>账户金额</th>
-              <th>登记日期</th>
-              <th>最后消费时间</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr class='odd gradeX'>
-              <td>
-                <input class='checkboxes' type='checkbox' value='1'>
-              </td>
-              <td>
-                <a class='btn btn-outline btn-circle btn-sm purple' href='#/vip/update/1'>
-                  <i class='fa fa-edit'></i>
-                  编辑
-                </a>
-                <a class='btn btn-outline btn-circle dark btn-sm black' href='#/vip/remove/1'>
+                <a class='btn btn-outline btn-circle dark btn-sm black' href='javascript:;' ng-click='remove(dictionary.id)'>
                   <i class='fa fa-trash-o'></i>
                   删除
                 </a>
               </td>
               <td>
-                <a href='mailto:shuxer@gmail.com'>shuxer@gmail.com</a>
-              </td>
-              <td>120</td>
-              <td class='center'>12 Jan 2012</td>
-              <td>
-                <span class='label label-sm label-success'>Approved</span>
+                {{dictionary.status.valueNameCn}}
               </td>
             </tr>
           </tbody>
         </table>
-        <!-- END EXAMPLE TABLE PORTLET -->
         <div class='row'>
           <div class='col-md-12 col-sm-12' fa_pagination='' pagination='pagination' search='search()'></div>
+        </div>
+        <!-- Modal -->
+        <!-- Modal -->
+        <div aria-hidden='true' class='modal fade bs-modal-lg' id='dictionary' role='dialog' tabindex='-1'>
+          <div class='modal-dialog'>
+            <div class='modal-content'>
+              <form id='dictionaryform' name='dictionaryform' ng-submit='dictionarysubmit()' novalidate='' role='form'>
+                <div class='modal-header'>
+                  <button aria-hidden='true' class='close' data-dismiss='modal' type='button'></button>
+                  <h4 class='modal-title'>数据字典</h4>
+                </div>
+                <div class='modal-body'>
+                  <!-- BEGIN SAMPLE FORM PORTLET -->
+                  <div class='portlet light bordered'>
+                    <div class='portlet-title'>
+                      <div class='caption'>
+                        <i class='icon-settings font-dark'></i>
+                        <span class='caption-subject font-dark sbold uppercase'>会员信息</span>
+                      </div>
+                      <div class='actions'>
+                        <a class='btn btn-circle grey-salsa btn-sm' href='javascript:;'>
+                          <i class='fa fa-plus'></i>
+                          新增主人
+                        </a>
+                        <a class='btn btn-circle grey-salsa btn-sm' href='javascript:;'>
+                          <i class='fa fa-remove'></i>
+                          选择主人
+                        </a>
+                      </div>
+                    </div>
+                    <div class='portlet-body form'>
+                      <div class='form-body'>
+                        <div class='row'>
+                          <div class='col-md-4'>
+                            <div class='form-group'>
+                              <label class='control-label'>
+                                会员编号
+                                <span class='required'>*</span>
+                              </label>
+                              <input class='form-control' maxlength='32' name='gestCode' ng-model='gest.gestCode' required='true' type='text'>
+                              <p class='help-block font-red-thunderbird' ng-show='dictionaryform.gestCode.$invalid &amp;&amp; dictionaryform.submitted'>会员编号不能为空.</p>
+                            </div>
+                          </div>
+                          <div class='col-md-4'>
+                            <div class='form-group'>
+                              <label class='control-label'>
+                                会员姓名
+                              </label>
+                              <input class='form-control' maxlength='32' name='gestName' ng-model='gest.gestName' type='text'>
+                            </div>
+                          </div>
+                          <div class='col-md-4'>
+                            <div class='form-group'>
+                              <label class='control-label'>会员等级</label>
+                              <select class='form-control'>
+                                <option>普通会员</option>
+                                <option>VIP会员</option>
+                              </select>
+                            </div>
+                          </div>
+                        </div>
+                        <div class='row'>
+                          <div class='col-md-4'>
+                            <div class='form-group'>
+                              <label class='control-label'>会员性别</label>
+                              <select class='form-control'>
+                                <option>男</option>
+                                <option>女</option>
+                              </select>
+                            </div>
+                          </div>
+                          <div class='col-md-4'>
+                            <div class='form-group'>
+                              <label class='control-label'>
+                                出生日期
+                              </label>
+                              <div class='input-icon right'>
+                                <i class='fa fa-calendar'></i>
+                                <input class='form-control date-picker' data-date-format='yyyy-mm-dd' maxlength='32' name='gestBirthday' ng-model='gest.gestBirthday' readonly='true' type='text'>
+                              </div>
+                            </div>
+                          </div>
+                          <div class='col-md-4'>
+                            <div class='form-group'>
+                              <label class='control-label'>
+                                年龄
+                              </label>
+                              <input class='form-control' maxlength='16' name='error' ng-model='error' type='text'>
+                            </div>
+                          </div>
+                        </div>
+                        <div class='row'>
+                          <div class='col-md-4'>
+                            <div class='form-group'>
+                              <label class='control-label'>
+                                手机
+                              </label>
+                              <input class='form-control' maxlength='16' name='mobilePhone' ng-model='gest.mobilePhone' type='text'>
+                            </div>
+                          </div>
+                          <div class='col-md-4'>
+                            <div class='form-group'>
+                              <label class='control-label'>
+                                电话
+                              </label>
+                              <input class='form-control' maxlength='16' name='telPhone' ng-model='gest.telPhone' type='text'>
+                            </div>
+                          </div>
+                          <div class='col-md-4'>
+                            <div class='form-group'>
+                              <label class='control-label'>
+                                账户金额
+                              </label>
+                              <input class='form-control' maxlength='16' name='prepayMoney' ng-model='gest.prepayMoney' type='text'>
+                            </div>
+                          </div>
+                        </div>
+                        <div class='row'>
+                          <div class='col-md-8'>
+                            <div class='form-group'>
+                              <label class='control-label'>
+                                联系地址
+                              </label>
+                              <input class='form-control' maxlength='16' name='gestAddress' ng-model='gest.gestAddress' type='text'>
+                            </div>
+                          </div>
+                          <div class='col-md-4'>
+                            <div class='form-group'>
+                              <label class='control-label'>
+                                登记日期
+                              </label>
+                              <div class='input-icon right'>
+                                <i class='fa fa-calendar'></i>
+                                <input class='form-control date-picker' data-date-format='yyyy-mm-dd' maxlength='16' name='createDate' ng-model='gest.createDate' readonly='true' type='text'>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class='modal-footer'>
+                  <button class='btn grey-mint btn-outline' data-dismiss='modal' type='button'>关闭</button>
+                  <button class='btn btn-primary' ng-disabled='dictionaryform.$pristine' type='submit'>
+                    <i class='fa fa-plus'></i>
+                    保存表单
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
         </div>
       </div>
     </div>

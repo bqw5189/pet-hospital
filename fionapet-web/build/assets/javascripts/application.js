@@ -1,4 +1,4 @@
-angular.module('fiona', ['ngRoute', 'ngResource', 'fiona.services'])
+angular.module('fiona', ['ngRoute','fiona.services'])
     .config(['$routeProvider', function($routeProvider) {
         $routeProvider
             .when('/', {
@@ -13,7 +13,6 @@ angular.module('fiona', ['ngRoute', 'ngResource', 'fiona.services'])
             })
 
             // 会员管理
-            // 会员管理
             .when('/vip/list', {
                 controller: TempController ,
                 templateUrl: 'views/vip/list.html'
@@ -23,119 +22,76 @@ angular.module('fiona', ['ngRoute', 'ngResource', 'fiona.services'])
                 templateUrl: 'views/vip/modify.html'
             })
 
-            // 宠物品种
-            .when('/varieties/list', {
-                controller: TempController ,
-                templateUrl: 'views/basic/varieties/list.html'
-            })
-            .when('/varieties/update/:id', {
-                controller: TempController ,
-                templateUrl: 'views/basic/varieties/modify.html'
-            })
-            .when('/varieties/type', {
-                controller: TempController ,
-                templateUrl: 'views/basic/varieties/type.html'
-            })
+// BASIC - BEGIN
 
             // 经销商与生产商
             .when('/dealer/list', {
-                controller: TempController ,
+                controller: "DealerController",
                 templateUrl: 'views/basic/dealer/list.html'
             })
-            .when('/dealer/update/:id', {
-                controller: TempController ,
-                templateUrl: 'views/basic/dealer/modify.html'
-            })
 
-            // 仓库信息管理
-            .when('/storage/list', {
-                controller: TempController ,
-                templateUrl: 'views/basic/storage/list.html'
-            })
-            .when('/storage/update/:id', {
-                controller: TempController ,
-                templateUrl: 'views/basic/storage/modify.html'
-            })
-
-            // 商品与服务管理
-            .when('/product/list', {
-                controller: TempController ,
-                templateUrl: 'views/basic/product/list.html'
-            })
-            .when('/product/update/:id', {
-                controller: TempController ,
-                templateUrl: 'views/basic/product/modify.html'
+            // 数据字典管理
+            .when('/dictionary/list', {
+                controller: "DictionaryController",
+                templateUrl: 'views/basic/dictionary/list.html'
             })
 
             // 会员等级管理
             .when('/grade/list', {
-                controller: TempController ,
+                controller: "GradeController",
                 templateUrl: 'views/basic/grade/list.html'
             })
-            .when('/grade/update/:id', {
-                controller: TempController ,
-                templateUrl: 'views/basic/grade/modify.html'
-            })
 
-            // 数据字典
-            .when('/dictionary/list', {
-                controller: TempController ,
-                templateUrl: 'views/basic/dictionary/list.html'
-            })
-            .when('/dictionary/update/:id', {
-                controller: TempController ,
-                templateUrl: 'views/basic/dictionary/modify.html'
-            })
-
-            // 员工管理
-            .when('/personnel/list', {
-                controller: TempController ,
-                templateUrl: 'views/basic/personnel/list.html'
-            })
-            .when('/personnel/update/:id', {
-                controller: TempController ,
-                templateUrl: 'views/basic/personnel/modify.html'
+            // 医院信息
+            .when('/hospital/list', {
+                controller: "HospitalController",
+                templateUrl: 'views/basic/hospital/list.html'
             })
 
             // 化验项目管理
             .when('/labwork/list', {
-                controller: TempController ,
+                controller: "LabworkController",
                 templateUrl: 'views/basic/labwork/list.html'
             })
-            .when('/labwork/update/:id', {
-                controller: TempController ,
-                templateUrl: 'views/basic/labwork/modify.html'
+
+            // 员工管理
+            .when('/personnel/list', {
+                controller: "PersonnelController",
+                templateUrl: 'views/basic/personnel/list.html'
             })
 
-            // 医院管理
-            .when('/hospital/list', {
-                controller: TempController ,
-                templateUrl: 'views/basic/hospital/list.html'
-            })
-            .when('/hospital/update/:id', {
-                controller: TempController ,
-                templateUrl: 'views/basic/hospital/modify.html'
-            })
-
-            // 应用参数
-            .when('/setting/list', {
-                controller: TempController ,
-                templateUrl: 'views/basic/setting/list.html'
-            })
-            .when('/setting/update/:id', {
-                controller: TempController ,
-                templateUrl: 'views/basic/setting/modify.html'
+            // 商品与服务管理
+            .when('/product/list', {
+                controller: "ProductController",
+                templateUrl: 'views/basic/product/list.html'
             })
 
             // 角色管理
             .when('/role/list', {
-                controller: TempController,
+                controller: "RoleController",
                 templateUrl: 'views/basic/role/list.html'
             })
-            .when('/role/update/:id', {
-                controller: TempController,
-                templateUrl: 'views/basic/role/modify.html'
+
+            //应用参数配置
+            .when('/setting/list', {
+                controller: "SettingController",
+                templateUrl: 'views/basic/setting/list.html'
             })
+
+            // 仓库信息管理
+            .when('/storage/list', {
+                controller: "StorageController",
+                templateUrl: 'views/basic/storage/list.html'
+            })
+
+            // 宠物品种管理
+            .when('/varietie/list', {
+                controller: "VarietieController",
+                templateUrl: 'views/basic/varietie/list_cols2.html'
+            })
+
+
+// BASIC - END
 
             // 预约管理
             .when('/bespeak/list', {
@@ -174,6 +130,10 @@ angular.module('fiona', ['ngRoute', 'ngResource', 'fiona.services'])
             })
 
             // 案例
+            .when('/api', {
+                controller: "CaseController",
+                templateUrl: 'views/api/api.html'
+            })
             .when('/cases/list', {
                 controller: "CaseController",
                 templateUrl: 'views/cases/caselist.html'

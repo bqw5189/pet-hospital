@@ -23,6 +23,9 @@ angular.module('fiona').controller('PetController', function($scope, $http, comm
         autoclose: !0
     });
 
+
+    $scope.error= "未找到定义";
+
     $scope.selectedall = false;
 
     $scope.isRemoves = true;
@@ -40,9 +43,11 @@ angular.module('fiona').controller('PetController', function($scope, $http, comm
     };
 
     $scope.selectAll= function () {
-        angular.forEach(angular.element('.checkboxes'), function (data) {
-            $scope.selection[data.getAttribute('value')] = $scope.selectedall;
+        angular.forEach($scope.pets, function (pet) {
+            $scope.selection[pet.id] = $scope.selectedall;
         })
+
+        $scope.isRemoves = !$scope.selectedall
     };
 
     // 综合搜索项
@@ -62,19 +67,22 @@ angular.module('fiona').controller('PetController', function($scope, $http, comm
     // 综合搜索项
     $scope.filters = [
         // 宠物病例号
-        {"fieldName": "name","operator": "EQ", "value":""},
+        // {"fieldName": "name","operator": "EQ", "value":""},
 
         // 宠物昵称
-        {"fieldName": "name","operator": "EQ", "value":""},
+        {"fieldName": "petCode","operator": "EQ", "value":""},
+
+        // 宠物昵称
+        {"fieldName": "petName","operator": "EQ", "value":""},
 
         // 会员编号
-        {"fieldName": "name","operator": "EQ", "value":""},
+        {"fieldName": "gestCode","operator": "EQ", "value":""},
 
         // 会员名称
-        {"fieldName": "name","operator": "EQ", "value":""},
+        {"fieldName": "gestName","operator": "EQ", "value":""},
 
         // 会员电话
-        {"fieldName": "name","operator": "EQ", "value":""}
+        // {"fieldName": "mobilePhone","operator": "EQ", "value":""}
     ];
 
     $scope.placeholder = "请输入宠物病例号/宠物昵称/会员编号/会员名称/会员电话";
@@ -85,6 +93,10 @@ angular.module('fiona').controller('PetController', function($scope, $http, comm
         // alert(" 执行搜索.... ");
 
         console.log(" 执行搜索.... " + searchform.$dirty);
+
+        angular.forEach($scope.filters, function (data) {
+            console.log(" 执行搜索.... " + data.fieldName + ", " + data.operator + ", " + data.value);
+        });
 
         // 分页查询  /business/api/v2/pets
         // $http.get('/server/api/v2/pets/page.json', {'pageSize':$scope.pagination.pageSize, 'pageNumber':$scope.pagination.pageNumber, 'filters':$scope.filters}).success( function ( data, status, headers, config ) {
@@ -100,8 +112,19 @@ angular.module('fiona').controller('PetController', function($scope, $http, comm
 
             $scope.pets = data.data.content;
 
+            // $http.post('/business/api/v2/pets', data).success( function ( data, status, headers, config ) {
+            //     console.log( data );
+            //     alert("Submit OK");
+            // }).error(function(data,status,headers,config) { //     错误
+            //     alert("保存失败,请确认后重试" + status);
+            // });
+
+            // angular.forEach($scope.pets, function (pet, i) {
+            //     alert(pet.id);
+            // });
+
             // 搜索+分页
-            $scope.pagination.pageNumber = data.data.number;
+            $scope.pagination.pageNumber = data.data.number+1;
 
             $scope.pagination.last = data.data.last;
             $scope.pagination.first = data.data.first;
@@ -112,15 +135,22 @@ angular.module('fiona').controller('PetController', function($scope, $http, comm
 
 
     // Form 界面
-    $scope.submitform = function () {
-
-        alert('SubmitForm');
+    $scope.pstsubmit = function () {
 
         $scope.petform.submitted = true;
 
         if ($scope.petform.$valid) {
             alert('submit: ' + $scope.pet.id);
+            $http.post('/business/api/v2/pets', $scope.pet).success( function ( data, status, headers, config ) {
+                console.log( data );
+                alert("Submit OK");
+            }).error(function(data,status,headers,config) { //     错误
+                alert(status);
+            });
         } else {
+
+            alert($scope.petform.$error);
+
             // $scope.message = "请输入用户名和密码.";
 
             // $scope.signup_form.submitted = true;
@@ -144,7 +174,7 @@ angular.module('fiona').controller('PetController', function($scope, $http, comm
             });
         }
 
-        $('#large').modal('toggle');
+        $('#pet').modal('toggle');
     };
 
     // 删除功能
@@ -157,20 +187,21 @@ angular.module('fiona').controller('PetController', function($scope, $http, comm
     $scope.remove= function (id) {
         // console.log( $scope.xiuUser )
 
-        angular.forEach($scope.pets, function(data,index,array){
+        alert(id);
 
-            if(data.id == id)
-            {
-                $http.delete('server/user/remove.json').success(function(data, index, array){
-
-                    commons.danger("删除成功");
-
-                }).error(function (data) {
-                    commons.danger("删除失败");
-                });
-            }
-
+        $http.delete('/business/api/v2/pets/' + id).success(function(data, index, array){
+            commons.danger("删除成功");
+        }).error(function (data) {
+            commons.danger("删除失败");
         });
+
+        // angular.forEach($scope.pets, function(data,index,array){
+        //
+        //     if(data.id == id)
+        //     {
+        //     }
+        //
+        // });
 
     };
 

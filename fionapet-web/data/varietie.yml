@@ -4,7 +4,7 @@ listFields: # aliasName 显示使用, fieldName 关联字段使用,若显示名�
     fieldKey: type
 
   - fieldName: 种类
-    fieldKey: petRace
+    fieldKey: petRace.name
 
 fields: #可定义多个中文名称指向同一个字段
   ID: id
@@ -12,7 +12,7 @@ fields: #可定义多个中文名称指向同一个字段
   品种: type
 
   #犬科,猫科...,
-  种类: petRace
+  种类: petRace.name
 
   #宠物字典类型明细
   status: status

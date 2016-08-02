@@ -10,14 +10,14 @@
           <span class='caption-subject bold uppercase'>宠物管理</span>
         </div>
         <div class='actions'>
-          <a class='btn btn-circle btn-default btn-sm' href='javascript:;' ng-click='update()'>
+          <button class='btn btn-circle btn-default btn-sm' href='javascript:;' ng-click='update()'>
             <i class='fa fa-plus'></i>
             增加
-          </a>
-          <a class='btn btn-circle red-sunglo btn-sm' href='javascript:;' ng-click='removes()' ng-disabled='isRemoves'>
+          </button>
+          <button class='btn btn-circle red-sunglo btn-sm' href='javascript:;' ng-click='removes()' ng-disabled='isRemoves'>
             <i class='fa fa-remove'></i>
             删除
-          </a>
+          </button>
         </div>
       </div>
       <div class='portlet-body'>
@@ -36,6 +36,7 @@
               </th>
               <th>操作</th>
               <th>挂号状态</th>
+              <th>主键</th>
               <th>宠物状态</th>
               <th>会员编号</th>
               <th>会员姓名</th>
@@ -56,89 +57,79 @@
           <tbody>
             <tr class='odd gradeX' ng-repeat='pet in pets'>
               <td>
-                <input class='checkboxes' ng-change='selectChange()' ng-model='selection[" +@page_id+ ".id]' type='checkbox' value='{{pet.id}}'>
+                <input class='checkboxes' ng-change='selectChange()' ng-model='selection[pet.id]' type='checkbox'>
               </td>
               <td>
-                <a class='btn btn-outline btn-circle btn-sm purple' ng-click='update(" +@page_id+ ".id)'>
+                <a class='btn btn-outline btn-circle btn-sm purple' ng-click='update(pet.id)'>
                   <i class='fa fa-edit'></i>
                   编辑
                 </a>
-                <a class='btn btn-outline btn-circle dark btn-sm black' href='javascript:;' ng-click='remove(" +@page_id+ ".id)'>
+                <a class='btn btn-outline btn-circle dark btn-sm black' href='javascript:;' ng-click='remove(pet.id)'>
                   <i class='fa fa-trash-o'></i>
                   删除
                 </a>
               </td>
               <td>
-                {{pit.id}}
                 {{pet.status.valueNameCn}}
               </td>
               <td>
-                {{pit.id}}
+                {{pet.id}}
+              </td>
+              <td>
                 {{pet.sickFileCode}}
               </td>
               <td>
-                {{pit.id}}
-                error
+                {{pet.gestCode}}
               </td>
               <td>
-                {{pit.id}}
-                error
+                {{pet.gestName}}
               </td>
               <td>
-                {{pit.id}}
-                error
+                <span class='label label-danger'>Danger</span>
               </td>
               <td>
-                {{pit.id}}
                 {{pet.dogBandId}}
               </td>
               <td>
-                {{pit.id}}
-                error
+                <span class='label label-danger'>Danger</span>
               </td>
               <td>
-                {{pit.id}}
-                error
+                {{pet.petName}}
               </td>
               <td>
-                {{pit.id}}
                 {{pet.petSex.valueNameCn}}
               </td>
               <td>
-                {{pit.id}}
                 {{pet.petBirthday}}
               </td>
               <td>
-                {{pit.id}}
-                error
+                <span class='label label-danger'>Danger</span>
               </td>
               <td>
-                {{pit.id}}
                 {{pet.petWeight}}
               </td>
               <td>
-                {{pit.id}}
                 {{pet.petSkinColor.valueNameCn}}
               </td>
               <td>
-                {{pit.id}}
                 {{pet.petRace.petRace.name}}
               </td>
               <td>
-                {{pit.id}}
                 {{pet.petRace.type}}
               </td>
               <td>
-                {{pit.id}}
-                error
+                <span class='label label-danger'>Danger</span>
               </td>
             </tr>
           </tbody>
         </table>
-        <div aria-hidden='true' class='modal fade bs-modal-lg' id='large' role='dialog' tabindex='-1'>
+        <div class='row'>
+          <div class='col-md-12 col-sm-12' fa_pagination='' pagination='pagination' search='search()'></div>
+        </div>
+        <div aria-hidden='true' class='modal fade bs-modal-lg' id='pet' role='dialog' tabindex='-1'>
           <div class='modal-dialog modal-lg'>
             <div class='modal-content'>
-              <form id='petform' name='petform' ng-submit='submitform()' novalidate='' role='form'>
+              <form id='petform' name='petform' ng-submit='petsubmit()' novalidate='' role='form'>
                 <div class='modal-header'>
                   <button aria-hidden='true' class='close' data-dismiss='modal' type='button'></button>
                   <h4 class='modal-title'>宠物管理</h4>
@@ -167,15 +158,20 @@
                         <div class='row'>
                           <div class='col-md-4'>
                             <div class='form-group'>
-                              <label class='control-label'>会员编号</label>
-                              <input class='form-control' id='gestCode' name='gestCode' ng-model='pet.gestCode' required='required' type='text'>
-                              <p class='help-block font-red-thunderbird' ng-show='petform.gestCode.$invalid &amp;&amp; petform.submitted'>会员编码不能为空.</p>
+                              <label class='control-label'>
+                                会员编号
+                                <span class='required'>*</span>
+                              </label>
+                              <input class='form-control' maxlength='32' name='gestCode' ng-model='gest.gestCode' required='true' type='text'>
+                              <p class='help-block font-red-thunderbird' ng-show='petform.gestCode.$invalid &amp;&amp; petform.submitted'>会员编号不能为空.</p>
                             </div>
                           </div>
                           <div class='col-md-4'>
                             <div class='form-group'>
-                              <label class='control-label'>会员姓名</label>
-                              <input class='form-control' ng-model='pet.gestName' type='text'>
+                              <label class='control-label'>
+                                会员姓名
+                              </label>
+                              <input class='form-control' maxlength='32' name='gestName' ng-model='gest.gestName' type='text'>
                             </div>
                           </div>
                           <div class='col-md-4'>
@@ -193,60 +189,74 @@
                             <div class='form-group'>
                               <label class='control-label'>会员性别</label>
                               <select class='form-control'>
-                                <options>男</options>
-                                <options>女</options>
+                                <option>男</option>
+                                <option>女</option>
                               </select>
                             </div>
                           </div>
                           <div class='col-md-4'>
                             <div class='form-group'>
-                              <label class='control-label'>出生日期</label>
+                              <label class='control-label'>
+                                出生日期
+                              </label>
                               <div class='input-icon right'>
                                 <i class='fa fa-calendar'></i>
-                                <input class='form-control date-picker' data-date-format='yyyy-mm-dd' data-date-start-date='+0d' type='text'>
+                                <input class='form-control date-picker' data-date-format='yyyy-mm-dd' maxlength='32' name='gestBirthday' ng-model='gest.gestBirthday' readonly='true' type='text'>
                               </div>
                             </div>
                           </div>
                           <div class='col-md-4'>
                             <div class='form-group'>
-                              <label class='control-label'>会员年龄</label>
-                              <input class='form-control' type='text'>
+                              <label class='control-label'>
+                                年龄
+                              </label>
+                              <input class='form-control' maxlength='16' name='error' ng-model='error' type='text'>
                             </div>
                           </div>
                         </div>
                         <div class='row'>
                           <div class='col-md-4'>
                             <div class='form-group'>
-                              <label class='control-label'>会员电话</label>
-                              <input class='form-control' type='text'>
+                              <label class='control-label'>
+                                手机
+                              </label>
+                              <input class='form-control' maxlength='16' name='mobilePhone' ng-model='gest.mobilePhone' type='text'>
                             </div>
                           </div>
                           <div class='col-md-4'>
                             <div class='form-group'>
-                              <label class='control-label'>固定电话</label>
-                              <input class='form-control' type='text'>
+                              <label class='control-label'>
+                                电话
+                              </label>
+                              <input class='form-control' maxlength='16' name='telPhone' ng-model='gest.telPhone' type='text'>
                             </div>
                           </div>
                           <div class='col-md-4'>
                             <div class='form-group'>
-                              <label class='control-label'>账户金额</label>
-                              <input class='form-control' type='text'>
+                              <label class='control-label'>
+                                账户金额
+                              </label>
+                              <input class='form-control' maxlength='16' name='prepayMoney' ng-model='gest.prepayMoney' type='text'>
                             </div>
                           </div>
                         </div>
                         <div class='row'>
                           <div class='col-md-8'>
                             <div class='form-group'>
-                              <label class='control-label'>联系地址</label>
-                              <input class='form-control' type='text'>
+                              <label class='control-label'>
+                                联系地址
+                              </label>
+                              <input class='form-control' maxlength='16' name='gestAddress' ng-model='gest.gestAddress' type='text'>
                             </div>
                           </div>
                           <div class='col-md-4'>
                             <div class='form-group'>
-                              <label class='control-label'>登记日期</label>
+                              <label class='control-label'>
+                                登记日期
+                              </label>
                               <div class='input-icon right'>
                                 <i class='fa fa-calendar'></i>
-                                <input class='form-control date-picker' data-date-format='yyyy-mm-dd' data-date-start-date='+0d' type='text'>
+                                <input class='form-control date-picker' data-date-format='yyyy-mm-dd' maxlength='16' name='createDate' ng-model='gest.createDate' readonly='true' type='text'>
                               </div>
                             </div>
                           </div>
@@ -282,26 +292,24 @@
                                   <div class='form-group'>
                                     <label class='control-label'>
                                       编号(自动)
-                                      <span class='required'>*</span>
                                     </label>
-                                    <input class='form-control' type='text'>
+                                    <input class='form-control' maxlength='16' name='petCode' ng-model='pet.petCode' type='text'>
                                   </div>
                                 </div>
                                 <div class='col-md-4'>
                                   <div class='form-group'>
                                     <label class='control-label'>
                                       宠物昵称
-                                      <span class='required'>*</span>
                                     </label>
-                                    <input class='form-control' type='text'>
+                                    <input class='form-control' maxlength='16' name='petName' ng-model='pet.petName' type='text'>
                                   </div>
                                 </div>
                                 <div class='col-md-4'>
                                   <div class='form-group'>
                                     <label class='control-label'>宠物性别</label>
                                     <select class='form-control'>
-                                      <options>雄性</options>
-                                      <options>雌性</options>
+                                      <option>雄性</option>
+                                      <option>雌性</option>
                                     </select>
                                   </div>
                                 </div>
@@ -311,18 +319,19 @@
                                   <div class='form-group'>
                                     <label class='control-label'>
                                       出生日期
-                                      <span class='required'>*</span>
                                     </label>
                                     <div class='input-icon right'>
                                       <i class='fa fa-calendar'></i>
-                                      <input class='form-control date-picker' data-date-format='yyyy-mm-dd' data-date-start-date='+0d' type='text'>
+                                      <input class='form-control date-picker' data-date-format='yyyy-mm-dd' maxlength='16' name='petBirthday' ng-model='pet.petBirthday' readonly='true' type='text'>
                                     </div>
                                   </div>
                                 </div>
                                 <div class='col-md-4'>
                                   <div class='form-group'>
-                                    <label class='control-label'>宠物年龄</label>
-                                    <input class='form-control' type='text'>
+                                    <label class='control-label'>
+                                      宠物年龄
+                                    </label>
+                                    <input class='form-control' maxlength='16' name='age' ng-model='pet.age' type='text'>
                                   </div>
                                 </div>
                                 <div class='col-md-4'>
@@ -372,51 +381,62 @@
                                   <div class='form-group'>
                                     <label class='control-label'>
                                       病例号
-                                      <span class='required'>*</span>
                                     </label>
-                                    <input class='form-control' type='text'>
+                                    <input class='form-control' maxlength='16' name='error' ng-model='error' type='text'>
                                   </div>
                                 </div>
                               </div>
                               <div class='row'>
                                 <div class='col-md-3'>
                                   <div class='form-group'>
-                                    <label class='control-label'>身高(cm)</label>
-                                    <input class='form-control' type='text'>
+                                    <label class='control-label'>
+                                      身高(cm)
+                                    </label>
+                                    <input class='form-control' maxlength='16' name='petHeight' ng-model='pet.petHeight' type='text'>
                                   </div>
                                 </div>
                                 <div class='col-md-3'>
                                   <div class='form-group'>
-                                    <label class='control-label'>体重(kg)</label>
-                                    <input class='form-control' type='text'>
+                                    <label class='control-label'>
+                                      体重(kg)
+                                    </label>
+                                    <input class='form-control' maxlength='16' name='petWeight' ng-model='pet.petWeight' type='text'>
                                   </div>
                                 </div>
                                 <div class='col-md-3'>
                                   <div class='form-group'>
-                                    <label class='control-label'>肩宽(cm)</label>
-                                    <input class='form-control' type='text'>
+                                    <label class='control-label'>
+                                      肩宽(cm)
+                                    </label>
+                                    <input class='form-control' maxlength='16' name='petSwidth' ng-model='pet.petSwidth' type='text'>
                                   </div>
                                 </div>
                                 <div class='col-md-3'>
                                   <div class='form-group'>
-                                    <label class='control-label'>体长(cm)</label>
-                                    <input class='form-control' type='text'>
+                                    <label class='control-label'>
+                                      体长(cm)
+                                    </label>
+                                    <input class='form-control' maxlength='16' name='petBodyLong' ng-model='pet.petBodyLong' type='text'>
                                   </div>
                                 </div>
                               </div>
                               <div class='row'>
                                 <div class='col-md-12'>
                                   <div class='form-group'>
-                                    <label class='control-label'>宠物牌号</label>
-                                    <input class='form-control' type='text'>
+                                    <label class='control-label'>
+                                      宠物牌号
+                                    </label>
+                                    <input class='form-control' maxlength='16' name='dogBandId' ng-model='pet.dogBandId' type='text'>
                                   </div>
                                 </div>
                               </div>
                               <div class='row'>
                                 <div class='col-md-12'>
                                   <div class='form-group'>
-                                    <label class='control-label'>备注</label>
-                                    <textarea class='form-control' type='text'></textarea>
+                                    <label class='control-label'>
+                                      备注
+                                    </label>
+                                    <textarea class='form-control' maxlength='16' name='remark' ng-model='pet.remark' required='false' type='text'></textarea>
                                   </div>
                                 </div>
                               </div>
@@ -437,8 +457,8 @@
                   </div>
                 </div>
                 <div class='modal-footer'>
-                  <button class='btn dark btn-outline' data-dismiss='modal' type='button'>Close</button>
-                  <button class='btn btn-circle blue btn-sm' ng-disabled='petform.$pristine' type='submit'>
+                  <button class='btn grey-mint btn-outline' data-dismiss='modal' type='button'>关闭</button>
+                  <button class='btn btn-primary' ng-disabled='petform.$pristine' type='submit'>
                     <i class='fa fa-plus'></i>
                     保存表单
                   </button>
@@ -446,9 +466,6 @@
               </form>
             </div>
           </div>
-        </div>
-        <div class='row'>
-          <div class='col-md-12 col-sm-12' fa_pagination='' pagination='pagination' search='search()'></div>
         </div>
       </div>
     </div>
