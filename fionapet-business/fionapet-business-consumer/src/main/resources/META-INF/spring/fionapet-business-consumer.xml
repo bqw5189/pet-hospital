@@ -456,4 +456,9 @@
     <dubbo:reference id="dictTypeDetailService" interface="com.fionapet.business.service.DictTypeDetailService"/>
     <!-- 字典类型明细 service -->
 
+
+	<!-- 仓库信息表 service -->
+    <dubbo:reference id="warehouseService" interface="com.fionapet.business.service.WarehouseService"/>
+    <!-- 仓库信息表 service -->
+
 </beans>

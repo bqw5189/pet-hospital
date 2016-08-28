@@ -8745,4 +8745,11 @@
     </bean>
     <!-- 字典类型明细 action -->
 
+
+	<!-- 仓库信息表 action -->
+    <bean class="com.fionapet.business.consumer.WarehouseDemoAction" init-method="start">
+        <property name="warehouseService" ref="warehouseService"/>
+    </bean>
+    <!-- 仓库信息表 action -->
+
 </beans>

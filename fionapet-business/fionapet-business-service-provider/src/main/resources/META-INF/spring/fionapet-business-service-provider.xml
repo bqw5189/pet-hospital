@@ -737,4 +737,12 @@
                    protocol="dubbo" validation="true" timeout="2000" />
     <!-- 字典类型明细 api -->
 
+
+	<!-- 仓库信息表 api -->
+    <bean id="warehouseService" class="com.fionapet.business.service.WarehouseServiceImpl"/>
+
+    <dubbo:service interface="com.fionapet.business.service.WarehouseService" ref="warehouseService"
+                   protocol="dubbo" validation="true" timeout="2000" connections="100"/>
+    <!-- 仓库信息表 api -->
+
 </beans>

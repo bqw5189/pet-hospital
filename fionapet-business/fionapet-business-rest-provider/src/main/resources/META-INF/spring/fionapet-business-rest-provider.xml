@@ -1105,4 +1105,16 @@
     <dubbo:reference id="dictTypeDetailService" interface="com.fionapet.business.service.DictTypeDetailService"/>
     <!--字典类型明细 api -->
 
+
+	<!--仓库信息表 api -->
+    <dubbo:service interface="com.fionapet.business.facade.WarehouseRestService" ref="warehouseRestService"
+                   protocol="rest" validation="true" timeout="2000" connections="100"/>
+
+    <bean id="warehouseRestService" class="com.fionapet.business.facade.WarehouseRestServiceImpl">
+        <property name="warehouseService" ref="warehouseService"/>
+    </bean>
+
+    <dubbo:reference id="warehouseService" interface="com.fionapet.business.service.WarehouseService"/>
+    <!--仓库信息表 api -->
+
 </beans>
