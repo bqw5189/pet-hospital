@@ -1,5 +1,6 @@
 package com.fionapet.business.entity;
 
+import org.codehaus.jackson.annotate.JsonIgnore;
 import org.dubbo.x.entity.*;
 
 import javax.persistence.*;

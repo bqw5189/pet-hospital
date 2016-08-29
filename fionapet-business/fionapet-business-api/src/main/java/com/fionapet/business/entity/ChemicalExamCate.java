@@ -1,10 +1,14 @@
 package com.fionapet.business.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fionapet.business.facade.vo.TreeBase;
+import com.fionapet.business.facade.vo.Treeable;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import org.hibernate.annotations.NotFound;
+import org.hibernate.annotations.NotFoundAction;
 
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 /**
  * 化验样例类型
@@ -14,7 +18,7 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "t_chemical_exam_cate")
 @ApiModel("化验样例类型")
-public class ChemicalExamCate extends CMSEntity {
+public class ChemicalExamCate extends CMSEntity implements Treeable{
     
     /**
      * cateNo
@@ -31,15 +35,20 @@ public class ChemicalExamCate extends CMSEntity {
     /**
      * parentId
      */
-    @ApiModelProperty(value = "parentId", required = false)
-    private String parentId;
-    public String getParentId() {
-        return parentId;
+    @ApiModelProperty(value = "parentObject", required = false)
+    private ChemicalExamCate parentObject;
+
+    @ManyToOne(cascade = CascadeType.DETACH,fetch = FetchType.LAZY)
+    @JoinColumn(name = "parent_id", referencedColumnName = "cateNo")
+    @NotFound(action = NotFoundAction.IGNORE)
+    public ChemicalExamCate getParentObject() {
+        return parentObject;
     }
-    public void setParentId(String parentId) {
-        this.parentId = parentId;
+
+    public void setParentObject(ChemicalExamCate parentObject) {
+        this.parentObject = parentObject;
     }
-    
+
     /**
      * cateName
      */
@@ -87,6 +96,35 @@ public class ChemicalExamCate extends CMSEntity {
     public void setRemark(String remark) {
         this.remark = remark;
     }
-    
+
+
+    @Override
+    @Transient
+    public String getParent() {
+        if (this.getParentObject() != null) {
+            return this.getParentObject().getCateNo();
+        }else{
+            return "";
+        }
+    }
+
+    @Override
+    public void setParent(String parent) {
+        if (this.getParentObject() != null) {
+            this.getParentObject().setCateNo(parent);
+        }
+    }
+
+    @Override
+    @Transient
+    public String getText() {
+        return this.getCateName();
+    }
+
+    @Override
+    public void setText(String text) {
+        this.setCateName(text);
+
+    }
 }
 
