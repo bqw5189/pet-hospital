@@ -1,0 +1,58 @@
+/ BEGIN SAMPLE FORM PORTLET
+.row
+  .col-md-3
+    .portlet
+      .portlet-title
+        .caption
+          %i.fa.fa-user
+          会员信息
+        .actions
+          %a.btn.btn-circle.btn-default.btn-sm{:href => "javascript:;"}
+            %i.fa.fa-plus
+            选择宠物
+
+          %a.btn.btn-circle.btn-default.btn-sm{:href => "javascript:;"}
+            %i.fa.fa-remove
+            新增宠物
+
+      .portlet-body.portlet-empty
+        = partial 'views/commons/pet_header'
+
+  .col-md-9
+    .portlet.light.bordered
+      .portlet-title
+        .caption
+          %i.icon-settings.font-dark
+          %span.caption-subject.font-dark.sbold.uppercase 宠物信息
+
+      .portlet-body.form
+        .tabbable-line
+          %ul.nav.nav-tabs
+            %li.active
+              %a{"data-toggle" => "tab", :href => "//#fosterage_basic"} 基本信息
+
+            %li
+              %a{"data-toggle" => "tab", :href => "//#fosterage_consume"} 寄养期间消费
+
+            %li
+              %a{"data-toggle" => "tab", :href => "//#fosterage_prepay"} 预付金记录
+
+            %li
+              %a{"data-toggle" => "tab", :href => "//#fosterage_health"} 健康状态记录
+
+          .tab-content
+            #fosterage_basic.tab-pane.active
+              = partial 'views/commons/fosterage_form'
+
+            -#寄养期间消费
+            #fosterage_consume.tab-pane
+              = partial 'views/commons/consume_list'
+
+            -#预付金记录
+            #fosterage_prepay.tab-pane
+              = partial 'views/commons/prepay_list'
+
+            -#健康状态记录
+            #fosterage_health.tab-pane
+              = partial 'views/commons/health_list'
+

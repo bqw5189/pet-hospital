@@ -1,0 +1,31 @@
+---
+layout: "cols2"
+---
+- page '化验项目管理', 'labwork'
+
+-# 大纲部分
+
+-#化验项目分类
+= partial 'views/commons/nav_tree', :locals => {:sidename => "化验项目", :sidefieldname=> 'name'}
+
+-# 主体部分
+- content_for :toolbar do
+  = partial :'layouts/buttons/insert', :locals => {:disabled => "!selectedId"}
+  = partial :'layouts/buttons/removes'
+
+- content_for :theader do
+  - @page.listFields.each do |field|
+    %th #{field.aliasName || field.fieldName}
+
+- content_for :tbody do
+  - @page.listFields.each do |column|
+    %td
+      = bind @page_id, (column.fieldKey || @fields[column.fieldName] || 'error')
+
+/ Modal
+= partial :'layouts/partials/modal-lg' do
+  = partial 'modify'
+
+- modal "参考值设置", "labworkdetail"
+= partial :'layouts/partials/modal-portal-lg' do
+  = partial 'labworkdetail'

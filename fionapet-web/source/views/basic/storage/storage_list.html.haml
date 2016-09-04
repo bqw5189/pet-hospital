@@ -1,0 +1,19 @@
+- page '仓库信息管理', 'storage'
+
+- content_for :toolbar do
+  = partial :'layouts/buttons/insert'
+  = partial :'layouts/buttons/removes'
+
+
+- content_for :theader do
+  - @page.listFields.each do |field|
+    %th #{field.aliasName || field.fieldName}
+
+- content_for :tbody do
+  - @page.listFields.each do |column|
+    %td
+      = bind @page_id, (column.fieldKey || @fields[column.fieldName] || 'error')
+
+/ Modal
+= partial :'layouts/partials/modal' do
+  = partial 'modify'

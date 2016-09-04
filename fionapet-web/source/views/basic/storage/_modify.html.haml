@@ -1,62 +1,15 @@
-/ BEGIN SAMPLE FORM PORTLET
-.portlet.light.bordered
-  .portlet-title
-    .caption
-      %i.icon-settings.font-dark
-      %span.caption-subject.font-dark.sbold.uppercase 会员信息
-    .actions
-      %a.btn.btn-circle.grey-salsa.btn-sm{:href => "javascript:;"}
-        %i.fa.fa-plus
-        新增主人
+.form-body
+  .row
+    .col-md-12
+      = partial :'layouts/inputs/text', :locals => {:fieldName => '仓库编号', :maxlength => '32', :required => 'true'}
 
-      %a.btn.btn-circle.grey-salsa.btn-sm{:href => "javascript:;"}
-        %i.fa.fa-remove
-        选择主人
+  .row
+    .col-md-12
+      = partial :'layouts/inputs/text', :locals => {:fieldName => '仓库名称', :maxlength => '32'}
 
-  .portlet-body.form
-    .form-body
-      .row
-        .col-md-4
-          = partial :'layouts/inputs/text', :locals => {:keyword => 'gest', :fieldName => '会员编号', :maxlength => '32', :required => 'true'}
+  .row
+    .col-md-6
+      = partial :'layouts/inputs/select', :locals => {:fieldName => '是否是药库', :maxlength => '32', :required => "true", :options => "type.code as type.name for type in dropdowns.drugStores"}
 
-        .col-md-4
-          = partial :'layouts/inputs/text', :locals => {:keyword => 'gest', :fieldName => '会员姓名', :maxlength => '32'}
-
-        .col-md-4
-          .form-group
-            %label.control-label 会员等级
-            %select.form-control
-              %option 普通会员
-              %option VIP会员
-
-      .row
-        .col-md-4
-          .form-group
-            %label.control-label 会员性别
-            %select.form-control
-              %option 男
-              %option 女
-
-        .col-md-4
-          = partial :'layouts/inputs/date', :locals => {:keyword => 'gest', :fieldName => '出生日期', :maxlength => '16'}
-
-
-        .col-md-4
-          = partial :'layouts/inputs/text', :locals => {:keyword => 'gest', :fieldName => '年龄', :maxlength => '16'}
-
-      .row
-        .col-md-4
-          = partial :'layouts/inputs/text', :locals => {:keyword => 'gest', :fieldName => '手机', :maxlength => '16'}
-
-        .col-md-4
-          = partial :'layouts/inputs/text', :locals => {:keyword => 'gest', :fieldName => '电话', :maxlength => '16'}
-
-        .col-md-4
-          = partial :'layouts/inputs/money', :locals => {:keyword => 'gest', :fieldName => '账户金额', :maxlength => '16'}
-
-      .row
-        .col-md-8
-          = partial :'layouts/inputs/text', :locals => {:keyword => 'gest', :fieldName => '联系地址', :maxlength => '16'}
-
-        .col-md-4
-          = partial :'layouts/inputs/date', :locals => {:keyword => 'gest', :fieldName => '登记日期', :maxlength => '16'}
+    .col-md-6
+      = partial :'layouts/inputs/select', :locals => {:fieldName => '是否销售库', :maxlength => '32', :required => "true", :options => "sellStore.code as sellStore.name for sellStore in dropdowns.sellStores"}

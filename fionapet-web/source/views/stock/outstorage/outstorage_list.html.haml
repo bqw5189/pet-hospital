@@ -1,0 +1,21 @@
+- page '出库管理', 'outstorage'
+
+- content_for :toolbar do
+  = partial :'layouts/buttons/insert'
+  = partial :'layouts/buttons/removes'
+
+- content_for :theader do
+  - @page.listFields.each do |field|
+    %th #{field.aliasName || field.fieldName}
+
+- content_for :tbody do
+  - @page.listFields.each do |column|
+    %td
+      = bind @page_id, (column.fieldKey || @fields[column.fieldName] || 'error')
+
+= partial :'layouts/partials/modal-full' do
+  = partial 'modify'
+
+- modal "选择商品", "product"
+= partial :'layouts/partials/modal-portal-full' do
+  = partial 'products'

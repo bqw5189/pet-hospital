@@ -13,6 +13,34 @@ angular.module('fiona.services', [])
 
             return authorization;
         },
+        getBusinessHostname : function () {
+            return "http://localhost:8080/business";
+        },
+        getAccountHostname : function () {
+            return "http://localhost:8080/account";
+        },
+        modaldanger: function (alert_id, msg) {
+            App.alert({
+                container: "#" + alert_id + "_alert",
+                place: "append",
+                type: "danger",
+                message: msg,
+                close: true,
+                closeInSeconds: 2,
+                icon: "remove"
+            });
+        },
+        modalsuccess: function (alert_id, msg) {
+            App.alert({
+                container: "#" + alert_id + "_alert",
+                place: "append",
+                type: "success",
+                message: msg,
+                close: true,
+                closeInSeconds: 2,
+                icon: "remove"
+            });
+        },
         success: function (msg) {
             App.alert({
                 container: "#operate_msg_box",

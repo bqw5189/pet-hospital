@@ -1,0 +1,48 @@
+# 经销商与生产商
+listFields: # aliasName 显示使用, fieldName 关联字段使用,若显示名称与字段名称一致, 则不需要定义 aliasName
+  - fieldName: 挂号类型
+
+  - fieldName: 会员姓名
+
+  - fieldName: 手机
+
+  - fieldName: 宠物昵称
+
+  - fieldName: 性别
+
+  - fieldName: 年龄
+
+  - fieldName: 体重
+
+  - fieldName: 种类
+
+  - fieldName: 品种
+
+  - fieldName: 挂号状态
+
+  - fieldName: 付费状态
+
+  - fieldName: 暂停原因
+
+searchFields:
+  - fieldName: 员工姓名
+
+  - fieldName: ---
+
+
+
+fields: #可定义多个中文名称指向同一个字段
+  主键: id
+
+  挂号类型: XX
+
+  金额: XX
+
+  业务员: XX
+
+  医生: XX
+
+  助理医生: XX
+
+
+

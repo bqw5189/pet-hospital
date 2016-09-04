@@ -1,0 +1,119 @@
+---
+layout: "page"
+---
+- page "直接销售", "saleplate"
+
+-#大纲部分 | 商品服务分类
+= partial 'views/commons/nav_product_type'
+
+- content_for :toolbar do
+  %button.btn.btn-circle.red-sunglo.btn-sm{:href => "javascript:;", 'ng': {'click':'removes()', 'disabled': 'isRemoves'} }
+    %i.fa.fa-remove
+    删除
+
+- content_for :theader do
+  - @page.listFields.each do |field|
+    %th #{field.aliasName || field.fieldName}
+
+-#- content_for :ttoolbar do
+-#  %a.btn.btn-outline.btn-circle.btn-sm.purple{'ng-click' => 'update(pet.id)'}
+-#    %i.fa.fa-edit
+-#    更新
+-#  %a.btn.btn-outline.btn-circle.dark.btn-sm.black{:href => "javascript:;", 'ng': {'click':'remove(pet.id)'}}
+-#    %i.fa.fa-trash-o
+-#    Delete
+
+- content_for :tbody do
+  - @page.listFields.each do |column|
+    %td
+      = bind @page_id, (column.fieldKey || @fields[column.fieldName] || 'error')
+
+#operate_msg_box
+.well
+  %form.form-horizontal
+    .row
+      .col-md-2
+        .form-control-static
+          %label
+            %input{:type => "radio", :name => "usertype", :id => "usertype"}
+            会员
+          %label
+            %input{:type => "radio", :name => "usertype", :id => "usertype"}
+            散客
+      .col-md-5
+        .form-control
+          %label.text-muted 会员编号:
+
+          %b 03939929,
+
+          %label.text-muted 会员姓名:
+          %b 王伟斌,
+
+          %label.text-muted 会员等级:
+          %b 贵宾
+
+      .col-md-5
+        .input-group
+          %input.form-control{:placeholder => "会员姓名/编号/电话", :type => "text"}/
+          .input-group-btn
+            %button.btn.green{:tabindex => "-1", :type => "button", ng: {'click' => 'findvip()'} } Action
+
+.row
+  .col-md-3
+    .tabbable-line
+      %ul#curelist.nav.nav-tabs
+        %li.active
+          %a{"data-toggle" => "tab", :href => "//#product_type"}
+            商品/服务分类
+            %span.badge.badge-success 3
+
+        %li
+          %a{"data-toggle" => "tab", :href => "//#part_list"}
+            商品(宠物药品)
+            %span.badge.badge-danger 3
+
+      .tab-content
+        #product_type.tab-pane.active
+          = yield_content :outline_body
+
+        #part_list.tab-pane
+          .portlet
+            .portlet-body
+              .portlet-input.input-inline
+                .input-icon.right
+                  %i.icon-magnifier
+                  %input.form-control.input-circle{:type=>"text", :size =>'60' ,:placeholder=>"search..."}
+
+            .portlet-body.portlet-empty
+              %p
+              .thumbnail
+                .caption
+                  %b 雪莲美
+                  %br
+                  价格: 120 元, 规格: 10ml, 库存 110支, 单位: 盒, 湖南但熊生物科技有限公司
+                  %br
+                  WF000000000034
+
+              .thumbnail
+                .caption
+                  %b 雪莲美
+                  %br
+                  价格: 120 元, 规格: 10ml, 库存 110支, 单位: 盒, 湖南但熊生物科技有限公司
+                  %br
+                  WF000000000034
+  .col-md-9
+    .portlet
+      .portlet-title
+        总项数: 2, 总金额: 15500 元
+
+      .portlet-body.portlet-empty
+        -#表格
+        = partial :'layouts/table/table'
+
+= partial :'layouts/partials/modal-lg' do
+  = partial 'modify'
+
+- modal "会员查询", "findvip"
+
+= partial :'layouts/partials/modal-lg' do
+  = partial 'findvip'

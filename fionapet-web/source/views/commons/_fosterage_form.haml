@@ -1,0 +1,37 @@
+-#寄养登记表单
+.row
+  .col-md-4
+    = partial :'layouts/inputs/text', :locals => { :fieldName => '寄养号', :maxlength => '16'}
+
+  .col-md-4
+    = partial :'layouts/inputs/date', :locals => { :fieldName => '开始日期', :maxlength => '16'}
+
+  .col-md-4
+    = partial :'layouts/inputs/date', :locals => { :fieldName => '结束日期', :maxlength => '16'}
+.row
+  .col-md-4
+    = partial :'layouts/inputs/text', :locals => { :fieldName => '预付金额', :maxlength => '16'}
+
+  .col-md-4
+    = partial :'layouts/inputs/text', :locals => { :fieldName => '预计天数', :maxlength => '16'}
+
+  .col-md-4
+    = partial :'layouts/inputs/text', :locals => { :fieldName => '主管人员', :maxlength => '16'}
+
+.row
+  .col-md-4
+    = partial :'layouts/inputs/text', :locals => { :fieldName => '寄养类型', :maxlength => '16'}
+
+  .col-md-4
+    = partial :'layouts/inputs/text', :locals => { :fieldName => '价格', :maxlength => '16'}
+
+  .col-md-4
+    = partial :'layouts/inputs/text', :locals => { :fieldName => '笼舍编号', :maxlength => '16'}
+
+.row
+  .col-md-4
+    = partial :'layouts/inputs/text', :locals => { :fieldName => '业务员', :maxlength => '16'}
+
+.row
+  .col-md-12
+    = partial :'layouts/inputs/textarea', :locals => { :fieldName => '备注', :maxlength => '16'}

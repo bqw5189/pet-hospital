@@ -1,209 +1,36 @@
-
 // 员工管理
-angular.module('fiona').controller('PersonnelController', function($scope, $http, commons) {
+angular.module('fiona').controller('PersonnelController', function($scope, $controller) {
 
-    $http.defaults.headers.post.authorization = commons.getAuthorization();
+    // 声明要使用的下拉选项
+    $scope.dropboxlist = ["会员状态", "性别"];
 
-    $http.defaults.headers.post['Content-Type']= 'application/json';
-
-    // 使用日期控件
-    jQuery().datepicker && $(".date-picker-btn").datepicker({
-        format: 'yyyy-mm-dd',
-        orientation: "left",
-        autoclose: !0
-    }).on("changeDate", function() {
-        $(this).parent().prev().val($(this).datepicker('getFormattedDate'));
-    });
-
-    jQuery().datepicker && $(".date-picker").datepicker({
-        format: 'yyyy-mm-dd',
-        orientation: "left",
-        autoclose: !0
-    });
-
-
-    $scope.error= "未找到定义";
-
-    $scope.selectedall = false;
-
-    $scope.isRemoves = true;
-
-    $scope.selection = {};
-
-    $scope.selectChange = function () {
-        $scope.isRemoves = true;
-        angular.forEach($scope.selection, function(value, key){
-            if(value == true)
-            {
-                $scope.isRemoves = false;
-            }
-        });
+    $scope.dropdowns= {
+        personStatusSet: [{code: "1", name: "正常"}, {code: "0", name: "禁用"}],
+        isSyncEasSet: [{code: "true", name: "是"}, {code: "false", name: "否"}]
+        // roleset: [{code: "1", name: "医生"}, {code: "2", name: "护士"}, {code: "3", name: "销售员"}, {code: "4", name: "系统管理员"}]
     };
 
-    $scope.selectAll= function () {
-        angular.forEach($scope.personnels, function (personnel) {
-            $scope.selection[personnel.id] = $scope.selectedall;
-        })
+    // 主数据加载地址
+    $scope.master = {
+        id: "personnel",
 
-        $scope.isRemoves = !$scope.selectedall
+        name: "员工管理",
+
+        server: "/api/v2/personss",
+
+        insert: function () {
+
+            angular.forEach($scope.dropdowns, function (value, key) {
+                $scope.personnel[key.substr(0, key.length - 3)] = value[0].code;
+            });
+
+        }
     };
 
     // 综合搜索项
-    $scope.pagination = {
-        'pageSize': 1,
-        'pageNumber': 1,
-        "first":true,
-        "last":false,
-        "totalElements": 1,
-        "totalPages": 1
-    };
+    $scope.filters = [{"code": "name","operator": "EQ", "value":""} , {"name": "name","operator": "EQ", "value":""} , {"contractMan": "name","operator": "EQ", "value":""} , {"mobilePhone": "name","operator": "EQ", "value":""} , {"dealerAddress": "name","operator": "EQ", "value":""}];
 
-    $scope.combox = {
-        types: [ {'name':'猫科'}, {'name':'犬科'} ]
-    };
+    $scope.placeholder = "请输入自动编号 / 经销商名称 / 联系人 / 手机 / 地址";
 
-    // 综合搜索项 // 品种
-    $scope.filters = [{"fieldName": "name","operator": "EQ", "value":""}];
-
-    $scope.placeholder = "请输入品种";
-
-    // 检索宠物信息
-    $scope.search = function () {
-
-        console.log(" 执行搜索.... " + searchform.$dirty);
-
-        $http.post('/business/api/v2/personnels/page', {'pageSize':$scope.pagination.pageSize, 'pageNumber':$scope.pagination.pageNumber, 'filters':$scope.filters}).success( function ( data, status, headers, config ) {
-            console.log( data );
-
-            $scope.personnels = data.data.content;
-
-            // 搜索+分页
-            $scope.pagination.pageNumber = data.data.number;
-
-            $scope.pagination.last = data.data.last;
-            $scope.pagination.first = data.data.first;
-            $scope.pagination.totalPages = data.data.totalPages;
-            $scope.pagination.totalElements = data.data.totalElements;
-        });
-    };
-
-
-    // Form 界面
-    $scope.update = function (id) {
-        // alert(id);
-        if(id == undefined)
-        {
-            // 添加
-            $scope.personnel = {};
-        }
-        else
-        {
-            angular.forEach($scope.personnels, function(data,index,array){
-                if(data.id== id)
-                {
-                    $scope.personnel = data;
-                }
-            });
-        }
-
-        $('#personnel').modal('toggle');
-    };
-
-
-    $scope.personnelsubmit = function () {
-
-        $scope.personnelform.submitted = true;
-
-        if ($scope.personnelform.$valid) {
-
-            console.log('submit: ' + $scope.personnel.id);
-
-            $http.post('/business/api/v2/personnels', $scope.personnel).success( function ( data, status, headers, config ) {
-                console.log( data );
-            }).error(function(data,status,headers,config) { //     错误
-                alert("Personnelsubmit Error");
-            });
-        } else {
-
-            alert($scope.personnelform.$error);
-
-            // $scope.message = "请输入用户名和密码.";
-
-            // $scope.signup_form.submitted = true;
-        }
-    };
-
-    $scope.updatetype = function (id) {
-        // alert(id);
-        if(id == undefined)
-        {
-            // 添加
-            $scope.personnel = {};
-        }
-        else
-        {
-            // angular.forEach($scope.personnels, function(data,index,array){
-            //     if(data.id== id)
-            //     {
-            //         $scope.personnel = data;
-            //     }
-            // });
-        }
-
-        $('#type').modal('toggle');
-    };
-
-    $scope.typesubmit = function () {
-
-        $scope.personnelform.submitted = true;
-
-        if ($scope.personnelform.$valid) {
-
-            console.log('submit: ' + $scope.personnel.id);
-
-            $http.post('/business/api/v2/personnels', $scope.personnel).success( function ( data, status, headers, config ) {
-                console.log( data );
-            }).error(function(data,status,headers,config) { //     错误
-                alert("Personnelsubmit Error");
-            });
-        } else {
-
-            alert($scope.personnelform.$error);
-
-            // $scope.message = "请输入用户名和密码.";
-
-            // $scope.signup_form.submitted = true;
-        }
-    };
-
-
-    // 删除功能
-    $scope.removes = function () {
-        angular.forEach($scope.selection, function(value, key){
-            alert(key+ " = " + value);
-        });
-    };
-
-    $scope.remove= function (id) {
-        // console.log( $scope.xiuUser )
-
-        alert(id);
-
-        $http.delete('/business/api/v2/personnels/' + id).success(function(data, index, array){
-            commons.danger("删除成功");
-        }).error(function (data) {
-            commons.danger("删除失败");
-        });
-
-        // angular.forEach($scope.personnels, function(data,index,array){
-        //
-        //     if(data.id == id)
-        //     {
-        //     }
-        //
-        // });
-
-    };
-
-
+    $controller('BasePaginationController', {$scope: $scope}); //继承
 });

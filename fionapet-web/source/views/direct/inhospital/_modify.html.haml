@@ -1,0 +1,107 @@
+/ BEGIN SAMPLE FORM PORTLET
+.row
+  .col-md-3
+    .portlet
+      .portlet-title
+        .caption
+          %i.fa.fa-user
+          会员信息
+        .actions
+          %a.btn.btn-circle.btn-default.btn-sm{:href => "javascript:;"}
+            %i.fa.fa-plus
+            选择宠物
+
+          %a.btn.btn-circle.btn-default.btn-sm{:href => "javascript:;"}
+            %i.fa.fa-remove
+            新增宠物
+
+      .portlet-body.portlet-empty
+        = partial 'views/commons/pet_header'
+
+
+  .col-md-9
+    .portlet.light.bordered
+      .portlet-title
+        .caption
+          %i.fa.fa-file
+          %span.caption-subject.font-dark.sbold.uppercase 住院登记
+
+      .portlet-body.form
+        .tabbable-line
+          %ul.nav.nav-tabs
+            %li.active
+              %a{"data-toggle" => "tab", :href => "//#inhospital_basic"} 基本信息
+
+            %li
+              %a{"data-toggle" => "tab", :href => "//#inhospital_consume"} 寄养期间消费
+
+            %li
+              %a{"data-toggle" => "tab", :href => "//#inhospital_prepay"} 预付金记录
+
+            %li
+              %a{"data-toggle" => "tab", :href => "//#inhospital_health"} 健康状态记录
+
+            %li
+              %a{"data-toggle" => "tab", :href => "//#inhospital_recipe"} 住院处方
+
+
+          .tab-content
+            #inhospital_basic.tab-pane.active
+              = partial 'views/commons/inhospital_form'
+
+            -#寄养期间消费
+            #inhospital_consume.tab-pane
+              = partial 'views/commons/consume_list'
+
+
+            -#预付金记录
+            #inhospital_prepay.tab-pane
+              = partial 'views/commons/prepay_list'
+
+            -#健康状态记录
+            #inhospital_health.tab-pane
+              = partial 'views/commons/health_list'
+
+            -#住院处方
+            #inhospital_recipe.tab-pane
+              .row
+                .col-md-2
+                  %div.list-group
+                    %label.list-group-item.active{:href => 'javascript:;'}
+                      2016年2月29日
+
+                    %label.list-group-item{:href => 'javascript:;'}
+                      2016年2月25日
+
+                    %label.list-group-item{:href => 'javascript:;'}
+                      2016年2月10日
+
+                .col-md-10
+                  .portlet
+                    .portlet-title
+                      .caption
+                        %i.fa.fa-file-text
+                        2016年2月29日
+
+                      .actions
+                        %a.btn.btn-circle.btn-default.btn-sm{:href => "javascript:;"}
+                          %i.fa.fa-copy
+                            复制上一个处方
+
+                        %a.btn.btn-circle.btn-default.btn-sm{:href => "javascript:;"}
+                          %i.fa.fa-plus
+                            处理处方
+
+                        %a.btn.btn-circle.btn-default.btn-sm{:href => "javascript:;"}
+                          %i.fa.fa-print
+                            打印
+                        %a.btn.btn-circle.btn-default.btn-sm{:href => "javascript:;"}
+                          %i.fa.fa-edit
+                            编辑
+                        %a.btn.btn-circle.btn-danger.btn-sm{:href => "javascript:;"}
+                          %i.fa.fa-cancel
+                            删除
+
+                    .portlet-body.portlet-empty
+                      = partial 'views/commons/recipe_list'
+

@@ -1,0 +1,41 @@
+- page "挂号查询", "register"
+
+- content_for :toolbar do
+  %button.btn.btn-circle.btn-default.btn-sm{:href => "javascript:;", 'ng': {'click':'registerfastmodal()'}}
+    %i.fa.fa-plus
+    快捷挂号
+
+  %button.btn.btn-circle.btn-default.btn-sm{:href => "javascript:;", 'ng': {'click':'registervipmodal()'}}
+    %i.fa.fa-plus
+    会员挂号
+
+  %button.btn.btn-circle.red-sunglo.btn-sm{:href => "javascript:;", 'ng': {'click':'removes()', 'disabled': 'isRemoves'} }
+    %i.fa.fa-remove
+    删除
+
+- content_for :theader do
+  - @page.listFields.each do |field|
+    %th #{field.aliasName || field.fieldName}
+
+-#- content_for :ttoolbar do
+-#  %a.btn.btn-outline.btn-circle.btn-sm.purple{'ng-click' => 'update(pet.id)'}
+-#    %i.fa.fa-edit
+-#    更新
+-#  %a.btn.btn-outline.btn-circle.dark.btn-sm.black{:href => "javascript:;", 'ng': {'click':'remove(pet.id)'}}
+-#    %i.fa.fa-trash-o
+-#    Delete
+
+- content_for :tbody do
+  - @page.listFields.each do |column|
+    %td
+      = bind @page_id, (column.fieldKey || @fields[column.fieldName] || 'error')
+
+- modal "会员挂号", "registervip"
+
+= partial :'layouts/partials/modal-full' do
+  = partial 'registervip'
+
+- modal "快捷挂号", "registerfast"
+
+= partial :'layouts/partials/modal-full' do
+  = partial 'registerfast'

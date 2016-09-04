@@ -1,0 +1,89 @@
+dashboard: dashboard
+
+# Cases
+case: api
+index: api
+
+#检测影像
+analysed: analysed
+film: analysed
+
+# 结算服务
+payment: balance
+statement: balance
+
+#基础数据
+dealer: basic
+dictionary: basic
+grade: basic
+hospital: basic
+labwork: basic
+labworkdetail: basic
+personnel: basic
+product: basic
+producttype: basic
+role: basic
+setting: basic
+storage: basic
+varietie: basic
+varietietype: basic
+userdict: basic
+
+#基础数据
+check: check
+checkdevice: check
+
+#诊疗服务
+curemanager: cure
+medicalrecord: cure
+prescription: cure
+invaccine: cure
+
+# 直接连
+beauty: direct
+bespeak: direct
+fosterage: direct
+inhospital: direct
+itback: direct
+
+# 会员管理
+pet: guest
+vip: guest
+
+expenditure: management
+
+msgfind: message
+msgself: message
+msgsetting: message
+msgwarn: message
+wechat: message
+
+register: registration
+
+# 报表
+reportachievements: report
+reportcases: report
+reportconsumption: report
+reportgrossprofit: report
+reportpurchase: report
+reportreg: report
+reportsales: report
+reportstock: report
+reportstorefront: report
+reportturnover: report
+reportvisit: report
+
+# 销售
+marketing: sales
+saleplate: sales
+
+# 库存
+backstorage: stock
+backstoragedetails: stock
+instorage: stock
+instoragedetails: stock
+movestorage: stock
+movestoragedetails: stock
+outstorage: stock
+outstoragedetails: stock
+stock: stock

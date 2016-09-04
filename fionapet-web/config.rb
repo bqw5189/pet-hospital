@@ -10,6 +10,7 @@ page '/*.json', layout: false
 page '/*.txt', layout: false
 
 page "/*filter.html", layout: false
+
 page "/*pagination.html", layout: false
 
 page "/login.html", :layout => "login"
@@ -18,9 +19,6 @@ page "/index.html", :layout => "application"
 
 # 一列布局
 page "/views/*list.html", :layout => "list"
-
-# 两列布局
-page "/views/*cols2.html", :layout => "column2"
 
 # 默认布局
 page "/views/*.html", :layout => "page"
@@ -66,30 +64,79 @@ helpers do
     end
 
     def inputName(key, fieldName)
-        return fieldName
+        if (fieldName.index("$") == 0)
+            return fieldName.delete "$"
+        else
+            return fieldName
+        end
     end
 
     def inputModel(key, fieldName)
         if fieldName == 'error'
             return fieldName
+        elsif (fieldName.index("$") == 0)
+            puts "#base: " << fieldName
+            return fieldName.delete "$"
         else
             return "" << key << "." << fieldName
         end
     end
 
     def modal(name, id)
-        puts "Method: " << name << ": " << id
         @modal_id = id
         @modal_name = name
     end
 
-    def inputHelper(key, fieldName)
+    def portal(name, id)
+        @portal_id = id
+        @portal_name = name
+    end
+
+    # 必填验证
+    def validrequired(key, fieldName)
         if fieldName == 'error'
             return 'true'
         else
-            return "" << @modal_id << "form." << fieldName << ".$invalid && " << @modal_id << "form.submitted"
+            return "" << @modal_id << "form." << fieldName << ".$error.required && " << @modal_id << "form.submitted"
         end
     end
+
+    # 电子信箱验证
+    def validemail(key, fieldName)
+        if fieldName == 'error'
+            return 'true'
+        else
+            return "" << @modal_id << "form." << fieldName << ".$error.email && " << @modal_id << "form.submitted"
+        end
+    end
+
+    # 输入框长度
+    def validmaxlength(key, fieldName)
+        if fieldName == 'error'
+            return 'true'
+        else
+            return "" << @modal_id << "form." << fieldName << ".$error.maxlength && " << @modal_id << "form.submitted"
+        end
+    end
+
+    # URL验证
+    def validurl(key, fieldName)
+        if fieldName == 'error'
+            return 'true'
+        else
+            return "" << @modal_id << "form." << fieldName << ".$error.url && " << @modal_id << "form.submitted"
+        end
+    end
+
+    # 数字验证
+    def validnumber(key, fieldName)
+        if fieldName == 'error'
+            return 'true'
+        else
+            return "" << @modal_id << "form." << fieldName << ".$error.number && " << @modal_id << "form.submitted"
+        end
+    end
+
 end
 
 # Methods defined in the helpers block are available in templates

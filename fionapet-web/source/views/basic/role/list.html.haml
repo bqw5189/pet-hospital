@@ -2,9 +2,11 @@
 
 - @prefix = "basic/"
 
-- fields = data[@page_id].fields
+- @dataset = data["" << (@prefix.delete "/") << "-" << @page_id];
 
-- listFields = data[@page_id].listFields
+- fields = @dataset.fields
+
+- listFields = @dataset.listFields
 
 - content_for :toolbar do
   %button.btn.btn-circle.btn-default.btn-sm{:href => "javascript:;", 'ng': {'click':'update()'}}
@@ -15,26 +17,18 @@
     删除
 
 - content_for :theader do
-  - listFields.each do |field|
+  - @page.listFields.each do |field|
     -#挂号状态
     %th #{field.aliasName || field.fieldName}
 
--#- content_for :ttoolbar do
--#  %a.btn.btn-outline.btn-circle.btn-sm.purple{'ng-click' => 'update(pet.id)'}
--#    %i.fa.fa-edit
--#    更新
--#  %a.btn.btn-outline.btn-circle.dark.btn-sm.black{:href => "javascript:;", 'ng': {'click':'remove(pet.id)'}}
--#    %i.fa.fa-trash-o
--#    Delete
-
 - content_for :tbody do
-  - listFields.each do |column|
+  - @page.listFields.each do |column|
     -# #{column.fieldName}
     %td
-      = bind @page_id, (column.fieldKey || fields[column.fieldName] || 'error')
+      = bind @page_id, (column.fieldKey || @fields[column.fieldName] || 'error')
 
 / Modal
 
 / Modal
-= partial :'layouts/partials/modal' do
+= partial :'layouts/partials/modal-lg' do
   = partial 'modify'

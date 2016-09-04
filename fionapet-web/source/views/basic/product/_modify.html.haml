@@ -1,62 +1,129 @@
-/ BEGIN SAMPLE FORM PORTLET
-.portlet.light.bordered
-  .portlet-title
-    .caption
-      %i.icon-settings.font-dark
-      %span.caption-subject.font-dark.sbold.uppercase 会员信息
-    .actions
-      %a.btn.btn-circle.grey-salsa.btn-sm{:href => "javascript:;"}
-        %i.fa.fa-plus
-        新增主人
 
-      %a.btn.btn-circle.grey-salsa.btn-sm{:href => "javascript:;"}
-        %i.fa.fa-remove
-        选择主人
+-#卡片样式
+.tabbable-line
+  %ul.nav.nav-tabs
+    %li.active
+      %a{"data-toggle" => "tab", :href => "//#product_basic"} 基本信息
+    %li
+      %a{"data-toggle" => "tab", :href => "//#product_pictures"} 图片信息
 
-  .portlet-body.form
-    .form-body
-      .row
-        .col-md-4
-          = partial :'layouts/inputs/text', :locals => {:keyword => 'gest', :fieldName => '会员编号', :maxlength => '32', :required => 'true'}
+  .tab-content
+    #product_basic.tab-pane.active
+      .form-body
+        .row
+          .col-md-2
+            = partial :'layouts/inputs/text', :locals => {:fieldName => '所属分类ID', :maxlength => '64'}
 
-        .col-md-4
-          = partial :'layouts/inputs/text', :locals => {:keyword => 'gest', :fieldName => '会员姓名', :maxlength => '32'}
+          .col-md-2
+            = partial :'layouts/inputs/text', :locals => {:fieldName => '包装单位', :maxlength => '32'}
 
-        .col-md-4
-          .form-group
-            %label.control-label 会员等级
+          .col-md-2
+            = partial :'layouts/inputs/text', :locals => {:fieldName => '电子商务ID', :maxlength => '32'}
+
+          .col-md-2
+            = partial :'layouts/inputs/text', :locals => {:fieldName => '会员价格', :maxlength => '32'}
+
+          .col-md-2
+            = partial :'layouts/inputs/text', :locals => {:fieldName => '保质期', :maxlength => '32'}
+
+        .row
+          .col-md-3
+            = partial :'layouts/inputs/text', :locals => {:fieldName => '所属分类', :maxlength => '32'}
+
+          .col-md-3
+            = partial :'layouts/inputs/text', :locals => {:fieldName => '编号', :maxlength => '32'}
+
+          .col-md-6
+            = partial :'layouts/inputs/text', :locals => {:fieldName => '名称', :maxlength => '32'}
+
+        .row
+          .col-md-3
+            = partial :'layouts/inputs/text', :locals => {:fieldName => '条码', :maxlength => '32'}
+
+          .col-md-3
+            = partial :'layouts/inputs/text', :locals => {:fieldName => '规格', :maxlength => '32'}
+
+          .col-md-3
+            %label.control-label 剂型
             %select.form-control
-              %option 普通会员
-              %option VIP会员
+              %option 无
 
-      .row
-        .col-md-4
-          .form-group
-            %label.control-label 会员性别
+          .col-md-3
+            = partial :'layouts/inputs/text', :locals => {:fieldName => '零散比', :maxlength => '32'}
+
+        .row
+          .col-md-3
+            %label.control-label 是否销售
             %select.form-control
-              %option 男
-              %option 女
+              %option 是
+              %option 否
 
-        .col-md-4
-          = partial :'layouts/inputs/date', :locals => {:keyword => 'gest', :fieldName => '出生日期', :maxlength => '16'}
+          .col-md-3
+            %label.control-label 是否打折
+            %select.form-control
+              %option 是
+              %option 否
+
+          .col-md-3
+            = partial :'layouts/inputs/text', :locals => {:fieldName => '默认进价', :maxlength => '32'}
+
+          .col-md-3
+            = partial :'layouts/inputs/text', :locals => {:fieldName => '生产厂商', :maxlength => '32'}
+
+        .row
+          .col-md-3
+            = partial :'layouts/inputs/text', :locals => {:fieldName => '销售价格', :maxlength => '32'}
+
+          .col-md-3
+            = partial :'layouts/inputs/text', :locals => {:fieldName => '销售单位', :maxlength => '32'}
+
+          .col-md-3
+            = partial :'layouts/inputs/text', :locals => {:fieldName => '处方价格', :maxlength => '32'}
+
+          .col-md-3
+            %label.control-label 处方单位
+            %select.form-control
+              %option 套
+
+        .row
+          .col-md-3
+            = partial :'layouts/inputs/text', :locals => {:fieldName => '库存下限', :maxlength => '32'}
+
+          .col-md-3
+            = partial :'layouts/inputs/text', :locals => {:fieldName => '库存上限', :maxlength => '32'}
+
+          .col-md-3
+            = partial :'layouts/inputs/text', :locals => {:fieldName => '是否记库', :maxlength => '32'}
+
+          .col-md-3
+            = partial :'layouts/inputs/text', :locals => {:fieldName => '货位信息', :maxlength => '32'}
+
+        .row
+          .col-md-3
+            = partial :'layouts/inputs/text', :locals => {:fieldName => '拼音码', :maxlength => '32'}
+
+          .col-md-3
+            = partial :'layouts/inputs/text', :locals => {:fieldName => '分组', :maxlength => '32'}
+
+          .col-md-3
+            %label.control-label 是否可兑换
+            %select.form-control
+              %option 是
+              %option 否
+
+          .col-md-3
+            = partial :'layouts/inputs/text', :locals => {:fieldName => '兑换积分', :maxlength => '32'}
+
+        .row
+          .col-md-12
+            = partial :'layouts/inputs/textarea', :locals => {:fieldName => '用法', :maxlength => '32'}
+
+        .row
+          .col-md-12
+            = partial :'layouts/inputs/textarea', :locals => {:fieldName => '备注', :maxlength => '32'}
 
 
-        .col-md-4
-          = partial :'layouts/inputs/text', :locals => {:keyword => 'gest', :fieldName => '年龄', :maxlength => '16'}
+    #product_pictures.tab-pane
+      -#文件上传
+      = partial :'layouts/inputs/fileupload', :locals => {:keyword => '', :fieldName => '商品照片', :maxlength => '32', :required => "true"}
 
-      .row
-        .col-md-4
-          = partial :'layouts/inputs/text', :locals => {:keyword => 'gest', :fieldName => '手机', :maxlength => '16'}
-
-        .col-md-4
-          = partial :'layouts/inputs/text', :locals => {:keyword => 'gest', :fieldName => '电话', :maxlength => '16'}
-
-        .col-md-4
-          = partial :'layouts/inputs/money', :locals => {:keyword => 'gest', :fieldName => '账户金额', :maxlength => '16'}
-
-      .row
-        .col-md-8
-          = partial :'layouts/inputs/text', :locals => {:keyword => 'gest', :fieldName => '联系地址', :maxlength => '16'}
-
-        .col-md-4
-          = partial :'layouts/inputs/date', :locals => {:keyword => 'gest', :fieldName => '登记日期', :maxlength => '16'}

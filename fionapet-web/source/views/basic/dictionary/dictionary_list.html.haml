@@ -1,0 +1,33 @@
+---
+layout: "cols2_basic"
+---
+- page '数据字典', 'dictionary'
+
+-# 大纲部分
+
+-#数据字典类别
+= partial 'views/commons/nav_datumtype', :locals => {:sidename => "种类", :sidefieldname=> 'dictName'}
+
+-# 主体部分
+
+- content_for :toolbar do
+  = partial :'layouts/buttons/insert'
+  = partial :'layouts/buttons/removes'
+
+- content_for :theader do
+  - @page.listFields.each do |field|
+    -#挂号状态
+    %th #{field.aliasName || field.fieldName}
+
+- content_for :tbody do
+  - @page.listFields.each do |column|
+    -# #{column.fieldName}
+    %td
+      = bind @page_id, (column.fieldKey || @fields[column.fieldName] || 'error')
+
+-#表格，侧边栏选择脚本过滤
+= partial :'layouts/table/table_selected'
+
+/ Modal
+= partial :'layouts/partials/modal' do
+  = partial 'modify'

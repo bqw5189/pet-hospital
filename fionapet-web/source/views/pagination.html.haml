@@ -1,4 +1,4 @@
-%form.form-inline{:role => "form", :name => "petform", :novalidate => "", "ng-submit" => "jump()"}
+%form.form-inline{:role => "form", :name => "paginationform", :novalidate => "", "ng-submit" => "jump()"}
   .form-group
     %button.btn.btn-sm.default.prev{:type => 'button',:href => "javascript:;", 'ng' => {'disabled': 'pagination.first==true', 'click': 'jump(pagination.pageNumber-1)'}}
       %i.fa.fa-angle-left

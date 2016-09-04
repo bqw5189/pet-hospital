@@ -1,0 +1,47 @@
+---
+layout: "cols2_light"
+---
+- page '宠物品种管理', 'varietie'
+
+-# 大纲部分
+
+- content_for :outline_toolbar do
+  = partial :'layouts/buttons/insert', :locals => {:click => 'varietietypeinsert()'}
+  = partial :'layouts/buttons/remove', :locals => {:click => 'varietietyperemove()'}
+  = partial :'layouts/buttons/update', :locals => {:click => 'varietietypeupdate()'}
+
+-#宠物详细信息
+= partial 'views/commons/nav_datumtype', :locals => {:sidename => "种类", :sidefieldname=> 'name'}
+
+-# 主体部分
+
+/ 页面按钮
+- content_for :toolbar do
+  = partial :'layouts/buttons/insert'
+  = partial :'layouts/buttons/removes'
+
+/ Table 头
+- content_for :theader do
+  - @page.listFields.each do |field|
+    %th #{field.aliasName || field.fieldName}
+
+/ Table 正文
+- content_for :tbody do
+  - @page.listFields.each do |column|
+    %td
+      = bind @page_id, (column.fieldKey || @fields[column.fieldName] || 'error')
+
+-#表格，侧边栏选择脚本过滤
+= partial :'layouts/table/table_selected'
+
+/ Modal
+- modal "宠物品种", "varietie"
+
+= partial :'layouts/partials/modal' do
+  = partial 'modify'
+
+/ Modal
+- modal "种类", "varietietype"
+
+= partial :'layouts/partials/modal' do
+  = partial 'pettype'

@@ -1,0 +1,50 @@
+# 经销商与生产商
+listFields: # aliasName 显示使用, fieldName 关联字段使用,若显示名称与字段名称一致, 则不需要定义 aliasName
+  - fieldName: 销售单号
+
+  - fieldName: 会员姓名
+
+  - fieldName: 总项数
+
+  - fieldName: 总金额
+
+  - fieldName: 付款状态
+
+  - fieldName: 操作人
+
+  - fieldName: 操作时间
+
+searchFields:
+
+  - fieldName: 商品名称
+
+  - fieldName: 销售单号
+
+  - fieldName: ---
+
+  - fieldName: 会员编号
+
+  - fieldName: 会员姓名
+
+  - fieldName: 主人手机
+
+  - fieldName: ---
+
+  - fieldName: 购买日期
+
+  - fieldName: 状态
+
+
+fields: #可定义多个中文名称指向同一个字段
+  主键: 编码
+
+  主键: 名称
+
+  主键: 规格
+
+  主键: 生产商
+
+  主键: 单位
+
+  主键: 单价
+

@@ -1,0 +1,24 @@
+.form-body
+  .row
+    .col-md-12
+      = partial :'layouts/inputs/textview', :locals => {:keyword => "producttype", :fieldName => '父类名称', :maxlength => '32'}
+
+  .row
+    .col-md-12
+      = partial :'layouts/inputs/text', :locals => {:keyword => "producttype", :fieldName => '父类ID', :maxlength => '64'}
+
+  .row
+    .col-md-12
+      = partial :'layouts/inputs/text', :locals => {:keyword => "producttype", :fieldName => '种类编号', :maxlength => '32'}
+
+  .row
+    .col-md-12
+      = partial :'layouts/inputs/text', :locals => {:keyword => "producttype", :fieldName => '类别名称', :maxlength => '32'}
+
+  .row
+    .col-md-12
+      = partial :'layouts/inputs/money', :locals => {:keyword => "producttype", :fieldName => '业务类型', :maxlength => '32'}
+
+  .row
+    .col-md-12
+      = partial :'layouts/inputs/text', :locals => {:keyword => "producttype", :fieldName => '零售预期毛利', :maxlength => '32'}

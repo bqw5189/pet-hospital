@@ -1,0 +1,32 @@
+
+%table#sample_editable_1.table.table-striped.table-hover.table-bordered
+  %thead
+    %tr
+      %th 操作
+      %th 会员编号
+      %th 会员姓名
+      %th 会员性别
+      %th 会员电话
+      %th 固定电话
+      %th 会员生日
+      %th 账户金额
+
+  %tbody
+    %tr.odd.gradeX
+      %td
+        %a.btn.btn-outline.btn-circle.dark.btn-sm.black{:href => "javascript:;", 'ng': {'click':'remove(' +@page_id+ '.id)'}}
+          %i.fa.fa-trash-o
+          选择
+
+      %td vip000010101
+      %td 123
+      %td 男
+      %td 18622737266
+      %td 0535
+      %td 2016-10-12
+      %td 1009
+
+.form-actions.text-center
+  %button.btn.blue{:type => "submit"} 保存挂号
+  %button.btn.blue{:type => "submit"} 挂号并付款
+  %button.btn.default{:type => "button"} 取消挂号

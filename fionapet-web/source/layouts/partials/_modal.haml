@@ -11,6 +11,7 @@
           %h4.modal-title #{@modal_name}
 
         .modal-body
+          %div{:id => "#{@modal_id}_alert"}
           = yield
 
         .modal-footer
@@ -20,4 +21,4 @@
             %i.fa.fa-plus
             保存表单
 
-- puts "Modal: " << ( @modal_name || "空" ) << ": " << ( @modal_id || "空" )
+-#- puts "Modal: " << ( @modal_name || "空" ) << ": " << ( @modal_id || "空" )
