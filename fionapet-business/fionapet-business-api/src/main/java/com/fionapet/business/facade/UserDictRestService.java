@@ -23,7 +23,7 @@ import java.util.List;
 @Consumes({MediaType.APPLICATION_JSON})
 @Produces({ContentType.APPLICATION_JSON_UTF_8})
 @Api(value="userdicts", description = "用户字典接口")
-public interface UserDictRestService extends CURDRestService<UserDict>{
+public interface UserDictRestService extends CURDRestService<UserDict>,SelectRestService{
     /**
      * 用户字典
      * @return

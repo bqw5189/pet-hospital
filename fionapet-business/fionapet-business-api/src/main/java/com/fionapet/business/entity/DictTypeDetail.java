@@ -26,18 +26,6 @@ public class DictTypeDetail extends CMEntity {
         this.dictType = dictType;
     }
 
-//    /**
-//     * dictTypeId
-//     */
-//    @ApiModelProperty(value = "dictTypeId", required = false)
-//    private String dictTypeId;
-//    public String getDictTypeId() {
-//        return dictTypeId;
-//    }
-//    public void setDictTypeId(String dictTypeId) {
-//        this.dictTypeId = dictTypeId;
-//    }
-    
     /**
      * dictDetailCode
      */

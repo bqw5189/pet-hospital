@@ -24,7 +24,7 @@ import java.util.Map;
 @Consumes({MediaType.APPLICATION_JSON})
 @Produces({ContentType.APPLICATION_JSON_UTF_8})
 @Api(value="dicttypes", description = "字典类型接口")
-public interface DictTypeRestService extends CURDRestService<DictType>{
+public interface DictTypeRestService extends CURDRestService<DictType>, SelectRestService{
     /**
      * 字典类型
      * @return

@@ -3,8 +3,12 @@ package com.fionapet.business.entity;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import java.util.HashSet;
+import java.util.Set;
 
 /**
  * 应用字典大类
@@ -15,7 +19,17 @@ import javax.persistence.Table;
 @Table(name = "t_user_dict")
 @ApiModel("应用字典大类")
 public class UserDict extends CMSEntity {
-    
+    private Set<UserDictDetail> details = new HashSet<UserDictDetail>();
+
+    @OneToMany(cascade = { CascadeType.REFRESH, CascadeType.PERSIST,CascadeType.MERGE, CascadeType.REMOVE },mappedBy ="userDict")
+    public Set<UserDictDetail> getDetails() {
+        return details;
+    }
+
+    public void setDetails(Set<UserDictDetail> details) {
+        this.details = details;
+    }
+
     /**
      * dictName
      */

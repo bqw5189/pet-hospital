@@ -3,8 +3,7 @@ package com.fionapet.business.entity;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 /**
  * 数据字典 字典明细项
@@ -15,19 +14,18 @@ import javax.persistence.Table;
 @Table(name = "t_user_dict_detail")
 @ApiModel("数据字典 字典明细项")
 public class UserDictDetail extends CMSEntity {
-    
-    /**
-     * dictTypeId
-     */
-    @ApiModelProperty(value = "dictTypeId", required = false)
-    private String dictTypeId;
-    public String getDictTypeId() {
-        return dictTypeId;
+    private UserDict userDict;
+
+    @ManyToOne(cascade = {CascadeType.MERGE,CascadeType.REFRESH }, optional = true)
+    @JoinColumn(name="dict_type_id")
+    public UserDict getUserDict() {
+        return userDict;
     }
-    public void setDictTypeId(String dictTypeId) {
-        this.dictTypeId = dictTypeId;
+
+    public void setUserDict(UserDict userDict) {
+        this.userDict = userDict;
     }
-    
+
     /**
      * dictDetailCode
      */

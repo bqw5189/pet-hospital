@@ -11,7 +11,5 @@ import java.util.Map;
  * 字典类型
 * Created by tom on 2016-07-31 16:42:53.
  */
-public interface DictTypeService extends CURDService<DictType> {
-
-    Map<String,List<Map<String,String>>> selects(Map<String, String> param);
+public interface DictTypeService extends CURDService<DictType> ,SelectService{
 }
