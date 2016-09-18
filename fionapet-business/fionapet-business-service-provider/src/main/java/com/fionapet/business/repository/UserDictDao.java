@@ -1,6 +1,5 @@
 package com.fionapet.business.repository;
 
-import com.fionapet.business.entity.DictType;
 import com.fionapet.business.entity.UserDict;
 import org.dubbo.x.repository.DaoBase;
 

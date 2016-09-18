@@ -3,8 +3,7 @@ package com.fionapet.business.entity;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 /**
  * 商品和服务类型
@@ -15,7 +14,18 @@ import javax.persistence.Table;
 @Table(name = "t_item_type")
 @ApiModel("商品和服务类型")
 public class ItemType extends CMSEntity {
-    
+    private ItemCate itemCate;
+
+    @ManyToOne(cascade = {CascadeType.MERGE,CascadeType.REFRESH }, optional = true)
+    @JoinColumn(name="cate_no")
+    public ItemCate getItemCate() {
+        return itemCate;
+    }
+
+    public void setItemCate(ItemCate itemCate) {
+        this.itemCate = itemCate;
+    }
+
     /**
      *商品编号
      */
@@ -40,17 +50,17 @@ public class ItemType extends CMSEntity {
         this.itemName = itemName;
     }
     
-    /**
-     * 种类业务编号对应t_item_cate表的cate_no 
-     */
-    @ApiModelProperty(value = "cateNo")
-    private String cateNo;
-    public String getCateNo() {
-        return cateNo;
-    }
-    public void setCateNo(String cateNo) {
-        this.cateNo = cateNo;
-    }
+//    /**
+//     * 种类业务编号对应t_item_cate表的cate_no 
+//     */
+//    @ApiModelProperty(value = "cateNo")
+//    private String cateNo;
+//    public String getCateNo() {
+//        return cateNo;
+//    }
+//    public void setCateNo(String cateNo) {
+//        this.cateNo = cateNo;
+//    }
     
     /**
      * 销售单位 

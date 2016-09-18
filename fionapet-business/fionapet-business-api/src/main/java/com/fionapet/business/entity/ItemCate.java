@@ -3,9 +3,13 @@ package com.fionapet.business.entity;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
+import java.util.HashSet;
+import java.util.Set;
 
 /**
  *  商品服务种类
@@ -16,6 +20,17 @@ import javax.validation.constraints.NotNull;
 @Table(name = "t_item_cate")
 @ApiModel("商品服务种类")
 public class ItemCate extends CMSEntity{
+    private Set<ItemType> details = new HashSet<ItemType>();
+
+    @OneToMany(cascade = { CascadeType.REFRESH, CascadeType.PERSIST,CascadeType.MERGE, CascadeType.REMOVE },mappedBy ="itemCate")
+    public Set<ItemType> getDetails() {
+        return details;
+    }
+
+    public void setDetails(Set<ItemType> details) {
+        this.details = details;
+    }
+
     /**
      * 名称
      */

@@ -11,7 +11,7 @@ import org.slf4j.LoggerFactory;
  * 商品服务种类
 * Created by tom on 2016-07-31 16:42:52.
  */
-public class ItemCateRestServiceImpl extends RestServiceBase<ItemCate> implements ItemCateRestService {
+public class ItemCateRestServiceImpl extends SelectRestServiceBase<ItemCate> implements ItemCateRestService {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(ItemCateRestServiceImpl.class);
 

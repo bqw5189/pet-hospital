@@ -23,7 +23,7 @@ import java.util.List;
 @Consumes({MediaType.APPLICATION_JSON})
 @Produces({ContentType.APPLICATION_JSON_UTF_8})
 @Api(value="itemcates", description = "商品服务种类接口")
-public interface ItemCateRestService extends CURDRestService<ItemCate>{
+public interface ItemCateRestService extends CURDRestService<ItemCate>,SelectRestService{
     /**
      * 商品服务种类
      * @return
