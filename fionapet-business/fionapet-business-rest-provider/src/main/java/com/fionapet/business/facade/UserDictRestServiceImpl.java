@@ -7,6 +7,9 @@ import com.fionapet.business.service.UserDictService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.util.List;
+import java.util.Map;
+
 /**
  * 用户字典
 * Created by tom on 2016-07-31 16:36:24.
@@ -29,5 +32,7 @@ public class UserDictRestServiceImpl extends RestServiceBase<UserDict> implement
     public CURDService<UserDict> getService() {
         return userDictService;
     }
+
+
 
 }

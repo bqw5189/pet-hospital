@@ -12,6 +12,7 @@ import io.swagger.annotations.ApiParam;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import java.util.List;
+import java.util.Map;
 
 /**
  * 字典类型 接口
@@ -54,4 +55,9 @@ public interface DictTypeRestService extends CURDRestService<DictType>{
     @Path("/{id}")
     @ApiOperation(value = "删除字典类型", notes = "删除字典类型")
     RestResult<String> delete(@HeaderParam(ConstantVariable.HEADER_AUTHORIZATION_KEY) String token, @ApiParam("id") @PathParam("id") String uuid);
+
+    @POST
+    @Path("/selects")
+    @ApiOperation(value = "下拉列表信息",notes = "下拉列表信息.")
+    RestResult<Map<String,List<Map<String, String>>>> selects(@HeaderParam(ConstantVariable.HEADER_AUTHORIZATION_KEY) String token,Map<String,String> param);
 }

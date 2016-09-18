@@ -1,6 +1,7 @@
 package com.fionapet.business.repository;
 
 import com.fionapet.business.entity.DictType;
+import com.google.common.collect.ImmutableList;
 import org.junit.Assert;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,5 +27,21 @@ public class DictTypeDaoTest extends SpringTransactionalTestCase {
         Assert.assertNotNull(dictTypes);
 
         Assert.assertEquals(dictTypes.size(), 21);
+
+        DictType dictType = dictTypes.get(0);
+        Assert.assertNotNull(dictType);
+        Assert.assertTrue(dictType.getDetails().size()>0);
+    }
+
+    @Test
+    public void selects(){
+        List<String> names = ImmutableList.of("付款状态","检查状态");
+
+        List<DictType> dictTypes = dictTypeDao.findByDictNameIn(names);
+
+        Assert.assertNotNull(dictTypes);
+        Assert.assertEquals(dictTypes.size(),2);
+
+
     }
 }

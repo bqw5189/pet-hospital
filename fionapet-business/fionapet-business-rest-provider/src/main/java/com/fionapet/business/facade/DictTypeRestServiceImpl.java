@@ -1,11 +1,17 @@
 package com.fionapet.business.facade;
 
 import com.fionapet.business.entity.DictType;
+import org.dubbo.x.facade.RestResult;
 import org.dubbo.x.service.CURDService;
 import org.dubbo.x.facade.RestServiceBase;
 import com.fionapet.business.service.DictTypeService;
+import org.dubbo.x.util.ConstantVariable;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import javax.ws.rs.HeaderParam;
+import java.util.List;
+import java.util.Map;
 
 /**
  * 字典类型
@@ -30,4 +36,8 @@ public class DictTypeRestServiceImpl extends RestServiceBase<DictType> implement
         return dictTypeService;
     }
 
+    @Override
+    public RestResult<Map<String, List<Map<String, String>>>> selects(@HeaderParam(ConstantVariable.HEADER_AUTHORIZATION_KEY) String token, Map<String, String> param) {
+        return RestResult.OK(dictTypeService.selects(param));
+    }
 }

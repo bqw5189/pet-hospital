@@ -1,12 +1,9 @@
 package com.fionapet.business.entity;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
-import javax.persistence.Entity;
-import javax.persistence.Table;
-import javax.persistence.Transient;
+import javax.persistence.*;
 
 /**
  * 宠物字典类型明细
@@ -17,18 +14,29 @@ import javax.persistence.Transient;
 @Table(name = "t_dict_type_detail")
 @ApiModel("宠物字典类型明细")
 public class DictTypeDetail extends CMEntity {
-    
-    /**
-     * dictTypeId
-     */
-    @ApiModelProperty(value = "dictTypeId", required = false)
-    private String dictTypeId;
-    public String getDictTypeId() {
-        return dictTypeId;
+    private DictType dictType;
+
+    @ManyToOne(cascade = {CascadeType.MERGE,CascadeType.REFRESH }, optional = true)
+    @JoinColumn(name="dict_type_id")
+    public DictType getDictType() {
+        return dictType;
     }
-    public void setDictTypeId(String dictTypeId) {
-        this.dictTypeId = dictTypeId;
+
+    public void setDictType(DictType dictType) {
+        this.dictType = dictType;
     }
+
+//    /**
+//     * dictTypeId
+//     */
+//    @ApiModelProperty(value = "dictTypeId", required = false)
+//    private String dictTypeId;
+//    public String getDictTypeId() {
+//        return dictTypeId;
+//    }
+//    public void setDictTypeId(String dictTypeId) {
+//        this.dictTypeId = dictTypeId;
+//    }
     
     /**
      * dictDetailCode
