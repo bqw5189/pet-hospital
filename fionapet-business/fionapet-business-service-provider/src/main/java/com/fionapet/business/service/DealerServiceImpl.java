@@ -5,12 +5,14 @@ import org.dubbo.x.repository.DaoBase;
 import org.dubbo.x.service.CURDServiceBase;
 import com.fionapet.business.repository.DealerDao;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.transaction.annotation.Transactional;
 
 /**
  *  代理商
 * Created by tom on 2016-07-31 16:42:51.
  */
-public class DealerServiceImpl extends CURDServiceBase<Dealer> implements DealerService {
+@Transactional
+public class DealerServiceImpl extends StatusCURDServiceBase<Dealer> implements DealerService {
     @Autowired
     private DealerDao dealerDao;
 

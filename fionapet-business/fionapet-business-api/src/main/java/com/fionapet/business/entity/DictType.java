@@ -2,11 +2,9 @@ package com.fionapet.business.entity;
 
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import org.codehaus.jackson.annotate.JsonIgnore;
 
-import javax.persistence.CascadeType;
-import javax.persistence.Entity;
-import javax.persistence.OneToMany;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -34,7 +32,8 @@ public class DictType extends CMSEntity {
 
     private Set<DictTypeDetail> details = new HashSet<DictTypeDetail>();
 
-    @OneToMany(cascade = { CascadeType.REFRESH, CascadeType.PERSIST,CascadeType.MERGE, CascadeType.REMOVE },mappedBy ="dictType")
+    @JsonIgnore
+    @OneToMany(cascade = { CascadeType.REFRESH },mappedBy ="dictType")
     public Set<DictTypeDetail> getDetails() {
         return details;
     }

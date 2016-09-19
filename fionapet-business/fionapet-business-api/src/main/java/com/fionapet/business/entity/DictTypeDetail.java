@@ -2,6 +2,7 @@ package com.fionapet.business.entity;
 
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import org.codehaus.jackson.annotate.JsonIgnore;
 
 import javax.persistence.*;
 
@@ -16,7 +17,8 @@ import javax.persistence.*;
 public class DictTypeDetail extends CMEntity {
     private DictType dictType;
 
-    @ManyToOne(cascade = {CascadeType.MERGE,CascadeType.REFRESH }, optional = true)
+    @JsonIgnore
+    @ManyToOne(cascade = {CascadeType.REFRESH }, optional = false)
     @JoinColumn(name="dict_type_id")
     public DictType getDictType() {
         return dictType;

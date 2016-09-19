@@ -11,6 +11,14 @@ import javax.persistence.*;
 
 @MappedSuperclass
 public class StatusEntity extends IdEntity {
+    public static DictTypeDetail DEFAULT(){
+        DictTypeDetail status = new DictTypeDetail();
+        status.setId("68479670-5787-11e6-9b57-ec4aad85924d");
+        status.setDictDetailCode("SM00001");
+        status.setCreateUserId("fc5db3b3-4063-4a12-a511-880ba19e4b58");
+        status.setUpdateUserId("fc5db3b3-4063-4a12-a511-880ba19e4b58");
+        return status;
+    }
     /**
      * 状态
      */
