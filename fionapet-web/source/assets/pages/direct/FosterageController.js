@@ -1,272 +1,215 @@
 
 // 寄养管理
-angular.module('fiona').controller('FosterageController', function($scope, $http, commons) {
 
-    $http.defaults.headers.post.authorization = commons.getAuthorization();
+// 住院管理
+angular.module('fiona').controller('FosterageController', function($scope, $controller) {
 
-    $http.defaults.headers.post['Content-Type']= 'application/json';
-
-    // alert(commons.getAuthorization());
-
-    // 使用日期控件
-    jQuery().datepicker && $(".date-picker-btn").datepicker({
-        format: 'yyyy-mm-dd',
-        orientation: "left",
-        autoclose: !0
-    }).on("changeDate", function() {
-        $(this).parent().prev().val($(this).datepicker('getFormattedDate'));
-    });
-
-    jQuery().datepicker && $(".date-picker").datepicker({
-        format: 'yyyy-mm-dd',
-        orientation: "left",
-        autoclose: !0
-    });
-
-
-    $scope.error= "未找到定义";
-
-    $scope.selectedall = false;
-
-    $scope.isRemoves = true;
-
-    $scope.selection = {};
-
-    $scope.selectChange = function () {
-        $scope.isRemoves = true;
-        angular.forEach($scope.selection, function(value, key){
-            if(value == true)
-            {
-                $scope.isRemoves = false;
-            }
-        });
-    };
-
-    $scope.selectAll= function () {
-        angular.forEach($scope.fosterages, function (fosterage) {
-            $scope.selection[fosterage.id] = $scope.selectedall;
-        })
-
-        $scope.isRemoves = !$scope.selectedall
-    };
-
-    // 综合搜索项
-    $scope.pagination = {
-        'pageSize': 1,
-        'pageNumber': 1,
-        "first":true,
-        "last":false,
-        "totalElements": 1,
-        "totalPages": 1
-    };
-    
-    $scope.combox = {
-        types: [ {'name':'猫科'}, {'name':'犬科'} ]
-    };
-
-    // 综合搜索项
-    $scope.filters = [
-        // 宠物病例号
-        // {"fieldName": "name","operator": "EQ", "value":""},
-
-        // 宠物昵称
-        {"fieldName": "fosterageCode","operator": "EQ", "value":""},
-
-        // 宠物昵称
-        {"fieldName": "fosterageName","operator": "EQ", "value":""},
-
-        // 会员编号
-        {"fieldName": "gestCode","operator": "EQ", "value":""},
-
-        // 会员名称
-        {"fieldName": "gestName","operator": "EQ", "value":""},
-
-        // 会员电话
-        // {"fieldName": "mobilePhone","operator": "EQ", "value":""}
+    // 声明要使用的下拉选项
+    $scope.dropboxargs = [
+        {name: "managerIdSet", server: "personss"},  // 主管人员ID
+        {name: "manufacturerIdSet", server: "personss"}, // 业务员id
+        {name: "itemCodeSet", server: "personss"} // 寄养类型Code
     ];
 
-    $scope.placeholder = "请输入宠物病例号/宠物昵称/会员编号/会员名称/会员电话";
+    $scope.dropdowns= {};
 
-    // 检索宠物信息
-    $scope.search = function () {
+    // 综合搜索项
+    $scope.filters = [{"code": "name","operator": "EQ", "value":""} , {"name": "name","operator": "EQ", "value":""} , {"contractMan": "name","operator": "EQ", "value":""} , {"mobilePhone": "name","operator": "EQ", "value":""} , {"dealerAddress": "name","operator": "EQ", "value":""}];
 
-        // alert(" 执行搜索.... ");
+    $scope.placeholder = "请输入自动编号 / 经销商名称 / 联系人 / 手机 / 地址";
 
-        console.log(" 执行搜索.... " + searchform.$dirty);
+    // 主数据加载地址
+    $scope.master = {
+        id: "fosterage",
 
-        angular.forEach($scope.filters, function (data) {
-            console.log(" 执行搜索.... " + data.fieldName + ", " + data.operator + ", " + data.value);
-        });
+        name: "住院管理",
 
-        // 分页查询  /business/api/v2/fosterages
-        // $http.get('/server/api/v2/fosterages/page.json', {'pageSize':$scope.pagination.pageSize, 'pageNumber':$scope.pagination.pageNumber, 'filters':$scope.filters}).success( function ( data, status, headers, config ) {
+        server: "/api/v2/fosterrecords",
 
-        // alert('pageSize: '+ $scope.pagination.pageSize  +'pageNumber: ' + $scope.pagination.pageNumber + ", " + $scope.filters.length);
+        insert: function () {
 
-        // angular.forEach($scope.filters, function (data, index) {
-        //     alert(data.fieldName);
-        // });
-
-        $http.post('/server/api/v2/fosterages/page.json', {'pageSize':$scope.pagination.pageSize, 'pageNumber':$scope.pagination.pageNumber, 'filters':$scope.filters}).success( function ( data, status, headers, config ) {
-            console.log( data );
-
-            $scope.fosterages = data.data.content;
-
-            // $http.post('/business/api/v2/fosterages', data).success( function ( data, status, headers, config ) {
-            //     console.log( data );
-            //     alert("Submit OK");
-            // }).error(function(data,status,headers,config) { //     错误
-            //     alert("保存失败,请确认后重试" + status);
-            // });
-
-            // angular.forEach($scope.fosterages, function (fosterage, i) {
-            //     alert(fosterage.id);
-            // });
-
-            // 搜索+分页
-            $scope.pagination.pageNumber = data.data.number+1;
-
-            $scope.pagination.last = data.data.last;
-            $scope.pagination.first = data.data.first;
-            $scope.pagination.totalPages = data.data.totalPages;
-            $scope.pagination.totalElements = data.data.totalElements;
-        });
-    };
-
-
-    // Form 界面
-    $scope.fosteragesubmit = function () {
-
-        $scope.fosterageform.submitted = true;
-
-        if ($scope.fosterageform.$valid) {
-            alert('submit: ' + $scope.fosterage.id);
-            $http.post('/business/api/v2/fosterages', $scope.fosterage).success( function ( data, status, headers, config ) {
-                console.log( data );
-                alert("Submit OK");
-            }).error(function(data,status,headers,config) { //     错误
-                alert(status);
-            });
-        } else {
-
-            alert($scope.fosterageform.$error);
-
-            // $scope.message = "请输入用户名和密码.";
-
-            // $scope.signup_form.submitted = true;
         }
     };
 
-    $scope.update = function (id) {
+    $controller('BasePaginationController', {$scope: $scope}); //继承
 
-        if(id == undefined)
-        {
-            // 添加
-            $scope.fosterage = {};
-        }
-        else
-        {
-            angular.forEach($scope.fosterages, function(data,index,array){
-                if(data.id== id)
-                {
-                    $scope.fosterage = data;
-                }
-            });
-        }
+    // 寄养期间消费
+    $scope.fosteragedetailportal = {
+        master: {
+            id: "fosteragedetail",
 
-        $('#fosterage').modal('toggle');
+            name: "寄养期间消费",
+
+            foreignkey: "serviceId", // 外键
+
+            server: "/api/v2/fosterrecorddetails"
+        },
+
+        parent: {
+            id: "fosterage"
+        }
     };
 
-    // 预付金记录
-    $scope.prepaymodal = function (id) {
+    $controller('BasePortalController', {$scope: $scope, component: $scope.fosteragedetailportal}); //继承
 
-        if(id == undefined)
-        {
-            // 添加
-            $scope.prepay = {};
-        }
-        else
-        {
-            angular.forEach($scope.prepays, function(data,index,array){
-                if(data.id== id)
-                {
-                    $scope.prepay = data;
-                }
-            });
-        }
+    // 预付金额
+    $scope.vipprepayportal = {
+        master: {
+            id: "vipprepay",
 
-        $('#prepay').modal('toggle');
+            name: "预付金额",
+
+            foreignkey: "relationId", // 外键
+
+            server: "/api/v2/prepaymoneys"
+        },
+
+        parent: {
+            id: "fosterage"
+        }
     };
+
+    $controller('BasePortalController', {$scope: $scope, component: $scope.vipprepayportal}); //继承
 
     // 健康状态记录
-    $scope.healthmodal = function (id) {
+    $scope.fosteragehealthportal = {
+        master: {
+            id: "fosteragehealth",
 
-        if(id == undefined)
-        {
-            // 添加
-            $scope.health = {};
+            name: "健康状态记录",
+
+            foreignkey: "relationId", // 外键
+
+            server: "/api/v2/fosterhealths"
+        },
+
+        parent: {
+            id: "fosterage"
         }
-        else
-        {
-            angular.forEach($scope.healths, function(data,index,array){
-                if(data.id== id)
+    };
+
+    $controller('BasePortalController', {$scope: $scope, component: $scope.fosteragehealthportal}); //继承
+
+    // 选择宠物
+    $scope.petportal = {
+        dropdowns: {},
+
+        dropboxargs : [
+            {name: "gestStyleSet", server: "gestlevels"},
+            {name: "statusSet", server: "dicts", filterName: "会员状态"},
+            {name: "gestSexSet", server: "userdicts", filterName: "性别"}
+        ],
+
+        master: {
+            id: "pet",
+
+            name: "宠物",
+
+            server: "/api/v2/pets",
+
+            checked: function () {
+                // 主人ID
+                $scope.fosterage.gestId = $scope.pet.id;
+
+                // 主人编号
+                $scope.fosterage.gestCode = $scope.pet.gestCode;
+
+                // 主人名称
+                $scope.fosterage.gestName = $scope.pet.gestName;
+            },
+            submit: function () {
+                // 主人ID
+                $scope.fosterage.gestId = $scope.pet.id;
+
+                // 主人编号
+                $scope.fosterage.gestCode = $scope.pet.gestCode;
+
+                // 主人名称
+                $scope.fosterage.gestName = $scope.pet.gestName;
+            },
+            insert: function () {
+                angular.forEach($scope.petportal.dropdowns, function (value, key) {
+                    $scope.pet[key.substr(0, key.length - 3)] = value[0];
+                });
+            }
+        },
+
+        parent: {
+            id: "fosterage"
+        }
+    };
+
+    $controller('CommonVipController', {$scope: $scope, component: $scope.petportal}); //继承
+
+    // 选择商品
+    $scope.productportal = {
+        slave: {
+            text: "cateName",
+
+            parent: "parentId",
+
+            foreignkey: "cateNo",         // id = {master.foreignkey}
+
+            id: "producttype",
+
+            name: "化验项目",
+
+            server: "/api/v2/itemcates"
+        },
+
+        // 主数据加载地址
+        master: {
+            id: "product",
+
+            name: "商品&服务",
+
+            server: "/api/v2/itemtypes",
+
+            submit: function (selected) {
+                if(!$scope.fosteragedetails)
                 {
-                    $scope.health = data;
+                    $scope.fosteragedetails = [];
                 }
-            });
-        }
 
-        $('#health').modal('toggle');
-    };
+                angular.forEach(selected, function (_fosteragedetail) {
+                    var fosteragedetail = {createUserId:1, updateUserId: 1};
 
-    // 添加商品/服务
-    $scope.productmodal = function (id) {
+                    // 服务ID
+                    // fosteragedetail.serviceId = $scope.fosterage.id;
 
-        if(id == undefined)
-        {
-            // 添加
-            $scope.product = {};
-        }
-        else
-        {
-            angular.forEach($scope.products, function(data,index,array){
-                if(data.id== id)
-                {
-                    $scope.product = data;
-                }
-            });
-        }
+                    angular.forEach(["itemCode", "itemName", "itemStandard", "barCode", "sellPrice", "packageUnit", "", "", ""], function (name) {
+                        fosteragedetail[name] = _fosteragedetail[name];
+                    });
 
-        $('#product').modal('toggle');
-    };
+                    // 个数
+                    fosteragedetail.inputCount = 1;
+                    // 总价
+                    fosteragedetail.totalCost = 1;
 
-    // 删除功能
-    $scope.removes = function () {
-        angular.forEach($scope.selection, function(value, key){
-            alert(key+ " = " + value);
-        });
-    };
+                    $scope.fosteragedetails.push(fosteragedetail);
+                    //
+                    // // 备
+                    // fosteragedetail.remark = _fosteragedetail.remark;
+                });
 
-    $scope.remove= function (id) {
-        // console.log( $scope.xiuUser )
+                // 总项
+                // $scope.fosterage.totalNum = $scope.fosteragedetails.length;
 
-        alert(id);
+                // 总金额
+                //
+                // $scope.fosterage.totalCost = $scope.fosteragedetails.length;
+            }
+        },
 
-        $http.delete('/business/api/v2/fosterages/' + id).success(function(data, index, array){
-            commons.danger("删除成功");
-        }).error(function (data) {
-            commons.danger("删除失败");
-        });
+        // 综合搜索项
+        filters : [{"fieldName": "itemCode","operator": "EQ", "value":""} , {"fieldName": "itemName","operator": "EQ", "value":""}],
 
-        // angular.forEach($scope.fosterages, function(data,index,array){
-        //
-        //     if(data.id == id)
-        //     {
-        //     }
-        //
-        // });
+        placeholder : "请输入宠物病例号/宠物昵称/会员编号/会员名称/会员电话"
 
     };
 
+    $controller('TreeSidePortalController', {$scope: $scope, component: $scope.productportal}); //继承
 
+    $scope.productportal.treeload();
+    $scope.productportal.search();
 });

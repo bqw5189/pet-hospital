@@ -3,15 +3,17 @@
 angular.module('fiona').controller('MarketingController', function($scope, $controller) {
 
     // 声明要使用的下拉选项
-    $scope.dropboxlist = [];
+    $scope.dropboxargs = [
+        {name: "assistantDoctorIdSet", server: "personss"}  // 服务助理ID
+    ];
 
-    $scope.dropdowns= {types: [{code: "1", name: "经销商"}, {code: "2", name: "生产商"}, {code: "3", name: "经销商和生产商"}]};
+    $scope.dropdowns= {};
 
     // 主数据加载地址
     $scope.master = {
         id: "marketing",
 
-        name: "直接销售",
+        name: "销售查询",
 
         server: "/api/v2/storedirectsells"
     };
@@ -34,4 +36,6 @@ angular.module('fiona').controller('MarketingController', function($scope, $cont
     $scope.placeholder = "请输入宠物病例号/宠物昵称/会员编号/会员名称/会员电话";
 
     $controller('BasePaginationController', {$scope: $scope}); //继承
+
+    
 });

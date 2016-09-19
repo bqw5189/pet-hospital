@@ -1,19 +1,12 @@
+---
+layout: "page"
+---
+
 - page '仓库信息管理', 'storage'
 
-- content_for :toolbar do
-  = partial :'layouts/buttons/insert'
-  = partial :'layouts/buttons/removes'
+- portal '仓库信息管理', 'storage'
+= partial 'layouts/widget/portal', :locals => {:filterbar => "page", :pagingbar => "none"}
 
-
-- content_for :theader do
-  - @page.listFields.each do |field|
-    %th #{field.aliasName || field.fieldName}
-
-- content_for :tbody do
-  - @page.listFields.each do |column|
-    %td
-      = bind @page_id, (column.fieldKey || @fields[column.fieldName] || 'error')
-
-/ Modal
-= partial :'layouts/partials/modal' do
+/ 编辑
+= partial :'layouts/partials/modal-portal-lg' do
   = partial 'modify'

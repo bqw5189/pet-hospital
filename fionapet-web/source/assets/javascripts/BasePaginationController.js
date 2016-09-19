@@ -1,11 +1,11 @@
-angular.module('fiona').controller('BasePaginationController', function ($scope, $http, commons) {
+angular.module('fiona').controller('BasePaginationController', function ($scope, $controller, $http, commons) {
+
     // I'm the sibling, but want to act as parent
-
-    $scope.error = "未找到定义";
-
     $http.defaults.headers.post.authorization = commons.getAuthorization();
 
     $http.defaults.headers.post['Content-Type'] = 'application/json';
+
+    $controller('BaseController', {$scope: $scope}); //继承
 
     // 使用日期控件
     jQuery().datepicker && $(".date-picker-btn").datepicker({
@@ -22,58 +22,8 @@ angular.module('fiona').controller('BasePaginationController', function ($scope,
         autoclose: !0
     });
 
-    $scope.loadUserdicts = function (dropboxlist) {
-        /**
-         * 读取下拉选项
-         */
-        angular.forEach(dropboxlist, function (name) {
-            $http.post(commons.getBusinessHostname() + "/api/v2/userdicts/page", {
-                'pageSize': 1,
-                'pageNumber': 1,
-                'filters': [{"fieldName": "dictName", "value": name, "operator": "EQ"}]
-            }).success(function (data, status, headers, config) {
-
-                angular.forEach(data.data.content, function (data) {
-                    $http.post(commons.getBusinessHostname() + "/api/v2/userdictdetails/page", {
-                        'pageSize': 100,
-                        'pageNumber': 1,
-                        'filters': [{"fieldName": "dictTypeId", "value": data.id, "operator": "EQ"}]
-                    }).success(function (datadetail, status, headers, config) {
-                        $scope.dropdowns[data.dictName] = datadetail.data.content;
-                        console.log(data.dictName);
-                        console.log($scope.dropdowns[data.dictName]);
-                    });
-                });
-            });
-        });
-    };
-
-    $scope.loadDicts = function (dropboxlist) {
-        /**
-         * 读取下拉选项
-         */
-        angular.forEach(dropboxlist, function (name) {
-            $http.post(commons.getBusinessHostname() + "/api/v2/dicttypes/page", {
-                'pageSize': 1,
-                'pageNumber': 1,
-                'filters': [{"fieldName": "dictName", "value": name, "operator": "EQ"}]
-            }).success(function (data, status, headers, config) {
-
-                angular.forEach(data.data.content, function (data) {
-
-                    $http.post(commons.getBusinessHostname() + "/api/v2/dicttypedetails/page", {
-                        'pageSize': 100,
-                        'pageNumber': 1,
-                        'filters': [{"fieldName": "dictTypeId", "value": data.id, "operator": "EQ"}]
-                    }).success(function (datadetail, status, headers, config) {
-                        $scope.dropdowns[data.dictName] = datadetail.data.content;
-                        // console.log(data.dictName);
-                        // console.log($scope.dropdowns[data.dictName]);
-                    });
-                });
-            });
-        });
-    };
+    // 会员等级, 会员状态
+    $scope.dropboxinit($scope.dropboxargs);
 
     // 综合搜索项
     $scope.pagination = {
@@ -84,7 +34,7 @@ angular.module('fiona').controller('BasePaginationController', function ($scope,
         "totalElements": 1,
         "totalPages": 1
     };
-
+    
     // 复选框
     $scope.selectedall = false;
 
@@ -215,6 +165,8 @@ angular.module('fiona').controller('BasePaginationController', function ($scope,
             });
         }
         else {
+            console.log($scope[$scope.master.id + 'form'].$error);
+
             alert('ValidError');
         }
     };

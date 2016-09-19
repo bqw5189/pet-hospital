@@ -1,47 +1,27 @@
 ---
-layout: "cols2_light"
+layout: "page"
 ---
+
 - page '宠物品种管理', 'varietie'
 
--# 大纲部分
+#operate_msg_box
+.row
+  .col-md-3
+    - portal "种类", "varietietype"
+    = partial 'layouts/widget/side', :locals => {:name => "分类", :id=> 'varietietype', :fieldName => "name"}
 
-- content_for :outline_toolbar do
-  = partial :'layouts/buttons/insert', :locals => {:click => 'varietietypeinsert()'}
-  = partial :'layouts/buttons/remove', :locals => {:click => 'varietietyperemove()'}
-  = partial :'layouts/buttons/update', :locals => {:click => 'varietietypeupdate()'}
+  .col-md-9
+    - portal '宠物品种管理', 'varietie'
+    = partial 'layouts/widget/portal', :locals => {:pagefilter => "varietietypeportal.selectedId", :filterbar => "none", :pagingbar => "none"}
 
--#宠物详细信息
-= partial 'views/commons/nav_datumtype', :locals => {:sidename => "种类", :sidefieldname=> 'name'}
-
--# 主体部分
-
-/ 页面按钮
-- content_for :toolbar do
-  = partial :'layouts/buttons/insert'
-  = partial :'layouts/buttons/removes'
-
-/ Table 头
-- content_for :theader do
-  - @page.listFields.each do |field|
-    %th #{field.aliasName || field.fieldName}
-
-/ Table 正文
-- content_for :tbody do
-  - @page.listFields.each do |column|
-    %td
-      = bind @page_id, (column.fieldKey || @fields[column.fieldName] || 'error')
-
--#表格，侧边栏选择脚本过滤
-= partial :'layouts/table/table_selected'
-
-/ Modal
+/ 宠物品种
 - modal "宠物品种", "varietie"
 
-= partial :'layouts/partials/modal' do
+= partial :'layouts/partials/modal-portal-lg' do
   = partial 'modify'
 
-/ Modal
+/ 种类
 - modal "种类", "varietietype"
 
-= partial :'layouts/partials/modal' do
+= partial :'layouts/partials/modal-portal-lg' do
   = partial 'pettype'

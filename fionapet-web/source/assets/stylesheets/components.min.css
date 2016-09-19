@@ -165,8 +165,8 @@ body {
 
 .form-group.form-md-line-input {
     position: relative;
-    margin: 0 0 35px;
-    padding-top: 20px
+    /*margin: 0 0 35px;*/
+    /*padding-top: 20px*/
 }
 
 .form-horizontal .form-group.form-md-line-input {

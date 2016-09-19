@@ -3,12 +3,15 @@
 
 - fields = data["" << @module[$keyword] << "-" << $keyword].fields
 
-- $ngModel = inputModel($keyword, (fields[fieldName] || 'error'))
+- if defined? labelName
+  - $ngModel = inputModel($keyword, (fields[fieldName] || 'error') + "." + labelName)
+
+- if !(defined? labelName)
+  - $ngModel = inputModel($keyword, (fields[fieldName] || 'error'))
+
 
 .form-group.form-md-line-input
   %label.control-label
     #{fieldName} #{@formIdName}
-    - if $required == 'true'
-      %span.required *
 
   %input.form-control{:type => "text", "ng-model"=>"#{$ngModel}" , "readonly" => "true"}/

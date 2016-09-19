@@ -1,225 +1,89 @@
+// 挂号查询
+angular.module('fiona').controller('RegisterController', function($scope, $controller, $http, commons) {
+     
+    // 声明要使用的下拉选项
+    $scope.dropboxargs = [
+        {name: "gestStyleSet", server: "gestlevels"},
+        {name: "statusSet", server: "dicts", filterName: "会员状态"},
+        {name: "gestSexSet", server: "userdicts", filterName: "性别"},
 
-// 挂号
-angular.module('fiona').controller('RegisterController', function($scope, $http, commons) {
+        {name: "raceTypeSet", server: "petraces"}, // 种类
+        {name: "petRaceSet", server: "varieties"}, // 品种
+        {name: "petBreedSet", server: "dicts", filterName: "绝育状态"},
+        {name: "sickFileCodeSet", server: "dicts", filterName: "宠物状态"},
+        {name: "petSexSet", server: "userdicts", filterName: "动物性别"},
+        {name: "petSkinColorSet", server: "userdicts", filterName: "动物颜色"},
 
-    $http.defaults.headers.post.authorization = commons.getAuthorization();
-
-    $http.defaults.headers.post['Content-Type']= 'application/json';
-
-    // alert(commons.getAuthorization());
-
-    // 使用日期控件
-    jQuery().datepicker && $(".date-picker-btn").datepicker({
-        format: 'yyyy-mm-dd',
-        orientation: "left",
-        autoclose: !0
-    }).on("changeDate", function() {
-        $(this).parent().prev().val($(this).datepicker('getFormattedDate'));
-    });
-
-    jQuery().datepicker && $(".date-picker").datepicker({
-        format: 'yyyy-mm-dd',
-        orientation: "left",
-        autoclose: !0
-    });
-
-
-    $scope.error= "未找到定义";
-
-    $scope.selectedall = false;
-
-    $scope.isRemoves = true;
-
-    $scope.selection = {};
-
-    $scope.selectChange = function () {
-        $scope.isRemoves = true;
-        angular.forEach($scope.selection, function(value, key){
-            if(value == true)
-            {
-                $scope.isRemoves = false;
-            }
-        });
-    };
-
-    $scope.selectAll= function () {
-        angular.forEach($scope.registers, function (register) {
-            $scope.selection[register.id] = $scope.selectedall;
-        })
-
-        $scope.isRemoves = !$scope.selectedall
-    };
-
-    // 综合搜索项
-    $scope.pagination = {
-        'pageSize': 1,
-        'pageNumber': 1,
-        "first":true,
-        "last":false,
-        "totalElements": 1,
-        "totalPages": 1
-    };
-
-    $scope.combox = {
-        types: [ {'name':'猫科'}, {'name':'犬科'} ]
-    };
-
-    // 综合搜索项
-    $scope.filters = [
-        // 宠物病例号
-        // {"fieldName": "name","operator": "EQ", "value":""},
-
-        // 宠物昵称
-        {"fieldName": "registerCode","operator": "EQ", "value":""},
-
-        // 宠物昵称
-        {"fieldName": "registerName","operator": "EQ", "value":""},
-
-        // 会员编号
-        {"fieldName": "gestCode","operator": "EQ", "value":""},
-
-        // 会员名称
-        {"fieldName": "gestName","operator": "EQ", "value":""},
-
-        // 会员电话
-        // {"fieldName": "mobilePhone","operator": "EQ", "value":""}
+        {name: "registerStyleSet", server: "products", filterName: "挂号项目"},
+        {name: "doctorIdSet", server: "personss"}, // 医生
+        {name: "assistantDoctorIdSet", server: "personss"}  // 服务助理ID
     ];
+    
+    $scope.dropdowns= {};
 
-    $scope.placeholder = "请输入宠物病例号/宠物昵称/会员编号/会员名称/会员电话";
+    // 主数据加载地址
+    $scope.master = {
+        id: "register",
 
-    // 检索宠物信息
-    $scope.search = function () {
-
-        // alert(" 执行搜索.... ");
-
-        console.log(" 执行搜索.... " + searchform.$dirty);
-
-        angular.forEach($scope.filters, function (data) {
-            console.log(" 执行搜索.... " + data.fieldName + ", " + data.operator + ", " + data.value);
-        });
-
-        // 分页查询  /business/api/v2/registers
-        // $http.get('/server/api/v2/registers/page.json', {'pageSize':$scope.pagination.pageSize, 'pageNumber':$scope.pagination.pageNumber, 'filters':$scope.filters}).success( function ( data, status, headers, config ) {
-
-        // alert('pageSize: '+ $scope.pagination.pageSize  +'pageNumber: ' + $scope.pagination.pageNumber + ", " + $scope.filters.length);
-
-        // angular.forEach($scope.filters, function (data, index) {
-        //     alert(data.fieldName);
-        // });
-
-        $http.post('/server/api/v2/registers/page.json', {'pageSize':$scope.pagination.pageSize, 'pageNumber':$scope.pagination.pageNumber, 'filters':$scope.filters}).success( function ( data, status, headers, config ) {
-            console.log( data );
-
-            $scope.registers = data.data.content;
-
-            // $http.post('/business/api/v2/registers', data).success( function ( data, status, headers, config ) {
-            //     console.log( data );
-            //     alert("Submit OK");
-            // }).error(function(data,status,headers,config) { //     错误
-            //     alert("保存失败,请确认后重试" + status);
-            // });
-
-            // angular.forEach($scope.registers, function (register, i) {
-            //     alert(register.id);
-            // });
-
-            // 搜索+分页
-            $scope.pagination.pageNumber = data.data.number+1;
-
-            $scope.pagination.last = data.data.last;
-            $scope.pagination.first = data.data.first;
-            $scope.pagination.totalPages = data.data.totalPages;
-            $scope.pagination.totalElements = data.data.totalElements;
-        });
-    };
-
-
-    // Form 界面
-    $scope.registersubmit = function () {
-
-        $scope.registerform.submitted = true;
-
-        if ($scope.registerform.$valid) {
-            alert('submit: ' + $scope.register.id);
-            $http.post('/business/api/v2/registers', $scope.register).success( function ( data, status, headers, config ) {
-                console.log( data );
-                alert("Submit OK");
-            }).error(function(data,status,headers,config) { //     错误
-                alert(status);
+        name: "挂号查询",
+        
+        server: "/api/v2/medicregisterrecords",
+        insert: function () {
+            angular.forEach($scope.dropdowns, function (value, key) {
+                $scope.register[key.substr(0, key.length - 3)] = value[0];
             });
-        } else {
-
-            alert($scope.registerform.$error);
-
-            // $scope.message = "请输入用户名和密码.";
-
-            // $scope.signup_form.submitted = true;
+        },
+        update: function () {
+            // $scope.petportal.get($scope.beauty.gestId);
+            // $scope.vipportal.search();
         }
     };
 
-    // 会员挂号
-    $scope.registervipmodal = function (id) {
+    $scope.registerfastmodal = function () {
 
-        if(id == undefined)
-        {
-            // 添加
-            $scope.register = {};
-        }
-        else
-        {
-            angular.forEach($scope.registers, function(data,index,array){
-                if(data.id== id)
-                {
-                    $scope.register = data;
-                }
-            });
-        }
+        $("#registerfast").modal('toggle');
 
-        $('#registervip').modal('toggle');
     };
 
-    // 快捷挂号
-    $scope.registerfastmodal = function (id) {
+    // 综合搜索项
+    $scope.filters = [{"code": "name","operator": "EQ", "value":""} , {"name": "name","operator": "EQ", "value":""} , {"contractMan": "name","operator": "EQ", "value":""} , {"mobilePhone": "name","operator": "EQ", "value":""} , {"dealerAddress": "name","operator": "EQ", "value":""}];
 
-        if(id == undefined)
-        {
+    $scope.placeholder = "请输入自动编号 / 经销商名称 / 联系人 / 手机 / 地址";
 
-        }
-        else
-        {
+    $controller('BasePaginationController', {$scope: $scope}); //继承
 
-        }
+    /**
+     * 弹出选择宠物
+     * ---------------------------
+     * */
+    $controller('PetPopupSelectController', {$scope: $scope}); //继承
 
-        $('#registerfast').modal('toggle');
+    $scope.petportal.master.checked = function () {
+        // 主人ID
+        $scope.register.gestId = $scope.pet.id;
+
+        // 主人编号
+        $scope.register.gestCode = $scope.pet.gestCode;
+
+        // 主人名称
+        $scope.register.gestName = $scope.pet.gestName;
     };
 
-    // 删除功能
-    $scope.removes = function () {
-        angular.forEach($scope.selection, function(value, key){
-            alert(key+ " = " + value);
+    $scope.petportal.master.submit = function () {
+        // 主人ID
+        $scope.register.gestId = $scope.pet.id;
+
+        // 主人编号
+        $scope.register.gestCode = $scope.pet.gestCode;
+
+        // 主人名称
+        $scope.register.gestName = $scope.pet.gestName;
+    };
+
+    $scope.petportal.master.insert = function () {
+        angular.forEach($scope.petportal.dropdowns, function (value, key) {
+            $scope.pet[key.substr(0, key.length - 3)] = value[0];
         });
     };
-
-    $scope.remove= function (id) {
-        // console.log( $scope.xiuUser )
-
-        alert(id);
-
-        $http.delete('/business/api/v2/registers/' + id).success(function(data, index, array){
-            commons.danger("删除成功");
-        }).error(function (data) {
-            commons.danger("删除失败");
-        });
-
-        // angular.forEach($scope.registers, function(data,index,array){
-        //
-        //     if(data.id == id)
-        //     {
-        //     }
-        //
-        // });
-
-    };
-
 
 });

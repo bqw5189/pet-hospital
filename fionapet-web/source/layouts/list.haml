@@ -13,6 +13,7 @@
 
       .portlet-body
         -#表格(搜索+分页)
+        - modal @page_title, @page_id
         = partial :'layouts/table/table_full'
 
         =yield

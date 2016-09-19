@@ -1,11 +1,11 @@
-angular.module('fiona').controller('BaseTreeController', function ($scope, $http, commons) {
+angular.module('fiona').controller('BaseTreeController', function ($scope, $controller, $http, commons) {
     // I'm the sibling, but want to act as parent
-
-    $scope.error = "未找到定义";
 
     $http.defaults.headers.post.authorization = commons.getAuthorization();
 
     $http.defaults.headers.post['Content-Type'] = 'application/json';
+
+    $controller('BaseController', {$scope: $scope}); //继承
 
     // 使用日期控件
     jQuery().datepicker && $(".date-picker-btn").datepicker({
@@ -21,60 +21,6 @@ angular.module('fiona').controller('BaseTreeController', function ($scope, $http
         orientation: "left",
         autoclose: !0
     });
-
-    $scope.loadUserdicts = function (dropboxlist) {
-        /**
-         * 读取下拉选项
-         */
-        angular.forEach(dropboxlist, function (name) {
-            $http.post(commons.getBusinessHostname() + "/api/v2/userdicts/page", {
-                'pageSize': 1,
-                'pageNumber': 1,
-                'filters': [{"fieldName": "dictName", "value": name, "operator": "EQ"}]
-            }).success(function (data, status, headers, config) {
-
-                angular.forEach(data.data.content, function (data) {
-                    $http.post(commons.getBusinessHostname() + "/api/v2/userdictdetails/page", {
-                        'pageSize': 100,
-                        'pageNumber': 1,
-                        'filters': [{"fieldName": "dictTypeId", "value": data.id, "operator": "EQ"}]
-                    }).success(function (datadetail, status, headers, config) {
-                        $scope.dropdowns[data.dictName] = datadetail.data.content;
-                        console.log(data.dictName);
-                        console.log($scope.dropdowns[data.dictName]);
-                    });
-                });
-            });
-        });
-    };
-
-    $scope.loadDicts = function (dropboxlist) {
-        /**
-         * 读取下拉选项
-         */
-        angular.forEach(dropboxlist, function (name) {
-            $http.post(commons.getBusinessHostname() + "/api/v2/dicttypes/page", {
-                'pageSize': 1,
-                'pageNumber': 1,
-                'filters': [{"fieldName": "dictName", "value": name, "operator": "EQ"}]
-            }).success(function (data, status, headers, config) {
-
-                angular.forEach(data.data.content, function (data) {
-
-                    $http.post(commons.getBusinessHostname() + "/api/v2/dicttypedetails/page", {
-                        'pageSize': 100,
-                        'pageNumber': 1,
-                        'filters': [{"fieldName": "dictTypeId", "value": data.id, "operator": "EQ"}]
-                    }).success(function (datadetail, status, headers, config) {
-                        $scope.dropdowns[data.dictName] = datadetail.data.content;
-                        // console.log(data.dictName);
-                        // console.log($scope.dropdowns[data.dictName]);
-                    });
-                });
-            });
-        });
-    };
-
 
     $scope.treeConfig = {
         core: {
@@ -178,10 +124,6 @@ angular.module('fiona').controller('BaseTreeController', function ($scope, $http
         "last": false,
         "totalElements": 1,
         "totalPages": 1
-    };
-
-    $scope.combox = {
-        types: [{'name': '猫科', "code": "cat"}, {'name': '犬科', "code": "dog"}]
     };
 
     // 根据选择项进行过滤
@@ -302,7 +244,7 @@ angular.module('fiona').controller('BaseTreeController', function ($scope, $http
                 $('#' + $scope.master.id).modal('toggle');
 
                 $scope.search();
-
+                
                 if (!!$scope.master.submit) {
                     $scope.master.submit();
                 }
@@ -410,7 +352,6 @@ angular.module('fiona').controller('BaseTreeController', function ($scope, $http
         }
     };
 
-
     $scope[$scope.slave.id + "remove"] = function (id) {
         if (confirm("您确定要删除该记录吗?")) {
             $http.delete(commons.getBusinessHostname() + $scope.slave.server + "/" + $scope.selectedId).success(function (data, index, array) {
@@ -423,5 +364,210 @@ angular.module('fiona').controller('BaseTreeController', function ($scope, $http
                 commons.danger("删除失败");
             });
         }
+    };
+}).controller('TreePanelController', function ($scope, component, $http, commons) {
+
+    $http.defaults.headers.post.authorization = commons.getAuthorization();
+
+    $http.defaults.headers.post['Content-Type'] = 'application/json';
+
+    /**
+     * 目录树配置
+     * ---------------------------
+     * */
+    component.treeConfig = {
+        core: {
+            themes: {responsive: !1},
+            multiple: false,
+            animation: false,
+            error: function (error) {
+                alert("error from js tree - " + angular.toJson(error));
+            },
+            check_callback: true,
+            worker: true
+        },
+        types: {
+            default: {
+                icon: 'fa fa-folder icon-state-warning icon-lg'
+            },
+            file: {icon: "fa fa-file icon-state-warning icon-lg"}
+        },
+        version: 1,
+        plugins: ['types', 'radio']
+    };
+
+    /**
+     * 树事件触发
+     * ---------------------------
+     * */
+    component.treeEventsObj = {
+        'select_node': function (e, item) {
+
+            // // console.log(item.selected[0]);
+
+            component.selectedId = item.selected[0];
+
+            angular.forEach($scope[component.id + "s"], function (data) {
+                if (data.id == component.selectedId) {
+                    component.selected = data;
+                    $scope[component.id] = data;
+                }
+            });
+
+            console.log($scope[component.id]);
+
+            if (!!component.selectNode) {
+                component.selectNode();
+            }
+            
+            // component.search();
+            // alert('select_node called: ' + item.selected);
+        }
+    };
+
+    /**
+     * 加载树数据
+     * ---------------------------
+     * */
+    component.search = function () {
+
+        $http.get(commons.getBusinessHostname() + component.server).success(function (data, status, headers, config) {
+
+            angular.forEach(data.data, function (item) {
+                item.text = item[component.text];
+                item.parent = item[component.parent] || "#";
+                // item.parent = "#";
+                // console.log("Text: " + item.text)
+                // console.log("Parent: " + item.parent)
+            });
+
+            $scope[component.id + 's'] = data.data;
+
+            // console.log($scope[component.id + 's']);
+            
+            // component.treeData = data.data;
+
+            component.treeConfig.version++;
+        });
+    };
+
+    /**
+     * 添加
+     * ---------------------------
+     * */
+    component.insert = function () {
+
+        $scope[component.id + 'form'].submitted = false;
+
+        // 添加
+        $scope[component.id] = {
+            // "itemStyle": component.selected.text,
+            "createUserId": "1",
+            "updateUserId": "1"
+        };
+
+        if (!!component.callback && !!component.callback.insert) {
+            component.callback.insert();
+        }
+
+        $('#' + component.id).modal('toggle');
+    };
+
+    /**
+     * 变更
+     * ---------------------------
+     * */
+    component.update = function (id) {
+
+        $scope[component.id + 'form'].submitted = false;
+
+        angular.forEach($scope[component.id + 's'], function (data, index, array) {
+            if (data.id == id) {
+                $scope[component.id] = data;
+            }
+        });
+
+        if (!!component.callback && !!component.callback.update) {
+            component.callback.update();
+        }
+
+        $('#' + component.id).modal('toggle');
+    };
+
+
+    /**
+     * 保存
+     * ---------------------------
+     * */
+    $scope.submit = function () {
+        $scope[component.id + "form"].submitted = true;
+
+        if ($scope[component.id + "form"].$valid) {
+
+            $http.post(commons.getBusinessHostname() + $scope.server, $scope[component.id]).success(function (data, status, headers, config) {
+
+                $('#' + component.id).modal('toggle');
+
+                $scope.sideload();
+
+                commons.success("保存成功")
+            }).error(function (data, status, headers, config) { //     错误
+
+                commons.modaldanger(component.id, "保存失败")
+            });
+        }
+    };
+
+    /**
+     * 删除
+     * ---------------------------
+     * */
+    component.remove = function (id) {
+        if (confirm("您确定要删除该记录吗?")) {
+            $http.delete(commons.getBusinessHostname() + component.server + "/" + id).success(function (data, index, array) {
+
+                if (!!component.callback && !!component.callback.remove) {
+                    component.callback.remove();
+                }
+
+                commons.success("删除成功")
+
+            }).error(function (data) {
+                commons.danger("删除失败");
+            });
+        }
+    };
+
+    /**
+     * 初始化
+     * ---------------------------
+     * */
+    component.init= function () {
+        component.search();
+    };
+}).controller('TablePaginationPanelController', function ($scope, component, $controller, $http, commons) {
+
+    $http.defaults.headers.post.authorization = commons.getAuthorization();
+
+    $http.defaults.headers.post['Content-Type'] = 'application/json';
+
+    // Component 组件必填属性声明
+    component.vars = {
+        foreignkey: true,
+        foreign: true,
+        id: true,
+        name: true,
+        server: true,
+        callback: {search: false, insert: false, update: false}
+    };
+
+    $controller('BaseCRUDController', {$scope: $scope, component: component}); //继承
+
+    /**
+     * 初始化
+     * ---------------------------
+     * */
+    component.init= function () {
+        component.search();
     };
 });

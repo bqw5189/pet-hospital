@@ -3,24 +3,45 @@ listFields: # aliasName 显示使用, fieldName 关联字段使用,若显示名�
   - fieldName: 充值记录
 
   - fieldName: 会员等级
+    fieldKey: gestStyle.levelName
 
   - fieldName: 会员编号
 
   - fieldName: 会员姓名
 
-  - fieldName: 性别
+  - fieldName: 会员性别
+    fieldKey: gestSex.valueNameCn
 
   - fieldName: 会员电话
 
   - fieldName: 固定电话
 
-  - fieldName: 会员生日
+  - fieldName: 出生日期
 
   - fieldName: 账户金额
 
   - fieldName: 登记日期
 
   - fieldName: 最后消费时间
+
+portalFields: # 选择会员弹出图层字段
+  - fieldName: 会员编号
+
+  - fieldName: 会员姓名
+
+  - fieldName: 会员性别
+    fieldKey: gestSex.valueNameCn
+
+  - fieldName: 会员电话
+
+  - fieldName: 固定电话
+
+  - fieldName: 出生日期
+
+  - fieldName: 账户金额
+
+  - fieldName: 会员状态
+    fieldKey: status.valueNameCn
 
 searchFields:
   - fieldName: 会员编号
@@ -36,24 +57,23 @@ fields:
   ID: id
 
   #宠物字典类型明细
-  状态: status
+  会员状态: status
 
   会员编号: gestCode
-
-  loseRightDate: loseRightDate
 
   会员姓名: gestName
 
   #数据字典 字典明细项
-  性别: gestSex
+  会员性别: gestSex
 
   出生日期: gestBirthday
 
-  手机: mobilePhone
+  # 手机
+  会员电话: mobilePhone
 
-  电话: telPhone
+  固定电话: telPhone
 
-  邮箱: email
+  联系邮箱: email
 
   联系地址: gestAddress
 
@@ -64,18 +84,23 @@ fields:
 
   账号: vipAccount
 
-  最后消费时间: lastPaidTime
+  最后消费日期: lastPaidTime
 
   #会员等级管理
-  gestStyle: gestStyle
-
-  paidStatus: paidStatus
-
-  remark: remark
-
-  rewardPoint: rewardPoint
+  会员等级: gestStyle
 
   账户金额: prepayMoney
 
   登记日期: createDate
+
+  loseRightDate: loseRightDate
+
+#  支付状态
+  paidStatus: paidStatus
+
+  备注: remark
+
+  积分: rewardPoint
+
+
 

@@ -1,4 +1,8 @@
-# 经销商与生产商
+module:
+  id: inhospital
+  name: 住院管理
+  server: inhospitalrecords
+
 listFields: # aliasName 显示使用, fieldName 关联字段使用,若显示名称与字段名称一致, 则不需要定义 aliasName
   - fieldName: 住院号
 
@@ -39,27 +43,46 @@ searchFields:
 
 
 fields: #可定义多个中文名称指向同一个字段
-  主键: XX
 
-  住院号: XX
+  顾客ID: gestId
+  顾客编号: gestCode
+  顾客名称: gestName
+  手机: mobilePhone
+  VIP编号: vipNo
 
-  开始日期: XX
+  宠物ID: petId
+  宠物名称: petName
 
-  结束日期: XX
+  主管人员ID: managerId
+  主管人员: managerBy
 
-  预付金额: XX
+  业务员Id: manufacturerId
+  业务员: manufacturerName
 
-  预计天数: XX
+  住院类型Code: itemCode
+  住院类型: itemName
 
-  主管人员: XX
+  价格: price
+  实际价格: realPrice
+  总价: totalMoney
+  住院诊断: remark
 
-  住院类型: XX
+  住院号: inHospitalNo
+  开始日期: startTime
+  结束日期: endTime
+  预付金额: inputMoney
+  预计天数: preDays
+  实际天数: realDays
+  笼舍编号: cageNo
 
-  价格: XX
+  记录时间: recordTime
+  影像状态: paidStatus
+  影像时间: paidTime
+  updateTime: updateTime
 
-  笼舍编号: XX
-
-  业务员: XX
-
-  住院诊断: XX
-
+  主键: id
+  状态: status
+  创建人: createUserId
+  创建时间: createDate
+  修改人: updateUserId
+  修改时间: updateDate

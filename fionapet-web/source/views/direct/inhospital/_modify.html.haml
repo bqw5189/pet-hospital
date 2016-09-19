@@ -1,25 +1,46 @@
 / BEGIN SAMPLE FORM PORTLET
 .row
   .col-md-3
-    .portlet
-      .portlet-title
-        .caption
-          %i.fa.fa-user
-          会员信息
-        .actions
-          %a.btn.btn-circle.btn-default.btn-sm{:href => "javascript:;"}
-            %i.fa.fa-plus
-            选择宠物
-
-          %a.btn.btn-circle.btn-default.btn-sm{:href => "javascript:;"}
-            %i.fa.fa-remove
-            新增宠物
-
-      .portlet-body.portlet-empty
-        = partial 'views/commons/pet_header'
-
+    = partial :'views/commons/pet/portal_pet_view'
 
   .col-md-9
+    -#住院登记表单
+    .row
+      .col-md-3
+        = partial :'layouts/inputs/text', :locals => { :fieldName => '住院号', :maxlength => '16'}
+
+      .col-md-3
+        = partial :'layouts/inputs/text', :locals => { :fieldName => '住院类型', :maxlength => '16'}
+
+      .col-md-2
+        = partial :'layouts/inputs/date', :locals => { :fieldName => '开始日期', :maxlength => '16'}
+
+      .col-md-2
+        = partial :'layouts/inputs/date', :locals => { :fieldName => '结束日期', :maxlength => '16'}
+
+      .col-md-2
+        = partial :'layouts/inputs/text', :locals => { :fieldName => '预计天数', :maxlength => '16'}
+
+    .row
+      .col-md-3
+        = partial :'layouts/inputs/text', :locals => { :fieldName => '笼舍编号', :maxlength => '16'}
+
+      .col-md-3
+        = partial :'layouts/inputs/text', :locals => { :fieldName => '价格', :maxlength => '16'}
+
+      .col-md-2
+        = partial :'layouts/inputs/text', :locals => { :fieldName => '预付金额', :maxlength => '16'}
+
+      .col-md-2
+        = partial :'layouts/inputs/select', :locals => {:fieldName => '主管人员', :options => "type.id as type.personName for type in dropdowns.managerIdSet"}
+
+      .col-md-2
+        = partial :'layouts/inputs/select', :locals => {:fieldName => '业务员', :options => "type.id as type.personName for type in dropdowns.manufacturerIdSet"}
+
+    .row
+      .col-md-12
+        = partial :'layouts/inputs/textarea', :locals => { :fieldName => '住院诊断', :maxlength => '16'}
+
     .portlet.light.bordered
       .portlet-title
         .caption
@@ -30,9 +51,6 @@
         .tabbable-line
           %ul.nav.nav-tabs
             %li.active
-              %a{"data-toggle" => "tab", :href => "//#inhospital_basic"} 基本信息
-
-            %li
               %a{"data-toggle" => "tab", :href => "//#inhospital_consume"} 寄养期间消费
 
             %li
@@ -44,64 +62,38 @@
             %li
               %a{"data-toggle" => "tab", :href => "//#inhospital_recipe"} 住院处方
 
-
           .tab-content
-            #inhospital_basic.tab-pane.active
-              = partial 'views/commons/inhospital_form'
-
-            -#寄养期间消费
-            #inhospital_consume.tab-pane
-              = partial 'views/commons/consume_list'
-
+            -#住院期间消费
+            #inhospital_consume.tab-pane.active
+              - portal "住院期间消费", "inhospitaldetail"
+              = partial :'layouts/table/portal' do
+                = partial :'layouts/buttons/insert', :locals => {:click => 'productportal.insert()'}
+                = partial :'layouts/buttons/removes', :locals => {:click => 'beautydetailportal.removes()', 'disabled': 'beautydetailportal.isRemoves'}
 
             -#预付金记录
             #inhospital_prepay.tab-pane
-              = partial 'views/commons/prepay_list'
+              .well
+                总金额:, 总项数:
+
+              - portal "预付金额记录", "vipprepay"
+
+              = partial :'layouts/table/portal' do
+                = partial :'layouts/buttons/insert', :locals => {:click => 'vipprepayportal.insert()'}
 
             -#健康状态记录
             #inhospital_health.tab-pane
-              = partial 'views/commons/health_list'
+              - portal "健康状态记录", "inhospitalhealth"
+
+              = partial :'layouts/table/portal' do
+                = partial :'layouts/buttons/insert', :locals => {:click => 'inhospitalhealthportal.insert()'}
 
             -#住院处方
             #inhospital_recipe.tab-pane
-              .row
-                .col-md-2
-                  %div.list-group
-                    %label.list-group-item.active{:href => 'javascript:;'}
-                      2016年2月29日
+              - portal "住院处方", "inhospitalprescriptiondetail"
 
-                    %label.list-group-item{:href => 'javascript:;'}
-                      2016年2月25日
-
-                    %label.list-group-item{:href => 'javascript:;'}
-                      2016年2月10日
-
-                .col-md-10
-                  .portlet
-                    .portlet-title
-                      .caption
-                        %i.fa.fa-file-text
-                        2016年2月29日
-
-                      .actions
-                        %a.btn.btn-circle.btn-default.btn-sm{:href => "javascript:;"}
-                          %i.fa.fa-copy
-                            复制上一个处方
-
-                        %a.btn.btn-circle.btn-default.btn-sm{:href => "javascript:;"}
-                          %i.fa.fa-plus
-                            处理处方
-
-                        %a.btn.btn-circle.btn-default.btn-sm{:href => "javascript:;"}
-                          %i.fa.fa-print
-                            打印
-                        %a.btn.btn-circle.btn-default.btn-sm{:href => "javascript:;"}
-                          %i.fa.fa-edit
-                            编辑
-                        %a.btn.btn-circle.btn-danger.btn-sm{:href => "javascript:;"}
-                          %i.fa.fa-cancel
-                            删除
-
-                    .portlet-body.portlet-empty
-                      = partial 'views/commons/recipe_list'
-
+              = partial :'layouts/portal/sideportal', :locals => {:sidename => "住院处方", :sidefieldname=> 'prescriptionCode'} do
+                = partial :'layouts/buttons/insert', :locals => {:click => 'inhospitalprescriptiondetailportal.insert()'}
+                = partial :'layouts/buttons/btn', :locals => {:label => "复制上一个处方", :icon => "fa-copy", :click => "void()"}
+                = partial :'layouts/buttons/btn', :locals => {:label => "处理处方", :icon => "fa-plus", :click => "void()"}
+                = partial :'layouts/buttons/btn', :locals => {:label => "打印", :icon => "fa-print", :click => "void()"}
+                = partial :'layouts/buttons/btn', :locals => {:label => "编辑", :icon => "fa-edit", :click => "void()"}

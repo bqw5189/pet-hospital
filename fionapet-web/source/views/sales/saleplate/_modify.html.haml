@@ -1,73 +1,18 @@
-
-.portlet.light.bordered
+.portlet
   .portlet-title
     .caption
-      %i.icon-settings.font-dark
-      %span.caption-subject.font-dark.sbold.uppercase 会员信息
 
-  .portlet-body.form
-    .form-body
-      .row
-        .col-md-3
-          = partial :'layouts/inputs/text', :locals => {:keyword => 'vip', :fieldName => '会员姓名', :maxlength => '16'}
+      会员姓名: {{ saleplate.gestName }}
+      销售单号: {{ saleplate.directSellCode }}
 
-        .col-md-3
-          = partial :'layouts/inputs/text', :locals => {:keyword => 'vip', :fieldName => '手机', :maxlength => '16'}
+      总项数:
+      %label.label.label-success{:style => "padding-right: 10px;padding-left: 10px"}
+        {{ saleplate.totalNum }}
+      , 总金额:
+      %label.label.label-danger{:style => "padding-right: 10px;padding-left: 10px"}
+        {{ saleplate.totalCost }} 元
 
-        .col-md-6
-          = partial :'layouts/inputs/text', :locals => {:keyword => 'vip', :fieldName => '病例编号', :maxlength => '16'}
-
-      .row
-        .col-md-3
-          = partial :'layouts/inputs/text', :locals => {:keyword => 'vip', :fieldName => '宠物昵称', :maxlength => '16'}
-
-        .col-md-3
-          = partial :'layouts/inputs/text', :locals => {:keyword => 'vip', :fieldName => '性别', :maxlength => '16'}
-
-        .col-md-3
-          = partial :'layouts/inputs/text', :locals => {:keyword => 'vip', :fieldName => '年龄', :maxlength => '16'}
-
-        .col-md-3
-          = partial :'layouts/inputs/text', :locals => {:keyword => 'vip', :fieldName => '体重', :maxlength => '16'}
-
-      .row
-        .col-md-3
-          = partial :'layouts/inputs/text', :locals => {:keyword => 'vip', :fieldName => '种类', :maxlength => '16'}
-
-        .col-md-3
-          = partial :'layouts/inputs/text', :locals => {:keyword => 'vip', :fieldName => '品种', :maxlength => '16'}
-
-        .col-md-6
-          = partial :'layouts/inputs/text', :locals => {:keyword => 'vip', :fieldName => '绝育状态', :maxlength => '16'}
-
-
-
-.portlet.light.bordered
-  .portlet-title
-    .caption
-      %i.icon-settings.font-dark
-      %span.caption-subject.font-dark.sbold.uppercase 挂号信息
-
-  .portlet-body.form
-    .form-body
-      .row
-        .col-md-4
-          = partial :'layouts/inputs/text', :locals => {:keyword => 'vip', :fieldName => '挂号类型', :maxlength => '16'}
-
-        .col-md-4
-          = partial :'layouts/inputs/text', :locals => {:keyword => 'vip', :fieldName => '金额', :maxlength => '16'}
-
-      .row
-        .col-md-4
-          = partial :'layouts/inputs/text', :locals => {:keyword => 'vip', :fieldName => '业务员', :maxlength => '16'}
-
-        .col-md-4
-          = partial :'layouts/inputs/text', :locals => {:keyword => 'vip', :fieldName => '医生', :maxlength => '16'}
-
-        .col-md-4
-          = partial :'layouts/inputs/text', :locals => {:keyword => 'vip', :fieldName => '助理医生', :maxlength => '16'}
-
-  .form-actions.text-center
-    %button.btn.blue{:type => "submit"} 保存挂号
-    %button.btn.blue{:type => "submit"} 挂号并付款
-    %button.btn.default{:type => "button"} 取消挂号
+  .portlet-body.portlet-empty
+    -#表格
+    - modal "销售清单明细", "saleplatedetail"
+    = partial :'layouts/table/table'

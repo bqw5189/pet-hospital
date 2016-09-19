@@ -1,7 +1,7 @@
 .form-body
   .row
     .col-md-6
-      = partial :'layouts/inputs/select', :locals => {:keyword => "labworkdetail", :fieldName => '医疗类型', :maxlength => '32', :required => "true", :options => "type.dictDetailCode as type.valueNameCn for type in dropdowns['医疗类型']"}
+      = partial :'layouts/inputs/select', :locals => {:keyword => "labworkdetail", :fieldName => '医疗类型', :maxlength => '32', :required => "true", :options => "type.dictDetailCode as type.valueNameCn for type in dropdowns.petRaceNameSet"}
 
     .col-md-3
       = partial :'layouts/inputs/text', :locals => {:keyword => "labworkdetail", :fieldName => '年龄段', :maxlength => '32'}

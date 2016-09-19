@@ -89,8 +89,7 @@ angular.module('fiona').controller('BaseSideController', function ($scope, $http
             $scope.userdicts = data;
         });
     };
-
-
+    
     /**
      * 添加
      */

@@ -18,6 +18,9 @@ angular.module('fiona')
 
             controller: function ($scope, $timeout) {
 
+                console.log("Directive: ");
+                console.log($scope.filters);
+
                 $scope.filtersCopy = $scope.filters;
 
                 $scope.searchbar = {
@@ -118,6 +121,8 @@ angular.module('fiona')
                         $scope.searchbar.firstTextPlaceholder = "请输入" + $scope.searchbar.fieldName;
                     }
                 };
+
+
                 $scope.submit();
             }
         }

@@ -9,7 +9,7 @@
 
   .row
     .col-md-6
-      = partial :'layouts/inputs/select', :locals => {:fieldName => '是否是药库', :maxlength => '32', :required => "true", :options => "type.code as type.name for type in dropdowns.drugStores"}
+      = partial :'layouts/inputs/select', :locals => {:fieldName => '是否是药库', :maxlength => '32', :required => "true", :options => "type.code as type.name for type in dropdowns.drugStoreSet"}
 
     .col-md-6
-      = partial :'layouts/inputs/select', :locals => {:fieldName => '是否销售库', :maxlength => '32', :required => "true", :options => "sellStore.code as sellStore.name for sellStore in dropdowns.sellStores"}
+      = partial :'layouts/inputs/select', :locals => {:fieldName => '是否销售库', :maxlength => '32', :required => "true", :options => "sellStore.code as sellStore.name for sellStore in dropdowns.sellStoreSet"}

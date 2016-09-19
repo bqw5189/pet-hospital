@@ -1,19 +1,12 @@
+---
+layout: "page"
+---
+
 - page '经销商与生产商', 'dealer'
 
-- content_for :toolbar do
-  = partial :'layouts/buttons/insert'
-  = partial :'layouts/buttons/removes'
-
-- content_for :theader do
-  - @page.listFields.each do |field|
-    %th #{field.aliasName || field.fieldName}
-
-- content_for :tbody do
-  - @page.listFields.each do |column|
-    -# #{column.fieldName}
-    %td
-      = bind @page_id, (column.fieldKey || @fields[column.fieldName] || 'error')
+- portal '经销商与生产商', 'dealer'
+= partial 'layouts/widget/portal'
 
 / Modal
-= partial :'layouts/partials/modal-lg' do
+= partial :'layouts/partials/modal-portal-lg' do
   = partial 'modify'

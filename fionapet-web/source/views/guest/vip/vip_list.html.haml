@@ -13,5 +13,9 @@
     %td
       = bind @page_id, (column.fieldKey || @fields[column.fieldName] || 'error')
 
-= partial :'layouts/partials/modal-lg' do
+= partial :'layouts/partials/modal-full' do
   = partial 'modify'
+
+- modal "添加宠物", "pet"
+= partial :'layouts/partials/modal-portal-lg' do
+  = partial 'pet_form'

@@ -1,8 +1,8 @@
 -# portal_name, portal_id
 - @portal = data["" << @module[@portal_id] << "-" << @portal_id]
 
-/ PORTLET
-.portlet.light.bordered{"ng": {"show": "!!#{@page_id}.id"}}
+/ PORTLET {"ng": {"show": "!!#{@page_id}.id"}}
+.portlet.light.bordered
   .portlet-title
     .caption.font-dark
       %i.fa.fa-beer.font-dark
@@ -31,4 +31,8 @@
 
           - @portal.listFields.each do |column|
             %td
-              = bind @portal_id, (column.fieldKey || @portal.fields[column.fieldName] || 'error')
+              - if !column.input?
+                = bind @portal_id, (column.fieldKey || @portal.fields[column.fieldName] || 'error')
+
+              - if column.input?
+                = bindText column.input, @portal_id, (column.fieldKey || @portal.fields[column.fieldName] || 'error')

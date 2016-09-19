@@ -11,9 +11,9 @@ angular.module('fiona').controller('SaleplateController', function($scope, $cont
     $scope.master = {
         id: "saleplate",
 
-        name: "销售查询",
+        name: "直接销售",
 
-        server: "/api/v2/"
+        server: "/api/v2/storedirectsells"
     };
 
     // 综合搜索项
@@ -34,4 +34,25 @@ angular.module('fiona').controller('SaleplateController', function($scope, $cont
     $scope.placeholder = "请输入宠物病例号/宠物昵称/会员编号/会员名称/会员电话";
 
     $controller('BasePaginationController', {$scope: $scope}); //继承
+
+
+    /**
+     * 加载商品
+     * ---------------------------
+     * */
+
+    $scope.saleplatepanel = {
+
+        foreign: "saleplate", // 外键
+
+        foreignkey: "directSellId",
+
+        id: "saleplatedetail",
+
+        name: "销售商品明细",
+
+        server: "/api/v2/storedirectselldetails"
+    };
+
+    $controller('TablePaginationPanelController', {$scope: $scope, component: $scope.saleplatepanel}); //继承
 });

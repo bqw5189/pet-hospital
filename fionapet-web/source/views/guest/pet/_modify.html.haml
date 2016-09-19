@@ -1,62 +1,4 @@
-/ BEGIN SAMPLE FORM PORTLET
-.portlet.light.bordered
-  .portlet-title
-    .caption
-      %i.icon-settings.font-dark
-      %span.caption-subject.font-dark.sbold.uppercase 会员信息
-    .actions
-      %a.btn.btn-circle.grey-salsa.btn-sm{:href => "javascript:;"}
-        %i.fa.fa-plus
-        新增主人
-
-      %a.btn.btn-circle.grey-salsa.btn-sm{:href => "javascript:;"}
-        %i.fa.fa-remove
-        选择主人
-
-  .portlet-body.form
-    .form-body
-      .row
-        .col-md-4
-          = partial :'layouts/inputs/text', :locals => {:keyword => 'vip', :fieldName => '会员编号', :maxlength => '32', :required => 'true'}
-
-        .col-md-4
-          = partial :'layouts/inputs/text', :locals => {:keyword => 'vip', :fieldName => '会员姓名', :maxlength => '32'}
-
-        .col-md-4
-
-          .form-group
-            %label.control-label 会员等级
-            %select.form-control
-              %option 普通会员
-              %option VIP会员
-
-      .row
-        .col-md-4
-          = partial :'layouts/inputs/select', :locals => {:fieldName => '会员性别', :maxlength => '32', :required => "true", :options => "type.dictDetailCode as type.valueNameCn for type in dropdowns['性别']"}
-
-        .col-md-4
-          = partial :'layouts/inputs/date', :locals => {:keyword => 'vip', :fieldName => '出生日期', :maxlength => '16'}
-
-
-        .col-md-4
-          = partial :'layouts/inputs/text', :locals => {:keyword => 'vip', :fieldName => '年龄', :maxlength => '16'}
-
-      .row
-        .col-md-4
-          = partial :'layouts/inputs/text', :locals => {:keyword => 'vip', :fieldName => '手机', :maxlength => '16'}
-
-        .col-md-4
-          = partial :'layouts/inputs/text', :locals => {:keyword => 'vip', :fieldName => '电话', :maxlength => '16'}
-
-        .col-md-4
-          = partial :'layouts/inputs/money', :locals => {:keyword => 'vip', :fieldName => '账户金额', :maxlength => '16'}
-
-      .row
-        .col-md-8
-          = partial :'layouts/inputs/text', :locals => {:keyword => 'vip', :fieldName => '联系地址', :maxlength => '16'}
-
-        .col-md-4
-          = partial :'layouts/inputs/date', :locals => {:keyword => 'vip', :fieldName => '登记日期', :maxlength => '16'}
+= partial :'views/commons/vip/portal_vip_view'
 
 .portlet.light.bordered
   .portlet-title
@@ -79,52 +21,46 @@
           .form-body
             .row
               .col-md-4
-                = partial :'layouts/inputs/text', :locals => { :fieldName => '编号(自动)', :maxlength => '16'}
+                = partial :'layouts/inputs/text', :locals => { :fieldName => '编号(自动)', :required => "true", :maxlength => '16'}
 
               .col-md-4
-                = partial :'layouts/inputs/text', :locals => { :fieldName => '宠物昵称', :maxlength => '16'}
+                = partial :'layouts/inputs/text', :locals => { :fieldName => '宠物昵称', :required => "true", :maxlength => '16'}
 
 
               .col-md-4
                 .form-group
-                  = partial :'layouts/inputs/select', :locals => {:fieldName => '宠物性别', :maxlength => '32', :required => "true", :options => "type.dictDetailCode as type.valueNameCn for type in dropdowns['动物性别']"}
+                  = partial :'layouts/inputs/select', :locals => {:fieldName => '宠物性别', :maxlength => '32', :required => "true", :options => "type as type.valueNameCn for type in dropdowns.petSexSet"}
 
             .row
               .col-md-4
-                = partial :'layouts/inputs/date', :locals => { :fieldName => '出生日期', :maxlength => '16'}
+                = partial :'layouts/inputs/date', :locals => { :fieldName => '出生日期', :maxlength => '16', :required => "true" }
 
               .col-md-4
-                = partial :'layouts/inputs/text', :locals => { :fieldName => '宠物年龄', :maxlength => '16'}
+                = partial :'layouts/inputs/textview', :locals => { :fieldName => '宠物年龄', :maxlength => '16'}
 
               .col-md-4
                 .form-group
-                  = partial :'layouts/inputs/select', :locals => {:fieldName => '绝育状态', :maxlength => '32', :required => "true", :options => "type.dictDetailCode as type.valueNameCn for type in dropdowns['绝育状态']"}
+                  = partial :'layouts/inputs/select', :locals => {:fieldName => '绝育状态', :maxlength => '32', :required => "true", :options => "type.valueNameCn as type.valueNameCn for type in dropdowns.petBreedSet"}
 
             .row
               .col-md-4
-                .form-group
-                  %label.control-label 宠物颜色
-                  %input.form-control{:type => "text"}/
+                = partial :'layouts/inputs/select', :locals => {:fieldName => '宠物颜色', :maxlength => '32', :options => "type as type.valueNameCn for type in dropdowns.petSkinColorSet"}
 
               .col-md-4
                 .form-group
-                  %label.control-label 宠物种类
-                  %select.form-control{:type => '', 'ng': {'model':'pet.type', 'options':"pettype.name for pettype in combox.types"}}
-
+                  = partial :'layouts/inputs/selectview', :locals => {:fieldName => '宠物种类', :options => "type.name for type in dropdowns.raceTypeSet"}
 
               .col-md-4
                 .form-group
-                  %label.control-label 宠物品种
-                  %select.form-control
-                    %option 加菲猫
-                    %option 阿拉斯加
+                  = partial :'layouts/inputs/select', :locals => {:fieldName => '宠物品种', :maxlength => '32', :required => "true", :options => "type as type.type for type in dropdowns.petRaceSet"}
+
             .row
               .col-md-4
-                = partial :'layouts/inputs/select', :locals => {:fieldName => '宠物状态', :maxlength => '32', :required => "true", :options => "type.dictDetailCode as type.valueNameCn for type in dropdowns['宠物状态']"}
+                = partial :'layouts/inputs/select', :locals => {:fieldName => '宠物状态', :maxlength => '32', :options => "type as type.valueNameCn for type in dropdowns.sickFileCodeSet"}
 
 
-              .col-md-7
-                = partial :'layouts/inputs/text', :locals => { :fieldName => '病例号', :maxlength => '16'}
+              -#.col-md-7
+              -#  = partial :'layouts/inputs/text', :locals => { :fieldName => '病例号', :maxlength => '16', :required => "true"}
 
             .row
               .col-md-3

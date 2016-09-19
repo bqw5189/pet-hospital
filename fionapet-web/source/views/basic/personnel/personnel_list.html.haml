@@ -1,31 +1,17 @@
+---
+layout: "page"
+---
+
 - page '员工管理', 'personnel'
 
-- content_for :toolbar do
-  = partial :'layouts/buttons/insert'
-  = partial :'layouts/buttons/removes'
+= partial 'layouts/widget/portal' do
+  = partial :'layouts/buttons/insert', :locals => {:click => "#{@portal_id}portal.insert()"}
+  = partial :'layouts/buttons/removes', :locals => {:click => "#{@portal_id}portal.removes()", :disabled => "#{@portal_id}portal.isRemoves"}
 
-  %button.btn.btn-circle.btn-default.btn-sm{:href => "javascript:;", 'ng': {'click':'update()'}}
-    %i.fa.fa-plus
-    导入预约设置
-
-  %button.btn.btn-circle.btn-default.btn-sm{:href => "javascript:;", 'ng': {'click':'update()'}}
-    %i.fa.fa-plus
-    导出预约设置
-
-  %button.btn.btn-circle.btn-default.btn-sm{:href => "javascript:;", 'ng': {'click':'update()'}}
-    %i.fa.fa-plus
-    停用
-
-- content_for :theader do
-  - @page.listFields.each do |field|
-    %th #{field.aliasName || field.fieldName}
-
-- content_for :tbody do
-  - @page.listFields.each do |column|
-    -# #{column.fieldName}
-    %td
-      = bind @page_id, (column.fieldKey || @fields[column.fieldName] || 'error')
+  = partial :'layouts/buttons/btn', :locals => {:label => "导入预约设置"}
+  = partial :'layouts/buttons/btn', :locals => {:label => "导出预约设置"}
+  = partial :'layouts/buttons/btn', :locals => {:label => "停用"}
 
 / Modal
-= partial :'layouts/partials/modal-lg' do
+= partial :'layouts/partials/modal-portal-lg' do
   = partial 'modify'

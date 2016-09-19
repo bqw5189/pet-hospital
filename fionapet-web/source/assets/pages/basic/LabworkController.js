@@ -1,61 +1,107 @@
 // 化验项目管理
 angular.module('fiona').controller('LabworkController', function ($scope, $controller, $http, commons) {
 
-    $scope.dropdowns= {indexTypes: [{code: "1", name: "定量"}, {code: "2", name: "定性"}]};
+    // 声明要使用的下拉选项
+    $scope.dropboxargs = [
+        {name: "petRaceNameSet", server: "userdicts", filterName: "医疗类型"},
+        {name: "cheTestUnitSet", server: "userdicts", filterName: "化验单位"}
+    ];
 
-    // 目录树数据加载地址
-    $scope.slave = {
+    $scope.dropdowns= {
+        indexTypesSet: [{code: "1", name: "定量"}, {code: "2", name: "定性"}]
+    };
 
-        text: "cateName",
+    $controller('BaseController', {$scope: $scope}); //继承
 
-        parent: "parentId",
+    $scope.dropboxinit($scope.dropboxargs);
 
-        foreignkey: "cateNo",         // id = {master.foreignkey}
+    console.log($scope.dropdowns);
+
+    /**
+     * 化验项目分类
+     * ---------------------------
+     * */
+    $scope.labworktypeportal= {
+
+        text: "cateName", // 树标签-字段名
+
+        parent: "parentId", // 父引用-字段名
+
+        foreign: "labworktype",
+
+        foreignkey: "cateNo",
 
         id: "labworktype",
-        name: "化验项目",
-        server: "/api/v2/chemicalexamcates"
-    };
 
-    // 主数据加载地址
-    $scope.master = {
-        id: "labwork",
-        name: "化验项目管理",
-        server: "/api/v2/medicchemicalexamtypes",
-    };
+        name: "化验项目分类",
 
-    $scope.filters = [{"fieldName": "cheTestName", "operator": "EQ", "value": ""}];// 综合搜索项
+        server: "/api/v2/chemicalexamcates",
 
-    $scope.placeholder = "请输入参数";
-
-    // Portal
-    $scope.labworkdetailportal = {
-        master: {
-            id: "labworkdetail",
-
-            name: "参考值设置",
-
-            foreignkey: "cheTestTypdId", // 外键
-
-            server: "/api/v2/medicchemicalexamtypedetails"
-        },
-
-        parent: {
-            id: "labwork"
+        callback: {
+            switched: function () {
+                // 加载
+                $scope.labworkportal.search();
+            },
+            insert: function () {
+                // 加载
+                if (!$scope.labworktypeportal.selectedId) {
+                    $scope.labworktype.parentId = "#";
+                }
+                else {
+                    $scope.labworktype.parentId = $scope.labworktypeportal.selectedId;
+                }
+            }
         }
     };
 
-    $controller('BaseTreeController', {$scope: $scope}); //继承
+    $controller('TreeSidePanelController', {$scope: $scope, component: $scope.labworktypeportal}); //继承
 
-    // 声明要使用的下拉选项
-    $scope.loadUserdicts(["医疗类型", "化验单位"]);
+    /**
+     * 化验项目管理
+     * ---------------------------
+     * */
+    $scope.labworkportal= {
 
-    $controller('BasePortalController', {$scope: $scope, component: $scope.labworkdetailportal}); //继承
+        foreign: "labworktype", // 外键
 
-    // 主表编辑时回调
-    $scope.master.update = function () {
-        $scope.labworkdetailportal.search($scope.labwork.id);
+        foreignkey: "cateNo",
+
+        id: "labwork",
+
+        name: "化验项目管理",
+
+        server: "/api/v2/medicchemicalexamtypes",
+
+        defilters: {"itemCode": "商品编号", "itemName": "商品名称"},
+
+        callback : {
+            update: function () {
+                $scope.labworkdetailportal.search($scope.labwork.id);
+            }
+        }
     };
 
-    $scope.sideload();
+    $controller('BaseCRUDController', {$scope: $scope, component: $scope.labworkportal}); //继承
+
+    /**
+     * 参考值设置
+     * ---------------------------
+     * */
+    $scope.labworkdetailportal= {
+
+        foreign: "labwork", // 外键
+
+        foreignkey: "cheTestTypdId",
+
+        id: "labworkdetail",
+
+        name: "参考值设置",
+
+        server: "/api/v2/medicchemicalexamtypedetails"
+    };
+
+    $controller('BaseCRUDController', {$scope: $scope, component: $scope.labworkdetailportal}); //继承
+
+    $scope.labworktypeportal.search();
+    $scope.labworkportal.filter();
 });

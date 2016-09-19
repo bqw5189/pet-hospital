@@ -18,29 +18,17 @@ searchFields:
 
 fields: #可定义多个中文名称指向同一个字段
 
+  所属分类ID: cateNo
+
+  所属分类: itemStyle
+
   #商品信息
-
-  主键: id
-
-  状态: status
-
-  创建人: createUserId
-
-  创建时间: createDate
-
-  修改人: updateUserId
-
-  修改时间: updateDate
 
   编号: itemCode
 
   名称: itemName
 
   规格: itemStandard
-
-  所属分类ID: cateNo
-
-  所属分类: itemStyle
 
   销售单位: itemBulk
 
@@ -94,3 +82,15 @@ fields: #可定义多个中文名称指向同一个字段
   会员价格: vipSellPrice
 
   保质期: safeDay
+
+  主键: id
+
+  状态: status
+
+  创建人: createUserId
+
+  创建时间: createDate
+
+  修改人: updateUserId
+
+  修改时间: updateDate

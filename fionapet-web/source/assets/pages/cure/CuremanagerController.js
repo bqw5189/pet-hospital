@@ -2,6 +2,102 @@
 // 宠物管理
 angular.module('fiona').controller('CuremanagerController', function($scope, $http, commons) {
 
+
+    /**
+     *  诊断信息
+     * ---------------------------
+     * */
+
+
+    $scope.curemanagerportal = {
+        id: "curemanager",
+
+        name: "诊断信息",
+
+        server: "/api/v2/medicmedictreatrecords",
+
+        callback: {
+            switched: function () {
+                $scope.expenditureportal.search();
+            }
+        }
+    };
+
+    $controller('TablePaginationPanelController', {$scope: $scope, component: $scope.curemanagerportal}); //继承
+
+
+    /**
+    * 就诊列表（挂号）
+    * ---------------------------
+    * */
+    $scope.registerportal = {
+        id: "register",
+
+        name: "支出分类",
+
+        server: "/api/v2/medicregisterrecords",
+
+        callback: {
+            switched: function () {
+                $scope.expenditureportal.search();
+            }
+        }
+    };
+
+    $controller('SidePanelController', {$scope: $scope, component: $scope.registerportal}); //继承
+
+    /**
+     *  选择宠物
+     * ---------------------------
+     * */
+    $scope.petportal = {
+        dropdowns: {},
+        dropboxargs : [],
+
+        master: {
+            id: "pet",
+
+            name: "宠物",
+
+            server: "/api/v2/pets",
+
+            checked: function () {
+                // 主人ID
+                $scope.beauty.gestId = $scope.pet.id;
+
+                // 主人编号
+                $scope.beauty.gestCode = $scope.pet.gestCode;
+
+                // 主人名称
+                $scope.beauty.gestName = $scope.pet.gestName;
+            },
+            submit: function () {
+                // 主人ID
+                $scope.beauty.gestId = $scope.pet.id;
+
+                // 主人编号
+                $scope.beauty.gestCode = $scope.pet.gestCode;
+
+                // 主人名称
+                $scope.beauty.gestName = $scope.pet.gestName;
+            },
+            insert: function () {
+                angular.forEach($scope.petportal.dropdowns, function (value, key) {
+                    $scope.pet[key.substr(0, key.length - 3)] = value[0];
+                });
+            }
+        },
+
+        parent: {
+            id: "beauty"
+        }
+    };
+
+    $controller('CommonVipController', {$scope: $scope, component: $scope.petportal}); //继承
+
+
+
+
     $http.defaults.headers.post.authorization = commons.getAuthorization();
 
     $http.defaults.headers.post['Content-Type']= 'application/json';

@@ -63,6 +63,14 @@ helpers do
         end
     end
 
+    def bindText(inputType, key, fieldName)
+        if fieldName == 'error'
+            return "<span class='label label-danger'>Danger</span>"
+        else
+            return "<input type='" << inputType << "' class='form-control form-filter input-sm' ng-model='" << key << "." << fieldName << "'>";
+        end
+    end
+
     def inputName(key, fieldName)
         if (fieldName.index("$") == 0)
             return fieldName.delete "$"
@@ -112,6 +120,7 @@ helpers do
 
     # 输入框长度
     def validmaxlength(key, fieldName)
+        puts "Validmaxlength: " << key << " | " << fieldName
         if fieldName == 'error'
             return 'true'
         else

@@ -1,4 +1,8 @@
-# 数据字典管理
+module:
+  name: 数据字典管理
+  id: userdicts
+  data: userdictdetails
+
 listFields: # aliasName 显示使用, fieldName 关联字段使用,若显示名称与字段名称一致, 则不需要定义 aliasName
   - fieldName: 编码
 

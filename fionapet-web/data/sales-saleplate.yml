@@ -24,17 +24,28 @@ searchFields:
 
 
 fields: #可定义多个中文名称指向同一个字段
+  销售单号: directSellCode
+
+  总项数: totalNum
+  总金额: totalCost
+
+  会员ID: gestId
+  会员编号: gestCode
+  会员姓名: gestName
+  会员手机: mobilePhone
+
+  宠物ID: petId
+  宠物名称: petName
+
+  折扣: discount
+
+  影像状态: paidStatus
+  影像时间: paidTime
+  备注: remark
+
   主键: id
-
-  挂号类型: XX
-
-  金额: XX
-
-  业务员: XX
-
-  医生: XX
-
-  助理医生: XX
-
-
-
+  状态: status
+  创建人: createUserId
+  创建时间: createDate
+  修改人: updateUserId
+  修改时间: updateDate

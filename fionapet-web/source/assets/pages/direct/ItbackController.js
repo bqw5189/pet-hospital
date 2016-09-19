@@ -1,209 +1,154 @@
 
 // 销售退货
-angular.module('fiona').controller('ItbackController', function($scope, $http, commons) {
+angular.module('fiona').controller('ItbackController', function($scope, $controller, $http, commons) {
 
-    $http.defaults.headers.post.authorization = commons.getAuthorization();
-
-    $http.defaults.headers.post['Content-Type']= 'application/json';
-
-    // alert(commons.getAuthorization());
-
-    // 使用日期控件
-    jQuery().datepicker && $(".date-picker-btn").datepicker({
-        format: 'yyyy-mm-dd',
-        orientation: "left",
-        autoclose: !0
-    }).on("changeDate", function() {
-        $(this).parent().prev().val($(this).datepicker('getFormattedDate'));
-    });
-
-    jQuery().datepicker && $(".date-picker").datepicker({
-        format: 'yyyy-mm-dd',
-        orientation: "left",
-        autoclose: !0
-    });
-
-
-    $scope.error= "未找到定义";
-
-    $scope.selectedall = false;
-
-    $scope.isRemoves = true;
-
-    $scope.selection = {};
-
-    $scope.selectChange = function () {
-        $scope.isRemoves = true;
-        angular.forEach($scope.selection, function(value, key){
-            if(value == true)
-            {
-                $scope.isRemoves = false;
-            }
-        });
-    };
-
-    $scope.selectAll= function () {
-        angular.forEach($scope.itbacks, function (itback) {
-            $scope.selection[itback.id] = $scope.selectedall;
-        })
-
-        $scope.isRemoves = !$scope.selectedall
-    };
-
-    // 综合搜索项
-    $scope.pagination = {
-        'pageSize': 1,
-        'pageNumber': 1,
-        "first":true,
-        "last":false,
-        "totalElements": 1,
-        "totalPages": 1
-    };
-    
-    $scope.combox = {
-        types: [ {'name':'猫科'}, {'name':'犬科'} ]
-    };
-
-    // 综合搜索项
-    $scope.filters = [
-        // 宠物病例号
-        // {"fieldName": "name","operator": "EQ", "value":""},
-
-        // 宠物昵称
-        {"fieldName": "itbackCode","operator": "EQ", "value":""},
-
-        // 宠物昵称
-        {"fieldName": "itbackName","operator": "EQ", "value":""},
-
-        // 会员编号
-        {"fieldName": "gestCode","operator": "EQ", "value":""},
-
-        // 会员名称
-        {"fieldName": "gestName","operator": "EQ", "value":""},
-
-        // 会员电话
-        // {"fieldName": "mobilePhone","operator": "EQ", "value":""}
+    // 声明要使用的下拉选项
+    $scope.dropboxargs = [
+        {name: "assistantIdSet", server: "personss"},  // 服务助理ID
+        {name: "hairdresserIdSet", server: "personss"} // 服务师ID
     ];
 
-    $scope.placeholder = "请输入宠物病例号/宠物昵称/会员编号/会员名称/会员电话";
+    $scope.dropdowns= {};
 
-    // 检索宠物信息
-    $scope.search = function () {
+    // 主数据加载地址
+    $scope.master = {
+        id: "itback",
 
-        // alert(" 执行搜索.... ");
+        name: "销售退货",
 
-        console.log(" 执行搜索.... " + searchform.$dirty);
-
-        angular.forEach($scope.filters, function (data) {
-            console.log(" 执行搜索.... " + data.fieldName + ", " + data.operator + ", " + data.value);
-        });
-
-        // 分页查询  /business/api/v2/itbacks
-        // $http.get('/server/api/v2/itbacks/page.json', {'pageSize':$scope.pagination.pageSize, 'pageNumber':$scope.pagination.pageNumber, 'filters':$scope.filters}).success( function ( data, status, headers, config ) {
-
-        // alert('pageSize: '+ $scope.pagination.pageSize  +'pageNumber: ' + $scope.pagination.pageNumber + ", " + $scope.filters.length);
-
-        // angular.forEach($scope.filters, function (data, index) {
-        //     alert(data.fieldName);
-        // });
-
-        $http.post('/server/api/v2/itbacks/page.json', {'pageSize':$scope.pagination.pageSize, 'pageNumber':$scope.pagination.pageNumber, 'filters':$scope.filters}).success( function ( data, status, headers, config ) {
-            console.log( data );
-
-            $scope.itbacks = data.data.content;
-
-            // $http.post('/business/api/v2/itbacks', data).success( function ( data, status, headers, config ) {
-            //     console.log( data );
-            //     alert("Submit OK");
-            // }).error(function(data,status,headers,config) { //     错误
-            //     alert("保存失败,请确认后重试" + status);
-            // });
-
-            // angular.forEach($scope.itbacks, function (itback, i) {
-            //     alert(itback.id);
-            // });
-
-            // 搜索+分页
-            $scope.pagination.pageNumber = data.data.number+1;
-
-            $scope.pagination.last = data.data.last;
-            $scope.pagination.first = data.data.first;
-            $scope.pagination.totalPages = data.data.totalPages;
-            $scope.pagination.totalElements = data.data.totalElements;
-        });
+        server: "/api/v2/services",
+        update: function () {
+            // $scope.petportal.get($scope.beauty.gestId);
+            // $scope.vipportal.search();
+        }
     };
 
+    // 综合搜索项
+    $scope.filters = [{"code": "name","operator": "EQ", "value":""} , {"name": "name","operator": "EQ", "value":""} , {"contractMan": "name","operator": "EQ", "value":""} , {"mobilePhone": "name","operator": "EQ", "value":""} , {"dealerAddress": "name","operator": "EQ", "value":""}];
 
-    // Form 界面
-    $scope.itbacksubmit = function () {
+    $scope.placeholder = "请输入自动编号 / 经销商名称 / 联系人 / 手机 / 地址";
 
-        $scope.itbackform.submitted = true;
+    $controller('BasePaginationController', {$scope: $scope}); //继承
 
-        if ($scope.itbackform.$valid) {
-            alert('submit: ' + $scope.itback.id);
-            $http.post('/business/api/v2/itbacks', $scope.itback).success( function ( data, status, headers, config ) {
-                console.log( data );
-                alert("Submit OK");
-            }).error(function(data,status,headers,config) { //     错误
-                alert(status);
+    /**
+     * 选择会员
+     * ---------------------------
+     * */
+    
+
+    $scope.vipportal = {
+        dropdowns: {},
+
+        dropboxargs : [
+            {name: "gestStyleSet", server: "gestlevels"},
+            {name: "statusSet", server: "dicts", filterName: "会员状态"},
+            {name: "gestSexSet", server: "userdicts", filterName: "性别"}
+        ],
+
+        master: {
+            id: "vip",
+
+            name: "会员",
+
+            server: "/api/v2/gests",
+
+            checked: function () {
+                // 主人ID
+                $scope.itback.gestId = $scope.vip.id;
+
+                // 主人编号
+                // $scope.itback.gestCode = $scope.vip.gestCode;
+
+                // 主人名称
+                $scope.itback.gestName = $scope.vip.gestName;
+
+                // 主人名称
+                $scope.itback.gestPhone = $scope.vip.mobilePhone;
+            },
+
+            cancel: function () {
+                // 主人ID
+                $scope.itback.gestId = $scope.vip.id;
+
+                // 主人编号
+                // $scope.itback.gestCode = $scope.vip.gestCode;
+
+                // 主人名称
+                $scope.itback.gestName = $scope.vip.gestName;
+
+                // 主人名称
+                $scope.itback.gestPhone = $scope.vip.mobilePhone;
+            }
+        },
+
+        parent: {
+            id: "itback"
+        }
+    };
+
+    $controller('SaleVipController', {$scope: $scope, component: $scope.vipportal}); //继承
+
+    /**
+     * 退货商品明细
+     * ---------------------------
+     * */
+    $scope.itbackdetailportal = {
+        master: {
+            id: "itbackdetail",
+
+            name: "销售退货明细",
+
+            foreignkey: "rcId", // 外键
+
+            server: "/api/v2/returncommoditydetails"
+        },
+
+        parent: {
+            id: "itback"
+        }
+    };
+
+    $controller('BasePortalController', {$scope: $scope, component: $scope.itbackdetailportal}); //继承
+
+    /**
+     * 弹出选择商品
+     * ---------------------------
+     * */
+    $controller('ProductPopupSelectController', {$scope: $scope}); //继承
+
+    $scope.productportal.master.submit = function (selected) {
+        if (!$scope.itbackdetails) {
+            $scope.itbackdetails = [];
+        }
+
+        angular.forEach(selected, function (_itbackdetail) {
+            var itbackdetail = {createUserId: 1, updateUserId: 1};
+
+            // 服务ID
+            // itbackdetail.serviceId = $scope.inhospital.id;
+
+            angular.forEach(["itemCode", "itemName", "itemStandard", "barCode", "sellPrice", "packageUnit", "", "", ""], function (name) {
+                itbackdetail[name] = _itbackdetail[name];
             });
-        } else {
 
-            alert($scope.itbackform.$error);
+            // 个数
+            itbackdetail.inputCount = 1;
+            // 总价
+            itbackdetail.totalCost = 1;
 
-            // $scope.message = "请输入用户名和密码.";
-
-            // $scope.signup_form.submitted = true;
-        }
-    };
-
-    $scope.update = function (id) {
-
-        if(id == undefined)
-        {
-            // 添加
-            $scope.itback = {};
-        }
-        else
-        {
-            angular.forEach($scope.itbacks, function(data,index,array){
-                if(data.id== id)
-                {
-                    $scope.itback = data;
-                }
-            });
-        }
-
-        $('#itback').modal('toggle');
-    };
-
-    // 删除功能
-    $scope.removes = function () {
-        angular.forEach($scope.selection, function(value, key){
-            alert(key+ " = " + value);
-        });
-    };
-
-    $scope.remove= function (id) {
-        // console.log( $scope.xiuUser )
-
-        alert(id);
-
-        $http.delete('/business/api/v2/itbacks/' + id).success(function(data, index, array){
-            commons.danger("删除成功");
-        }).error(function (data) {
-            commons.danger("删除失败");
+            $scope.itbackdetails.push(itbackdetail);
+            //
+            // // 备
+            // itbackdetail.remark = _itbackdetail.remark;
         });
 
-        // angular.forEach($scope.itbacks, function(data,index,array){
-        //
-        //     if(data.id == id)
-        //     {
-        //     }
-        //
-        // });
+        // 总项
+        // $scope.inhospital.totalNum = $scope.itbackdetails.length;
 
+        // 总金额
+        //
+        // $scope.inhospital.totalCost = $scope.itbackdetail.length;
     };
 
-
+    $scope.productportal.init();
 });

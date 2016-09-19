@@ -18,21 +18,7 @@
     .caption
       %i.icon-bubble.font-green-sharp
       %span.caption-subject.font-green-sharp.sbold 送检医院
-    .actions
-      .btn-group
-        %a.btn.green-haze.btn-outline.btn-circle.btn-sm{"data-close-others" => "true", "data-hover" => "dropdown", "data-toggle" => "dropdown", :href => "javascript:;"}
-          Actions
-          %i.fa.fa-angle-down
-        %ul.dropdown-menu.pull-right
-          %li
-            %a{:href => "javascript:;"} Option 1
-          %li.divider
-          %li
-            %a{:href => "javascript:;"} Option 2
-          %li
-            %a{:href => "javascript:;"} Option 3
-          %li
-            %a{:href => "javascript:;"} Option 4
+
   .portlet-body
     .form-body
       .row
@@ -50,10 +36,10 @@
           = partial :'layouts/inputs/text', :locals => {:fieldName => '医师编号', :maxlength => '16'}
 
         .col-md-4
-          = partial :'layouts/inputs/text', :locals => {:fieldName => '采样日期', :maxlength => '16'}
+          = partial :'layouts/inputs/date', :locals => {:fieldName => '采样日期', :maxlength => '16'}
 
         .col-md-4
-          = partial :'layouts/inputs/text', :locals => {:fieldName => '是否加急', :maxlength => '16'}
+          = partial :'layouts/inputs/select', :locals => {:fieldName => '是否加急', :options => "type.code as type.name for type in [{code: '1', name: '是'}, {code: '0', name: '否'}]"}
 
 .portlet.light.bordered
   .portlet-title
@@ -76,7 +62,7 @@
           %li
             %a{:href => "javascript:;"} Option 4
   .portlet-body
-    = partial 'views/commons/pet_header'
+    = partial 'views/commons/pet/portal_pet_formset'
 
 
 .portlet.light.bordered
@@ -88,68 +74,13 @@
   .portlet-body
     .row
       .col-md-12
-        = partial :'layouts/inputs/text_btn', :locals => {:fieldName => '采样部位', :maxlength => '16', :btnname => '选择部位', :btnclick => 'checkpartmodal(0)'}
+        = partial :'layouts/inputs/text_btn', :locals => {:fieldName => '采样部位', :maxlength => '16', :btnname => '选择部位', :btnclick => 'checkpartportal.insert()'}
     .row
       .col-md-12
         .row
-          .col-md-3
+          .col-md-3{"ng" => {"repeat": "sample in dropdowns.sampleSet"}}
             %label
-              %input{:type => 'checkbox'} 全血
-
-          .col-md-3
-            %label
-              %input{:type => 'checkbox'} 粪便
-
-          .col-md-3
-            %label
-              %input{:type => 'checkbox'} 结石
-
-          .col-md-3
-            %label
-              %input{:type => 'checkbox'} 血清
-
-        .row
-          .col-md-3
-            %label
-              %input{:type => 'checkbox'} 皮肤刮擦物/皮屑/毛发
-
-          .col-md-3
-            %label
-              %input{:type => 'checkbox'} 活检组织
-
-          .col-md-3
-            %label
-              %input{:type => 'checkbox'} 血浆
-
-          .col-md-3
-            %label
-              %input{:type => 'checkbox'} 采样拭子
-
-        .row
-          .col-md-3
-            %label
-              %input{:type => 'checkbox'} 尿液
-
-          .col-md-3
-            %label
-              %input{:type => 'checkbox'} 穿剌抽吸液
-
-          .col-md-3
-            %label
-              %input{:type => 'checkbox'} 组织器官
-
-          .col-md-3
-            %label
-              %input{:type => 'checkbox'} 全血
-
-        .row
-          .col-md-3
-            %label
-              %input{:type => 'checkbox'} 腹水
-
-          .col-md-3
-            %label
-              %input{:type => 'checkbox'} 肿块组织
+              %input{:type => 'checkbox', "ng" => {"model": "data.simple", "true-value": "true", "false-value": "false" } } {{ sample.name }}
 
     .row
       .col-md-12

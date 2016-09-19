@@ -10,11 +10,11 @@
 
   .row
     .col-md-12
-      = partial :'layouts/inputs/select', :locals => {:fieldName => '化验单位', :maxlength => '32', :required => "true", :options => "type.dictDetailCode as type.valueNameCn for type in dropdowns['化验单位']"}
+      = partial :'layouts/inputs/select', :locals => {:fieldName => '化验单位', :maxlength => '32', :required => "true", :options => "type.dictDetailCode as type.valueNameCn for type in dropdowns.cheTestUnitSet"}
 
   .row
     .col-md-12
-      = partial :'layouts/inputs/select', :locals => {:fieldName => '指标类型', :maxlength => '32', :required => "true", :options => "type.code as type.name for type in dropdowns['indexTypes']"}
+      = partial :'layouts/inputs/select', :locals => {:fieldName => '指标类型', :maxlength => '32', :required => "true", :options => "type.code as type.name for type in dropdowns.indexTypesSet"}
 
 / Portal
 - portal "参考值设置", "labworkdetail"

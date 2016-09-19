@@ -2,11 +2,26 @@ angular.module('fiona.services', [])
 
 .factory('commons', function() {
     var authorization='fc5db3b3-4063-4a12-a511-880ba19e4b58';
+    function formatnumber(num) {
+        if(num <= 9)
+        {
+            return "0" + num
+        }
+
+        return num;
+    };
     return {
         setAuthorization: function (auth) {
             console.log( "保存用户凭证" + auth );
 
             authorization = auth;
+        },
+        serialNumber: function () {
+            var date = new Date();
+
+            // date.getMilliseconds();
+
+            return date.getFullYear() + "" + formatnumber(date.getMonth() + 1) + "" + formatnumber(date.getDate()) + "" + formatnumber(date.getHours()) + "" + formatnumber(date.getMinutes()) + "" + formatnumber(date.getSeconds());
         },
         getAuthorization : function () {
             console.log( "当前用户凭证: " + authorization );

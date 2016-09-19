@@ -1,232 +1,47 @@
 
-// 宠物管理
-angular.module('fiona').controller('CheckController', function($scope, $http, commons) {
+// 检验检测
+angular.module('fiona').controller('CheckController', function($scope, $controller, $http, commons) {
 
-    $http.defaults.headers.post.authorization = commons.getAuthorization();
+    // 声明要使用的下拉选项
+    $scope.dropboxlist = [];
 
-    $http.defaults.headers.post['Content-Type']= 'application/json';
-
-    // alert(commons.getAuthorization());
-
-    // 使用日期控件
-    jQuery().datepicker && $(".date-picker-btn").datepicker({
-        format: 'yyyy-mm-dd',
-        orientation: "left",
-        autoclose: !0
-    }).on("changeDate", function() {
-        $(this).parent().prev().val($(this).datepicker('getFormattedDate'));
-    });
-
-    jQuery().datepicker && $(".date-picker").datepicker({
-        format: 'yyyy-mm-dd',
-        orientation: "left",
-        autoclose: !0
-    });
-
-
-    $scope.error= "未找到定义";
-
-    $scope.selectedall = false;
-
-    $scope.isRemoves = true;
-
-    $scope.selection = {};
-
-    $scope.selectChange = function () {
-        $scope.isRemoves = true;
-        angular.forEach($scope.selection, function(value, key){
-            if(value == true)
-            {
-                $scope.isRemoves = false;
-            }
-        });
+    $scope.dropdowns= {
+        sampleSet: [{code:'', name: '全血' },{code:'', name: '粪便' },{code:'', name: '结石' },{code:'', name: '血清' },{code:'', name: '皮肤刮擦物/皮屑/毛发' },{code:'', name: '活检组织' },{code:'', name: '血浆' },{code:'', name: '采样拭子' },{code:'', name: '尿液' },{code:'', name: '穿剌抽吸液' },{code:'', name: '组织器官' },{code:'', name: '全血' },{code:'', name: '腹水' },{code:'', name: '肿块组织' }]
     };
 
-    $scope.selectAll= function () {
-        angular.forEach($scope.check, function (check) {
-            $scope.selection[check.id] = $scope.selectedall;
-        })
+    // 主数据加载地址
+    $scope.master = {
+        id: "check",
 
-        $scope.isRemoves = !$scope.selectedall
+        name: "检验检测",
+
+        server: "/api/v2/checkprocesssheets",
+
+        insert: function () {
+
+        }
     };
 
     // 综合搜索项
-    $scope.pagination = {
-        'pageSize': 1,
-        'pageNumber': 1,
-        "first":true,
-        "last":false,
-        "totalElements": 1,
-        "totalPages": 1
-    };
+    $scope.filters = [{"code": "name","operator": "EQ", "value":""} , {"name": "name","operator": "EQ", "value":""} , {"contractMan": "name","operator": "EQ", "value":""} , {"mobilePhone": "name","operator": "EQ", "value":""} , {"dealerAddress": "name","operator": "EQ", "value":""}];
 
-    $scope.combox = {
-        types: [ {'name':'猫科'}, {'name':'犬科'} ],
-        sex:[{'code':'1', cnname: '男', enname:''}, {'code':'0', cnname: '女', enname:''}]
-    };
+    $scope.placeholder = "请输入自动编号 / 经销商名称 / 联系人 / 手机 / 地址";
 
-    // 综合搜索项
-    $scope.filters = [
-        // 宠物病例号
-        // {"fieldName": "name","operator": "EQ", "value":""},
-
-        // 宠物昵称
-        {"fieldName": "checkCode","operator": "EQ", "value":""},
-
-        // 宠物昵称
-        {"fieldName": "checkName","operator": "EQ", "value":""},
-
-        // 会员编号
-        {"fieldName": "gestCode","operator": "EQ", "value":""},
-
-        // 会员名称
-        {"fieldName": "gestName","operator": "EQ", "value":""},
-
-        // 会员电话
-        // {"fieldName": "mobilePhone","operator": "EQ", "value":""}
-    ];
-
-    $scope.placeholder = "请输入宠物病例号/宠物昵称/会员编号/会员名称/会员电话";
-
-    // 检索宠物信息
-    $scope.search = function () {
-
-        // alert(" 执行搜索.... ");
-
-        console.log(" 执行搜索.... " + searchform.$dirty);
-
-        angular.forEach($scope.filters, function (data) {
-            console.log(" 执行搜索.... " + data.fieldName + ", " + data.operator + ", " + data.value);
-        });
-
-        // 分页查询  /business/api/v2/check
-        // $http.get('/server/api/v2/check/page.json', {'pageSize':$scope.pagination.pageSize, 'pageNumber':$scope.pagination.pageNumber, 'filters':$scope.filters}).success( function ( data, status, headers, config ) {
-
-        // alert('pageSize: '+ $scope.pagination.pageSize  +'pageNumber: ' + $scope.pagination.pageNumber + ", " + $scope.filters.length);
-
-        // angular.forEach($scope.filters, function (data, index) {
-        //     alert(data.fieldName);
-        // });
-
-        $http.post('/server/api/v2/check/page.json', {'pageSize':$scope.pagination.pageSize, 'pageNumber':$scope.pagination.pageNumber, 'filters':$scope.filters}).success( function ( data, status, headers, config ) {
-            console.log( data );
-
-            $scope.check = data.data.content;
-
-            // $http.post('/business/api/v2/check', data).success( function ( data, status, headers, config ) {
-            //     console.log( data );
-            //     alert("Submit OK");
-            // }).error(function(data,status,headers,config) { //     错误
-            //     alert("保存失败,请确认后重试" + status);
-            // });
-
-            // angular.forEach($scope.check, function (check, i) {
-            //     alert(check.id);
-            // });
-
-            // 搜索+分页
-            $scope.pagination.pageNumber = data.data.number+1;
-
-            $scope.pagination.last = data.data.last;
-            $scope.pagination.first = data.data.first;
-            $scope.pagination.totalPages = data.data.totalPages;
-            $scope.pagination.totalElements = data.data.totalElements;
-        });
-    };
+    $controller('BasePaginationController', {$scope: $scope}); //继承
 
 
-    // Form 界面
-    $scope.checkubmit = function () {
+    /**
+     * 送检部位
+     * ---------------------------
+     * */
+    $scope.checkpartportal = {
+       id: "checkpart",
 
-        $scope.checkform.submitted = true;
+        name: "送检部位",
 
-        alert("CheckSex: " + $scope.check.checkSex.valueNameCn);
+        insert: function () {
 
-        // angular.forEach($scope.check.checkSex, function (data, key) {
-        //     alert(key + ": "  + data);
-        // });
-
-
-        if ($scope.checkform.$valid) {
-            // alert('submit: ' + $scope.check.id);
-            $http.post('/business/api/v2/check', $scope.check).success( function ( data, status, headers, config ) {
-                console.log( data );
-                alert("Submit OK");
-            }).error(function(data,status,headers,config) { //     错误
-                alert("Status: " + status);
-            });
-        } else {
-
-            alert("Error: " + $scope.checkform.$error);
-
-            // $scope.message = "请输入用户名和密码.";
-
-            // $scope.signup_form.submitted = true;
+            $("#checkpart").modal('toggle');
         }
-    };
-
-    $scope.update = function (id) {
-
-        if(id == undefined)
-        {
-            // 添加
-            $scope.check = {};
-        }
-        else
-        {
-            angular.forEach($scope.check, function(data,index,array){
-                if(data.id== id)
-                {
-                    $scope.check = data;
-                }
-            });
-        }
-
-        $('#check').modal('toggle');
-    };
-
-    $scope.casesmodal = function (id) {
-
-        $('#cases').modal('toggle');
-    };
-
-    $scope.checkpartmodal = function (id) {
-
-        $('#checkpart').modal('toggle');
-    };
-
-    $scope.joincheckmodal = function (id) {
-
-        $('#joincheck').modal('toggle');
-    };
-
-    // 删除功能
-    $scope.removes = function () {
-        angular.forEach($scope.selection, function(value, key){
-            alert(key+ " = " + value);
-        });
-    };
-
-    $scope.remove= function (id) {
-        // console.log( $scope.xiuUser )
-
-        alert(id);
-
-        $http.delete('/business/api/v2/check/' + id).success(function(data, index, array){
-            commons.danger("删除成功");
-        }).error(function (data) {
-            commons.danger("删除失败");
-        });
-
-        // angular.forEach($scope.check, function(data,index,array){
-        //
-        //     if(data.id == id)
-        //     {
-        //     }
-        //
-        // });
-
-    };
-
-
+    }
 });

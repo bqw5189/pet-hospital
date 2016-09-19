@@ -2,21 +2,45 @@
 // 数据字典管理
 angular.module('fiona').controller('DictionaryController', function($scope, $controller) {
 
-    // 目录树数据加载地址
-    $scope.slave = {
-        name: "分类",
-        server: "/api/v2/dicttypes"
-    };
+    /**
+     * 数据字典
+     * ---------------------------
+     * */
+    $scope.dictionaryportal= {
 
-    // 主数据加载地址
-    $scope.master = {
-        id: "dictionary",
-        name: "数据字典",
+        foreign: "dictionarytype", // 外键
+
         foreignkey: "dictTypeId",
-        server: "/api/v2/dicttypedetails",
+
+        id: "dictionary",
+
+        name: "数据字典",
+
+        server: "/api/v2/dicttypedetails"
     };
 
-    $controller('BaseSideController', {$scope: $scope}); //继承
+    $controller('BaseCRUDController', {$scope: $scope, component: $scope.dictionaryportal}); //继承
 
-    $scope.init();
+    /**
+     * 字典分类
+     * ---------------------------
+     * */
+    $scope.dictionarytypeportal = {
+        id: "dictionarytype",
+
+        name: "字典分类",
+
+        server: "/api/v2/dicttypes",
+
+        callback: {
+            switched: function () {
+                $scope.dictionaryportal.search();
+            }
+        }
+    };
+
+    $controller('SidePanelController', {$scope: $scope, component: $scope.dictionarytypeportal}); //继承
+
+    $scope.dictionarytypeportal.init();
+
 });

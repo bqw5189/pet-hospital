@@ -3,22 +3,20 @@ layout: "cols2_listgroup"
 ---
 - page '支出管理', 'expenditure'
 
--# 大纲部分
+-# Side
 
 - content_for :outline_toolbar do
-  = partial :'layouts/buttons/insert', :locals => {:click => 'expenditureinsert()'}
-  = partial :'layouts/buttons/remove', :locals => {:click => 'expenditureremove()'}
+  = partial :'layouts/buttons/insert', :locals => {:click => 'expendituretypeportal.insert()'}
+  = partial :'layouts/buttons/remove', :locals => {:click => 'expendituretypeportal.remove()'}
 
--#宠物详细信息
-= partial 'views/commons/nav_datumtype', :locals => {:sidename => "支出类型", :sidefieldname=> 'cateName'}
+
+= partial 'views/commons/tree/panel_side', :locals => {:name => "支出类型", :id=> 'expendituretype', :fieldName => "cateName"}
+
+-# Table
 
 - content_for :toolbar do
-  %button.btn.btn-circle.btn-default.btn-sm{:href => "javascript:;", 'ng': {'click':'insert()'}}
-    %i.fa.fa-plus
-    增加
-  %button.btn.btn-circle.red-sunglo.btn-sm{:href => "javascript:;", 'ng': {'click':'removes()', 'disabled': 'isRemoves'} }
-    %i.fa.fa-remove
-    删除
+  = partial :'layouts/buttons/insert', :locals => {:click => 'expenditureportal.insert()'}
+  = partial :'layouts/buttons/remove', :locals => {:click => 'expenditureportal.remove()'}
 
 - content_for :theader do
   - @page.listFields.each do |field|
@@ -29,13 +27,13 @@ layout: "cols2_listgroup"
     %td
       = bind @page_id, (column.fieldKey || @fields[column.fieldName] || 'error')
 
-
-= partial :'layouts/partials/modal-lg' do
+/ 编辑
+= partial :'layouts/partials/modal-portal-lg' do
   = partial 'modify'
 
-/ Modal
-- modal "服务商品分类", "expendituretype"
+/ 服务商品分类
+- modal "支出分类", "expendituretype"
 
-= partial :'layouts/partials/modal-lg' do
+= partial :'layouts/partials/_modal-portal-lg' do
   = partial 'expendituretype'
 

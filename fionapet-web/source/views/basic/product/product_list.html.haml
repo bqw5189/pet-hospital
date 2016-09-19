@@ -1,43 +1,27 @@
 ---
-layout: "cols2_light"
+layout: "page"
 ---
+
 - page '商品与服务管理', 'product'
 
--# 大纲部分
+#operate_msg_box
+.row
+  .col-md-3
+    - portal "商品&服务", "producttype"
+    = partial 'layouts/widget/tree', :locals => {:sidename => "商品&服务", :sidefieldname=> 'name'}
 
-- content_for :outline_toolbar do
-  = partial :'layouts/buttons/insert', :locals => {:click => 'producttypeinsert()', :disabled => "!selectedId"}
-  = partial :'layouts/buttons/remove', :locals => {:click => 'producttyperemove()', :disabled => "!selectedId"}
+  .col-md-9
+    - portal '商品与服务管理', 'product'
+    = partial 'layouts/widget/portal'
 
--#商品&服务类型
-= partial 'views/commons/nav_tree', :locals => {:sidename => "商品&服务", :sidefieldname=> 'name'}
-
--# 主体部分
-- content_for :toolbar do
-  = partial :'layouts/buttons/insert', :locals => {:disabled => "!selectedId"}
-  = partial :'layouts/buttons/removes'
-
-- content_for :theader do
-  - @page.listFields.each do |field|
-    %th #{field.aliasName || field.fieldName}
-
-- content_for :tbody do
-  - @page.listFields.each do |column|
-    %td
-      = bind @page_id, (column.fieldKey || @fields[column.fieldName] || 'error')
-
--#表格(搜索+分页)
-= partial :'layouts/table/table_full'
-
-/ Modal
+/ 商品&服务
 - modal '商品服务管理', 'product'
-
-= partial :'layouts/partials/modal-full' do
+= partial :'layouts/partials/modal-portal-full' do
   = partial 'modify'
 
 
-/ Modal
+/ 商品&服务分类
 - modal "服务商品分类", "producttype"
 
-= partial :'layouts/partials/modal' do
+= partial :'layouts/partials/modal-portal-lg' do
   = partial 'producttype'

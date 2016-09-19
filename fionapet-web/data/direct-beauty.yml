@@ -46,34 +46,32 @@ searchFields:
   - fieldName: 状态
 
 fields: #可定义多个中文名称指向同一个字段
+  主键: id
+  状态: status
+  创建人: createUserId
+  创建时间: createDate
+  修改人: updateUserId
+  修改时间: updateDate
 
-  服务单号: XX
+  宠物主人ID: gestId
+  宠物主人编号: gestCode
+  宠物主人名称: gestName
 
-  总项: XX
+  宠物ID: petId
+  宠物名称: petName
 
-  总金额: XX
+  服务助理: assistantId
+  服务助理姓名: assistantName
 
-  服务师: XX
+  服务师: hairdresserId
+  服务师姓名: hairdresserName
 
-  服务助理: XX
+  服务单号: serviceCode
+  总项: totalNum
+  总金额: totalCost
+  备注: remark
 
-  备注: XX
-
-
-  编码: XX
-
-  名称: XX
-
-  规格: XX
-
-  单价: XX
-
-  数量: XX
-
-  销售单位: XX
-
-  金额: XX
-
-  条码: XX
-
+  电话: mobilePhone
+  影像状态状态: paidStatus
+  影像时间: paidTime
 

@@ -18,7 +18,7 @@
               = partial :'layouts/inputs/text', :locals => {:fieldName => '员工名称', :maxlength => '32'}
 
             .col-md-4
-              = partial :'layouts/inputs/select', :locals => {:fieldName => '员工性别', :maxlength => '32', :required => "true", :options => "type.id as type.valueNameCn for type in dropdowns['性别']"}
+              = partial :'layouts/inputs/select', :locals => {:fieldName => '员工性别', :maxlength => '32', :required => "true", :options => "type.id as type.valueNameCn for type in dropdowns.sexSet"}
 
           .row
             .col-md-4
@@ -49,7 +49,7 @@
               = partial :'layouts/inputs/select', :locals => {:fieldName => '是否可预约', :maxlength => '32', :required => "true", :options => "type.code as type.name for type in dropdowns.isSyncEasSet"}
 
             .col-md-4
-              = partial :'layouts/inputs/select', :locals => {:fieldName => '员工状态', :maxlength => '32', :required => "true", :options => "type.code as type.name for type in dropdowns.personStatusSet"}
+              = partial :'layouts/inputs/select', :locals => {:fieldName => '员工状态', :maxlength => '32', :required => "true", :options => "type.code as type.valueNameCn for type in dropdowns.personStatusSet"}
 
 
             .col-md-4
