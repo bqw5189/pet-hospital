@@ -1,6 +1,7 @@
 package com.fionapet.business.entity;
 
 import org.codehaus.jackson.annotate.JsonIgnore;
+import org.codehaus.jackson.annotate.JsonIgnoreProperties;
 import org.dubbo.x.entity.*;
 
 import javax.persistence.*;
@@ -10,6 +11,7 @@ import javax.persistence.*;
  */
 
 @MappedSuperclass
+
 public class StatusEntity extends IdEntity {
     public static DictTypeDetail DEFAULT(){
         DictTypeDetail status = new DictTypeDetail();
@@ -22,6 +24,7 @@ public class StatusEntity extends IdEntity {
     /**
      * 状态
      */
+    @JsonIgnore
     private DictTypeDetail status = new DictTypeDetail();
 
     public StatusEntity() {
@@ -31,7 +34,9 @@ public class StatusEntity extends IdEntity {
         status.setUpdateUserId("fc5db3b3-4063-4a12-a511-880ba19e4b58");
     }
 
-    @ManyToOne(cascade = {CascadeType.REFRESH }, optional = true)
+
+
+    @ManyToOne(cascade = {CascadeType.REFRESH }, optional = true,fetch = FetchType.LAZY)
     @JoinColumn(name="status", referencedColumnName = "dictDetailCode")
     public DictTypeDetail getStatus() {
         return status;

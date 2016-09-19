@@ -2,6 +2,7 @@ package com.fionapet.business.entity;
 
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import org.codehaus.jackson.annotate.JsonIgnoreProperties;
 
 import javax.persistence.Entity;
 import javax.persistence.Table;

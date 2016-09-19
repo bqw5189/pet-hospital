@@ -3,10 +3,7 @@ package com.fionapet.business.entity;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
-import javax.persistence.Entity;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import javax.persistence.Table;
+import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 
 /**
@@ -25,16 +22,29 @@ public class PetSmallRace extends CMSEntity{
     @NotNull
     private String type;
 
-    private PetRace petRace;
-
+    private PetRace petRaceObject;
     @ManyToOne
     @JoinColumn(name = "pet_race_id")
-    public PetRace getPetRace() {
-        return petRace;
+    public PetRace getPetRaceObject() {
+        return petRaceObject;
     }
 
-    public void setPetRace(PetRace petRace) {
-        this.petRace = petRace;
+    public void setPetRaceObject(PetRace petRaceObject) {
+        this.petRaceObject = petRaceObject;
+    }
+
+    private String petRace;
+    @Transient
+    public String getPetRace() {
+        if(null!=this.petRaceObject)return this.petRaceObject.getId();
+        return null;
+    }
+
+    public void setPetRace(String petRace) {
+        if (null == this.petRaceObject){
+            this.petRaceObject = new PetRace();
+            this.petRaceObject.setId(petRace);
+        }
     }
 
     public String getType() {

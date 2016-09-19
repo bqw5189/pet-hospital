@@ -33,7 +33,8 @@ public class DictType extends CMSEntity {
     private Set<DictTypeDetail> details = new HashSet<DictTypeDetail>();
 
     @JsonIgnore
-    @OneToMany(cascade = { CascadeType.REFRESH },mappedBy ="dictType")
+    @OneToMany(cascade = { CascadeType.REFRESH })
+    @JoinColumn(name="dict_type_id")
     public Set<DictTypeDetail> getDetails() {
         return details;
     }
