@@ -14,16 +14,14 @@ import javax.persistence.*;
 @Table(name = "t_item_type")
 @ApiModel("商品和服务类型")
 public class ItemType extends CMSEntity {
-    private ItemCate itemCate;
+    private String cateNo;
 
-    @ManyToOne(cascade = {CascadeType.MERGE,CascadeType.REFRESH }, optional = true)
-    @JoinColumn(name="cate_no")
-    public ItemCate getItemCate() {
-        return itemCate;
+    public String getCateNo() {
+        return cateNo;
     }
 
-    public void setItemCate(ItemCate itemCate) {
-        this.itemCate = itemCate;
+    public void setCateNo(String cateNo) {
+        this.cateNo = cateNo;
     }
 
     /**

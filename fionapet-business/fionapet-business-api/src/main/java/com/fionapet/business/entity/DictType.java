@@ -29,18 +29,5 @@ public class DictType extends CMSEntity {
     public void setDictName(String dictName) {
         this.dictName = dictName;
     }
-
-    private Set<DictTypeDetail> details = new HashSet<DictTypeDetail>();
-
-    @JsonIgnore
-    @OneToMany(cascade = { CascadeType.REFRESH })
-    @JoinColumn(name="dict_type_id")
-    public Set<DictTypeDetail> getDetails() {
-        return details;
-    }
-
-    public void setDetails(Set<DictTypeDetail> details) {
-        this.details = details;
-    }
 }
 

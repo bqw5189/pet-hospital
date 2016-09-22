@@ -3,6 +3,7 @@ package com.fionapet.business.service;
 import com.fionapet.business.entity.ItemCate;
 import com.fionapet.business.entity.ItemType;
 import com.fionapet.business.repository.ItemCateDao;
+import com.fionapet.business.repository.ItemTypeDao;
 import com.google.common.collect.ImmutableMap;
 import org.dubbo.x.repository.DaoBase;
 import org.dubbo.x.service.CURDServiceBase;
@@ -11,10 +12,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 /**
  *  商品服务种类
@@ -25,6 +23,8 @@ public class ItemCateServiceImpl extends CURDServiceBase<ItemCate> implements It
     private static final Logger LOGGER = LoggerFactory.getLogger(ItemCateServiceImpl.class);
     @Autowired
     private ItemCateDao itemCateDao;
+    @Autowired
+    private ItemTypeDao itemTypeDao;
 
     @Override
     public DaoBase<ItemCate> getDao() {
@@ -32,7 +32,7 @@ public class ItemCateServiceImpl extends CURDServiceBase<ItemCate> implements It
     }
 
     @Override
-    public Map<String, List<Map<String, String>>> selects(Map<String, String> params) {
+    public Map<String, Collection> selects(Map<String, String> params) {
         LOGGER.debug("selects params:{}", params);
 
         Map<String, String> paramKeyToValue = new HashMap<String, String>();
@@ -42,15 +42,9 @@ public class ItemCateServiceImpl extends CURDServiceBase<ItemCate> implements It
 
         List<ItemCate> dictTypes = itemCateDao.findByCateNameIn(paramKeyToValue.keySet());
 
-        Map<String, List<Map<String, String>>> result = new HashMap<String, List<Map<String, String>>>();
+        Map<String, Collection> result = new HashMap<String, Collection>();
         for (ItemCate dictType: dictTypes){
-            List<Map<String, String>> detals = new ArrayList<Map<String, String>>();
-
-            for (ItemType dictTypeDetail: dictType.getDetails()){
-                detals.add(ImmutableMap.of("code", dictTypeDetail.getItemCode(), "name", dictTypeDetail.getItemName()));
-            }
-
-            result.put(paramKeyToValue.get(dictType.getCateName()), detals);
+            result.put(paramKeyToValue.get(dictType.getCateName()), itemTypeDao.findByCateNo(dictType.getCateNo()));
         }
         return result;
     }

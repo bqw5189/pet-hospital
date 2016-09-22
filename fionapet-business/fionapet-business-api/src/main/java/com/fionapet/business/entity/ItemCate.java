@@ -20,17 +20,6 @@ import java.util.Set;
 @Table(name = "t_item_cate")
 @ApiModel("商品服务种类")
 public class ItemCate extends CMSEntity{
-    private Set<ItemType> details = new HashSet<ItemType>();
-
-    @OneToMany(cascade = { CascadeType.REFRESH, CascadeType.PERSIST,CascadeType.MERGE, CascadeType.REMOVE },mappedBy ="itemCate")
-    public Set<ItemType> getDetails() {
-        return details;
-    }
-
-    public void setDetails(Set<ItemType> details) {
-        this.details = details;
-    }
-
     /**
      * 名称
      */

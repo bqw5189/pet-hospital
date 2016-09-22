@@ -30,7 +30,6 @@ public class DictTypeDaoTest extends SpringTransactionalTestCase {
 
         DictType dictType = dictTypes.get(0);
         Assert.assertNotNull(dictType);
-        Assert.assertTrue(dictType.getDetails().size()>0);
     }
 
     @Test
@@ -41,7 +40,5 @@ public class DictTypeDaoTest extends SpringTransactionalTestCase {
 
         Assert.assertNotNull(dictTypes);
         Assert.assertEquals(dictTypes.size(),2);
-
-
     }
 }

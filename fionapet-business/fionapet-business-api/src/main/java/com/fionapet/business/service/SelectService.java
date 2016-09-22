@@ -1,5 +1,6 @@
 package com.fionapet.business.service;
 
+import java.util.Collection;
 import java.util.List;
 import java.util.Map;
 
@@ -9,5 +10,5 @@ import java.util.Map;
  */
 public interface SelectService{
 
-    Map<String,List<Map<String,String>>> selects(Map<String, String> param);
+    Map<String,Collection> selects(Map<String, String> param);
 }

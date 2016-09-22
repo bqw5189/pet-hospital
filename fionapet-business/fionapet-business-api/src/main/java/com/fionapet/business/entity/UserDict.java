@@ -19,17 +19,6 @@ import java.util.Set;
 @Table(name = "t_user_dict")
 @ApiModel("应用字典大类")
 public class UserDict extends CMSEntity {
-    private Set<UserDictDetail> details = new HashSet<UserDictDetail>();
-
-    @OneToMany(cascade = { CascadeType.REFRESH, CascadeType.PERSIST,CascadeType.MERGE, CascadeType.REMOVE },mappedBy ="userDict")
-    public Set<UserDictDetail> getDetails() {
-        return details;
-    }
-
-    public void setDetails(Set<UserDictDetail> details) {
-        this.details = details;
-    }
-
     /**
      * dictName
      */

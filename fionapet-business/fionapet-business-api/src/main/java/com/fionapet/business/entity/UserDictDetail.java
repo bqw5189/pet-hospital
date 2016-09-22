@@ -14,16 +14,14 @@ import javax.persistence.*;
 @Table(name = "t_user_dict_detail")
 @ApiModel("数据字典 字典明细项")
 public class UserDictDetail extends CMSEntity {
-    private UserDict userDict;
+    private String dictTypeId;
 
-    @ManyToOne(cascade = {CascadeType.MERGE,CascadeType.REFRESH }, optional = true)
-    @JoinColumn(name="dict_type_id")
-    public UserDict getUserDict() {
-        return userDict;
+    public String getDictTypeId() {
+        return dictTypeId;
     }
 
-    public void setUserDict(UserDict userDict) {
-        this.userDict = userDict;
+    public void setDictTypeId(String dictTypeId) {
+        this.dictTypeId = dictTypeId;
     }
 
     /**

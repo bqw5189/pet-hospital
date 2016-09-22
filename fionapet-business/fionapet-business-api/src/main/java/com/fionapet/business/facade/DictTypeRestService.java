@@ -11,6 +11,7 @@ import io.swagger.annotations.ApiParam;
 
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
+import java.util.Collection;
 import java.util.List;
 import java.util.Map;
 
@@ -59,5 +60,5 @@ public interface DictTypeRestService extends CURDRestService<DictType>, SelectRe
     @POST
     @Path("/selects")
     @ApiOperation(value = "下拉列表信息",notes = "下拉列表信息.")
-    RestResult<Map<String,List<Map<String, String>>>> selects(@HeaderParam(ConstantVariable.HEADER_AUTHORIZATION_KEY) String token,Map<String,String> param);
+    RestResult<Map<String,Collection>> selects(@HeaderParam(ConstantVariable.HEADER_AUTHORIZATION_KEY) String token, Map<String,String> param);
 }

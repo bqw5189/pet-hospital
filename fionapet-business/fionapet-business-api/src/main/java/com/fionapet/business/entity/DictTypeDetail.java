@@ -15,26 +15,15 @@ import javax.persistence.*;
 @Table(name = "t_dict_type_detail")
 @ApiModel("宠物字典类型明细")
 public class DictTypeDetail extends CMEntity {
-//    private String dictTypeId;
-//
-//    public String getDictTypeId() {
-//        return dictTypeId;
-//    }
-//
-//    public void setDictTypeId(String dictTypeId) {
-//        this.dictTypeId = dictTypeId;
-//    }
-    //    @JsonIgnore
-//    @ManyToOne(cascade = {CascadeType.REFRESH }, optional = false)
-//    @JoinColumn(name="dict_type_id")
-//    public DictType getDictType() {
-//        return dictType;
-//    }
-//
-//    public void setDictType(DictType dictType) {
-//        this.dictType = dictType;
-//    }
+    private String dictTypeId;
 
+    public String getDictTypeId() {
+        return dictTypeId;
+    }
+
+    public void setDictTypeId(String dictTypeId) {
+        this.dictTypeId = dictTypeId;
+    }
     /**
      * dictDetailCode
      */

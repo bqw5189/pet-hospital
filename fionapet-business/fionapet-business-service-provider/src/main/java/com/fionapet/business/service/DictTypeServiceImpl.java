@@ -3,6 +3,7 @@ package com.fionapet.business.service;
 import com.fionapet.business.entity.DictType;
 import com.fionapet.business.entity.DictTypeDetail;
 import com.fionapet.business.repository.DictTypeDao;
+import com.fionapet.business.repository.DictTypeDetailDao;
 import com.google.common.collect.ImmutableMap;
 import org.dubbo.x.repository.DaoBase;
 import org.dubbo.x.service.CURDServiceBase;
@@ -11,10 +12,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 /**
  *  字典类型
@@ -25,6 +23,8 @@ public class DictTypeServiceImpl extends CURDServiceBase<DictType> implements Di
     private static final Logger LOGGER = LoggerFactory.getLogger(DictTypeServiceImpl.class);
     @Autowired
     private DictTypeDao dictTypeDao;
+    @Autowired
+    private DictTypeDetailDao dictTypeDetailDao;
 
     @Override
     public DaoBase<DictType> getDao() {
@@ -32,7 +32,7 @@ public class DictTypeServiceImpl extends CURDServiceBase<DictType> implements Di
     }
 
     @Override
-    public Map<String, List<Map<String, String>>> selects(Map<String, String> params) {
+    public Map<String, Collection> selects(Map<String, String> params) {
         LOGGER.debug("selects params:{}", params);
 
         Map<String, String> paramKeyToValue = new HashMap<String, String>();
@@ -42,15 +42,10 @@ public class DictTypeServiceImpl extends CURDServiceBase<DictType> implements Di
 
         List<DictType> dictTypes = dictTypeDao.findByDictNameIn(paramKeyToValue.keySet());
 
-        Map<String, List<Map<String, String>>> result = new HashMap<String, List<Map<String, String>>>();
+        Map<String, Collection> result = new HashMap<String, Collection>();
+
         for (DictType dictType: dictTypes){
-            List<Map<String, String>> detals = new ArrayList<Map<String, String>>();
-
-            for (DictTypeDetail dictTypeDetail: dictType.getDetails()){
-                detals.add(ImmutableMap.of("code", dictTypeDetail.getDictDetailCode(), "name", dictTypeDetail.getValueNameCn()));
-            }
-
-            result.put(paramKeyToValue.get(dictType.getDictName()), detals);
+            result.put(paramKeyToValue.get(dictType.getDictName()), dictTypeDetailDao.findByDictTypeId(dictType.getId()));
         }
         return result;
     }

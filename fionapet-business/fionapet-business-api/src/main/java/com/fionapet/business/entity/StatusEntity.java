@@ -36,7 +36,7 @@ public class StatusEntity extends IdEntity {
 
 
 
-    @ManyToOne(cascade = {CascadeType.REFRESH }, optional = true,fetch = FetchType.LAZY)
+    @OneToOne(cascade = {CascadeType.REFRESH }, fetch = FetchType.LAZY)
     @JoinColumn(name="status", referencedColumnName = "dictDetailCode")
     public DictTypeDetail getStatus() {
         return status;
