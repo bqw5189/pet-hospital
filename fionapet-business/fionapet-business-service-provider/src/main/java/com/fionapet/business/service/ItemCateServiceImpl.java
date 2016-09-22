@@ -44,7 +44,7 @@ public class ItemCateServiceImpl extends CURDServiceBase<ItemCate> implements It
 
         Map<String, Collection> result = new HashMap<String, Collection>();
         for (ItemCate dictType: dictTypes){
-            result.put(paramKeyToValue.get(dictType.getCateName()), itemTypeDao.findByCateNo(dictType.getCateNo()));
+            result.put(paramKeyToValue.get(dictType.getCateName()), itemTypeDao.findByCateNo(dictType.getId()));
         }
         return result;
     }
