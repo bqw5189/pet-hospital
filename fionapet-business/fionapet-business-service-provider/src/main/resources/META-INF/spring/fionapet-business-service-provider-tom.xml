@@ -24,7 +24,7 @@
     <bean id="appConfigService" class="com.fionapet.business.service.AppConfigServiceImpl"/>
 
     <dubbo:service interface="com.fionapet.business.service.AppConfigService" ref="appConfigService"
-                   protocol="dubbo" validation="true" timeout="2000" connections="100"/>
+                   protocol="dubbo" validation="true" timeout="5000" />
     <!-- 提醒配置表 api -->
 
 
@@ -32,7 +32,7 @@
     <bean id="petService" class="com.fionapet.business.service.PetServiceImpl"/>
 
     <dubbo:service interface="com.fionapet.business.service.PetService" ref="petService"
-                   protocol="dubbo" validation="true" timeout="2000" connections="100"/>
+                   protocol="dubbo" validation="true" timeout="5000" />
     <!-- 宠物 api -->
 
 
@@ -40,20 +40,20 @@
     <bean id="medicPrescriptionDetailService" class="com.fionapet.business.service.MedicPrescriptionDetailServiceImpl"/>
 
     <dubbo:service interface="com.fionapet.business.service.MedicPrescriptionDetailService" ref="medicPrescriptionDetailService"
-                   protocol="dubbo" validation="true" timeout="2000" connections="100"/>
+                   protocol="dubbo" validation="true" timeout="5000" />
     <!-- 医生处方明细 api -->
 
 	<!-- 医生开处方 api -->
     <bean id="medicPrescriptionService" class="com.fionapet.business.service.MedicPrescriptionServiceImpl"/>
 
     <dubbo:service interface="com.fionapet.business.service.MedicPrescriptionService" ref="medicPrescriptionService"
-                   protocol="dubbo" validation="true" timeout="2000" connections="100"/>
+                   protocol="dubbo" validation="true" timeout="5000" />
     <!-- 医生开处方 api -->
 
 	<!-- 检查处理单据 api -->
     <bean id="checkProcessSheetService" class="com.fionapet.business.service.CheckProcessSheetServiceImpl"/>
 
     <dubbo:service interface="com.fionapet.business.service.CheckProcessSheetService" ref="checkProcessSheetService"
-                   protocol="dubbo" validation="true" timeout="2000" connections="100"/>
+                   protocol="dubbo" validation="true" timeout="5000" />
     <!-- 检查处理单据 api -->
 </beans>

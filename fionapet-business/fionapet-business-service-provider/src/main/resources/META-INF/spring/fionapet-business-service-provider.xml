@@ -31,14 +31,14 @@
     <bean id="petSmallRaceService" class="com.fionapet.business.service.PetSmallRaceServiceImpl"/>
 
     <dubbo:service interface="com.fionapet.business.service.PetSmallRaceService" ref="petSmallRaceService"
-                   protocol="dubbo" validation="true" timeout="2000" />
+                   protocol="dubbo" validation="true" timeout="5000" />
     <!-- pet race api -->
 
     <!-- 应用配置 api -->
     <bean id="appConfigService" class="com.fionapet.business.service.AppConfigServiceImpl"/>
 
     <dubbo:service interface="com.fionapet.business.service.AppConfigService" ref="appConfigService"
-                   protocol="dubbo" validation="true" timeout="2000" />
+                   protocol="dubbo" validation="true" timeout="5000" />
     <!-- 应用配置 api -->
 
 
@@ -46,7 +46,7 @@
     <bean id="medicPrescriptionService" class="com.fionapet.business.service.MedicPrescriptionServiceImpl"/>
 
     <dubbo:service interface="com.fionapet.business.service.MedicPrescriptionService" ref="medicPrescriptionService"
-                   protocol="dubbo" validation="true" timeout="2000" />
+                   protocol="dubbo" validation="true" timeout="5000" />
     <!-- 医生处方明细 api -->
 
 
@@ -54,7 +54,7 @@
     <bean id="phoneMessageService" class="com.fionapet.business.service.PhoneMessageServiceImpl"/>
 
     <dubbo:service interface="com.fionapet.business.service.PhoneMessageService" ref="phoneMessageService"
-                   protocol="dubbo" validation="true" timeout="2000" />
+                   protocol="dubbo" validation="true" timeout="5000" />
     <!-- 电话信息表 api -->
 
 
@@ -62,7 +62,7 @@
     <bean id="warehouseMoverecordService" class="com.fionapet.business.service.WarehouseMoverecordServiceImpl"/>
 
     <dubbo:service interface="com.fionapet.business.service.WarehouseMoverecordService" ref="warehouseMoverecordService"
-                   protocol="dubbo" validation="true" timeout="2000" />
+                   protocol="dubbo" validation="true" timeout="5000" />
     <!-- 移库记录 api -->
 
 
@@ -70,7 +70,7 @@
     <bean id="warehouseInventoryService" class="com.fionapet.business.service.WarehouseInventoryServiceImpl"/>
 
     <dubbo:service interface="com.fionapet.business.service.WarehouseInventoryService" ref="warehouseInventoryService"
-                   protocol="dubbo" validation="true" timeout="2000" />
+                   protocol="dubbo" validation="true" timeout="5000" />
     <!-- 仓库存货清单 api -->
 
 
@@ -78,7 +78,7 @@
     <bean id="medicChemicalExamtypeDetailService" class="com.fionapet.business.service.MedicChemicalExamtypeDetailServiceImpl"/>
 
     <dubbo:service interface="com.fionapet.business.service.MedicChemicalExamtypeDetailService" ref="medicChemicalExamtypeDetailService"
-                   protocol="dubbo" validation="true" timeout="2000" />
+                   protocol="dubbo" validation="true" timeout="5000" />
     <!-- 医生化验实例类型细节表 api -->
 
 
@@ -86,7 +86,7 @@
     <bean id="warehouseBackrecordService" class="com.fionapet.business.service.WarehouseBackrecordServiceImpl"/>
 
     <dubbo:service interface="com.fionapet.business.service.WarehouseBackrecordService" ref="warehouseBackrecordService"
-                   protocol="dubbo" validation="true" timeout="2000" />
+                   protocol="dubbo" validation="true" timeout="5000" />
     <!-- 退回记录 api -->
 
 
@@ -94,7 +94,7 @@
     <bean id="storeDirectSellService" class="com.fionapet.business.service.StoreDirectSellServiceImpl"/>
 
     <dubbo:service interface="com.fionapet.business.service.StoreDirectSellService" ref="storeDirectSellService"
-                   protocol="dubbo" validation="true" timeout="2000" />
+                   protocol="dubbo" validation="true" timeout="5000" />
     <!-- 仓库直销主表 api -->
 
 
@@ -102,7 +102,7 @@
     <bean id="medicVaccineService" class="com.fionapet.business.service.MedicVaccineServiceImpl"/>
 
     <dubbo:service interface="com.fionapet.business.service.MedicVaccineService" ref="medicVaccineService"
-                   protocol="dubbo" validation="true" timeout="2000" />
+                   protocol="dubbo" validation="true" timeout="5000" />
     <!-- 育苗表 api -->
 
 
@@ -110,7 +110,7 @@
     <bean id="medicSuppliesService" class="com.fionapet.business.service.MedicSuppliesServiceImpl"/>
 
     <dubbo:service interface="com.fionapet.business.service.MedicSuppliesService" ref="medicSuppliesService"
-                   protocol="dubbo" validation="true" timeout="2000" />
+                   protocol="dubbo" validation="true" timeout="5000" />
     <!-- 医生供应量表 api -->
 
 
@@ -118,7 +118,7 @@
     <bean id="rewardPointLogService" class="com.fionapet.business.service.RewardPointLogServiceImpl"/>
 
     <dubbo:service interface="com.fionapet.business.service.RewardPointLogService" ref="rewardPointLogService"
-                   protocol="dubbo" validation="true" timeout="2000" />
+                   protocol="dubbo" validation="true" timeout="5000" />
     <!-- 序列号 api -->
 
 
@@ -126,7 +126,7 @@
     <bean id="warehouseBackrecordDetailService" class="com.fionapet.business.service.WarehouseBackrecordDetailServiceImpl"/>
 
     <dubbo:service interface="com.fionapet.business.service.WarehouseBackrecordDetailService" ref="warehouseBackrecordDetailService"
-                   protocol="dubbo" validation="true" timeout="2000" />
+                   protocol="dubbo" validation="true" timeout="5000" />
     <!-- 退回记录明细 api -->
 
 
@@ -134,7 +134,7 @@
     <bean id="returnCommodityService" class="com.fionapet.business.service.ReturnCommodityServiceImpl"/>
 
     <dubbo:service interface="com.fionapet.business.service.ReturnCommodityService" ref="returnCommodityService"
-                   protocol="dubbo" validation="true" timeout="2000" />
+                   protocol="dubbo" validation="true" timeout="5000" />
     <!-- 返回商品主表 api -->
 
 
@@ -142,7 +142,7 @@
     <bean id="medicPrescriptionDetailService" class="com.fionapet.business.service.MedicPrescriptionDetailServiceImpl"/>
 
     <dubbo:service interface="com.fionapet.business.service.MedicPrescriptionDetailService" ref="medicPrescriptionDetailService"
-                   protocol="dubbo" validation="true" timeout="2000" />
+                   protocol="dubbo" validation="true" timeout="5000" />
     <!-- 医生处方明细 api -->
 
 
@@ -150,7 +150,7 @@
     <bean id="microSmsConfigService" class="com.fionapet.business.service.MicroSmsConfigServiceImpl"/>
 
     <dubbo:service interface="com.fionapet.business.service.MicroSmsConfigService" ref="microSmsConfigService"
-                   protocol="dubbo" validation="true" timeout="2000" />
+                   protocol="dubbo" validation="true" timeout="5000" />
     <!-- 消息提醒配置表 api -->
 
 
@@ -158,7 +158,7 @@
     <bean id="warehouseInrecordService" class="com.fionapet.business.service.WarehouseInrecordServiceImpl"/>
 
     <dubbo:service interface="com.fionapet.business.service.WarehouseInrecordService" ref="warehouseInrecordService"
-                   protocol="dubbo" validation="true" timeout="2000" />
+                   protocol="dubbo" validation="true" timeout="5000" />
     <!-- 进库记录 api -->
 
 
@@ -166,7 +166,7 @@
     <bean id="medicRegisterRecordService" class="com.fionapet.business.service.MedicRegisterRecordServiceImpl"/>
 
     <dubbo:service interface="com.fionapet.business.service.MedicRegisterRecordService" ref="medicRegisterRecordService"
-                   protocol="dubbo" validation="true" timeout="2000" />
+                   protocol="dubbo" validation="true" timeout="5000" />
     <!-- 医生登记记录明细 api -->
 
 
@@ -174,7 +174,7 @@
     <bean id="prepayMoneyService" class="com.fionapet.business.service.PrepayMoneyServiceImpl"/>
 
     <dubbo:service interface="com.fionapet.business.service.PrepayMoneyService" ref="prepayMoneyService"
-                   protocol="dubbo" validation="true" timeout="2000" />
+                   protocol="dubbo" validation="true" timeout="5000" />
     <!-- 提前付费表 api -->
 
 
@@ -182,7 +182,7 @@
     <bean id="warehouseInrecordDetailService" class="com.fionapet.business.service.WarehouseInrecordDetailServiceImpl"/>
 
     <dubbo:service interface="com.fionapet.business.service.WarehouseInrecordDetailService" ref="warehouseInrecordDetailService"
-                   protocol="dubbo" validation="true" timeout="2000" />
+                   protocol="dubbo" validation="true" timeout="5000" />
     <!-- 进库记录明细 api -->
 
 
@@ -190,7 +190,7 @@
     <bean id="promptService" class="com.fionapet.business.service.PromptServiceImpl"/>
 
     <dubbo:service interface="com.fionapet.business.service.PromptService" ref="promptService"
-                   protocol="dubbo" validation="true" timeout="2000" />
+                   protocol="dubbo" validation="true" timeout="5000" />
     <!-- 急诊表 api -->
 
 
@@ -198,7 +198,7 @@
     <bean id="serviceDetailService" class="com.fionapet.business.service.ServiceDetailServiceImpl"/>
 
     <dubbo:service interface="com.fionapet.business.service.ServiceDetailService" ref="serviceDetailService"
-                   protocol="dubbo" validation="true" timeout="2000" />
+                   protocol="dubbo" validation="true" timeout="5000" />
     <!-- 服务明细 api -->
 
 
@@ -206,7 +206,7 @@
     <bean id="checkProcessSheetService" class="com.fionapet.business.service.CheckProcessSheetServiceImpl"/>
 
     <dubbo:service interface="com.fionapet.business.service.CheckProcessSheetService" ref="checkProcessSheetService"
-                   protocol="dubbo" validation="true" timeout="2000" />
+                   protocol="dubbo" validation="true" timeout="5000" />
     <!-- 检查处理单据 api -->
 
 
@@ -214,7 +214,7 @@
     <bean id="warehouseOutrecordService" class="com.fionapet.business.service.WarehouseOutrecordServiceImpl"/>
 
     <dubbo:service interface="com.fionapet.business.service.WarehouseOutrecordService" ref="warehouseOutrecordService"
-                   protocol="dubbo" validation="true" timeout="2000" />
+                   protocol="dubbo" validation="true" timeout="5000" />
     <!-- 出库记录 api -->
 
 
@@ -222,7 +222,7 @@
     <bean id="medicChemicalExamtypeService" class="com.fionapet.business.service.MedicChemicalExamtypeServiceImpl"/>
 
     <dubbo:service interface="com.fionapet.business.service.MedicChemicalExamtypeService" ref="medicChemicalExamtypeService"
-                   protocol="dubbo" validation="true" timeout="2000" />
+                   protocol="dubbo" validation="true" timeout="5000" />
     <!-- 医生化验实例类型细节表 api -->
 
 
@@ -230,7 +230,7 @@
     <bean id="medicMedictreatRecordService" class="com.fionapet.business.service.MedicMedictreatRecordServiceImpl"/>
 
     <dubbo:service interface="com.fionapet.business.service.MedicMedictreatRecordService" ref="medicMedictreatRecordService"
-                   protocol="dubbo" validation="true" timeout="2000" />
+                   protocol="dubbo" validation="true" timeout="5000" />
     <!-- 医生处理记录 api -->
 
 
@@ -238,7 +238,7 @@
     <bean id="rewardpointExchangeDetailService" class="com.fionapet.business.service.RewardpointExchangeDetailServiceImpl"/>
 
     <dubbo:service interface="com.fionapet.business.service.RewardpointExchangeDetailService" ref="rewardpointExchangeDetailService"
-                   protocol="dubbo" validation="true" timeout="2000" />
+                   protocol="dubbo" validation="true" timeout="5000" />
     <!-- 赔偿交换细节 api -->
 
 
@@ -246,7 +246,7 @@
     <bean id="warehouseOutrecordDetailService" class="com.fionapet.business.service.WarehouseOutrecordDetailServiceImpl"/>
 
     <dubbo:service interface="com.fionapet.business.service.WarehouseOutrecordDetailService" ref="warehouseOutrecordDetailService"
-                   protocol="dubbo" validation="true" timeout="2000" />
+                   protocol="dubbo" validation="true" timeout="5000" />
     <!-- 出库记录明细 api -->
 
 
@@ -254,7 +254,7 @@
     <bean id="rewardpointExchangeService" class="com.fionapet.business.service.RewardpointExchangeServiceImpl"/>
 
     <dubbo:service interface="com.fionapet.business.service.RewardpointExchangeService" ref="rewardpointExchangeService"
-                   protocol="dubbo" validation="true" timeout="2000" />
+                   protocol="dubbo" validation="true" timeout="5000" />
     <!-- 赔偿交换 api -->
 
 
@@ -262,7 +262,7 @@
     <bean id="serialNumberService" class="com.fionapet.business.service.SerialNumberServiceImpl"/>
 
     <dubbo:service interface="com.fionapet.business.service.SerialNumberService" ref="serialNumberService"
-                   protocol="dubbo" validation="true" timeout="2000" />
+                   protocol="dubbo" validation="true" timeout="5000" />
     <!-- 序列号 api -->
 
 
@@ -270,7 +270,7 @@
     <bean id="vipInputTemService" class="com.fionapet.business.service.VipInputTemServiceImpl"/>
 
     <dubbo:service interface="com.fionapet.business.service.VipInputTemService" ref="vipInputTemService"
-                   protocol="dubbo" validation="true" timeout="2000" />
+                   protocol="dubbo" validation="true" timeout="5000" />
     <!-- VIP信息 api -->
 
 
@@ -278,7 +278,7 @@
     <bean id="approveStatusEntityService" class="com.fionapet.business.service.ApproveStatusEntityServiceImpl"/>
 
     <dubbo:service interface="com.fionapet.business.service.ApproveStatusEntityService" ref="approveStatusEntityService"
-                   protocol="dubbo" validation="true" timeout="2000" />
+                   protocol="dubbo" validation="true" timeout="5000" />
     <!-- 审批状态实体 api -->
 
 
@@ -286,7 +286,7 @@
     <bean id="warehouseMoverecordDetailService" class="com.fionapet.business.service.WarehouseMoverecordDetailServiceImpl"/>
 
     <dubbo:service interface="com.fionapet.business.service.WarehouseMoverecordDetailService" ref="warehouseMoverecordDetailService"
-                   protocol="dubbo" validation="true" timeout="2000" />
+                   protocol="dubbo" validation="true" timeout="5000" />
     <!-- 移库记录明细 api -->
 
 
@@ -294,7 +294,7 @@
     <bean id="storeDirectSellDetailService" class="com.fionapet.business.service.StoreDirectSellDetailServiceImpl"/>
 
     <dubbo:service interface="com.fionapet.business.service.StoreDirectSellDetailService" ref="storeDirectSellDetailService"
-                   protocol="dubbo" validation="true" timeout="2000" />
+                   protocol="dubbo" validation="true" timeout="5000" />
     <!-- 仓库直销明细 api -->
 
 
@@ -302,7 +302,7 @@
     <bean id="returnCommodityDetailService" class="com.fionapet.business.service.ReturnCommodityDetailServiceImpl"/>
 
     <dubbo:service interface="com.fionapet.business.service.ReturnCommodityDetailService" ref="returnCommodityDetailService"
-                   protocol="dubbo" validation="true" timeout="2000" />
+                   protocol="dubbo" validation="true" timeout="5000" />
     <!-- 返回商品明细 api -->
 
 
@@ -310,7 +310,7 @@
     <bean id="serviceService" class="com.fionapet.business.service.ServiceServiceImpl"/>
 
     <dubbo:service interface="com.fionapet.business.service.ServiceService" ref="serviceService"
-                   protocol="dubbo" validation="true" timeout="2000" />
+                   protocol="dubbo" validation="true" timeout="5000" />
     <!-- 服务主表 api -->
 
 
@@ -318,7 +318,7 @@
     <bean id="inHospitalPrescriptionDetailService" class="com.fionapet.business.service.InHospitalPrescriptionDetailServiceImpl"/>
 
     <dubbo:service interface="com.fionapet.business.service.InHospitalPrescriptionDetailService" ref="inHospitalPrescriptionDetailService"
-                   protocol="dubbo" validation="true" timeout="2000" />
+                   protocol="dubbo" validation="true" timeout="5000" />
     <!-- 住院处方明细 api -->
 
 
@@ -326,7 +326,7 @@
     <bean id="inHospitalPrescriptionService" class="com.fionapet.business.service.InHospitalPrescriptionServiceImpl"/>
 
     <dubbo:service interface="com.fionapet.business.service.InHospitalPrescriptionService" ref="inHospitalPrescriptionService"
-                   protocol="dubbo" validation="true" timeout="2000" />
+                   protocol="dubbo" validation="true" timeout="5000" />
     <!-- 住院处方 api -->
 
 
@@ -334,7 +334,7 @@
     <bean id="baseMedicPrescriptionDetailService" class="com.fionapet.business.service.BaseMedicPrescriptionDetailServiceImpl"/>
 
     <dubbo:service interface="com.fionapet.business.service.BaseMedicPrescriptionDetailService" ref="baseMedicPrescriptionDetailService"
-                   protocol="dubbo" validation="true" timeout="2000" />
+                   protocol="dubbo" validation="true" timeout="5000" />
     <!-- 处方明细 api -->
 
 
@@ -342,7 +342,7 @@
     <bean id="baseMedicPrescriptionService" class="com.fionapet.business.service.BaseMedicPrescriptionServiceImpl"/>
 
     <dubbo:service interface="com.fionapet.business.service.BaseMedicPrescriptionService" ref="baseMedicPrescriptionService"
-                   protocol="dubbo" validation="true" timeout="2000" />
+                   protocol="dubbo" validation="true" timeout="5000" />
     <!-- 处方 api -->
 
 
@@ -350,7 +350,7 @@
     <bean id="petService" class="com.fionapet.business.service.PetServiceImpl"/>
 
     <dubbo:service interface="com.fionapet.business.service.PetService" ref="petService"
-                   protocol="dubbo" validation="true" timeout="2000" />
+                   protocol="dubbo" validation="true" timeout="5000" />
     <!-- 宠物 api -->
 
 
@@ -358,7 +358,7 @@
     <bean id="gestService" class="com.fionapet.business.service.GestServiceImpl"/>
 
     <dubbo:service interface="com.fionapet.business.service.GestService" ref="gestService"
-                   protocol="dubbo" validation="true" timeout="2000" />
+                   protocol="dubbo" validation="true" timeout="5000" />
     <!-- 会员 api -->
 
 
@@ -366,7 +366,7 @@
     <bean id="inventoryLogService" class="com.fionapet.business.service.InventoryLogServiceImpl"/>
 
     <dubbo:service interface="com.fionapet.business.service.InventoryLogService" ref="inventoryLogService"
-                   protocol="dubbo" validation="true" timeout="2000" />
+                   protocol="dubbo" validation="true" timeout="5000" />
     <!-- 存货清单日志表 api -->
 
 
@@ -374,7 +374,7 @@
     <bean id="itemCountChangeReasonService" class="com.fionapet.business.service.ItemCountChangeReasonServiceImpl"/>
 
     <dubbo:service interface="com.fionapet.business.service.ItemCountChangeReasonService" ref="itemCountChangeReasonService"
-                   protocol="dubbo" validation="true" timeout="2000" />
+                   protocol="dubbo" validation="true" timeout="5000" />
     <!-- 种类数量更改原因表 api -->
 
 
@@ -382,7 +382,7 @@
     <bean id="enterpriseService" class="com.fionapet.business.service.EnterpriseServiceImpl"/>
 
     <dubbo:service interface="com.fionapet.business.service.EnterpriseService" ref="enterpriseService"
-                   protocol="dubbo" validation="true" timeout="2000" />
+                   protocol="dubbo" validation="true" timeout="5000" />
     <!-- 企业信息表 api -->
 
 
@@ -390,7 +390,7 @@
     <bean id="fosterRecordDetailService" class="com.fionapet.business.service.FosterRecordDetailServiceImpl"/>
 
     <dubbo:service interface="com.fionapet.business.service.FosterRecordDetailService" ref="fosterRecordDetailService"
-                   protocol="dubbo" validation="true" timeout="2000" />
+                   protocol="dubbo" validation="true" timeout="5000" />
     <!-- 养育记录明细表 api -->
 
 
@@ -398,7 +398,7 @@
     <bean id="inHospitalRecordDetailService" class="com.fionapet.business.service.InHospitalRecordDetailServiceImpl"/>
 
     <dubbo:service interface="com.fionapet.business.service.InHospitalRecordDetailService" ref="inHospitalRecordDetailService"
-                   protocol="dubbo" validation="true" timeout="2000" />
+                   protocol="dubbo" validation="true" timeout="5000" />
     <!-- 医院记录明细表 api -->
 
 
@@ -406,7 +406,7 @@
     <bean id="fifoLogService" class="com.fionapet.business.service.FifoLogServiceImpl"/>
 
     <dubbo:service interface="com.fionapet.business.service.FifoLogService" ref="fifoLogService"
-                   protocol="dubbo" validation="true" timeout="2000" />
+                   protocol="dubbo" validation="true" timeout="5000" />
     <!-- 进库出库日志 api -->
 
 
@@ -414,7 +414,7 @@
     <bean id="itemtypeChemicalexamService" class="com.fionapet.business.service.ItemtypeChemicalexamServiceImpl"/>
 
     <dubbo:service interface="com.fionapet.business.service.ItemtypeChemicalexamService" ref="itemtypeChemicalexamService"
-                   protocol="dubbo" validation="true" timeout="2000" />
+                   protocol="dubbo" validation="true" timeout="5000" />
     <!-- 类型化验实例表 api -->
 
 
@@ -422,7 +422,7 @@
     <bean id="itemSingleDetailService" class="com.fionapet.business.service.ItemSingleDetailServiceImpl"/>
 
     <dubbo:service interface="com.fionapet.business.service.ItemSingleDetailService" ref="itemSingleDetailService"
-                   protocol="dubbo" validation="true" timeout="2000" />
+                   protocol="dubbo" validation="true" timeout="5000" />
     <!-- 类型化验实例明细表 api -->
 
 
@@ -430,7 +430,7 @@
     <bean id="inHospitalRecordService" class="com.fionapet.business.service.InHospitalRecordServiceImpl"/>
 
     <dubbo:service interface="com.fionapet.business.service.InHospitalRecordService" ref="inHospitalRecordService"
-                   protocol="dubbo" validation="true" timeout="2000" />
+                   protocol="dubbo" validation="true" timeout="5000" />
     <!-- 医院记录表 api -->
 
 
@@ -438,7 +438,7 @@
     <bean id="fosterHealthService" class="com.fionapet.business.service.FosterHealthServiceImpl"/>
 
     <dubbo:service interface="com.fionapet.business.service.FosterHealthService" ref="fosterHealthService"
-                   protocol="dubbo" validation="true" timeout="2000" />
+                   protocol="dubbo" validation="true" timeout="5000" />
     <!-- 养育健康状况表 api -->
 
 
@@ -446,7 +446,7 @@
     <bean id="fosterRecordService" class="com.fionapet.business.service.FosterRecordServiceImpl"/>
 
     <dubbo:service interface="com.fionapet.business.service.FosterRecordService" ref="fosterRecordService"
-                   protocol="dubbo" validation="true" timeout="2000" />
+                   protocol="dubbo" validation="true" timeout="5000" />
     <!-- 养育记录主表 api -->
 
 
@@ -454,7 +454,7 @@
     <bean id="inputMoneyRecordService" class="com.fionapet.business.service.InputMoneyRecordServiceImpl"/>
 
     <dubbo:service interface="com.fionapet.business.service.InputMoneyRecordService" ref="inputMoneyRecordService"
-                   protocol="dubbo" validation="true" timeout="2000" />
+                   protocol="dubbo" validation="true" timeout="5000" />
     <!-- 收款记录表 api -->
 
 
@@ -462,7 +462,7 @@
     <bean id="itemCountService" class="com.fionapet.business.service.ItemCountServiceImpl"/>
 
     <dubbo:service interface="com.fionapet.business.service.ItemCountService" ref="itemCountService"
-                   protocol="dubbo" validation="true" timeout="2000" />
+                   protocol="dubbo" validation="true" timeout="5000" />
     <!-- 种类数量更改原因表 api -->
 
 
@@ -470,7 +470,7 @@
     <bean id="checkWarehouseService" class="com.fionapet.business.service.CheckWarehouseServiceImpl"/>
 
     <dubbo:service interface="com.fionapet.business.service.CheckWarehouseService" ref="checkWarehouseService"
-                   protocol="dubbo" validation="true" timeout="2000" />
+                   protocol="dubbo" validation="true" timeout="5000" />
     <!-- 仓库检查主表 api -->
 
 
@@ -478,7 +478,7 @@
     <bean id="checkWarehouseDetailService" class="com.fionapet.business.service.CheckWarehouseDetailServiceImpl"/>
 
     <dubbo:service interface="com.fionapet.business.service.CheckWarehouseDetailService" ref="checkWarehouseDetailService"
-                   protocol="dubbo" validation="true" timeout="2000" />
+                   protocol="dubbo" validation="true" timeout="5000" />
     <!-- 检查仓库明细表 api -->
 
 
@@ -486,7 +486,7 @@
     <bean id="financeSettleAccountsDetailService" class="com.fionapet.business.service.FinanceSettleAccountsDetailServiceImpl"/>
 
     <dubbo:service interface="com.fionapet.business.service.FinanceSettleAccountsDetailService" ref="financeSettleAccountsDetailService"
-                   protocol="dubbo" validation="true" timeout="2000" />
+                   protocol="dubbo" validation="true" timeout="5000" />
     <!-- 资金账户明细表 api -->
 
 
@@ -494,7 +494,7 @@
     <bean id="itemtypeSuppliesService" class="com.fionapet.business.service.ItemtypeSuppliesServiceImpl"/>
 
     <dubbo:service interface="com.fionapet.business.service.ItemtypeSuppliesService" ref="itemtypeSuppliesService"
-                   protocol="dubbo" validation="true" timeout="2000" />
+                   protocol="dubbo" validation="true" timeout="5000" />
     <!-- 供应量表 api -->
 
 
@@ -502,7 +502,7 @@
     <bean id="financeSettleAccountsService" class="com.fionapet.business.service.FinanceSettleAccountsServiceImpl"/>
 
     <dubbo:service interface="com.fionapet.business.service.FinanceSettleAccountsService" ref="financeSettleAccountsService"
-                   protocol="dubbo" validation="true" timeout="2000" />
+                   protocol="dubbo" validation="true" timeout="5000" />
     <!-- 资金账号表 api -->
 
 
@@ -510,7 +510,7 @@
     <bean id="medicApplianceService" class="com.fionapet.business.service.MedicApplianceServiceImpl"/>
 
     <dubbo:service interface="com.fionapet.business.service.MedicApplianceService" ref="medicApplianceService"
-                   protocol="dubbo" validation="true" timeout="2000" />
+                   protocol="dubbo" validation="true" timeout="5000" />
     <!-- 医生器具表 api -->
 
 
@@ -518,7 +518,7 @@
     <bean id="expensesExpendService" class="com.fionapet.business.service.ExpensesExpendServiceImpl"/>
 
     <dubbo:service interface="com.fionapet.business.service.ExpensesExpendService" ref="expensesExpendService"
-                   protocol="dubbo" validation="true" timeout="2000" />
+                   protocol="dubbo" validation="true" timeout="5000" />
     <!-- 付出费用表 api -->
 
 
@@ -526,7 +526,7 @@
     <bean id="gestPaidRecordService" class="com.fionapet.business.service.GestPaidRecordServiceImpl"/>
 
     <dubbo:service interface="com.fionapet.business.service.GestPaidRecordService" ref="gestPaidRecordService"
-                   protocol="dubbo" validation="true" timeout="2000" />
+                   protocol="dubbo" validation="true" timeout="5000" />
     <!-- 顾客影像记录表 api -->
 
 
@@ -534,7 +534,7 @@
     <bean id="userDictDetailService" class="com.fionapet.business.service.UserDictDetailServiceImpl"/>
 
     <dubbo:service interface="com.fionapet.business.service.UserDictDetailService" ref="userDictDetailService"
-                   protocol="dubbo" validation="true" timeout="2000" />
+                   protocol="dubbo" validation="true" timeout="5000" />
     <!-- 数据字典 字典明细项 api -->
 
 
@@ -542,7 +542,7 @@
     <bean id="userDictService" class="com.fionapet.business.service.UserDictServiceImpl"/>
 
     <dubbo:service interface="com.fionapet.business.service.UserDictService" ref="userDictService"
-                   protocol="dubbo" validation="true" timeout="2000" />
+                   protocol="dubbo" validation="true" timeout="5000" />
     <!-- 用户字典 api -->
 
 
@@ -550,7 +550,7 @@
     <bean id="trprescriptionTemplateService" class="com.fionapet.business.service.TrprescriptionTemplateServiceImpl"/>
 
     <dubbo:service interface="com.fionapet.business.service.TrprescriptionTemplateService" ref="trprescriptionTemplateService"
-                   protocol="dubbo" validation="true" timeout="2000" />
+                   protocol="dubbo" validation="true" timeout="5000" />
     <!-- 药方模版 api -->
 
 
@@ -558,7 +558,7 @@
     <bean id="gestLevelService" class="com.fionapet.business.service.GestLevelServiceImpl"/>
 
     <dubbo:service interface="com.fionapet.business.service.GestLevelService" ref="gestLevelService"
-                   protocol="dubbo" validation="true" timeout="2000" />
+                   protocol="dubbo" validation="true" timeout="5000" />
     <!-- 会员等级管理 api -->
 
 
@@ -566,7 +566,7 @@
     <bean id="personsCmAppService" class="com.fionapet.business.service.PersonsCmAppServiceImpl"/>
 
     <dubbo:service interface="com.fionapet.business.service.PersonsCmAppService" ref="personsCmAppService"
-                   protocol="dubbo" validation="true" timeout="2000" />
+                   protocol="dubbo" validation="true" timeout="5000" />
     <!-- 宠物主人 api -->
 
 
@@ -574,7 +574,7 @@
     <bean id="medicChemicalExamDetailService" class="com.fionapet.business.service.MedicChemicalExamDetailServiceImpl"/>
 
     <dubbo:service interface="com.fionapet.business.service.MedicChemicalExamDetailService" ref="medicChemicalExamDetailService"
-                   protocol="dubbo" validation="true" timeout="2000" />
+                   protocol="dubbo" validation="true" timeout="5000" />
     <!-- 化验单明细 api -->
 
 
@@ -582,7 +582,7 @@
     <bean id="medicVedioExamService" class="com.fionapet.business.service.MedicVedioExamServiceImpl"/>
 
     <dubbo:service interface="com.fionapet.business.service.MedicVedioExamService" ref="medicVedioExamService"
-                   protocol="dubbo" validation="true" timeout="2000" />
+                   protocol="dubbo" validation="true" timeout="5000" />
     <!-- 医生影像样例 api -->
 
 
@@ -590,7 +590,7 @@
     <bean id="businesCateService" class="com.fionapet.business.service.BusinesCateServiceImpl"/>
 
     <dubbo:service interface="com.fionapet.business.service.BusinesCateService" ref="businesCateService"
-                   protocol="dubbo" validation="true" timeout="2000" />
+                   protocol="dubbo" validation="true" timeout="5000" />
     <!-- 业务类型表 api -->
 
 
@@ -598,7 +598,7 @@
     <bean id="itemTypeService" class="com.fionapet.business.service.ItemTypeServiceImpl"/>
 
     <dubbo:service interface="com.fionapet.business.service.ItemTypeService" ref="itemTypeService"
-                   protocol="dubbo" validation="true" timeout="2000" />
+                   protocol="dubbo" validation="true" timeout="5000" />
     <!-- 商品类型 api -->
 
 
@@ -606,7 +606,7 @@
     <bean id="dealerService" class="com.fionapet.business.service.DealerServiceImpl"/>
 
     <dubbo:service interface="com.fionapet.business.service.DealerService" ref="dealerService"
-                   protocol="dubbo" validation="true" timeout="2000" />
+                   protocol="dubbo" validation="true" timeout="5000" />
     <!-- 代理商 api -->
 
 
@@ -614,7 +614,7 @@
     <bean id="prescriptionTemplateDetailService" class="com.fionapet.business.service.PrescriptionTemplateDetailServiceImpl"/>
 
     <dubbo:service interface="com.fionapet.business.service.PrescriptionTemplateDetailService" ref="prescriptionTemplateDetailService"
-                   protocol="dubbo" validation="true" timeout="2000" />
+                   protocol="dubbo" validation="true" timeout="5000" />
     <!-- 处方模版明细 api -->
 
 
@@ -622,7 +622,7 @@
     <bean id="itemDiscountRateService" class="com.fionapet.business.service.ItemDiscountRateServiceImpl"/>
 
     <dubbo:service interface="com.fionapet.business.service.ItemDiscountRateService" ref="itemDiscountRateService"
-                   protocol="dubbo" validation="true" timeout="2000" />
+                   protocol="dubbo" validation="true" timeout="5000" />
     <!-- 业务类型打折率 api -->
 
 
@@ -630,7 +630,7 @@
     <bean id="expensesCateService" class="com.fionapet.business.service.ExpensesCateServiceImpl"/>
 
     <dubbo:service interface="com.fionapet.business.service.ExpensesCateService" ref="expensesCateService"
-                   protocol="dubbo" validation="true" timeout="2000" />
+                   protocol="dubbo" validation="true" timeout="5000" />
     <!-- 费用类型 api -->
 
 
@@ -638,7 +638,7 @@
     <bean id="trprescriptionTemplateDetailService" class="com.fionapet.business.service.TrprescriptionTemplateDetailServiceImpl"/>
 
     <dubbo:service interface="com.fionapet.business.service.TrprescriptionTemplateDetailService" ref="trprescriptionTemplateDetailService"
-                   protocol="dubbo" validation="true" timeout="2000" />
+                   protocol="dubbo" validation="true" timeout="5000" />
     <!-- 药方模版明细 api -->
 
 
@@ -646,7 +646,7 @@
     <bean id="trprescriptionTemplateTypeService" class="com.fionapet.business.service.TrprescriptionTemplateTypeServiceImpl"/>
 
     <dubbo:service interface="com.fionapet.business.service.TrprescriptionTemplateTypeService" ref="trprescriptionTemplateTypeService"
-                   protocol="dubbo" validation="true" timeout="2000" />
+                   protocol="dubbo" validation="true" timeout="5000" />
     <!-- 药方模版类型 api -->
 
 
@@ -654,7 +654,7 @@
     <bean id="petRaceService" class="com.fionapet.business.service.PetRaceServiceImpl"/>
 
     <dubbo:service interface="com.fionapet.business.service.PetRaceService" ref="petRaceService"
-                   protocol="dubbo" validation="true" timeout="2000" />
+                   protocol="dubbo" validation="true" timeout="5000" />
     <!-- 宠物种类 api -->
 
 
@@ -662,7 +662,7 @@
     <bean id="personsAppointmentService" class="com.fionapet.business.service.PersonsAppointmentServiceImpl"/>
 
     <dubbo:service interface="com.fionapet.business.service.PersonsAppointmentService" ref="personsAppointmentService"
-                   protocol="dubbo" validation="true" timeout="2000" />
+                   protocol="dubbo" validation="true" timeout="5000" />
     <!-- 宠物主人 api -->
 
 
@@ -670,7 +670,7 @@
     <bean id="medicChemicalexamService" class="com.fionapet.business.service.MedicChemicalexamServiceImpl"/>
 
     <dubbo:service interface="com.fionapet.business.service.MedicChemicalexamService" ref="medicChemicalexamService"
-                   protocol="dubbo" validation="true" timeout="2000" />
+                   protocol="dubbo" validation="true" timeout="5000" />
     <!-- 化验单明细 api -->
 
 
@@ -678,7 +678,7 @@
     <bean id="itemCateService" class="com.fionapet.business.service.ItemCateServiceImpl"/>
 
     <dubbo:service interface="com.fionapet.business.service.ItemCateService" ref="itemCateService"
-                   protocol="dubbo" validation="true" timeout="2000" />
+                   protocol="dubbo" validation="true" timeout="5000" />
     <!-- 商品服务种类 api -->
 
 
@@ -686,7 +686,7 @@
     <bean id="prescriptionTemplateTypeService" class="com.fionapet.business.service.PrescriptionTemplateTypeServiceImpl"/>
 
     <dubbo:service interface="com.fionapet.business.service.PrescriptionTemplateTypeService" ref="prescriptionTemplateTypeService"
-                   protocol="dubbo" validation="true" timeout="2000" />
+                   protocol="dubbo" validation="true" timeout="5000" />
     <!-- 处方模版类型 api -->
 
 
@@ -694,7 +694,7 @@
     <bean id="personsService" class="com.fionapet.business.service.PersonsServiceImpl"/>
 
     <dubbo:service interface="com.fionapet.business.service.PersonsService" ref="personsService"
-                   protocol="dubbo" validation="true" timeout="2000" />
+                   protocol="dubbo" validation="true" timeout="5000" />
     <!-- 宠物主人信息 api -->
 
 
@@ -702,7 +702,7 @@
     <bean id="prescriptionTemplateService" class="com.fionapet.business.service.PrescriptionTemplateServiceImpl"/>
 
     <dubbo:service interface="com.fionapet.business.service.PrescriptionTemplateService" ref="prescriptionTemplateService"
-                   protocol="dubbo" validation="true" timeout="2000" />
+                   protocol="dubbo" validation="true" timeout="5000" />
     <!-- 处方模版 api -->
 
 
@@ -710,7 +710,7 @@
     <bean id="imagesService" class="com.fionapet.business.service.ImagesServiceImpl"/>
 
     <dubbo:service interface="com.fionapet.business.service.ImagesService" ref="imagesService"
-                   protocol="dubbo" validation="true" timeout="2000" />
+                   protocol="dubbo" validation="true" timeout="5000" />
     <!-- 图片信息 api -->
 
 
@@ -718,7 +718,7 @@
     <bean id="chemicalExamCateService" class="com.fionapet.business.service.ChemicalExamCateServiceImpl"/>
 
     <dubbo:service interface="com.fionapet.business.service.ChemicalExamCateService" ref="chemicalExamCateService"
-                   protocol="dubbo" validation="true" timeout="2000" />
+                   protocol="dubbo" validation="true" timeout="5000" />
     <!-- 化验样例类型 api -->
 
 
@@ -726,7 +726,7 @@
     <bean id="dictTypeService" class="com.fionapet.business.service.DictTypeServiceImpl"/>
 
     <dubbo:service interface="com.fionapet.business.service.DictTypeService" ref="dictTypeService"
-                   protocol="dubbo" validation="true" timeout="2000" />
+                   protocol="dubbo" validation="true" timeout="5000" />
     <!-- 字典类型 api -->
 
 
@@ -734,7 +734,7 @@
     <bean id="dictTypeDetailService" class="com.fionapet.business.service.DictTypeDetailServiceImpl"/>
 
     <dubbo:service interface="com.fionapet.business.service.DictTypeDetailService" ref="dictTypeDetailService"
-                   protocol="dubbo" validation="true" timeout="2000" />
+                   protocol="dubbo" validation="true" timeout="5000" />
     <!-- 字典类型明细 api -->
 
 
@@ -742,7 +742,7 @@
     <bean id="warehouseService" class="com.fionapet.business.service.WarehouseServiceImpl"/>
 
     <dubbo:service interface="com.fionapet.business.service.WarehouseService" ref="warehouseService"
-                   protocol="dubbo" validation="true" timeout="2000" connections="100"/>
+                   protocol="dubbo" validation="true" timeout="5000" connections="100"/>
     <!-- 仓库信息表 api -->
 
 </beans>

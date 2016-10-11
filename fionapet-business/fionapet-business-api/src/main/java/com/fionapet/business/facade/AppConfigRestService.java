@@ -35,6 +35,16 @@ public interface AppConfigRestService extends CURDRestService<AppConfig>{
     RestResult<List<AppConfig>> list(@HeaderParam(ConstantVariable.HEADER_AUTHORIZATION_KEY) String token);
 
     /**
+     * 应用配置-根据类型名称获取唯一编号
+     * @return
+     */
+    @GET
+    @Path("/genNumberByName")
+    @ApiOperation(value = "应用配置",
+            notes = "应用配置列表.")
+    RestResult<String> genNumberByName(@HeaderParam(ConstantVariable.HEADER_AUTHORIZATION_KEY) String token, @ApiParam("name") @QueryParam("name") String name);
+
+    /**
      * 应用配置 详细信息
      *
      * @return

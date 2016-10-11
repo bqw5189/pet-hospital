@@ -1,6 +1,7 @@
 package com.fionapet.business.service;
 
 import com.fionapet.business.entity.AppConfig;
+import org.dubbo.x.facade.RestResult;
 import org.dubbo.x.service.CURDService;
 /**
  * 应用配置
@@ -8,4 +9,5 @@ import org.dubbo.x.service.CURDService;
  */
 public interface AppConfigService extends CURDService<AppConfig> {
 
+    String genNumberByName(String name);
 }

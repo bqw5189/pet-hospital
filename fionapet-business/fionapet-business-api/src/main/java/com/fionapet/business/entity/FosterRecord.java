@@ -18,7 +18,7 @@ import java.util.Date;
  */
 @Entity
 @Table(name = "t_foster_record")
-@ApiModel("养育记录主表")
+@ApiModel("寄养记录主表")
 public class FosterRecord extends CMSEntity {
     
     /**
