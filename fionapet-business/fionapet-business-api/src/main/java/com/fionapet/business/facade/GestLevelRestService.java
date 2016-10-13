@@ -11,7 +11,9 @@ import io.swagger.annotations.ApiParam;
 
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
+import java.util.Collection;
 import java.util.List;
+import java.util.Map;
 
 /**
  * 会员等级管理 接口
@@ -23,7 +25,7 @@ import java.util.List;
 @Consumes({MediaType.APPLICATION_JSON})
 @Produces({ContentType.APPLICATION_JSON_UTF_8})
 @Api(value="gestlevels", description = "会员等级管理接口")
-public interface GestLevelRestService extends CURDRestService<GestLevel>{
+public interface GestLevelRestService extends CURDRestService<GestLevel>, SelectRestService{
     /**
      * 会员等级管理
      * @return
@@ -54,4 +56,9 @@ public interface GestLevelRestService extends CURDRestService<GestLevel>{
     @Path("/{id}")
     @ApiOperation(value = "删除会员等级管理", notes = "删除会员等级管理")
     RestResult<String> delete(@HeaderParam(ConstantVariable.HEADER_AUTHORIZATION_KEY) String token, @ApiParam("id") @PathParam("id") String uuid);
+
+    @POST
+    @Path("/selects")
+    @ApiOperation(value = "下拉列表信息",notes = "下拉列表信息.")
+    RestResult<Map<String,Collection>> selects(@HeaderParam(ConstantVariable.HEADER_AUTHORIZATION_KEY) String token, Map<String,String> param);
 }

@@ -1,6 +1,7 @@
 package com.fionapet.business.repository;
 
 import com.fionapet.business.entity.GestLevel;
+import org.dubbo.x.entity.StatusEnum;
 import org.junit.Assert;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,5 +27,12 @@ public class GestLevelDaoTest extends SpringTransactionalTestCase {
         Assert.assertNotNull(gestLevels);
 
         Assert.assertEquals(gestLevels.size(), 3);
+    }
+
+    @Test
+    public void findByStatusDictDetailCode(){
+        List<GestLevel> gestLevels = gestLevelDao.findByStatusDictDetailCode(StatusEnum.OK.toString());
+        Assert.assertNotNull(gestLevels);
+        Assert.assertEquals(gestLevels.size(), 1);
     }
 }

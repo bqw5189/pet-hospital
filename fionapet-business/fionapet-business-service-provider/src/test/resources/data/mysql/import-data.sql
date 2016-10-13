@@ -11,7 +11,7 @@ insert into t_pet_small_race (id, type,pet_race_id, create_user_id, update_user_
 insert into t_pet_small_race (id, type,pet_race_id, create_user_id, update_user_id) values('1aa38af8-efd0-4fbb-8c78-d12d17cc9606','博美犬','1aa38af8-efd0-4fbb-8c78-d12d17cc9605','fc5db3b3-4063-4a12-a511-880ba19e4b58','fc5db3b3-4063-4a12-a511-880ba19e4b58');
 insert into t_pet_small_race (id, type,pet_race_id, create_user_id, update_user_id) values('1aa38af8-efd0-4fbb-8c78-d12d17cc9607','马尔济斯犬','1aa38af8-efd0-4fbb-8c78-d12d17cc9605','fc5db3b3-4063-4a12-a511-880ba19e4b58','fc5db3b3-4063-4a12-a511-880ba19e4b58');
 insert into t_pet_small_race (id, type,pet_race_id, create_user_id, update_user_id) values('1aa38af8-efd0-4fbb-8c78-d12d17cc9608','约克夏梗','1aa38af8-efd0-4fbb-8c78-d12d17cc9605','fc5db3b3-4063-4a12-a511-880ba19e4b58','fc5db3b3-4063-4a12-a511-880ba19e4b58');
-insert into t_pet_small_race (id, type,pet_race_id, create_user_id, update_user_id) values('1aa38af8-efd0-4fbb-8c78-d12d17cc9609','贵宾犬','1aa38af8-efd0-4fbb-8c78-d12d17cc9605','fc5db3b3-4063-4a12-a511-880ba19e4b58','fc5db3b3-4063-4a12-a511-880ba19e4b58');
+insert into t_pet_smallet_race (id, type,pet_race_id, create_user_id, update_user_id) values('1aa38af8-efd0-4fbb-8c78-d12d17cc9609','贵宾犬','1aa38af8-efd0-4fbb-8c78-d12d17cc9605','fc5db3b3-4063-4a12-a511-880ba19e4b58','fc5db3b3-4063-4a12-a511-880ba19e4b58');
 insert into t_pet_small_race (id, type,pet_race_id, create_user_id, update_user_id) values('1aa38af8-efd0-4fbb-8c78-d12d17cc9610','京巴犬','1aa38af8-efd0-4fbb-8c78-d12d17cc9605','fc5db3b3-4063-4a12-a511-880ba19e4b58','fc5db3b3-4063-4a12-a511-880ba19e4b58');
 insert into t_pet_small_race (id, type,pet_race_id, create_user_id, update_user_id) values('1aa38af8-efd0-4fbb-8c78-d12d17cc9611','蝴蝶犬','1aa38af8-efd0-4fbb-8c78-d12d17cc9605','fc5db3b3-4063-4a12-a511-880ba19e4b58','fc5db3b3-4063-4a12-a511-880ba19e4b58');
 insert into t_pet_small_race (id, type,pet_race_id, create_user_id, update_user_id) values('1aa38af8-efd0-4fbb-8c78-d12d17cc9612','巴哥犬','1aa38af8-efd0-4fbb-8c78-d12d17cc9605','fc5db3b3-4063-4a12-a511-880ba19e4b58','fc5db3b3-4063-4a12-a511-880ba19e4b58');
@@ -291,9 +291,9 @@ VALUES (uuid(), 'CEX00116', '溶菌宁', '5a2ba3bf-37d2-4d18-ac49-09ab7823e40d',
 -- -t_item_type-- -
 
 -- -t_gest_level-- -
-INSERT into t_gest_level (id, level_code,level_name,is_credit,is_discount,discount_rate, remark, create_user_id,update_user_id) VALUES (uuid(), 'HYDJ000000001', '普通会员', '否', '否', 100.00, NULL, '34ff5c2e-6625-4d6d-ad39-d1745755b3a8','34ff5c2e-6625-4d6d-ad39-d1745755b3a8');
-INSERT into t_gest_level (id, level_code,level_name,is_credit,is_discount,discount_rate, remark, create_user_id,update_user_id) VALUES (uuid(), 'HYDJ000000002', '银卡会员', '否', '是', 95.00, NULL, '34ff5c2e-6625-4d6d-ad39-d1745755b3a8','34ff5c2e-6625-4d6d-ad39-d1745755b3a8');
-INSERT into t_gest_level (id, level_code,level_name,is_credit,is_discount,discount_rate, remark, create_user_id,update_user_id) VALUES (uuid(), 'HYDJ000000003', '金卡会员', '否', '是', 92.00, NULL, '34ff5c2e-6625-4d6d-ad39-d1745755b3a8','34ff5c2e-6625-4d6d-ad39-d1745755b3a8');
+INSERT into t_gest_level (id, level_code,level_name,is_credit,is_discount,discount_rate, remark, create_user_id,update_user_id,status) VALUES (uuid(), 'HYDJ000000001', '普通会员', '否', '否', 100.00, NULL, '34ff5c2e-6625-4d6d-ad39-d1745755b3a8','34ff5c2e-6625-4d6d-ad39-d1745755b3a8','SM00001');
+INSERT into t_gest_level (id, level_code,level_name,is_credit,is_discount,discount_rate, remark, create_user_id,update_user_id,status) VALUES (uuid(), 'HYDJ000000002', '银卡会员', '否', '是', 95.00, NULL, '34ff5c2e-6625-4d6d-ad39-d1745755b3a8','34ff5c2e-6625-4d6d-ad39-d1745755b3a8','SM00001');
+INSERT into t_gest_level (id, level_code,level_name,is_credit,is_discount,discount_rate, remark, create_user_id,update_user_id,status) VALUES (uuid(), 'HYDJ000000003', '金卡会员', '否', '是', 92.00, NULL, '34ff5c2e-6625-4d6d-ad39-d1745755b3a8','34ff5c2e-6625-4d6d-ad39-d1745755b3a8','SM00001');
 -- -t_gest_level-- -
 -- --t_user_dict_detail-- --
 INSERT into t_user_dict_detail (id, dict_type_id,dict_detail_code,value_name_cn,value_name_en,comments,create_user_id,update_user_id) VALUES (uuid(), 'f5ca1dcb-41e4-4553-b41e-f3eeda6d56f1', 'DM00001', '男', NULL, NULL,'34ff5c2e-6625-4d6d-ad39-d1745755b3a8','34ff5c2e-6625-4d6d-ad39-d1745755b3a8');
