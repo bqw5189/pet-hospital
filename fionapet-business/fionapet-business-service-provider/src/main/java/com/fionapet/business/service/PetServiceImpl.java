@@ -1,8 +1,7 @@
 package com.fionapet.business.service;
 
 import com.fionapet.business.entity.Pet;
-import com.fionapet.business.test.DataBuilder;
-import com.fionapet.business.test.PetData;
+import org.apache.commons.lang3.ObjectUtils;
 import org.dubbo.x.repository.DaoBase;
 import org.dubbo.x.service.CURDServiceBase;
 import com.fionapet.business.repository.PetDao;
@@ -21,9 +20,19 @@ public class PetServiceImpl extends CURDServiceBase<Pet> implements PetService {
     private static final Logger LOGGER = LoggerFactory.getLogger(PetServiceImpl.class);
     @Autowired
     private PetDao petDao;
+    @Autowired
+    private AppConfigService appConfigService;
 
     @Override
     public DaoBase<Pet> getDao() {
         return petDao;
+    }
+
+    @Override
+    public Pet createOrUpdte(Pet entity) {
+        if (null == entity.getId()){
+            entity.setSickFileCode(appConfigService.genNumberByName(AppConfigService.NUMBER_KEY_BLBH));
+        }
+        return super.createOrUpdte(entity);
     }
 }

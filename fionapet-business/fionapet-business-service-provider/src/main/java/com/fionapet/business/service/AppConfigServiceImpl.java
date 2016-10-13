@@ -28,7 +28,7 @@ public class AppConfigServiceImpl extends CURDServiceBase<AppConfig> implements 
     static{
         NUMBER_INFO.put("宠物编号",new NumberInfo("t_pet","pet_code"));
         NUMBER_INFO.put("会员编号",new NumberInfo("t_persons","person_code"));
-        NUMBER_INFO.put("病历编号",new NumberInfo("t_pet","sick_file_code"));
+        NUMBER_INFO.put(NUMBER_KEY_BLBH,new NumberInfo("t_pet","sick_file_code"));
         NUMBER_INFO.put("销售单号",new NumberInfo("t_store_direct_sell","direct_sell_code"));
         NUMBER_INFO.put("寄养编号",new NumberInfo("t_foster_record","foster_no"));
         NUMBER_INFO.put("住院编号",new NumberInfo("t_in_hospital_record","in_hospital_no"));

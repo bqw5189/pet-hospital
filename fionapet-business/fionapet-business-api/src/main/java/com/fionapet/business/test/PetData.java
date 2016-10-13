@@ -40,9 +40,6 @@ public class PetData implements IData<Pet>{
         UserDictDetail userDictDetail = DataBuilder.data(UserDictDetailData.class);
         pet.setPetSex(userDictDetail);
 
-        DictTypeDetail dictTypeDetail = DataBuilder.data(DictTypeDetailData.class);
-        pet.setSickFileCode(dictTypeDetail);
-
         //颜色
         pet.setPetSkinColor(userDictDetail);
 

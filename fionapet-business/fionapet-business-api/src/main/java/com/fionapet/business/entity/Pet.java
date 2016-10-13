@@ -250,19 +250,17 @@ public class Pet extends CMSEntity {
     }
 
     /**
-     * 宠物状态
+     * 病例编号
      */
-    @ApiModelProperty(value = "宠物状态", required = false)
-    @Column(columnDefinition = "宠物状态")
-    private DictTypeDetail sickFileCode;
+    @ApiModelProperty(value = "病例编号", required = true)
+    @Column(columnDefinition = "病例编号")
+    private String sickFileCode;
 
-    @ManyToOne(cascade = {CascadeType.REFRESH}, optional = true)
-    @JoinColumn(name = "sick_file_code", referencedColumnName = "dictDetailCode")
-    public DictTypeDetail getSickFileCode() {
+    public String getSickFileCode() {
         return sickFileCode;
     }
 
-    public void setSickFileCode(DictTypeDetail sickFileCode) {
+    public void setSickFileCode(String sickFileCode) {
         this.sickFileCode = sickFileCode;
     }
 
