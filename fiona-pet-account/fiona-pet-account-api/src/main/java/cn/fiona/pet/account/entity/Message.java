@@ -2,6 +2,7 @@ package cn.fiona.pet.account.entity;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.dubbo.x.entity.IdEntity;
 
 import javax.persistence.Entity;
 import javax.persistence.Table;

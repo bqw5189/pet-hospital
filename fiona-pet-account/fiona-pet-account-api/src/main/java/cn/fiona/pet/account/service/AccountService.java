@@ -1,5 +1,6 @@
 package cn.fiona.pet.account.service;
 
+import cn.fiona.pet.account.entity.User;
 import cn.fiona.pet.account.exception.ApiException;
 import cn.fiona.pet.account.facade.LoginVO;
 
@@ -24,4 +25,11 @@ public interface AccountService {
      * @throws ApiException
      */
     boolean validateToken(String token) throws ApiException;
+
+    /**
+     * 根据 token 获取用户信息
+     * @param token
+     * @return
+     */
+    User getByToken(String token) throws ApiException;
 }

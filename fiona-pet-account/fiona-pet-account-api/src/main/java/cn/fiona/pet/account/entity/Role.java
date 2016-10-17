@@ -1,6 +1,7 @@
 package cn.fiona.pet.account.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import org.dubbo.x.entity.IdEntity;
 import org.hibernate.annotations.Fetch;
 import org.hibernate.annotations.FetchMode;
 import org.hibernate.annotations.LazyCollection;
@@ -56,6 +57,7 @@ public class Role extends IdEntity {
     }
 
     @ManyToMany(mappedBy = "roles", fetch = FetchType.LAZY)
+    @JsonIgnore
     public Set<User> getUsers() {
         return users;
     }
@@ -68,6 +70,7 @@ public class Role extends IdEntity {
     @JoinTable(name = "t_role_menu",
             joinColumns = {@JoinColumn(name = "role_code", referencedColumnName = "code")},
             inverseJoinColumns = {@JoinColumn(name = "menu_code", referencedColumnName = "code")})
+    @JsonIgnore
     public Set<Menu> getMenuSet() {
         return menuSet;
     }

@@ -1,5 +1,7 @@
 package cn.fiona.pet.account.entity;
 
+import org.dubbo.x.entity.IdEntity;
+
 import javax.persistence.Entity;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
@@ -8,8 +10,8 @@ import javax.validation.constraints.NotNull;
  * Created by tom on 16/6/20.
  */
 @Entity
-@Table(name = "t_enterprise")
-public class Enterprise extends IdEntity{
+@Table(name = "t_organize")
+public class Organize extends IdEntity {
     /**
      * 名称
      */

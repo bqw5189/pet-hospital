@@ -4,7 +4,7 @@
 -- ----------------------------
 DROP TABLE IF EXISTS `t_user`;
 CREATE TABLE `t_user` (
-  `uuid` VARCHAR(36) NOT NULL,
+  `id` VARCHAR(36) NOT NULL,
   `enterprise_id` VARCHAR(36) NOT NULL,
   `login_name` varchar(64) NOT NULL,
   `name` varchar(64) NOT NULL,
@@ -12,7 +12,7 @@ CREATE TABLE `t_user` (
   `salt` varchar(64) DEFAULT NULL,
   `register_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `status` varchar(32) NOT NULL DEFAULT 'OK',
-  PRIMARY KEY (`uuid`),
+  PRIMARY KEY (`id`),
   UNIQUE KEY `login_name` (`login_name`)
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 -- ----------------------------
@@ -20,12 +20,12 @@ CREATE TABLE `t_user` (
 -- ----------------------------
 DROP TABLE IF EXISTS `t_role`;
 CREATE TABLE `t_role` (
-  `uuid` VARCHAR(36) NOT NULL,
+  `id` VARCHAR(36) NOT NULL,
   `name` VARCHAR(256) NOT NULL,
   `code` VARCHAR(36) NOT NULL UNIQUE,
   `describe` varchar(256),
   `status` varchar(32) NOT NULL DEFAULT 'OK',
-  PRIMARY KEY (`uuid`),
+  PRIMARY KEY (`id`),
   UNIQUE KEY `name` (`name`)
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 -- ----------------------------
@@ -33,17 +33,17 @@ CREATE TABLE `t_role` (
 -- ----------------------------
 DROP TABLE IF EXISTS `t_user_role`;
 CREATE TABLE `t_user_role` (
-  `uuid` VARCHAR(36) NOT NULL,
+  `id` VARCHAR(36) NOT NULL,
   `user_id` VARCHAR(36) NOT NULL,
   `role_id` VARCHAR(36) NOT NULL,
-  PRIMARY KEY (`uuid`)
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
 -- ----------------------------
 -- Table structure for t_menu
 -- ----------------------------
 DROP TABLE IF EXISTS `t_menu`;
 CREATE TABLE `t_menu` (
-  `uuid` VARCHAR(36) NOT NULL,
+  `id` VARCHAR(36) NOT NULL,
   `name` varchar(128) NOT NULL,
   `code` varchar(36) NOT NULL,
   `uri` varchar(128) DEFAULT '#',
@@ -53,7 +53,7 @@ CREATE TABLE `t_menu` (
   `leaf` BOOLEAN DEFAULT TRUE,
   `order` int DEFAULT 0,
   `parent_id` VARCHAR(36) DEFAULT '-1',
-  PRIMARY KEY (`uuid`)
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
@@ -61,20 +61,20 @@ CREATE TABLE `t_menu` (
 -- ----------------------------
 DROP TABLE IF EXISTS `t_role_menu`;
 CREATE TABLE `t_role_menu` (
-  `uuid` VARCHAR(36) NOT NULL,
+  `id` VARCHAR(36) NOT NULL,
   `role_code` VARCHAR(36) NOT NULL,
   `menu_code` VARCHAR(36) NOT NULL,
-  PRIMARY KEY (`uuid`)
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 -- ----------------------------
 -- Table structure for t_enterprise
 -- ----------------------------
-DROP TABLE IF EXISTS `t_enterprise`;
-CREATE TABLE `t_enterprise` (
-  `uuid` VARCHAR(36) NOT NULL,
+DROP TABLE IF EXISTS `t_organize`;
+CREATE TABLE `t_organize` (
+  `id` VARCHAR(36) NOT NULL,
   `name` VARCHAR(256) NOT NULL,
   `code` varchar(64) NOT NULL DEFAULT 'default',
-  PRIMARY KEY (`uuid`),
+  PRIMARY KEY (`id`),
   UNIQUE KEY `name_code` (`name`,`code`)
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 

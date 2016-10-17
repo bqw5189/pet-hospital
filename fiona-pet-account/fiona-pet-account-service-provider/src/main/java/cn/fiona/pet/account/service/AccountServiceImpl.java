@@ -47,7 +47,7 @@ public class AccountServiceImpl implements AccountService {
             throw new InvalidParameterException("密码错误!");
         }
 
-        String token = user.getUuid();
+        String token = user.getId();
 
         return token;
     }
@@ -64,6 +64,23 @@ public class AccountServiceImpl implements AccountService {
         }
 
         return true;
+    }
+
+    @Override
+    @Transactional
+    public User getByToken(String token) throws ApiException {
+        User user = userDao.findOne(token);
+
+        if (null == user){
+            throw new ApiException(String.format("%s not exists!", token));
+        }
+
+        User userVO = new User();
+        userVO.setId(user.getId());
+        userVO.setName(user.getName());
+        userVO.setLoginName(user.getLoginName());
+
+        return userVO;
     }
 
     private boolean passwordValidation(String password, User user){

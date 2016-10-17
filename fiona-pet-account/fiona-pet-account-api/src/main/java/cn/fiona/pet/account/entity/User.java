@@ -3,6 +3,7 @@ package cn.fiona.pet.account.entity;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.dubbo.x.entity.IdEntity;
 import org.hibernate.validator.constraints.NotBlank;
 
 import javax.persistence.*;
@@ -41,7 +42,7 @@ public class User extends IdEntity {
     /**
      * 所属企业
      */
-    private Enterprise enterprise;
+    private Organize organize;
 
     /**
      * 用户 角色 信息
@@ -118,13 +119,13 @@ public class User extends IdEntity {
     }
 
     @ManyToOne
-    @JoinColumn(name = "enterprise_id", referencedColumnName = "uuid")
-    public Enterprise getEnterprise() {
-        return enterprise;
+    @JoinColumn(name = "enterprise_id", referencedColumnName = "id")
+    public Organize getOrganize() {
+        return organize;
     }
 
-    public void setEnterprise(Enterprise enterprise) {
-        this.enterprise = enterprise;
+    public void setOrganize(Organize organize) {
+        this.organize = organize;
     }
 
     @Override
