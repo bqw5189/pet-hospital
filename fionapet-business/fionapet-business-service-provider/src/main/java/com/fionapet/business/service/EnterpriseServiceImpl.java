@@ -1,10 +1,12 @@
 package com.fionapet.business.service;
 
 import com.fionapet.business.entity.Enterprise;
+import org.dubbo.x.entity.PageSearch;
 import org.dubbo.x.repository.DaoBase;
 import org.dubbo.x.service.CURDServiceBase;
 import com.fionapet.business.repository.EnterpriseDao;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
 
 /**
  *  企业信息表
@@ -18,4 +20,5 @@ public class EnterpriseServiceImpl extends CURDServiceBase<Enterprise> implement
     public DaoBase<Enterprise> getDao() {
         return enterpriseDao;
     }
+
 }

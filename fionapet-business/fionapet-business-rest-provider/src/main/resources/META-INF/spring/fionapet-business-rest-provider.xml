@@ -1116,5 +1116,4 @@
 
     <dubbo:reference id="warehouseService" interface="com.fionapet.business.service.WarehouseService"/>
     <!--仓库信息表 api -->
-
 </beans>
