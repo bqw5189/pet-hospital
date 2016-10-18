@@ -1,12 +1,15 @@
 package cn.fiona.pet.account.facade;
 
 import cn.fiona.pet.account.entity.Account;
+import cn.fiona.pet.account.entity.User;
 import cn.fiona.pet.account.exception.ApiException;
 import cn.fiona.pet.account.exception.NotFoundException;
 import cn.fiona.pet.account.service.AccountService;
 import io.swagger.annotations.ApiParam;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import javax.ws.rs.HeaderParam;
 
 /**
  * 身份认证
@@ -43,6 +46,21 @@ public class AuthRestServiceImpl implements AuthRestService {
             restResult = RestResult.ERROR(e.getMessage());
         }
 
+        return restResult;
+    }
+
+    @Override
+    public RestResult<User> get(@HeaderParam(AuthRestService.HEADER_AUTHORIZATION_KEY) String token) {
+        RestResult<User> restResult = RestResult.NOT_FOND();
+
+        User user = null;
+        try {
+            user = accountService.getByToken(token);
+            restResult = RestResult.OK(user);
+        } catch (ApiException e) {
+            logger.warn("{}", e);
+            restResult = RestResult.ERROR(e.getMessage());
+        }
         return restResult;
     }
 }

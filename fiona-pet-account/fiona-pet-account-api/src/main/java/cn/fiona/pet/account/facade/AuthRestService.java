@@ -1,5 +1,6 @@
 package cn.fiona.pet.account.facade;
 
+import cn.fiona.pet.account.entity.User;
 import com.alibaba.dubbo.rpc.protocol.rest.support.ContentType;
 import io.swagger.annotations.*;
 
@@ -28,4 +29,11 @@ public interface AuthRestService {
     @Path("login")
     @ApiOperation(value = "登录", notes = "用户登录,登录成功返回token信息",response = RestResult.class)
     RestResult<String> login(@ApiParam(value = "登录信息", required = true) LoginVO loginVO);
+
+    @GET
+    @Path("")
+    @ApiOperation(value = "登录用户信息",
+            notes = "登录用户信息"
+    )
+    RestResult<User> get(@HeaderParam(AuthRestService.HEADER_AUTHORIZATION_KEY) String token);
 }
