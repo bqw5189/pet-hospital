@@ -24,7 +24,7 @@ public class StatusEntity extends IdEntity {
     /**
      * 状态
      */
-    @JsonIgnore
+//    @JsonIgnore
     private DictTypeDetail status = new DictTypeDetail();
 
     public StatusEntity() {
@@ -36,7 +36,7 @@ public class StatusEntity extends IdEntity {
 
 
 
-    @OneToOne(cascade = {CascadeType.REFRESH }, fetch = FetchType.LAZY)
+    @OneToOne(cascade = {CascadeType.REFRESH }, fetch = FetchType.EAGER)
     @JoinColumn(name="status", referencedColumnName = "dictDetailCode")
     public DictTypeDetail getStatus() {
         return status;

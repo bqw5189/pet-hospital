@@ -12,7 +12,7 @@ import javax.validation.constraints.NotNull;
 import java.util.Date;
 
 /**
- * 种类数量更改原因表
+ * 商品库存数量 汇总
  * <p>
 * Created by tom on 2016-07-25 09:32:32.
  */
