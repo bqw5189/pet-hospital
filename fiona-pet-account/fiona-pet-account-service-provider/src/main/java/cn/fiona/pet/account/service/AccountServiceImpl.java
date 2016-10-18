@@ -5,6 +5,7 @@ import cn.fiona.pet.account.exception.ApiException;
 import cn.fiona.pet.account.exception.NotFoundException;
 import cn.fiona.pet.account.facade.LoginVO;
 import cn.fiona.pet.account.repository.UserDao;
+import com.fionapet.business.service.PersonsService;
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -25,6 +26,8 @@ public class AccountServiceImpl implements AccountService {
 
     private Logger logger = LoggerFactory.getLogger(AccountServiceImpl.class);
 
+    private PersonsService personsService;
+
     @Override
     public String login(LoginVO loginVO) throws ApiException {
         User user = userDao.findByLoginName(loginVO.getName());
@@ -34,6 +37,12 @@ public class AccountServiceImpl implements AccountService {
         }
 
         if (null == user) {
+
+            String token = personsService.login(loginVO);
+            if (null != token){
+                return  token;
+            }
+
             throw new NotFoundException(String.format("[%s]用户未找到!", loginVO.getName()));
         }
 
@@ -60,7 +69,8 @@ public class AccountServiceImpl implements AccountService {
 
         User user = userDao.findOne(token);
         if (null == user){
-            throw new ApiException(String.format("%s not exists!", token));
+            return personsService.validateToken(token);
+//            throw new ApiException(String.format("%s not exists!", token));
         }
 
         return true;
@@ -72,7 +82,10 @@ public class AccountServiceImpl implements AccountService {
         User user = userDao.findOne(token);
 
         if (null == user){
-            throw new ApiException(String.format("%s not exists!", token));
+            user = personsService.getByToken(token);
+            if (null == user) {
+                throw new ApiException(String.format("%s not exists!", token));
+            }
         }
 
         User userVO = new User();
@@ -93,4 +106,11 @@ public class AccountServiceImpl implements AccountService {
     }
 
 
+    public PersonsService getPersonsService() {
+        return personsService;
+    }
+
+    public void setPersonsService(PersonsService personsService) {
+        this.personsService = personsService;
+    }
 }
