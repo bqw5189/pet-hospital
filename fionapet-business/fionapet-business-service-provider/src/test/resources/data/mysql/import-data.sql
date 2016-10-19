@@ -11,7 +11,7 @@ insert into t_pet_small_race (id, type,pet_race_id, create_user_id, update_user_
 insert into t_pet_small_race (id, type,pet_race_id, create_user_id, update_user_id) values('1aa38af8-efd0-4fbb-8c78-d12d17cc9606','博美犬','1aa38af8-efd0-4fbb-8c78-d12d17cc9605','fc5db3b3-4063-4a12-a511-880ba19e4b58','fc5db3b3-4063-4a12-a511-880ba19e4b58');
 insert into t_pet_small_race (id, type,pet_race_id, create_user_id, update_user_id) values('1aa38af8-efd0-4fbb-8c78-d12d17cc9607','马尔济斯犬','1aa38af8-efd0-4fbb-8c78-d12d17cc9605','fc5db3b3-4063-4a12-a511-880ba19e4b58','fc5db3b3-4063-4a12-a511-880ba19e4b58');
 insert into t_pet_small_race (id, type,pet_race_id, create_user_id, update_user_id) values('1aa38af8-efd0-4fbb-8c78-d12d17cc9608','约克夏梗','1aa38af8-efd0-4fbb-8c78-d12d17cc9605','fc5db3b3-4063-4a12-a511-880ba19e4b58','fc5db3b3-4063-4a12-a511-880ba19e4b58');
-insert into t_pet_smallet_race (id, type,pet_race_id, create_user_id, update_user_id) values('1aa38af8-efd0-4fbb-8c78-d12d17cc9609','贵宾犬','1aa38af8-efd0-4fbb-8c78-d12d17cc9605','fc5db3b3-4063-4a12-a511-880ba19e4b58','fc5db3b3-4063-4a12-a511-880ba19e4b58');
+insert into t_pet_small_race (id, type,pet_race_id, create_user_id, update_user_id) values('1aa38af8-efd0-4fbb-8c78-d12d17cc9609','贵宾犬','1aa38af8-efd0-4fbb-8c78-d12d17cc9605','fc5db3b3-4063-4a12-a511-880ba19e4b58','fc5db3b3-4063-4a12-a511-880ba19e4b58');
 insert into t_pet_small_race (id, type,pet_race_id, create_user_id, update_user_id) values('1aa38af8-efd0-4fbb-8c78-d12d17cc9610','京巴犬','1aa38af8-efd0-4fbb-8c78-d12d17cc9605','fc5db3b3-4063-4a12-a511-880ba19e4b58','fc5db3b3-4063-4a12-a511-880ba19e4b58');
 insert into t_pet_small_race (id, type,pet_race_id, create_user_id, update_user_id) values('1aa38af8-efd0-4fbb-8c78-d12d17cc9611','蝴蝶犬','1aa38af8-efd0-4fbb-8c78-d12d17cc9605','fc5db3b3-4063-4a12-a511-880ba19e4b58','fc5db3b3-4063-4a12-a511-880ba19e4b58');
 insert into t_pet_small_race (id, type,pet_race_id, create_user_id, update_user_id) values('1aa38af8-efd0-4fbb-8c78-d12d17cc9612','巴哥犬','1aa38af8-efd0-4fbb-8c78-d12d17cc9605','fc5db3b3-4063-4a12-a511-880ba19e4b58','fc5db3b3-4063-4a12-a511-880ba19e4b58');
@@ -40,7 +40,7 @@ insert into t_warehouse (id, code, name,drug_store,sell_store,create_user_id, up
 insert into t_warehouse (id, code, name,drug_store,sell_store, create_user_id, update_user_id) values(uuid(),'CKBH0000001','医院药房',true,true,'fc5db3b3-4063-4a12-a511-880ba19e4b58','fc5db3b3-4063-4a12-a511-880ba19e4b58');
 -- t_warehouse --
 
---t_item_cate-- -
+-- t_item_cate -- -
 INSERT into t_item_cate (id, cate_no, parent_id,cate_name,busi_type_id, single_profit, create_user_id,update_user_id)
             VALUES ('5a2ba3bf-37d2-4d18-ac49-09ab7823e40d','ICate01', NULL, '宠物药品', '0b02ebb8-e341-420b-9267-453610635ecd', NULL, '34ff5c2e-6625-4d6d-ad39-d1745755b3a8', '34ff5c2e-6625-4d6d-ad39-d1745755b3a8');
 INSERT into t_item_cate (id, cate_no, parent_id,cate_name,busi_type_id, single_profit, create_user_id,update_user_id) VALUES ('1467f659-dbf8-4ede-89fd-396b08bbdc8c', 'ICate02', NULL, '宠物食品', '18644a6e-a004-4ce0-a11f-d100dfbc1caa', NULL, '34ff5c2e-6625-4d6d-ad39-d1745755b3a8', '34ff5c2e-6625-4d6d-ad39-d1745755b3a8');
@@ -57,8 +57,8 @@ INSERT into t_item_cate (id, cate_no, parent_id,cate_name,busi_type_id, single_p
 INSERT into t_item_cate (id, cate_no, parent_id,cate_name,busi_type_id, single_profit, create_user_id,update_user_id) VALUES ('f2d13040-8d4d-4244-9f4a-e788b50eee6e', 'FWLX00013', NULL, '测试', '18644a6e-a004-4ce0-a11f-d100dfbc1caa', NULL, '34ff5c2e-6625-4d6d-ad39-d1745755b3a8',  '34ff5c2e-6625-4d6d-ad39-d1745755b3a8');
 INSERT into t_item_cate (id, cate_no, parent_id,cate_name,busi_type_id, single_profit, create_user_id,update_user_id) VALUES ('c16991a8-79b0-4d6f-bfa2-1cf10b0f984d', 'ICate0201', '1467f659-dbf8-4ede-89fd-396b08bbdc8c', '宠儿香家庭专用系列 美健膳食罐头', '18644a6e-a004-4ce0-a11f-d100dfbc1caa', 12.00,'34ff5c2e-6625-4d6d-ad39-d1745755b3a8','34ff5c2e-6625-4d6d-ad39-d1745755b3a8');
 INSERT into t_item_cate (id, cate_no, parent_id,cate_name,busi_type_id, single_profit, create_user_id,update_user_id) VALUES ('578d88da-a3bb-43a3-886e-6844e9ea9e49', 'ICate0202', '1467f659-dbf8-4ede-89fd-396b08bbdc8c', '海鲜类', '18644a6e-a004-4ce0-a11f-d100dfbc1caa', 20.00, '34ff5c2e-6625-4d6d-ad39-d1745755b3a8','34ff5c2e-6625-4d6d-ad39-d1745755b3a8');
---t_item_cate-- -
---t_busines_cate--
+-- t_item_cate -- -
+-- t_busines_cate --
 INSERT into t_busines_cate(id, cate_name,create_user_id,update_user_id) VALUES ('ff969be2-a25b-451e-8fe1-e434b21a94f2', '宠物食品','34ff5c2e-6625-4d6d-ad39-d1745755b3a8','34ff5c2e-6625-4d6d-ad39-d1745755b3a8');
 INSERT into t_busines_cate(id, cate_name,create_user_id,update_user_id)  VALUES ('18644a6e-a004-4ce0-a11f-d100dfbc1caa', '宠物用品','34ff5c2e-6625-4d6d-ad39-d1745755b3a8','34ff5c2e-6625-4d6d-ad39-d1745755b3a8');
 INSERT into t_busines_cate(id, cate_name,create_user_id,update_user_id)  VALUES ('0b02ebb8-e341-420b-9267-453610635ecd', '宠物药品','34ff5c2e-6625-4d6d-ad39-d1745755b3a8','34ff5c2e-6625-4d6d-ad39-d1745755b3a8');

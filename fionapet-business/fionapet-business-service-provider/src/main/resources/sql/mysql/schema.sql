@@ -556,7 +556,7 @@ CREATE TABLE `t_images` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
---M_OperationLog
+-- M_OperationLog
 -- -- --- --- --- --- --- --- --- ---
 -- Table structure for t_menu_fun_module 功能模块
 -- -- -- --- --- --- --- --- --- --- ---
