@@ -21,7 +21,7 @@ CREATE TABLE `t_user` (
 DROP TABLE IF EXISTS `t_role`;
 CREATE TABLE `t_role` (
   `id` VARCHAR(36) NOT NULL,
-  `name` VARCHAR(256) NOT NULL,
+  `name` VARCHAR(64) NOT NULL,
   `code` VARCHAR(36) NOT NULL UNIQUE,
   `describe` varchar(256),
   `status` varchar(32) NOT NULL DEFAULT 'OK',
@@ -75,6 +75,6 @@ CREATE TABLE `t_organize` (
   `name` VARCHAR(256) NOT NULL,
   `code` varchar(64) NOT NULL DEFAULT 'default',
   PRIMARY KEY (`id`),
-  UNIQUE KEY `name_code` (`name`,`code`)
+  UNIQUE KEY `UK_code` (`code`)
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
