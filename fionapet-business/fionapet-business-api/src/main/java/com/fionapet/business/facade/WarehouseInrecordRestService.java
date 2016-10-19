@@ -54,4 +54,9 @@ public interface WarehouseInrecordRestService extends CURDRestService<WarehouseI
     @Path("/{id}")
     @ApiOperation(value = "删除进库记录", notes = "删除进库记录")
     RestResult<String> delete(@HeaderParam(ConstantVariable.HEADER_AUTHORIZATION_KEY) String token, @ApiParam("id") @PathParam("id") String uuid);
+
+    @GET
+    @Path("/audit/{id}")
+    @ApiOperation(value = "审核进库记录", notes = "审核进库记录")
+    RestResult<String> audit(@HeaderParam(ConstantVariable.HEADER_AUTHORIZATION_KEY) String token, @ApiParam("id") @PathParam("id") String uuid);
 }

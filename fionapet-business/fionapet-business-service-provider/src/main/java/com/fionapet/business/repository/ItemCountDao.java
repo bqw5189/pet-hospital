@@ -8,4 +8,5 @@ import org.dubbo.x.repository.DaoBase;
 * Created by tom on 2016-07-25 09:32:32.
  **/
 public interface ItemCountDao extends DaoBase<ItemCount> {
+    ItemCount findByItemCode(String itemCode);
 }

@@ -12,4 +12,6 @@ import java.util.List;
  **/
 public interface DictTypeDetailDao extends DaoBase<DictTypeDetail> {
     List<DictTypeDetail> findByDictTypeId(String id);
+
+    DictTypeDetail findByDictDetailCode(String sm00042);
 }

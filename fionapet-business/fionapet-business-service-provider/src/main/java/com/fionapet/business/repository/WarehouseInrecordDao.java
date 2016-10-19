@@ -8,4 +8,5 @@ import org.dubbo.x.repository.DaoBase;
 * Created by tom on 2016-07-18 11:56:10.
  **/
 public interface WarehouseInrecordDao extends DaoBase<WarehouseInrecord> {
+    WarehouseInrecord findByInWarehouseCode(String inWarehouseCode);
 }

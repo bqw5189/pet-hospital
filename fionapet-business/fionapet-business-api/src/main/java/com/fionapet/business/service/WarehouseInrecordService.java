@@ -8,4 +8,10 @@ import org.dubbo.x.service.CURDService;
  */
 public interface WarehouseInrecordService extends CURDService<WarehouseInrecord> {
 
+    /**
+     * 审计入库
+     * @param uuid
+     * @return
+     */
+    Boolean audit(String uuid);
 }
