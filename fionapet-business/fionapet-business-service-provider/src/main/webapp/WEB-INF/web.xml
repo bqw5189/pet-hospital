@@ -10,7 +10,7 @@
 
     <context-param>
         <param-name>contextConfigLocation</param-name>
-        <param-value>/WEB-INF/classes/META-INF/spring/applicationContext.xml,/WEB-INF/classes/META-INF/spring/fionapet-business-service-provider.xml,/WEB-INF/classes/META-INF/spring/fionapet-business-service-provider-tom.xml</param-value>
+        <param-value>/WEB-INF/classes/META-INF/spring/applicationContext.xml,/WEB-INF/classes/META-INF/spring/applicationContext-jms.xml,/WEB-INF/classes/META-INF/spring/fionapet-business-service-provider.xml,/WEB-INF/classes/META-INF/spring/fionapet-business-service-provider-tom.xml</param-value>
     </context-param>
 
     <!--this listener must be defined before the spring listener-->

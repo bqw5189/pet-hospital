@@ -2100,7 +2100,7 @@ CREATE TABLE `t_item_count` (
   `remark` text null,-- 备注
   `manufacturer_code` varchar(50) null,-- 经销商编号
   `manufacturer_name` varchar(200) null,-- 经销商名称
-  `batch_number` varchar(50) not null,-- 批次号
+  `batch_number` varchar(50)  null,-- 批次号
   `out_date_time` timestamp null,-- 过期时间
   `create_user_id` varchar(36) not null,
   `create_date` timestamp not null default current_timestamp on update current_timestamp,

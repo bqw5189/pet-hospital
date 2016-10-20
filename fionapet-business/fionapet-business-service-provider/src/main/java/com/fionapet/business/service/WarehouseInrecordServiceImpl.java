@@ -1,16 +1,23 @@
 package com.fionapet.business.service;
 
+import cn.fiona.pet.account.entity.User;
 import com.fionapet.business.entity.DictTypeDetail;
 import com.fionapet.business.entity.ItemCount;
 import com.fionapet.business.entity.WarehouseInrecord;
 import com.fionapet.business.entity.WarehouseInrecordDetail;
+import com.fionapet.business.jms.NoticeInfoBuilder;
+import com.fionapet.business.jms.QueueMessageProducer;
+import com.fionapet.business.jms.WarehouseNoticeInfo;
+import com.fionapet.business.jms.WarehouseOpType;
 import com.fionapet.business.repository.*;
 import org.apache.commons.beanutils.BeanUtilsBean;
 import org.dubbo.x.repository.DaoBase;
 import org.dubbo.x.service.CURDServiceBase;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import javax.transaction.Transactional;
 import java.lang.reflect.InvocationTargetException;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -21,11 +28,9 @@ public class WarehouseInrecordServiceImpl extends CURDServiceBase<WarehouseInrec
     @Autowired
     private WarehouseInrecordDao warehouseInrecordDao;
     @Autowired
-    private WarehouseInrecordDetailDao warehouseInrecordDetailDao;
-    @Autowired
     private DictTypeDetailDao dictTypeDetailDao;
     @Autowired
-    private ItemCountDao itemCountDao;
+    private QueueMessageProducer queueMessageProducer;
 
     @Override
     public DaoBase<WarehouseInrecord> getDao() {
@@ -42,41 +47,27 @@ public class WarehouseInrecordServiceImpl extends CURDServiceBase<WarehouseInrec
     }
 
     @Override
+    @Transactional
     public Boolean audit(String uuid) {
         WarehouseInrecord warehouseInrecord = warehouseInrecordDao.findOne(uuid);
 
         if (null != warehouseInrecord){
             DictTypeDetail checkStatus = dictTypeDetailDao.findByDictDetailCode("SM00043");
             warehouseInrecord.setStatus(checkStatus);
-            warehouseInrecordDao.save(warehouseInrecord);
+            warehouseInrecord.setCheckDate(new Date());
+
+            User user = (User) this.getCurrentUser();
+            warehouseInrecord.setCheckMan(user.getName());
+
+            createOrUpdte(warehouseInrecord);
         }
 
-        //更新库存
-        update(warehouseInrecord);
+        // 发送 审核 更新库存消息
+        WarehouseNoticeInfo warehouseNoticeInfo = NoticeInfoBuilder.instance().setCurrentUser(getCurrentUser()).setWarehouseOpType(WarehouseOpType.CHECK).setWarehouseRecordId(uuid).build();
+        queueMessageProducer.sendQueue(warehouseNoticeInfo);
 
         return true;
     }
 
-    private void update(WarehouseInrecord warehouseInrecord) {
-        List<WarehouseInrecordDetail> warehouseInrecordDetails = warehouseInrecordDetailDao.findByInWarehouseCode(warehouseInrecord.getInWarehouseCode());
-        for (WarehouseInrecordDetail warehouseInrecordDetail: warehouseInrecordDetails){
-            ItemCount itemCount = itemCountDao.findByItemCode(warehouseInrecordDetail.getItemCode());
 
-            if (null == itemCount){
-                itemCount = new ItemCount();
-                try {
-                    BeanUtilsBean.getInstance().copyProperties(itemCount, warehouseInrecordDetail);
-                } catch (IllegalAccessException e) {
-                    e.printStackTrace();
-                } catch (InvocationTargetException e) {
-                    e.printStackTrace();
-                }
-            }
-
-            itemCount.setItemCountNum(itemCount.getItemCountNum() + warehouseInrecordDetail.getInputCount());
-
-            itemCountDao.save(itemCount);
-        }
-
-    }
 }
