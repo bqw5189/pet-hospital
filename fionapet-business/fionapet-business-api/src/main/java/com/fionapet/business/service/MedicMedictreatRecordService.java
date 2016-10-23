@@ -8,4 +8,5 @@ import org.dubbo.x.service.CURDService;
  */
 public interface MedicMedictreatRecordService extends CURDService<MedicMedictreatRecord> {
 
+
 }

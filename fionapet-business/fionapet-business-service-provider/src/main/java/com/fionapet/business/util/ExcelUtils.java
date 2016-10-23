@@ -21,7 +21,7 @@ public class ExcelUtils {
     private static Logger logger = LoggerFactory.getLogger(ExcelUtils.class);
     private static JsonMapper jsonMapper = new JsonMapper();
 
-    public static List<List<String>> toList(InputStream stream){
+    public static List<List<String>> toList(InputStream stream, int sheetIndex){
         List<List<String>> result = new ArrayList<List<String>>();
 
         Workbook rwb = null;
@@ -32,7 +32,7 @@ public class ExcelUtils {
             rwb = Workbook.getWorkbook(stream);
 
             //获取文件的指定工作表 默认的第一个
-            Sheet sheet = rwb.getSheet(0);
+            Sheet sheet = rwb.getSheet(sheetIndex);
 
             //行数(表头的目录不需要，从1开始)
             for(int i=1; i<sheet.getRows(); i++){
@@ -65,5 +65,9 @@ public class ExcelUtils {
 //        logger.debug("toList:{}", result);
 
         return result;
+    }
+
+    public static List<List<String>> toList(InputStream stream){
+        return toList(stream, 0);
     }
 }
