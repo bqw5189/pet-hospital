@@ -1,5 +1,7 @@
 package com.fionapet.business.facade;
 
+import com.fionapet.business.facade.vo.BillItemVO;
+import com.fionapet.business.facade.vo.BillVO;
 import org.dubbo.x.facade.CURDRestService;
 import org.dubbo.x.facade.RestResult;
 import org.dubbo.x.util.ConstantVariable;
@@ -12,6 +14,7 @@ import io.swagger.annotations.ApiParam;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import java.util.List;
+import java.util.Map;
 
 /**
  * 顾客影像记录表 接口
@@ -54,4 +57,24 @@ public interface GestPaidRecordRestService extends CURDRestService<GestPaidRecor
     @Path("/{id}")
     @ApiOperation(value = "删除顾客影像记录表", notes = "删除顾客影像记录表")
     RestResult<String> delete(@HeaderParam(ConstantVariable.HEADER_AUTHORIZATION_KEY) String token, @ApiParam("id") @PathParam("id") String uuid);
+
+    /**
+     * 顾客 未支付 记录表
+     * @return
+     */
+    @GET
+    @Path("/billList")
+    @ApiOperation(value = "顾客 未支付 记录表",
+            notes = "顾客 未支付 记录表.")
+    RestResult<List<BillVO>> billList(@HeaderParam(ConstantVariable.HEADER_AUTHORIZATION_KEY) String token);
+
+    /**
+     * 未支付 详情
+     * @return
+     */
+    @GET
+    @Path("/billDetail/{gestId}")
+    @ApiOperation(value = "未支付 详情",
+            notes = "未支付 详情.")
+    RestResult<Map<String, List<BillItemVO>>> billDetail(@HeaderParam(ConstantVariable.HEADER_AUTHORIZATION_KEY) String token, @ApiParam("会员id") @PathParam("gestId") String gestId);
 }

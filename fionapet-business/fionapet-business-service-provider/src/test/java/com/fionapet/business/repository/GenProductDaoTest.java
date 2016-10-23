@@ -68,10 +68,11 @@ public class GenProductDaoTest extends SpringTransactionalTestCase {
     }
 
     @Test
+    @Rollback(false)
     public void genChemicalExam(){
         String file = "products.xls";
 
-        List<List<String>> data = ExcelUtils.toList(GenProductDaoTest.class.getClassLoader().getResourceAsStream(file));
+        List<List<String>> data = ExcelUtils.toList(GenProductDaoTest.class.getClassLoader().getResourceAsStream(file),3);
 
         for (List<String> row: data){
             ItemType itemType = itemTypeDao.findByItemName(row.get(3));
@@ -79,16 +80,16 @@ public class GenProductDaoTest extends SpringTransactionalTestCase {
                 itemType = new ItemType();
             }
             itemType.setItemName(row.get(0));
-            itemType.setInputPrice(Double.parseDouble(StringUtils.defaultIfEmpty(row.get(6),"0")));
-            itemType.setSellPrice(Double.parseDouble(StringUtils.defaultIfEmpty(row.get(7),"0")));
+//            itemType.setInputPrice(Double.parseDouble(StringUtils.defaultIfEmpty(row.get(6),"0")));
+//            itemType.setSellPrice(Double.parseDouble(StringUtils.defaultIfEmpty(row.get(7),"0")));
             itemType.setRecipePrice(Double.parseDouble(StringUtils.defaultIfEmpty(row.get(5),"0")));
-            itemType.setItemBulk(Integer.parseInt(StringUtils.defaultIfEmpty(row.get(4),"0")));
-            itemType.setItemStandard(row.get(1));
-            itemType.setCateNo("ICate01");
-            itemType.setPackageUnit(getUserDictDetailNo(row.get(2)));
+//            itemType.setItemBulk(Integer.parseInt(StringUtils.defaultIfEmpty(row.get(4),"0")));
+//            itemType.setItemStandard(row.get(1));
+            itemType.setCateNo("ICate08");
+//            itemType.setPackageUnit(getUserDictDetailNo(row.get(2)));
             itemType.setRecipeUnit(getUserDictDetailNo(row.get(3)));
-            itemType.setBarCode(row.get(9));
-            itemType.setItemCode(row.get(10));
+            itemType.setBarCode(row.get(6));
+            itemType.setItemCode(row.get(7));
             itemType.setStatus(StatusEntity.DEFAULT());
 
             itemType.setCreateUserId("34ff5c2e-6625-4d6d-ad39-d1745755b3a8");
