@@ -29,11 +29,8 @@
 
     <!-- account api v2 -->
     <bean id="accountService" class="cn.fiona.pet.account.service.AccountServiceImpl">
-        <property name="personsService" ref="personsService"></property>
     </bean>
 
-    <dubbo:reference id="personsService" interface="com.fionapet.business.service.PersonsService" />
-    
     <dubbo:service interface="cn.fiona.pet.account.service.AccountService" ref="accountService"
                    protocol="dubbo" validation="true" timeout="2000" connections="100"/>
     <!-- account api v2 -->
