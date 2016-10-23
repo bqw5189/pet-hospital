@@ -107,7 +107,13 @@ public class AccountServiceImpl implements AccountService {
     public List<User> listByRoleCode(String code) {
         Role role = roleDao.findByCode(code);
         List<User> users = new ArrayList<User>();
-        users.addAll(role.getUsers());
+        for (User user: role.getUsers()){
+            User userVO = new User();
+            user.setName(user.getName());
+            user.setId(user.getId());
+            user.setLoginName(user.getLoginName());
+            users.add(userVO);
+        }
         return users;
     }
 
