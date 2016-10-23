@@ -1,5 +1,6 @@
 package com.fionapet.business.service;
 
+import cn.fiona.pet.account.entity.Role;
 import cn.fiona.pet.account.entity.User;
 import cn.fiona.pet.account.exception.ApiException;
 import cn.fiona.pet.account.facade.LoginVO;
@@ -11,6 +12,8 @@ import com.fionapet.business.repository.PersonsDao;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import java.security.InvalidParameterException;
+import java.util.HashSet;
+import java.util.Set;
 
 /**
  *  宠物主人信息
@@ -61,6 +64,11 @@ public class PersonsServiceImpl extends CURDServiceBase<Persons> implements Pers
         user.setId(persons.getId());
         user.setLoginName(persons.getPersonName());
         user.setName(persons.getPersonName());
+        Set<Role> roleSet = new HashSet<Role>();
+        Role role = new Role();
+        role.setCode(persons.getRoleId());
+        roleSet.add(role);
+        user.setRoles(roleSet);
         return user;
     }
 }

@@ -40,7 +40,7 @@ public class AppConfigServiceImpl extends CURDServiceBase<AppConfig> implements 
         NUMBER_INFO.put("入库单号",new NumberInfo("t_warehouse_inrecord","in_warehouse_code"));
         NUMBER_INFO.put("出库单号",new NumberInfo("t_warehouse_outrecord","out_warehouse_code"));
         NUMBER_INFO.put("退货单号",new NumberInfo("t_warehouse_backrecord","back_warehouse_code"));
-        NUMBER_INFO.put("处方流水",new NumberInfo("t_medic_prescription","medic_record_code"));
+        NUMBER_INFO.put("处方流水",new NumberInfo("t_medic_prescription","prescription_code"));
         NUMBER_INFO.put("经销商编号",new NumberInfo("t_dealer","code"));
         NUMBER_INFO.put("商品服务",new NumberInfo("t_item_type","item_code"));
         NUMBER_INFO.put("字典编号",new NumberInfo("t_user_dict_detail","dict_detail_code"));
