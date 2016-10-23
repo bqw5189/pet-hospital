@@ -11,7 +11,7 @@ import javax.persistence.Table;
 import java.util.Date;
 
 /**
- * 医生登记记录明细
+ * 医生登记记录明细 --  挂号
  * <p>
 * Created by tom on 2016-07-18 11:47:04.
  */

@@ -12,4 +12,6 @@ import java.util.List;
  */
 public interface UserDictDetailDao extends DaoBase<UserDictDetail> {
     List<UserDictDetail> findByDictTypeId(String id);
+
+    List<UserDictDetail> findByValueNameCn(String name);
 }

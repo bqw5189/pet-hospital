@@ -9,7 +9,7 @@ import javax.persistence.Entity;
 import javax.persistence.Table;
 
 /**
- * 医生处理记录
+ * 医生处理记录-就诊记录
  * <p>
 * Created by tom on 2016-07-18 11:47:04.
  */
