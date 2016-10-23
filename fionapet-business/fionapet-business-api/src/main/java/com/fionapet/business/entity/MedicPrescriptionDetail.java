@@ -18,7 +18,7 @@ import java.util.Date;
 @Entity
 @Table(name = "t_medic_prescription_detail")
 @ApiModel("医生处方明细")
-public class MedicPrescriptionDetail extends CMSEntity {
+public class MedicPrescriptionDetail extends PaidEntity {
     
     /**
      * 企业编号
@@ -145,35 +145,7 @@ public class MedicPrescriptionDetail extends CMSEntity {
     public void setGroupName(String groupName) {
         this.groupName = groupName;
     }
-    
-    /**
-     * 影像状态
-     */
-    @ApiModelProperty(value = "影像状态", required = false)
-    
-    @Column(columnDefinition = "影像状态")
-    private String paidStatus;
-    public String getPaidStatus() {
-        return paidStatus;
-    }
-    public void setPaidStatus(String paidStatus) {
-        this.paidStatus = paidStatus;
-    }
-    
-    /**
-     * 影像时间
-     */
-    @ApiModelProperty(value = "影像时间", required = false)
-    
-    @Column(columnDefinition = "影像时间")
-    private Date paidTime;
-    public Date getPaidTime() {
-        return paidTime;
-    }
-    public void setPaidTime(Date paidTime) {
-        this.paidTime = paidTime;
-    }
-    
+
     /**
      * 状态
      */
