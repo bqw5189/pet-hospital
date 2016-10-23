@@ -58,10 +58,10 @@ public class MedicMedictreatRecordServiceImpl extends CURDServiceBase<MedicMedic
                 } catch (InvocationTargetException e) {
                     e.printStackTrace();
                 }
-            }else{
-                if (entity.getId() == null){
-                    entity = medicMedictreatRecord;
-                }
+            }
+        }else{
+            if (entity.getId() == null){
+                entity = medicMedictreatRecord;
             }
         }
         return super.createOrUpdte(entity);
