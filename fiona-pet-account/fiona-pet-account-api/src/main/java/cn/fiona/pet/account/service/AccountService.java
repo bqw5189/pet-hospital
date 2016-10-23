@@ -41,4 +41,6 @@ public interface AccountService {
      * @return
      */
     List<User> listByRoleCode(String code);
+
+    User createUser(User user);
 }

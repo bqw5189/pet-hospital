@@ -1,5 +1,6 @@
 package cn.fiona.pet.account.service;
 
+import cn.fiona.pet.account.entity.Organize;
 import cn.fiona.pet.account.entity.Role;
 import cn.fiona.pet.account.entity.User;
 import cn.fiona.pet.account.exception.ApiException;
@@ -7,7 +8,6 @@ import cn.fiona.pet.account.exception.NotFoundException;
 import cn.fiona.pet.account.facade.LoginVO;
 import cn.fiona.pet.account.repository.RoleDao;
 import cn.fiona.pet.account.repository.UserDao;
-import com.fionapet.business.service.PersonsService;
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -18,7 +18,9 @@ import org.springside.modules.utils.Encodes;
 
 import java.security.InvalidParameterException;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 /**
  * @author baiqw
@@ -33,8 +35,6 @@ public class AccountServiceImpl implements AccountService {
 
     private Logger logger = LoggerFactory.getLogger(AccountServiceImpl.class);
 
-    private PersonsService personsService;
-
     @Override
     public String login(LoginVO loginVO) throws ApiException {
         User user = userDao.findByLoginName(loginVO.getName());
@@ -44,12 +44,6 @@ public class AccountServiceImpl implements AccountService {
         }
 
         if (null == user) {
-
-            String token = personsService.login(loginVO);
-            if (null != token){
-                return  token;
-            }
-
             throw new NotFoundException(String.format("[%s]用户未找到!", loginVO.getName()));
         }
 
@@ -76,8 +70,7 @@ public class AccountServiceImpl implements AccountService {
 
         User user = userDao.findOne(token);
         if (null == user){
-            return personsService.validateToken(token);
-//            throw new ApiException(String.format("%s not exists!", token));
+            throw new ApiException(String.format("%s not exists!", token));
         }
 
         return true;
@@ -88,11 +81,8 @@ public class AccountServiceImpl implements AccountService {
     public User getByToken(String token) throws ApiException {
         User user = userDao.findOne(token);
 
-        if (null == user){
-            user = personsService.getByToken(token);
-            if (null == user) {
-                throw new ApiException(String.format("%s not exists!", token));
-            }
+        if (null == user) {
+            throw new ApiException(String.format("%s not exists!", token));
         }
 
         User userVO = new User();
@@ -114,7 +104,29 @@ public class AccountServiceImpl implements AccountService {
             userVO.setLoginName(user.getLoginName());
             users.add(userVO);
         }
+
         return users;
+    }
+
+    @Override
+    public User createUser(User user) {
+
+        Organize organize =  new Organize();
+        organize.setId("9b06d376-44ff-4153-9b31-c29a19b8da29");
+        user.setOrganize(organize);
+
+        Set<Role> roleSet = new HashSet<Role>();
+
+        for (Role role: user.getRoles()){
+            Role r = roleDao.findByCode(role.getCode());
+            roleSet.add(r);
+        }
+
+        user.setRoles(roleSet);
+
+        encode(user);
+
+        return userDao.save(user);
     }
 
     private boolean passwordValidation(String password, User user){
@@ -126,12 +138,14 @@ public class AccountServiceImpl implements AccountService {
         return user.getPassword().equals(Encodes.encodeHex(hashPassword));
     }
 
+    private void encode(User user){
 
-    public PersonsService getPersonsService() {
-        return personsService;
+        byte[] salt = Encodes.decodeHex(user.getSalt());
+
+        byte[] hashPassword = Digests.sha1(user.getPlainPassword().getBytes(), salt, 1024);
+
+        user.setPassword(Encodes.encodeHex(hashPassword));
     }
 
-    public void setPersonsService(PersonsService personsService) {
-        this.personsService = personsService;
-    }
+
 }
