@@ -4,6 +4,8 @@ import cn.fiona.pet.account.entity.User;
 import cn.fiona.pet.account.exception.ApiException;
 import cn.fiona.pet.account.facade.LoginVO;
 
+import java.util.List;
+
 /**
  * 账号接口
  *
@@ -32,4 +34,11 @@ public interface AccountService {
      * @return
      */
     User getByToken(String token) throws ApiException;
+
+    /**
+     * 根据 角色 code 获取用户列表
+     * @param code
+     * @return
+     */
+    List<User> listByRoleCode(String code);
 }

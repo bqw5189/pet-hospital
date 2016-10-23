@@ -11,4 +11,6 @@ import org.springframework.data.repository.PagingAndSortingRepository;
 
 public interface RoleDao extends PagingAndSortingRepository<Role, String> {
 	Role findByName(String name);
+
+	Role findByCode(String code);
 }

@@ -6,6 +6,7 @@ import io.swagger.annotations.*;
 
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
+import java.util.List;
 
 /**
  * 身份授权 服务 rest api
@@ -36,4 +37,11 @@ public interface AuthRestService {
             notes = "登录用户信息"
     )
     RestResult<User> get(@HeaderParam(AuthRestService.HEADER_AUTHORIZATION_KEY) String token);
+
+    @GET
+    @Path("/users/byRole/{code}")
+    @ApiOperation(value = "根据角色编号获取用户列表",
+            notes = "根据角色编号获取用户列表"
+    )
+    RestResult<List<User>> usersByRoleCode(@HeaderParam(AuthRestService.HEADER_AUTHORIZATION_KEY) String token, @ApiParam("角色编号") @PathParam("code") String code);
 }

@@ -10,6 +10,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import javax.ws.rs.HeaderParam;
+import java.util.List;
 
 /**
  * 身份认证
@@ -62,5 +63,10 @@ public class AuthRestServiceImpl implements AuthRestService {
             restResult = RestResult.ERROR(e.getMessage());
         }
         return restResult;
+    }
+
+    @Override
+    public RestResult<List<User>> usersByRoleCode(@HeaderParam(AuthRestService.HEADER_AUTHORIZATION_KEY) String token, @ApiParam("角色编号") String code) {
+        return RestResult.OK(accountService.listByRoleCode(code));
     }
 }

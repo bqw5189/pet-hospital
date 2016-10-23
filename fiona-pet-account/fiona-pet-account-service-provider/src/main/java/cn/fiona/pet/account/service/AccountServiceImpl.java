@@ -1,9 +1,11 @@
 package cn.fiona.pet.account.service;
 
+import cn.fiona.pet.account.entity.Role;
 import cn.fiona.pet.account.entity.User;
 import cn.fiona.pet.account.exception.ApiException;
 import cn.fiona.pet.account.exception.NotFoundException;
 import cn.fiona.pet.account.facade.LoginVO;
+import cn.fiona.pet.account.repository.RoleDao;
 import cn.fiona.pet.account.repository.UserDao;
 import com.fionapet.business.service.PersonsService;
 import org.apache.commons.lang3.StringUtils;
@@ -15,6 +17,8 @@ import org.springside.modules.security.utils.Digests;
 import org.springside.modules.utils.Encodes;
 
 import java.security.InvalidParameterException;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * @author baiqw
@@ -23,6 +27,9 @@ import java.security.InvalidParameterException;
 public class AccountServiceImpl implements AccountService {
     @Autowired
     private UserDao userDao;
+
+    @Autowired
+    private RoleDao roleDao;
 
     private Logger logger = LoggerFactory.getLogger(AccountServiceImpl.class);
 
@@ -94,6 +101,14 @@ public class AccountServiceImpl implements AccountService {
         userVO.setLoginName(user.getLoginName());
 
         return userVO;
+    }
+
+    @Override
+    public List<User> listByRoleCode(String code) {
+        Role role = roleDao.findByCode(code);
+        List<User> users = new ArrayList<User>();
+        users.addAll(role.getUsers());
+        return users;
     }
 
     private boolean passwordValidation(String password, User user){
