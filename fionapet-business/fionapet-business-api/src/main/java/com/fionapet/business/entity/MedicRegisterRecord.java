@@ -18,7 +18,8 @@ import java.util.Date;
 @Entity
 @Table(name = "t_medic_register_record")
 @ApiModel("医生登记记录明细")
-public class MedicRegisterRecord extends PaidEntity {
+public class MedicRegisterRecord extends CMSEntity {
+
     /**
      * 登记编号
      */
@@ -187,6 +188,34 @@ public class MedicRegisterRecord extends PaidEntity {
         this.doctorId = doctorId;
     }
     
+    /**
+     * 影像状态
+     */
+    @ApiModelProperty(value = "影像状态", required = false)
+
+    @Column(columnDefinition = "影像状态")
+    private String paidStatus = "SM00040";
+    public String getPaidStatus() {
+        return paidStatus;
+    }
+    public void setPaidStatus(String paidStatus) {
+        this.paidStatus = paidStatus;
+    }
+
+    /**
+     * 影像时间
+     */
+    @ApiModelProperty(value = "影像时间", required = false)
+
+    @Column(columnDefinition = "影像时间")
+    private Date paidTime;
+    public Date getPaidTime() {
+        return paidTime;
+    }
+    public void setPaidTime(Date paidTime) {
+        this.paidTime = paidTime;
+    }
+
     /**
      * 原因
      */
