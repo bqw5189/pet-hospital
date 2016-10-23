@@ -109,9 +109,9 @@ public class AccountServiceImpl implements AccountService {
         List<User> users = new ArrayList<User>();
         for (User user: role.getUsers()){
             User userVO = new User();
-            user.setName(user.getName());
-            user.setId(user.getId());
-            user.setLoginName(user.getLoginName());
+            userVO.setName(user.getName());
+            userVO.setId(user.getId());
+            userVO.setLoginName(user.getLoginName());
             users.add(userVO);
         }
         return users;
