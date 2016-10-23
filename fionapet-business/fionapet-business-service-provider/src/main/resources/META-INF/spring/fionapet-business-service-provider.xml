@@ -691,7 +691,10 @@
 
 
 	<!-- 宠物主人信息 api -->
-    <bean id="personsService" class="com.fionapet.business.service.PersonsServiceImpl"/>
+    <bean id="personsService" class="com.fionapet.business.service.PersonsServiceImpl">
+        <property name="accountService" ref="accountService"></property>
+            </bean>
+    <dubbo:reference id="accountService" interface="cn.fiona.pet.account.service.AccountService" />
 
     <dubbo:service interface="com.fionapet.business.service.PersonsService" ref="personsService"
                    protocol="dubbo" validation="true" timeout="5000" />
