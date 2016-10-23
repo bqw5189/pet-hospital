@@ -3,6 +3,8 @@ package com.fionapet.business.service;
 import com.fionapet.business.entity.AppConfig;
 import com.fionapet.business.repository.GestDao;
 import org.apache.commons.lang.StringUtils;
+import org.apache.commons.lang.time.DateFormatUtils;
+import org.apache.commons.lang.time.DateUtils;
 import org.dubbo.x.repository.DaoBase;
 import org.dubbo.x.service.CURDServiceBase;
 import com.fionapet.business.repository.AppConfigDao;
@@ -53,6 +55,10 @@ public class AppConfigServiceImpl extends CURDServiceBase<AppConfig> implements 
         NUMBER_INFO.put("服务编号",new NumberInfo("t_item_type","item_code"));
 //        NUMBER_INFO.put("盘点单编号",new NumberInfo("",""));
         NUMBER_INFO.put("销售退货单号",new NumberInfo("t_return_commodity","rc_code"));
+
+        //挂号
+        NUMBER_INFO.put("登记编号",new NumberInfo("t_register_record","register_no"));
+        NUMBER_INFO.put("就诊编号",new NumberInfo("t_medic_register_record","register_no"));
 
 
     }
@@ -114,12 +120,17 @@ public class AppConfigServiceImpl extends CURDServiceBase<AppConfig> implements 
 
         List<AppConfig> numberInfos = appConfigDao.findByConfigNameLike(name + SQL_WILDCARDS);
 
-        for (AppConfig appConfig: numberInfos){
-            if ((name + "前缀").equals(appConfig.getConfigName())){
-                result.setPrefix(appConfig.getConfigValue());
-            }
-            if ((name + "长度").equals(appConfig.getConfigName())){
-                result.setLength(Integer.parseInt(appConfig.getConfigValue()));
+        if (numberInfos.size() == 0){
+            result.setPrefix(DateFormatUtils.format(System.currentTimeMillis(), "yyyyMMdd"));
+            result.setLength(4);
+        }else {
+            for (AppConfig appConfig : numberInfos) {
+                if ((name + "前缀").equals(appConfig.getConfigName())) {
+                    result.setPrefix(appConfig.getConfigValue());
+                }
+                if ((name + "长度").equals(appConfig.getConfigName())) {
+                    result.setLength(Integer.parseInt(appConfig.getConfigValue()));
+                }
             }
         }
 
