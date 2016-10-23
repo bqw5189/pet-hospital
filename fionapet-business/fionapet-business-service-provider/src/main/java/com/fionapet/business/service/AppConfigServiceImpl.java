@@ -57,10 +57,8 @@ public class AppConfigServiceImpl extends CURDServiceBase<AppConfig> implements 
         NUMBER_INFO.put("销售退货单号",new NumberInfo("t_return_commodity","rc_code"));
 
         //挂号
-        NUMBER_INFO.put("登记编号",new NumberInfo("t_register_record","register_no"));
-        NUMBER_INFO.put("就诊编号",new NumberInfo("t_medic_register_record","register_no"));
-
-
+        NUMBER_INFO.put("登记编号",new NumberInfo("t_medic_register_record","register_no", DateFormatUtils.format(System.currentTimeMillis(), "yyyyMMdd"), 4));
+        NUMBER_INFO.put("就诊编号",new NumberInfo("t_medic_medictreat_record","medi_treatment_code","BL" + DateFormatUtils.format(System.currentTimeMillis(), "yyyyMMdd"),4));
     }
 
     /**
@@ -120,17 +118,12 @@ public class AppConfigServiceImpl extends CURDServiceBase<AppConfig> implements 
 
         List<AppConfig> numberInfos = appConfigDao.findByConfigNameLike(name + SQL_WILDCARDS);
 
-        if (numberInfos.size() == 0){
-            result.setPrefix(DateFormatUtils.format(System.currentTimeMillis(), "yyyyMMdd"));
-            result.setLength(4);
-        }else {
-            for (AppConfig appConfig : numberInfos) {
-                if ((name + "前缀").equals(appConfig.getConfigName())) {
-                    result.setPrefix(appConfig.getConfigValue());
-                }
-                if ((name + "长度").equals(appConfig.getConfigName())) {
-                    result.setLength(Integer.parseInt(appConfig.getConfigValue()));
-                }
+        for (AppConfig appConfig : numberInfos) {
+            if ((name + "前缀").equals(appConfig.getConfigName())) {
+                result.setPrefix(appConfig.getConfigValue());
+            }
+            if ((name + "长度").equals(appConfig.getConfigName())) {
+                result.setLength(Integer.parseInt(appConfig.getConfigValue()));
             }
         }
 
@@ -147,6 +140,14 @@ public class AppConfigServiceImpl extends CURDServiceBase<AppConfig> implements 
         public NumberInfo(String tableName, String columName) {
             this.tableName = tableName;
             this.columName = columName;
+        }
+
+        public NumberInfo(String tableName, String columName, String prefix, int length) {
+            this.name = name;
+            this.tableName = tableName;
+            this.columName = columName;
+            this.prefix = prefix;
+            this.length = length;
         }
 
         public String getName() {

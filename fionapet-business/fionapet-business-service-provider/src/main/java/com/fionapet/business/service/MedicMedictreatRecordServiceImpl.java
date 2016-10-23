@@ -50,6 +50,18 @@ public class MedicMedictreatRecordServiceImpl extends CURDServiceBase<MedicMedic
                 } catch (InvocationTargetException e) {
                     e.printStackTrace();
                 }
+
+                try {
+                    BeanUtilsBean.getInstance().copyProperties(entity, medicMedictreatRecord);
+                } catch (IllegalAccessException e) {
+                    e.printStackTrace();
+                } catch (InvocationTargetException e) {
+                    e.printStackTrace();
+                }
+            }else{
+                if (entity.getId() == null){
+                    entity = medicMedictreatRecord;
+                }
             }
         }
         return super.createOrUpdte(entity);
