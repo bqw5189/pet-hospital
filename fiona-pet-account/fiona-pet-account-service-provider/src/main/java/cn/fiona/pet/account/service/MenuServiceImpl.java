@@ -1,12 +1,10 @@
 package cn.fiona.pet.account.service;
 
-import cn.fiona.pet.account.entity.Account;
 import cn.fiona.pet.account.entity.Menu;
 import cn.fiona.pet.account.entity.Role;
 import cn.fiona.pet.account.entity.User;
 import cn.fiona.pet.account.exception.ApiException;
 import cn.fiona.pet.account.repository.MenuDao;
-import cn.fiona.pet.account.repository.RoleDao;
 import cn.fiona.pet.account.repository.UserDao;
 import cn.fiona.pet.account.vo.MenuVO;
 import org.apache.commons.collections.CollectionUtils;
@@ -28,25 +26,18 @@ public class MenuServiceImpl implements MenuService {
     private MenuDao menuDao;
 
     @Autowired
-    private RoleDao roleDao;
-    @Autowired
-    private AccountService accountService;
+    private UserDao userDao;
 
     @Override
     public Set<Menu> findByToken(String token) throws ApiException {
         Set<Menu> menus = new HashSet<Menu>();
 
-        User user = accountService.getByToken(token);
-
+        User user = userDao.findOne(token);
         Set<Role> roleSet = user.getRoles();
 
         for (Role role : roleSet) {
-            if (role.getMenuSet() == null){
-                Role r = roleDao.findByCode(role.getCode());
-                menus.addAll(r.getMenuSet());
-            }else {
-                menus.addAll(role.getMenuSet());
-            }
+
+            menus.addAll(role.getMenuSet());
         }
 
         return menus;
