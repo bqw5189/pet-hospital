@@ -12,10 +12,10 @@ import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.transaction.annotation.Transactional;
 import org.springside.modules.security.utils.Digests;
 import org.springside.modules.utils.Encodes;
 
+import javax.transaction.Transactional;
 import java.security.InvalidParameterException;
 import java.util.ArrayList;
 import java.util.HashSet;
@@ -109,6 +109,7 @@ public class AccountServiceImpl implements AccountService {
     }
 
     @Override
+    @Transactional
     public User createUser(User user) {
 
         Organize organize =  new Organize();
@@ -118,15 +119,28 @@ public class AccountServiceImpl implements AccountService {
         Set<Role> roleSet = new HashSet<Role>();
 
         for (Role role: user.getRoles()){
+            logger.debug("add role:{}", role.getCode());
             Role r = roleDao.findByCode(role.getCode());
             roleSet.add(r);
+        }
+
+        if (roleSet.size() == 0){
+            roleSet.add(roleDao.findByCode("doctor"));
         }
 
         user.setRoles(roleSet);
 
         encode(user);
 
-        return userDao.save(user);
+        userDao.save(user);
+
+        User userVO = new User();
+
+        userVO.setId(user.getId());
+        userVO.setName(user.getName());
+        userVO.setLoginName(user.getLoginName());
+
+        return userVO;
     }
 
     private boolean passwordValidation(String password, User user){
