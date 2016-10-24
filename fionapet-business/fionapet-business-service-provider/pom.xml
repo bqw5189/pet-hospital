@@ -399,6 +399,12 @@
             <version>${spring.version}</version>
         </dependency>
 
+        <dependency>
+            <groupId>com.github.obiteaaron</groupId>
+            <artifactId>pinyin4j-multi</artifactId>
+            <version>1.0.0</version>
+        </dependency>
+
     </dependencies>
     <!--<build>-->
     <!--<plugins>-->
