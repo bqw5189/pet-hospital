@@ -1879,7 +1879,7 @@ CREATE TABLE `t_medic_medictreat_record` (
   `id` VARCHAR(36) NOT NULL,
   `pet_id` varchar(36) null,-- 宠物id
 	`medi_treatment_code` varchar(50) null,-- 医生对待编号
-	`register_no` varchar(50) null,-- 注册编号
+	`register_no` varchar(50) UNIQUE ,-- 注册编号
 	`temperature` varchar(50) null,-- 温度
 	`heartbeat` varchar(50) null,-- 心跳
 	`breath` varchar(50) null,-- 气息
