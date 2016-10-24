@@ -17,7 +17,7 @@ insert into t_role (id,name,code,`describe`) values('42ed144b-76ef-4634-ba6b-b66
 -- ----------------------------
 -- Table data for t_user_role
 -- ----------------------------
-insert into t_user_role (id,user_id,role_id) values('836b4570-9b24-4a1b-9b50-0e4a652d9ee1','fc5db3b3-4063-4a12-a511-880ba19e4b58','8890e122-d989-4800-8bee-23cc345e13ba');
+insert into t_user_role (user_id,role_id) values('fc5db3b3-4063-4a12-a511-880ba19e4b58','8890e122-d989-4800-8bee-23cc345e13ba');
 -- ----------------------------
 -- Table data for t_menu
 -- ----------------------------
@@ -162,6 +162,12 @@ insert into t_role_menu (id,menu_code,role_code) values(uuid(),'FM0202','admin')
 insert into t_role_menu (id,menu_code,role_code) values(uuid(),'FM0203','admin');
 insert into t_role_menu (id,menu_code,role_code) values(uuid(),'FM0204','admin');
 insert into t_role_menu (id,menu_code,role_code) values(uuid(),'FM0206','admin');
+
+
+insert into t_role_menu (id,menu_code,role_code) values(uuid(),'FM0306','doctor');
+insert into t_role_menu (id,menu_code,role_code) values(uuid(),'FM0318','doctor');
+
+
 
 -- ----------------------------
 -- Table data for t_organize
