@@ -13,5 +13,5 @@ import java.util.List;
 public interface ItemTypeDao extends DaoBase<ItemType> {
     List<ItemType> findByCateNo(String cateNo);
 
-    ItemType findByItemName(String itemName);
+    List<ItemType> findByItemName(String itemName);
 }

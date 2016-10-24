@@ -18,8 +18,8 @@ public class SerializationOptimizerImpl implements SerializationOptimizer {
 
     public Collection<Class> getSerializableClasses() {
         List<Class> classes = new LinkedList<Class>();
-        classes.add(PetRace.class);
-        classes.add(PetSmallRace.class);
+//        classes.add(PetRace.class);
+//        classes.add(PetSmallRace.class);
         return classes;
     }
 }

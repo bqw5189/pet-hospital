@@ -10,6 +10,7 @@ import org.dubbo.x.service.CURDServiceBase;
 import com.fionapet.business.repository.MedicMedictreatRecordDao;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import javax.transaction.Transactional;
 import java.lang.reflect.InvocationTargetException;
 
 /**
@@ -32,7 +33,8 @@ public class MedicMedictreatRecordServiceImpl extends CURDServiceBase<MedicMedic
     }
 
     @Override
-    public MedicMedictreatRecord createOrUpdte(MedicMedictreatRecord entity) {
+    @Transactional
+    public synchronized MedicMedictreatRecord createOrUpdte(MedicMedictreatRecord entity) {
         MedicMedictreatRecord medicMedictreatRecord = medicMedictreatRecordDao.findByRegisterNo(entity.getRegisterNo());
         if (null == medicMedictreatRecord){
             medicMedictreatRecord = new MedicMedictreatRecord();
