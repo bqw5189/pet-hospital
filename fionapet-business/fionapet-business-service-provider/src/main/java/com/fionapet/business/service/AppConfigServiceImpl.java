@@ -1,6 +1,7 @@
 package com.fionapet.business.service;
 
 import com.fionapet.business.entity.AppConfig;
+import com.fionapet.business.entity.SerialNumber;
 import com.fionapet.business.repository.GestDao;
 import org.apache.commons.lang.StringUtils;
 import org.apache.commons.lang.time.DateFormatUtils;
@@ -70,6 +71,8 @@ public class AppConfigServiceImpl extends CURDServiceBase<AppConfig> implements 
     private AppConfigDao appConfigDao;
     @Autowired
     private EntityManagerFactory entityManagerFactory;
+    @Autowired
+    private SerialNumberService serialNumberService;
 
     @Override
     public DaoBase<AppConfig> getDao() {
@@ -78,39 +81,19 @@ public class AppConfigServiceImpl extends CURDServiceBase<AppConfig> implements 
 
     @Override
     public String genNumberByName(String name) {
+        serialNumberService.setCurrentUser(getCurrentUser());
+
+        SerialNumber serialNumber = serialNumberService.getCurrentSerialNumber(name);
 
         NumberInfo numberInfo = getNumberInfo(name);
+
         if (null == numberInfo){
-            return "1";
-        }
-        Integer seq = SEQ.get(name);
-        if (null != seq){
-            SEQ.put(name, ++seq);
-            return numberInfo.prefix + StringUtils.leftPad(seq + "", numberInfo.getLength(), "0");
+            return serialNumber.getSerialNum()+"";
         }
 
-        return currentMaxCode(numberInfo);
+        return numberInfo.prefix + StringUtils.leftPad(serialNumber.getSerialNum() + "", numberInfo.getLength(), "0");
     }
 
-    private String currentMaxCode(NumberInfo numberInfo){
-        Query query = entityManagerFactory.createEntityManager().createNativeQuery(String.format("select max(%s) from %s", numberInfo.columName, numberInfo.tableName));
-        Object result = query.getSingleResult();
-
-        if (null!=result){
-            String numberCodeStr = result+"";
-            numberCodeStr = numberCodeStr.replaceFirst(numberInfo.prefix,"");
-
-            long numberCode = Long.parseLong(numberCodeStr) + 1;
-
-            SEQ.put(numberInfo.getName(), (int)numberCode);
-
-            numberCodeStr = numberInfo.prefix + StringUtils.leftPad(numberCode + "", numberInfo.getLength(), "0");
-
-            return numberCodeStr;
-        }
-
-        return numberInfo.prefix + StringUtils.leftPad(1 + "", numberInfo.getLength(), "0");
-    }
 
     private NumberInfo getNumberInfo(String name){
         NumberInfo result = NUMBER_INFO.get(name);

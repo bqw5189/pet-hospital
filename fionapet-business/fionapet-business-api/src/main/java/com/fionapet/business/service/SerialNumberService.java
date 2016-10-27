@@ -7,5 +7,5 @@ import org.dubbo.x.service.CURDService;
 * Created by tom on 2016-07-18 11:56:11.
  */
 public interface SerialNumberService extends CURDService<SerialNumber> {
-
+    SerialNumber getCurrentSerialNumber(String name);
 }
