@@ -2361,11 +2361,11 @@ CREATE TABLE `t_finance_settle_accounts_detail` (
   `infact_price` double null,-- 实际价格
   `discount_money` double null,-- 折后价
   `busi_type_id` integer null,-- 业务类型ID
-  `relation_id` integer null,-- 关联ID
+  `relation_id` VARCHAR(36) null,-- 关联ID
   `item_descript` varchar(100) null,-- 类型描述
   `paid_status` varchar(50) null,-- 影像状态
   `paid_time` timestamp null,-- 影像时间
-  `relation_detail_id` integer null,-- 关联细节ID
+  `relation_detail_id` VARCHAR(36) null,-- 关联细节ID
   `sum_discount_money` double null,-- 折后总价
   `sum_original_money` double null,-- 原始价格
   `create_user_id` varchar(36) not null,
@@ -2385,7 +2385,7 @@ DROP TABLE IF EXISTS `t_finance_settle_accounts`;
 CREATE TABLE `t_finance_settle_accounts` (
   `id` VARCHAR(36) NOT NULL,
   `settle_code` varchar(50) null,-- 编号
-  `gest_id` integer null,-- 顾客ID
+  `gest_id` varchar(50) null,-- 顾客ID
   `gest_code` varchar(50) null,-- 顾客编号
   `gest_name` varchar(100) null,-- 顾客名称
   `pet_code` varchar(50) null,-- 宠物编号
@@ -2565,5 +2565,7 @@ CREATE TABLE `t_dealer` (
   UNIQUE KEY `name` (`name`)
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
+
+CREATE UNIQUE INDEX t_medic_medictreat_record_register_no_uindex ON fiona_pet_business.t_medic_medictreat_record (register_no);
 
 

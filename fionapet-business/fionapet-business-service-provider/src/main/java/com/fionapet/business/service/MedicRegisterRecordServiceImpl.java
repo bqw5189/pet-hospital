@@ -41,6 +41,14 @@ public class MedicRegisterRecordServiceImpl extends CURDServiceBase<MedicRegiste
 
         pageSearch.getFilters().add(searchFilter);
 
+        searchFilter = new SearchFilter();
+
+        searchFilter.setFieldName("status.dictDetailCode");
+        searchFilter.setOperator(SearchFilter.Operator.EQ.toString());
+        searchFilter.setValue("SM00037");
+
+        pageSearch.getFilters().add(searchFilter);
+
         return super.page(pageSearch);
     }
 

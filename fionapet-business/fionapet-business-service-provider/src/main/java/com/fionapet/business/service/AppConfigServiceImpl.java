@@ -35,7 +35,7 @@ public class AppConfigServiceImpl extends CURDServiceBase<AppConfig> implements 
         NUMBER_INFO.put("销售单号",new NumberInfo("t_store_direct_sell","direct_sell_code"));
         NUMBER_INFO.put("寄养编号",new NumberInfo("t_foster_record","foster_no"));
         NUMBER_INFO.put("住院编号",new NumberInfo("t_in_hospital_record","in_hospital_no"));
-        NUMBER_INFO.put("结算单号",new NumberInfo("t_finance_settle_accounts","settle_code"));
+        NUMBER_INFO.put("结算单号",new NumberInfo("结算单号",true));
         NUMBER_INFO.put("驱虫疫苗组号",new NumberInfo("t_medic_vaccine","vaccine_group_code"));
 //        NUMBER_INFO.put("库存条码",new NumberInfo("",""));
         NUMBER_INFO.put("入库单号",new NumberInfo("t_warehouse_inrecord","in_warehouse_code"));
@@ -103,7 +103,11 @@ public class AppConfigServiceImpl extends CURDServiceBase<AppConfig> implements 
 
         for (AppConfig appConfig : numberInfos) {
             if ((name + "前缀").equals(appConfig.getConfigName())) {
-                result.setPrefix(appConfig.getConfigValue());
+                if (result.isHasDate()) {
+                    result.setPrefix(appConfig.getConfigValue() + DateFormatUtils.format(System.currentTimeMillis(), "yyyyMMdd"));
+                }else{
+                    result.setPrefix(appConfig.getConfigValue());
+                }
             }
             if ((name + "长度").equals(appConfig.getConfigName())) {
                 result.setLength(Integer.parseInt(appConfig.getConfigValue()));
@@ -119,6 +123,15 @@ public class AppConfigServiceImpl extends CURDServiceBase<AppConfig> implements 
         private String columName;
         private String prefix;
         private int length;
+        private boolean hasDate = false;
+
+        public boolean isHasDate() {
+            return hasDate;
+        }
+
+        public void setHasDate(boolean hasDate) {
+            this.hasDate = hasDate;
+        }
 
         public NumberInfo(String tableName, String columName) {
             this.tableName = tableName;
@@ -131,6 +144,11 @@ public class AppConfigServiceImpl extends CURDServiceBase<AppConfig> implements 
             this.columName = columName;
             this.prefix = prefix;
             this.length = length;
+        }
+
+        public NumberInfo(String name, boolean hasDate) {
+            this.name = name;
+            this.hasDate = hasDate;
         }
 
         public String getName() {

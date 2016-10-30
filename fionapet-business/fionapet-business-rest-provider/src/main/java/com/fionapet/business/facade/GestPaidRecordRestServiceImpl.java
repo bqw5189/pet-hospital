@@ -1,8 +1,10 @@
 package com.fionapet.business.facade;
 
+import com.fionapet.business.entity.FinanceSettleAccounts;
 import com.fionapet.business.entity.GestPaidRecord;
 import com.fionapet.business.entity.SettleAccountsView;
 import com.fionapet.business.entity.BillVO;
+import com.fionapet.business.facade.vo.PayVO;
 import io.swagger.annotations.ApiParam;
 import org.dubbo.x.facade.RestResult;
 import org.dubbo.x.service.CURDService;
@@ -49,7 +51,7 @@ public class GestPaidRecordRestServiceImpl extends RestServiceBase<GestPaidRecor
     }
 
     @Override
-    public RestResult<GestPaidRecord> pay(@HeaderParam(ConstantVariable.HEADER_AUTHORIZATION_KEY) String token, List<SettleAccountsView> payList) {
-        return RestResult.OK(gestPaidRecordService.pay(payList));
+    public RestResult<FinanceSettleAccounts> pay(@HeaderParam(ConstantVariable.HEADER_AUTHORIZATION_KEY) String token, PayVO pay) {
+        return RestResult.OK(gestPaidRecordService.pay(pay));
     }
 }

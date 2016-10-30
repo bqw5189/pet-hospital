@@ -40,6 +40,7 @@ public class MedicMedictreatRecordServiceImpl extends CURDServiceBase<MedicMedic
             medicMedictreatRecord = new MedicMedictreatRecord();
             medicMedictreatRecord.setStatus(CMSEntity.DEFAULT());
             medicMedictreatRecord.setRegisterNo(entity.getRegisterNo());
+            appConfigService.setCurrentUser(getCurrentUser());
             medicMedictreatRecord.setMediTreatmentCode(appConfigService.genNumberByName("就诊编号"));
 
             MedicRegisterRecord medicRegisterRecord = medicRegisterRecordDao.findByRegisterNo(entity.getRegisterNo());

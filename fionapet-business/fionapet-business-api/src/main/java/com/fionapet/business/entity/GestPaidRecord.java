@@ -18,7 +18,7 @@ import java.util.Date;
  */
 @Entity
 @Table(name = "t_gest_paid_record")
-@ApiModel("顾客影像记录表")
+@ApiModel("支付方式记录表")
 public class GestPaidRecord extends CMSEntity {
     
     /**
@@ -52,9 +52,9 @@ public class GestPaidRecord extends CMSEntity {
     /**
      * 操作部位
      */
-    @ApiModelProperty(value = "操作部位", required = false)
+    @ApiModelProperty(value = "支付方式", required = false)
     
-    @Column(columnDefinition = "操作部位")
+    @Column(columnDefinition = "支付方式")
     private String operateAction;
     public String getOperateAction() {
         return operateAction;
@@ -66,9 +66,9 @@ public class GestPaidRecord extends CMSEntity {
     /**
      * 操作内容
      */
-    @ApiModelProperty(value = "操作内容", required = false)
+    @ApiModelProperty(value = "支付金额", required = false)
     
-    @Column(columnDefinition = "操作内容")
+    @Column(columnDefinition = "支付金额")
     private String operateContent;
     public String getOperateContent() {
         return operateContent;

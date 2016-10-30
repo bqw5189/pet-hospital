@@ -195,11 +195,11 @@ public class FinanceSettleAccountsDetail extends CMSEntity {
     @ApiModelProperty(value = "关联ID", required = false)
     
     @Column(columnDefinition = "关联ID")
-    private Integer relationId;
-    public Integer getRelationId() {
+    private String relationId;
+    public String getRelationId() {
         return relationId;
     }
-    public void setRelationId(Integer relationId) {
+    public void setRelationId(String relationId) {
         this.relationId = relationId;
     }
     
@@ -251,11 +251,11 @@ public class FinanceSettleAccountsDetail extends CMSEntity {
     @ApiModelProperty(value = "关联细节ID", required = false)
     
     @Column(columnDefinition = "关联细节ID")
-    private Integer relationDetailId;
-    public Integer getRelationDetailId() {
+    private String relationDetailId;
+    public String getRelationDetailId() {
         return relationDetailId;
     }
-    public void setRelationDetailId(Integer relationDetailId) {
+    public void setRelationDetailId(String relationDetailId) {
         this.relationDetailId = relationDetailId;
     }
     

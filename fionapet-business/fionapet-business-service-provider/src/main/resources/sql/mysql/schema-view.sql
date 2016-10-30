@@ -3,20 +3,20 @@
 -- -- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
 drop view if exists v_settle_accounts_view;
 create view v_settle_accounts_view as
-  select uuid() id, sds.gest_id, sdsd.item_code, sdsd.item_name, sdsd.sell_price item_cost,
-    sdsd.item_num, sdsd.busi_type_id, '直接销售' business_type, sds.id relation_id,
-    it.is_vip_discount, sdsd.sell_unit item_unit, sdsd.id relation_detail_id
-  from  t_store_direct_sell sds
-    INNER JOIN t_store_direct_sell_detail sdsd on sds.id = sdsd.direct_sell_id
-    LEFT JOIN t_gest g on sds.gest_id=g.id
-    LEFT JOIN t_item_type it on sdsd.item_code = it.item_code
-  where sdsd.paid_status <> 'SM00051' or sdsd.paid_status is null
-
-  UNION ALL
+--   select uuid() id, sds.gest_id, sdsd.item_code, sdsd.item_name, sdsd.sell_price item_cost,
+--     sdsd.item_num, sdsd.busi_type_id, '直接销售' business_type, sds.id relation_id,
+--     it.is_vip_discount, sdsd.sell_unit item_unit, sdsd.id relation_detail_id
+--   from  t_store_direct_sell sds
+--     INNER JOIN t_store_direct_sell_detail sdsd on sds.id = sdsd.direct_sell_id
+--     LEFT JOIN t_gest g on sds.gest_id=g.id
+--     LEFT JOIN t_item_type it on sdsd.item_code = it.item_code
+--   where sdsd.paid_status <> 'SM00051' or sdsd.paid_status is null
+--
+--   UNION ALL
 
   select uuid() id,gpr.gest_id, gpr.item_code,gpr.item_name,gpr.register_price item_cost,
-    gpr.relation_id, gpr.is_vip_discount, it.package_unit item_unit,
-                                                  gpr.relation_id relation_detail_id, 1 item_num, 10 busi_type_id, '挂号费用' business_type
+    1 item_num, 10 busi_type_id,'挂号费用' business_type, gpr.relation_id, gpr.is_vip_discount, '次' item_unit,
+    gpr.relation_id relation_detail_id
   from v_gest_pet_register gpr
     LEFT JOIN t_item_type it on gpr.item_code=it.item_code
   where gpr.register_paid_status is null or gpr.register_paid_status <> 'SM00051'
@@ -40,10 +40,10 @@ create view v_settle_accounts_view as
 -- -- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
 drop view if exists v_gest_bill;
 create view v_gest_bill as
-select uuid() id, gest_id, g.gest_code gest_no, gest_name,g.mobile_phone phone, gs.total from t_gest g LEFT JOIN (
-select gest_id, sum(item_cost * item_num) total from v_settle_accounts_view
-group by gest_id) gs
-on g.id = gs.gest_id
+select uuid() id, gs.gest_id, g.gest_code gest_no, gest_name,g.mobile_phone phone, gs.total from t_gest g
+INNER JOIN (select gest_id, sum(item_cost * item_num) total from v_settle_accounts_view
+  group by gest_id) gs
+  on g.id = gs.gest_id
 ;
 
 -- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --
