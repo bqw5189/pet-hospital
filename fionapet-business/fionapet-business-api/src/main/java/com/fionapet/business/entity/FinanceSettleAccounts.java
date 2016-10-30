@@ -41,11 +41,11 @@ public class FinanceSettleAccounts extends CMSEntity {
     @ApiModelProperty(value = "顾客ID", required = false)
     
     @Column(columnDefinition = "顾客ID")
-    private Integer gestId;
-    public Integer getGestId() {
+    private String gestId;
+    public String getGestId() {
         return gestId;
     }
-    public void setGestId(Integer gestId) {
+    public void setGestId(String gestId) {
         this.gestId = gestId;
     }
     

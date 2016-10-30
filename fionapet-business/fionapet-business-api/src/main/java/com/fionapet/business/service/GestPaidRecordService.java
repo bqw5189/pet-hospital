@@ -1,8 +1,9 @@
 package com.fionapet.business.service;
 
 import com.fionapet.business.entity.GestPaidRecord;
+import com.fionapet.business.entity.SettleAccountsView;
 import com.fionapet.business.facade.vo.BillItemVO;
-import com.fionapet.business.facade.vo.BillVO;
+import com.fionapet.business.entity.BillVO;
 import org.dubbo.x.service.CURDService;
 
 import java.util.List;
@@ -16,5 +17,7 @@ public interface GestPaidRecordService extends CURDService<GestPaidRecord> {
 
     List<BillVO> billList();
 
-    Map<String, List<BillItemVO>> billDetail(String gestId);
+    List<SettleAccountsView> billDetail(String gestId);
+
+    List<SettleAccountsView> pay(List<SettleAccountsView> payList);
 }

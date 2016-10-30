@@ -1,7 +1,8 @@
 package com.fionapet.business.facade;
 
+import com.fionapet.business.entity.SettleAccountsView;
 import com.fionapet.business.facade.vo.BillItemVO;
-import com.fionapet.business.facade.vo.BillVO;
+import com.fionapet.business.entity.BillVO;
 import org.dubbo.x.facade.CURDRestService;
 import org.dubbo.x.facade.RestResult;
 import org.dubbo.x.util.ConstantVariable;
@@ -76,5 +77,11 @@ public interface GestPaidRecordRestService extends CURDRestService<GestPaidRecor
     @Path("/billDetail/{gestId}")
     @ApiOperation(value = "未支付 详情",
             notes = "未支付 详情.")
-    RestResult<Map<String, List<BillItemVO>>> billDetail(@HeaderParam(ConstantVariable.HEADER_AUTHORIZATION_KEY) String token, @ApiParam("会员id") @PathParam("gestId") String gestId);
+    RestResult<List<SettleAccountsView>> billDetail(@HeaderParam(ConstantVariable.HEADER_AUTHORIZATION_KEY) String token, @ApiParam("会员id") @PathParam("gestId") String gestId);
+
+
+    @POST
+    @Path("/pay")
+    @ApiOperation(value = "支付", notes = "支付记录")
+    RestResult<GestPaidRecord> pay(@HeaderParam(ConstantVariable.HEADER_AUTHORIZATION_KEY) String token,List<SettleAccountsView> payList);
 }

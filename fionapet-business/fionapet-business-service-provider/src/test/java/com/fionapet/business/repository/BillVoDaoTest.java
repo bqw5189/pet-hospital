@@ -1,7 +1,8 @@
 package com.fionapet.business.repository;
 
-import com.fionapet.business.entity.GestPaidRecord;
 import com.fionapet.business.entity.BillVO;
+import com.fionapet.business.entity.GestPaidRecord;
+import com.fionapet.business.entity.SettleAccountsView;
 import org.junit.Assert;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,19 +16,19 @@ import java.util.List;
 * Created by tom on 2016-07-25 09:32:34.
  */
 @ContextConfiguration(locations = {"/META-INF/spring/applicationContext.xml"})
-public class GestPaidRecordDaoTest extends SpringTransactionalTestCase {
+public class BillVoDaoTest extends SpringTransactionalTestCase {
 
     @Autowired
-    private GestPaidRecordDao gestPaidRecordDao;
+    private BillVODao billVODao;
 
     @Test
     public void findAll(){
-        List<GestPaidRecord> gestPaidRecords = gestPaidRecordDao.findAllBy();
+        List<BillVO> gestPaidRecords = billVODao.findAllBy();
 
         Assert.assertNotNull(gestPaidRecords);
 
-        Assert.assertEquals(gestPaidRecords.size(), 0);
+        Assert.assertEquals(gestPaidRecords.size(), 1);
     }
 
-
+   
 }

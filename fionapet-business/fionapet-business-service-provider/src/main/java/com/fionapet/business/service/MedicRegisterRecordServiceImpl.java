@@ -50,6 +50,7 @@ public class MedicRegisterRecordServiceImpl extends CURDServiceBase<MedicRegiste
             DictTypeDetail dictTypeDetail = dictTypeDetailDao.findByDictDetailCode("SM00034");
             entity.setStatus(dictTypeDetail);
         }
+
         return super.createOrUpdte(entity);
     }
 

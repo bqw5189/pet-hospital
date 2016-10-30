@@ -1,18 +1,13 @@
 package com.fionapet.business.service;
 
-import com.fionapet.business.entity.Gest;
-import com.fionapet.business.entity.GestPaidRecord;
-import com.fionapet.business.entity.Pet;
+import com.fionapet.business.entity.*;
 import com.fionapet.business.facade.vo.BillItemVO;
-import com.fionapet.business.facade.vo.BillVO;
-import com.fionapet.business.repository.GestDao;
-import com.fionapet.business.repository.PetDao;
-import org.apache.commons.lang.time.DateFormatUtils;
+import com.fionapet.business.repository.*;
 import org.dubbo.x.repository.DaoBase;
 import org.dubbo.x.service.CURDServiceBase;
-import com.fionapet.business.repository.GestPaidRecordDao;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import javax.transaction.Transactional;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -35,6 +30,18 @@ public class GestPaidRecordServiceImpl extends CURDServiceBase<GestPaidRecord> i
     @Autowired
     private MedicRegisterRecordService medicRegisterRecordService;
 
+    @Autowired
+    private BillVODao billVODao;
+    @Autowired
+    private SettleAccountsDao settleAccountsDao;
+    @Autowired
+    private DictTypeDetailDao dictTypeDetailDao;
+
+    @Autowired
+    private FinanceSettleAccountsDao financeSettleAccountsDao;
+    @Autowired
+    private FinanceSettleAccountsDetailDao financeSettleAccountsDetailDao;
+
     @Override
     public DaoBase<GestPaidRecord> getDao() {
         return gestPaidRecordDao;
@@ -42,34 +49,48 @@ public class GestPaidRecordServiceImpl extends CURDServiceBase<GestPaidRecord> i
 
     @Override
     public List<BillVO> billList() {
-        List<BillVO> result = new ArrayList<BillVO>();
-        List<Gest> gests = gestDao.findByPaidStatusNot("SM00051");
+        List<BillVO> result = billVODao.findAllBy();
+        return result;
+    }
 
-        for (Gest gest:gests){
-            BillVO billVO = new BillVO();
-
-            billVO.setGestName(gest.getGestName());
-            billVO.setGestNo(gest.getGestCode());
-            billVO.setPhone(gest.getMobilePhone());
-            billVO.setLastPayDate(DateFormatUtils.format(System.currentTimeMillis(), "yyyy年MM月dd"));
-            billVO.setTotal(0);
-
-            result.add(billVO);
-        }
+    @Override
+    public List<SettleAccountsView> billDetail(String gestId) {
+        List<SettleAccountsView> result = settleAccountsDao.findByGestId(gestId);
 
         return result;
     }
 
     @Override
-    public Map<String, List<BillItemVO>> billDetail(String gestId) {
-        Map<String, List<BillItemVO>> result = new HashMap<String, List<BillItemVO>>();
-        List<Pet> pets = petDao.findByGestId(gestId);
+    @Transactional
+    public List<SettleAccountsView> pay(List<SettleAccountsView> payList) {
 
-        for (Pet pet: pets){
-            List<BillItemVO> registers = medicRegisterRecordService.billDetail(pet.getId());
-            result.put("挂号费用", registers);
+        if (payList.size() == 0){
+            return payList;
         }
 
-        return result;
+        Double total = 0D;
+        for (SettleAccountsView settleAccountsView: payList){
+            total += (settleAccountsView.getItemCost() * Double.parseDouble(settleAccountsView.getItemNum()));
+        }
+
+        //已支付 状态
+        DictTypeDetail dictTypeDetail = dictTypeDetailDao.findByDictDetailCode("SM00051");
+
+        //会员信息
+        Gest gest = gestDao.findOne(payList.get(0).getGestId());
+
+        //支付记录
+        FinanceSettleAccounts financeSettleAccounts = new FinanceSettleAccounts();
+        financeSettleAccounts.setGestCode(gest.getGestCode());
+        financeSettleAccounts.setGestId(gest.getId());
+        financeSettleAccounts.setStatus(dictTypeDetail);
+        financeSettleAccounts.setTotalMoney(total);
+        financeSettleAccounts.setShouldPaidMoney(total);
+        financeSettleAccounts.setFactPaidMoney(total);
+
+
+
+
+        return null;
     }
 }

@@ -1,8 +1,8 @@
 package com.fionapet.business.facade;
 
 import com.fionapet.business.entity.GestPaidRecord;
-import com.fionapet.business.facade.vo.BillItemVO;
-import com.fionapet.business.facade.vo.BillVO;
+import com.fionapet.business.entity.SettleAccountsView;
+import com.fionapet.business.entity.BillVO;
 import io.swagger.annotations.ApiParam;
 import org.dubbo.x.facade.RestResult;
 import org.dubbo.x.service.CURDService;
@@ -14,7 +14,6 @@ import org.slf4j.LoggerFactory;
 
 import javax.ws.rs.HeaderParam;
 import java.util.List;
-import java.util.Map;
 
 /**
  * 顾客影像记录表
@@ -45,7 +44,12 @@ public class GestPaidRecordRestServiceImpl extends RestServiceBase<GestPaidRecor
     }
 
     @Override
-    public RestResult<Map<String, List<BillItemVO>>> billDetail(@HeaderParam(ConstantVariable.HEADER_AUTHORIZATION_KEY) String token, @ApiParam("会员id") String gestId) {
+    public RestResult<List<SettleAccountsView>> billDetail(@HeaderParam(ConstantVariable.HEADER_AUTHORIZATION_KEY) String token, @ApiParam("会员id") String gestId) {
         return RestResult.OK(gestPaidRecordService.billDetail(gestId));
+    }
+
+    @Override
+    public RestResult<GestPaidRecord> pay(@HeaderParam(ConstantVariable.HEADER_AUTHORIZATION_KEY) String token, List<SettleAccountsView> payList) {
+        return RestResult.OK(gestPaidRecordService.pay(payList));
     }
 }
