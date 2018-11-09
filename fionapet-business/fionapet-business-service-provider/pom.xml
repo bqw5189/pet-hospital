@@ -63,7 +63,7 @@
         <dependency>
             <groupId>org.dubbo</groupId>
             <artifactId>dubbo-base-service-provider</artifactId>
-            <version>1.0-SNAPSHOT</version>
+            <version>2.0-SNAPSHOT</version>
         </dependency>
         <dependency>
             <groupId>org.javassist</groupId>

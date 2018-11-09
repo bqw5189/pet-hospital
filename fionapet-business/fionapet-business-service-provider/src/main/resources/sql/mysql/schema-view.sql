@@ -1,4 +1,21 @@
 -- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --
+-- --- Table structure for v_gest_pet_register  会员宠物挂号视图
+-- -- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
+drop view if exists v_gest_pet_register;
+create view v_gest_pet_register as
+select g.id gest_id,g.gest_code, g.gest_name,g.mobile_phone,g.gest_style,
+  p.id pet_id, p.pet_name, p.sick_file_code,it.is_count, it.is_vip_discount,
+  reg.register_no, reg.item_code,reg.item_name, reg.register_price, it.is_sell,
+  reg.id relation_id, reg.operator_man, reg.doctor,
+  reg.doctor_id, reg.status, reg.paid_status register_paid_status,reg.paid_time,
+  reg.pause_reason, reg.create_user_id, reg.create_date, reg.update_date,reg.update_user_id,
+  reg.assistant_doctor_id, reg.assistant_doctor_name
+from t_gest g
+INNER JOIN t_pet p on g.id = p.gest_id
+INNER JOIN t_medic_register_record reg on p.id = reg.pet_id
+INNER JOIN t_item_type it on reg.item_code = it.item_code
+
+-- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --
 -- --- Table structure for v_settle_accounts_view  待支付视图
 -- -- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
 drop view if exists v_settle_accounts_view;
@@ -46,20 +63,5 @@ INNER JOIN (select gest_id, sum(item_cost * item_num) total from v_settle_accoun
   on g.id = gs.gest_id
 ;
 
--- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --
--- --- Table structure for v_gest_pet_register  会员宠物挂号视图
--- -- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
-drop view if exists v_gest_pet_register;
-create view v_gest_pet_register as
-select g.id gest_id,g.gest_code, g.gest_name,g.mobile_phone,g.gest_style,
-  p.id pet_id, p.pet_name, p.sick_file_code,it.is_count, it.is_vip_discount,
-  reg.register_no, reg.item_code,reg.item_name, reg.register_price, it.is_sell,
-  reg.id relation_id, reg.operator_man, reg.doctor,
-  reg.doctor_id, reg.status, reg.paid_status register_paid_status,reg.paid_time,
-  reg.pause_reason, reg.create_user_id, reg.create_date, reg.update_date,reg.update_user_id,
-  reg.assistant_doctor_id, reg.assistant_doctor_name
-from t_gest g
-INNER JOIN t_pet p on g.id = p.gest_id
-INNER JOIN t_medic_register_record reg on p.id = reg.pet_id
-INNER JOIN t_item_type it on reg.item_code = it.item_code
+
 

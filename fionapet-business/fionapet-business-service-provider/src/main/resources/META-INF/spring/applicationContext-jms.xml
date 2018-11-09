@@ -17,7 +17,7 @@
 	<!-- ActiveMQ 连接工厂 -->
 	<!-- 真正可以产生Connection的ConnectionFactory，由对应的 JMS服务厂商提供-->
 	<bean id="connectinFactory" class="org.apache.activemq.ActiveMQConnectionFactory">
-		 <property name="brokerURL" value="tcp://192.168.1.254:61616" />
+		 <property name="brokerURL" value="tcp://101.200.220.3:61616" />
 		<!--<property name="brokerURL" value="${mqUrl}" />-->
 	</bean>
 	<!-- Spring Caching连接工厂 -->
